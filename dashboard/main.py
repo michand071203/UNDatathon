@@ -179,6 +179,8 @@ def calculate_color(severity_score: Optional[float]) -> str:
     if severity_score >= 25: return "#facc15"
     return "#16a34a"
 
+templates.env.globals["calculate_color"] = calculate_color
+
 def calculate_radius(people_in_need: int) -> float:
     people_in_need = max(0, people_in_need)
 
@@ -290,7 +292,7 @@ def _normalize_crisis_record(crisis: dict) -> Optional[dict]:
         "coverage_projected": year_data_coverage_projected,
         "contribution_count": year_data.get("contribution_count"),
         "category_breakdown_scored": project_metrics_2026.get("category_breakdown_scored") or [],
-        "category_scores": {item["category"]: item.get("category_score") for item in (project_metrics_2026.get("category_breakdown_scored") or [])},
+        "category_scores": {item["category"]: item.get("category_score_normalized") for item in (project_metrics_2026.get("category_breakdown_scored") or [])},
         "category_level_score": project_metrics_2026.get("category_level_score"),
         "overall_severity_score": project_metrics_2026.get("overall_severity_score"),
         "systematic_underfunding": crisis.get("systematic_underfunding"),
