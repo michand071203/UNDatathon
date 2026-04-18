@@ -14,11 +14,15 @@
     "dest_plan_code":"FPSE26",
     "total_contributions":340004369,
     "contribution_count":165,
-    "country_iso3":null,
+    "Country ISO3_x":null,
     "people_in_need":null,
     "people_targeted":null,
     "people_affected":null,
     "people_reached":null,
+    "Country ISO3_y":null,
+    "category_breakdown":[
+
+    ],
     "latitude":-23.5504428,
     "longitude":-46.6334463
   },
@@ -37,11 +41,15 @@
     "dest_plan_code":"HSYR26",
     "total_contributions":375260530,
     "contribution_count":75,
-    "country_iso3":"SYR",
+    "Country ISO3_x":"SYR",
     "people_in_need":16500000.0,
     "people_targeted":10300000.0,
     "people_affected":0.0,
     "people_reached":0.0,
+    "Country ISO3_y":null,
+    "category_breakdown":[
+
+    ],
     "latitude":49.6251361,
     "longitude":6.272597
   },
@@ -60,11 +68,15 @@
     "dest_plan_code":"HSDN26",
     "total_contributions":407778832,
     "contribution_count":83,
-    "country_iso3":"SDN",
+    "Country ISO3_x":"SDN",
     "people_in_need":33699770.0,
     "people_targeted":20419163.0,
     "people_affected":0.0,
     "people_reached":0.0,
+    "Country ISO3_y":null,
+    "category_breakdown":[
+
+    ],
     "latitude":10.022662,
     "longitude":77.9653911
   },
@@ -83,11 +95,34 @@
     "dest_plan_code":"HUKR26",
     "total_contributions":806065099,
     "contribution_count":106,
-    "country_iso3":"UKR",
+    "Country ISO3_x":"UKR",
     "people_in_need":10849697.0,
     "people_targeted":4118954.0,
     "people_affected":0.0,
     "people_reached":0.0,
+    "Country ISO3_y":"UKR",
+    "category_breakdown":[
+      {
+        "category":"Cash",
+        "in_need":0.0,
+        "targeted":1091920
+      },
+      {
+        "category":"Education",
+        "in_need":846540.0,
+        "targeted":487663
+      },
+      {
+        "category":"Health",
+        "in_need":4473766.0,
+        "targeted":1468059
+      },
+      {
+        "category":"Protection",
+        "in_need":6539382.0,
+        "targeted":2442478
+      }
+    ],
     "latitude":48.9878957,
     "longitude":12.087126
   },
@@ -106,11 +141,15 @@
     "dest_plan_code":"HYEM26",
     "total_contributions":161785093,
     "contribution_count":85,
-    "country_iso3":"YEM",
+    "Country ISO3_x":"YEM",
     "people_in_need":23100000.0,
     "people_targeted":10500000.0,
     "people_affected":0.0,
     "people_reached":0.0,
+    "Country ISO3_y":null,
+    "category_breakdown":[
+
+    ],
     "latitude":3.5619213,
     "longitude":12.1574578
   },
@@ -129,11 +168,49 @@
     "dest_plan_code":"HAFG26",
     "total_contributions":175703203,
     "contribution_count":58,
-    "country_iso3":"AFG",
+    "Country ISO3_x":"AFG",
     "people_in_need":21889283.0,
     "people_targeted":17479657.0,
     "people_affected":0.0,
     "people_reached":0.0,
+    "Country ISO3_y":"AFG",
+    "category_breakdown":[
+      {
+        "category":"Cash",
+        "in_need":0.0,
+        "targeted":688322
+      },
+      {
+        "category":"Education",
+        "in_need":7105602.0,
+        "targeted":613774
+      },
+      {
+        "category":"Food Security",
+        "in_need":17412653.0,
+        "targeted":11911619
+      },
+      {
+        "category":"Health",
+        "in_need":14423290.0,
+        "targeted":7218662
+      },
+      {
+        "category":"Nutrition",
+        "in_need":7464230.0,
+        "targeted":5682222
+      },
+      {
+        "category":"Protection",
+        "in_need":14988378.0,
+        "targeted":5347659
+      },
+      {
+        "category":"WASH",
+        "in_need":15909907.0,
+        "targeted":7838434
+      }
+    ],
     "latitude":33.7680065,
     "longitude":66.2385139
   },
@@ -152,11 +229,44 @@
     "dest_plan_code":"HSSD26",
     "total_contributions":206659361,
     "contribution_count":68,
-    "country_iso3":"SSD",
+    "Country ISO3_x":"SSD",
     "people_in_need":9913863.0,
     "people_targeted":4343435.0,
     "people_affected":0.0,
     "people_reached":0.0,
+    "Country ISO3_y":"SSD",
+    "category_breakdown":[
+      {
+        "category":"Cash",
+        "in_need":0.0,
+        "targeted":463705
+      },
+      {
+        "category":"Education",
+        "in_need":2435900.0,
+        "targeted":795532
+      },
+      {
+        "category":"Food Security",
+        "in_need":7650962.0,
+        "targeted":2664032
+      },
+      {
+        "category":"Health",
+        "in_need":6269692.0,
+        "targeted":2884600
+      },
+      {
+        "category":"Nutrition",
+        "in_need":5250933.0,
+        "targeted":1833612
+      },
+      {
+        "category":"Protection",
+        "in_need":4867750.0,
+        "targeted":1548355
+      }
+    ],
     "latitude":-32.7461659,
     "longitude":-70.7044932
   },
@@ -175,11 +285,34 @@
     "dest_plan_code":"HCOD26",
     "total_contributions":409627645,
     "contribution_count":65,
-    "country_iso3":"COD",
+    "Country ISO3_x":"COD",
     "people_in_need":14940727.0,
     "people_targeted":7313763.0,
     "people_affected":0.0,
     "people_reached":0.0,
+    "Country ISO3_y":"COD",
+    "category_breakdown":[
+      {
+        "category":"Education",
+        "in_need":3901894.0,
+        "targeted":480758
+      },
+      {
+        "category":"Food Security",
+        "in_need":13003064.0,
+        "targeted":5922823
+      },
+      {
+        "category":"Health",
+        "in_need":7544115.0,
+        "targeted":2512134
+      },
+      {
+        "category":"Nutrition",
+        "in_need":4256957.0,
+        "targeted":1853401
+      }
+    ],
     "latitude":44.520752,
     "longitude":-109.0218534
   },
@@ -198,11 +331,44 @@
     "dest_plan_code":"HTCD26",
     "total_contributions":168197320,
     "contribution_count":100,
-    "country_iso3":"TCD",
+    "Country ISO3_x":"TCD",
     "people_in_need":4509014.0,
     "people_targeted":3352810.0,
     "people_affected":0.0,
     "people_reached":0.0,
+    "Country ISO3_y":"TCD",
+    "category_breakdown":[
+      {
+        "category":"CCCM",
+        "in_need":504194.0,
+        "targeted":482348
+      },
+      {
+        "category":"Education",
+        "in_need":1388864.0,
+        "targeted":587099
+      },
+      {
+        "category":"Food Security",
+        "in_need":2913694.0,
+        "targeted":1581468
+      },
+      {
+        "category":"Health",
+        "in_need":1706766.0,
+        "targeted":1203856
+      },
+      {
+        "category":"Nutrition",
+        "in_need":2128981.0,
+        "targeted":1237152
+      },
+      {
+        "category":"WASH",
+        "in_need":2901096.0,
+        "targeted":1672229
+      }
+    ],
     "latitude":-2.8958053,
     "longitude":-69.7497586
   },
@@ -221,11 +387,44 @@
     "dest_plan_code":"HMMR26",
     "total_contributions":240080430,
     "contribution_count":62,
-    "country_iso3":"MMR",
+    "Country ISO3_x":"MMR",
     "people_in_need":16229050.0,
     "people_targeted":4868096.0,
     "people_affected":0.0,
     "people_reached":0.0,
+    "Country ISO3_y":"MMR",
+    "category_breakdown":[
+      {
+        "category":"Education",
+        "in_need":3523306.0,
+        "targeted":1135546
+      },
+      {
+        "category":"Food Security",
+        "in_need":8475703.0,
+        "targeted":1506063
+      },
+      {
+        "category":"Health",
+        "in_need":9251462.0,
+        "targeted":2002225
+      },
+      {
+        "category":"Nutrition",
+        "in_need":2653317.0,
+        "targeted":677374
+      },
+      {
+        "category":"Protection",
+        "in_need":11596899.0,
+        "targeted":3372443
+      },
+      {
+        "category":"WASH",
+        "in_need":8948125.0,
+        "targeted":2375280
+      }
+    ],
     "latitude":19.0822739,
     "longitude":73.15177
   },
@@ -244,11 +443,44 @@
     "dest_plan_code":"HHTI26",
     "total_contributions":167418324,
     "contribution_count":18,
-    "country_iso3":"HTI",
+    "Country ISO3_x":"HTI",
     "people_in_need":6414193.0,
     "people_targeted":4162202.0,
     "people_affected":0.0,
     "people_reached":0.0,
+    "Country ISO3_y":"HTI",
+    "category_breakdown":[
+      {
+        "category":"CCCM",
+        "in_need":2118299.0,
+        "targeted":571841
+      },
+      {
+        "category":"Education",
+        "in_need":1493675.0,
+        "targeted":982031
+      },
+      {
+        "category":"Food Security",
+        "in_need":5910721.0,
+        "targeted":3529354
+      },
+      {
+        "category":"Health",
+        "in_need":4860485.0,
+        "targeted":2710790
+      },
+      {
+        "category":"Nutrition",
+        "in_need":1225803.0,
+        "targeted":946258
+      },
+      {
+        "category":"Protection",
+        "in_need":2195026.0,
+        "targeted":1235914
+      }
+    ],
     "latitude":-20.358137,
     "longitude":148.9521302
   },
@@ -267,11 +499,44 @@
     "dest_plan_code":"HSOM26",
     "total_contributions":95721718,
     "contribution_count":56,
-    "country_iso3":"SOM",
+    "Country ISO3_x":"SOM",
     "people_in_need":4796040.0,
     "people_targeted":2430751.0,
     "people_affected":0.0,
     "people_reached":0.0,
+    "Country ISO3_y":"SOM",
+    "category_breakdown":[
+      {
+        "category":"CCCM",
+        "in_need":2039580.0,
+        "targeted":1039063
+      },
+      {
+        "category":"Education",
+        "in_need":1729469.0,
+        "targeted":628192
+      },
+      {
+        "category":"Health",
+        "in_need":4989936.0,
+        "targeted":2426481
+      },
+      {
+        "category":"Nutrition",
+        "in_need":2369935.0,
+        "targeted":1270239
+      },
+      {
+        "category":"Protection",
+        "in_need":3097201.0,
+        "targeted":1853929
+      },
+      {
+        "category":"WASH",
+        "in_need":4486155.0,
+        "targeted":2229585
+      }
+    ],
     "latitude":46.8067676,
     "longitude":18.1413711
   },
@@ -290,11 +555,15 @@
     "dest_plan_code":"RUGA26",
     "total_contributions":3107765,
     "contribution_count":3,
-    "country_iso3":null,
+    "Country ISO3_x":null,
     "people_in_need":null,
     "people_targeted":null,
     "people_affected":null,
     "people_reached":null,
+    "Country ISO3_y":null,
+    "category_breakdown":[
+
+    ],
     "latitude":33.9404278,
     "longitude":-83.373049
   },
@@ -329,11 +598,15 @@
     "dest_plan_code":"RREG26b",
     "total_contributions":550821668,
     "contribution_count":48,
-    "country_iso3":null,
+    "Country ISO3_x":null,
     "people_in_need":null,
     "people_targeted":null,
     "people_affected":null,
     "people_reached":null,
+    "Country ISO3_y":null,
+    "category_breakdown":[
+
+    ],
     "latitude":44.6976778,
     "longitude":7.8542707
   },
@@ -352,11 +625,15 @@
     "dest_plan_code":"RBGD26",
     "total_contributions":95341717,
     "contribution_count":74,
-    "country_iso3":null,
+    "Country ISO3_x":null,
     "people_in_need":null,
     "people_targeted":null,
     "people_affected":null,
     "people_reached":null,
+    "Country ISO3_y":null,
+    "category_breakdown":[
+
+    ],
     "latitude":-23.568589,
     "longitude":-46.6477629
   },
@@ -375,11 +652,15 @@
     "dest_plan_code":"HNER26",
     "total_contributions":52031462,
     "contribution_count":55,
-    "country_iso3":"NER",
+    "Country ISO3_x":"NER",
     "people_in_need":2600000.0,
     "people_targeted":1600000.0,
     "people_affected":0.0,
     "people_reached":0.0,
+    "Country ISO3_y":null,
+    "category_breakdown":[
+
+    ],
     "latitude":51.7845921,
     "longitude":19.1139514
   },
@@ -398,11 +679,15 @@
     "dest_plan_code":"HBFA26",
     "total_contributions":48705325,
     "contribution_count":45,
-    "country_iso3":"BFA",
+    "Country ISO3_x":"BFA",
     "people_in_need":4400000.0,
     "people_targeted":3100000.0,
     "people_affected":0.0,
     "people_reached":0.0,
+    "Country ISO3_y":null,
+    "category_breakdown":[
+
+    ],
     "latitude":48.1841414,
     "longitude":16.4131103
   },
@@ -421,11 +706,15 @@
     "dest_plan_code":"HVEN26",
     "total_contributions":112004600,
     "contribution_count":23,
-    "country_iso3":"VEN",
+    "Country ISO3_x":"VEN",
     "people_in_need":7900000.0,
     "people_targeted":5400000.0,
     "people_affected":0.0,
     "people_reached":0.0,
+    "Country ISO3_y":null,
+    "category_breakdown":[
+
+    ],
     "latitude":48.2083537,
     "longitude":16.3725042
   },
@@ -444,11 +733,15 @@
     "dest_plan_code":"HMLI26",
     "total_contributions":58442083,
     "contribution_count":96,
-    "country_iso3":"MLI",
+    "Country ISO3_x":"MLI",
     "people_in_need":5100000.0,
     "people_targeted":3800000.0,
     "people_affected":0.0,
     "people_reached":0.0,
+    "Country ISO3_y":null,
+    "category_breakdown":[
+
+    ],
     "latitude":41.4477214,
     "longitude":-90.5114665
   },
@@ -467,11 +760,34 @@
     "dest_plan_code":"HMOZ26",
     "total_contributions":133991591,
     "contribution_count":52,
-    "country_iso3":"MOZ",
+    "Country ISO3_x":"MOZ",
     "people_in_need":2356162.0,
     "people_targeted":1745582.0,
     "people_affected":0.0,
     "people_reached":0.0,
+    "Country ISO3_y":"MOZ",
+    "category_breakdown":[
+      {
+        "category":"Education",
+        "in_need":738165.0,
+        "targeted":553295
+      },
+      {
+        "category":"Health",
+        "in_need":1216660.0,
+        "targeted":948693
+      },
+      {
+        "category":"Nutrition",
+        "in_need":588027.0,
+        "targeted":371552
+      },
+      {
+        "category":"Protection",
+        "in_need":1654443.0,
+        "targeted":1008599
+      }
+    ],
     "latitude":-17.489829,
     "longitude":-149.7627821
   },
@@ -490,11 +806,44 @@
     "dest_plan_code":"HNGA26",
     "total_contributions":185745288,
     "contribution_count":47,
-    "country_iso3":"NGA",
+    "Country ISO3_x":"NGA",
     "people_in_need":5900000.0,
     "people_targeted":2500000.0,
     "people_affected":0.0,
     "people_reached":0.0,
+    "Country ISO3_y":"NGA",
+    "category_breakdown":[
+      {
+        "category":"CCCM",
+        "in_need":2036114.0,
+        "targeted":568578
+      },
+      {
+        "category":"Education",
+        "in_need":1648802.0,
+        "targeted":633643
+      },
+      {
+        "category":"Food Security",
+        "in_need":5848123.0,
+        "targeted":1492595
+      },
+      {
+        "category":"Health",
+        "in_need":3957689.0,
+        "targeted":1488054
+      },
+      {
+        "category":"Nutrition",
+        "in_need":4114246.0,
+        "targeted":1533941
+      },
+      {
+        "category":"Protection",
+        "in_need":3328745.0,
+        "targeted":1472715
+      }
+    ],
     "latitude":64.6863136,
     "longitude":97.7453061
   },
@@ -513,11 +862,15 @@
     "dest_plan_code":"HCMR26",
     "total_contributions":56851463,
     "contribution_count":33,
-    "country_iso3":"CMR",
+    "Country ISO3_x":"CMR",
     "people_in_need":2900000.0,
     "people_targeted":1800000.0,
     "people_affected":0.0,
     "people_reached":0.0,
+    "Country ISO3_y":null,
+    "category_breakdown":[
+
+    ],
     "latitude":39.0125063,
     "longitude":-7.0692822
   },
@@ -536,11 +889,15 @@
     "dest_plan_code":"HCOL26",
     "total_contributions":148069132,
     "contribution_count":35,
-    "country_iso3":"COL",
+    "Country ISO3_x":"COL",
     "people_in_need":6900000.0,
     "people_targeted":2600000.0,
     "people_affected":0.0,
     "people_reached":0.0,
+    "Country ISO3_y":null,
+    "category_breakdown":[
+
+    ],
     "latitude":19.166667,
     "longitude":-104.0
   },
@@ -559,11 +916,49 @@
     "dest_plan_code":"HCAF26",
     "total_contributions":37374699,
     "contribution_count":38,
-    "country_iso3":"CAF",
+    "Country ISO3_x":"CAF",
     "people_in_need":2286959.0,
     "people_targeted":1265483.0,
     "people_affected":0.0,
     "people_reached":0.0,
+    "Country ISO3_y":"CAF",
+    "category_breakdown":[
+      {
+        "category":"CCCM",
+        "in_need":411618.0,
+        "targeted":246970
+      },
+      {
+        "category":"Education",
+        "in_need":585470.0,
+        "targeted":278834
+      },
+      {
+        "category":"Food Security",
+        "in_need":1765978.0,
+        "targeted":825257
+      },
+      {
+        "category":"Health",
+        "in_need":955008.0,
+        "targeted":516609
+      },
+      {
+        "category":"Nutrition",
+        "in_need":335305.0,
+        "targeted":240392
+      },
+      {
+        "category":"Protection",
+        "in_need":1043244.0,
+        "targeted":559981
+      },
+      {
+        "category":"WASH",
+        "in_need":1096042.0,
+        "targeted":569945
+      }
+    ],
     "latitude":19.9402881,
     "longitude":79.3126355
   },
@@ -582,11 +977,15 @@
     "dest_plan_code":"OPAK26",
     "total_contributions":8847821,
     "contribution_count":10,
-    "country_iso3":null,
+    "Country ISO3_x":null,
     "people_in_need":null,
     "people_targeted":null,
     "people_affected":null,
     "people_reached":null,
+    "Country ISO3_y":null,
+    "category_breakdown":[
+
+    ],
     "latitude":13.4509043,
     "longitude":79.1145053
   },
@@ -605,11 +1004,15 @@
     "dest_plan_code":"OVNM26",
     "total_contributions":440684,
     "contribution_count":3,
-    "country_iso3":null,
+    "Country ISO3_x":null,
     "people_in_need":null,
     "people_targeted":null,
     "people_affected":null,
     "people_reached":null,
+    "Country ISO3_y":null,
+    "category_breakdown":[
+
+    ],
     "latitude":14.3926225,
     "longitude":79.017633
   },
@@ -628,66 +1031,17 @@
     "dest_plan_code":"OLKA2526",
     "total_contributions":5037687,
     "contribution_count":16,
-    "country_iso3":null,
+    "Country ISO3_x":null,
     "people_in_need":null,
     "people_targeted":null,
     "people_affected":null,
     "people_reached":null,
+    "Country ISO3_y":null,
+    "category_breakdown":[
+
+    ],
     "latitude":-8.2744567,
     "longitude":123.001795
-  },
-  {
-    "code":"RREG26",
-    "name":"Regional Migrant Response Plan for Horn of Africa to Yemen and Southern Africa 2026",
-    "locations":"YEM | KEN | DJI | SOM | ETH | TZA",
-    "primary_location":"YEM",
-    "location_codes":[
-      "YEM",
-      "KEN",
-      "DJI",
-      "SOM",
-      "ETH",
-      "TZA"
-    ],
-    "year":2026,
-    "requirements":0.0,
-    "funding":27150666.0,
-    "percent_funded":null,
-    "dest_plan_code":"RREG26",
-    "total_contributions":44622108,
-    "contribution_count":21,
-    "country_iso3":"YEM",
-    "people_in_need":23100000.0,
-    "people_targeted":10500000.0,
-    "people_affected":0.0,
-    "people_reached":0.0,
-    "latitude":3.5619213,
-    "longitude":12.1574578
-  },
-  {
-    "code":"RJORLBNTUR26",
-    "name":"Syrian Arab Republic Regional Refugee and Resilience Plan (3RP) 2026",
-    "locations":"JOR | TUR | LBN",
-    "primary_location":"JOR",
-    "location_codes":[
-      "JOR",
-      "TUR",
-      "LBN"
-    ],
-    "year":2026,
-    "requirements":0.0,
-    "funding":107634318.0,
-    "percent_funded":null,
-    "dest_plan_code":"RJORLBNTUR26",
-    "total_contributions":135353176,
-    "contribution_count":64,
-    "country_iso3":null,
-    "people_in_need":null,
-    "people_targeted":null,
-    "people_affected":null,
-    "people_reached":null,
-    "latitude":25.3691156,
-    "longitude":61.361292
   },
   {
     "code":"RREG26a",
@@ -710,12 +1064,77 @@
     "dest_plan_code":"RREG26a",
     "total_contributions":36421006,
     "contribution_count":19,
-    "country_iso3":null,
+    "Country ISO3_x":null,
     "people_in_need":null,
     "people_targeted":null,
     "people_affected":null,
     "people_reached":null,
+    "Country ISO3_y":null,
+    "category_breakdown":[
+
+    ],
     "latitude":47.2861569,
     "longitude":-2.3487929
+  },
+  {
+    "code":"RREG26",
+    "name":"Regional Migrant Response Plan for Horn of Africa to Yemen and Southern Africa 2026",
+    "locations":"YEM | KEN | DJI | SOM | ETH | TZA",
+    "primary_location":"YEM",
+    "location_codes":[
+      "YEM",
+      "KEN",
+      "DJI",
+      "SOM",
+      "ETH",
+      "TZA"
+    ],
+    "year":2026,
+    "requirements":0.0,
+    "funding":27150666.0,
+    "percent_funded":null,
+    "dest_plan_code":"RREG26",
+    "total_contributions":44622108,
+    "contribution_count":21,
+    "Country ISO3_x":"YEM",
+    "people_in_need":23100000.0,
+    "people_targeted":10500000.0,
+    "people_affected":0.0,
+    "people_reached":0.0,
+    "Country ISO3_y":null,
+    "category_breakdown":[
+
+    ],
+    "latitude":3.5619213,
+    "longitude":12.1574578
+  },
+  {
+    "code":"RJORLBNTUR26",
+    "name":"Syrian Arab Republic Regional Refugee and Resilience Plan (3RP) 2026",
+    "locations":"JOR | TUR | LBN",
+    "primary_location":"JOR",
+    "location_codes":[
+      "JOR",
+      "TUR",
+      "LBN"
+    ],
+    "year":2026,
+    "requirements":0.0,
+    "funding":107634318.0,
+    "percent_funded":null,
+    "dest_plan_code":"RJORLBNTUR26",
+    "total_contributions":135353176,
+    "contribution_count":64,
+    "Country ISO3_x":null,
+    "people_in_need":null,
+    "people_targeted":null,
+    "people_affected":null,
+    "people_reached":null,
+    "Country ISO3_y":null,
+    "category_breakdown":[
+
+    ],
+    "latitude":25.3691156,
+    "longitude":61.361292
   }
 ]

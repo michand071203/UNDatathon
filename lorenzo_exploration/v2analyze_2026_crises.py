@@ -5,6 +5,28 @@ import pandas as pd
 from geopy.extra.rate_limiter import RateLimiter
 from geopy.geocoders import Nominatim
 
+DESCRIPTION_MAP = {
+    "education": "Education",
+    "food security": "Food Security",
+    "food security and agriculture": "Food Security",
+    "sécurité alimentaire": "Food Security",
+    "health": "Health",
+    "santé": "Health",
+    "nutrition": "Nutrition",
+    "protection": "Protection",
+    "protection (overall)": "Protection",
+    "wash": "WASH",
+    "water, sanitation and hygiene": "WASH",
+    "eau, hygiène et assainissement": "WASH",
+    "shelter": "Shelter/NFI",
+    "shelter and nfi": "Shelter/NFI",
+    "abris": "Shelter/NFI",
+    "cccm": "CCCM",
+    "camp coordination and camp management": "CCCM",
+    "multipurpose cash": "Cash",
+    "multi-purpose cash": "Cash",
+}
+
 DATA_DIR = Path(__file__).resolve().parent.parent / "data"
 COORDINATE_FILE = DATA_DIR / "country_coordinates.csv"
 
@@ -86,20 +108,52 @@ def load_incoming_funding():
 
 def load_severity():
     severity = pd.read_csv(DATA_DIR / "hpc_hno_2026.csv")
+
     numeric_cols = ["Population", "In Need", "Targeted", "Affected", "Reached"]
     for col in numeric_cols:
         if col in severity.columns:
             severity[col] = pd.to_numeric(severity[col], errors="coerce")
-    # Filter to only "ALL" cluster entries
-    severity = severity[severity["Cluster"] == "ALL"]
-    return severity
+
+    # Normalize description
+    if "Description" in severity.columns:
+        severity["desc_norm"] = (
+            severity["Description"].astype(str).str.lower().str.strip()
+        )
+        severity["desc_norm"] = severity["desc_norm"].map(DESCRIPTION_MAP)
+    # Keep ALL cluster for totals
+    severity_all = severity[severity["Cluster"] == "ALL"].copy()
+
+    # Build per-category breakdown (In Need + Targeted)
+    if "Country ISO3" in severity.columns and "desc_norm" in severity.columns:
+        severity_mapped = severity[severity["desc_norm"].notna()].copy()
+        breakdown = (
+            severity_mapped.groupby(["Country ISO3", "desc_norm"], as_index=False)
+            [["In Need", "Targeted"]]
+            .sum()
+        )
+
+        breakdown_json = (
+            breakdown.groupby("Country ISO3")
+            .apply(lambda g: g[["desc_norm", "In Need", "Targeted"]]
+                   .rename(columns={
+                       "desc_norm": "category",
+                       "In Need": "in_need",
+                       "Targeted": "targeted"
+                   })
+                   .to_dict("records"))
+            .reset_index(name="category_breakdown")
+        )
+    else:
+        breakdown_json = pd.DataFrame(columns=["Country ISO3", "category_breakdown"])
+
+    return severity_all, breakdown_json
 
 
 def build_summary():
     plans = load_plans()
     fts = load_requirements_funding()
     contributions = load_incoming_funding()
-    severity = load_severity()
+    severity, breakdown_json = load_severity()
 
     funding_summary = fts.groupby("code", as_index=False).agg(
         requirements=("requirements", "sum"), funding=("funding", "sum")
@@ -143,10 +197,22 @@ def build_summary():
         right_on="Country ISO3",
     )
 
+    plan_summary = plan_summary.merge(
+        breakdown_json,
+        how="left",
+        left_on="primary_location",
+        right_on="Country ISO3",
+    )
+
     # Add coordinates using the geocoder pipeline cache
     primary_codes = plan_summary["primary_location"].dropna().unique().tolist()
     coordinates = load_coordinates(primary_codes)
     plan_summary = plan_summary.merge(coordinates, how="left", on="primary_location")
+
+    if "category_breakdown" in plan_summary.columns:
+        plan_summary["category_breakdown"] = plan_summary["category_breakdown"].apply(
+            lambda x: x if isinstance(x, list) else []
+        )
 
     plan_summary = plan_summary.sort_values(by="requirements", ascending=False)
     return plan_summary
