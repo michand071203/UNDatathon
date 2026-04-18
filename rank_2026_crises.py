@@ -42,15 +42,44 @@ def build_category_people_in_need_rankings(df):
                 )
 
     if not rows:
-        return []
+        return {
+            "by_people_in_need": [],
+            "by_category_coverage": [],
+            "by_category_gap": [],
+        }
 
     cat_df = pd.DataFrame(rows)
-    cat_agg = (
-        cat_df.groupby("category", as_index=False)
-        .agg({"people_in_need": "sum", "people_targeted": "sum"})
-        .sort_values("people_in_need", ascending=False)
+    cat_agg = cat_df.groupby("category", as_index=False).agg(
+        {"people_in_need": "sum", "people_targeted": "sum"}
     )
-    return cat_agg.to_dict("records")
+    cat_agg["coverage_ratio"] = cat_agg["people_targeted"] / cat_agg["people_in_need"]
+    cat_agg["unmet_need"] = cat_agg["people_in_need"] - cat_agg["people_targeted"]
+    cat_agg["unmet_need_ratio"] = cat_agg["unmet_need"] / cat_agg["people_in_need"]
+    cat_agg.loc[
+        cat_agg["people_in_need"] == 0,
+        [
+            "coverage_ratio",
+            "unmet_need_ratio",
+        ],
+    ] = None
+
+    return {
+        "by_people_in_need": cat_agg.sort_values("people_in_need", ascending=False)[
+            ["category", "people_in_need", "people_targeted"]
+        ].to_dict("records"),
+        "by_category_coverage": cat_agg.sort_values(
+            "coverage_ratio", ascending=False, na_position="last"
+        )[["category", "people_in_need", "people_targeted", "coverage_ratio"]].to_dict(
+            "records"
+        ),
+        "by_category_gap": cat_agg.sort_values(
+            "unmet_need_ratio", ascending=False, na_position="last"
+        )[
+            ["category", "people_in_need", "people_targeted", "unmet_need_ratio"]
+        ].to_dict(
+            "records"
+        ),
+    }
 
 
 def compute_rankings(df):
@@ -59,7 +88,25 @@ def compute_rankings(df):
 
     # Compute relative metrics
     df["coverage_ratio"] = df["people_targeted"] / df["people_in_need"]
-    df.loc[df["people_in_need"] == 0, "coverage_ratio"] = None
+    df["unmet_need_ratio"] = (df["people_in_need"] - df["people_targeted"]) / df[
+        "people_in_need"
+    ]
+    df["funding_per_need"] = df["funding"] / df["people_in_need"]
+    df["funding_per_target"] = df["funding"] / df["people_targeted"]
+    df["gap_per_person"] = df["funding_gap"] / df["people_in_need"]
+    df["reached_ratio"] = df["people_reached"] / df["people_in_need"]
+
+    df.loc[
+        df["people_in_need"] == 0,
+        [
+            "coverage_ratio",
+            "unmet_need_ratio",
+            "funding_per_need",
+            "gap_per_person",
+            "reached_ratio",
+        ],
+    ] = None
+    df.loc[df["people_targeted"] == 0, "funding_per_target"] = None
 
     # Add an overall rank score from each plan ranking category
     df["rank_funding_gap"] = df["funding_gap"].rank(method="dense", ascending=False)
@@ -74,6 +121,21 @@ def compute_rankings(df):
     df["rank_coverage_ratio"] = df["coverage_ratio"].rank(
         method="dense", ascending=False, na_option="bottom"
     )
+    df["rank_unmet_need_ratio"] = df["unmet_need_ratio"].rank(
+        method="dense", ascending=False, na_option="bottom"
+    )
+    df["rank_funding_per_need"] = df["funding_per_need"].rank(
+        method="dense", ascending=False, na_option="bottom"
+    )
+    df["rank_funding_per_target"] = df["funding_per_target"].rank(
+        method="dense", ascending=False, na_option="bottom"
+    )
+    df["rank_gap_per_person"] = df["gap_per_person"].rank(
+        method="dense", ascending=False, na_option="bottom"
+    )
+    df["rank_reached_ratio"] = df["reached_ratio"].rank(
+        method="dense", ascending=False, na_option="bottom"
+    )
     df["overall_rank_score"] = (
         df[
             [
@@ -83,6 +145,11 @@ def compute_rankings(df):
                 "rank_percent_funded",
                 "rank_people_in_need",
                 "rank_coverage_ratio",
+                "rank_unmet_need_ratio",
+                "rank_funding_per_need",
+                "rank_funding_per_target",
+                "rank_gap_per_person",
+                "rank_reached_ratio",
             ]
         ]
         .sum(axis=1)
@@ -151,6 +218,90 @@ def compute_rankings(df):
         ].to_dict(
             "records"
         ),
+        "by_target_coverage": df.sort_values(
+            "coverage_ratio", ascending=False, na_position="last"
+        )[
+            [
+                "code",
+                "name",
+                "primary_location",
+                "people_in_need",
+                "people_targeted",
+                "coverage_ratio",
+            ]
+        ].to_dict(
+            "records"
+        ),
+        "by_unmet_need_ratio": df.sort_values(
+            "unmet_need_ratio", ascending=False, na_position="last"
+        )[
+            [
+                "code",
+                "name",
+                "primary_location",
+                "people_in_need",
+                "people_targeted",
+                "unmet_need_ratio",
+            ]
+        ].to_dict(
+            "records"
+        ),
+        "by_funding_per_need": df.sort_values(
+            "funding_per_need", ascending=False, na_position="last"
+        )[
+            [
+                "code",
+                "name",
+                "primary_location",
+                "people_in_need",
+                "funding",
+                "funding_per_need",
+            ]
+        ].to_dict(
+            "records"
+        ),
+        "by_funding_per_target": df.sort_values(
+            "funding_per_target", ascending=False, na_position="last"
+        )[
+            [
+                "code",
+                "name",
+                "primary_location",
+                "people_targeted",
+                "funding",
+                "funding_per_target",
+            ]
+        ].to_dict(
+            "records"
+        ),
+        "by_gap_per_person": df.sort_values(
+            "gap_per_person", ascending=False, na_position="last"
+        )[
+            [
+                "code",
+                "name",
+                "primary_location",
+                "people_in_need",
+                "funding_gap",
+                "gap_per_person",
+            ]
+        ].to_dict(
+            "records"
+        ),
+        "by_people_reached_ratio": df.sort_values(
+            "reached_ratio", ascending=False, na_position="last"
+        )[
+            [
+                "code",
+                "name",
+                "primary_location",
+                "people_reached",
+                "people_in_need",
+                "reached_ratio",
+            ]
+        ].to_dict(
+            "records"
+        ),
         "overall": df.sort_values("overall_rank_score", ascending=True)[
             [
                 "code",
@@ -163,12 +314,22 @@ def compute_rankings(df):
                 "people_in_need",
                 "people_targeted",
                 "coverage_ratio",
+                "unmet_need_ratio",
+                "funding_per_need",
+                "funding_per_target",
+                "gap_per_person",
+                "reached_ratio",
                 "rank_funding_gap",
                 "rank_requirements",
                 "rank_funding",
                 "rank_percent_funded",
                 "rank_people_in_need",
                 "rank_coverage_ratio",
+                "rank_unmet_need_ratio",
+                "rank_funding_per_need",
+                "rank_funding_per_target",
+                "rank_gap_per_person",
+                "rank_reached_ratio",
                 "overall_rank_score",
                 "overall_rank",
             ]
@@ -196,6 +357,36 @@ def compute_rankings(df):
         country_agg["funding"] / country_agg["requirements"] * 100
     ).round(1)
     country_agg.loc[country_agg["requirements"] == 0, "percent_funded"] = None
+    country_agg["coverage_ratio"] = (
+        country_agg["people_targeted"] / country_agg["people_in_need"]
+    )
+    country_agg["unmet_need_ratio"] = (
+        country_agg["people_in_need"] - country_agg["people_targeted"]
+    ) / country_agg["people_in_need"]
+    country_agg["funding_per_need"] = (
+        country_agg["funding"] / country_agg["people_in_need"]
+    )
+    country_agg["funding_per_target"] = (
+        country_agg["funding"] / country_agg["people_targeted"]
+    )
+    country_agg["gap_per_person"] = (
+        country_agg["funding_gap"] / country_agg["people_in_need"]
+    )
+    country_agg["reached_ratio"] = (
+        country_agg["people_reached"] / country_agg["people_in_need"]
+    )
+
+    country_agg.loc[
+        country_agg["people_in_need"] == 0,
+        [
+            "coverage_ratio",
+            "unmet_need_ratio",
+            "funding_per_need",
+            "gap_per_person",
+            "reached_ratio",
+        ],
+    ] = None
+    country_agg.loc[country_agg["people_targeted"] == 0, "funding_per_target"] = None
 
     country_rankings = {
         "by_funding_gap": country_agg.sort_values("funding_gap", ascending=False)[
@@ -247,14 +438,207 @@ def compute_rankings(df):
                 "people_reached",
             ]
         ].to_dict("records"),
+        "by_coverage": country_agg.sort_values(
+            "coverage_ratio", ascending=False, na_position="last"
+        )[
+            [
+                "primary_location",
+                "people_in_need",
+                "people_targeted",
+                "coverage_ratio",
+            ]
+        ].to_dict(
+            "records"
+        ),
+        "by_unmet_need_ratio": country_agg.sort_values(
+            "unmet_need_ratio", ascending=False, na_position="last"
+        )[
+            [
+                "primary_location",
+                "people_in_need",
+                "people_targeted",
+                "unmet_need_ratio",
+            ]
+        ].to_dict(
+            "records"
+        ),
+        "by_funding_per_need": country_agg.sort_values(
+            "funding_per_need", ascending=False, na_position="last"
+        )[
+            [
+                "primary_location",
+                "people_in_need",
+                "funding",
+                "funding_per_need",
+            ]
+        ].to_dict(
+            "records"
+        ),
+        "by_funding_per_target": country_agg.sort_values(
+            "funding_per_target", ascending=False, na_position="last"
+        )[
+            [
+                "primary_location",
+                "people_targeted",
+                "funding",
+                "funding_per_target",
+            ]
+        ].to_dict(
+            "records"
+        ),
+        "by_gap_per_person": country_agg.sort_values(
+            "gap_per_person", ascending=False, na_position="last"
+        )[
+            [
+                "primary_location",
+                "people_in_need",
+                "funding_gap",
+                "gap_per_person",
+            ]
+        ].to_dict(
+            "records"
+        ),
+        "by_reached_ratio": country_agg.sort_values(
+            "reached_ratio", ascending=False, na_position="last"
+        )[
+            [
+                "primary_location",
+                "people_reached",
+                "people_in_need",
+                "reached_ratio",
+            ]
+        ].to_dict(
+            "records"
+        ),
+        "by_funding_gap": country_agg.sort_values("funding_gap", ascending=False)[
+            [
+                "primary_location",
+                "requirements",
+                "funding",
+                "funding_gap",
+                "percent_funded",
+            ]
+        ].to_dict("records"),
+        "by_requirements": country_agg.sort_values("requirements", ascending=False)[
+            [
+                "primary_location",
+                "requirements",
+                "funding",
+                "funding_gap",
+                "percent_funded",
+            ]
+        ].to_dict("records"),
+        "by_funding": country_agg.sort_values("funding", ascending=False)[
+            [
+                "primary_location",
+                "requirements",
+                "funding",
+                "funding_gap",
+                "percent_funded",
+            ]
+        ].to_dict("records"),
+        "by_percent_funded": country_agg.sort_values(
+            "percent_funded", ascending=True, na_position="last"
+        )[
+            [
+                "primary_location",
+                "requirements",
+                "funding",
+                "funding_gap",
+                "percent_funded",
+            ]
+        ].to_dict(
+            "records"
+        ),
+        "by_people_in_need": country_agg.sort_values("people_in_need", ascending=False)[
+            [
+                "primary_location",
+                "people_in_need",
+                "people_targeted",
+                "people_affected",
+                "people_reached",
+            ]
+        ].to_dict("records"),
+        "by_coverage": country_agg.sort_values(
+            "coverage_ratio", ascending=False, na_position="last"
+        )[
+            [
+                "primary_location",
+                "people_in_need",
+                "people_targeted",
+                "coverage_ratio",
+            ]
+        ].to_dict(
+            "records"
+        ),
+        "by_unmet_need_ratio": country_agg.sort_values(
+            "unmet_need_ratio", ascending=False, na_position="last"
+        )[
+            [
+                "primary_location",
+                "people_in_need",
+                "people_targeted",
+                "unmet_need_ratio",
+            ]
+        ].to_dict(
+            "records"
+        ),
+        "by_funding_per_need": country_agg.sort_values(
+            "funding_per_need", ascending=False, na_position="last"
+        )[
+            [
+                "primary_location",
+                "people_in_need",
+                "funding",
+                "funding_per_need",
+            ]
+        ].to_dict(
+            "records"
+        ),
+        "by_funding_per_target": country_agg.sort_values(
+            "funding_per_target", ascending=False, na_position="last"
+        )[
+            [
+                "primary_location",
+                "people_targeted",
+                "funding",
+                "funding_per_target",
+            ]
+        ].to_dict(
+            "records"
+        ),
+        "by_gap_per_person": country_agg.sort_values(
+            "gap_per_person", ascending=False, na_position="last"
+        )[
+            [
+                "primary_location",
+                "people_in_need",
+                "funding_gap",
+                "gap_per_person",
+            ]
+        ].to_dict(
+            "records"
+        ),
+        "by_reached_ratio": country_agg.sort_values(
+            "reached_ratio", ascending=False, na_position="last"
+        )[
+            [
+                "primary_location",
+                "people_reached",
+                "people_in_need",
+                "reached_ratio",
+            ]
+        ].to_dict(
+            "records"
+        ),
     }
+
+    category_rankings = build_category_people_in_need_rankings(df)
 
     return {
         "plan_rankings": plan_rankings,
         "country_rankings": country_rankings,
-        "category_rankings": {
-            "by_people_in_need": build_category_people_in_need_rankings(df)
-        },
+        "category_rankings": category_rankings,
     }
 
 
@@ -263,7 +647,19 @@ def main():
     rankings = compute_rankings(df)
     with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
         json.dump(rankings, f, indent=2, ensure_ascii=False)
+
+    ranking_names = []
+    for section, section_rankings in rankings.items():
+        if isinstance(section_rankings, dict):
+            for ranking_name in section_rankings.keys():
+                ranking_names.append(f"{section}.{ranking_name}")
+
+    ranking_names_file = DATA_DIR / "2026_crisis_ranking_names.json"
+    with open(ranking_names_file, "w", encoding="utf-8") as f:
+        json.dump(ranking_names, f, indent=2, ensure_ascii=False)
+
     print(f"Rankings saved to {OUTPUT_FILE}")
+    print(f"Ranking names saved to {ranking_names_file}")
 
 
 if __name__ == "__main__":

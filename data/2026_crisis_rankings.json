@@ -1360,107 +1360,1459 @@
         "people_reached": NaN
       }
     ],
-    "overall": [
+    "by_target_coverage": [
+      {
+        "code": "HAFG26",
+        "name": "Afghanistan Humanitarian Needs and Response Plan 2026",
+        "primary_location": "AFG",
+        "people_in_need": 21889283.0,
+        "people_targeted": 17479657.0,
+        "coverage_ratio": 0.7985486322233579
+      },
+      {
+        "code": "HMLI26",
+        "name": "Mali Besoins Humanitaires et Plan de Réponse 2026",
+        "primary_location": "MLI",
+        "people_in_need": 5100000.0,
+        "people_targeted": 3800000.0,
+        "coverage_ratio": 0.7450980392156863
+      },
+      {
+        "code": "HTCD26",
+        "name": "Tchad Besoins Humanitaires et Plan de Réponse 2026",
+        "primary_location": "TCD",
+        "people_in_need": 4509014.0,
+        "people_targeted": 3352810.0,
+        "coverage_ratio": 0.743579416697309
+      },
+      {
+        "code": "HMOZ26",
+        "name": "Mozambique Humanitarian Needs and Response Plan 2026",
+        "primary_location": "MOZ",
+        "people_in_need": 2356162.0,
+        "people_targeted": 1745582.0,
+        "coverage_ratio": 0.7408582262170428
+      },
+      {
+        "code": "HBFA26",
+        "name": "Burkina Faso Besoins Humanitaires et Plan de Réponse 2026",
+        "primary_location": "BFA",
+        "people_in_need": 4400000.0,
+        "people_targeted": 3100000.0,
+        "coverage_ratio": 0.7045454545454546
+      },
+      {
+        "code": "HVEN26",
+        "name": "Venezuela Plan de Respuesta Humanitaria 2026",
+        "primary_location": "VEN",
+        "people_in_need": 7900000.0,
+        "people_targeted": 5400000.0,
+        "coverage_ratio": 0.6835443037974683
+      },
+      {
+        "code": "HHTI26",
+        "name": "Haiti Besoins Humanitaires et Plan de Réponse 2026",
+        "primary_location": "HTI",
+        "people_in_need": 6414193.0,
+        "people_targeted": 4162202.0,
+        "coverage_ratio": 0.6489050142395154
+      },
       {
         "code": "HSYR26",
         "name": "Syrian Arab Republic Humanitarian Response Priorities 2026",
         "primary_location": "SYR",
-        "requirements": 2922184830.0,
-        "funding": 437301894.0,
-        "funding_gap": 2484882936.0,
-        "percent_funded": 15.0,
         "people_in_need": 16500000.0,
         "people_targeted": 10300000.0,
-        "coverage_ratio": 0.6242424242424243,
-        "rank_funding_gap": 2.0,
-        "rank_requirements": 2.0,
-        "rank_funding": 4.0,
-        "rank_percent_funded": 11.0,
-        "rank_people_in_need": 4.0,
-        "rank_coverage_ratio": 8.0,
-        "overall_rank_score": 31,
-        "overall_rank": 1.0
+        "coverage_ratio": 0.6242424242424243
+      },
+      {
+        "code": "HCMR26",
+        "name": "Cameroon Humanitarian Needs and Response Plan 2026",
+        "primary_location": "CMR",
+        "people_in_need": 2900000.0,
+        "people_targeted": 1800000.0,
+        "coverage_ratio": 0.6206896551724138
+      },
+      {
+        "code": "HNER26",
+        "name": "Niger Besoins Humanitaires et Plan de Réponse 2026",
+        "primary_location": "NER",
+        "people_in_need": 2600000.0,
+        "people_targeted": 1600000.0,
+        "coverage_ratio": 0.6153846153846154
       },
       {
         "code": "HSDN26",
         "name": "Sudan Humanitarian Needs and Response Plan 2026",
         "primary_location": "SDN",
-        "requirements": 2866228593.0,
-        "funding": 488147337.0,
-        "funding_gap": 2378081256.0,
-        "percent_funded": 17.0,
         "people_in_need": 33699770.0,
         "people_targeted": 20419163.0,
-        "coverage_ratio": 0.6059140166238524,
-        "rank_funding_gap": 3.0,
-        "rank_requirements": 3.0,
-        "rank_funding": 2.0,
-        "rank_percent_funded": 12.0,
-        "rank_people_in_need": 1.0,
-        "rank_coverage_ratio": 11.0,
-        "overall_rank_score": 32,
-        "overall_rank": 2.0
+        "coverage_ratio": 0.6059140166238524
       },
       {
-        "code": "HAFG26",
-        "name": "Afghanistan Humanitarian Needs and Response Plan 2026",
-        "primary_location": "AFG",
-        "requirements": 1714181496.0,
-        "funding": 214214587.0,
-        "funding_gap": 1499966909.0,
-        "percent_funded": 12.5,
-        "people_in_need": 21889283.0,
-        "people_targeted": 17479657.0,
-        "coverage_ratio": 0.7985486322233579,
-        "rank_funding_gap": 6.0,
-        "rank_requirements": 6.0,
-        "rank_funding": 11.0,
-        "rank_percent_funded": 7.0,
-        "rank_people_in_need": 3.0,
-        "rank_coverage_ratio": 1.0,
-        "overall_rank_score": 34,
-        "overall_rank": 3.0
+        "code": "HCAF26",
+        "name": "République Centrafricaine Besoins Humanitaires et Plan de Réponse 2026",
+        "primary_location": "CAF",
+        "people_in_need": 2286959.0,
+        "people_targeted": 1265483.0,
+        "coverage_ratio": 0.5533474802128067
+      },
+      {
+        "code": "HSOM26",
+        "name": "Somalia Humanitarian Needs and Response Plan 2026",
+        "primary_location": "SOM",
+        "people_in_need": 4796040.0,
+        "people_targeted": 2430751.0,
+        "coverage_ratio": 0.506824588618944
+      },
+      {
+        "code": "HCOD26",
+        "name": "République Démocratique du Congo Besoins Humanitaires et Plan de Réponse 2026",
+        "primary_location": "COD",
+        "people_in_need": 14940727.0,
+        "people_targeted": 7313763.0,
+        "coverage_ratio": 0.4895185488631176
       },
       {
         "code": "HYEM26",
         "name": "Yemen Humanitarian Needs and Response Plan 2026",
         "primary_location": "YEM",
-        "requirements": 2162563336.0,
-        "funding": 258764721.0,
-        "funding_gap": 1903798615.0,
-        "percent_funded": 12.0,
         "people_in_need": 23100000.0,
         "people_targeted": 10500000.0,
-        "coverage_ratio": 0.45454545454545453,
-        "rank_funding_gap": 4.0,
-        "rank_requirements": 5.0,
-        "rank_funding": 7.0,
-        "rank_percent_funded": 6.0,
-        "rank_people_in_need": 2.0,
-        "rank_coverage_ratio": 15.0,
-        "overall_rank_score": 39,
-        "overall_rank": 4.0
+        "coverage_ratio": 0.45454545454545453
+      },
+      {
+        "code": "RREG26",
+        "name": "Regional Migrant Response Plan for Horn of Africa to Yemen and Southern Africa 2026",
+        "primary_location": "YEM",
+        "people_in_need": 23100000.0,
+        "people_targeted": 10500000.0,
+        "coverage_ratio": 0.45454545454545453
+      },
+      {
+        "code": "HSSD26",
+        "name": "South Sudan Humanitarian Needs and Response Plan 2026",
+        "primary_location": "SSD",
+        "people_in_need": 9913863.0,
+        "people_targeted": 4343435.0,
+        "coverage_ratio": 0.4381173110824711
+      },
+      {
+        "code": "HNGA26",
+        "name": "Nigeria Humanitarian Needs and Response Plan 2026",
+        "primary_location": "NGA",
+        "people_in_need": 5900000.0,
+        "people_targeted": 2500000.0,
+        "coverage_ratio": 0.423728813559322
+      },
+      {
+        "code": "HUKR26",
+        "name": "Ukraine Humanitarian Needs and Response Plan 2026",
+        "primary_location": "UKR",
+        "people_in_need": 10849697.0,
+        "people_targeted": 4118954.0,
+        "coverage_ratio": 0.3796376986380357
+      },
+      {
+        "code": "HCOL26",
+        "name": "Colombia Necesidades Humanitarias y Plan de Respuesta 2026",
+        "primary_location": "COL",
+        "people_in_need": 6900000.0,
+        "people_targeted": 2600000.0,
+        "coverage_ratio": 0.37681159420289856
+      },
+      {
+        "code": "HMMR26",
+        "name": "Myanmar Humanitarian Needs and Response Plan 2026",
+        "primary_location": "MMR",
+        "people_in_need": 16229050.0,
+        "people_targeted": 4868096.0,
+        "coverage_ratio": 0.299961858519137
       },
       {
         "code": "FPSE26",
         "name": "Escalation of Hostilities in the OPT Flash Appeal 2026",
         "primary_location": "PSE",
-        "requirements": 4064305808.0,
-        "funding": 451836549.0,
-        "funding_gap": 3612469259.0,
-        "percent_funded": 11.1,
         "people_in_need": NaN,
         "people_targeted": NaN,
-        "coverage_ratio": NaN,
-        "rank_funding_gap": 1.0,
-        "rank_requirements": 1.0,
-        "rank_funding": 3.0,
-        "rank_percent_funded": 5.0,
-        "rank_people_in_need": 21.0,
-        "rank_coverage_ratio": 21.0,
-        "overall_rank_score": 52,
-        "overall_rank": 5.0
+        "coverage_ratio": NaN
       },
+      {
+        "code": "RUGA26",
+        "name": "Uganda Regional Refugee Response Plan 2026",
+        "primary_location": "UGA",
+        "people_in_need": NaN,
+        "people_targeted": NaN,
+        "coverage_ratio": NaN
+      },
+      {
+        "code": "RREG26b",
+        "name": "Venezuela Regional Refugee and Migrant Response Plan (RMRP) 2026",
+        "primary_location": "BRA",
+        "people_in_need": NaN,
+        "people_targeted": NaN,
+        "coverage_ratio": NaN
+      },
+      {
+        "code": "RBGD26",
+        "name": "Rohingya Humanitarian Crisis Joint Response Plan 2026",
+        "primary_location": "BGD",
+        "people_in_need": NaN,
+        "people_targeted": NaN,
+        "coverage_ratio": NaN
+      },
+      {
+        "code": "OPAK26",
+        "name": "Pakistan Floods Support Plan 2026",
+        "primary_location": "PAK",
+        "people_in_need": NaN,
+        "people_targeted": NaN,
+        "coverage_ratio": NaN
+      },
+      {
+        "code": "OVNM26",
+        "name": "Viet Nam 25-26 Joint Response Plan Multiple Typhoons and Floods 2026",
+        "primary_location": "VNM",
+        "people_in_need": NaN,
+        "people_targeted": NaN,
+        "coverage_ratio": NaN
+      },
+      {
+        "code": "OLKA2526",
+        "name": "Sri Lanka Humanitarian Priorities Plan Cyclone Ditwa 2026",
+        "primary_location": "LKA",
+        "people_in_need": NaN,
+        "people_targeted": NaN,
+        "coverage_ratio": NaN
+      },
+      {
+        "code": "RJORLBNTUR26",
+        "name": "Syrian Arab Republic Regional Refugee and Resilience Plan (3RP) 2026",
+        "primary_location": "JOR",
+        "people_in_need": NaN,
+        "people_targeted": NaN,
+        "coverage_ratio": NaN
+      },
+      {
+        "code": "RREG26a",
+        "name": "Sudan Emergency: Regional Refugee Response Plan 2026",
+        "primary_location": "LBY",
+        "people_in_need": NaN,
+        "people_targeted": NaN,
+        "coverage_ratio": NaN
+      }
+    ],
+    "by_unmet_need_ratio": [
+      {
+        "code": "HMMR26",
+        "name": "Myanmar Humanitarian Needs and Response Plan 2026",
+        "primary_location": "MMR",
+        "people_in_need": 16229050.0,
+        "people_targeted": 4868096.0,
+        "unmet_need_ratio": 0.7000381414808631
+      },
+      {
+        "code": "HCOL26",
+        "name": "Colombia Necesidades Humanitarias y Plan de Respuesta 2026",
+        "primary_location": "COL",
+        "people_in_need": 6900000.0,
+        "people_targeted": 2600000.0,
+        "unmet_need_ratio": 0.6231884057971014
+      },
+      {
+        "code": "HUKR26",
+        "name": "Ukraine Humanitarian Needs and Response Plan 2026",
+        "primary_location": "UKR",
+        "people_in_need": 10849697.0,
+        "people_targeted": 4118954.0,
+        "unmet_need_ratio": 0.6203623013619644
+      },
+      {
+        "code": "HNGA26",
+        "name": "Nigeria Humanitarian Needs and Response Plan 2026",
+        "primary_location": "NGA",
+        "people_in_need": 5900000.0,
+        "people_targeted": 2500000.0,
+        "unmet_need_ratio": 0.576271186440678
+      },
+      {
+        "code": "HSSD26",
+        "name": "South Sudan Humanitarian Needs and Response Plan 2026",
+        "primary_location": "SSD",
+        "people_in_need": 9913863.0,
+        "people_targeted": 4343435.0,
+        "unmet_need_ratio": 0.5618826889175289
+      },
+      {
+        "code": "RREG26",
+        "name": "Regional Migrant Response Plan for Horn of Africa to Yemen and Southern Africa 2026",
+        "primary_location": "YEM",
+        "people_in_need": 23100000.0,
+        "people_targeted": 10500000.0,
+        "unmet_need_ratio": 0.5454545454545454
+      },
+      {
+        "code": "HYEM26",
+        "name": "Yemen Humanitarian Needs and Response Plan 2026",
+        "primary_location": "YEM",
+        "people_in_need": 23100000.0,
+        "people_targeted": 10500000.0,
+        "unmet_need_ratio": 0.5454545454545454
+      },
+      {
+        "code": "HCOD26",
+        "name": "République Démocratique du Congo Besoins Humanitaires et Plan de Réponse 2026",
+        "primary_location": "COD",
+        "people_in_need": 14940727.0,
+        "people_targeted": 7313763.0,
+        "unmet_need_ratio": 0.5104814511368825
+      },
+      {
+        "code": "HSOM26",
+        "name": "Somalia Humanitarian Needs and Response Plan 2026",
+        "primary_location": "SOM",
+        "people_in_need": 4796040.0,
+        "people_targeted": 2430751.0,
+        "unmet_need_ratio": 0.49317541138105603
+      },
+      {
+        "code": "HCAF26",
+        "name": "République Centrafricaine Besoins Humanitaires et Plan de Réponse 2026",
+        "primary_location": "CAF",
+        "people_in_need": 2286959.0,
+        "people_targeted": 1265483.0,
+        "unmet_need_ratio": 0.4466525197871934
+      },
+      {
+        "code": "HSDN26",
+        "name": "Sudan Humanitarian Needs and Response Plan 2026",
+        "primary_location": "SDN",
+        "people_in_need": 33699770.0,
+        "people_targeted": 20419163.0,
+        "unmet_need_ratio": 0.3940859833761477
+      },
+      {
+        "code": "HNER26",
+        "name": "Niger Besoins Humanitaires et Plan de Réponse 2026",
+        "primary_location": "NER",
+        "people_in_need": 2600000.0,
+        "people_targeted": 1600000.0,
+        "unmet_need_ratio": 0.38461538461538464
+      },
+      {
+        "code": "HCMR26",
+        "name": "Cameroon Humanitarian Needs and Response Plan 2026",
+        "primary_location": "CMR",
+        "people_in_need": 2900000.0,
+        "people_targeted": 1800000.0,
+        "unmet_need_ratio": 0.3793103448275862
+      },
+      {
+        "code": "HSYR26",
+        "name": "Syrian Arab Republic Humanitarian Response Priorities 2026",
+        "primary_location": "SYR",
+        "people_in_need": 16500000.0,
+        "people_targeted": 10300000.0,
+        "unmet_need_ratio": 0.37575757575757573
+      },
+      {
+        "code": "HHTI26",
+        "name": "Haiti Besoins Humanitaires et Plan de Réponse 2026",
+        "primary_location": "HTI",
+        "people_in_need": 6414193.0,
+        "people_targeted": 4162202.0,
+        "unmet_need_ratio": 0.3510949857604846
+      },
+      {
+        "code": "HVEN26",
+        "name": "Venezuela Plan de Respuesta Humanitaria 2026",
+        "primary_location": "VEN",
+        "people_in_need": 7900000.0,
+        "people_targeted": 5400000.0,
+        "unmet_need_ratio": 0.31645569620253167
+      },
+      {
+        "code": "HBFA26",
+        "name": "Burkina Faso Besoins Humanitaires et Plan de Réponse 2026",
+        "primary_location": "BFA",
+        "people_in_need": 4400000.0,
+        "people_targeted": 3100000.0,
+        "unmet_need_ratio": 0.29545454545454547
+      },
+      {
+        "code": "HMOZ26",
+        "name": "Mozambique Humanitarian Needs and Response Plan 2026",
+        "primary_location": "MOZ",
+        "people_in_need": 2356162.0,
+        "people_targeted": 1745582.0,
+        "unmet_need_ratio": 0.2591417737829572
+      },
+      {
+        "code": "HTCD26",
+        "name": "Tchad Besoins Humanitaires et Plan de Réponse 2026",
+        "primary_location": "TCD",
+        "people_in_need": 4509014.0,
+        "people_targeted": 3352810.0,
+        "unmet_need_ratio": 0.256420583302691
+      },
+      {
+        "code": "HMLI26",
+        "name": "Mali Besoins Humanitaires et Plan de Réponse 2026",
+        "primary_location": "MLI",
+        "people_in_need": 5100000.0,
+        "people_targeted": 3800000.0,
+        "unmet_need_ratio": 0.2549019607843137
+      },
+      {
+        "code": "HAFG26",
+        "name": "Afghanistan Humanitarian Needs and Response Plan 2026",
+        "primary_location": "AFG",
+        "people_in_need": 21889283.0,
+        "people_targeted": 17479657.0,
+        "unmet_need_ratio": 0.2014513677766421
+      },
+      {
+        "code": "FPSE26",
+        "name": "Escalation of Hostilities in the OPT Flash Appeal 2026",
+        "primary_location": "PSE",
+        "people_in_need": NaN,
+        "people_targeted": NaN,
+        "unmet_need_ratio": NaN
+      },
+      {
+        "code": "RUGA26",
+        "name": "Uganda Regional Refugee Response Plan 2026",
+        "primary_location": "UGA",
+        "people_in_need": NaN,
+        "people_targeted": NaN,
+        "unmet_need_ratio": NaN
+      },
+      {
+        "code": "RREG26b",
+        "name": "Venezuela Regional Refugee and Migrant Response Plan (RMRP) 2026",
+        "primary_location": "BRA",
+        "people_in_need": NaN,
+        "people_targeted": NaN,
+        "unmet_need_ratio": NaN
+      },
+      {
+        "code": "RBGD26",
+        "name": "Rohingya Humanitarian Crisis Joint Response Plan 2026",
+        "primary_location": "BGD",
+        "people_in_need": NaN,
+        "people_targeted": NaN,
+        "unmet_need_ratio": NaN
+      },
+      {
+        "code": "OPAK26",
+        "name": "Pakistan Floods Support Plan 2026",
+        "primary_location": "PAK",
+        "people_in_need": NaN,
+        "people_targeted": NaN,
+        "unmet_need_ratio": NaN
+      },
+      {
+        "code": "OVNM26",
+        "name": "Viet Nam 25-26 Joint Response Plan Multiple Typhoons and Floods 2026",
+        "primary_location": "VNM",
+        "people_in_need": NaN,
+        "people_targeted": NaN,
+        "unmet_need_ratio": NaN
+      },
+      {
+        "code": "OLKA2526",
+        "name": "Sri Lanka Humanitarian Priorities Plan Cyclone Ditwa 2026",
+        "primary_location": "LKA",
+        "people_in_need": NaN,
+        "people_targeted": NaN,
+        "unmet_need_ratio": NaN
+      },
+      {
+        "code": "RJORLBNTUR26",
+        "name": "Syrian Arab Republic Regional Refugee and Resilience Plan (3RP) 2026",
+        "primary_location": "JOR",
+        "people_in_need": NaN,
+        "people_targeted": NaN,
+        "unmet_need_ratio": NaN
+      },
+      {
+        "code": "RREG26a",
+        "name": "Sudan Emergency: Regional Refugee Response Plan 2026",
+        "primary_location": "LBY",
+        "people_in_need": NaN,
+        "people_targeted": NaN,
+        "unmet_need_ratio": NaN
+      }
+    ],
+    "by_funding_per_need": [
+      {
+        "code": "HUKR26",
+        "name": "Ukraine Humanitarian Needs and Response Plan 2026",
+        "primary_location": "UKR",
+        "people_in_need": 10849697.0,
+        "funding": 640227370.0,
+        "funding_per_need": 59.008778770503916
+      },
+      {
+        "code": "HMOZ26",
+        "name": "Mozambique Humanitarian Needs and Response Plan 2026",
+        "primary_location": "MOZ",
+        "people_in_need": 2356162.0,
+        "funding": 131262552.0,
+        "funding_per_need": 55.7103255209107
+      },
+      {
+        "code": "HTCD26",
+        "name": "Tchad Besoins Humanitaires et Plan de Réponse 2026",
+        "primary_location": "TCD",
+        "people_in_need": 4509014.0,
+        "funding": 215913333.0,
+        "funding_per_need": 47.8848220475696
+      },
+      {
+        "code": "HSSD26",
+        "name": "South Sudan Humanitarian Needs and Response Plan 2026",
+        "primary_location": "SSD",
+        "people_in_need": 9913863.0,
+        "funding": 322015249.0,
+        "funding_per_need": 32.481309152648166
+      },
+      {
+        "code": "HNGA26",
+        "name": "Nigeria Humanitarian Needs and Response Plan 2026",
+        "primary_location": "NGA",
+        "people_in_need": 5900000.0,
+        "funding": 188766423.0,
+        "funding_per_need": 31.994308983050846
+      },
+      {
+        "code": "HCOD26",
+        "name": "République Démocratique du Congo Besoins Humanitaires et Plan de Réponse 2026",
+        "primary_location": "COD",
+        "people_in_need": 14940727.0,
+        "funding": 430024823.0,
+        "funding_per_need": 28.78205478220705
+      },
+      {
+        "code": "HHTI26",
+        "name": "Haiti Besoins Humanitaires et Plan de Réponse 2026",
+        "primary_location": "HTI",
+        "people_in_need": 6414193.0,
+        "funding": 172057079.0,
+        "funding_per_need": 26.824431226188548
+      },
+      {
+        "code": "HSYR26",
+        "name": "Syrian Arab Republic Humanitarian Response Priorities 2026",
+        "primary_location": "SYR",
+        "people_in_need": 16500000.0,
+        "funding": 437301894.0,
+        "funding_per_need": 26.50314509090909
+      },
+      {
+        "code": "HNER26",
+        "name": "Niger Besoins Humanitaires et Plan de Réponse 2026",
+        "primary_location": "NER",
+        "people_in_need": 2600000.0,
+        "funding": 66462854.0,
+        "funding_per_need": 25.562636153846153
+      },
+      {
+        "code": "HSOM26",
+        "name": "Somalia Humanitarian Needs and Response Plan 2026",
+        "primary_location": "SOM",
+        "people_in_need": 4796040.0,
+        "funding": 111250193.0,
+        "funding_per_need": 23.196260456543314
+      },
+      {
+        "code": "HCMR26",
+        "name": "Cameroon Humanitarian Needs and Response Plan 2026",
+        "primary_location": "CMR",
+        "people_in_need": 2900000.0,
+        "funding": 66498901.0,
+        "funding_per_need": 22.93065551724138
+      },
+      {
+        "code": "HCOL26",
+        "name": "Colombia Necesidades Humanitarias y Plan de Respuesta 2026",
+        "primary_location": "COL",
+        "people_in_need": 6900000.0,
+        "funding": 152365573.0,
+        "funding_per_need": 22.081967101449276
+      },
+      {
+        "code": "HCAF26",
+        "name": "République Centrafricaine Besoins Humanitaires et Plan de Réponse 2026",
+        "primary_location": "CAF",
+        "people_in_need": 2286959.0,
+        "funding": 47355888.0,
+        "funding_per_need": 20.70692478527162
+      },
+      {
+        "code": "HBFA26",
+        "name": "Burkina Faso Besoins Humanitaires et Plan de Réponse 2026",
+        "primary_location": "BFA",
+        "people_in_need": 4400000.0,
+        "funding": 72939948.0,
+        "funding_per_need": 16.57726090909091
+      },
+      {
+        "code": "HMMR26",
+        "name": "Myanmar Humanitarian Needs and Response Plan 2026",
+        "primary_location": "MMR",
+        "people_in_need": 16229050.0,
+        "funding": 245472134.0,
+        "funding_per_need": 15.125477708183782
+      },
+      {
+        "code": "HMLI26",
+        "name": "Mali Besoins Humanitaires et Plan de Réponse 2026",
+        "primary_location": "MLI",
+        "people_in_need": 5100000.0,
+        "funding": 75201041.0,
+        "funding_per_need": 14.745302156862746
+      },
+      {
+        "code": "HSDN26",
+        "name": "Sudan Humanitarian Needs and Response Plan 2026",
+        "primary_location": "SDN",
+        "people_in_need": 33699770.0,
+        "funding": 488147337.0,
+        "funding_per_need": 14.48518304427597
+      },
+      {
+        "code": "HYEM26",
+        "name": "Yemen Humanitarian Needs and Response Plan 2026",
+        "primary_location": "YEM",
+        "people_in_need": 23100000.0,
+        "funding": 258764721.0,
+        "funding_per_need": 11.201935974025973
+      },
+      {
+        "code": "HVEN26",
+        "name": "Venezuela Plan de Respuesta Humanitaria 2026",
+        "primary_location": "VEN",
+        "people_in_need": 7900000.0,
+        "funding": 84012783.0,
+        "funding_per_need": 10.634529493670886
+      },
+      {
+        "code": "HAFG26",
+        "name": "Afghanistan Humanitarian Needs and Response Plan 2026",
+        "primary_location": "AFG",
+        "people_in_need": 21889283.0,
+        "funding": 214214587.0,
+        "funding_per_need": 9.786277010535247
+      },
+      {
+        "code": "RREG26",
+        "name": "Regional Migrant Response Plan for Horn of Africa to Yemen and Southern Africa 2026",
+        "primary_location": "YEM",
+        "people_in_need": 23100000.0,
+        "funding": 27150666.0,
+        "funding_per_need": 1.1753535064935066
+      },
+      {
+        "code": "FPSE26",
+        "name": "Escalation of Hostilities in the OPT Flash Appeal 2026",
+        "primary_location": "PSE",
+        "people_in_need": NaN,
+        "funding": 451836549.0,
+        "funding_per_need": NaN
+      },
+      {
+        "code": "RUGA26",
+        "name": "Uganda Regional Refugee Response Plan 2026",
+        "primary_location": "UGA",
+        "people_in_need": NaN,
+        "funding": 13438960.0,
+        "funding_per_need": NaN
+      },
+      {
+        "code": "RREG26b",
+        "name": "Venezuela Regional Refugee and Migrant Response Plan (RMRP) 2026",
+        "primary_location": "BRA",
+        "people_in_need": NaN,
+        "funding": 67880713.0,
+        "funding_per_need": NaN
+      },
+      {
+        "code": "RBGD26",
+        "name": "Rohingya Humanitarian Crisis Joint Response Plan 2026",
+        "primary_location": "BGD",
+        "people_in_need": NaN,
+        "funding": 233087883.0,
+        "funding_per_need": NaN
+      },
+      {
+        "code": "OPAK26",
+        "name": "Pakistan Floods Support Plan 2026",
+        "primary_location": "PAK",
+        "people_in_need": NaN,
+        "funding": 11011245.0,
+        "funding_per_need": NaN
+      },
+      {
+        "code": "OVNM26",
+        "name": "Viet Nam 25-26 Joint Response Plan Multiple Typhoons and Floods 2026",
+        "primary_location": "VNM",
+        "people_in_need": NaN,
+        "funding": 3028917.0,
+        "funding_per_need": NaN
+      },
+      {
+        "code": "OLKA2526",
+        "name": "Sri Lanka Humanitarian Priorities Plan Cyclone Ditwa 2026",
+        "primary_location": "LKA",
+        "people_in_need": NaN,
+        "funding": 15834857.0,
+        "funding_per_need": NaN
+      },
+      {
+        "code": "RJORLBNTUR26",
+        "name": "Syrian Arab Republic Regional Refugee and Resilience Plan (3RP) 2026",
+        "primary_location": "JOR",
+        "people_in_need": NaN,
+        "funding": 107634318.0,
+        "funding_per_need": NaN
+      },
+      {
+        "code": "RREG26a",
+        "name": "Sudan Emergency: Regional Refugee Response Plan 2026",
+        "primary_location": "LBY",
+        "people_in_need": NaN,
+        "funding": 124214829.0,
+        "funding_per_need": NaN
+      }
+    ],
+    "by_funding_per_target": [
+      {
+        "code": "HUKR26",
+        "name": "Ukraine Humanitarian Needs and Response Plan 2026",
+        "primary_location": "UKR",
+        "people_targeted": 4118954.0,
+        "funding": 640227370.0,
+        "funding_per_target": 155.4344549611382
+      },
+      {
+        "code": "HNGA26",
+        "name": "Nigeria Humanitarian Needs and Response Plan 2026",
+        "primary_location": "NGA",
+        "people_targeted": 2500000.0,
+        "funding": 188766423.0,
+        "funding_per_target": 75.5065692
+      },
+      {
+        "code": "HMOZ26",
+        "name": "Mozambique Humanitarian Needs and Response Plan 2026",
+        "primary_location": "MOZ",
+        "people_targeted": 1745582.0,
+        "funding": 131262552.0,
+        "funding_per_target": 75.19701280146106
+      },
+      {
+        "code": "HSSD26",
+        "name": "South Sudan Humanitarian Needs and Response Plan 2026",
+        "primary_location": "SSD",
+        "people_targeted": 4343435.0,
+        "funding": 322015249.0,
+        "funding_per_target": 74.13838333024438
+      },
+      {
+        "code": "HTCD26",
+        "name": "Tchad Besoins Humanitaires et Plan de Réponse 2026",
+        "primary_location": "TCD",
+        "people_targeted": 3352810.0,
+        "funding": 215913333.0,
+        "funding_per_target": 64.39772399867574
+      },
+      {
+        "code": "HCOD26",
+        "name": "République Démocratique du Congo Besoins Humanitaires et Plan de Réponse 2026",
+        "primary_location": "COD",
+        "people_targeted": 7313763.0,
+        "funding": 430024823.0,
+        "funding_per_target": 58.79665816351993
+      },
+      {
+        "code": "HCOL26",
+        "name": "Colombia Necesidades Humanitarias y Plan de Respuesta 2026",
+        "primary_location": "COL",
+        "people_targeted": 2600000.0,
+        "funding": 152365573.0,
+        "funding_per_target": 58.60214346153846
+      },
+      {
+        "code": "HMMR26",
+        "name": "Myanmar Humanitarian Needs and Response Plan 2026",
+        "primary_location": "MMR",
+        "people_targeted": 4868096.0,
+        "funding": 245472134.0,
+        "funding_per_target": 50.424669932556796
+      },
+      {
+        "code": "HSOM26",
+        "name": "Somalia Humanitarian Needs and Response Plan 2026",
+        "primary_location": "SOM",
+        "people_targeted": 2430751.0,
+        "funding": 111250193.0,
+        "funding_per_target": 45.76782772073322
+      },
+      {
+        "code": "HSYR26",
+        "name": "Syrian Arab Republic Humanitarian Response Priorities 2026",
+        "primary_location": "SYR",
+        "people_targeted": 10300000.0,
+        "funding": 437301894.0,
+        "funding_per_target": 42.456494563106794
+      },
+      {
+        "code": "HNER26",
+        "name": "Niger Besoins Humanitaires et Plan de Réponse 2026",
+        "primary_location": "NER",
+        "people_targeted": 1600000.0,
+        "funding": 66462854.0,
+        "funding_per_target": 41.53928375
+      },
+      {
+        "code": "HHTI26",
+        "name": "Haiti Besoins Humanitaires et Plan de Réponse 2026",
+        "primary_location": "HTI",
+        "people_targeted": 4162202.0,
+        "funding": 172057079.0,
+        "funding_per_target": 41.33799344673805
+      },
+      {
+        "code": "HCAF26",
+        "name": "République Centrafricaine Besoins Humanitaires et Plan de Réponse 2026",
+        "primary_location": "CAF",
+        "people_targeted": 1265483.0,
+        "funding": 47355888.0,
+        "funding_per_target": 37.42119649177429
+      },
+      {
+        "code": "HCMR26",
+        "name": "Cameroon Humanitarian Needs and Response Plan 2026",
+        "primary_location": "CMR",
+        "people_targeted": 1800000.0,
+        "funding": 66498901.0,
+        "funding_per_target": 36.94383388888889
+      },
+      {
+        "code": "HYEM26",
+        "name": "Yemen Humanitarian Needs and Response Plan 2026",
+        "primary_location": "YEM",
+        "people_targeted": 10500000.0,
+        "funding": 258764721.0,
+        "funding_per_target": 24.64425914285714
+      },
+      {
+        "code": "HSDN26",
+        "name": "Sudan Humanitarian Needs and Response Plan 2026",
+        "primary_location": "SDN",
+        "people_targeted": 20419163.0,
+        "funding": 488147337.0,
+        "funding_per_target": 23.90633430958948
+      },
+      {
+        "code": "HBFA26",
+        "name": "Burkina Faso Besoins Humanitaires et Plan de Réponse 2026",
+        "primary_location": "BFA",
+        "people_targeted": 3100000.0,
+        "funding": 72939948.0,
+        "funding_per_target": 23.529015483870968
+      },
+      {
+        "code": "HMLI26",
+        "name": "Mali Besoins Humanitaires et Plan de Réponse 2026",
+        "primary_location": "MLI",
+        "people_targeted": 3800000.0,
+        "funding": 75201041.0,
+        "funding_per_target": 19.789747631578948
+      },
+      {
+        "code": "HVEN26",
+        "name": "Venezuela Plan de Respuesta Humanitaria 2026",
+        "primary_location": "VEN",
+        "people_targeted": 5400000.0,
+        "funding": 84012783.0,
+        "funding_per_target": 15.557922777777778
+      },
+      {
+        "code": "HAFG26",
+        "name": "Afghanistan Humanitarian Needs and Response Plan 2026",
+        "primary_location": "AFG",
+        "people_targeted": 17479657.0,
+        "funding": 214214587.0,
+        "funding_per_target": 12.25507954761355
+      },
+      {
+        "code": "RREG26",
+        "name": "Regional Migrant Response Plan for Horn of Africa to Yemen and Southern Africa 2026",
+        "primary_location": "YEM",
+        "people_targeted": 10500000.0,
+        "funding": 27150666.0,
+        "funding_per_target": 2.5857777142857143
+      },
+      {
+        "code": "FPSE26",
+        "name": "Escalation of Hostilities in the OPT Flash Appeal 2026",
+        "primary_location": "PSE",
+        "people_targeted": NaN,
+        "funding": 451836549.0,
+        "funding_per_target": NaN
+      },
+      {
+        "code": "RUGA26",
+        "name": "Uganda Regional Refugee Response Plan 2026",
+        "primary_location": "UGA",
+        "people_targeted": NaN,
+        "funding": 13438960.0,
+        "funding_per_target": NaN
+      },
+      {
+        "code": "RREG26b",
+        "name": "Venezuela Regional Refugee and Migrant Response Plan (RMRP) 2026",
+        "primary_location": "BRA",
+        "people_targeted": NaN,
+        "funding": 67880713.0,
+        "funding_per_target": NaN
+      },
+      {
+        "code": "RBGD26",
+        "name": "Rohingya Humanitarian Crisis Joint Response Plan 2026",
+        "primary_location": "BGD",
+        "people_targeted": NaN,
+        "funding": 233087883.0,
+        "funding_per_target": NaN
+      },
+      {
+        "code": "OPAK26",
+        "name": "Pakistan Floods Support Plan 2026",
+        "primary_location": "PAK",
+        "people_targeted": NaN,
+        "funding": 11011245.0,
+        "funding_per_target": NaN
+      },
+      {
+        "code": "OVNM26",
+        "name": "Viet Nam 25-26 Joint Response Plan Multiple Typhoons and Floods 2026",
+        "primary_location": "VNM",
+        "people_targeted": NaN,
+        "funding": 3028917.0,
+        "funding_per_target": NaN
+      },
+      {
+        "code": "OLKA2526",
+        "name": "Sri Lanka Humanitarian Priorities Plan Cyclone Ditwa 2026",
+        "primary_location": "LKA",
+        "people_targeted": NaN,
+        "funding": 15834857.0,
+        "funding_per_target": NaN
+      },
+      {
+        "code": "RJORLBNTUR26",
+        "name": "Syrian Arab Republic Regional Refugee and Resilience Plan (3RP) 2026",
+        "primary_location": "JOR",
+        "people_targeted": NaN,
+        "funding": 107634318.0,
+        "funding_per_target": NaN
+      },
+      {
+        "code": "RREG26a",
+        "name": "Sudan Emergency: Regional Refugee Response Plan 2026",
+        "primary_location": "LBY",
+        "people_targeted": NaN,
+        "funding": 124214829.0,
+        "funding_per_target": NaN
+      }
+    ],
+    "by_gap_per_person": [
+      {
+        "code": "HNER26",
+        "name": "Niger Besoins Humanitaires et Plan de Réponse 2026",
+        "primary_location": "NER",
+        "people_in_need": 2600000.0,
+        "funding_gap": 609156735.0,
+        "gap_per_person": 234.29105192307694
+      },
+      {
+        "code": "HMOZ26",
+        "name": "Mozambique Humanitarian Needs and Response Plan 2026",
+        "primary_location": "MOZ",
+        "people_in_need": 2356162.0,
+        "funding_gap": 403080032.0,
+        "gap_per_person": 171.07483780826615
+      },
+      {
+        "code": "HTCD26",
+        "name": "Tchad Besoins Humanitaires et Plan de Réponse 2026",
+        "primary_location": "TCD",
+        "people_in_need": 4509014.0,
+        "funding_gap": 770156294.0,
+        "gap_per_person": 170.80370431318244
+      },
+      {
+        "code": "HSOM26",
+        "name": "Somalia Humanitarian Needs and Response Plan 2026",
+        "primary_location": "SOM",
+        "people_in_need": 4796040.0,
+        "funding_gap": 740749807.0,
+        "gap_per_person": 154.4502979541455
+      },
+      {
+        "code": "HUKR26",
+        "name": "Ukraine Humanitarian Needs and Response Plan 2026",
+        "primary_location": "UKR",
+        "people_in_need": 10849697.0,
+        "funding_gap": 1663734605.0,
+        "gap_per_person": 153.34387725297768
+      },
+      {
+        "code": "HSYR26",
+        "name": "Syrian Arab Republic Humanitarian Response Priorities 2026",
+        "primary_location": "SYR",
+        "people_in_need": 16500000.0,
+        "funding_gap": 2484882936.0,
+        "gap_per_person": 150.59896581818182
+      },
+      {
+        "code": "HBFA26",
+        "name": "Burkina Faso Besoins Humanitaires et Plan de Réponse 2026",
+        "primary_location": "BFA",
+        "people_in_need": 4400000.0,
+        "funding_gap": 585546411.0,
+        "gap_per_person": 133.07872977272729
+      },
+      {
+        "code": "HSSD26",
+        "name": "South Sudan Humanitarian Needs and Response Plan 2026",
+        "primary_location": "SSD",
+        "people_in_need": 9913863.0,
+        "funding_gap": 1141030807.0,
+        "gap_per_person": 115.09446993568501
+      },
+      {
+        "code": "HHTI26",
+        "name": "Haiti Besoins Humanitaires et Plan de Réponse 2026",
+        "primary_location": "HTI",
+        "people_in_need": 6414193.0,
+        "funding_gap": 708270347.0,
+        "gap_per_person": 110.42236287557921
+      },
+      {
+        "code": "HMLI26",
+        "name": "Mali Besoins Humanitaires et Plan de Réponse 2026",
+        "primary_location": "MLI",
+        "people_in_need": 5100000.0,
+        "funding_gap": 502665371.0,
+        "gap_per_person": 98.56183745098039
+      },
+      {
+        "code": "HCAF26",
+        "name": "République Centrafricaine Besoins Humanitaires et Plan de Réponse 2026",
+        "primary_location": "CAF",
+        "people_in_need": 2286959.0,
+        "funding_gap": 216741500.0,
+        "gap_per_person": 94.77279653898474
+      },
+      {
+        "code": "HCMR26",
+        "name": "Cameroon Humanitarian Needs and Response Plan 2026",
+        "primary_location": "CMR",
+        "people_in_need": 2900000.0,
+        "funding_gap": 252477320.0,
+        "gap_per_person": 87.0611448275862
+      },
+      {
+        "code": "HYEM26",
+        "name": "Yemen Humanitarian Needs and Response Plan 2026",
+        "primary_location": "YEM",
+        "people_in_need": 23100000.0,
+        "funding_gap": 1903798615.0,
+        "gap_per_person": 82.41552445887446
+      },
+      {
+        "code": "HSDN26",
+        "name": "Sudan Humanitarian Needs and Response Plan 2026",
+        "primary_location": "SDN",
+        "people_in_need": 33699770.0,
+        "funding_gap": 2378081256.0,
+        "gap_per_person": 70.56669098928569
+      },
+      {
+        "code": "HVEN26",
+        "name": "Venezuela Plan de Respuesta Humanitaria 2026",
+        "primary_location": "VEN",
+        "people_in_need": 7900000.0,
+        "funding_gap": 548179189.0,
+        "gap_per_person": 69.38977075949367
+      },
+      {
+        "code": "HAFG26",
+        "name": "Afghanistan Humanitarian Needs and Response Plan 2026",
+        "primary_location": "AFG",
+        "people_in_need": 21889283.0,
+        "funding_gap": 1499966909.0,
+        "gap_per_person": 68.525173209191
+      },
+      {
+        "code": "HCOD26",
+        "name": "République Démocratique du Congo Besoins Humanitaires et Plan de Réponse 2026",
+        "primary_location": "COD",
+        "people_in_need": 14940727.0,
+        "funding_gap": 973696895.0,
+        "gap_per_person": 65.17065033046919
+      },
+      {
+        "code": "HNGA26",
+        "name": "Nigeria Humanitarian Needs and Response Plan 2026",
+        "primary_location": "NGA",
+        "people_in_need": 5900000.0,
+        "funding_gap": 327633000.0,
+        "gap_per_person": 55.531016949152544
+      },
+      {
+        "code": "HMMR26",
+        "name": "Myanmar Humanitarian Needs and Response Plan 2026",
+        "primary_location": "MMR",
+        "people_in_need": 16229050.0,
+        "funding_gap": 644128664.0,
+        "gap_per_person": 39.68985639948118
+      },
+      {
+        "code": "HCOL26",
+        "name": "Colombia Necesidades Humanitarias y Plan de Respuesta 2026",
+        "primary_location": "COL",
+        "people_in_need": 6900000.0,
+        "funding_gap": 134600794.0,
+        "gap_per_person": 19.50736144927536
+      },
+      {
+        "code": "RREG26",
+        "name": "Regional Migrant Response Plan for Horn of Africa to Yemen and Southern Africa 2026",
+        "primary_location": "YEM",
+        "people_in_need": 23100000.0,
+        "funding_gap": -27150666.0,
+        "gap_per_person": -1.1753535064935066
+      },
+      {
+        "code": "FPSE26",
+        "name": "Escalation of Hostilities in the OPT Flash Appeal 2026",
+        "primary_location": "PSE",
+        "people_in_need": NaN,
+        "funding_gap": 3612469259.0,
+        "gap_per_person": NaN
+      },
+      {
+        "code": "RUGA26",
+        "name": "Uganda Regional Refugee Response Plan 2026",
+        "primary_location": "UGA",
+        "people_in_need": NaN,
+        "funding_gap": 815261040.0,
+        "gap_per_person": NaN
+      },
+      {
+        "code": "RREG26b",
+        "name": "Venezuela Regional Refugee and Migrant Response Plan (RMRP) 2026",
+        "primary_location": "BRA",
+        "people_in_need": NaN,
+        "funding_gap": 669592309.0,
+        "gap_per_person": NaN
+      },
+      {
+        "code": "RBGD26",
+        "name": "Rohingya Humanitarian Crisis Joint Response Plan 2026",
+        "primary_location": "BGD",
+        "people_in_need": NaN,
+        "funding_gap": 465287383.0,
+        "gap_per_person": NaN
+      },
+      {
+        "code": "OPAK26",
+        "name": "Pakistan Floods Support Plan 2026",
+        "primary_location": "PAK",
+        "people_in_need": NaN,
+        "funding_gap": 53932664.0,
+        "gap_per_person": NaN
+      },
+      {
+        "code": "OVNM26",
+        "name": "Viet Nam 25-26 Joint Response Plan Multiple Typhoons and Floods 2026",
+        "primary_location": "VNM",
+        "people_in_need": NaN,
+        "funding_gap": 58103449.0,
+        "gap_per_person": NaN
+      },
+      {
+        "code": "OLKA2526",
+        "name": "Sri Lanka Humanitarian Priorities Plan Cyclone Ditwa 2026",
+        "primary_location": "LKA",
+        "people_in_need": NaN,
+        "funding_gap": 19465143.0,
+        "gap_per_person": NaN
+      },
+      {
+        "code": "RJORLBNTUR26",
+        "name": "Syrian Arab Republic Regional Refugee and Resilience Plan (3RP) 2026",
+        "primary_location": "JOR",
+        "people_in_need": NaN,
+        "funding_gap": -107634318.0,
+        "gap_per_person": NaN
+      },
+      {
+        "code": "RREG26a",
+        "name": "Sudan Emergency: Regional Refugee Response Plan 2026",
+        "primary_location": "LBY",
+        "people_in_need": NaN,
+        "funding_gap": -124214829.0,
+        "gap_per_person": NaN
+      }
+    ],
+    "by_people_reached_ratio": [
+      {
+        "code": "HSYR26",
+        "name": "Syrian Arab Republic Humanitarian Response Priorities 2026",
+        "primary_location": "SYR",
+        "people_reached": 0.0,
+        "people_in_need": 16500000.0,
+        "reached_ratio": 0.0
+      },
+      {
+        "code": "HSDN26",
+        "name": "Sudan Humanitarian Needs and Response Plan 2026",
+        "primary_location": "SDN",
+        "people_reached": 0.0,
+        "people_in_need": 33699770.0,
+        "reached_ratio": 0.0
+      },
+      {
+        "code": "HUKR26",
+        "name": "Ukraine Humanitarian Needs and Response Plan 2026",
+        "primary_location": "UKR",
+        "people_reached": 0.0,
+        "people_in_need": 10849697.0,
+        "reached_ratio": 0.0
+      },
+      {
+        "code": "HYEM26",
+        "name": "Yemen Humanitarian Needs and Response Plan 2026",
+        "primary_location": "YEM",
+        "people_reached": 0.0,
+        "people_in_need": 23100000.0,
+        "reached_ratio": 0.0
+      },
+      {
+        "code": "HAFG26",
+        "name": "Afghanistan Humanitarian Needs and Response Plan 2026",
+        "primary_location": "AFG",
+        "people_reached": 0.0,
+        "people_in_need": 21889283.0,
+        "reached_ratio": 0.0
+      },
+      {
+        "code": "HSSD26",
+        "name": "South Sudan Humanitarian Needs and Response Plan 2026",
+        "primary_location": "SSD",
+        "people_reached": 0.0,
+        "people_in_need": 9913863.0,
+        "reached_ratio": 0.0
+      },
+      {
+        "code": "HCOD26",
+        "name": "République Démocratique du Congo Besoins Humanitaires et Plan de Réponse 2026",
+        "primary_location": "COD",
+        "people_reached": 0.0,
+        "people_in_need": 14940727.0,
+        "reached_ratio": 0.0
+      },
+      {
+        "code": "HTCD26",
+        "name": "Tchad Besoins Humanitaires et Plan de Réponse 2026",
+        "primary_location": "TCD",
+        "people_reached": 0.0,
+        "people_in_need": 4509014.0,
+        "reached_ratio": 0.0
+      },
+      {
+        "code": "HMMR26",
+        "name": "Myanmar Humanitarian Needs and Response Plan 2026",
+        "primary_location": "MMR",
+        "people_reached": 0.0,
+        "people_in_need": 16229050.0,
+        "reached_ratio": 0.0
+      },
+      {
+        "code": "HHTI26",
+        "name": "Haiti Besoins Humanitaires et Plan de Réponse 2026",
+        "primary_location": "HTI",
+        "people_reached": 0.0,
+        "people_in_need": 6414193.0,
+        "reached_ratio": 0.0
+      },
+      {
+        "code": "HSOM26",
+        "name": "Somalia Humanitarian Needs and Response Plan 2026",
+        "primary_location": "SOM",
+        "people_reached": 0.0,
+        "people_in_need": 4796040.0,
+        "reached_ratio": 0.0
+      },
+      {
+        "code": "HNER26",
+        "name": "Niger Besoins Humanitaires et Plan de Réponse 2026",
+        "primary_location": "NER",
+        "people_reached": 0.0,
+        "people_in_need": 2600000.0,
+        "reached_ratio": 0.0
+      },
+      {
+        "code": "HBFA26",
+        "name": "Burkina Faso Besoins Humanitaires et Plan de Réponse 2026",
+        "primary_location": "BFA",
+        "people_reached": 0.0,
+        "people_in_need": 4400000.0,
+        "reached_ratio": 0.0
+      },
+      {
+        "code": "HVEN26",
+        "name": "Venezuela Plan de Respuesta Humanitaria 2026",
+        "primary_location": "VEN",
+        "people_reached": 0.0,
+        "people_in_need": 7900000.0,
+        "reached_ratio": 0.0
+      },
+      {
+        "code": "HMLI26",
+        "name": "Mali Besoins Humanitaires et Plan de Réponse 2026",
+        "primary_location": "MLI",
+        "people_reached": 0.0,
+        "people_in_need": 5100000.0,
+        "reached_ratio": 0.0
+      },
+      {
+        "code": "HMOZ26",
+        "name": "Mozambique Humanitarian Needs and Response Plan 2026",
+        "primary_location": "MOZ",
+        "people_reached": 0.0,
+        "people_in_need": 2356162.0,
+        "reached_ratio": 0.0
+      },
+      {
+        "code": "HNGA26",
+        "name": "Nigeria Humanitarian Needs and Response Plan 2026",
+        "primary_location": "NGA",
+        "people_reached": 0.0,
+        "people_in_need": 5900000.0,
+        "reached_ratio": 0.0
+      },
+      {
+        "code": "HCMR26",
+        "name": "Cameroon Humanitarian Needs and Response Plan 2026",
+        "primary_location": "CMR",
+        "people_reached": 0.0,
+        "people_in_need": 2900000.0,
+        "reached_ratio": 0.0
+      },
+      {
+        "code": "HCOL26",
+        "name": "Colombia Necesidades Humanitarias y Plan de Respuesta 2026",
+        "primary_location": "COL",
+        "people_reached": 0.0,
+        "people_in_need": 6900000.0,
+        "reached_ratio": 0.0
+      },
+      {
+        "code": "HCAF26",
+        "name": "République Centrafricaine Besoins Humanitaires et Plan de Réponse 2026",
+        "primary_location": "CAF",
+        "people_reached": 0.0,
+        "people_in_need": 2286959.0,
+        "reached_ratio": 0.0
+      },
+      {
+        "code": "RREG26",
+        "name": "Regional Migrant Response Plan for Horn of Africa to Yemen and Southern Africa 2026",
+        "primary_location": "YEM",
+        "people_reached": 0.0,
+        "people_in_need": 23100000.0,
+        "reached_ratio": 0.0
+      },
+      {
+        "code": "FPSE26",
+        "name": "Escalation of Hostilities in the OPT Flash Appeal 2026",
+        "primary_location": "PSE",
+        "people_reached": NaN,
+        "people_in_need": NaN,
+        "reached_ratio": NaN
+      },
+      {
+        "code": "RUGA26",
+        "name": "Uganda Regional Refugee Response Plan 2026",
+        "primary_location": "UGA",
+        "people_reached": NaN,
+        "people_in_need": NaN,
+        "reached_ratio": NaN
+      },
+      {
+        "code": "RREG26b",
+        "name": "Venezuela Regional Refugee and Migrant Response Plan (RMRP) 2026",
+        "primary_location": "BRA",
+        "people_reached": NaN,
+        "people_in_need": NaN,
+        "reached_ratio": NaN
+      },
+      {
+        "code": "RBGD26",
+        "name": "Rohingya Humanitarian Crisis Joint Response Plan 2026",
+        "primary_location": "BGD",
+        "people_reached": NaN,
+        "people_in_need": NaN,
+        "reached_ratio": NaN
+      },
+      {
+        "code": "OPAK26",
+        "name": "Pakistan Floods Support Plan 2026",
+        "primary_location": "PAK",
+        "people_reached": NaN,
+        "people_in_need": NaN,
+        "reached_ratio": NaN
+      },
+      {
+        "code": "OVNM26",
+        "name": "Viet Nam 25-26 Joint Response Plan Multiple Typhoons and Floods 2026",
+        "primary_location": "VNM",
+        "people_reached": NaN,
+        "people_in_need": NaN,
+        "reached_ratio": NaN
+      },
+      {
+        "code": "OLKA2526",
+        "name": "Sri Lanka Humanitarian Priorities Plan Cyclone Ditwa 2026",
+        "primary_location": "LKA",
+        "people_reached": NaN,
+        "people_in_need": NaN,
+        "reached_ratio": NaN
+      },
+      {
+        "code": "RJORLBNTUR26",
+        "name": "Syrian Arab Republic Regional Refugee and Resilience Plan (3RP) 2026",
+        "primary_location": "JOR",
+        "people_reached": NaN,
+        "people_in_need": NaN,
+        "reached_ratio": NaN
+      },
+      {
+        "code": "RREG26a",
+        "name": "Sudan Emergency: Regional Refugee Response Plan 2026",
+        "primary_location": "LBY",
+        "people_reached": NaN,
+        "people_in_need": NaN,
+        "reached_ratio": NaN
+      }
+    ],
+    "overall": [
       {
         "code": "HUKR26",
         "name": "Ukraine Humanitarian Needs and Response Plan 2026",
@@ -1472,14 +2824,54 @@
         "people_in_need": 10849697.0,
         "people_targeted": 4118954.0,
         "coverage_ratio": 0.3796376986380357,
+        "unmet_need_ratio": 0.6203623013619644,
+        "funding_per_need": 59.008778770503916,
+        "funding_per_target": 155.4344549611382,
+        "gap_per_person": 153.34387725297768,
+        "reached_ratio": 0.0,
         "rank_funding_gap": 5.0,
         "rank_requirements": 4.0,
         "rank_funding": 1.0,
         "rank_percent_funded": 20.0,
         "rank_people_in_need": 7.0,
         "rank_coverage_ratio": 18.0,
-        "overall_rank_score": 55,
-        "overall_rank": 6.0
+        "rank_unmet_need_ratio": 3.0,
+        "rank_funding_per_need": 1.0,
+        "rank_funding_per_target": 1.0,
+        "rank_gap_per_person": 5.0,
+        "rank_reached_ratio": 1.0,
+        "overall_rank_score": 66,
+        "overall_rank": 1.0
+      },
+      {
+        "code": "HSYR26",
+        "name": "Syrian Arab Republic Humanitarian Response Priorities 2026",
+        "primary_location": "SYR",
+        "requirements": 2922184830.0,
+        "funding": 437301894.0,
+        "funding_gap": 2484882936.0,
+        "percent_funded": 15.0,
+        "people_in_need": 16500000.0,
+        "people_targeted": 10300000.0,
+        "coverage_ratio": 0.6242424242424243,
+        "unmet_need_ratio": 0.37575757575757573,
+        "funding_per_need": 26.50314509090909,
+        "funding_per_target": 42.456494563106794,
+        "gap_per_person": 150.59896581818182,
+        "reached_ratio": 0.0,
+        "rank_funding_gap": 2.0,
+        "rank_requirements": 2.0,
+        "rank_funding": 4.0,
+        "rank_percent_funded": 11.0,
+        "rank_people_in_need": 4.0,
+        "rank_coverage_ratio": 8.0,
+        "rank_unmet_need_ratio": 13.0,
+        "rank_funding_per_need": 8.0,
+        "rank_funding_per_target": 10.0,
+        "rank_gap_per_person": 6.0,
+        "rank_reached_ratio": 1.0,
+        "overall_rank_score": 69,
+        "overall_rank": 2.0
       },
       {
         "code": "HSSD26",
@@ -1492,34 +2884,84 @@
         "people_in_need": 9913863.0,
         "people_targeted": 4343435.0,
         "coverage_ratio": 0.4381173110824711,
+        "unmet_need_ratio": 0.5618826889175289,
+        "funding_per_need": 32.481309152648166,
+        "funding_per_target": 74.13838333024438,
+        "gap_per_person": 115.09446993568501,
+        "reached_ratio": 0.0,
         "rank_funding_gap": 7.0,
         "rank_requirements": 7.0,
         "rank_funding": 6.0,
         "rank_percent_funded": 17.0,
         "rank_people_in_need": 8.0,
         "rank_coverage_ratio": 16.0,
-        "overall_rank_score": 61,
-        "overall_rank": 7.0
+        "rank_unmet_need_ratio": 5.0,
+        "rank_funding_per_need": 4.0,
+        "rank_funding_per_target": 4.0,
+        "rank_gap_per_person": 8.0,
+        "rank_reached_ratio": 1.0,
+        "overall_rank_score": 83,
+        "overall_rank": 3.0
       },
       {
-        "code": "HCOD26",
-        "name": "République Démocratique du Congo Besoins Humanitaires et Plan de Réponse 2026",
-        "primary_location": "COD",
-        "requirements": 1403721718.0,
-        "funding": 430024823.0,
-        "funding_gap": 973696895.0,
-        "percent_funded": 30.6,
-        "people_in_need": 14940727.0,
-        "people_targeted": 7313763.0,
-        "coverage_ratio": 0.4895185488631176,
-        "rank_funding_gap": 8.0,
-        "rank_requirements": 8.0,
-        "rank_funding": 5.0,
-        "rank_percent_funded": 21.0,
-        "rank_people_in_need": 6.0,
-        "rank_coverage_ratio": 14.0,
-        "overall_rank_score": 62,
-        "overall_rank": 8.0
+        "code": "HSDN26",
+        "name": "Sudan Humanitarian Needs and Response Plan 2026",
+        "primary_location": "SDN",
+        "requirements": 2866228593.0,
+        "funding": 488147337.0,
+        "funding_gap": 2378081256.0,
+        "percent_funded": 17.0,
+        "people_in_need": 33699770.0,
+        "people_targeted": 20419163.0,
+        "coverage_ratio": 0.6059140166238524,
+        "unmet_need_ratio": 0.3940859833761477,
+        "funding_per_need": 14.48518304427597,
+        "funding_per_target": 23.90633430958948,
+        "gap_per_person": 70.56669098928569,
+        "reached_ratio": 0.0,
+        "rank_funding_gap": 3.0,
+        "rank_requirements": 3.0,
+        "rank_funding": 2.0,
+        "rank_percent_funded": 12.0,
+        "rank_people_in_need": 1.0,
+        "rank_coverage_ratio": 11.0,
+        "rank_unmet_need_ratio": 10.0,
+        "rank_funding_per_need": 17.0,
+        "rank_funding_per_target": 16.0,
+        "rank_gap_per_person": 14.0,
+        "rank_reached_ratio": 1.0,
+        "overall_rank_score": 90,
+        "overall_rank": 4.0
+      },
+      {
+        "code": "HYEM26",
+        "name": "Yemen Humanitarian Needs and Response Plan 2026",
+        "primary_location": "YEM",
+        "requirements": 2162563336.0,
+        "funding": 258764721.0,
+        "funding_gap": 1903798615.0,
+        "percent_funded": 12.0,
+        "people_in_need": 23100000.0,
+        "people_targeted": 10500000.0,
+        "coverage_ratio": 0.45454545454545453,
+        "unmet_need_ratio": 0.5454545454545454,
+        "funding_per_need": 11.201935974025973,
+        "funding_per_target": 24.64425914285714,
+        "gap_per_person": 82.41552445887446,
+        "reached_ratio": 0.0,
+        "rank_funding_gap": 4.0,
+        "rank_requirements": 5.0,
+        "rank_funding": 7.0,
+        "rank_percent_funded": 6.0,
+        "rank_people_in_need": 2.0,
+        "rank_coverage_ratio": 15.0,
+        "rank_unmet_need_ratio": 6.0,
+        "rank_funding_per_need": 18.0,
+        "rank_funding_per_target": 15.0,
+        "rank_gap_per_person": 13.0,
+        "rank_reached_ratio": 1.0,
+        "overall_rank_score": 92,
+        "overall_rank": 5.0
       },
       {
         "code": "HTCD26",
@@ -1532,14 +2974,84 @@
         "people_in_need": 4509014.0,
         "people_targeted": 3352810.0,
         "coverage_ratio": 0.743579416697309,
+        "unmet_need_ratio": 0.256420583302691,
+        "funding_per_need": 47.8848220475696,
+        "funding_per_target": 64.39772399867574,
+        "gap_per_person": 170.80370431318244,
+        "reached_ratio": 0.0,
         "rank_funding_gap": 10.0,
         "rank_requirements": 9.0,
         "rank_funding": 10.0,
         "rank_percent_funded": 16.0,
         "rank_people_in_need": 15.0,
         "rank_coverage_ratio": 3.0,
-        "overall_rank_score": 63,
-        "overall_rank": 9.0
+        "rank_unmet_need_ratio": 18.0,
+        "rank_funding_per_need": 3.0,
+        "rank_funding_per_target": 5.0,
+        "rank_gap_per_person": 3.0,
+        "rank_reached_ratio": 1.0,
+        "overall_rank_score": 93,
+        "overall_rank": 6.0
+      },
+      {
+        "code": "HCOD26",
+        "name": "République Démocratique du Congo Besoins Humanitaires et Plan de Réponse 2026",
+        "primary_location": "COD",
+        "requirements": 1403721718.0,
+        "funding": 430024823.0,
+        "funding_gap": 973696895.0,
+        "percent_funded": 30.6,
+        "people_in_need": 14940727.0,
+        "people_targeted": 7313763.0,
+        "coverage_ratio": 0.4895185488631176,
+        "unmet_need_ratio": 0.5104814511368825,
+        "funding_per_need": 28.78205478220705,
+        "funding_per_target": 58.79665816351993,
+        "gap_per_person": 65.17065033046919,
+        "reached_ratio": 0.0,
+        "rank_funding_gap": 8.0,
+        "rank_requirements": 8.0,
+        "rank_funding": 5.0,
+        "rank_percent_funded": 21.0,
+        "rank_people_in_need": 6.0,
+        "rank_coverage_ratio": 14.0,
+        "rank_unmet_need_ratio": 7.0,
+        "rank_funding_per_need": 6.0,
+        "rank_funding_per_target": 6.0,
+        "rank_gap_per_person": 17.0,
+        "rank_reached_ratio": 1.0,
+        "overall_rank_score": 99,
+        "overall_rank": 7.0
+      },
+      {
+        "code": "HSOM26",
+        "name": "Somalia Humanitarian Needs and Response Plan 2026",
+        "primary_location": "SOM",
+        "requirements": 852000000.0,
+        "funding": 111250193.0,
+        "funding_gap": 740749807.0,
+        "percent_funded": 13.1,
+        "people_in_need": 4796040.0,
+        "people_targeted": 2430751.0,
+        "coverage_ratio": 0.506824588618944,
+        "unmet_need_ratio": 0.49317541138105603,
+        "funding_per_need": 23.196260456543314,
+        "funding_per_target": 45.76782772073322,
+        "gap_per_person": 154.4502979541455,
+        "reached_ratio": 0.0,
+        "rank_funding_gap": 11.0,
+        "rank_requirements": 12.0,
+        "rank_funding": 17.0,
+        "rank_percent_funded": 9.0,
+        "rank_people_in_need": 14.0,
+        "rank_coverage_ratio": 13.0,
+        "rank_unmet_need_ratio": 8.0,
+        "rank_funding_per_need": 10.0,
+        "rank_funding_per_target": 9.0,
+        "rank_gap_per_person": 4.0,
+        "rank_reached_ratio": 1.0,
+        "overall_rank_score": 108,
+        "overall_rank": 8.0
       },
       {
         "code": "HHTI26",
@@ -1552,13 +3064,83 @@
         "people_in_need": 6414193.0,
         "people_targeted": 4162202.0,
         "coverage_ratio": 0.6489050142395154,
+        "unmet_need_ratio": 0.3510949857604846,
+        "funding_per_need": 26.824431226188548,
+        "funding_per_target": 41.33799344673805,
+        "gap_per_person": 110.42236287557921,
+        "reached_ratio": 0.0,
         "rank_funding_gap": 12.0,
         "rank_requirements": 11.0,
         "rank_funding": 13.0,
         "rank_percent_funded": 14.0,
         "rank_people_in_need": 11.0,
         "rank_coverage_ratio": 7.0,
-        "overall_rank_score": 68,
+        "rank_unmet_need_ratio": 14.0,
+        "rank_funding_per_need": 7.0,
+        "rank_funding_per_target": 12.0,
+        "rank_gap_per_person": 9.0,
+        "rank_reached_ratio": 1.0,
+        "overall_rank_score": 111,
+        "overall_rank": 9.0
+      },
+      {
+        "code": "HAFG26",
+        "name": "Afghanistan Humanitarian Needs and Response Plan 2026",
+        "primary_location": "AFG",
+        "requirements": 1714181496.0,
+        "funding": 214214587.0,
+        "funding_gap": 1499966909.0,
+        "percent_funded": 12.5,
+        "people_in_need": 21889283.0,
+        "people_targeted": 17479657.0,
+        "coverage_ratio": 0.7985486322233579,
+        "unmet_need_ratio": 0.2014513677766421,
+        "funding_per_need": 9.786277010535247,
+        "funding_per_target": 12.25507954761355,
+        "gap_per_person": 68.525173209191,
+        "reached_ratio": 0.0,
+        "rank_funding_gap": 6.0,
+        "rank_requirements": 6.0,
+        "rank_funding": 11.0,
+        "rank_percent_funded": 7.0,
+        "rank_people_in_need": 3.0,
+        "rank_coverage_ratio": 1.0,
+        "rank_unmet_need_ratio": 20.0,
+        "rank_funding_per_need": 20.0,
+        "rank_funding_per_target": 20.0,
+        "rank_gap_per_person": 16.0,
+        "rank_reached_ratio": 1.0,
+        "overall_rank_score": 111,
+        "overall_rank": 9.0
+      },
+      {
+        "code": "HNER26",
+        "name": "Niger Besoins Humanitaires et Plan de Réponse 2026",
+        "primary_location": "NER",
+        "requirements": 675619589.0,
+        "funding": 66462854.0,
+        "funding_gap": 609156735.0,
+        "percent_funded": 9.8,
+        "people_in_need": 2600000.0,
+        "people_targeted": 1600000.0,
+        "coverage_ratio": 0.6153846153846154,
+        "unmet_need_ratio": 0.38461538461538464,
+        "funding_per_need": 25.562636153846153,
+        "funding_per_target": 41.53928375,
+        "gap_per_person": 234.29105192307694,
+        "reached_ratio": 0.0,
+        "rank_funding_gap": 15.0,
+        "rank_requirements": 16.0,
+        "rank_funding": 24.0,
+        "rank_percent_funded": 4.0,
+        "rank_people_in_need": 18.0,
+        "rank_coverage_ratio": 10.0,
+        "rank_unmet_need_ratio": 11.0,
+        "rank_funding_per_need": 9.0,
+        "rank_funding_per_target": 11.0,
+        "rank_gap_per_person": 1.0,
+        "rank_reached_ratio": 1.0,
+        "overall_rank_score": 120,
         "overall_rank": 10.0
       },
       {
@@ -1572,154 +3154,24 @@
         "people_in_need": 16229050.0,
         "people_targeted": 4868096.0,
         "coverage_ratio": 0.299961858519137,
+        "unmet_need_ratio": 0.7000381414808631,
+        "funding_per_need": 15.125477708183782,
+        "funding_per_target": 50.424669932556796,
+        "gap_per_person": 39.68985639948118,
+        "reached_ratio": 0.0,
         "rank_funding_gap": 14.0,
         "rank_requirements": 10.0,
         "rank_funding": 8.0,
         "rank_percent_funded": 19.0,
         "rank_people_in_need": 5.0,
         "rank_coverage_ratio": 20.0,
-        "overall_rank_score": 76,
-        "overall_rank": 11.0
-      },
-      {
-        "code": "HSOM26",
-        "name": "Somalia Humanitarian Needs and Response Plan 2026",
-        "primary_location": "SOM",
-        "requirements": 852000000.0,
-        "funding": 111250193.0,
-        "funding_gap": 740749807.0,
-        "percent_funded": 13.1,
-        "people_in_need": 4796040.0,
-        "people_targeted": 2430751.0,
-        "coverage_ratio": 0.506824588618944,
-        "rank_funding_gap": 11.0,
-        "rank_requirements": 12.0,
-        "rank_funding": 17.0,
-        "rank_percent_funded": 9.0,
-        "rank_people_in_need": 14.0,
-        "rank_coverage_ratio": 13.0,
-        "overall_rank_score": 76,
-        "overall_rank": 11.0
-      },
-      {
-        "code": "HVEN26",
-        "name": "Venezuela Plan de Respuesta Humanitaria 2026",
-        "primary_location": "VEN",
-        "requirements": 632191972.0,
-        "funding": 84012783.0,
-        "funding_gap": 548179189.0,
-        "percent_funded": 13.3,
-        "people_in_need": 7900000.0,
-        "people_targeted": 5400000.0,
-        "coverage_ratio": 0.6835443037974683,
-        "rank_funding_gap": 17.0,
-        "rank_requirements": 18.0,
-        "rank_funding": 19.0,
-        "rank_percent_funded": 10.0,
-        "rank_people_in_need": 9.0,
-        "rank_coverage_ratio": 6.0,
-        "overall_rank_score": 79,
-        "overall_rank": 12.0
-      },
-      {
-        "code": "HBFA26",
-        "name": "Burkina Faso Besoins Humanitaires et Plan de Réponse 2026",
-        "primary_location": "BFA",
-        "requirements": 658486359.0,
-        "funding": 72939948.0,
-        "funding_gap": 585546411.0,
-        "percent_funded": 11.1,
-        "people_in_need": 4400000.0,
-        "people_targeted": 3100000.0,
-        "coverage_ratio": 0.7045454545454546,
-        "rank_funding_gap": 16.0,
-        "rank_requirements": 17.0,
-        "rank_funding": 21.0,
-        "rank_percent_funded": 5.0,
-        "rank_people_in_need": 16.0,
-        "rank_coverage_ratio": 5.0,
-        "overall_rank_score": 80,
-        "overall_rank": 13.0
-      },
-      {
-        "code": "HMLI26",
-        "name": "Mali Besoins Humanitaires et Plan de Réponse 2026",
-        "primary_location": "MLI",
-        "requirements": 577866412.0,
-        "funding": 75201041.0,
-        "funding_gap": 502665371.0,
-        "percent_funded": 13.0,
-        "people_in_need": 5100000.0,
-        "people_targeted": 3800000.0,
-        "coverage_ratio": 0.7450980392156863,
-        "rank_funding_gap": 18.0,
-        "rank_requirements": 19.0,
-        "rank_funding": 20.0,
-        "rank_percent_funded": 8.0,
-        "rank_people_in_need": 13.0,
-        "rank_coverage_ratio": 2.0,
-        "overall_rank_score": 80,
-        "overall_rank": 13.0
-      },
-      {
-        "code": "HNER26",
-        "name": "Niger Besoins Humanitaires et Plan de Réponse 2026",
-        "primary_location": "NER",
-        "requirements": 675619589.0,
-        "funding": 66462854.0,
-        "funding_gap": 609156735.0,
-        "percent_funded": 9.8,
-        "people_in_need": 2600000.0,
-        "people_targeted": 1600000.0,
-        "coverage_ratio": 0.6153846153846154,
-        "rank_funding_gap": 15.0,
-        "rank_requirements": 16.0,
-        "rank_funding": 24.0,
-        "rank_percent_funded": 4.0,
-        "rank_people_in_need": 18.0,
-        "rank_coverage_ratio": 10.0,
-        "overall_rank_score": 87,
-        "overall_rank": 14.0
-      },
-      {
-        "code": "RUGA26",
-        "name": "Uganda Regional Refugee Response Plan 2026",
-        "primary_location": "UGA",
-        "requirements": 828700000.0,
-        "funding": 13438960.0,
-        "funding_gap": 815261040.0,
-        "percent_funded": 1.6,
-        "people_in_need": NaN,
-        "people_targeted": NaN,
-        "coverage_ratio": NaN,
-        "rank_funding_gap": 9.0,
-        "rank_requirements": 13.0,
-        "rank_funding": 28.0,
-        "rank_percent_funded": 1.0,
-        "rank_people_in_need": 21.0,
-        "rank_coverage_ratio": 21.0,
-        "overall_rank_score": 93,
-        "overall_rank": 15.0
-      },
-      {
-        "code": "RREG26b",
-        "name": "Venezuela Regional Refugee and Migrant Response Plan (RMRP) 2026",
-        "primary_location": "BRA",
-        "requirements": 737473022.0,
-        "funding": 67880713.0,
-        "funding_gap": 669592309.0,
-        "percent_funded": 9.2,
-        "people_in_need": NaN,
-        "people_targeted": NaN,
-        "coverage_ratio": NaN,
-        "rank_funding_gap": 13.0,
-        "rank_requirements": 14.0,
-        "rank_funding": 22.0,
-        "rank_percent_funded": 3.0,
-        "rank_people_in_need": 21.0,
-        "rank_coverage_ratio": 21.0,
-        "overall_rank_score": 94,
-        "overall_rank": 16.0
+        "rank_unmet_need_ratio": 1.0,
+        "rank_funding_per_need": 15.0,
+        "rank_funding_per_target": 8.0,
+        "rank_gap_per_person": 19.0,
+        "rank_reached_ratio": 1.0,
+        "overall_rank_score": 120,
+        "overall_rank": 10.0
       },
       {
         "code": "HMOZ26",
@@ -1732,14 +3184,54 @@
         "people_in_need": 2356162.0,
         "people_targeted": 1745582.0,
         "coverage_ratio": 0.7408582262170428,
+        "unmet_need_ratio": 0.2591417737829572,
+        "funding_per_need": 55.7103255209107,
+        "funding_per_target": 75.19701280146106,
+        "gap_per_person": 171.07483780826615,
+        "reached_ratio": 0.0,
         "rank_funding_gap": 20.0,
         "rank_requirements": 20.0,
         "rank_funding": 15.0,
         "rank_percent_funded": 18.0,
         "rank_people_in_need": 19.0,
         "rank_coverage_ratio": 4.0,
-        "overall_rank_score": 96,
-        "overall_rank": 17.0
+        "rank_unmet_need_ratio": 17.0,
+        "rank_funding_per_need": 2.0,
+        "rank_funding_per_target": 3.0,
+        "rank_gap_per_person": 2.0,
+        "rank_reached_ratio": 1.0,
+        "overall_rank_score": 121,
+        "overall_rank": 11.0
+      },
+      {
+        "code": "HBFA26",
+        "name": "Burkina Faso Besoins Humanitaires et Plan de Réponse 2026",
+        "primary_location": "BFA",
+        "requirements": 658486359.0,
+        "funding": 72939948.0,
+        "funding_gap": 585546411.0,
+        "percent_funded": 11.1,
+        "people_in_need": 4400000.0,
+        "people_targeted": 3100000.0,
+        "coverage_ratio": 0.7045454545454546,
+        "unmet_need_ratio": 0.29545454545454547,
+        "funding_per_need": 16.57726090909091,
+        "funding_per_target": 23.529015483870968,
+        "gap_per_person": 133.07872977272729,
+        "reached_ratio": 0.0,
+        "rank_funding_gap": 16.0,
+        "rank_requirements": 17.0,
+        "rank_funding": 21.0,
+        "rank_percent_funded": 5.0,
+        "rank_people_in_need": 16.0,
+        "rank_coverage_ratio": 5.0,
+        "rank_unmet_need_ratio": 16.0,
+        "rank_funding_per_need": 14.0,
+        "rank_funding_per_target": 17.0,
+        "rank_gap_per_person": 7.0,
+        "rank_reached_ratio": 1.0,
+        "overall_rank_score": 135,
+        "overall_rank": 12.0
       },
       {
         "code": "HNGA26",
@@ -1752,54 +3244,114 @@
         "people_in_need": 5900000.0,
         "people_targeted": 2500000.0,
         "coverage_ratio": 0.423728813559322,
+        "unmet_need_ratio": 0.576271186440678,
+        "funding_per_need": 31.994308983050846,
+        "funding_per_target": 75.5065692,
+        "gap_per_person": 55.531016949152544,
+        "reached_ratio": 0.0,
         "rank_funding_gap": 21.0,
         "rank_requirements": 21.0,
         "rank_funding": 12.0,
         "rank_percent_funded": 23.0,
         "rank_people_in_need": 12.0,
         "rank_coverage_ratio": 17.0,
-        "overall_rank_score": 106,
-        "overall_rank": 18.0
+        "rank_unmet_need_ratio": 4.0,
+        "rank_funding_per_need": 5.0,
+        "rank_funding_per_target": 2.0,
+        "rank_gap_per_person": 18.0,
+        "rank_reached_ratio": 1.0,
+        "overall_rank_score": 136,
+        "overall_rank": 13.0
       },
       {
-        "code": "RBGD26",
-        "name": "Rohingya Humanitarian Crisis Joint Response Plan 2026",
-        "primary_location": "BGD",
-        "requirements": 698375266.0,
-        "funding": 233087883.0,
-        "funding_gap": 465287383.0,
-        "percent_funded": 33.4,
+        "code": "FPSE26",
+        "name": "Escalation of Hostilities in the OPT Flash Appeal 2026",
+        "primary_location": "PSE",
+        "requirements": 4064305808.0,
+        "funding": 451836549.0,
+        "funding_gap": 3612469259.0,
+        "percent_funded": 11.1,
         "people_in_need": NaN,
         "people_targeted": NaN,
         "coverage_ratio": NaN,
-        "rank_funding_gap": 19.0,
-        "rank_requirements": 15.0,
-        "rank_funding": 9.0,
-        "rank_percent_funded": 22.0,
+        "unmet_need_ratio": NaN,
+        "funding_per_need": NaN,
+        "funding_per_target": NaN,
+        "gap_per_person": NaN,
+        "reached_ratio": NaN,
+        "rank_funding_gap": 1.0,
+        "rank_requirements": 1.0,
+        "rank_funding": 3.0,
+        "rank_percent_funded": 5.0,
         "rank_people_in_need": 21.0,
         "rank_coverage_ratio": 21.0,
-        "overall_rank_score": 107,
-        "overall_rank": 19.0
+        "rank_unmet_need_ratio": 21.0,
+        "rank_funding_per_need": 22.0,
+        "rank_funding_per_target": 22.0,
+        "rank_gap_per_person": 22.0,
+        "rank_reached_ratio": 2.0,
+        "overall_rank_score": 141,
+        "overall_rank": 14.0
       },
       {
-        "code": "HCMR26",
-        "name": "Cameroon Humanitarian Needs and Response Plan 2026",
-        "primary_location": "CMR",
-        "requirements": 318976221.0,
-        "funding": 66498901.0,
-        "funding_gap": 252477320.0,
-        "percent_funded": 20.8,
-        "people_in_need": 2900000.0,
-        "people_targeted": 1800000.0,
-        "coverage_ratio": 0.6206896551724138,
-        "rank_funding_gap": 22.0,
-        "rank_requirements": 22.0,
-        "rank_funding": 23.0,
-        "rank_percent_funded": 15.0,
-        "rank_people_in_need": 17.0,
-        "rank_coverage_ratio": 9.0,
-        "overall_rank_score": 108,
-        "overall_rank": 20.0
+        "code": "HMLI26",
+        "name": "Mali Besoins Humanitaires et Plan de Réponse 2026",
+        "primary_location": "MLI",
+        "requirements": 577866412.0,
+        "funding": 75201041.0,
+        "funding_gap": 502665371.0,
+        "percent_funded": 13.0,
+        "people_in_need": 5100000.0,
+        "people_targeted": 3800000.0,
+        "coverage_ratio": 0.7450980392156863,
+        "unmet_need_ratio": 0.2549019607843137,
+        "funding_per_need": 14.745302156862746,
+        "funding_per_target": 19.789747631578948,
+        "gap_per_person": 98.56183745098039,
+        "reached_ratio": 0.0,
+        "rank_funding_gap": 18.0,
+        "rank_requirements": 19.0,
+        "rank_funding": 20.0,
+        "rank_percent_funded": 8.0,
+        "rank_people_in_need": 13.0,
+        "rank_coverage_ratio": 2.0,
+        "rank_unmet_need_ratio": 19.0,
+        "rank_funding_per_need": 16.0,
+        "rank_funding_per_target": 18.0,
+        "rank_gap_per_person": 10.0,
+        "rank_reached_ratio": 1.0,
+        "overall_rank_score": 144,
+        "overall_rank": 15.0
+      },
+      {
+        "code": "HVEN26",
+        "name": "Venezuela Plan de Respuesta Humanitaria 2026",
+        "primary_location": "VEN",
+        "requirements": 632191972.0,
+        "funding": 84012783.0,
+        "funding_gap": 548179189.0,
+        "percent_funded": 13.3,
+        "people_in_need": 7900000.0,
+        "people_targeted": 5400000.0,
+        "coverage_ratio": 0.6835443037974683,
+        "unmet_need_ratio": 0.31645569620253167,
+        "funding_per_need": 10.634529493670886,
+        "funding_per_target": 15.557922777777778,
+        "gap_per_person": 69.38977075949367,
+        "reached_ratio": 0.0,
+        "rank_funding_gap": 17.0,
+        "rank_requirements": 18.0,
+        "rank_funding": 19.0,
+        "rank_percent_funded": 10.0,
+        "rank_people_in_need": 9.0,
+        "rank_coverage_ratio": 6.0,
+        "rank_unmet_need_ratio": 15.0,
+        "rank_funding_per_need": 19.0,
+        "rank_funding_per_target": 19.0,
+        "rank_gap_per_person": 15.0,
+        "rank_reached_ratio": 1.0,
+        "overall_rank_score": 148,
+        "overall_rank": 16.0
       },
       {
         "code": "HCOL26",
@@ -1812,14 +3364,54 @@
         "people_in_need": 6900000.0,
         "people_targeted": 2600000.0,
         "coverage_ratio": 0.37681159420289856,
+        "unmet_need_ratio": 0.6231884057971014,
+        "funding_per_need": 22.081967101449276,
+        "funding_per_target": 58.60214346153846,
+        "gap_per_person": 19.50736144927536,
+        "reached_ratio": 0.0,
         "rank_funding_gap": 24.0,
         "rank_requirements": 23.0,
         "rank_funding": 14.0,
         "rank_percent_funded": 25.0,
         "rank_people_in_need": 10.0,
         "rank_coverage_ratio": 19.0,
-        "overall_rank_score": 115,
-        "overall_rank": 21.0
+        "rank_unmet_need_ratio": 2.0,
+        "rank_funding_per_need": 12.0,
+        "rank_funding_per_target": 7.0,
+        "rank_gap_per_person": 20.0,
+        "rank_reached_ratio": 1.0,
+        "overall_rank_score": 157,
+        "overall_rank": 17.0
+      },
+      {
+        "code": "HCMR26",
+        "name": "Cameroon Humanitarian Needs and Response Plan 2026",
+        "primary_location": "CMR",
+        "requirements": 318976221.0,
+        "funding": 66498901.0,
+        "funding_gap": 252477320.0,
+        "percent_funded": 20.8,
+        "people_in_need": 2900000.0,
+        "people_targeted": 1800000.0,
+        "coverage_ratio": 0.6206896551724138,
+        "unmet_need_ratio": 0.3793103448275862,
+        "funding_per_need": 22.93065551724138,
+        "funding_per_target": 36.94383388888889,
+        "gap_per_person": 87.0611448275862,
+        "reached_ratio": 0.0,
+        "rank_funding_gap": 22.0,
+        "rank_requirements": 22.0,
+        "rank_funding": 23.0,
+        "rank_percent_funded": 15.0,
+        "rank_people_in_need": 17.0,
+        "rank_coverage_ratio": 9.0,
+        "rank_unmet_need_ratio": 12.0,
+        "rank_funding_per_need": 11.0,
+        "rank_funding_per_target": 14.0,
+        "rank_gap_per_person": 12.0,
+        "rank_reached_ratio": 1.0,
+        "overall_rank_score": 158,
+        "overall_rank": 18.0
       },
       {
         "code": "HCAF26",
@@ -1832,34 +3424,84 @@
         "people_in_need": 2286959.0,
         "people_targeted": 1265483.0,
         "coverage_ratio": 0.5533474802128067,
+        "unmet_need_ratio": 0.4466525197871934,
+        "funding_per_need": 20.70692478527162,
+        "funding_per_target": 37.42119649177429,
+        "gap_per_person": 94.77279653898474,
+        "reached_ratio": 0.0,
         "rank_funding_gap": 23.0,
         "rank_requirements": 24.0,
         "rank_funding": 25.0,
         "rank_percent_funded": 13.0,
         "rank_people_in_need": 20.0,
         "rank_coverage_ratio": 12.0,
-        "overall_rank_score": 117,
-        "overall_rank": 22.0
+        "rank_unmet_need_ratio": 9.0,
+        "rank_funding_per_need": 13.0,
+        "rank_funding_per_target": 13.0,
+        "rank_gap_per_person": 11.0,
+        "rank_reached_ratio": 1.0,
+        "overall_rank_score": 164,
+        "overall_rank": 19.0
       },
       {
-        "code": "OVNM26",
-        "name": "Viet Nam 25-26 Joint Response Plan Multiple Typhoons and Floods 2026",
-        "primary_location": "VNM",
-        "requirements": 61132366.0,
-        "funding": 3028917.0,
-        "funding_gap": 58103449.0,
-        "percent_funded": 5.0,
+        "code": "RUGA26",
+        "name": "Uganda Regional Refugee Response Plan 2026",
+        "primary_location": "UGA",
+        "requirements": 828700000.0,
+        "funding": 13438960.0,
+        "funding_gap": 815261040.0,
+        "percent_funded": 1.6,
         "people_in_need": NaN,
         "people_targeted": NaN,
         "coverage_ratio": NaN,
-        "rank_funding_gap": 25.0,
-        "rank_requirements": 26.0,
-        "rank_funding": 30.0,
-        "rank_percent_funded": 2.0,
+        "unmet_need_ratio": NaN,
+        "funding_per_need": NaN,
+        "funding_per_target": NaN,
+        "gap_per_person": NaN,
+        "reached_ratio": NaN,
+        "rank_funding_gap": 9.0,
+        "rank_requirements": 13.0,
+        "rank_funding": 28.0,
+        "rank_percent_funded": 1.0,
         "rank_people_in_need": 21.0,
         "rank_coverage_ratio": 21.0,
-        "overall_rank_score": 125,
-        "overall_rank": 23.0
+        "rank_unmet_need_ratio": 21.0,
+        "rank_funding_per_need": 22.0,
+        "rank_funding_per_target": 22.0,
+        "rank_gap_per_person": 22.0,
+        "rank_reached_ratio": 2.0,
+        "overall_rank_score": 182,
+        "overall_rank": 20.0
+      },
+      {
+        "code": "RREG26b",
+        "name": "Venezuela Regional Refugee and Migrant Response Plan (RMRP) 2026",
+        "primary_location": "BRA",
+        "requirements": 737473022.0,
+        "funding": 67880713.0,
+        "funding_gap": 669592309.0,
+        "percent_funded": 9.2,
+        "people_in_need": NaN,
+        "people_targeted": NaN,
+        "coverage_ratio": NaN,
+        "unmet_need_ratio": NaN,
+        "funding_per_need": NaN,
+        "funding_per_target": NaN,
+        "gap_per_person": NaN,
+        "reached_ratio": NaN,
+        "rank_funding_gap": 13.0,
+        "rank_requirements": 14.0,
+        "rank_funding": 22.0,
+        "rank_percent_funded": 3.0,
+        "rank_people_in_need": 21.0,
+        "rank_coverage_ratio": 21.0,
+        "rank_unmet_need_ratio": 21.0,
+        "rank_funding_per_need": 22.0,
+        "rank_funding_per_target": 22.0,
+        "rank_gap_per_person": 22.0,
+        "rank_reached_ratio": 2.0,
+        "overall_rank_score": 183,
+        "overall_rank": 21.0
       },
       {
         "code": "RREG26",
@@ -1872,14 +3514,84 @@
         "people_in_need": 23100000.0,
         "people_targeted": 10500000.0,
         "coverage_ratio": 0.45454545454545453,
+        "unmet_need_ratio": 0.5454545454545454,
+        "funding_per_need": 1.1753535064935066,
+        "funding_per_target": 2.5857777142857143,
+        "gap_per_person": -1.1753535064935066,
+        "reached_ratio": 0.0,
         "rank_funding_gap": 28.0,
         "rank_requirements": 28.0,
         "rank_funding": 26.0,
         "rank_percent_funded": 26.0,
         "rank_people_in_need": 2.0,
         "rank_coverage_ratio": 15.0,
-        "overall_rank_score": 125,
+        "rank_unmet_need_ratio": 6.0,
+        "rank_funding_per_need": 21.0,
+        "rank_funding_per_target": 21.0,
+        "rank_gap_per_person": 21.0,
+        "rank_reached_ratio": 1.0,
+        "overall_rank_score": 195,
+        "overall_rank": 22.0
+      },
+      {
+        "code": "RBGD26",
+        "name": "Rohingya Humanitarian Crisis Joint Response Plan 2026",
+        "primary_location": "BGD",
+        "requirements": 698375266.0,
+        "funding": 233087883.0,
+        "funding_gap": 465287383.0,
+        "percent_funded": 33.4,
+        "people_in_need": NaN,
+        "people_targeted": NaN,
+        "coverage_ratio": NaN,
+        "unmet_need_ratio": NaN,
+        "funding_per_need": NaN,
+        "funding_per_target": NaN,
+        "gap_per_person": NaN,
+        "reached_ratio": NaN,
+        "rank_funding_gap": 19.0,
+        "rank_requirements": 15.0,
+        "rank_funding": 9.0,
+        "rank_percent_funded": 22.0,
+        "rank_people_in_need": 21.0,
+        "rank_coverage_ratio": 21.0,
+        "rank_unmet_need_ratio": 21.0,
+        "rank_funding_per_need": 22.0,
+        "rank_funding_per_target": 22.0,
+        "rank_gap_per_person": 22.0,
+        "rank_reached_ratio": 2.0,
+        "overall_rank_score": 196,
         "overall_rank": 23.0
+      },
+      {
+        "code": "OVNM26",
+        "name": "Viet Nam 25-26 Joint Response Plan Multiple Typhoons and Floods 2026",
+        "primary_location": "VNM",
+        "requirements": 61132366.0,
+        "funding": 3028917.0,
+        "funding_gap": 58103449.0,
+        "percent_funded": 5.0,
+        "people_in_need": NaN,
+        "people_targeted": NaN,
+        "coverage_ratio": NaN,
+        "unmet_need_ratio": NaN,
+        "funding_per_need": NaN,
+        "funding_per_target": NaN,
+        "gap_per_person": NaN,
+        "reached_ratio": NaN,
+        "rank_funding_gap": 25.0,
+        "rank_requirements": 26.0,
+        "rank_funding": 30.0,
+        "rank_percent_funded": 2.0,
+        "rank_people_in_need": 21.0,
+        "rank_coverage_ratio": 21.0,
+        "rank_unmet_need_ratio": 21.0,
+        "rank_funding_per_need": 22.0,
+        "rank_funding_per_target": 22.0,
+        "rank_gap_per_person": 22.0,
+        "rank_reached_ratio": 2.0,
+        "overall_rank_score": 214,
+        "overall_rank": 24.0
       },
       {
         "code": "OPAK26",
@@ -1892,14 +3604,24 @@
         "people_in_need": NaN,
         "people_targeted": NaN,
         "coverage_ratio": NaN,
+        "unmet_need_ratio": NaN,
+        "funding_per_need": NaN,
+        "funding_per_target": NaN,
+        "gap_per_person": NaN,
+        "reached_ratio": NaN,
         "rank_funding_gap": 26.0,
         "rank_requirements": 25.0,
         "rank_funding": 29.0,
         "rank_percent_funded": 12.0,
         "rank_people_in_need": 21.0,
         "rank_coverage_ratio": 21.0,
-        "overall_rank_score": 134,
-        "overall_rank": 24.0
+        "rank_unmet_need_ratio": 21.0,
+        "rank_funding_per_need": 22.0,
+        "rank_funding_per_target": 22.0,
+        "rank_gap_per_person": 22.0,
+        "rank_reached_ratio": 2.0,
+        "overall_rank_score": 223,
+        "overall_rank": 25.0
       },
       {
         "code": "RREG26a",
@@ -1912,14 +3634,24 @@
         "people_in_need": NaN,
         "people_targeted": NaN,
         "coverage_ratio": NaN,
+        "unmet_need_ratio": NaN,
+        "funding_per_need": NaN,
+        "funding_per_target": NaN,
+        "gap_per_person": NaN,
+        "reached_ratio": NaN,
         "rank_funding_gap": 30.0,
         "rank_requirements": 28.0,
         "rank_funding": 16.0,
         "rank_percent_funded": 26.0,
         "rank_people_in_need": 21.0,
         "rank_coverage_ratio": 21.0,
-        "overall_rank_score": 142,
-        "overall_rank": 25.0
+        "rank_unmet_need_ratio": 21.0,
+        "rank_funding_per_need": 22.0,
+        "rank_funding_per_target": 22.0,
+        "rank_gap_per_person": 22.0,
+        "rank_reached_ratio": 2.0,
+        "overall_rank_score": 231,
+        "overall_rank": 26.0
       },
       {
         "code": "RJORLBNTUR26",
@@ -1932,14 +3664,24 @@
         "people_in_need": NaN,
         "people_targeted": NaN,
         "coverage_ratio": NaN,
+        "unmet_need_ratio": NaN,
+        "funding_per_need": NaN,
+        "funding_per_target": NaN,
+        "gap_per_person": NaN,
+        "reached_ratio": NaN,
         "rank_funding_gap": 29.0,
         "rank_requirements": 28.0,
         "rank_funding": 18.0,
         "rank_percent_funded": 26.0,
         "rank_people_in_need": 21.0,
         "rank_coverage_ratio": 21.0,
-        "overall_rank_score": 143,
-        "overall_rank": 26.0
+        "rank_unmet_need_ratio": 21.0,
+        "rank_funding_per_need": 22.0,
+        "rank_funding_per_target": 22.0,
+        "rank_gap_per_person": 22.0,
+        "rank_reached_ratio": 2.0,
+        "overall_rank_score": 232,
+        "overall_rank": 27.0
       },
       {
         "code": "OLKA2526",
@@ -1952,14 +3694,24 @@
         "people_in_need": NaN,
         "people_targeted": NaN,
         "coverage_ratio": NaN,
+        "unmet_need_ratio": NaN,
+        "funding_per_need": NaN,
+        "funding_per_target": NaN,
+        "gap_per_person": NaN,
+        "reached_ratio": NaN,
         "rank_funding_gap": 27.0,
         "rank_requirements": 27.0,
         "rank_funding": 27.0,
         "rank_percent_funded": 24.0,
         "rank_people_in_need": 21.0,
         "rank_coverage_ratio": 21.0,
-        "overall_rank_score": 147,
-        "overall_rank": 27.0
+        "rank_unmet_need_ratio": 21.0,
+        "rank_funding_per_need": 22.0,
+        "rank_funding_per_target": 22.0,
+        "rank_gap_per_person": 22.0,
+        "rank_reached_ratio": 2.0,
+        "overall_rank_score": 236,
+        "overall_rank": 28.0
       }
     ]
   },
@@ -2988,6 +4740,1062 @@
         "people_affected": 0.0,
         "people_reached": 0.0
       }
+    ],
+    "by_coverage": [
+      {
+        "primary_location": "AFG",
+        "people_in_need": 21889283.0,
+        "people_targeted": 17479657.0,
+        "coverage_ratio": 0.7985486322233579
+      },
+      {
+        "primary_location": "MLI",
+        "people_in_need": 5100000.0,
+        "people_targeted": 3800000.0,
+        "coverage_ratio": 0.7450980392156863
+      },
+      {
+        "primary_location": "TCD",
+        "people_in_need": 4509014.0,
+        "people_targeted": 3352810.0,
+        "coverage_ratio": 0.743579416697309
+      },
+      {
+        "primary_location": "MOZ",
+        "people_in_need": 2356162.0,
+        "people_targeted": 1745582.0,
+        "coverage_ratio": 0.7408582262170428
+      },
+      {
+        "primary_location": "BFA",
+        "people_in_need": 4400000.0,
+        "people_targeted": 3100000.0,
+        "coverage_ratio": 0.7045454545454546
+      },
+      {
+        "primary_location": "VEN",
+        "people_in_need": 7900000.0,
+        "people_targeted": 5400000.0,
+        "coverage_ratio": 0.6835443037974683
+      },
+      {
+        "primary_location": "HTI",
+        "people_in_need": 6414193.0,
+        "people_targeted": 4162202.0,
+        "coverage_ratio": 0.6489050142395154
+      },
+      {
+        "primary_location": "SYR",
+        "people_in_need": 16500000.0,
+        "people_targeted": 10300000.0,
+        "coverage_ratio": 0.6242424242424243
+      },
+      {
+        "primary_location": "CMR",
+        "people_in_need": 2900000.0,
+        "people_targeted": 1800000.0,
+        "coverage_ratio": 0.6206896551724138
+      },
+      {
+        "primary_location": "NER",
+        "people_in_need": 2600000.0,
+        "people_targeted": 1600000.0,
+        "coverage_ratio": 0.6153846153846154
+      },
+      {
+        "primary_location": "SDN",
+        "people_in_need": 33699770.0,
+        "people_targeted": 20419163.0,
+        "coverage_ratio": 0.6059140166238524
+      },
+      {
+        "primary_location": "CAF",
+        "people_in_need": 2286959.0,
+        "people_targeted": 1265483.0,
+        "coverage_ratio": 0.5533474802128067
+      },
+      {
+        "primary_location": "SOM",
+        "people_in_need": 4796040.0,
+        "people_targeted": 2430751.0,
+        "coverage_ratio": 0.506824588618944
+      },
+      {
+        "primary_location": "COD",
+        "people_in_need": 14940727.0,
+        "people_targeted": 7313763.0,
+        "coverage_ratio": 0.4895185488631176
+      },
+      {
+        "primary_location": "YEM",
+        "people_in_need": 46200000.0,
+        "people_targeted": 21000000.0,
+        "coverage_ratio": 0.45454545454545453
+      },
+      {
+        "primary_location": "SSD",
+        "people_in_need": 9913863.0,
+        "people_targeted": 4343435.0,
+        "coverage_ratio": 0.4381173110824711
+      },
+      {
+        "primary_location": "NGA",
+        "people_in_need": 5900000.0,
+        "people_targeted": 2500000.0,
+        "coverage_ratio": 0.423728813559322
+      },
+      {
+        "primary_location": "UKR",
+        "people_in_need": 10849697.0,
+        "people_targeted": 4118954.0,
+        "coverage_ratio": 0.3796376986380357
+      },
+      {
+        "primary_location": "COL",
+        "people_in_need": 6900000.0,
+        "people_targeted": 2600000.0,
+        "coverage_ratio": 0.37681159420289856
+      },
+      {
+        "primary_location": "MMR",
+        "people_in_need": 16229050.0,
+        "people_targeted": 4868096.0,
+        "coverage_ratio": 0.299961858519137
+      },
+      {
+        "primary_location": "BGD",
+        "people_in_need": 0.0,
+        "people_targeted": 0.0,
+        "coverage_ratio": NaN
+      },
+      {
+        "primary_location": "BRA",
+        "people_in_need": 0.0,
+        "people_targeted": 0.0,
+        "coverage_ratio": NaN
+      },
+      {
+        "primary_location": "JOR",
+        "people_in_need": 0.0,
+        "people_targeted": 0.0,
+        "coverage_ratio": NaN
+      },
+      {
+        "primary_location": "LBY",
+        "people_in_need": 0.0,
+        "people_targeted": 0.0,
+        "coverage_ratio": NaN
+      },
+      {
+        "primary_location": "LKA",
+        "people_in_need": 0.0,
+        "people_targeted": 0.0,
+        "coverage_ratio": NaN
+      },
+      {
+        "primary_location": "PAK",
+        "people_in_need": 0.0,
+        "people_targeted": 0.0,
+        "coverage_ratio": NaN
+      },
+      {
+        "primary_location": "PSE",
+        "people_in_need": 0.0,
+        "people_targeted": 0.0,
+        "coverage_ratio": NaN
+      },
+      {
+        "primary_location": "UGA",
+        "people_in_need": 0.0,
+        "people_targeted": 0.0,
+        "coverage_ratio": NaN
+      },
+      {
+        "primary_location": "VNM",
+        "people_in_need": 0.0,
+        "people_targeted": 0.0,
+        "coverage_ratio": NaN
+      }
+    ],
+    "by_unmet_need_ratio": [
+      {
+        "primary_location": "MMR",
+        "people_in_need": 16229050.0,
+        "people_targeted": 4868096.0,
+        "unmet_need_ratio": 0.7000381414808631
+      },
+      {
+        "primary_location": "COL",
+        "people_in_need": 6900000.0,
+        "people_targeted": 2600000.0,
+        "unmet_need_ratio": 0.6231884057971014
+      },
+      {
+        "primary_location": "UKR",
+        "people_in_need": 10849697.0,
+        "people_targeted": 4118954.0,
+        "unmet_need_ratio": 0.6203623013619644
+      },
+      {
+        "primary_location": "NGA",
+        "people_in_need": 5900000.0,
+        "people_targeted": 2500000.0,
+        "unmet_need_ratio": 0.576271186440678
+      },
+      {
+        "primary_location": "SSD",
+        "people_in_need": 9913863.0,
+        "people_targeted": 4343435.0,
+        "unmet_need_ratio": 0.5618826889175289
+      },
+      {
+        "primary_location": "YEM",
+        "people_in_need": 46200000.0,
+        "people_targeted": 21000000.0,
+        "unmet_need_ratio": 0.5454545454545454
+      },
+      {
+        "primary_location": "COD",
+        "people_in_need": 14940727.0,
+        "people_targeted": 7313763.0,
+        "unmet_need_ratio": 0.5104814511368825
+      },
+      {
+        "primary_location": "SOM",
+        "people_in_need": 4796040.0,
+        "people_targeted": 2430751.0,
+        "unmet_need_ratio": 0.49317541138105603
+      },
+      {
+        "primary_location": "CAF",
+        "people_in_need": 2286959.0,
+        "people_targeted": 1265483.0,
+        "unmet_need_ratio": 0.4466525197871934
+      },
+      {
+        "primary_location": "SDN",
+        "people_in_need": 33699770.0,
+        "people_targeted": 20419163.0,
+        "unmet_need_ratio": 0.3940859833761477
+      },
+      {
+        "primary_location": "NER",
+        "people_in_need": 2600000.0,
+        "people_targeted": 1600000.0,
+        "unmet_need_ratio": 0.38461538461538464
+      },
+      {
+        "primary_location": "CMR",
+        "people_in_need": 2900000.0,
+        "people_targeted": 1800000.0,
+        "unmet_need_ratio": 0.3793103448275862
+      },
+      {
+        "primary_location": "SYR",
+        "people_in_need": 16500000.0,
+        "people_targeted": 10300000.0,
+        "unmet_need_ratio": 0.37575757575757573
+      },
+      {
+        "primary_location": "HTI",
+        "people_in_need": 6414193.0,
+        "people_targeted": 4162202.0,
+        "unmet_need_ratio": 0.3510949857604846
+      },
+      {
+        "primary_location": "VEN",
+        "people_in_need": 7900000.0,
+        "people_targeted": 5400000.0,
+        "unmet_need_ratio": 0.31645569620253167
+      },
+      {
+        "primary_location": "BFA",
+        "people_in_need": 4400000.0,
+        "people_targeted": 3100000.0,
+        "unmet_need_ratio": 0.29545454545454547
+      },
+      {
+        "primary_location": "MOZ",
+        "people_in_need": 2356162.0,
+        "people_targeted": 1745582.0,
+        "unmet_need_ratio": 0.2591417737829572
+      },
+      {
+        "primary_location": "TCD",
+        "people_in_need": 4509014.0,
+        "people_targeted": 3352810.0,
+        "unmet_need_ratio": 0.256420583302691
+      },
+      {
+        "primary_location": "MLI",
+        "people_in_need": 5100000.0,
+        "people_targeted": 3800000.0,
+        "unmet_need_ratio": 0.2549019607843137
+      },
+      {
+        "primary_location": "AFG",
+        "people_in_need": 21889283.0,
+        "people_targeted": 17479657.0,
+        "unmet_need_ratio": 0.2014513677766421
+      },
+      {
+        "primary_location": "BGD",
+        "people_in_need": 0.0,
+        "people_targeted": 0.0,
+        "unmet_need_ratio": NaN
+      },
+      {
+        "primary_location": "BRA",
+        "people_in_need": 0.0,
+        "people_targeted": 0.0,
+        "unmet_need_ratio": NaN
+      },
+      {
+        "primary_location": "JOR",
+        "people_in_need": 0.0,
+        "people_targeted": 0.0,
+        "unmet_need_ratio": NaN
+      },
+      {
+        "primary_location": "LBY",
+        "people_in_need": 0.0,
+        "people_targeted": 0.0,
+        "unmet_need_ratio": NaN
+      },
+      {
+        "primary_location": "LKA",
+        "people_in_need": 0.0,
+        "people_targeted": 0.0,
+        "unmet_need_ratio": NaN
+      },
+      {
+        "primary_location": "PAK",
+        "people_in_need": 0.0,
+        "people_targeted": 0.0,
+        "unmet_need_ratio": NaN
+      },
+      {
+        "primary_location": "PSE",
+        "people_in_need": 0.0,
+        "people_targeted": 0.0,
+        "unmet_need_ratio": NaN
+      },
+      {
+        "primary_location": "UGA",
+        "people_in_need": 0.0,
+        "people_targeted": 0.0,
+        "unmet_need_ratio": NaN
+      },
+      {
+        "primary_location": "VNM",
+        "people_in_need": 0.0,
+        "people_targeted": 0.0,
+        "unmet_need_ratio": NaN
+      }
+    ],
+    "by_funding_per_need": [
+      {
+        "primary_location": "UKR",
+        "people_in_need": 10849697.0,
+        "funding": 640227370.0,
+        "funding_per_need": 59.008778770503916
+      },
+      {
+        "primary_location": "MOZ",
+        "people_in_need": 2356162.0,
+        "funding": 131262552.0,
+        "funding_per_need": 55.7103255209107
+      },
+      {
+        "primary_location": "TCD",
+        "people_in_need": 4509014.0,
+        "funding": 215913333.0,
+        "funding_per_need": 47.8848220475696
+      },
+      {
+        "primary_location": "SSD",
+        "people_in_need": 9913863.0,
+        "funding": 322015249.0,
+        "funding_per_need": 32.481309152648166
+      },
+      {
+        "primary_location": "NGA",
+        "people_in_need": 5900000.0,
+        "funding": 188766423.0,
+        "funding_per_need": 31.994308983050846
+      },
+      {
+        "primary_location": "COD",
+        "people_in_need": 14940727.0,
+        "funding": 430024823.0,
+        "funding_per_need": 28.78205478220705
+      },
+      {
+        "primary_location": "HTI",
+        "people_in_need": 6414193.0,
+        "funding": 172057079.0,
+        "funding_per_need": 26.824431226188548
+      },
+      {
+        "primary_location": "SYR",
+        "people_in_need": 16500000.0,
+        "funding": 437301894.0,
+        "funding_per_need": 26.50314509090909
+      },
+      {
+        "primary_location": "NER",
+        "people_in_need": 2600000.0,
+        "funding": 66462854.0,
+        "funding_per_need": 25.562636153846153
+      },
+      {
+        "primary_location": "SOM",
+        "people_in_need": 4796040.0,
+        "funding": 111250193.0,
+        "funding_per_need": 23.196260456543314
+      },
+      {
+        "primary_location": "CMR",
+        "people_in_need": 2900000.0,
+        "funding": 66498901.0,
+        "funding_per_need": 22.93065551724138
+      },
+      {
+        "primary_location": "COL",
+        "people_in_need": 6900000.0,
+        "funding": 152365573.0,
+        "funding_per_need": 22.081967101449276
+      },
+      {
+        "primary_location": "CAF",
+        "people_in_need": 2286959.0,
+        "funding": 47355888.0,
+        "funding_per_need": 20.70692478527162
+      },
+      {
+        "primary_location": "BFA",
+        "people_in_need": 4400000.0,
+        "funding": 72939948.0,
+        "funding_per_need": 16.57726090909091
+      },
+      {
+        "primary_location": "MMR",
+        "people_in_need": 16229050.0,
+        "funding": 245472134.0,
+        "funding_per_need": 15.125477708183782
+      },
+      {
+        "primary_location": "MLI",
+        "people_in_need": 5100000.0,
+        "funding": 75201041.0,
+        "funding_per_need": 14.745302156862746
+      },
+      {
+        "primary_location": "SDN",
+        "people_in_need": 33699770.0,
+        "funding": 488147337.0,
+        "funding_per_need": 14.48518304427597
+      },
+      {
+        "primary_location": "VEN",
+        "people_in_need": 7900000.0,
+        "funding": 84012783.0,
+        "funding_per_need": 10.634529493670886
+      },
+      {
+        "primary_location": "AFG",
+        "people_in_need": 21889283.0,
+        "funding": 214214587.0,
+        "funding_per_need": 9.786277010535247
+      },
+      {
+        "primary_location": "YEM",
+        "people_in_need": 46200000.0,
+        "funding": 285915387.0,
+        "funding_per_need": 6.188644740259741
+      },
+      {
+        "primary_location": "BGD",
+        "people_in_need": 0.0,
+        "funding": 233087883.0,
+        "funding_per_need": NaN
+      },
+      {
+        "primary_location": "BRA",
+        "people_in_need": 0.0,
+        "funding": 67880713.0,
+        "funding_per_need": NaN
+      },
+      {
+        "primary_location": "JOR",
+        "people_in_need": 0.0,
+        "funding": 107634318.0,
+        "funding_per_need": NaN
+      },
+      {
+        "primary_location": "LBY",
+        "people_in_need": 0.0,
+        "funding": 124214829.0,
+        "funding_per_need": NaN
+      },
+      {
+        "primary_location": "LKA",
+        "people_in_need": 0.0,
+        "funding": 15834857.0,
+        "funding_per_need": NaN
+      },
+      {
+        "primary_location": "PAK",
+        "people_in_need": 0.0,
+        "funding": 11011245.0,
+        "funding_per_need": NaN
+      },
+      {
+        "primary_location": "PSE",
+        "people_in_need": 0.0,
+        "funding": 451836549.0,
+        "funding_per_need": NaN
+      },
+      {
+        "primary_location": "UGA",
+        "people_in_need": 0.0,
+        "funding": 13438960.0,
+        "funding_per_need": NaN
+      },
+      {
+        "primary_location": "VNM",
+        "people_in_need": 0.0,
+        "funding": 3028917.0,
+        "funding_per_need": NaN
+      }
+    ],
+    "by_funding_per_target": [
+      {
+        "primary_location": "UKR",
+        "people_targeted": 4118954.0,
+        "funding": 640227370.0,
+        "funding_per_target": 155.4344549611382
+      },
+      {
+        "primary_location": "NGA",
+        "people_targeted": 2500000.0,
+        "funding": 188766423.0,
+        "funding_per_target": 75.5065692
+      },
+      {
+        "primary_location": "MOZ",
+        "people_targeted": 1745582.0,
+        "funding": 131262552.0,
+        "funding_per_target": 75.19701280146106
+      },
+      {
+        "primary_location": "SSD",
+        "people_targeted": 4343435.0,
+        "funding": 322015249.0,
+        "funding_per_target": 74.13838333024438
+      },
+      {
+        "primary_location": "TCD",
+        "people_targeted": 3352810.0,
+        "funding": 215913333.0,
+        "funding_per_target": 64.39772399867574
+      },
+      {
+        "primary_location": "COD",
+        "people_targeted": 7313763.0,
+        "funding": 430024823.0,
+        "funding_per_target": 58.79665816351993
+      },
+      {
+        "primary_location": "COL",
+        "people_targeted": 2600000.0,
+        "funding": 152365573.0,
+        "funding_per_target": 58.60214346153846
+      },
+      {
+        "primary_location": "MMR",
+        "people_targeted": 4868096.0,
+        "funding": 245472134.0,
+        "funding_per_target": 50.424669932556796
+      },
+      {
+        "primary_location": "SOM",
+        "people_targeted": 2430751.0,
+        "funding": 111250193.0,
+        "funding_per_target": 45.76782772073322
+      },
+      {
+        "primary_location": "SYR",
+        "people_targeted": 10300000.0,
+        "funding": 437301894.0,
+        "funding_per_target": 42.456494563106794
+      },
+      {
+        "primary_location": "NER",
+        "people_targeted": 1600000.0,
+        "funding": 66462854.0,
+        "funding_per_target": 41.53928375
+      },
+      {
+        "primary_location": "HTI",
+        "people_targeted": 4162202.0,
+        "funding": 172057079.0,
+        "funding_per_target": 41.33799344673805
+      },
+      {
+        "primary_location": "CAF",
+        "people_targeted": 1265483.0,
+        "funding": 47355888.0,
+        "funding_per_target": 37.42119649177429
+      },
+      {
+        "primary_location": "CMR",
+        "people_targeted": 1800000.0,
+        "funding": 66498901.0,
+        "funding_per_target": 36.94383388888889
+      },
+      {
+        "primary_location": "SDN",
+        "people_targeted": 20419163.0,
+        "funding": 488147337.0,
+        "funding_per_target": 23.90633430958948
+      },
+      {
+        "primary_location": "BFA",
+        "people_targeted": 3100000.0,
+        "funding": 72939948.0,
+        "funding_per_target": 23.529015483870968
+      },
+      {
+        "primary_location": "MLI",
+        "people_targeted": 3800000.0,
+        "funding": 75201041.0,
+        "funding_per_target": 19.789747631578948
+      },
+      {
+        "primary_location": "VEN",
+        "people_targeted": 5400000.0,
+        "funding": 84012783.0,
+        "funding_per_target": 15.557922777777778
+      },
+      {
+        "primary_location": "YEM",
+        "people_targeted": 21000000.0,
+        "funding": 285915387.0,
+        "funding_per_target": 13.615018428571428
+      },
+      {
+        "primary_location": "AFG",
+        "people_targeted": 17479657.0,
+        "funding": 214214587.0,
+        "funding_per_target": 12.25507954761355
+      },
+      {
+        "primary_location": "BGD",
+        "people_targeted": 0.0,
+        "funding": 233087883.0,
+        "funding_per_target": NaN
+      },
+      {
+        "primary_location": "BRA",
+        "people_targeted": 0.0,
+        "funding": 67880713.0,
+        "funding_per_target": NaN
+      },
+      {
+        "primary_location": "JOR",
+        "people_targeted": 0.0,
+        "funding": 107634318.0,
+        "funding_per_target": NaN
+      },
+      {
+        "primary_location": "LBY",
+        "people_targeted": 0.0,
+        "funding": 124214829.0,
+        "funding_per_target": NaN
+      },
+      {
+        "primary_location": "LKA",
+        "people_targeted": 0.0,
+        "funding": 15834857.0,
+        "funding_per_target": NaN
+      },
+      {
+        "primary_location": "PAK",
+        "people_targeted": 0.0,
+        "funding": 11011245.0,
+        "funding_per_target": NaN
+      },
+      {
+        "primary_location": "PSE",
+        "people_targeted": 0.0,
+        "funding": 451836549.0,
+        "funding_per_target": NaN
+      },
+      {
+        "primary_location": "UGA",
+        "people_targeted": 0.0,
+        "funding": 13438960.0,
+        "funding_per_target": NaN
+      },
+      {
+        "primary_location": "VNM",
+        "people_targeted": 0.0,
+        "funding": 3028917.0,
+        "funding_per_target": NaN
+      }
+    ],
+    "by_gap_per_person": [
+      {
+        "primary_location": "NER",
+        "people_in_need": 2600000.0,
+        "funding_gap": 609156735.0,
+        "gap_per_person": 234.29105192307694
+      },
+      {
+        "primary_location": "MOZ",
+        "people_in_need": 2356162.0,
+        "funding_gap": 403080032.0,
+        "gap_per_person": 171.07483780826615
+      },
+      {
+        "primary_location": "TCD",
+        "people_in_need": 4509014.0,
+        "funding_gap": 770156294.0,
+        "gap_per_person": 170.80370431318244
+      },
+      {
+        "primary_location": "SOM",
+        "people_in_need": 4796040.0,
+        "funding_gap": 740749807.0,
+        "gap_per_person": 154.4502979541455
+      },
+      {
+        "primary_location": "UKR",
+        "people_in_need": 10849697.0,
+        "funding_gap": 1663734605.0,
+        "gap_per_person": 153.34387725297768
+      },
+      {
+        "primary_location": "SYR",
+        "people_in_need": 16500000.0,
+        "funding_gap": 2484882936.0,
+        "gap_per_person": 150.59896581818182
+      },
+      {
+        "primary_location": "BFA",
+        "people_in_need": 4400000.0,
+        "funding_gap": 585546411.0,
+        "gap_per_person": 133.07872977272729
+      },
+      {
+        "primary_location": "SSD",
+        "people_in_need": 9913863.0,
+        "funding_gap": 1141030807.0,
+        "gap_per_person": 115.09446993568501
+      },
+      {
+        "primary_location": "HTI",
+        "people_in_need": 6414193.0,
+        "funding_gap": 708270347.0,
+        "gap_per_person": 110.42236287557921
+      },
+      {
+        "primary_location": "MLI",
+        "people_in_need": 5100000.0,
+        "funding_gap": 502665371.0,
+        "gap_per_person": 98.56183745098039
+      },
+      {
+        "primary_location": "CAF",
+        "people_in_need": 2286959.0,
+        "funding_gap": 216741500.0,
+        "gap_per_person": 94.77279653898474
+      },
+      {
+        "primary_location": "CMR",
+        "people_in_need": 2900000.0,
+        "funding_gap": 252477320.0,
+        "gap_per_person": 87.0611448275862
+      },
+      {
+        "primary_location": "SDN",
+        "people_in_need": 33699770.0,
+        "funding_gap": 2378081256.0,
+        "gap_per_person": 70.56669098928569
+      },
+      {
+        "primary_location": "VEN",
+        "people_in_need": 7900000.0,
+        "funding_gap": 548179189.0,
+        "gap_per_person": 69.38977075949367
+      },
+      {
+        "primary_location": "AFG",
+        "people_in_need": 21889283.0,
+        "funding_gap": 1499966909.0,
+        "gap_per_person": 68.525173209191
+      },
+      {
+        "primary_location": "COD",
+        "people_in_need": 14940727.0,
+        "funding_gap": 973696895.0,
+        "gap_per_person": 65.17065033046919
+      },
+      {
+        "primary_location": "NGA",
+        "people_in_need": 5900000.0,
+        "funding_gap": 327633000.0,
+        "gap_per_person": 55.531016949152544
+      },
+      {
+        "primary_location": "YEM",
+        "people_in_need": 46200000.0,
+        "funding_gap": 1876647949.0,
+        "gap_per_person": 40.620085476190475
+      },
+      {
+        "primary_location": "MMR",
+        "people_in_need": 16229050.0,
+        "funding_gap": 644128664.0,
+        "gap_per_person": 39.68985639948118
+      },
+      {
+        "primary_location": "COL",
+        "people_in_need": 6900000.0,
+        "funding_gap": 134600794.0,
+        "gap_per_person": 19.50736144927536
+      },
+      {
+        "primary_location": "BGD",
+        "people_in_need": 0.0,
+        "funding_gap": 465287383.0,
+        "gap_per_person": NaN
+      },
+      {
+        "primary_location": "BRA",
+        "people_in_need": 0.0,
+        "funding_gap": 669592309.0,
+        "gap_per_person": NaN
+      },
+      {
+        "primary_location": "JOR",
+        "people_in_need": 0.0,
+        "funding_gap": -107634318.0,
+        "gap_per_person": NaN
+      },
+      {
+        "primary_location": "LBY",
+        "people_in_need": 0.0,
+        "funding_gap": -124214829.0,
+        "gap_per_person": NaN
+      },
+      {
+        "primary_location": "LKA",
+        "people_in_need": 0.0,
+        "funding_gap": 19465143.0,
+        "gap_per_person": NaN
+      },
+      {
+        "primary_location": "PAK",
+        "people_in_need": 0.0,
+        "funding_gap": 53932664.0,
+        "gap_per_person": NaN
+      },
+      {
+        "primary_location": "PSE",
+        "people_in_need": 0.0,
+        "funding_gap": 3612469259.0,
+        "gap_per_person": NaN
+      },
+      {
+        "primary_location": "UGA",
+        "people_in_need": 0.0,
+        "funding_gap": 815261040.0,
+        "gap_per_person": NaN
+      },
+      {
+        "primary_location": "VNM",
+        "people_in_need": 0.0,
+        "funding_gap": 58103449.0,
+        "gap_per_person": NaN
+      }
+    ],
+    "by_reached_ratio": [
+      {
+        "primary_location": "AFG",
+        "people_reached": 0.0,
+        "people_in_need": 21889283.0,
+        "reached_ratio": 0.0
+      },
+      {
+        "primary_location": "BFA",
+        "people_reached": 0.0,
+        "people_in_need": 4400000.0,
+        "reached_ratio": 0.0
+      },
+      {
+        "primary_location": "CAF",
+        "people_reached": 0.0,
+        "people_in_need": 2286959.0,
+        "reached_ratio": 0.0
+      },
+      {
+        "primary_location": "CMR",
+        "people_reached": 0.0,
+        "people_in_need": 2900000.0,
+        "reached_ratio": 0.0
+      },
+      {
+        "primary_location": "COD",
+        "people_reached": 0.0,
+        "people_in_need": 14940727.0,
+        "reached_ratio": 0.0
+      },
+      {
+        "primary_location": "COL",
+        "people_reached": 0.0,
+        "people_in_need": 6900000.0,
+        "reached_ratio": 0.0
+      },
+      {
+        "primary_location": "HTI",
+        "people_reached": 0.0,
+        "people_in_need": 6414193.0,
+        "reached_ratio": 0.0
+      },
+      {
+        "primary_location": "MLI",
+        "people_reached": 0.0,
+        "people_in_need": 5100000.0,
+        "reached_ratio": 0.0
+      },
+      {
+        "primary_location": "MMR",
+        "people_reached": 0.0,
+        "people_in_need": 16229050.0,
+        "reached_ratio": 0.0
+      },
+      {
+        "primary_location": "MOZ",
+        "people_reached": 0.0,
+        "people_in_need": 2356162.0,
+        "reached_ratio": 0.0
+      },
+      {
+        "primary_location": "NER",
+        "people_reached": 0.0,
+        "people_in_need": 2600000.0,
+        "reached_ratio": 0.0
+      },
+      {
+        "primary_location": "NGA",
+        "people_reached": 0.0,
+        "people_in_need": 5900000.0,
+        "reached_ratio": 0.0
+      },
+      {
+        "primary_location": "SDN",
+        "people_reached": 0.0,
+        "people_in_need": 33699770.0,
+        "reached_ratio": 0.0
+      },
+      {
+        "primary_location": "SOM",
+        "people_reached": 0.0,
+        "people_in_need": 4796040.0,
+        "reached_ratio": 0.0
+      },
+      {
+        "primary_location": "SSD",
+        "people_reached": 0.0,
+        "people_in_need": 9913863.0,
+        "reached_ratio": 0.0
+      },
+      {
+        "primary_location": "SYR",
+        "people_reached": 0.0,
+        "people_in_need": 16500000.0,
+        "reached_ratio": 0.0
+      },
+      {
+        "primary_location": "TCD",
+        "people_reached": 0.0,
+        "people_in_need": 4509014.0,
+        "reached_ratio": 0.0
+      },
+      {
+        "primary_location": "UKR",
+        "people_reached": 0.0,
+        "people_in_need": 10849697.0,
+        "reached_ratio": 0.0
+      },
+      {
+        "primary_location": "VEN",
+        "people_reached": 0.0,
+        "people_in_need": 7900000.0,
+        "reached_ratio": 0.0
+      },
+      {
+        "primary_location": "YEM",
+        "people_reached": 0.0,
+        "people_in_need": 46200000.0,
+        "reached_ratio": 0.0
+      },
+      {
+        "primary_location": "BGD",
+        "people_reached": 0.0,
+        "people_in_need": 0.0,
+        "reached_ratio": NaN
+      },
+      {
+        "primary_location": "BRA",
+        "people_reached": 0.0,
+        "people_in_need": 0.0,
+        "reached_ratio": NaN
+      },
+      {
+        "primary_location": "JOR",
+        "people_reached": 0.0,
+        "people_in_need": 0.0,
+        "reached_ratio": NaN
+      },
+      {
+        "primary_location": "LBY",
+        "people_reached": 0.0,
+        "people_in_need": 0.0,
+        "reached_ratio": NaN
+      },
+      {
+        "primary_location": "LKA",
+        "people_reached": 0.0,
+        "people_in_need": 0.0,
+        "reached_ratio": NaN
+      },
+      {
+        "primary_location": "PAK",
+        "people_reached": 0.0,
+        "people_in_need": 0.0,
+        "reached_ratio": NaN
+      },
+      {
+        "primary_location": "PSE",
+        "people_reached": 0.0,
+        "people_in_need": 0.0,
+        "reached_ratio": NaN
+      },
+      {
+        "primary_location": "UGA",
+        "people_reached": 0.0,
+        "people_in_need": 0.0,
+        "reached_ratio": NaN
+      },
+      {
+        "primary_location": "VNM",
+        "people_reached": 0.0,
+        "people_in_need": 0.0,
+        "reached_ratio": NaN
+      }
     ]
   },
   "category_rankings": {
@@ -3026,6 +5834,94 @@
         "category": "other",
         "people_in_need": 0.0,
         "people_targeted": 2243947.0
+      }
+    ],
+    "by_category_coverage": [
+      {
+        "category": "food_security",
+        "people_in_need": 93368632.0,
+        "people_targeted": 45079354.0,
+        "coverage_ratio": 0.4828104796480257
+      },
+      {
+        "category": "hygiene",
+        "people_in_need": 33341325.0,
+        "people_targeted": 14685473.0,
+        "coverage_ratio": 0.4404585900530348
+      },
+      {
+        "category": "health",
+        "people_in_need": 59648869.0,
+        "people_targeted": 25380163.0,
+        "coverage_ratio": 0.42549277841294864
+      },
+      {
+        "category": "camp_coordination_and_camp_management",
+        "people_in_need": 7109805.0,
+        "people_targeted": 2908800.0,
+        "coverage_ratio": 0.4091251447824518
+      },
+      {
+        "category": "protection",
+        "people_in_need": 49311068.0,
+        "people_targeted": 18842073.0,
+        "coverage_ratio": 0.38210636605964404
+      },
+      {
+        "category": "education",
+        "people_in_need": 25397687.0,
+        "people_targeted": 7176367.0,
+        "coverage_ratio": 0.2825598646049934
+      },
+      {
+        "category": "other",
+        "people_in_need": 0.0,
+        "people_targeted": 2243947.0,
+        "coverage_ratio": NaN
+      }
+    ],
+    "by_category_gap": [
+      {
+        "category": "education",
+        "people_in_need": 25397687.0,
+        "people_targeted": 7176367.0,
+        "unmet_need_ratio": 0.7174401353950066
+      },
+      {
+        "category": "protection",
+        "people_in_need": 49311068.0,
+        "people_targeted": 18842073.0,
+        "unmet_need_ratio": 0.6178936339403559
+      },
+      {
+        "category": "camp_coordination_and_camp_management",
+        "people_in_need": 7109805.0,
+        "people_targeted": 2908800.0,
+        "unmet_need_ratio": 0.5908748552175481
+      },
+      {
+        "category": "health",
+        "people_in_need": 59648869.0,
+        "people_targeted": 25380163.0,
+        "unmet_need_ratio": 0.5745072215870514
+      },
+      {
+        "category": "hygiene",
+        "people_in_need": 33341325.0,
+        "people_targeted": 14685473.0,
+        "unmet_need_ratio": 0.5595414099469652
+      },
+      {
+        "category": "food_security",
+        "people_in_need": 93368632.0,
+        "people_targeted": 45079354.0,
+        "unmet_need_ratio": 0.5171895203519743
+      },
+      {
+        "category": "other",
+        "people_in_need": 0.0,
+        "people_targeted": 2243947.0,
+        "unmet_need_ratio": NaN
       }
     ]
   }
