@@ -21,6 +21,9 @@
             width: max-content;
             max-width: min(70vw, 560px);
         }
+        #nlp-send-btn .loading-spinner { display: none; }
+        #nlp-send-btn.htmx-request .send-label { display: none; }
+        #nlp-send-btn.htmx-request .loading-spinner { display: inline-flex; }
     </style>
 </head>
 <body class="bg-gray-100 overflow-hidden h-screen flex flex-col">
@@ -52,11 +55,17 @@
                            class="flex-grow border border-blue-200 bg-blue-50/30 rounded-lg px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-400 transition-all font-medium italic"
                            onkeydown="if(event.key==='Enter') document.getElementById('nlp-send-btn').click()">
                     <button id="nlp-send-btn"
-                            class="bg-blue-600 hover:bg-blue-700 text-white text-xs font-bold px-6 py-2.5 rounded-lg transition-all shadow-sm uppercase tracking-widest"
+                            class="bg-blue-600 hover:bg-blue-700 text-white text-xs font-bold px-6 py-2.5 rounded-lg transition-all shadow-sm uppercase tracking-widest inline-flex items-center justify-center min-w-[92px]"
                             hx-post="/nlp-query"
                             hx-target="#active-filters"
                             hx-include="#nlp-query-input">
-                        SEND
+                        <span class="send-label">SEND</span>
+                        <span class="loading-spinner items-center justify-center" aria-label="Loading" role="status">
+                            <svg class="w-4 h-4 animate-spin" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                                <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="3"></circle>
+                                <path class="opacity-90" fill="currentColor" d="M12 2a10 10 0 0 1 10 10h-3a7 7 0 0 0-7-7V2z"></path>
+                            </svg>
+                        </span>
                     </button>
                 </div>
             </div>

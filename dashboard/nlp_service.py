@@ -132,7 +132,7 @@ class QueryParser:
             "Always use the `apply_filters` tool to output the structured data. "
             "IMPORTANT RULES:\n"
             "1. Pay strict attention to the data types. If a value is missing or unknown, omit the field or return a literal JSON null.\n"
-            "2. For numeric filters, infer the correct operator ('eq', 'gt', 'lt', 'gte', 'lte'). E.g., 'more than 10%' -> 'gt', 'less than 5' -> 'lt'.\n"
+            "2. For numeric filters, infer the correct operator ('eq', 'gt', 'lt', 'gte', 'lte'). Use your judgment on when equality is actually desired. E.g., 'more than 10%' -> 'gte', 'less than 5' -> 'lt'.\n"
             "3. For list/enum filters, if the query implies negation (e.g., 'outside of the Middle East', 'excluding Sudan'), use the EXACT location/item mentioned and set the 'exclude' field to true. Do NOT try to list all the other alternatives.\n"
             "4. For geographic locations, output standard ISO-3 codes for specific countries (e.g. 'SDN', 'HTI'). If a broad region is mentioned, output a list of plausible ISO-3 country codes for that region instead of the region label itself.\n"
             "5. If the query asks to sort or rank results (e.g., 'highest', 'lowest', 'most underfunded'), set the 'order_by' field with the correct 'field' and 'direction' ('asc' or 'desc')."
