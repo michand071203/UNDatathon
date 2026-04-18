@@ -65,8 +65,7 @@
         <!-- Active NLP Filters Display Area -->
         <div class="px-6 py-2 bg-gray-50/50">
             <div id="active-filters" class="w-full max-w-7xl mx-auto min-h-[32px] flex items-center">
-                <!-- HTMX will inject filter_chips.html here -->
-                <span class="text-xs italic text-gray-400">Filters will appear here when applied.</span>
+                {% include "filter_chips.html" %}
             </div>
         </div>
     </section>
@@ -269,6 +268,58 @@
             if (card) {
                 updateSelection(card.dataset.crisisId);
             }
+        });
+
+        function parseFiltersJson() {
+            const filtersInput = document.getElementById('hidden-filters-input');
+            if (!filtersInput || !filtersInput.value) return {};
+            try {
+                return JSON.parse(filtersInput.value);
+            } catch {
+                return {};
+            }
+        }
+
+        function writeFiltersJson(nextFilters) {
+            const filtersInput = document.getElementById('hidden-filters-input');
+            if (!filtersInput) return;
+            filtersInput.value = JSON.stringify(nextFilters);
+            document.body.dispatchEvent(new CustomEvent('filters-changed'));
+        }
+
+        document.body.addEventListener('change', function(e) {
+            if (e.target.id !== 'sort-field-select') return;
+
+            const nextFilters = parseFiltersJson();
+            const sortField = e.target.value;
+            const directionToggle = document.getElementById('sort-direction-toggle');
+            const sortDirection = directionToggle ? (directionToggle.dataset.direction || 'desc') : 'desc';
+
+            if (!sortField) {
+                delete nextFilters.order_by;
+                writeFiltersJson(nextFilters);
+                return;
+            }
+
+            nextFilters.order_by = { field: sortField, direction: sortDirection };
+            writeFiltersJson(nextFilters);
+        });
+
+        document.body.addEventListener('click', function(e) {
+            if (e.target.id !== 'sort-direction-toggle') return;
+
+            const nextDirection = e.target.dataset.direction === 'asc' ? 'desc' : 'asc';
+            e.target.dataset.direction = nextDirection;
+            e.target.textContent = nextDirection.toUpperCase();
+
+            const fieldSelect = document.getElementById('sort-field-select');
+            if (!fieldSelect || !fieldSelect.value) {
+                return;
+            }
+
+            const nextFilters = parseFiltersJson();
+            nextFilters.order_by = { field: fieldSelect.value, direction: nextDirection };
+            writeFiltersJson(nextFilters);
         });
     </script>
 </body>

@@ -1,22 +1,40 @@
-<div class="flex flex-wrap gap-2 items-center w-full">
-    <span class="text-xs font-bold text-gray-400 uppercase mr-1">Active Filters:</span>
-    {% for chip in chips %}
-    <div class="flex items-center bg-blue-100 text-blue-700 px-3 py-1 rounded-full text-xs font-semibold border border-blue-200 shadow-sm animate-in fade-in slide-in-from-left-2 duration-300">
-        {{ chip }}
-    </div>
-    {% endfor %}
-    
-    {% if not chips %}
-    <span class="text-xs italic text-gray-400">None</span>
-    {% endif %}
+<div class="w-full flex items-center justify-between gap-4">
+    <div class="flex flex-wrap gap-2 items-center min-h-[32px]">
+        <span class="text-xs font-bold text-gray-400 uppercase mr-1">Active Filters:</span>
+        {% for chip in chips %}
+        <div class="flex items-center bg-blue-100 text-blue-700 px-3 py-1 rounded-full text-xs font-semibold border border-blue-200 shadow-sm animate-in fade-in slide-in-from-left-2 duration-300">
+            {{ chip }}
+        </div>
+        {% endfor %}
 
-    <button hx-post="/nlp-query" 
-            hx-vals='{"query": ""}' 
-            hx-target="#active-filters" 
-            onclick="document.getElementById('nlp-query-input').value = ''"
-            class="text-xs text-red-500 hover:text-red-700 ml-auto font-bold uppercase tracking-tighter transition-colors">
-        Reset
-    </button>
-    
+        {% if not chips %}
+        <span class="text-xs italic text-gray-400">None</span>
+        {% endif %}
+
+        <button hx-post="/nlp-query"
+                hx-vals='js:{query: "", preserve_sort: true, current_filters: document.getElementById("hidden-filters-input")?.value || "{}"}'
+                hx-target="#active-filters"
+                onclick="document.getElementById('nlp-query-input').value = ''"
+                class="text-xs text-red-500 hover:text-red-700 font-bold uppercase tracking-tighter transition-colors ml-2">
+            Reset
+        </button>
+    </div>
+
+    <div class="flex items-center gap-2 shrink-0">
+        <span class="text-xs font-bold text-gray-400 uppercase">Sort</span>
+        <select id="sort-field-select" class="border border-gray-300 rounded-md px-2 py-1 text-xs bg-white">
+            <option value="">None</option>
+            {% for option in sort_field_options %}
+            <option value="{{ option.value }}" {% if option.value == selected_sort_field %}selected{% endif %}>{{ option.label }}</option>
+            {% endfor %}
+        </select>
+        <button id="sort-direction-toggle"
+                type="button"
+                data-direction="{{ selected_sort_direction }}"
+                class="px-3 py-1 text-xs font-bold rounded-md border border-gray-300 bg-white hover:bg-gray-50 transition-colors min-w-[58px]">
+            {{ selected_sort_direction | upper }}
+        </button>
+    </div>
+
     <input type="hidden" name="filters" value='{{ filters_json }}' id="hidden-filters-input">
 </div>

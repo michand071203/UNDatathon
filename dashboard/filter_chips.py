@@ -8,24 +8,22 @@ from nlp_service import (
     EnumCondition,
     OrderCondition,
 )
-
-FIELD_LABELS = {
-    "people_in_need": "PIN",
-    "funding_coverage_percentage": "Funding",
-    "crisis_type": "Crisis Type",
-}
+from field_labels import FIELD_LABELS
 
 OPERATOR_DISPLAY = {
     "eq": "=",
     "gt": ">",
     "lt": "<",
-    "gte": ">=",
-    "lte": "<=",
+    "gte": "≥",
+    "lte": "≤",
 }
 
 
 def _field_label(field_name: str) -> str:
-    return FIELD_LABELS.get(field_name, field_name.replace("_", " ").title())
+    field_labels = FIELD_LABELS.get(field_name)
+    if field_labels:
+        return field_labels["short"]
+    return field_name.replace("_", " ").title()
 
 
 def _format_numeric_value(field_name: str, value: float) -> str:

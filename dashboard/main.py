@@ -13,6 +13,7 @@ from fastapi.templating import Jinja2Templates
 from typing import Optional, List, Any
 from dotenv import load_dotenv
 from filter_chips import build_filter_chips
+from field_labels import FIELD_LABELS
 
 load_dotenv()
 
@@ -35,7 +36,22 @@ FIELD_MAP = {
     "crisis_type": []
 }
 
-CHIP_FIELD_ORDER = list(FIELD_MAP.keys()) + ["order_by"]
+CHIP_FIELD_ORDER = list(FIELD_MAP.keys())
+
+SORT_FIELDS = [
+    "people_in_need",
+    "funding_coverage_percentage",
+    "funding_required_usd",
+    "funding_received_usd",
+]
+
+SORT_FIELD_OPTIONS = [
+    {
+        "value": field_name,
+        "label": FIELD_LABELS.get(field_name, {}).get("long", field_name.replace("_", " ").title()),
+    }
+    for field_name in SORT_FIELDS
+]
 
 def get_nested_value(data: dict, path: List[str]) -> Any:
     """Safely retrieves a value from a nested dictionary given a path list."""
@@ -161,23 +177,52 @@ def apply_advanced_filters(data: List[dict], filters: Optional[QueryFilter]) -> 
 
 @app.get("/", response_class=HTMLResponse)
 async def get_index(request: Request):
-    return templates.TemplateResponse(request=request, name="index.html")
+    return templates.TemplateResponse(
+        request=request,
+        name="index.html",
+        context={
+            "chips": [],
+            "filters_json": QueryFilter().model_dump_json(),
+            "sort_field_options": SORT_FIELD_OPTIONS,
+            "selected_sort_field": "",
+            "selected_sort_direction": "desc",
+        },
+    )
 
 @app.post("/nlp-query", response_class=HTMLResponse)
-async def post_nlp_query(request: Request, query: Optional[str] = Form(None)):
+async def post_nlp_query(
+    request: Request,
+    query: Optional[str] = Form(None),
+    current_filters: Optional[str] = Form(None),
+    preserve_sort: bool = Form(False),
+):
     # Handle empty or missing query safely
     if not query:
         parsed_filter = QueryFilter()
+        if preserve_sort and current_filters:
+            try:
+                existing_filter = QueryFilter.model_validate_json(current_filters)
+                parsed_filter.order_by = existing_filter.order_by
+            except:
+                pass
     else:
         parsed_filter = nlp_parser.parse_query(query)
     
     chips = build_filter_chips(parsed_filter, CHIP_FIELD_ORDER)
+    selected_sort_field = parsed_filter.order_by.field if parsed_filter.order_by else ""
+    selected_sort_direction = parsed_filter.order_by.direction.value if parsed_filter.order_by else "desc"
 
     # Trigger a refresh AFTER the DOM has been updated with the new filter JSON
     response = templates.TemplateResponse(
         request=request, 
         name="filter_chips.html", 
-        context={"chips": chips, "filters_json": parsed_filter.model_dump_json()}
+        context={
+            "chips": chips,
+            "filters_json": parsed_filter.model_dump_json(),
+            "sort_field_options": SORT_FIELD_OPTIONS,
+            "selected_sort_field": selected_sort_field,
+            "selected_sort_direction": selected_sort_direction,
+        }
     )
     response.headers["HX-Trigger-After-Swap"] = "filters-changed"
     return response
