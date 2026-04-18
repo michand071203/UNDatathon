@@ -171,8 +171,66 @@
             return `$${Number(value).toLocaleString()}`;
         }
 
+        const fundingHoverLinePlugin = {
+            id: 'fundingHoverLine',
+            beforeEvent(chart, args) {
+                const event = args?.event;
+                if (!event) return;
+
+                const directHoverElements = chart.getElementsAtEventForMode(
+                    event,
+                    'nearest',
+                    { intersect: true },
+                    false,
+                );
+
+                if (directHoverElements.length > 0) {
+                    chart.$fundingHoverState = {
+                        direct: true,
+                        datasetIndex: directHoverElements[0].datasetIndex,
+                    };
+                    return;
+                }
+
+                chart.$fundingHoverState = {
+                    direct: false,
+                    datasetIndex: null,
+                };
+            },
+            afterDatasetsDraw(chart, _args, pluginOptions) {
+                const activeElements = chart.tooltip?.getActiveElements?.() || [];
+                if (!activeElements.length) return;
+
+                const { ctx, chartArea } = chart;
+                const x = activeElements[0].element.x;
+
+                ctx.save();
+                ctx.beginPath();
+                ctx.moveTo(x, chartArea.top);
+                ctx.lineTo(x, chartArea.bottom);
+                ctx.lineWidth = 1;
+                ctx.setLineDash(pluginOptions?.dash || [4, 4]);
+                ctx.strokeStyle = pluginOptions?.color || 'rgba(37, 99, 235, 0.6)';
+                ctx.stroke();
+                ctx.restore();
+            },
+        };
+
         function initFundingLineCharts(root = document) {
             if (typeof Chart === 'undefined') return;
+
+            if (Chart.Tooltip?.positioners && !Chart.Tooltip.positioners.fundingBluePoint) {
+                Chart.Tooltip.positioners.fundingBluePoint = function(items, eventPosition) {
+                    const hoverState = this.chart?.$fundingHoverState || { direct: false };
+                    if (!hoverState.direct) {
+                        const blueItem = items.find((item) => item.datasetIndex === 0);
+                        if (blueItem?.element) {
+                            return { x: blueItem.element.x, y: blueItem.element.y };
+                        }
+                    }
+                    return Chart.Tooltip.positioners.nearest.call(this, items, eventPosition);
+                };
+            }
 
             const canvases = root.querySelectorAll('canvas.funding-line-chart');
             canvases.forEach((canvas) => {
@@ -195,6 +253,7 @@
 
                 canvas._fundingChartInstance = new Chart(ctx, {
                     type: 'line',
+                    plugins: [fundingHoverLinePlugin],
                     data: {
                         labels: years,
                         datasets: [
@@ -228,6 +287,10 @@
                     options: {
                         responsive: true,
                         maintainAspectRatio: false,
+                        interaction: {
+                            mode: 'index',
+                            intersect: false,
+                        },
                         scales: {
                             y: {
                                 min: 0,
@@ -245,23 +308,46 @@
                             },
                         },
                         plugins: {
+                            fundingHoverLine: {
+                                color: 'rgba(37, 99, 235, 0.55)',
+                                dash: [5, 4],
+                            },
                             legend: { display: false },
                             tooltip: {
+                                position: 'fundingBluePoint',
+                                filter: (item) => {
+                                    const hoverState = item.chart?.$fundingHoverState || { direct: false, datasetIndex: null };
+                                    if (hoverState.direct && hoverState.datasetIndex !== null) {
+                                        return item.datasetIndex === hoverState.datasetIndex;
+                                    }
+                                    return item.datasetIndex === 0;
+                                },
                                 callbacks: {
-                                    title: (items) => `Year ${items[0].label}`,
+                                    title: (items) => {
+                                        const hoverState = items?.[0]?.chart?.$fundingHoverState || { direct: false };
+                                        if (!hoverState.direct) return '';
+                                        return `Year ${items[0].label}`;
+                                    },
                                     label: (context) => {
+                                        const hoverState = context.chart?.$fundingHoverState || { direct: false };
                                         const idx = context.dataIndex;
                                         const pct = context.parsed.y;
-                                        const pctText = pct === null || pct === undefined ? 'N/A' : `${pct.toFixed(1)}% funded`;
+                                        const pctText = pct === null || pct === undefined ? 'N/A' : `${pct.toFixed(1)}%`;
+                                        if (!hoverState.direct) {
+                                            return pctText;
+                                        }
                                         if (context.dataset.label === 'Year Avg %') {
                                             return [
                                                 `Year benchmark: ${pctText}`,
-                                                'Weighted average funding coverage across all projects in this year.',
+                                                'Weighted average funding',
+                                                'coverage across all projects',
+                                                'in this year.',
                                             ];
                                         }
+                                        const coverageText = `Coverage: ${pctText}`;
                                         const fundingText = `Funding: ${formatCompactUsd(funding[idx])}`;
                                         const reqText = `Requirements: ${formatCompactUsd(requirements[idx])}`;
-                                        return [pctText, fundingText, reqText];
+                                        return [coverageText, fundingText, reqText];
                                     },
                                 },
                             },
