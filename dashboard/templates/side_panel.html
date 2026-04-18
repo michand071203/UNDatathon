@@ -30,7 +30,15 @@
                     </div>
                     <div class="bg-gray-50 p-4 rounded-lg border border-gray-100">
                         <div class="text-xs text-gray-500 uppercase font-semibold">Funded</div>
-                        <div class="text-lg font-bold text-gray-800 mt-1">{% if crisis.percent_funded is not none %}{{ crisis.percent_funded }}%{% else %}Unknown{% endif %}</div>
+                        <div class="text-lg font-bold text-gray-800 mt-1">
+                            {% if crisis.percent_funded is not none %}
+                                <span {% if crisis.coverage_projected %}class="italic cursor-help" data-hover-tooltip="Projected requirement: previous year's requirements minus previous year's funding." tabindex="0"{% endif %}>
+                                    {{ crisis.percent_funded }}%{% if crisis.coverage_projected %}<sup aria-hidden="true">*</sup>{% endif %}
+                                </span>
+                            {% else %}
+                                Unknown
+                            {% endif %}
+                        </div>
                     </div>
                 </div>
             </div>
@@ -44,7 +52,15 @@
                     <tbody class="divide-y divide-gray-100 bg-white">
                         <tr class="hover:bg-gray-50 transition-colors">
                             <td class="px-6 py-4 whitespace-nowrap text-sm font-bold text-gray-600 bg-gray-50/50 w-1/3">Requirements</td>
-                            <td class="px-6 py-4 text-sm text-gray-800 font-medium">{% if crisis.requirements %}${{ '{:,}'.format(crisis.requirements | int) }}{% else %}Unknown{% endif %}</td>
+                            <td class="px-6 py-4 text-sm text-gray-800 font-medium">
+                                {% if crisis.requirements is not none %}
+                                    <span {% if crisis.requirements_projected %}class="italic cursor-help" data-hover-tooltip="Projected requirement: previous year's requirements minus previous year's funding." tabindex="0"{% endif %}>
+                                        ${{ '{:,}'.format(crisis.requirements | int) }}{% if crisis.requirements_projected %}<sup aria-hidden="true">*</sup>{% endif %}
+                                    </span>
+                                {% else %}
+                                    Unknown
+                                {% endif %}
+                            </td>
                         </tr>
                         <tr class="hover:bg-gray-50 transition-colors">
                             <td class="px-6 py-4 whitespace-nowrap text-sm font-bold text-gray-600 bg-gray-50/50 w-1/3">Funding Received</td>
@@ -55,7 +71,7 @@
                             <td class="px-6 py-4 text-sm text-gray-800 font-medium">{% if crisis.people_targeted %}{{ '{:,}'.format(crisis.people_targeted | int) }}{% else %}Unknown{% endif %}</td>
                         </tr>
                         <tr class="hover:bg-gray-50 transition-colors">
-                            <td class="px-6 py-4 whitespace-nowrap text-sm font-bold text-gray-600 bg-gray-50/50 w-1/3">Contributions</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm font-bold text-gray-600 bg-gray-50/50 w-1/3">Contributors</td>
                             <td class="px-6 py-4 text-sm text-gray-800 font-medium">{{ crisis.contribution_count }}</td>
                         </tr>
                     </tbody>
@@ -107,8 +123,10 @@
                     {% set timeline_years = crisis.funding_timeline | map(attribute='year') | list %}
                     {% set timeline_pct = crisis.funding_timeline | map(attribute='percent_funded') | list %}
                     {% set timeline_avg_pct = crisis.funding_timeline | map(attribute='avg_percent_funded') | list %}
+                    {% set timeline_coverage_projected = crisis.funding_timeline | map(attribute='coverage_projected') | list %}
                     {% set timeline_funding = crisis.funding_timeline | map(attribute='funding') | list %}
                     {% set timeline_requirements = crisis.funding_timeline | map(attribute='requirements') | list %}
+                    {% set timeline_requirements_projected = crisis.funding_timeline | map(attribute='requirements_projected') | list %}
                     <div class="border border-gray-100 rounded-lg p-3 bg-gray-50">
                         <div class="h-44">
                             <canvas
@@ -116,8 +134,10 @@
                                 data-years='{{ timeline_years | tojson }}'
                                 data-percentages='{{ timeline_pct | tojson }}'
                                 data-avg-percentages='{{ timeline_avg_pct | tojson }}'
+                                data-coverage-projected='{{ timeline_coverage_projected | tojson }}'
                                 data-funding='{{ timeline_funding | tojson }}'
                                 data-requirements='{{ timeline_requirements | tojson }}'
+                                data-requirements-projected='{{ timeline_requirements_projected | tojson }}'
                                 aria-label="Funding percentage over time"
                                 role="img"></canvas>
                         </div>
@@ -134,7 +154,9 @@
                                 <span>{{ point.year }}</span>
                                 <span>
                                     {% if point.percent_funded is not none %}
-                                        {{ '%.1f'|format(point.percent_funded) }}%
+                                        <span {% if point.coverage_projected %}class="italic cursor-help" data-hover-tooltip="Projected requirement: previous year's requirements minus previous year's funding." tabindex="0"{% endif %}>
+                                            {{ '%.1f'|format(point.percent_funded) }}%{% if point.coverage_projected %}<sup aria-hidden="true">*</sup>{% endif %}
+                                        </span>
                                     {% else %}
                                         N/A
                                     {% endif %}
@@ -159,7 +181,15 @@
                             </div>
                             <div class="mt-1 text-[11px] text-gray-500 flex justify-between">
                                 <span>{% if point.funding %}${{ '{:,.0f}'.format(point.funding) }}{% else %}Unknown funding{% endif %}</span>
-                                <span>{% if point.requirements %}${{ '{:,.0f}'.format(point.requirements) }} req{% else %}Unknown req{% endif %}</span>
+                                <span>
+                                    {% if point.requirements is not none %}
+                                        <span {% if point.requirements_projected %}class="italic cursor-help" data-hover-tooltip="Projected requirement: previous year's requirements minus previous year's funding." tabindex="0"{% endif %}>
+                                            ${{ '{:,.0f}'.format(point.requirements) }} req{% if point.requirements_projected %}<sup aria-hidden="true">*</sup>{% endif %}
+                                        </span>
+                                    {% else %}
+                                        Unknown req
+                                    {% endif %}
+                                </span>
                             </div>
                         </div>
                         {% endfor %}

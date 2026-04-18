@@ -11,6 +11,7 @@ import math
 from fastapi import FastAPI, Request, Query, Form
 from fastapi.responses import HTMLResponse, JSONResponse
 from fastapi.templating import Jinja2Templates
+from fastapi.staticfiles import StaticFiles
 from typing import Optional, List, Any
 from dotenv import load_dotenv
 from filter_chips import build_filter_chips
@@ -23,6 +24,7 @@ app = FastAPI(title="Humanitarian Crisis Dashboard")
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 templates = Jinja2Templates(directory=os.path.join(BASE_DIR, "templates"))
+app.mount("/static", StaticFiles(directory=os.path.join(BASE_DIR, "static")), name="static")
 nlp_parser = QueryParser()
 
 # --- Declarative Configuration ---
@@ -116,6 +118,18 @@ def calculate_radius(people_in_need: int) -> float:
     return min_radius_km + (max_radius_km - min_radius_km) / (1 + math.exp(-(people_in_need - midpoint) / steepness))
 
 
+def _effective_requirements(values: dict) -> tuple[Any, bool]:
+    requirements = values.get("requirements")
+    requirements_last_year = values.get("requirements_last_year")
+    use_projected = (
+        requirements is None
+        or (isinstance(requirements, (int, float)) and float(requirements) == 0.0)
+    ) and requirements_last_year is not None
+    if use_projected:
+        return requirements_last_year, True
+    return requirements, False
+
+
 def _normalize_crisis_record(crisis: dict) -> Optional[dict]:
     # Dashboard expects the all-years schema with a top-level years dictionary.
     if "years" not in crisis or not isinstance(crisis.get("years"), dict):
@@ -139,6 +153,14 @@ def _normalize_crisis_record(crisis: dict) -> Optional[dict]:
     if not location_codes and crisis.get("primary_location_code"):
         location_codes = [crisis.get("primary_location_code")]
     people_2026 = crisis.get("people_2026") or {}
+    year_data_requirements, year_data_requirements_projected = _effective_requirements(year_data)
+    year_data_funding = year_data.get("funding")
+    year_data_percent_funded = year_data.get("percent_funded")
+    year_data_coverage_projected = (
+        year_data_requirements_projected
+        and isinstance(year_data_percent_funded, (int, float))
+    )
+
     funding_timeline = []
     for year_key, values in years.items():
         try:
@@ -146,14 +168,18 @@ def _normalize_crisis_record(crisis: dict) -> Optional[dict]:
         except (TypeError, ValueError):
             continue
 
-        requirements = values.get("requirements")
+        requirements, requirements_projected = _effective_requirements(values)
         funding = values.get("funding")
         if requirements is None and funding is None:
             continue
 
+        percent_funded = values.get("percent_funded")
+        coverage_projected = (
+            requirements_projected and isinstance(percent_funded, (int, float))
+        )
         coverage_ratio = 0.0
-        if isinstance(requirements, (int, float)) and isinstance(funding, (int, float)) and requirements > 0:
-            coverage_ratio = max(0.0, min(float(funding) / float(requirements), 1.0))
+        if isinstance(percent_funded, (int, float)):
+            coverage_ratio = max(0.0, min(float(percent_funded) / 100.0, 1.0))
 
         avg_percent_funded = values.get("avg_percent_funded")
         avg_coverage_ratio = None
@@ -164,9 +190,11 @@ def _normalize_crisis_record(crisis: dict) -> Optional[dict]:
             {
                 "year": year_int,
                 "requirements": requirements,
+                "requirements_projected": requirements_projected,
                 "funding": funding,
-                "percent_funded": values.get("percent_funded"),
+                "percent_funded": percent_funded,
                 "coverage_ratio": coverage_ratio,
+                "coverage_projected": coverage_projected,
                 "avg_percent_funded": avg_percent_funded,
                 "avg_coverage_ratio": avg_coverage_ratio,
             }
@@ -183,9 +211,11 @@ def _normalize_crisis_record(crisis: dict) -> Optional[dict]:
         "primary_location_name": crisis.get("primary_location_name"),
         "location_codes": location_codes,
         "location_names": impacted_countries,
-        "requirements": year_data.get("requirements"),
-        "funding": year_data.get("funding"),
-        "percent_funded": year_data.get("percent_funded"),
+        "requirements": year_data_requirements,
+        "requirements_projected": year_data_requirements_projected,
+        "funding": year_data_funding,
+        "percent_funded": year_data_percent_funded,
+        "coverage_projected": year_data_coverage_projected,
         "contribution_count": year_data.get("contribution_count"),
         "category_breakdown_scored": project_metrics_2026.get("category_breakdown_scored") or [],
         "category_level_score": project_metrics_2026.get("category_level_score"),

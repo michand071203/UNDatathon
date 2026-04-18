@@ -14,6 +14,7 @@
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
     <!-- Chart.js -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="/static/js/hover-tooltips.js" defer></script>
     <style>
         #map { height: calc(100vh - 80px); }
         .tab-content { display: none; }
@@ -252,8 +253,10 @@
                 const avgPercentages = JSON.parse(canvas.dataset.avgPercentages || '[]').map((v) =>
                     v === null || v === undefined ? null : Number(v)
                 );
+                const coverageProjected = JSON.parse(canvas.dataset.coverageProjected || '[]');
                 const funding = JSON.parse(canvas.dataset.funding || '[]');
                 const requirements = JSON.parse(canvas.dataset.requirements || '[]');
+                const requirementsProjected = JSON.parse(canvas.dataset.requirementsProjected || '[]');
 
                 const ctx = canvas.getContext('2d');
                 if (!ctx) return;
@@ -351,9 +354,22 @@
                                                 'in this year.',
                                             ];
                                         }
-                                        const coverageText = `Coverage: ${pctText}`;
+                                        const coverageIsProjected = Boolean(coverageProjected[idx]);
+                                        const coverageSuffix = coverageIsProjected ? '*' : '';
+                                        const coverageText = `Coverage: ${pctText}${coverageSuffix}`;
                                         const fundingText = `Funding: ${formatCompactUsd(funding[idx])}`;
-                                        const reqText = `Requirements: ${formatCompactUsd(requirements[idx])}`;
+                                        const isProjected = Boolean(requirementsProjected[idx]);
+                                        const reqSuffix = isProjected ? '*' : '';
+                                        const reqText = `Requirements: ${formatCompactUsd(requirements[idx])}${reqSuffix}`;
+                                        if (isProjected) {
+                                            return [
+                                                coverageText,
+                                                fundingText,
+                                                reqText,
+                                                "* Projected: previous year's requirements",
+                                                "minus previous year's funding.",
+                                            ];
+                                        }
                                         return [coverageText, fundingText, reqText];
                                     },
                                 },

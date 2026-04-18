@@ -39,7 +39,13 @@
                     <div class="flex flex-col">
                         <span class="text-[9px] font-bold text-gray-400 uppercase tracking-widest mb-0.5">Requirements</span>
                         <span class="text-sm font-bold text-gray-700 whitespace-nowrap">
-                            {% if crisis.requirements %}${{ '{:,}'.format(crisis.requirements | int) }}{% else %}Unknown{% endif %}
+                            {% if crisis.requirements is not none %}
+                                <span {% if crisis.requirements_projected %}class="italic cursor-help" data-hover-tooltip="Projected requirement: previous year's requirements minus previous year's funding." tabindex="0"{% endif %}>
+                                    ${{ '{:,}'.format(crisis.requirements | int) }}{% if crisis.requirements_projected %}<sup aria-hidden="true">*</sup>{% endif %}
+                                </span>
+                            {% else %}
+                                Unknown
+                            {% endif %}
                         </span>
                     </div>
 
@@ -48,7 +54,13 @@
                         <div class="flex justify-between items-center mb-1">
                             <span class="text-[9px] font-bold text-gray-400 uppercase tracking-widest">Coverage</span>
                             <span class="text-[10px] font-bold text-gray-700">
-                                {% if crisis.percent_funded is not none %}{{ crisis.percent_funded }}%{% else %}Unknown{% endif %}
+                                {% if crisis.percent_funded is not none %}
+                                    <span {% if crisis.coverage_projected %}class="italic cursor-help" data-hover-tooltip="Projected requirement: previous year's requirements minus previous year's funding." tabindex="0"{% endif %}>
+                                        {{ crisis.percent_funded }}%{% if crisis.coverage_projected %}<sup aria-hidden="true">*</sup>{% endif %}
+                                    </span>
+                                {% else %}
+                                    Unknown
+                                {% endif %}
                             </span>
                         </div>
                         <div class="w-full bg-gray-100 rounded-full h-1.5 overflow-hidden border border-gray-200/50">
