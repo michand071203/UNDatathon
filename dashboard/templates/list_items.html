@@ -16,32 +16,34 @@
         </div>
 
         <!-- Row 2: Locations and Metrics -->
-        <div class="flex flex-col lg:flex-row lg:items-center gap-4 lg:gap-12 mb-4">
-            <div class="flex items-center gap-8 sm:gap-12 shrink-0">
-                <div class="flex flex-col rounded-lg px-3 py-2 min-w-[112px] border" style="background-color: color-mix(in srgb, {{ crisis.color or '#9ca3af' }} 14%, white); border-color: color-mix(in srgb, {{ crisis.color or '#9ca3af' }} 32%, white);">
-                    <span class="text-[9px] font-bold uppercase tracking-widest mb-0.5" style="color: color-mix(in srgb, {{ crisis.color or '#9ca3af' }} 68%, #1f2937);">Severity Score</span>
-                    <span class="text-base font-extrabold whitespace-nowrap" style="color: color-mix(in srgb, {{ crisis.color or '#9ca3af' }} 78%, #111827);">
-                        {% if crisis.overall_severity_score is not none %}{{ crisis.overall_severity_score | round | int }}{% else %}Unknown{% endif %}
-                    </span>
-                </div>
+        <div class="flex gap-4 mb-4">
+            <!-- Severity Score (Stretches vertically) -->
+            <div class="flex flex-col rounded-lg px-3 py-2 min-w-[100px] border" style="background-color: color-mix(in srgb, {{ crisis.color or '#9ca3af' }} 14%, white); border-color: color-mix(in srgb, {{ crisis.color or '#9ca3af' }} 32%, white);">
+                <span class="text-[9px] font-bold uppercase tracking-widest mb-0.5" style="color: color-mix(in srgb, {{ crisis.color or '#9ca3af' }} 68%, #1f2937);">Severity Score</span>
+                <span class="text-base font-extrabold" style="color: color-mix(in srgb, {{ crisis.color or '#9ca3af' }} 78%, #111827);">
+                    {% if crisis.overall_severity_score is not none %}{{ crisis.overall_severity_score | round | int }}{% else %}Unknown{% endif %}
+                </span>
+            </div>
 
-                <div class="flex flex-col">
+            <!-- Other Metrics (Wrapped) -->
+            <div class="flex flex-wrap gap-x-8 gap-y-4 flex-grow items-start">
+                <div class="flex flex-col min-w-[80px]">
                     <span class="text-[9px] font-bold text-gray-400 uppercase tracking-widest mb-0.5">Location</span>
-                    <span class="text-sm font-bold text-blue-600 whitespace-nowrap">
+                    <span class="text-sm font-bold text-blue-600 truncate">
                         {% if crisis.primary_location_name_display %}{{ crisis.primary_location_name_display }}{% else %}Unknown{% endif %}
                     </span>
                 </div>
 
-                <div class="flex flex-col">
+                <div class="flex flex-col min-w-[80px]">
                     <span class="text-[9px] font-bold text-gray-400 uppercase tracking-widest mb-0.5">In Need</span>
-                    <span class="text-sm font-bold text-blue-600 whitespace-nowrap">
+                    <span class="text-sm font-bold text-blue-600 truncate">
                         {% if crisis.people_in_need %}{{ '{:,}'.format(crisis.people_in_need | int) }}{% else %}Unknown{% endif %}
                     </span>
                 </div>
 
-                <div class="flex flex-col">
+                <div class="flex flex-col min-w-[100px]">
                     <span class="text-[9px] font-bold text-gray-400 uppercase tracking-widest mb-0.5">Requirements</span>
-                    <span class="text-sm font-bold text-gray-700 whitespace-nowrap">
+                    <span class="text-sm font-bold text-gray-700 truncate">
                         {% if crisis.requirements is not none %}
                             <span {% if crisis.requirements_projected %}class="italic cursor-help" data-hover-tooltip="{{ projected_requirement_tooltip }}" tabindex="0"{% endif %}>
                                 ${{ '{:,}'.format(crisis.requirements | int) }}{% if crisis.requirements_projected %}<sup aria-hidden="true">*</sup>{% endif %}
@@ -52,48 +54,48 @@
                     </span>
                 </div>
 
-                <!-- Funding Progress -->
-                <div class="flex flex-col w-32 sm:w-40">
-                    <div class="flex justify-between items-center mb-1">
-                        <span class="text-[9px] font-bold text-gray-400 uppercase tracking-widest">Coverage</span>
-                        <span class="text-[10px] font-bold text-gray-700">
-                            {% if crisis.percent_funded is not none %}
-                                <span {% if crisis.coverage_projected %}class="italic cursor-help" data-hover-tooltip="{{ projected_requirement_tooltip }}" tabindex="0"{% endif %}>
-                                    {{ crisis.percent_funded }}%{% if crisis.coverage_projected %}<sup aria-hidden="true">*</sup>{% endif %}
-                                </span>
-                            {% else %}
-                                Unknown
-                            {% endif %}
-                        </span>
+                <!-- Funding and Underfunding -->
+                <div class="flex gap-4 flex-wrap">
+                    <!-- Coverage Progress -->
+                    <div class="flex flex-col w-32">
+                        <div class="flex justify-between items-center mb-1">
+                            <span class="text-[9px] font-bold text-gray-400 uppercase tracking-widest">Coverage</span>
+                            <span class="text-[10px] font-bold text-gray-700">
+                                {% if crisis.percent_funded is not none %}
+                                    <span {% if crisis.coverage_projected %}class="italic cursor-help" data-hover-tooltip="{{ projected_requirement_tooltip }}" tabindex="0"{% endif %}>
+                                        {{ crisis.percent_funded }}%{% if crisis.coverage_projected %}<sup aria-hidden="true">*</sup>{% endif %}
+                                    </span>
+                                {% else %}
+                                    Unknown
+                                {% endif %}
+                            </span>
+                        </div>
+                        <div class="w-full bg-gray-100 rounded-full h-1.5 overflow-hidden border border-gray-200/50">
+                            <div class="h-full rounded-full transition-all duration-500" style="width: {% if crisis.percent_funded is not none %}{{ crisis.percent_funded }}%{% else %}0%{% endif %}; background-color: {% if crisis.percent_funded is not none %}{{ crisis.color or '#3b82f6' }}{% else %}#9ca3af{% endif %}"></div>
+                        </div>
                     </div>
-                    <div class="w-full bg-gray-100 rounded-full h-1.5 overflow-hidden border border-gray-200/50">
-                        <div class="h-full rounded-full transition-all duration-500" style="width: {% if crisis.percent_funded is not none %}{{ crisis.percent_funded }}%{% else %}0%{% endif %}; background-color: {% if crisis.percent_funded is not none %}{{ crisis.color or '#3b82f6' }}{% else %}#9ca3af{% endif %}"></div>
+
+                    <!-- Underfunding Progress -->
+                    {% if crisis.systematic_underfunding.score is not none %}
+                    {% set u_score = crisis.systematic_underfunding.score %}
+                    <div class="flex flex-col w-32">
+                        <div class="flex justify-between items-center mb-1">
+                            <span class="text-[9px] font-bold text-gray-400 uppercase tracking-widest">Underfunding</span>
+                            <span class="text-[10px] font-bold text-gray-700">{{ u_score|int }}%</span>
+                        </div>
+                        <div class="w-full bg-gray-100 rounded-full h-1.5 overflow-hidden border border-gray-200/50">
+                            <div class="h-full rounded-full transition-all duration-500" style="width: {{ u_score }}%; background-color: {{ calculate_color(u_score) }}"></div>
+                        </div>
                     </div>
+                    {% endif %}
                 </div>
             </div>
         </div>
 
         {% set has_cat_data = (crisis.category_scores.values() | select('defined') | list | length > 0) %}
-        {% if has_cat_data or crisis.systematic_underfunding.score is not none %}
+        {% if has_cat_data %}
         <!-- Row 3: Category Donut Charts -->
         <div class="border-t border-gray-100 pt-4 flex gap-4">
-            <!-- Systematic Underfunding Chart -->
-            {% if crisis.systematic_underfunding.score is not none %}
-                {% set u_score = crisis.systematic_underfunding.score %}
-                <div class="flex flex-col items-center gap-1.5 flex-1">
-                    <div class="relative w-12 h-12">
-                        <svg class="w-full h-full transform -rotate-90" viewBox="0 0 36 36">
-                            <circle cx="18" cy="18" r="15.915" fill="none" stroke="#e5e7eb" stroke-width="3"></circle>
-                            <circle cx="18" cy="18" r="15.915" fill="none" stroke="{{ calculate_color(u_score) }}" stroke-width="3" stroke-dasharray="{{ u_score }}, 100" stroke-linecap="round"></circle>
-                        </svg>
-                        <div class="absolute inset-0 flex items-center justify-center text-[9px] font-bold text-gray-700">
-                            {{ u_score|int }}%
-                        </div>
-                    </div>
-                    <span class="text-[9px] font-bold text-gray-400 uppercase tracking-widest text-center">Systematic Underfunding</span>
-                </div>
-            {% endif %}
-
             {% for cat in ["education", "food_security", "health", "hygiene", "protection"] %}
                 {% set score = crisis.category_scores.get(cat) %}
                 <div class="flex flex-col items-center gap-1.5 flex-1">
