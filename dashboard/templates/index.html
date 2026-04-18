@@ -127,15 +127,15 @@
             data.forEach(crisis => {
                 const baseColor = crisis.color;
                 
-                // radius is calculated dynamically from people_in_need
-                const radiusInMeters = crisis.radius_km * 1000;
+                // Use pixel-based radius so equal values look equal across latitudes.
+                const radiusInPixels = Math.max(4, Math.min(42, crisis.radius_km * 0.12));
 
-                const circle = L.circle([crisis.latitude, crisis.longitude], {
+                const circle = L.circleMarker([crisis.latitude, crisis.longitude], {
                     color: baseColor,
                     fillColor: baseColor,
                     fillOpacity: 0.6,
                     weight: 2,
-                    radius: radiusInMeters
+                    radius: radiusInPixels
                 }).addTo(map);
 
                 // Store reference for selection

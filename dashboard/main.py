@@ -1,6 +1,7 @@
 from nlp_service import QueryParser, QueryFilter
 import json
 import os
+import math
 from fastapi import FastAPI, Request, Query, Form
 from fastapi.responses import HTMLResponse, JSONResponse
 from fastapi.templating import Jinja2Templates
@@ -46,7 +47,14 @@ def calculate_color(funding_coverage: float) -> str:
     return "#facc15"
 
 def calculate_radius(people_in_need: int) -> float:
-    return people_in_need * 0.000025
+    people_in_need = max(0, people_in_need)
+
+    min_radius_km = 30.0
+    max_radius_km = 200.0
+    midpoint = 2_200_000
+    steepness = 1_000_000
+
+    return min_radius_km + (max_radius_km - min_radius_km) / (1 + math.exp(-(people_in_need - midpoint) / steepness))
 
 def get_enriched_data():
     json_path = os.path.join(BASE_DIR, "..", "data", "2026_crisis_summary.json")
