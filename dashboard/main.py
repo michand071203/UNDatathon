@@ -294,6 +294,12 @@ def apply_advanced_filters(data: List[dict], filters: Optional[QueryFilter]) -> 
         if field_name == "locations" and isinstance(condition_obj, ListCondition):
             expanded_values = expand_location_values(condition_obj.values, available_iso3)
             condition_obj = ListCondition(values=expanded_values, exclude=condition_obj.exclude)
+
+        numeric_conditions: Optional[List[NumericCondition]] = None
+        if isinstance(condition_obj, NumericCondition):
+            numeric_conditions = [condition_obj]
+        elif isinstance(condition_obj, list):
+            numeric_conditions = [item for item in condition_obj if isinstance(item, NumericCondition)]
         
         def item_matches(crisis):
             values_to_check = []
@@ -307,9 +313,15 @@ def apply_advanced_filters(data: List[dict], filters: Optional[QueryFilter]) -> 
                     values_to_check.append(val)
 
             if not values_to_check:
-                if isinstance(condition_obj, NumericCondition) and condition_obj.operator in {"gt", "lt", "gte", "lte"}:
+                if numeric_conditions and any(
+                    cond.operator in {"gt", "lt", "gte", "lte"} for cond in numeric_conditions
+                ):
                     return True
                 return False
+
+            if numeric_conditions:
+                # Range-style filters are ANDed across conditions on the same field.
+                return all(any(cond.evaluate(v) for v in values_to_check) for cond in numeric_conditions)
 
             if getattr(condition_obj, "exclude", False):
                 return all(condition_obj.evaluate(v) for v in values_to_check)

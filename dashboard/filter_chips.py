@@ -82,6 +82,13 @@ def build_filter_chips(parsed_filter: QueryFilter, chip_field_order: list[str]) 
                 chips.append(f"{_field_label(field_name)}: {condition}")
             continue
 
+        if isinstance(condition, list):
+            for item in condition:
+                chip = _build_chip(field_name, item)
+                if chip:
+                    chips.append(chip)
+            continue
+
         chip = _build_chip(field_name, condition)
         if chip:
             chips.append(chip)

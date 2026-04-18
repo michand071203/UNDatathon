@@ -257,9 +257,9 @@ class OrderCondition(BaseModel):
 class QueryFilter(BaseModel):
     crisis_name: Optional[StringCondition] = None
     locations: Optional[ListCondition] = None
-    people_in_need: Optional[NumericCondition] = None
-    funding_coverage_percentage: Optional[NumericCondition] = None
-    severity_score: Optional[NumericCondition] = None
+    people_in_need: Optional[NumericCondition | List[NumericCondition]] = None
+    funding_coverage_percentage: Optional[NumericCondition | List[NumericCondition]] = None
+    severity_score: Optional[NumericCondition | List[NumericCondition]] = None
     sectors: Optional[ListCondition] = None
     order_by: Optional[OrderCondition] = None
     limit: Optional[int] = Field(default=None, ge=1)
@@ -290,17 +290,24 @@ class QueryParser:
 
         for field_name in percentage_fields:
             condition = getattr(parsed_filter, field_name, None)
-            if not isinstance(condition, NumericCondition):
+            numeric_conditions: List[NumericCondition] = []
+            if isinstance(condition, NumericCondition):
+                numeric_conditions = [condition]
+            elif isinstance(condition, list):
+                numeric_conditions = [c for c in condition if isinstance(c, NumericCondition)]
+
+            if not numeric_conditions:
                 continue
 
-            value = float(condition.value)
+            for numeric_condition in numeric_conditions:
+                value = float(numeric_condition.value)
 
-            # If the model returned a ratio for an explicit percentage query
-            # (e.g. query 10% -> value 0.1), convert it to percent units.
-            for q_percent in query_percents:
-                if q_percent > 1 and abs(value - (q_percent / 100.0)) < 1e-9:
-                    condition.value = q_percent
-                    break
+                # If the model returned a ratio for an explicit percentage query
+                # (e.g. query 10% -> value 0.1), convert it to percent units.
+                for q_percent in query_percents:
+                    if q_percent > 1 and abs(value - (q_percent / 100.0)) < 1e-9:
+                        numeric_condition.value = q_percent
+                        break
 
         return parsed_filter
 
@@ -322,6 +329,7 @@ class QueryParser:
             "IMPORTANT RULES:\n"
             "1. Pay strict attention to the data types. If a value is missing or unknown, omit the field or return a literal JSON null.\n"
             "2. For numeric filters, infer the correct operator ('eq', 'gt', 'lt', 'gte', 'lte'). Use your judgment on when equality is actually desired. E.g., 'more than 10%' -> 'gte', 'less than 5' -> 'lt'.\n"
+            "2b. If the user asks for a range/between (e.g., 'between 10 and 20'), return an array with TWO numeric conditions for that same field: one lower bound ('gt' or 'gte') and one upper bound ('lt' or 'lte').\n"
             "3. For list/enum filters, if the query implies negation (e.g., 'outside of the Middle East', 'excluding Sudan'), use the EXACT location/item mentioned and set the 'exclude' field to true. Do NOT try to list all the other alternatives.\n"
             f"4. Supported broad region labels are exactly: {self.region_names_text}. If the user requests one of these, output the exact region label text and do NOT expand it into countries.\n"
             "5. If the user names a geographic area that is not in the supported broad-region list, output your best-guess list of ISO-3 country codes for that area.\n"
