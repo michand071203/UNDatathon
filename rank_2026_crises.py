@@ -57,6 +57,10 @@ def compute_rankings(df):
     # Compute gap for each plan
     df["funding_gap"] = df["requirements"] - df["funding"]
 
+    # Compute relative metrics
+    df["coverage_ratio"] = df["people_targeted"] / df["people_in_need"]
+    df.loc[df["people_in_need"] == 0, "coverage_ratio"] = None
+
     # Add an overall rank score from each plan ranking category
     df["rank_funding_gap"] = df["funding_gap"].rank(method="dense", ascending=False)
     df["rank_requirements"] = df["requirements"].rank(method="dense", ascending=False)
@@ -67,6 +71,9 @@ def compute_rankings(df):
     df["rank_people_in_need"] = df["people_in_need"].rank(
         method="dense", ascending=False, na_option="bottom"
     )
+    df["rank_coverage_ratio"] = df["coverage_ratio"].rank(
+        method="dense", ascending=False, na_option="bottom"
+    )
     df["overall_rank_score"] = (
         df[
             [
@@ -75,6 +82,7 @@ def compute_rankings(df):
                 "rank_funding",
                 "rank_percent_funded",
                 "rank_people_in_need",
+                "rank_coverage_ratio",
             ]
         ]
         .sum(axis=1)
@@ -153,11 +161,14 @@ def compute_rankings(df):
                 "funding_gap",
                 "percent_funded",
                 "people_in_need",
+                "people_targeted",
+                "coverage_ratio",
                 "rank_funding_gap",
                 "rank_requirements",
                 "rank_funding",
                 "rank_percent_funded",
                 "rank_people_in_need",
+                "rank_coverage_ratio",
                 "overall_rank_score",
                 "overall_rank",
             ]
