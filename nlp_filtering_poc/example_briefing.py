@@ -3,6 +3,8 @@ from dotenv import load_dotenv
 from models import CrisisData
 from briefing_generator import BriefingGenerator
 
+import json
+
 def main():
     # Load environment variables from .env if present
     load_dotenv()
@@ -14,31 +16,20 @@ def main():
         print("Please ensure ANTHROPIC_API_KEY is set in your environment or .env file.")
         return
 
-    # Mock data representing the #1 ranked crisis after our gap-scoring pipeline runs
-    sudan_crisis = CrisisData(
-        country="Sudan",
-        total_people_in_need=24800000,
-        funding_required_usd=2700000000.00,
-        funding_received_usd=405000000.00,
-        funding_coverage_percentage=15.0,
-        overlooked_rank=1,
-        summary="Sudan is experiencing one of the fastest-growing displacement crises in the world due to widespread conflict between rival factions. The violence has devastated agricultural production and severely limited humanitarian access, pushing millions toward famine conditions, particularly in Darfur and Khartoum."
-    )
-    
-    # A second mock example
-    haiti_crisis = CrisisData(
-        country="Haiti",
-        total_people_in_need=5500000,
-        funding_required_usd=674000000.00,
-        funding_received_usd=40440000.00,
-        funding_coverage_percentage=6.0,
-        overlooked_rank=2,
-        summary="Surging gang violence in Port-au-Prince has completely disrupted supply chains and forced hundreds of thousands from their homes. Health systems are collapsing, and there is a critical shortage of clean water, leading to localized cholera outbreaks amid soaring inflation."
-    )
+    # Load mock data from the JSON file
+    json_path = os.path.join(os.path.dirname(__file__), "example_crises.json")
+    try:
+        with open(json_path, 'r') as f:
+            crises_data = json.load(f)
+            # Parse into Pydantic models
+            crises = [CrisisData(**item) for item in crises_data]
+    except Exception as e:
+        print(f"Error loading {json_path}: {e}")
+        return
 
     print("=== Testing Humanitarian LLM Briefing Generator ===\n")
     
-    for crisis in [sudan_crisis, haiti_crisis]:
+    for crisis in crises:
         print(f"Processing {crisis.country} (Rank #{crisis.overlooked_rank})...")
         try:
             briefing = generator.generate_briefing(crisis)
