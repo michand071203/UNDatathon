@@ -374,147 +374,201 @@
                 };
             }
 
-            const canvases = root.querySelectorAll('canvas.funding-line-chart');
+            const canvases = root.querySelectorAll('canvas.funding-line-chart, canvas.requirements-line-chart');
             canvases.forEach((canvas) => {
                 if (canvas._fundingChartInstance) {
                     canvas._fundingChartInstance.destroy();
                 }
 
                 const years = JSON.parse(canvas.dataset.years || '[]');
-                const percentages = JSON.parse(canvas.dataset.percentages || '[]').map((v) =>
-                    v === null || v === undefined ? null : Number(v)
-                );
-                const avgPercentages = JSON.parse(canvas.dataset.avgPercentages || '[]').map((v) =>
-                    v === null || v === undefined ? null : Number(v)
-                );
-                const coverageProjected = JSON.parse(canvas.dataset.coverageProjected || '[]');
-                const funding = JSON.parse(canvas.dataset.funding || '[]');
                 const requirements = JSON.parse(canvas.dataset.requirements || '[]');
                 const requirementsProjected = JSON.parse(canvas.dataset.requirementsProjected || '[]');
-
+                
                 const ctx = canvas.getContext('2d');
                 if (!ctx) return;
 
-                canvas._fundingChartInstance = new Chart(ctx, {
-                    type: 'line',
-                    plugins: [fundingHoverLinePlugin],
-                    data: {
-                        labels: years,
-                        datasets: [
-                            {
-                                label: 'Funding %',
-                                data: percentages,
-                                borderColor: '#2563eb',
-                                backgroundColor: 'rgba(37, 99, 235, 0.15)',
-                                pointBackgroundColor: '#1d4ed8',
-                                pointBorderColor: '#ffffff',
-                                pointBorderWidth: 1,
-                                pointRadius: 3,
-                                segment: {
-                                    borderDash: (ctx) => (coverageProjected[ctx.p1DataIndex] ? [5, 5] : undefined),
+                if (canvas.classList.contains('funding-line-chart')) {
+                    const percentages = JSON.parse(canvas.dataset.percentages || '[]').map((v) =>
+                        v === null || v === undefined ? null : Number(v)
+                    );
+                    const avgPercentages = JSON.parse(canvas.dataset.avgPercentages || '[]').map((v) =>
+                        v === null || v === undefined ? null : Number(v)
+                    );
+                    const funding = JSON.parse(canvas.dataset.funding || '[]');
+                    const coverageProjected = JSON.parse(canvas.dataset.coverageProjected || '[]');
+
+                    canvas._fundingChartInstance = new Chart(ctx, {
+                        type: 'line',
+                        plugins: [fundingHoverLinePlugin],
+                        data: {
+                            labels: years,
+                            datasets: [
+                                {
+                                    label: 'Funding %',
+                                    data: percentages,
+                                    borderColor: '#2563eb',
+                                    backgroundColor: 'rgba(37, 99, 235, 0.15)',
+                                    pointBackgroundColor: (ctx) => coverageProjected[ctx.dataIndex] ? '#9ca3af' : '#1d4ed8',
+                                    pointBorderColor: '#ffffff',
+                                    pointBorderWidth: 1,
+                                    pointRadius: 3,
+                                    segment: {
+                                        borderDash: (ctx) => (coverageProjected[ctx.p1DataIndex] ? [5, 5] : undefined),
+                                    },
+                                    tension: 0.2,
+                                    spanGaps: true,
                                 },
-                                tension: 0.2,
-                                spanGaps: true,
-                            },
-                            {
-                                label: 'Year Avg %',
-                                data: avgPercentages,
-                                borderColor: '#ef4444',
-                                backgroundColor: 'transparent',
-                                borderDash: [5, 5],
-                                borderWidth: 2,
-                                pointRadius: 0,
-                                pointHoverRadius: 3,
-                                pointHitRadius: 8,
-                                tension: 0,
-                                spanGaps: true,
-                            },
-                        ],
-                    },
-                    options: {
-                        responsive: true,
-                        maintainAspectRatio: false,
-                        interaction: {
-                            mode: 'index',
-                            intersect: false,
-                        },
-                        scales: {
-                            y: {
-                                min: 0,
-                                max: 100,
-                                ticks: {
-                                    callback: (value) => `${value}%`,
-                                    color: '#6b7280',
-                                    font: { size: 10 },
+                                {
+                                    label: 'Year Avg %',
+                                    data: avgPercentages,
+                                    borderColor: '#ef4444',
+                                    backgroundColor: 'transparent',
+                                    borderDash: [5, 5],
+                                    borderWidth: 2,
+                                    pointRadius: 0,
+                                    pointHoverRadius: 3,
+                                    pointHitRadius: 8,
+                                    tension: 0,
+                                    spanGaps: true,
                                 },
-                                grid: { color: '#e5e7eb' },
+                            ],
+                        },
+                        options: {
+                            responsive: true,
+                            maintainAspectRatio: false,
+                            interaction: {
+                                mode: 'index',
+                                intersect: false,
                             },
-                            x: {
-                                ticks: { color: '#6b7280', font: { size: 10 } },
-                                grid: { display: false },
+                            scales: {
+                                y: {
+                                    min: 0,
+                                    max: 100,
+                                    ticks: {
+                                        callback: (value) => `${value}%`,
+                                        color: '#6b7280',
+                                        font: { size: 10 },
+                                    },
+                                    grid: { color: '#e5e7eb' },
+                                },
+                                x: {
+                                    ticks: { color: '#6b7280', font: { size: 10 } },
+                                    grid: { display: false },
+                                },
+                            },
+                            plugins: {
+                                fundingHoverLine: {
+                                    color: 'rgba(37, 99, 235, 0.55)',
+                                    dash: [5, 4],
+                                },
+                                legend: { display: false },
+                                tooltip: {
+                                    position: 'fundingBluePoint',
+                                    filter: (item) => {
+                                        const hoverState = item.chart?.$fundingHoverState || { direct: false, datasetIndex: null };
+                                        if (hoverState.direct && hoverState.datasetIndex !== null) {
+                                            return item.datasetIndex === hoverState.datasetIndex;
+                                        }
+                                        return item.datasetIndex === 0;
+                                    },
+                                    callbacks: {
+                                        title: (items) => {
+                                            const hoverState = items?.[0]?.chart?.$fundingHoverState || { direct: false };
+                                            if (!hoverState.direct) return '';
+                                            return `Year ${items[0].label}`;
+                                        },
+                                        label: (context) => {
+                                            const hoverState = context.chart?.$fundingHoverState || { direct: false };
+                                            const idx = context.dataIndex;
+                                            const pct = context.parsed.y;
+                                            const pctText = pct === null || pct === undefined ? 'N/A' : `${pct.toFixed(1)}%`;
+                                            if (!hoverState.direct) {
+                                                return pctText;
+                                            }
+                                            if (context.dataset.label === 'Year Avg %') {
+                                                return [
+                                                    `Year benchmark: ${pctText}`,
+                                                    'Weighted average funding',
+                                                    'coverage across all projects',
+                                                    'in this year.',
+                                                ];
+                                            }
+                                            const coverageIsProjected = Boolean(coverageProjected[idx]);
+                                            const coverageSuffix = coverageIsProjected ? '*' : '';
+                                            const coverageText = `Coverage: ${pctText}${coverageSuffix}`;
+                                            const fundingText = `Funding: ${formatCompactUsd(funding[idx])}`;
+                                            const isProjected = Boolean(requirementsProjected[idx]);
+                                            const reqSuffix = isProjected ? '*' : '';
+                                            const reqAmount = isProjected ? formatEstimatedUsd(requirements[idx]) : formatCompactUsd(requirements[idx]);
+                                            const reqText = `Requirements: ${reqAmount}${reqSuffix}`;
+                                            if (isProjected) {
+                                                return [
+                                                    coverageText,
+                                                    fundingText,
+                                                    reqText,
+                                                    "* Projected: previous year's requirements",
+                                                    "minus previous year's funding.",
+                                                ];
+                                            }
+                                            return [coverageText, fundingText, reqText];
+                                        },
+                                    },
+                                },
                             },
                         },
-                        plugins: {
-                            fundingHoverLine: {
-                                color: 'rgba(37, 99, 235, 0.55)',
-                                dash: [5, 4],
+                    });
+                } else if (canvas.classList.contains('requirements-line-chart')) {
+                    canvas._fundingChartInstance = new Chart(ctx, {
+                        type: 'bar',
+                        data: {
+                            labels: years,
+                            datasets: [{
+                                label: 'Required Funding',
+                                data: requirements,
+                                backgroundColor: (ctx) => requirementsProjected[ctx.dataIndex] ? 'rgba(156, 163, 175, 0.4)' : 'rgba(37, 99, 235, 0.6)',
+                                borderColor: (ctx) => requirementsProjected[ctx.dataIndex] ? '#9ca3af' : '#2563eb',
+                                borderWidth: 1,
+                            }]
+                        },
+                        options: {
+                            responsive: true,
+                            maintainAspectRatio: false,
+                            interaction: {
+                                mode: 'index',
+                                intersect: false,
                             },
-                            legend: { display: false },
-                            tooltip: {
-                                position: 'fundingBluePoint',
-                                filter: (item) => {
-                                    const hoverState = item.chart?.$fundingHoverState || { direct: false, datasetIndex: null };
-                                    if (hoverState.direct && hoverState.datasetIndex !== null) {
-                                        return item.datasetIndex === hoverState.datasetIndex;
+                            scales: {
+                                y: {
+                                    beginAtZero: true,
+                                    ticks: {
+                                        callback: (value) => `$${(value / 1e6).toFixed(0)}M`,
+                                        color: '#6b7280',
+                                        font: { size: 10 },
+                                    },
+                                    grid: { color: '#e5e7eb' },
+                                },
+                                x: {
+                                    ticks: { color: '#6b7280', font: { size: 10 } },
+                                    grid: { display: false },
+                                },
+                            },
+                            plugins: {
+                                legend: { display: false },
+                                tooltip: {
+                                    callbacks: {
+                                        label: (context) => {
+                                            const idx = context.dataIndex;
+                                            const req = context.parsed.y;
+                                            const isProj = requirementsProjected[idx];
+                                            const reqAmount = isProj ? formatEstimatedUsd(req) : formatCompactUsd(req);
+                                            return `Required: ${reqAmount}${isProj ? '*' : ''}`;
+                                        }
                                     }
-                                    return item.datasetIndex === 0;
-                                },
-                                callbacks: {
-                                    title: (items) => {
-                                        const hoverState = items?.[0]?.chart?.$fundingHoverState || { direct: false };
-                                        if (!hoverState.direct) return '';
-                                        return `Year ${items[0].label}`;
-                                    },
-                                    label: (context) => {
-                                        const hoverState = context.chart?.$fundingHoverState || { direct: false };
-                                        const idx = context.dataIndex;
-                                        const pct = context.parsed.y;
-                                        const pctText = pct === null || pct === undefined ? 'N/A' : `${pct.toFixed(1)}%`;
-                                        if (!hoverState.direct) {
-                                            return pctText;
-                                        }
-                                        if (context.dataset.label === 'Year Avg %') {
-                                            return [
-                                                `Year benchmark: ${pctText}`,
-                                                'Weighted average funding',
-                                                'coverage across all projects',
-                                                'in this year.',
-                                            ];
-                                        }
-                                        const coverageIsProjected = Boolean(coverageProjected[idx]);
-                                        const coverageSuffix = coverageIsProjected ? '*' : '';
-                                        const coverageText = `Coverage: ${pctText}${coverageSuffix}`;
-                                        const fundingText = `Funding: ${formatCompactUsd(funding[idx])}`;
-                                        const isProjected = Boolean(requirementsProjected[idx]);
-                                        const reqSuffix = isProjected ? '*' : '';
-                                        const reqAmount = isProjected ? formatEstimatedUsd(requirements[idx]) : formatCompactUsd(requirements[idx]);
-                                        const reqText = `Requirements: ${reqAmount}${reqSuffix}`;
-                                        if (isProjected) {
-                                            return [
-                                                coverageText,
-                                                fundingText,
-                                                reqText,
-                                                "* Projected: previous year's requirements",
-                                                "minus previous year's funding.",
-                                            ];
-                                        }
-                                        return [coverageText, fundingText, reqText];
-                                    },
-                                },
-                            },
-                        },
-                    },
-                });
+                                }
+                            }
+                        }
+                    });
+                }
             });
         }
 

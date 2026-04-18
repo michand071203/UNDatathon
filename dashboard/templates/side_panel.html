@@ -181,6 +181,7 @@
                     {% set timeline_requirements = crisis.funding_timeline | map(attribute='requirements') | list %}
                     {% set timeline_requirements_projected = crisis.funding_timeline | map(attribute='requirements_projected') | list %}
                     <div class="border border-gray-100 rounded-lg p-3 bg-gray-50">
+                        <h4 class="text-xs font-bold text-gray-500 uppercase tracking-wider mb-2">Funding Ratio and Average Funding Ratio</h4>
                         <div class="h-44">
                             <canvas
                                 class="w-full h-full funding-line-chart"
@@ -192,6 +193,18 @@
                                 data-requirements='{{ timeline_requirements | tojson }}'
                                 data-requirements-projected='{{ timeline_requirements_projected | tojson }}'
                                 aria-label="Funding percentage over time"
+                                role="img"></canvas>
+                        </div>
+                    </div>
+                    <div class="border border-gray-100 rounded-lg p-3 bg-gray-50 mt-4">
+                        <h4 class="text-xs font-bold text-gray-500 uppercase tracking-wider mb-2">Total Required Funding</h4>
+                        <div class="h-44">
+                            <canvas
+                                class="w-full h-full requirements-line-chart"
+                                data-years='{{ timeline_years | tojson }}'
+                                data-requirements='{{ timeline_requirements | tojson }}'
+                                data-requirements-projected='{{ timeline_requirements_projected | tojson }}'
+                                aria-label="Requirements over time"
                                 role="img"></canvas>
                         </div>
                     </div>
