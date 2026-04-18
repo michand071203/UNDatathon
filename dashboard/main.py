@@ -1,4 +1,7 @@
-from nlp_service import QueryParser, QueryFilter
+from nlp_service import (
+    QueryParser,
+    QueryFilter,
+)
 import json
 import os
 import math
@@ -8,6 +11,7 @@ from fastapi.responses import HTMLResponse, JSONResponse
 from fastapi.templating import Jinja2Templates
 from typing import Optional, List, Any
 from dotenv import load_dotenv
+from filter_chips import build_filter_chips
 
 load_dotenv()
 
@@ -29,6 +33,8 @@ FIELD_MAP = {
     "overlooked_rank": [],
     "crisis_type": []
 }
+
+CHIP_FIELD_ORDER = list(FIELD_MAP.keys()) + ["order_by"]
 
 def get_nested_value(data: dict, path: List[str]) -> Any:
     """Safely retrieves a value from a nested dictionary given a path list."""
@@ -117,11 +123,23 @@ def apply_advanced_filters(data: List[dict], filters: Optional[QueryFilter]) -> 
         condition_obj = getattr(filters, field_name)
         
         def item_matches(crisis):
+            values_to_check = []
             for path in paths: # type: ignore
                 val = get_nested_value(crisis, path)
-                if condition_obj.evaluate(val):
-                    return True
-            return False
+                if val is None:
+                    continue
+                if isinstance(val, list):
+                    values_to_check.extend(val)
+                else:
+                    values_to_check.append(val)
+
+            if not values_to_check:
+                return False
+
+            if getattr(condition_obj, "exclude", False):
+                return all(condition_obj.evaluate(v) for v in values_to_check)
+
+            return any(condition_obj.evaluate(v) for v in values_to_check)
 
         filtered_results = [c for c in filtered_results if item_matches(c)]
 
@@ -150,18 +168,7 @@ async def post_nlp_query(request: Request, query: Optional[str] = Form(None)):
     else:
         parsed_filter = nlp_parser.parse_query(query)
     
-    chips = []
-    f_dict = parsed_filter.model_dump(exclude_none=True)
-    
-    if "locations" in f_dict:
-        prefix = "Excluding" if parsed_filter.locations.exclude else "In" # type: ignore
-        chips.append(f"{prefix}: {', '.join(parsed_filter.locations.values)}") # type: ignore
-    if "people_in_need" in f_dict:
-        chips.append(f"PIN {parsed_filter.people_in_need.operator} {parsed_filter.people_in_need.value:,}") # type: ignore
-    if "funding_coverage_percentage" in f_dict:
-        chips.append(f"Funding {parsed_filter.funding_coverage_percentage.operator} {parsed_filter.funding_coverage_percentage.value}%") # type: ignore
-    if "order_by" in f_dict:
-        chips.append(f"Sort: {parsed_filter.order_by.field} ({parsed_filter.order_by.direction})") # type: ignore
+    chips = build_filter_chips(parsed_filter, CHIP_FIELD_ORDER)
 
     # Trigger a refresh AFTER the DOM has been updated with the new filter JSON
     response = templates.TemplateResponse(
