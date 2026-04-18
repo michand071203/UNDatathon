@@ -191,6 +191,30 @@ def sanitize_non_finite_values(value: Any) -> Any:
     return value
 
 
+def format_compact_number(value: Any) -> str:
+    if value is None:
+        return "Unknown"
+
+    try:
+        numeric_value = float(value)
+    except (TypeError, ValueError):
+        return "Unknown"
+
+    abs_value = abs(numeric_value)
+    if abs_value >= 1_000_000_000:
+        return f"{numeric_value / 1_000_000_000:.1f}B"
+    if abs_value >= 1_000_000:
+        return f"{numeric_value / 1_000_000:.1f}M"
+    return f"{int(round(numeric_value)):,}"
+
+
+def format_compact_usd(value: Any) -> str:
+    compact = format_compact_number(value)
+    if compact == "Unknown":
+        return compact
+    return f"${compact}"
+
+
 # --- Dynamic Core Logic ---
 
 def calculate_color(severity_score: Optional[float]) -> str:
@@ -206,6 +230,8 @@ def calculate_color(severity_score: Optional[float]) -> str:
     return "#16a34a"
 
 templates.env.globals["calculate_color"] = calculate_color
+templates.env.globals["format_compact_number"] = format_compact_number
+templates.env.globals["format_compact_usd"] = format_compact_usd
 
 def calculate_radius(people_in_need: int) -> float:
     people_in_need = max(0, people_in_need)

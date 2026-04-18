@@ -172,6 +172,25 @@
             return `$${Number(value).toLocaleString()}`;
         }
 
+        function formatCompactNumber(value) {
+            if (value === null || value === undefined || Number.isNaN(Number(value))) {
+                return 'Unknown';
+            }
+
+            const numericValue = Number(value);
+            const absoluteValue = Math.abs(numericValue);
+
+            if (absoluteValue >= 1_000_000_000) {
+                return `${(numericValue / 1_000_000_000).toFixed(1)}B`;
+            }
+
+            if (absoluteValue >= 1_000_000) {
+                return `${(numericValue / 1_000_000).toFixed(1)}M`;
+            }
+
+            return Math.round(numericValue).toLocaleString();
+        }
+
         function formatSeverityScore(value) {
             if (value === null || value === undefined || Number.isNaN(Number(value))) {
                 return 'Unknown';
@@ -426,7 +445,7 @@
                         <div class="font-bold text-lg">${crisis.name}</div>
                         <div class="text-sm text-gray-600 mb-1">Locations: ${crisis.locations_display || 'Unknown'}</div>
                         <div class="text-sm font-extrabold mb-1" style="color: ${baseColor};">Severity Score: ${formatSeverityScore(crisis.overall_severity_score)}</div>
-                        <div class="text-xs font-semibold text-blue-600">${crisis.people_in_need ? crisis.people_in_need.toLocaleString() + ' in need' : 'Unknown PIN'}</div>
+                        <div class="text-xs font-semibold text-blue-600">${crisis.people_in_need !== null && crisis.people_in_need !== undefined ? `${formatCompactNumber(crisis.people_in_need)} in need` : 'Unknown PIN'}</div>
                     </div>
                 `, {
                     direction: 'top',
