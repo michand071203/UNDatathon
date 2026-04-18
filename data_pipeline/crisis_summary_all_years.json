@@ -476,7 +476,8 @@
           "coverage": 0.08637888809421074,
           "gap": 0.9136211119057893,
           "weight": 0.0919175784557758,
-          "category_score": 8
+          "category_score": 8,
+          "category_score_normalized": 91
         },
         {
           "category": "food_security",
@@ -485,7 +486,8 @@
           "coverage": 0.7072365537113311,
           "gap": 0.2927634462886689,
           "weight": 0.3218056464304721,
-          "category_score": 9
+          "category_score": 9,
+          "category_score_normalized": 29
         },
         {
           "category": "health",
@@ -494,7 +496,8 @@
           "coverage": 0.5004865048127022,
           "gap": 0.4995134951872978,
           "weight": 0.18657868681153358,
-          "category_score": 9
+          "category_score": 9,
+          "category_score_normalized": 50
         },
         {
           "category": "hygiene",
@@ -503,7 +506,8 @@
           "coverage": 0.4926762928281102,
           "gap": 0.5073237071718898,
           "weight": 0.2058094620127326,
-          "category_score": 10
+          "category_score": 10,
+          "category_score_normalized": 51
         },
         {
           "category": "protection",
@@ -512,7 +516,8 @@
           "coverage": 0.3567870385975053,
           "gap": 0.6432129614024946,
           "weight": 0.19388862628948597,
-          "category_score": 12
+          "category_score": 12,
+          "category_score_normalized": 64
         }
       ],
       "category_level_score": 50,
@@ -3156,7 +3161,8 @@
           "coverage": 0.5999980564503982,
           "gap": 0.40000194354960183,
           "weight": 0.06646863668549809,
-          "category_score": 3
+          "category_score": 3,
+          "category_score_normalized": 40
         },
         {
           "category": "education",
@@ -3165,7 +3171,8 @@
           "coverage": 0.47625668266520915,
           "gap": 0.5237433173347908,
           "weight": 0.0945424950324295,
-          "category_score": 5
+          "category_score": 5,
+          "category_score_normalized": 52
         },
         {
           "category": "food_security",
@@ -3174,7 +3181,8 @@
           "coverage": 0.5071420651097449,
           "gap": 0.4928579348902551,
           "weight": 0.33931804804555066,
-          "category_score": 17
+          "category_score": 17,
+          "category_score_normalized": 49
         },
         {
           "category": "health",
@@ -3183,7 +3191,8 @@
           "coverage": 0.5409473009650181,
           "gap": 0.4590526990349819,
           "weight": 0.1542159958596178,
-          "category_score": 7
+          "category_score": 7,
+          "category_score_normalized": 46
         },
         {
           "category": "hygiene",
@@ -3192,7 +3201,8 @@
           "coverage": 0.520002883101195,
           "gap": 0.479997116898805,
           "weight": 0.17699035875507557,
-          "category_score": 8
+          "category_score": 8,
+          "category_score_normalized": 48
         },
         {
           "category": "protection",
@@ -3201,7 +3211,8 @@
           "coverage": 0.5367689629655191,
           "gap": 0.4632310370344809,
           "weight": 0.1684644656218284,
-          "category_score": 8
+          "category_score": 8,
+          "category_score_normalized": 46
         }
       ],
       "category_level_score": 48,
@@ -3679,7 +3690,8 @@
           "coverage": 0.9566714399616021,
           "gap": 0.04332856003839791,
           "weight": 0.04367738126640791,
-          "category_score": 0
+          "category_score": 0,
+          "category_score_normalized": 4
         },
         {
           "category": "education",
@@ -3688,7 +3700,8 @@
           "coverage": 0.4227188551218838,
           "gap": 0.5772811448781162,
           "weight": 0.1203146853298301,
-          "category_score": 7
+          "category_score": 7,
+          "category_score_normalized": 58
         },
         {
           "category": "food_security",
@@ -3697,7 +3710,8 @@
           "coverage": 0.5589533333002821,
           "gap": 0.4410466666997179,
           "weight": 0.436837484336552,
-          "category_score": 19
+          "category_score": 19,
+          "category_score_normalized": 44
         },
         {
           "category": "health",
@@ -3706,7 +3720,8 @@
           "coverage": 0.7053433218144726,
           "gap": 0.29465667818552743,
           "weight": 0.1478539397821909,
-          "category_score": 4
+          "category_score": 4,
+          "category_score_normalized": 29
         },
         {
           "category": "hygiene",
@@ -3715,7 +3730,8 @@
           "coverage": 0.5764128453522392,
           "gap": 0.42358715464776076,
           "weight": 0.2513165092850191,
-          "category_score": 11
+          "category_score": 11,
+          "category_score_normalized": 42
         }
       ],
       "category_level_score": 41,
@@ -5485,7 +5501,8 @@
           "coverage": 0.12321144551850972,
           "gap": 0.8767885544814903,
           "weight": 0.13592593611864826,
-          "category_score": 12
+          "category_score": 12,
+          "category_score_normalized": 88
         },
         {
           "category": "food_security",
@@ -5494,7 +5511,8 @@
           "coverage": 0.45053386667374273,
           "gap": 0.5494661333262573,
           "weight": 0.6012681307725241,
-          "category_score": 33
+          "category_score": 33,
+          "category_score_normalized": 55
         },
         {
           "category": "health",
@@ -5503,7 +5521,8 @@
           "coverage": 0.3329925378921186,
           "gap": 0.6670074621078814,
           "weight": 0.26280593310882766,
-          "category_score": 18
+          "category_score": 18,
+          "category_score_normalized": 67
         }
       ],
       "category_level_score": 62,
@@ -8289,7 +8308,8 @@
           "coverage": 0.2699529197719491,
           "gap": 0.730047080228051,
           "weight": 0.11897876483886298,
-          "category_score": 9
+          "category_score": 9,
+          "category_score_normalized": 73
         },
         {
           "category": "education",
@@ -8298,7 +8318,8 @@
           "coverage": 0.6574596214035852,
           "gap": 0.34254037859641484,
           "weight": 0.08389543051792436,
-          "category_score": 3
+          "category_score": 3,
+          "category_score_normalized": 34
         },
         {
           "category": "food_security",
@@ -8307,7 +8328,8 @@
           "coverage": 0.6271417289425496,
           "gap": 0.3728582710574504,
           "weight": 0.4008380359726846,
-          "category_score": 15
+          "category_score": 15,
+          "category_score_normalized": 37
         },
         {
           "category": "health",
@@ -8316,7 +8338,8 @@
           "coverage": 0.5577200629155321,
           "gap": 0.4422799370844679,
           "weight": 0.27299946882749837,
-          "category_score": 12
+          "category_score": 12,
+          "category_score_normalized": 44
         },
         {
           "category": "protection",
@@ -8325,7 +8348,8 @@
           "coverage": 0.5630521005218161,
           "gap": 0.4369478994781839,
           "weight": 0.12328829984302973,
-          "category_score": 5
+          "category_score": 5,
+          "category_score_normalized": 44
         }
       ],
       "category_level_score": 44,
@@ -12831,7 +12855,8 @@
           "coverage": 0.7495546388680038,
           "gap": 0.2504453611319962,
           "weight": 0.17586683804688497,
-          "category_score": 4
+          "category_score": 4,
+          "category_score_normalized": 25
         },
         {
           "category": "food_security",
@@ -12840,7 +12865,8 @@
           "coverage": 0.6318621423846184,
           "gap": 0.36813785761538165,
           "weight": 0.14009665749012162,
-          "category_score": 5
+          "category_score": 5,
+          "category_score_normalized": 37
         },
         {
           "category": "health",
@@ -12849,7 +12875,8 @@
           "coverage": 0.7797519438462677,
           "gap": 0.22024805615373233,
           "weight": 0.28986764094494194,
-          "category_score": 6
+          "category_score": 6,
+          "category_score_normalized": 22
         },
         {
           "category": "protection",
@@ -12858,7 +12885,8 @@
           "coverage": 0.6096305523973929,
           "gap": 0.39036944760260706,
           "weight": 0.3941688635180515,
-          "category_score": 15
+          "category_score": 15,
+          "category_score_normalized": 39
         }
       ],
       "category_level_score": 31,
@@ -13236,7 +13264,8 @@
           "coverage": 0.322295593967711,
           "gap": 0.677704406032289,
           "weight": 0.079266595471663,
-          "category_score": 5
+          "category_score": 5,
+          "category_score_normalized": 68
         },
         {
           "category": "food_security",
@@ -13245,7 +13274,8 @@
           "coverage": 0.19619310595182685,
           "gap": 0.8038068940481732,
           "weight": 0.2503783453200054,
-          "category_score": 20
+          "category_score": 20,
+          "category_score_normalized": 80
         },
         {
           "category": "health",
@@ -13254,7 +13284,8 @@
           "coverage": 0.21642255029529386,
           "gap": 0.7835774497047061,
           "weight": 0.20813744133364015,
-          "category_score": 16
+          "category_score": 16,
+          "category_score_normalized": 78
         },
         {
           "category": "hygiene",
@@ -13263,7 +13294,8 @@
           "coverage": 0.26545002444646226,
           "gap": 0.7345499755535377,
           "weight": 0.2013130294685941,
-          "category_score": 15
+          "category_score": 15,
+          "category_score_normalized": 73
         },
         {
           "category": "protection",
@@ -13272,7 +13304,8 @@
           "coverage": 0.2908055851827286,
           "gap": 0.7091944148172714,
           "weight": 0.2609045884060973,
-          "category_score": 19
+          "category_score": 19,
+          "category_score_normalized": 71
         }
       ],
       "category_level_score": 75,
@@ -14600,7 +14633,8 @@
           "coverage": 0.27924664336083344,
           "gap": 0.7207533566391666,
           "weight": 0.09726480039213291,
-          "category_score": 7
+          "category_score": 7,
+          "category_score_normalized": 72
         },
         {
           "category": "education",
@@ -14609,7 +14643,8 @@
           "coverage": 0.3843050893921769,
           "gap": 0.6156949106078231,
           "weight": 0.07876297565664275,
-          "category_score": 5
+          "category_score": 5,
+          "category_score_normalized": 62
         },
         {
           "category": "food_security",
@@ -14618,7 +14653,8 @@
           "coverage": 0.30379681780508233,
           "gap": 0.6962031821949177,
           "weight": 0.4759005793476066,
-          "category_score": 33
+          "category_score": 33,
+          "category_score_normalized": 70
         },
         {
           "category": "health",
@@ -14627,7 +14663,8 @@
           "coverage": 0.3759906349387231,
           "gap": 0.6240093650612769,
           "weight": 0.18905809330869494,
-          "category_score": 12
+          "category_score": 12,
+          "category_score_normalized": 62
         },
         {
           "category": "protection",
@@ -14636,7 +14673,8 @@
           "coverage": 0.4424234959421644,
           "gap": 0.5575765040578355,
           "weight": 0.1590135512949228,
-          "category_score": 9
+          "category_score": 9,
+          "category_score_normalized": 56
         }
       ],
       "category_level_score": 66,
@@ -17598,7 +17636,8 @@
           "coverage": 0.5094494945037704,
           "gap": 0.4905505054962296,
           "weight": 0.10899689594146644,
-          "category_score": 5
+          "category_score": 5,
+          "category_score_normalized": 49
         },
         {
           "category": "education",
@@ -17607,7 +17646,8 @@
           "coverage": 0.36322825098339434,
           "gap": 0.6367717490166056,
           "weight": 0.09242429942781948,
-          "category_score": 6
+          "category_score": 6,
+          "category_score_normalized": 64
         },
         {
           "category": "food_security",
@@ -17616,7 +17656,8 @@
           "coverage": 0.5359805226725628,
           "gap": 0.4640194773274372,
           "weight": 0.12665134909296977,
-          "category_score": 6
+          "category_score": 6,
+          "category_score_normalized": 46
         },
         {
           "category": "health",
@@ -17625,7 +17666,8 @@
           "coverage": 0.48627497426820704,
           "gap": 0.5137250257317929,
           "weight": 0.2666664386523585,
-          "category_score": 14
+          "category_score": 14,
+          "category_score_normalized": 51
         },
         {
           "category": "hygiene",
@@ -17634,7 +17676,8 @@
           "coverage": 0.49699241332499655,
           "gap": 0.5030075866750034,
           "weight": 0.23974395204517077,
-          "category_score": 12
+          "category_score": 12,
+          "category_score_normalized": 50
         },
         {
           "category": "protection",
@@ -17643,7 +17686,8 @@
           "coverage": 0.5985820745892824,
           "gap": 0.40141792541071764,
           "weight": 0.16551706484021506,
-          "category_score": 7
+          "category_score": 7,
+          "category_score_normalized": 40
         }
       ],
       "category_level_score": 50,
@@ -17955,7 +17999,8 @@
           "coverage": 0.3265864772773923,
           "gap": 0.6734135227226077,
           "weight": 0.09200673066684918,
-          "category_score": 6
+          "category_score": 6,
+          "category_score_normalized": 67
         },
         {
           "category": "food_security",
@@ -17964,7 +18009,8 @@
           "coverage": 0.34860336407946274,
           "gap": 0.6513966359205372,
           "weight": 0.4873193391998719,
-          "category_score": 32
+          "category_score": 32,
+          "category_score_normalized": 65
         },
         {
           "category": "health",
@@ -17973,7 +18019,8 @@
           "coverage": 0.46008639658854056,
           "gap": 0.5399136034114594,
           "weight": 0.2368134419344386,
-          "category_score": 13
+          "category_score": 13,
+          "category_score_normalized": 54
         },
         {
           "category": "protection",
@@ -17982,7 +18029,8 @@
           "coverage": 0.3180843305428586,
           "gap": 0.6819156694571413,
           "weight": 0.1838604881988403,
-          "category_score": 13
+          "category_score": 13,
+          "category_score_normalized": 68
         }
       ],
       "category_level_score": 63,
@@ -20364,7 +20412,8 @@
           "coverage": 0.5760661043778204,
           "gap": 0.42393389562217965,
           "weight": 0.07137961808101528,
-          "category_score": 3
+          "category_score": 3,
+          "category_score_normalized": 42
         },
         {
           "category": "health",
@@ -20373,7 +20422,8 @@
           "coverage": 0.3281483653816494,
           "gap": 0.6718516346183506,
           "weight": 0.3772245947785473,
-          "category_score": 25
+          "category_score": 25,
+          "category_score_normalized": 67
         },
         {
           "category": "protection",
@@ -20382,7 +20432,8 @@
           "coverage": 0.3735028784065528,
           "gap": 0.6264971215934472,
           "weight": 0.5513957871404375,
-          "category_score": 35
+          "category_score": 35,
+          "category_score_normalized": 63
         }
       ],
       "category_level_score": 63,

@@ -220,6 +220,22 @@ def _display_score(value):
     return int(round(float(numeric) * 100.0))
 
 
+def _display_normalized_category_score(item):
+    if not isinstance(item, dict):
+        return None
+
+    gap = pd.to_numeric(item.get("gap"), errors="coerce")
+    if pd.notna(gap):
+        return _display_score(gap)
+
+    category_score = pd.to_numeric(item.get("category_score"), errors="coerce")
+    weight = pd.to_numeric(item.get("weight"), errors="coerce")
+    if pd.notna(category_score) and pd.notna(weight) and weight > 0:
+        return _display_score(category_score / weight)
+
+    return None
+
+
 def _with_requirement_fallback(requirements, requirements_last_year):
     requirements = pd.to_numeric(requirements, errors="coerce")
     requirements_last_year = pd.to_numeric(requirements_last_year, errors="coerce")
@@ -829,6 +845,9 @@ def build_all_years_export(summary):
                     {
                         **item,
                         "category_score": _display_score(item.get("category_score")),
+                        "category_score_normalized": _display_normalized_category_score(
+                            item
+                        ),
                     }
                     for item in category_breakdown_scored_2026
                 ],
