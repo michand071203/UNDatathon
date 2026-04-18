@@ -2,8 +2,7 @@
   {
     "code":"FPSE26",
     "name":"Escalation of Hostilities in the OPT Flash Appeal 2026",
-    "locations":"PSE",
-    "primary_location":"PSE",
+    "primary_location_code":"PSE",
     "location_codes":[
       "PSE"
     ],
@@ -23,14 +22,17 @@
     "category_breakdown":[
 
     ],
+    "primary_location_name":"Palestine",
+    "location_names":[
+      "Palestine"
+    ],
     "latitude":31.7562524,
     "longitude":34.9639214
   },
   {
     "code":"HSYR26",
     "name":"Syrian Arab Republic Humanitarian Response Priorities 2026",
-    "locations":"SYR",
-    "primary_location":"SYR",
+    "primary_location_code":"SYR",
     "location_codes":[
       "SYR"
     ],
@@ -50,14 +52,17 @@
     "category_breakdown":[
 
     ],
+    "primary_location_name":"Syria",
+    "location_names":[
+      "Syria"
+    ],
     "latitude":34.6401861,
     "longitude":39.0494106
   },
   {
     "code":"HSDN26",
     "name":"Sudan Humanitarian Needs and Response Plan 2026",
-    "locations":"SDN",
-    "primary_location":"SDN",
+    "primary_location_code":"SDN",
     "location_codes":[
       "SDN"
     ],
@@ -77,14 +82,17 @@
     "category_breakdown":[
 
     ],
+    "primary_location_name":"Sudan",
+    "location_names":[
+      "Sudan"
+    ],
     "latitude":14.5844444,
     "longitude":29.4917691
   },
   {
     "code":"HUKR26",
     "name":"Ukraine Humanitarian Needs and Response Plan 2026",
-    "locations":"UKR",
-    "primary_location":"UKR",
+    "primary_location_code":"UKR",
     "location_codes":[
       "UKR"
     ],
@@ -123,14 +131,17 @@
         "targeted":2442478
       }
     ],
+    "primary_location_name":"Ukraine",
+    "location_names":[
+      "Ukraine"
+    ],
     "latitude":49.4871968,
     "longitude":31.2718321
   },
   {
     "code":"HYEM26",
     "name":"Yemen Humanitarian Needs and Response Plan 2026",
-    "locations":"YEM",
-    "primary_location":"YEM",
+    "primary_location_code":"YEM",
     "location_codes":[
       "YEM"
     ],
@@ -150,14 +161,17 @@
     "category_breakdown":[
 
     ],
+    "primary_location_name":"Yemen",
+    "location_names":[
+      "Yemen"
+    ],
     "latitude":16.3471243,
     "longitude":47.8915271
   },
   {
     "code":"HAFG26",
     "name":"Afghanistan Humanitarian Needs and Response Plan 2026",
-    "locations":"AFG",
-    "primary_location":"AFG",
+    "primary_location_code":"AFG",
     "location_codes":[
       "AFG"
     ],
@@ -211,14 +225,17 @@
         "targeted":7838434
       }
     ],
+    "primary_location_name":"Afghanistan",
+    "location_names":[
+      "Afghanistan"
+    ],
     "latitude":33.7680065,
     "longitude":66.2385139
   },
   {
     "code":"HSSD26",
     "name":"South Sudan Humanitarian Needs and Response Plan 2026",
-    "locations":"SSD",
-    "primary_location":"SSD",
+    "primary_location_code":"SSD",
     "location_codes":[
       "SSD"
     ],
@@ -267,14 +284,17 @@
         "targeted":1548355
       }
     ],
+    "primary_location_name":"South Sudan",
+    "location_names":[
+      "South Sudan"
+    ],
     "latitude":7.8699431,
     "longitude":29.6667897
   },
   {
     "code":"HCOD26",
     "name":"R\u00e9publique D\u00e9mocratique du Congo Besoins Humanitaires et Plan de R\u00e9ponse 2026",
-    "locations":"COD",
-    "primary_location":"COD",
+    "primary_location_code":"COD",
     "location_codes":[
       "COD"
     ],
@@ -313,14 +333,17 @@
         "targeted":1853401
       }
     ],
+    "primary_location_name":"Democratic Republic of the Congo",
+    "location_names":[
+      "Democratic Republic of the Congo"
+    ],
     "latitude":-2.9814344,
     "longitude":23.8222636
   },
   {
     "code":"HTCD26",
     "name":"Tchad Besoins Humanitaires et Plan de R\u00e9ponse 2026",
-    "locations":"TCD",
-    "primary_location":"TCD",
+    "primary_location_code":"TCD",
     "location_codes":[
       "TCD"
     ],
@@ -369,14 +392,17 @@
         "targeted":1672229
       }
     ],
+    "primary_location_name":"Chad",
+    "location_names":[
+      "Chad"
+    ],
     "latitude":15.6134137,
     "longitude":19.0156172
   },
   {
     "code":"HMMR26",
     "name":"Myanmar Humanitarian Needs and Response Plan 2026",
-    "locations":"MMR",
-    "primary_location":"MMR",
+    "primary_location_code":"MMR",
     "location_codes":[
       "MMR"
     ],
@@ -425,14 +451,17 @@
         "targeted":2375280
       }
     ],
+    "primary_location_name":"Myanmar",
+    "location_names":[
+      "Myanmar"
+    ],
     "latitude":17.1750495,
     "longitude":95.9999652
   },
   {
     "code":"HHTI26",
     "name":"Haiti Besoins Humanitaires et Plan de R\u00e9ponse 2026",
-    "locations":"HTI",
-    "primary_location":"HTI",
+    "primary_location_code":"HTI",
     "location_codes":[
       "HTI"
     ],
@@ -481,14 +510,17 @@
         "targeted":1235914
       }
     ],
+    "primary_location_name":"Haiti",
+    "location_names":[
+      "Haiti"
+    ],
     "latitude":19.1399952,
     "longitude":-72.3570972
   },
   {
     "code":"HSOM26",
     "name":"Somalia Humanitarian Needs and Response Plan 2026",
-    "locations":"SOM",
-    "primary_location":"SOM",
+    "primary_location_code":"SOM",
     "location_codes":[
       "SOM"
     ],
@@ -537,14 +569,17 @@
         "targeted":2229585
       }
     ],
+    "primary_location_name":"Somalia",
+    "location_names":[
+      "Somalia"
+    ],
     "latitude":8.3676771,
     "longitude":49.083416
   },
   {
     "code":"RUGA26",
     "name":"Uganda Regional Refugee Response Plan 2026",
-    "locations":"UGA",
-    "primary_location":"UGA",
+    "primary_location_code":"UGA",
     "location_codes":[
       "UGA"
     ],
@@ -564,14 +599,17 @@
     "category_breakdown":[
 
     ],
+    "primary_location_name":"Uganda",
+    "location_names":[
+      "Uganda"
+    ],
     "latitude":1.5333554,
     "longitude":32.2166578
   },
   {
     "code":"RREG26b",
     "name":"Venezuela Regional Refugee and Migrant Response Plan (RMRP) 2026",
-    "locations":"BRA | GUY | CRI | URY | PRY | COL | PER | ECU | PAN | CUW | ARG | ABW | BOL | CHL | DOM | TTO | MEX",
-    "primary_location":"BRA",
+    "primary_location_code":"BRA",
     "location_codes":[
       "BRA",
       "GUY",
@@ -607,14 +645,33 @@
     "category_breakdown":[
 
     ],
+    "primary_location_name":"Brazil",
+    "location_names":[
+      "Brazil",
+      "Guyana",
+      "Costa Rica",
+      "Uruguay",
+      "Paraguay",
+      "Colombia",
+      "Peru",
+      "Ecuador",
+      "Panama",
+      "Cura\u00e7ao",
+      "Argentina",
+      "Aruba",
+      "Bolivia",
+      "Chile",
+      "Dominican Republic",
+      "Trinidad and Tobago",
+      "Mexico"
+    ],
     "latitude":-10.3333333,
     "longitude":-53.2
   },
   {
     "code":"RBGD26",
     "name":"Rohingya Humanitarian Crisis Joint Response Plan 2026",
-    "locations":"BGD",
-    "primary_location":"BGD",
+    "primary_location_code":"BGD",
     "location_codes":[
       "BGD"
     ],
@@ -634,14 +691,17 @@
     "category_breakdown":[
 
     ],
+    "primary_location_name":"Bangladesh",
+    "location_names":[
+      "Bangladesh"
+    ],
     "latitude":24.4769288,
     "longitude":90.2934413
   },
   {
     "code":"HNER26",
     "name":"Niger Besoins Humanitaires et Plan de R\u00e9ponse 2026",
-    "locations":"NER",
-    "primary_location":"NER",
+    "primary_location_code":"NER",
     "location_codes":[
       "NER"
     ],
@@ -661,14 +721,17 @@
     "category_breakdown":[
 
     ],
+    "primary_location_name":"Niger",
+    "location_names":[
+      "Niger"
+    ],
     "latitude":17.7356214,
     "longitude":9.3238432
   },
   {
     "code":"HBFA26",
     "name":"Burkina Faso Besoins Humanitaires et Plan de R\u00e9ponse 2026",
-    "locations":"BFA",
-    "primary_location":"BFA",
+    "primary_location_code":"BFA",
     "location_codes":[
       "BFA"
     ],
@@ -688,14 +751,17 @@
     "category_breakdown":[
 
     ],
+    "primary_location_name":"Burkina Faso",
+    "location_names":[
+      "Burkina Faso"
+    ],
     "latitude":12.0753083,
     "longitude":-1.6880314
   },
   {
     "code":"HVEN26",
     "name":"Venezuela Plan de Respuesta Humanitaria 2026",
-    "locations":"VEN",
-    "primary_location":"VEN",
+    "primary_location_code":"VEN",
     "location_codes":[
       "VEN"
     ],
@@ -715,14 +781,17 @@
     "category_breakdown":[
 
     ],
+    "primary_location_name":"Venezuela",
+    "location_names":[
+      "Venezuela"
+    ],
     "latitude":8.0018709,
     "longitude":-66.1109318
   },
   {
     "code":"HMLI26",
     "name":"Mali Besoins Humanitaires et Plan de R\u00e9ponse 2026",
-    "locations":"MLI",
-    "primary_location":"MLI",
+    "primary_location_code":"MLI",
     "location_codes":[
       "MLI"
     ],
@@ -742,14 +811,17 @@
     "category_breakdown":[
 
     ],
+    "primary_location_name":"Mali",
+    "location_names":[
+      "Mali"
+    ],
     "latitude":16.3700359,
     "longitude":-2.2900239
   },
   {
     "code":"HMOZ26",
     "name":"Mozambique Humanitarian Needs and Response Plan 2026",
-    "locations":"MOZ",
-    "primary_location":"MOZ",
+    "primary_location_code":"MOZ",
     "location_codes":[
       "MOZ"
     ],
@@ -788,14 +860,17 @@
         "targeted":1008599
       }
     ],
+    "primary_location_name":"Mozambique",
+    "location_names":[
+      "Mozambique"
+    ],
     "latitude":-19.302233,
     "longitude":34.9144977
   },
   {
     "code":"HNGA26",
     "name":"Nigeria Humanitarian Needs and Response Plan 2026",
-    "locations":"NGA",
-    "primary_location":"NGA",
+    "primary_location_code":"NGA",
     "location_codes":[
       "NGA"
     ],
@@ -844,14 +919,17 @@
         "targeted":1472715
       }
     ],
+    "primary_location_name":"Nigeria",
+    "location_names":[
+      "Nigeria"
+    ],
     "latitude":9.6000359,
     "longitude":7.9999721
   },
   {
     "code":"HCMR26",
     "name":"Cameroon Humanitarian Needs and Response Plan 2026",
-    "locations":"CMR",
-    "primary_location":"CMR",
+    "primary_location_code":"CMR",
     "location_codes":[
       "CMR"
     ],
@@ -871,14 +949,17 @@
     "category_breakdown":[
 
     ],
+    "primary_location_name":"Cameroon",
+    "location_names":[
+      "Cameroon"
+    ],
     "latitude":4.6125522,
     "longitude":13.1535811
   },
   {
     "code":"HCOL26",
     "name":"Colombia Necesidades Humanitarias y Plan de Respuesta 2026",
-    "locations":"COL",
-    "primary_location":"COL",
+    "primary_location_code":"COL",
     "location_codes":[
       "COL"
     ],
@@ -898,14 +979,17 @@
     "category_breakdown":[
 
     ],
+    "primary_location_name":"Colombia",
+    "location_names":[
+      "Colombia"
+    ],
     "latitude":4.099917,
     "longitude":-72.9088133
   },
   {
     "code":"HCAF26",
     "name":"R\u00e9publique Centrafricaine Besoins Humanitaires et Plan de R\u00e9ponse 2026",
-    "locations":"CAF",
-    "primary_location":"CAF",
+    "primary_location_code":"CAF",
     "location_codes":[
       "CAF"
     ],
@@ -959,14 +1043,17 @@
         "targeted":569945
       }
     ],
+    "primary_location_name":"Central African Republic",
+    "location_names":[
+      "Central African Republic"
+    ],
     "latitude":7.0323598,
     "longitude":19.9981227
   },
   {
     "code":"OPAK26",
     "name":"Pakistan Floods Support Plan 2026",
-    "locations":"PAK",
-    "primary_location":"PAK",
+    "primary_location_code":"PAK",
     "location_codes":[
       "PAK"
     ],
@@ -986,14 +1073,17 @@
     "category_breakdown":[
 
     ],
+    "primary_location_name":"Pakistan",
+    "location_names":[
+      "Pakistan"
+    ],
     "latitude":30.3308401,
     "longitude":71.247499
   },
   {
     "code":"OVNM26",
     "name":"Viet Nam\u00a025-26 Joint Response Plan Multiple Typhoons and Floods 2026",
-    "locations":"VNM",
-    "primary_location":"VNM",
+    "primary_location_code":"VNM",
     "location_codes":[
       "VNM"
     ],
@@ -1013,14 +1103,17 @@
     "category_breakdown":[
 
     ],
+    "primary_location_name":"Vietnam",
+    "location_names":[
+      "Vietnam"
+    ],
     "latitude":15.9266657,
     "longitude":107.9650855
   },
   {
     "code":"OLKA2526",
     "name":"Sri Lanka Humanitarian Priorities Plan Cyclone Ditwa 2026",
-    "locations":"LKA",
-    "primary_location":"LKA",
+    "primary_location_code":"LKA",
     "location_codes":[
       "LKA"
     ],
@@ -1040,14 +1133,17 @@
     "category_breakdown":[
 
     ],
+    "primary_location_name":"Sri Lanka",
+    "location_names":[
+      "Sri Lanka"
+    ],
     "latitude":7.5554942,
     "longitude":80.7137847
   },
   {
     "code":"RREG26a",
     "name":"Sudan Emergency: Regional Refugee Response Plan 2026",
-    "locations":"LBY | TCD | SSD | UGA | ETH | CAF | EGY",
-    "primary_location":"LBY",
+    "primary_location_code":"LBY",
     "location_codes":[
       "LBY",
       "TCD",
@@ -1073,14 +1169,23 @@
     "category_breakdown":[
 
     ],
+    "primary_location_name":"Libya",
+    "location_names":[
+      "Libya",
+      "Chad",
+      "South Sudan",
+      "Uganda",
+      "Ethiopia",
+      "Central African Republic",
+      "Egypt"
+    ],
     "latitude":26.8234472,
     "longitude":18.1236723
   },
   {
     "code":"RREG26",
     "name":"Regional Migrant Response Plan for Horn of Africa to Yemen and Southern Africa 2026",
-    "locations":"YEM | KEN | DJI | SOM | ETH | TZA",
-    "primary_location":"YEM",
+    "primary_location_code":"YEM",
     "location_codes":[
       "YEM",
       "KEN",
@@ -1105,14 +1210,22 @@
     "category_breakdown":[
 
     ],
+    "primary_location_name":"Yemen",
+    "location_names":[
+      "Yemen",
+      "Kenya",
+      "Djibouti",
+      "Somalia",
+      "Ethiopia",
+      "Tanzania"
+    ],
     "latitude":16.3471243,
     "longitude":47.8915271
   },
   {
     "code":"RJORLBNTUR26",
     "name":"Syrian Arab Republic Regional Refugee and Resilience Plan (3RP) 2026",
-    "locations":"JOR | TUR | LBN",
-    "primary_location":"JOR",
+    "primary_location_code":"JOR",
     "location_codes":[
       "JOR",
       "TUR",
@@ -1133,6 +1246,12 @@
     "Country ISO3_y":null,
     "category_breakdown":[
 
+    ],
+    "primary_location_name":"Jordan",
+    "location_names":[
+      "Jordan",
+      "T\u00fcrkiye",
+      "Lebanon"
     ],
     "latitude":31.1667049,
     "longitude":36.941628

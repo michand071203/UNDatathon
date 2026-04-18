@@ -16,6 +16,11 @@
         #map { height: calc(100vh - 80px); }
         .tab-content { display: none; }
         .tab-content.active { display: block; }
+        .crisis-tooltip {
+            white-space: normal;
+            width: max-content;
+            max-width: min(70vw, 560px);
+        }
     </style>
 </head>
 <body class="bg-gray-100 overflow-hidden h-screen flex flex-col">
@@ -145,10 +150,10 @@
                 circle.bindTooltip(`
                     <div class="p-1">
                         <div class="font-bold text-lg">${crisis.name}</div>
-                        <div class="text-sm text-gray-600 mb-1">Locations: ${crisis.locations}</div>
+                        <div class="text-sm text-gray-600 mb-1">Locations: ${crisis.locations_display || 'Unknown'}</div>
                         <div class="text-xs font-semibold text-blue-600">${crisis.people_in_need ? crisis.people_in_need.toLocaleString() + ' in need' : 'Unknown PIN'}</div>
                     </div>
-                `, { direction: 'top' });
+                `, { direction: 'top', className: 'crisis-tooltip' });
 
                 circle.on('click', function() {
                     updateSelection(crisis.code);

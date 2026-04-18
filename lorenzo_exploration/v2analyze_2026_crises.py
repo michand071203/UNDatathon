@@ -30,44 +30,29 @@ DESCRIPTION_MAP = {
 
 DATA_DIR = Path(__file__).resolve().parent.parent / "data"
 COORDINATE_FILE = DATA_DIR / "country_coordinates.csv"
-GEOCODE_ALIASES = {
-    "COD": ["Democratic Republic of the Congo"],
-    "PSE": ["State of Palestine", "Palestinian territories"],
+COUNTRY_NAME_OVERRIDES = {
+    "COD": "Democratic Republic of the Congo",
+    "PSE": "Palestine",
 }
 
 
-def geocode_country(code, geocode):
+def geocode_country(country_name, geocode, country_code=None):
+    if not country_name:
+        return None, None
+
     try:
-        country = pycountry.countries.get(alpha_3=code)
-        query_candidates = []
-        query_candidates.extend(GEOCODE_ALIASES.get(code, []))
-
-        if country:
-            for attr in ("official_name", "common_name", "name", "alpha_2"):
-                value = getattr(country, attr, None)
-                if value:
-                    query_candidates.append(value)
-
-        country_code = (getattr(country, "alpha_2", "") or "").lower()
-
-        # Keep order while removing duplicates.
-        seen = set()
-        unique_candidates = [
-            q for q in query_candidates if not (q in seen or seen.add(q))
-        ]
-
-        for query in unique_candidates:
-            location = geocode(query, country_codes=country_code) if country_code else None
-            if not location:
-                location = geocode(query)
-            if location:
-                return float(location.latitude), float(location.longitude)
+        country_code = (country_code or "").lower()
+        location = geocode(country_name, country_codes=country_code) if country_code else None
+        if not location:
+            location = geocode(country_name)
+        if location:
+            return float(location.latitude), float(location.longitude)
     except Exception:
         pass
     return None, None
 
 
-def load_coordinates(primary_codes):
+def load_coordinates(primary_code_to_name):
     if COORDINATE_FILE.exists():
         coords = pd.read_csv(COORDINATE_FILE)
         if "ISO3" in coords.columns:
@@ -91,6 +76,7 @@ def load_coordinates(primary_codes):
             coords["latitude"].notna() & coords["longitude"].notna(), "primary_location"
         ]
     )
+    primary_codes = list(primary_code_to_name.keys())
     missing_codes = [
         code for code in primary_codes if code not in existing_with_coordinates
     ]
@@ -99,7 +85,10 @@ def load_coordinates(primary_codes):
     geocode = RateLimiter(geolocator.geocode, min_delay_seconds=1)
 
     for code in missing_codes:
-        lat, lon = geocode_country(code, geocode)
+        country = pycountry.countries.get(alpha_3=code)
+        country_code = getattr(country, "alpha_2", None)
+        country_name = primary_code_to_name.get(code) or iso3_to_country_name(code)
+        lat, lon = geocode_country(country_name, geocode, country_code=country_code)
         coords = coords[coords["primary_location"] != code]
         coords = pd.concat(
             [
@@ -120,6 +109,20 @@ def parse_locations(locations):
         return []
     split_codes = re.split(r"[|,]", str(locations))
     return [code.strip() for code in split_codes if code.strip()]
+
+
+def iso3_to_country_name(code):
+    if not code:
+        return None
+
+    if code in COUNTRY_NAME_OVERRIDES:
+        return COUNTRY_NAME_OVERRIDES[code]
+
+    country = pycountry.countries.get(alpha_3=code)
+    if not country:
+        return code
+
+    return getattr(country, "common_name", None) or country.name
 
 
 def load_plans():
@@ -248,9 +251,24 @@ def build_summary():
         right_on="Country ISO3",
     )
 
+    plan_summary["primary_location_name"] = plan_summary["primary_location"].apply(
+        iso3_to_country_name
+    )
+    plan_summary["location_names"] = plan_summary["location_codes"].apply(
+        lambda codes: [iso3_to_country_name(code) for code in codes]
+        if isinstance(codes, list)
+        else []
+    )
+
     # Add coordinates using the geocoder pipeline cache
-    primary_codes = plan_summary["primary_location"].dropna().unique().tolist()
-    coordinates = load_coordinates(primary_codes)
+    primary_name_lookup = (
+        plan_summary[["primary_location", "primary_location_name"]]
+        .dropna(subset=["primary_location"])
+        .drop_duplicates(subset=["primary_location"])
+        .set_index("primary_location")["primary_location_name"]
+        .to_dict()
+    )
+    coordinates = load_coordinates(primary_name_lookup)
     plan_summary = plan_summary.merge(coordinates, how="left", on="primary_location")
 
     if "category_breakdown" in plan_summary.columns:
@@ -287,12 +305,14 @@ def main():
     column_rename = {
         "destPlanCode": "dest_plan_code",
         "Country ISO3": "country_iso3",
+        "primary_location": "primary_location_code",
         "In Need": "people_in_need",
         "Targeted": "people_targeted",
         "Affected": "people_affected",
         "Reached": "people_reached",
     }
     summary = summary.rename(columns=column_rename)
+    summary = summary.drop(columns=["locations"], errors="ignore")
 
     json_file = (
         Path(__file__).resolve().parent.parent / "data" / "2026_crisis_summary.json"

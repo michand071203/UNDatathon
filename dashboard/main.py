@@ -2,6 +2,7 @@ from nlp_service import QueryParser, QueryFilter
 import json
 import os
 import math
+import pycountry
 from fastapi import FastAPI, Request, Query, Form
 from fastapi.responses import HTMLResponse, JSONResponse
 from fastapi.templating import Jinja2Templates
@@ -20,7 +21,7 @@ nlp_parser = QueryParser()
 
 # Maps QueryFilter attribute names to paths in the crisis dictionary
 FIELD_MAP = {
-    "locations": [["location_codes"], ["country_iso3"], ["locations"]],
+    "locations": [["location_codes"], ["country_iso3"], ["primary_location_code"]],
     "people_in_need": [["people_in_need"]],
     "funding_coverage_percentage": [["percent_funded"]],
     "funding_required_usd": [["requirements"]],
@@ -56,6 +57,25 @@ def calculate_radius(people_in_need: int) -> float:
 
     return min_radius_km + (max_radius_km - min_radius_km) / (1 + math.exp(-(people_in_need - midpoint) / steepness))
 
+
+FULL_NAME_OVERRIDES = {
+    "PSE": "State of Palestine",
+    "COD": "Democratic Republic of the Congo",
+}
+
+
+def iso3_to_full_country_name(code: Optional[str]) -> Optional[str]:
+    if not code:
+        return None
+    if code in FULL_NAME_OVERRIDES:
+        return FULL_NAME_OVERRIDES[code]
+
+    country = pycountry.countries.get(alpha_3=code)
+    if not country:
+        return code
+
+    return getattr(country, "official_name", None) or country.name
+
 def get_enriched_data():
     json_path = os.path.join(BASE_DIR, "..", "data", "2026_crisis_summary.json")
     with open(json_path, "r") as f:
@@ -64,6 +84,18 @@ def get_enriched_data():
     valid_data = []
     for crisis in data:
         if crisis.get("latitude") is not None and crisis.get("longitude") is not None:
+            location_codes = crisis.get("location_codes") or []
+            full_location_names = [
+                iso3_to_full_country_name(code) for code in location_codes
+            ]
+            full_location_names = [name for name in full_location_names if name]
+
+            crisis["primary_location_name_display"] = iso3_to_full_country_name(
+                crisis.get("primary_location_code")
+            ) or crisis.get("primary_location_name")
+            crisis["location_names_display"] = full_location_names
+            crisis["locations_display"] = ", ".join(full_location_names)
+
             crisis["color"] = calculate_color(crisis.get("percent_funded") or 0)
             crisis["radius_km"] = calculate_radius(crisis.get("people_in_need") or 500000)
             valid_data.append(crisis)
