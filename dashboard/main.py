@@ -6,7 +6,6 @@ from nlp_service import (
 import json
 import os
 import math
-import pycountry
 from fastapi import FastAPI, Request, Query, Form
 from fastapi.responses import HTMLResponse, JSONResponse
 from fastapi.templating import Jinja2Templates
@@ -91,43 +90,16 @@ def calculate_radius(people_in_need: int) -> float:
     return min_radius_km + (max_radius_km - min_radius_km) / (1 + math.exp(-(people_in_need - midpoint) / steepness))
 
 
-FULL_NAME_OVERRIDES = {
-    "PSE": "State of Palestine",
-    "COD": "Democratic Republic of the Congo",
-}
-
-
-def iso3_to_full_country_name(code: Optional[str]) -> Optional[str]:
-    if not code:
-        return None
-    if code in FULL_NAME_OVERRIDES:
-        return FULL_NAME_OVERRIDES[code]
-
-    country = pycountry.countries.get(alpha_3=code)
-    if not country:
-        return code
-
-    return getattr(country, "official_name", None) or country.name
-
-
-def _pick_display_year(years: dict) -> Optional[str]:
-    # Dashboard is intentionally fixed to 2026-only display.
-    if not years:
-        return None
-    return "2026" if "2026" in years else None
-
-
 def _normalize_crisis_record(crisis: dict) -> Optional[dict]:
     # Dashboard expects the all-years schema with a top-level years dictionary.
     if "years" not in crisis or not isinstance(crisis.get("years"), dict):
         return None
 
     years = crisis.get("years", {})
-    selected_year = _pick_display_year(years)
-    if selected_year is None:
+    if "2026" not in years:
         return None
 
-    year_data = years.get(selected_year, {}) if selected_year else {}
+    year_data = years["2026"]
     codes = year_data.get("codes") or []
     names = year_data.get("names") or []
     people_2026 = crisis.get("people_2026") or {}
@@ -163,7 +135,7 @@ def _normalize_crisis_record(crisis: dict) -> Optional[dict]:
         "code": codes[0] if codes else crisis.get("funding_base_key"),
         "dest_plan_code": codes[0] if codes else crisis.get("funding_base_key"),
         "name": names[0] if names else crisis.get("funding_base_key"),
-        "display_year": int(selected_year) if selected_year and str(selected_year).isdigit() else None,
+        "display_year": 2026,
         "primary_location_code": crisis.get("primary_location_code"),
         "primary_location_name": crisis.get("primary_location_name"),
         "location_codes": [crisis.get("primary_location_code")] if crisis.get("primary_location_code") else [],
@@ -200,15 +172,11 @@ def get_enriched_data():
     valid_data = []
     for crisis in data:
         if crisis.get("latitude") is not None and crisis.get("longitude") is not None:
-            location_codes = crisis.get("location_codes") or []
-            full_location_names = [
-                iso3_to_full_country_name(code) for code in location_codes
-            ]
+            primary_location_name = crisis.get("primary_location_name")
+            full_location_names = [primary_location_name] if primary_location_name else []
             full_location_names = [name for name in full_location_names if name]
 
-            crisis["primary_location_name_display"] = iso3_to_full_country_name(
-                crisis.get("primary_location_code")
-            ) or crisis.get("primary_location_name")
+            crisis["primary_location_name_display"] = primary_location_name
             crisis["location_names_display"] = full_location_names
             crisis["locations_display"] = ", ".join(full_location_names)
 
