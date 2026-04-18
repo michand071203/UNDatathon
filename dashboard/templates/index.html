@@ -23,6 +23,10 @@
             width: max-content;
             max-width: min(70vw, 560px);
         }
+        /* Keep selected map markers visually circular; suppress default rectangular focus ring. */
+        .leaflet-container .leaflet-interactive:focus {
+            outline: none;
+        }
         #nlp-send-btn .loading-spinner { display: none; }
         #nlp-send-btn.htmx-request .send-label { display: none; }
         #nlp-send-btn.htmx-request .loading-spinner { display: inline-flex; }
