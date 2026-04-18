@@ -3,7 +3,40 @@ from pathlib import Path
 
 import pandas as pd
 
-DATA_DIR = Path(__file__).resolve().parent / "data"
+DATA_DIR = Path(__file__).resolve().parent.parent / "data"
+
+# Approximate coordinates for countries (lat, lon)
+COUNTRY_COORDINATES = {
+    "AFG": (33.9391, 67.7100),  # Afghanistan
+    "BFA": (12.2383, -1.5616),  # Burkina Faso
+    "BGD": (23.6850, 90.3563),  # Bangladesh
+    "BRA": (-14.2350, -51.9253),  # Brazil
+    "CAF": (6.6111, 20.9394),  # Central African Republic
+    "CMR": (7.3697, 12.3547),  # Cameroon
+    "COD": (-4.0383, 21.7587),  # Democratic Republic of the Congo
+    "COL": (4.5709, -74.2973),  # Colombia
+    "HTI": (18.9712, -72.2852),  # Haiti
+    "JOR": (30.5852, 36.2384),  # Jordan
+    "LBY": (26.3351, 17.2283),  # Libya
+    "LKA": (7.8731, 80.7718),  # Sri Lanka
+    "MLI": (17.5707, -3.9962),  # Mali
+    "MMR": (21.9162, 95.9560),  # Myanmar
+    "MOZ": (-18.6657, 35.5296),  # Mozambique
+    "NER": (17.6078, 8.0817),  # Niger
+    "NGA": (9.0820, 8.6753),  # Nigeria
+    "PAK": (30.3753, 69.3451),  # Pakistan
+    "PSE": (31.9522, 35.2332),  # Palestine
+    "SDN": (12.8628, 30.2176),  # Sudan
+    "SOM": (5.1521, 46.1996),  # Somalia
+    "SSD": (6.8770, 31.3070),  # South Sudan
+    "SYR": (34.8021, 38.9968),  # Syria
+    "TCD": (15.4542, 18.7322),  # Chad
+    "UGA": (1.3733, 32.2903),  # Uganda
+    "UKR": (48.3794, 31.1656),  # Ukraine
+    "VEN": (6.4238, -66.5897),  # Venezuela
+    "VNM": (14.0583, 108.2772),  # Vietnam
+    "YEM": (15.5527, 48.5164),  # Yemen
+}
 
 
 def parse_locations(locations):
@@ -98,6 +131,14 @@ def build_summary():
         right_on="Country ISO3",
     )
 
+    # Add coordinates
+    plan_summary["latitude"] = plan_summary["primary_location"].map(
+        lambda x: COUNTRY_COORDINATES.get(x, (None, None))[0]
+    )
+    plan_summary["longitude"] = plan_summary["primary_location"].map(
+        lambda x: COUNTRY_COORDINATES.get(x, (None, None))[1]
+    )
+
     plan_summary = plan_summary.sort_values(by="requirements", ascending=False)
     return plan_summary
 
@@ -123,8 +164,12 @@ def print_top_crises(summary, top_n=25):
 def main():
     summary = build_summary()
     print_top_crises(summary)
-    summary.to_csv("data/2026_crisis_summary.csv", index=False)
-    print("\nSaved plan summary to data/2026_crisis_summary.csv")
+    # Output to JSON instead of CSV
+    json_file = (
+        Path(__file__).resolve().parent.parent / "data" / "2026_crisis_summary.json"
+    )
+    summary.to_json(json_file, orient="records", indent=2)
+    print(f"\nSaved plan summary to {json_file}")
 
 
 if __name__ == "__main__":
