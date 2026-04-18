@@ -1,5 +1,7 @@
 {% for crisis in crises %}
-<div class="bg-white border border-gray-200 rounded-lg shadow-sm hover:shadow-md transition-shadow cursor-pointer overflow-hidden flex flex-col"
+<div class="crisis-card bg-white border border-gray-200 rounded-lg shadow-sm hover:shadow-md transition-all cursor-pointer overflow-hidden flex flex-col"
+     id="card-{{ crisis.id }}"
+     data-crisis-id="{{ crisis.id }}"
      hx-get="/details/{{ crisis.id }}"
      hx-target="#side-panel-content"
      hx-swap="innerHTML">

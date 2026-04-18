@@ -20,62 +20,93 @@
 </head>
 <body class="bg-gray-100 overflow-hidden h-screen flex flex-col">
 
-    <!-- Top Panel -->
-    <header class="h-20 bg-white border-b border-gray-200 flex items-center px-6 justify-between shadow-sm z-10">
-        <div class="flex items-center space-x-4">
-            <h1 class="text-xl font-bold text-gray-800">UN Datathon 2026</h1>
-            <nav class="flex space-x-2 bg-gray-100 p-1 rounded-lg">
-                <button onclick="switchTab('map')" class="px-4 py-2 rounded-md transition-colors tab-btn active bg-white shadow-sm font-semibold">Map View</button>
-                <button onclick="switchTab('list')" class="px-4 py-2 rounded-md transition-colors tab-btn hover:bg-white/50" hx-get="/list" hx-target="#list-container" hx-trigger="click">List View</button>
+    <!-- Top Panel: Brand and Tabs -->
+    <header class="h-16 bg-white border-b border-gray-100 flex items-center px-6 justify-between z-10">
+        <div class="flex items-center space-x-8">
+            <h1 class="text-xl font-black text-blue-900 tracking-tight italic">UN DATATHON <span class="text-gray-400 font-light">2026</span></h1>
+            <nav class="flex space-x-1 bg-gray-100 p-1 rounded-lg">
+                <button onclick="switchTab('map')" class="px-4 py-1.5 rounded-md transition-all tab-btn active bg-white shadow-sm font-bold text-sm">Map View</button>
+                <button onclick="switchTab('list')" class="px-4 py-1.5 rounded-md transition-all tab-btn hover:bg-white/50 text-sm text-gray-600" hx-get="/list" hx-target="#list-container" hx-trigger="click">List View</button>
             </nav>
         </div>
-        
-        <div class="flex space-x-4 items-center">
-            <input type="text" 
-                   name="search" 
-                   placeholder="Search crises..." 
-                   class="border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 w-64"
-                   hx-get="/list" 
-                   hx-target="#list-container" 
-                   hx-trigger="keyup changed delay:500ms"
-                   hx-include="[name='sort']">
-            
-            <select name="sort" 
-                    class="border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
-                    hx-get="/list" 
-                    hx-target="#list-container" 
-                    hx-trigger="change"
-                    hx-include="[name='search']">
-                <option value="title">Sort by: Name</option>
-                <option value="severity">Sort by: Severity</option>
-                <option value="impact">Sort by: Impact</option>
-            </select>
+        <div class="text-xs font-bold text-gray-400 uppercase tracking-widest hidden md:block">
+            Humanitarian Crisis Dashboard v1.0
         </div>
     </header>
 
-    <!-- Main View -->
-    <main class="flex-grow relative">
-        <!-- Map Tab -->
-        <div id="tab-map" class="tab-content active w-full h-full">
-            <div id="map" class="w-full"></div>
+    <!-- Filter Bar: Dedicated Full-Width Section -->
+    <section class="h-16 bg-white border-b border-gray-200 flex items-center px-6 shadow-sm z-10">
+        <div class="w-full max-w-7xl mx-auto flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-4 items-center">
+            <div class="relative w-full md:w-96">
+                <span class="absolute inset-y-0 left-0 pl-3 flex items-center text-gray-400">
+                    <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+                </span>
+                <input type="text" 
+                       name="search" 
+                       placeholder="Filter by crisis name or region..." 
+                       class="w-full border border-gray-300 rounded-lg pl-10 pr-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
+                       hx-get="/list" 
+                       hx-target="#list-container" 
+                       hx-trigger="keyup changed delay:300ms"
+                       hx-include="[name='sort']">
+            </div>
+            
+            <div class="flex items-center space-x-2 w-full md:w-auto">
+                <label class="text-xs font-bold text-gray-400 uppercase whitespace-nowrap">Sort By</label>
+                <select name="sort" 
+                        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2"
+                        hx-get="/list" 
+                        hx-target="#list-container" 
+                        hx-trigger="change"
+                        hx-include="[name='search']">
+                    <option value="title">Alphabetical</option>
+                    <option value="severity">Highest Severity</option>
+                    <option value="impact">Largest Impact</option>
+                </select>
+            </div>
+            
+            <div class="flex-grow"></div>
+            
+            <div id="result-count" class="text-xs font-semibold text-gray-500">
+                <!-- Can be updated dynamically if needed -->
+            </div>
         </div>
+    </section>
 
-        <!-- List Tab -->
-        <div id="tab-list" class="tab-content w-full h-full bg-white overflow-y-auto p-6">
-            <div id="list-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <!-- HTMX will inject list_items.html here -->
+    <!-- Main View Area -->
+    <main class="flex-grow flex flex-row overflow-hidden bg-gray-50">
+        <!-- Tab Content Wrapper -->
+        <div class="flex-grow relative overflow-hidden">
+            <!-- Map Tab -->
+            <div id="tab-map" class="tab-content active absolute inset-0">
+                <div id="map" class="w-full h-full"></div>
+            </div>
+
+            <!-- List Tab -->
+            <div id="tab-list" class="tab-content absolute inset-0 overflow-y-auto p-6">
+                <div class="max-w-7xl mx-auto">
+                    <div id="list-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                        <!-- HTMX will inject list_items.html here -->
+                    </div>
+                </div>
             </div>
         </div>
 
-        <!-- Side Panel (Left Slide-in) -->
+        <!-- Unified Side Panel (Right) -->
         <div id="side-panel" 
-             class="fixed top-20 left-0 h-[calc(100vh-80px)] w-full md:w-[450px] bg-white shadow-2xl z-20 transform -translate-x-full transition-transform duration-300 ease-in-out border-r border-gray-200 overflow-y-auto">
-            <!-- HTMX will inject side_panel.html here -->
-            <div id="side-panel-content"></div>
+             class="h-full w-0 border-l border-transparent transition-all duration-300 ease-in-out bg-white overflow-hidden z-20 shadow-[-4px_0_15px_-3px_rgba(0,0,0,0.1)]">
+            <!-- Fixed width container inside to prevent content reflow during width transition -->
+            <div id="side-panel-content" class="w-[450px] lg:w-[500px] h-full overflow-y-auto">
+                <!-- HTMX will inject side_panel.html here -->
+            </div>
         </div>
     </main>
 
     <script>
+        // Selection Tracking
+        let selectedCrisisId = null;
+        let mapCircles = {};
+
         // Map Initialization
         const map = L.map('map').setView([10, 20], 3);
         L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
@@ -88,18 +119,21 @@
             const data = await response.json();
             
             data.forEach(crisis => {
-                // Color mapping logic: higher metric -> darker red/orange
-                const color = crisis.display.color_metric > 8 ? '#b91c1c' : 
-                             crisis.display.color_metric > 5 ? '#f97316' : '#facc15';
+                const baseColor = crisis.display.color_metric > 8 ? '#b91c1c' : 
+                                 crisis.display.color_metric > 5 ? '#f97316' : '#facc15';
                 
                 const circle = L.circle([crisis.display.lat, crisis.display.lng], {
-                    color: color,
-                    fillColor: color,
+                    color: baseColor,
+                    fillColor: baseColor,
                     fillOpacity: 0.6,
+                    weight: 2,
                     radius: crisis.display.radius_metric
                 }).addTo(map);
 
-                // Tooltip
+                // Store reference for selection
+                circle.baseColor = baseColor;
+                mapCircles[crisis.id] = circle;
+
                 circle.bindTooltip(`
                     <div class="p-1">
                         <div class="font-bold text-lg">${crisis.display.title}</div>
@@ -108,19 +142,47 @@
                     </div>
                 `, { direction: 'top' });
 
-                // Click event to trigger HTMX request for side panel
                 circle.on('click', function() {
+                    updateSelection(crisis.id);
                     htmx.ajax('GET', `/details/${crisis.id}`, {
                         target: '#side-panel-content',
                         swap: 'innerHTML'
-                    }).then(() => {
-                        openSidePanel();
                     });
                 });
             });
         }
 
         loadMapData();
+
+        function updateSelection(id) {
+            // 1. Clear previous selections
+            if (selectedCrisisId && mapCircles[selectedCrisisId]) {
+                const prevCircle = mapCircles[selectedCrisisId];
+                prevCircle.setStyle({ color: prevCircle.baseColor, weight: 2, fillOpacity: 0.6 });
+            }
+            document.querySelectorAll('.crisis-card').forEach(card => {
+                card.classList.remove('border-blue-500', 'ring-4', 'ring-blue-100', 'bg-blue-50/30');
+                card.classList.add('border-gray-200');
+            });
+
+            // 2. Set new selection
+            selectedCrisisId = id;
+            
+            // Update Map
+            if (mapCircles[id]) {
+                const circle = mapCircles[id];
+                circle.setStyle({ color: '#1d4ed8', weight: 5, fillOpacity: 0.8 });
+                circle.bringToFront();
+            }
+
+            // Update List (if card exists in DOM)
+            const card = document.getElementById(`card-${id}`);
+            if (card) {
+                card.classList.remove('border-gray-200');
+                card.classList.add('border-blue-500', 'ring-4', 'ring-blue-100', 'bg-blue-50/30');
+                card.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+            }
+        }
 
         // UI Helpers
         function switchTab(tab) {
@@ -138,23 +200,54 @@
             
             if (tab === 'map') {
                 setTimeout(() => map.invalidateSize(), 100);
+            } else if (tab === 'list' && selectedCrisisId) {
+                // Re-apply list selection when switching back to list tab
+                setTimeout(() => updateSelection(selectedCrisisId), 50);
             }
         }
 
         function openSidePanel() {
-            document.getElementById('side-panel').classList.remove('-translate-x-full');
-            document.getElementById('side-panel').classList.add('translate-x-0');
+            const panel = document.getElementById('side-panel');
+            panel.classList.remove('w-0', 'border-transparent');
+            panel.classList.add('w-[450px]', 'lg:w-[500px]', 'border-gray-200');
+            setTimeout(() => map.invalidateSize(), 310);
         }
 
         function closeSidePanel() {
-            document.getElementById('side-panel').classList.remove('translate-x-0');
-            document.getElementById('side-panel').classList.add('-translate-x-full');
+            const panel = document.getElementById('side-panel');
+            panel.classList.remove('w-[450px]', 'lg:w-[500px]', 'border-gray-200');
+            panel.classList.add('w-0', 'border-transparent');
+            
+            // Clear selections when closing
+            if (selectedCrisisId && mapCircles[selectedCrisisId]) {
+                const circle = mapCircles[selectedCrisisId];
+                circle.setStyle({ color: circle.baseColor, weight: 2, fillOpacity: 0.6 });
+            }
+            document.querySelectorAll('.crisis-card').forEach(card => {
+                card.classList.remove('border-blue-500', 'ring-4', 'ring-blue-100', 'bg-blue-50/30');
+                card.classList.add('border-gray-200');
+            });
+            selectedCrisisId = null;
+
+            setTimeout(() => map.invalidateSize(), 310);
         }
 
-        // Listen for HTMX events to handle panel state if needed
+        // Listen for HTMX events
         document.body.addEventListener('htmx:afterOnLoad', function(evt) {
             if (evt.detail.target.id === 'side-panel-content') {
                 openSidePanel();
+            }
+            // If the list was re-loaded (search/sort), re-apply selection if applicable
+            if (evt.detail.target.id === 'list-container' && selectedCrisisId) {
+                updateSelection(selectedCrisisId);
+            }
+        });
+
+        // Global listener for list item clicks to sync with map
+        document.body.addEventListener('click', function(e) {
+            const card = e.target.closest('.crisis-card');
+            if (card) {
+                updateSelection(card.dataset.crisisId);
             }
         });
     </script>
