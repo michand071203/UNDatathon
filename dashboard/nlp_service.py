@@ -5,6 +5,13 @@ from typing import List, Optional, Literal, TypeVar, Generic, Any, Dict, cast
 from pydantic import BaseModel, Field, ValidationError, model_validator
 from enum import Enum
 from anthropic import Anthropic
+from regions import REGION_NAMES
+
+
+def _format_region_name_for_prompt(name: str) -> str:
+    if name == "mena":
+        return "MENA"
+    return " ".join(part.capitalize() for part in name.split())
 
 # --- Models with Dynamic Evaluation Logic ---
 
@@ -114,6 +121,9 @@ class QueryParser:
         else:
             self.client = Anthropic(api_key=key)
         self.model = "claude-3-haiku-20240307"
+        self.region_names_text = ", ".join(
+            _format_region_name_for_prompt(name) for name in REGION_NAMES
+        )
 
     def parse_query(self, query: str) -> QueryFilter:
         if not self.client or not query.strip():
@@ -134,8 +144,9 @@ class QueryParser:
             "1. Pay strict attention to the data types. If a value is missing or unknown, omit the field or return a literal JSON null.\n"
             "2. For numeric filters, infer the correct operator ('eq', 'gt', 'lt', 'gte', 'lte'). Use your judgment on when equality is actually desired. E.g., 'more than 10%' -> 'gte', 'less than 5' -> 'lt'.\n"
             "3. For list/enum filters, if the query implies negation (e.g., 'outside of the Middle East', 'excluding Sudan'), use the EXACT location/item mentioned and set the 'exclude' field to true. Do NOT try to list all the other alternatives.\n"
-            "4. For geographic locations, output standard ISO-3 codes for specific countries (e.g. 'SDN', 'HTI'). If a broad region is mentioned, output a list of plausible ISO-3 country codes for that region instead of the region label itself.\n"
-            "5. If the query asks to sort or rank results (e.g., 'highest', 'lowest', 'most underfunded'), set the 'order_by' field with the correct 'field' and 'direction' ('asc' or 'desc')."
+            f"4. Supported broad region labels are exactly: {self.region_names_text}. If the user requests one of these, output the exact region label text and do NOT expand it into countries.\n"
+            "5. If the user names a geographic area that is not in the supported broad-region list, output your best-guess list of ISO-3 country codes for that area.\n"
+            "6. If the query asks to sort or rank results (e.g., 'highest', 'lowest', 'most underfunded'), set the 'order_by' field with the correct 'field' and 'direction' ('asc' or 'desc')."
         )
 
         try:

@@ -2,6 +2,7 @@ from nlp_service import (
     QueryParser,
     QueryFilter,
     NumericCondition,
+    ListCondition,
 )
 import json
 import os
@@ -13,6 +14,7 @@ from typing import Optional, List, Any
 from dotenv import load_dotenv
 from filter_chips import build_filter_chips
 from field_labels import FIELD_LABELS
+from regions import expand_location_values
 
 load_dotenv()
 
@@ -71,6 +73,7 @@ def sanitize_non_finite_values(value: Any) -> Any:
     if isinstance(value, float) and not math.isfinite(value):
         return None
     return value
+
 
 # --- Dynamic Core Logic ---
 
@@ -197,6 +200,18 @@ def apply_advanced_filters(data: List[dict], filters: Optional[QueryFilter]) -> 
         return data
 
     filtered_results = data
+
+    available_iso3: set[str] = set()
+    for crisis in data:
+        primary = crisis.get("primary_location_code")
+        if isinstance(primary, str) and primary:
+            available_iso3.add(primary.upper())
+        country_iso3 = crisis.get("country_iso3")
+        if isinstance(country_iso3, str) and country_iso3:
+            available_iso3.add(country_iso3.upper())
+        for code in crisis.get("location_codes") or []:
+            if isinstance(code, str) and code:
+                available_iso3.add(code.upper())
     
     # 1. Declarative Filtering Loop
     for field_name, condition in filters.model_dump(exclude_none=True).items():
@@ -206,6 +221,9 @@ def apply_advanced_filters(data: List[dict], filters: Optional[QueryFilter]) -> 
         if not paths: continue
 
         condition_obj = getattr(filters, field_name)
+        if field_name == "locations" and isinstance(condition_obj, ListCondition):
+            expanded_values = expand_location_values(condition_obj.values, available_iso3)
+            condition_obj = ListCondition(values=expanded_values, exclude=condition_obj.exclude)
         
         def item_matches(crisis):
             values_to_check = []
