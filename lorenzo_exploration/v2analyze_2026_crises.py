@@ -42,7 +42,9 @@ def geocode_country(country_name, geocode, country_code=None):
 
     try:
         country_code = (country_code or "").lower()
-        location = geocode(country_name, country_codes=country_code) if country_code else None
+        location = (
+            geocode(country_name, country_codes=country_code) if country_code else None
+        )
         if not location:
             location = geocode(country_name)
         if location:
@@ -255,9 +257,11 @@ def build_summary():
         iso3_to_country_name
     )
     plan_summary["location_names"] = plan_summary["location_codes"].apply(
-        lambda codes: [iso3_to_country_name(code) for code in codes]
-        if isinstance(codes, list)
-        else []
+        lambda codes: (
+            [iso3_to_country_name(code) for code in codes]
+            if isinstance(codes, list)
+            else []
+        )
     )
 
     # Add coordinates using the geocoder pipeline cache
@@ -312,7 +316,9 @@ def main():
         "Reached": "people_reached",
     }
     summary = summary.rename(columns=column_rename)
-    summary = summary.drop(columns=["locations"], errors="ignore")
+    summary = summary.drop(
+        columns=["locations", "total_contributions"], errors="ignore"
+    )
 
     json_file = (
         Path(__file__).resolve().parent.parent / "data" / "2026_crisis_summary.json"

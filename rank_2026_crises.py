@@ -81,23 +81,21 @@ def compute_rankings(df):
     }
 
     # Aggregate by country (primary_location)
-    country_agg = (
-        df.groupby("primary_location")
-        .agg(
-            {
-                "requirements": "sum",
-                "funding": "sum",
-                "funding_gap": "sum",
-                "people_in_need": "sum",
-                "people_targeted": "sum",
-                "people_affected": "sum",
-                "people_reached": "sum",
-                "total_contributions": "sum",
-                "contribution_count": "sum",
-            }
-        )
-        .reset_index()
-    )
+    agg_columns = {
+        "requirements": "sum",
+        "funding": "sum",
+        "funding_gap": "sum",
+        "people_in_need": "sum",
+        "people_targeted": "sum",
+        "people_affected": "sum",
+        "people_reached": "sum",
+    }
+    if "total_contributions" in df.columns:
+        agg_columns["total_contributions"] = "sum"
+    if "contribution_count" in df.columns:
+        agg_columns["contribution_count"] = "sum"
+
+    country_agg = df.groupby("primary_location").agg(agg_columns).reset_index()
 
     country_agg["percent_funded"] = (
         country_agg["funding"] / country_agg["requirements"] * 100
