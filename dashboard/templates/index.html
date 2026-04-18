@@ -268,12 +268,6 @@
         }
 
         function buildCrisisHoverCard(crisis, baseColor) {
-            const requirements = Number(crisis.requirements);
-            const funding = Number(crisis.funding);
-            const hasRequirements = Number.isFinite(requirements);
-            const hasFunding = Number.isFinite(funding);
-            const fundingGap = hasRequirements && hasFunding ? Math.max(requirements - funding, 0) : null;
-
             const coverage = Number(crisis.percent_funded);
             const coverageIsKnown = Number.isFinite(coverage);
             const coverageWidth = coverageIsKnown
@@ -281,12 +275,6 @@
                 : 0;
             const locationsText = crisis.locations_display || 'Unknown location';
             const projectedTag = crisis.coverage_projected ? '<span class="ml-1 text-[10px] font-bold uppercase text-amber-700">Projected*</span>' : '';
-            const requirementsDisplay = crisis.requirements_projected
-                ? formatEstimatedUsd(crisis.requirements)
-                : formatCompactUsd(crisis.requirements);
-            const fundingGapDisplay = fundingGap === null
-                ? 'Unknown'
-                : (crisis.requirements_projected ? formatEstimatedUsd(fundingGap) : formatCompactUsd(fundingGap));
 
             return `
                 <article class="crisis-hover-card">
@@ -316,22 +304,6 @@
                             <div class="crisis-kpi">
                                 <div class="text-[10px] font-bold uppercase tracking-wide text-slate-500">People In Need</div>
                                 <div class="mt-1 text-sm font-black text-slate-900">${formatCompactNumber(crisis.people_in_need)}</div>
-                            </div>
-                            <div class="crisis-kpi">
-                                <div class="text-[10px] font-bold uppercase tracking-wide text-slate-500">Funding</div>
-                                <div class="mt-1 text-sm font-black text-emerald-700">${formatCompactUsd(crisis.funding)}</div>
-                            </div>
-                            <div class="crisis-kpi">
-                                <div class="text-[10px] font-bold uppercase tracking-wide text-slate-500">Requirements</div>
-                                <div class="mt-1 text-sm font-black text-slate-900">${requirementsDisplay}</div>
-                            </div>
-                            <div class="crisis-kpi">
-                                <div class="text-[10px] font-bold uppercase tracking-wide text-slate-500">Funding Gap</div>
-                                <div class="mt-1 text-sm font-black text-rose-700">${fundingGapDisplay}</div>
-                            </div>
-                            <div class="crisis-kpi">
-                                <div class="text-[10px] font-bold uppercase tracking-wide text-slate-500">People Targeted</div>
-                                <div class="mt-1 text-sm font-black text-slate-900">${formatCompactNumber(crisis.people_targeted)}</div>
                             </div>
                         </div>
 
