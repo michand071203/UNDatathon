@@ -192,6 +192,8 @@ def build_all_years_export(summary):
 
         for year, year_group in group.groupby("year", dropna=False):
             year_key = str(int(year)) if pd.notna(year) else "unknown"
+            year_requirements = year_group["requirements"].sum(min_count=1)
+            year_funding = year_group["funding"].sum(min_count=1)
             payload["years"][year_key] = {
                 "codes": sorted(
                     [str(code) for code in year_group["code"].dropna().unique().tolist()]
@@ -199,16 +201,14 @@ def build_all_years_export(summary):
                 "names": sorted(
                     [str(name) for name in year_group["name"].dropna().unique().tolist()]
                 ),
-                "requirements": _json_number(year_group["requirements"].sum(min_count=1)),
-                "funding": _json_number(year_group["funding"].sum(min_count=1)),
+                "requirements": _json_number(year_requirements),
+                "funding": _json_number(year_funding),
                 "percent_funded": _json_number(
-                    year_group["funding"].sum(min_count=1)
-                    / year_group["requirements"].sum(min_count=1)
-                    * 100
+                    round((year_funding / year_requirements) * 100, 1)
                 )
-                if pd.notna(year_group["requirements"].sum(min_count=1))
-                and year_group["requirements"].sum(min_count=1) != 0
-                and pd.notna(year_group["funding"].sum(min_count=1))
+                if pd.notna(year_requirements)
+                and year_requirements != 0
+                and pd.notna(year_funding)
                 else None,
                 "contribution_count": int(year_group["contribution_count"].sum(min_count=1))
                 if pd.notna(year_group["contribution_count"].sum(min_count=1))
