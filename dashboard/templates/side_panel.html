@@ -17,9 +17,9 @@
         <section>
             <h3 class="text-sm font-bold text-gray-400 uppercase tracking-wider mb-2">Core Impact Summary</h3>
             <div class="grid grid-cols-1 gap-1">
-                <div class="bg-indigo-50 p-4 rounded-lg border border-indigo-100 mb-3">
-                    <div class="text-xs text-indigo-500 uppercase font-semibold tracking-wide">Severity Score</div>
-                    <div class="text-3xl font-black text-indigo-700 mt-1">
+                <div class="p-4 rounded-lg border mb-3" style="background-color: {{ (crisis.color or '#9ca3af') ~ '1f' }}; border-color: {{ (crisis.color or '#9ca3af') ~ '4d' }};">
+                    <div class="text-xs uppercase font-semibold tracking-wide" style="color: {{ crisis.color or '#9ca3af' }};">Severity Score</div>
+                    <div class="text-3xl font-black mt-1" style="color: {{ crisis.color or '#9ca3af' }};">
                         {% if crisis.overall_severity_score is not none %}{{ '%.3f'|format(crisis.overall_severity_score) }}{% else %}Unknown{% endif %}
                     </div>
                 </div>

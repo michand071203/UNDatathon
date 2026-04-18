@@ -93,10 +93,17 @@ def sanitize_non_finite_values(value: Any) -> Any:
 
 # --- Dynamic Core Logic ---
 
-def calculate_color(funding_coverage: float) -> str:
-    if funding_coverage < 10: return "#b91c1c"
-    if funding_coverage < 25: return "#f97316"
-    return "#facc15"
+def calculate_color(severity_score: Optional[float]) -> str:
+    # Severity is normalized to [0, 1]: lower is better, higher is worse.
+    if severity_score is None:
+        return "#b91c1c"
+
+    severity_score = max(0.0, min(1.0, float(severity_score)))
+
+    if severity_score >= 0.75: return "#b91c1c"
+    if severity_score >= 0.5: return "#f97316"
+    if severity_score >= 0.25: return "#facc15"
+    return "#16a34a"
 
 def calculate_radius(people_in_need: int) -> float:
     people_in_need = max(0, people_in_need)
@@ -223,7 +230,7 @@ def get_enriched_data():
             crisis["location_names_display"] = full_location_names
             crisis["locations_display"] = ", ".join(full_location_names)
 
-            crisis["color"] = calculate_color(crisis.get("percent_funded") or 0)
+            crisis["color"] = calculate_color(crisis.get("overall_severity_score"))
             crisis["radius_km"] = calculate_radius(crisis.get("people_in_need") or 500000)
             valid_data.append(sanitize_non_finite_values(crisis))
     return valid_data

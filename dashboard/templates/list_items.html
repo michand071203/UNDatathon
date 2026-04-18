@@ -5,6 +5,7 @@
      hx-get="/details/{{ crisis.code }}"
      hx-target="#side-panel-content"
      hx-swap="innerHTML">
+    <div class="w-1.5 shrink-0" style="background-color: {{ crisis.color or '#9ca3af' }};"></div>
     <div class="p-5 flex-grow">
         <!-- Row 1: Crisis Name -->
         <div class="flex justify-between items-start mb-2">
@@ -14,9 +15,9 @@
             <!-- Row 2: Locations and Metrics -->
             <div class="flex flex-col lg:flex-row lg:items-center gap-4 lg:gap-12">
                 <div class="flex items-center gap-8 sm:gap-12 shrink-0">
-                    <div class="flex flex-col bg-indigo-50 border border-indigo-100 rounded-lg px-3 py-2 min-w-[112px]">
-                        <span class="text-[9px] font-bold text-indigo-500 uppercase tracking-widest mb-0.5">Severity Score</span>
-                        <span class="text-base font-extrabold text-indigo-700 whitespace-nowrap">
+                    <div class="flex flex-col rounded-lg px-3 py-2 min-w-[112px] border" style="background-color: color-mix(in srgb, {{ crisis.color or '#9ca3af' }} 14%, white); border-color: color-mix(in srgb, {{ crisis.color or '#9ca3af' }} 32%, white);">
+                        <span class="text-[9px] font-bold uppercase tracking-widest mb-0.5" style="color: color-mix(in srgb, {{ crisis.color or '#9ca3af' }} 68%, #1f2937);">Severity Score</span>
+                        <span class="text-base font-extrabold whitespace-nowrap" style="color: color-mix(in srgb, {{ crisis.color or '#9ca3af' }} 78%, #111827);">
                             {% if crisis.overall_severity_score is not none %}{{ '%.3f'|format(crisis.overall_severity_score) }}{% else %}Unknown{% endif %}
                         </span>
                     </div>
