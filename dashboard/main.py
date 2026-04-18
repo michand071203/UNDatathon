@@ -1,6 +1,7 @@
 from nlp_service import (
     QueryParser,
     QueryFilter,
+    NumericCondition,
 )
 import json
 import os
@@ -134,6 +135,8 @@ def apply_advanced_filters(data: List[dict], filters: Optional[QueryFilter]) -> 
                     values_to_check.append(val)
 
             if not values_to_check:
+                if isinstance(condition_obj, NumericCondition) and condition_obj.operator in {"gt", "lt", "gte", "lte"}:
+                    return True
                 return False
 
             if getattr(condition_obj, "exclude", False):
