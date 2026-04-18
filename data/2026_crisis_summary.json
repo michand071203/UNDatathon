@@ -1,5 +1,205 @@
 [
   {
+    "code":"RUGA26",
+    "name":"Uganda Regional Refugee Response Plan 2026",
+    "primary_location_code":"UGA",
+    "location_codes":[
+      "UGA"
+    ],
+    "year":2026,
+    "requirements":828700000.0,
+    "funding":13438960.0,
+    "percent_funded":1.6,
+    "dest_plan_code":"RUGA26",
+    "contribution_count":3,
+    "Country ISO3_x":null,
+    "people_in_need":null,
+    "people_targeted":null,
+    "people_affected":null,
+    "people_reached":null,
+    "Country ISO3_y":null,
+    "category_breakdown":[
+
+    ],
+    "benchmark_key":"UGA",
+    "primary_location_name":"Uganda",
+    "location_names":[
+      "Uganda"
+    ],
+    "latitude":1.5333554,
+    "longitude":32.2166578,
+    "category_breakdown_scored":[
+
+    ],
+    "category_level_score":null,
+    "overall_severity_score":0.984,
+    "systematic_underfunding":{
+      "score":null,
+      "weighted_avg_underfunding_gap":null,
+      "underfunded_year_share":null,
+      "max_underfunding_gap":null,
+      "historical_years_count":null
+    }
+  },
+  {
+    "code":"OVNM26",
+    "name":"Viet Nam\u00a025-26 Joint Response Plan Multiple Typhoons and Floods 2026",
+    "primary_location_code":"VNM",
+    "location_codes":[
+      "VNM"
+    ],
+    "year":2026,
+    "requirements":61132366.0,
+    "funding":3028917.0,
+    "percent_funded":5.0,
+    "dest_plan_code":"OVNM26",
+    "contribution_count":3,
+    "Country ISO3_x":null,
+    "people_in_need":null,
+    "people_targeted":null,
+    "people_affected":null,
+    "people_reached":null,
+    "Country ISO3_y":null,
+    "category_breakdown":[
+
+    ],
+    "benchmark_key":"VNM",
+    "primary_location_name":"Vietnam",
+    "location_names":[
+      "Vietnam"
+    ],
+    "latitude":15.9266657,
+    "longitude":107.9650855,
+    "category_breakdown_scored":[
+
+    ],
+    "category_level_score":null,
+    "overall_severity_score":0.95,
+    "systematic_underfunding":{
+      "score":null,
+      "weighted_avg_underfunding_gap":null,
+      "underfunded_year_share":null,
+      "max_underfunding_gap":null,
+      "historical_years_count":null
+    }
+  },
+  {
+    "code":"RREG26b",
+    "name":"Venezuela Regional Refugee and Migrant Response Plan (RMRP) 2026",
+    "primary_location_code":"BRA",
+    "location_codes":[
+      "BRA",
+      "GUY",
+      "CRI",
+      "URY",
+      "PRY",
+      "COL",
+      "PER",
+      "ECU",
+      "PAN",
+      "CUW",
+      "ARG",
+      "ABW",
+      "BOL",
+      "CHL",
+      "DOM",
+      "TTO",
+      "MEX"
+    ],
+    "year":2026,
+    "requirements":737473022.0,
+    "funding":67880713.0,
+    "percent_funded":9.2,
+    "dest_plan_code":"RREG26b",
+    "contribution_count":48,
+    "Country ISO3_x":null,
+    "people_in_need":null,
+    "people_targeted":null,
+    "people_affected":null,
+    "people_reached":null,
+    "Country ISO3_y":null,
+    "category_breakdown":[
+
+    ],
+    "benchmark_key":"BRA",
+    "primary_location_name":"Brazil",
+    "location_names":[
+      "Brazil",
+      "Guyana",
+      "Costa Rica",
+      "Uruguay",
+      "Paraguay",
+      "Colombia",
+      "Peru",
+      "Ecuador",
+      "Panama",
+      "Cura\u00e7ao",
+      "Argentina",
+      "Aruba",
+      "Bolivia",
+      "Chile",
+      "Dominican Republic",
+      "Trinidad and Tobago",
+      "Mexico"
+    ],
+    "latitude":-10.3333333,
+    "longitude":-53.2,
+    "category_breakdown_scored":[
+
+    ],
+    "category_level_score":null,
+    "overall_severity_score":0.908,
+    "systematic_underfunding":{
+      "score":null,
+      "weighted_avg_underfunding_gap":null,
+      "underfunded_year_share":null,
+      "max_underfunding_gap":null,
+      "historical_years_count":null
+    }
+  },
+  {
+    "code":"HNER26",
+    "name":"Niger Besoins Humanitaires et Plan de R\u00e9ponse 2026",
+    "primary_location_code":"NER",
+    "location_codes":[
+      "NER"
+    ],
+    "year":2026,
+    "requirements":675619589.0,
+    "funding":66462854.0,
+    "percent_funded":9.8,
+    "dest_plan_code":"HNER26",
+    "contribution_count":55,
+    "Country ISO3_x":"NER",
+    "people_in_need":2600000.0,
+    "people_targeted":1600000.0,
+    "people_affected":0.0,
+    "people_reached":0.0,
+    "Country ISO3_y":null,
+    "category_breakdown":[
+
+    ],
+    "benchmark_key":"NER",
+    "primary_location_name":"Niger",
+    "location_names":[
+      "Niger"
+    ],
+    "latitude":17.7356214,
+    "longitude":9.3238432,
+    "category_breakdown_scored":[
+
+    ],
+    "category_level_score":null,
+    "overall_severity_score":0.902,
+    "systematic_underfunding":{
+      "score":null,
+      "weighted_avg_underfunding_gap":null,
+      "underfunded_year_share":null,
+      "max_underfunding_gap":null,
+      "historical_years_count":null
+    }
+  },
+  {
     "code":"FPSE26",
     "name":"Escalation of Hostilities in the OPT Flash Appeal 2026",
     "primary_location_code":"PSE",
@@ -21,12 +221,193 @@
     "category_breakdown":[
 
     ],
+    "benchmark_key":"PSE",
     "primary_location_name":"Palestine",
     "location_names":[
       "Palestine"
     ],
     "latitude":31.7562524,
-    "longitude":34.9639214
+    "longitude":34.9639214,
+    "category_breakdown_scored":[
+
+    ],
+    "category_level_score":null,
+    "overall_severity_score":0.889,
+    "systematic_underfunding":{
+      "score":null,
+      "weighted_avg_underfunding_gap":null,
+      "underfunded_year_share":null,
+      "max_underfunding_gap":null,
+      "historical_years_count":null
+    }
+  },
+  {
+    "code":"HBFA26",
+    "name":"Burkina Faso Besoins Humanitaires et Plan de R\u00e9ponse 2026",
+    "primary_location_code":"BFA",
+    "location_codes":[
+      "BFA"
+    ],
+    "year":2026,
+    "requirements":658486359.0,
+    "funding":72939948.0,
+    "percent_funded":11.1,
+    "dest_plan_code":"HBFA26",
+    "contribution_count":45,
+    "Country ISO3_x":"BFA",
+    "people_in_need":4400000.0,
+    "people_targeted":3100000.0,
+    "people_affected":0.0,
+    "people_reached":0.0,
+    "Country ISO3_y":null,
+    "category_breakdown":[
+
+    ],
+    "benchmark_key":"BFA",
+    "primary_location_name":"Burkina Faso",
+    "location_names":[
+      "Burkina Faso"
+    ],
+    "latitude":12.0753083,
+    "longitude":-1.6880314,
+    "category_breakdown_scored":[
+
+    ],
+    "category_level_score":null,
+    "overall_severity_score":0.889,
+    "systematic_underfunding":{
+      "score":null,
+      "weighted_avg_underfunding_gap":null,
+      "underfunded_year_share":null,
+      "max_underfunding_gap":null,
+      "historical_years_count":null
+    }
+  },
+  {
+    "code":"HYEM26",
+    "name":"Yemen Humanitarian Needs and Response Plan 2026",
+    "primary_location_code":"YEM",
+    "location_codes":[
+      "YEM"
+    ],
+    "year":2026,
+    "requirements":2162563336.0,
+    "funding":258764721.0,
+    "percent_funded":12.0,
+    "dest_plan_code":"HYEM26",
+    "contribution_count":85,
+    "Country ISO3_x":"YEM",
+    "people_in_need":23100000.0,
+    "people_targeted":10500000.0,
+    "people_affected":0.0,
+    "people_reached":0.0,
+    "Country ISO3_y":null,
+    "category_breakdown":[
+
+    ],
+    "benchmark_key":"YEM",
+    "primary_location_name":"Yemen",
+    "location_names":[
+      "Yemen"
+    ],
+    "latitude":16.3471243,
+    "longitude":47.8915271,
+    "category_breakdown_scored":[
+
+    ],
+    "category_level_score":null,
+    "overall_severity_score":0.88,
+    "systematic_underfunding":{
+      "score":null,
+      "weighted_avg_underfunding_gap":null,
+      "underfunded_year_share":null,
+      "max_underfunding_gap":null,
+      "historical_years_count":null
+    }
+  },
+  {
+    "code":"HMLI26",
+    "name":"Mali Besoins Humanitaires et Plan de R\u00e9ponse 2026",
+    "primary_location_code":"MLI",
+    "location_codes":[
+      "MLI"
+    ],
+    "year":2026,
+    "requirements":577866412.0,
+    "funding":75201041.0,
+    "percent_funded":13.0,
+    "dest_plan_code":"HMLI26",
+    "contribution_count":96,
+    "Country ISO3_x":"MLI",
+    "people_in_need":5100000.0,
+    "people_targeted":3800000.0,
+    "people_affected":0.0,
+    "people_reached":0.0,
+    "Country ISO3_y":null,
+    "category_breakdown":[
+
+    ],
+    "benchmark_key":"MLI",
+    "primary_location_name":"Mali",
+    "location_names":[
+      "Mali"
+    ],
+    "latitude":16.3700359,
+    "longitude":-2.2900239,
+    "category_breakdown_scored":[
+
+    ],
+    "category_level_score":null,
+    "overall_severity_score":0.87,
+    "systematic_underfunding":{
+      "score":null,
+      "weighted_avg_underfunding_gap":null,
+      "underfunded_year_share":null,
+      "max_underfunding_gap":null,
+      "historical_years_count":null
+    }
+  },
+  {
+    "code":"HVEN26",
+    "name":"Venezuela Plan de Respuesta Humanitaria 2026",
+    "primary_location_code":"VEN",
+    "location_codes":[
+      "VEN"
+    ],
+    "year":2026,
+    "requirements":632191972.0,
+    "funding":84012783.0,
+    "percent_funded":13.3,
+    "dest_plan_code":"HVEN26",
+    "contribution_count":23,
+    "Country ISO3_x":"VEN",
+    "people_in_need":7900000.0,
+    "people_targeted":5400000.0,
+    "people_affected":0.0,
+    "people_reached":0.0,
+    "Country ISO3_y":null,
+    "category_breakdown":[
+
+    ],
+    "benchmark_key":"VEN",
+    "primary_location_name":"Venezuela",
+    "location_names":[
+      "Venezuela"
+    ],
+    "latitude":8.0018709,
+    "longitude":-66.1109318,
+    "category_breakdown_scored":[
+
+    ],
+    "category_level_score":null,
+    "overall_severity_score":0.867,
+    "systematic_underfunding":{
+      "score":null,
+      "weighted_avg_underfunding_gap":null,
+      "underfunded_year_share":null,
+      "max_underfunding_gap":null,
+      "historical_years_count":null
+    }
   },
   {
     "code":"HSYR26",
@@ -50,12 +431,25 @@
     "category_breakdown":[
 
     ],
+    "benchmark_key":"SYR",
     "primary_location_name":"Syria",
     "location_names":[
       "Syria"
     ],
     "latitude":34.6401861,
-    "longitude":39.0494106
+    "longitude":39.0494106,
+    "category_breakdown_scored":[
+
+    ],
+    "category_level_score":null,
+    "overall_severity_score":0.85,
+    "systematic_underfunding":{
+      "score":null,
+      "weighted_avg_underfunding_gap":null,
+      "underfunded_year_share":null,
+      "max_underfunding_gap":null,
+      "historical_years_count":null
+    }
   },
   {
     "code":"HSDN26",
@@ -79,12 +473,362 @@
     "category_breakdown":[
 
     ],
+    "benchmark_key":"SDN",
     "primary_location_name":"Sudan",
     "location_names":[
       "Sudan"
     ],
     "latitude":14.5844444,
-    "longitude":29.4917691
+    "longitude":29.4917691,
+    "category_breakdown_scored":[
+
+    ],
+    "category_level_score":null,
+    "overall_severity_score":0.83,
+    "systematic_underfunding":{
+      "score":null,
+      "weighted_avg_underfunding_gap":null,
+      "underfunded_year_share":null,
+      "max_underfunding_gap":null,
+      "historical_years_count":null
+    }
+  },
+  {
+    "code":"OPAK26",
+    "name":"Pakistan Floods Support Plan 2026",
+    "primary_location_code":"PAK",
+    "location_codes":[
+      "PAK"
+    ],
+    "year":2026,
+    "requirements":64943909.0,
+    "funding":11011245.0,
+    "percent_funded":17.0,
+    "dest_plan_code":"OPAK26",
+    "contribution_count":10,
+    "Country ISO3_x":null,
+    "people_in_need":null,
+    "people_targeted":null,
+    "people_affected":null,
+    "people_reached":null,
+    "Country ISO3_y":null,
+    "category_breakdown":[
+
+    ],
+    "benchmark_key":"PAK",
+    "primary_location_name":"Pakistan",
+    "location_names":[
+      "Pakistan"
+    ],
+    "latitude":30.3308401,
+    "longitude":71.247499,
+    "category_breakdown_scored":[
+
+    ],
+    "category_level_score":null,
+    "overall_severity_score":0.83,
+    "systematic_underfunding":{
+      "score":null,
+      "weighted_avg_underfunding_gap":null,
+      "underfunded_year_share":null,
+      "max_underfunding_gap":null,
+      "historical_years_count":null
+    }
+  },
+  {
+    "code":"HCMR26",
+    "name":"Cameroon Humanitarian Needs and Response Plan 2026",
+    "primary_location_code":"CMR",
+    "location_codes":[
+      "CMR"
+    ],
+    "year":2026,
+    "requirements":318976221.0,
+    "funding":66498901.0,
+    "percent_funded":20.8,
+    "dest_plan_code":"HCMR26",
+    "contribution_count":33,
+    "Country ISO3_x":"CMR",
+    "people_in_need":2900000.0,
+    "people_targeted":1800000.0,
+    "people_affected":0.0,
+    "people_reached":0.0,
+    "Country ISO3_y":null,
+    "category_breakdown":[
+
+    ],
+    "benchmark_key":"CMR",
+    "primary_location_name":"Cameroon",
+    "location_names":[
+      "Cameroon"
+    ],
+    "latitude":4.6125522,
+    "longitude":13.1535811,
+    "category_breakdown_scored":[
+
+    ],
+    "category_level_score":null,
+    "overall_severity_score":0.792,
+    "systematic_underfunding":{
+      "score":null,
+      "weighted_avg_underfunding_gap":null,
+      "underfunded_year_share":null,
+      "max_underfunding_gap":null,
+      "historical_years_count":null
+    }
+  },
+  {
+    "code":"HMMR26",
+    "name":"Myanmar Humanitarian Needs and Response Plan 2026",
+    "primary_location_code":"MMR",
+    "location_codes":[
+      "MMR"
+    ],
+    "year":2026,
+    "requirements":889600798.0,
+    "funding":245472134.0,
+    "percent_funded":27.6,
+    "dest_plan_code":"HMMR26",
+    "contribution_count":62,
+    "Country ISO3_x":"MMR",
+    "people_in_need":16229050.0,
+    "people_targeted":4868096.0,
+    "people_affected":0.0,
+    "people_reached":0.0,
+    "Country ISO3_y":"MMR",
+    "category_breakdown":[
+      {
+        "category":"education",
+        "in_need":3523306.0,
+        "targeted":1135546
+      },
+      {
+        "category":"food_security",
+        "in_need":11129020.0,
+        "targeted":2183437
+      },
+      {
+        "category":"health",
+        "in_need":9251462.0,
+        "targeted":2002225
+      },
+      {
+        "category":"hygiene",
+        "in_need":8948125.0,
+        "targeted":2375280
+      },
+      {
+        "category":"protection",
+        "in_need":11596899.0,
+        "targeted":3372443
+      }
+    ],
+    "benchmark_key":"MMR",
+    "primary_location_name":"Myanmar",
+    "location_names":[
+      "Myanmar"
+    ],
+    "latitude":17.1750495,
+    "longitude":95.9999652,
+    "category_breakdown_scored":[
+      {
+        "category":"education",
+        "in_need":3523306.0,
+        "targeted":1135546.0,
+        "coverage":0.322295594,
+        "gap":0.677704406,
+        "weight":0.0792665955,
+        "category_score":0.053719321
+      },
+      {
+        "category":"food_security",
+        "in_need":11129020.0,
+        "targeted":2183437.0,
+        "coverage":0.196193106,
+        "gap":0.803806894,
+        "weight":0.2503783453,
+        "category_score":0.2012558401
+      },
+      {
+        "category":"health",
+        "in_need":9251462.0,
+        "targeted":2002225.0,
+        "coverage":0.2164225503,
+        "gap":0.7835774497,
+        "weight":0.2081374413,
+        "category_score":0.1630918055
+      },
+      {
+        "category":"hygiene",
+        "in_need":8948125.0,
+        "targeted":2375280.0,
+        "coverage":0.2654500244,
+        "gap":0.7345499756,
+        "weight":0.2013130295,
+        "category_score":0.1478744809
+      },
+      {
+        "category":"protection",
+        "in_need":11596899.0,
+        "targeted":3372443.0,
+        "coverage":0.2908055852,
+        "gap":0.7091944148,
+        "weight":0.2609045884,
+        "category_score":0.1850320769
+      }
+    ],
+    "category_level_score":0.7509735243,
+    "overall_severity_score":0.7408584527,
+    "systematic_underfunding":{
+      "score":null,
+      "weighted_avg_underfunding_gap":null,
+      "underfunded_year_share":null,
+      "max_underfunding_gap":null,
+      "historical_years_count":null
+    }
+  },
+  {
+    "code":"HSSD26",
+    "name":"South Sudan Humanitarian Needs and Response Plan 2026",
+    "primary_location_code":"SSD",
+    "location_codes":[
+      "SSD"
+    ],
+    "year":2026,
+    "requirements":1463046056.0,
+    "funding":322015249.0,
+    "percent_funded":22.0,
+    "dest_plan_code":"HSSD26",
+    "contribution_count":68,
+    "Country ISO3_x":"SSD",
+    "people_in_need":9913863.0,
+    "people_targeted":4343435.0,
+    "people_affected":0.0,
+    "people_reached":0.0,
+    "Country ISO3_y":"SSD",
+    "category_breakdown":[
+      {
+        "category":"education",
+        "in_need":2435900.0,
+        "targeted":795532
+      },
+      {
+        "category":"food_security",
+        "in_need":12901895.0,
+        "targeted":4497644
+      },
+      {
+        "category":"health",
+        "in_need":6269692.0,
+        "targeted":2884600
+      },
+      {
+        "category":"other",
+        "in_need":0.0,
+        "targeted":463705
+      },
+      {
+        "category":"protection",
+        "in_need":4867750.0,
+        "targeted":1548355
+      }
+    ],
+    "benchmark_key":"SSD",
+    "primary_location_name":"South Sudan",
+    "location_names":[
+      "South Sudan"
+    ],
+    "latitude":7.8699431,
+    "longitude":29.6667897,
+    "category_breakdown_scored":[
+      {
+        "category":"education",
+        "in_need":2435900.0,
+        "targeted":795532.0,
+        "coverage":0.3265864773,
+        "gap":0.6734135227,
+        "weight":0.0920067307,
+        "category_score":0.0619585766
+      },
+      {
+        "category":"food_security",
+        "in_need":12901895.0,
+        "targeted":4497644.0,
+        "coverage":0.3486033641,
+        "gap":0.6513966359,
+        "weight":0.4873193392,
+        "category_score":0.3174381782
+      },
+      {
+        "category":"health",
+        "in_need":6269692.0,
+        "targeted":2884600.0,
+        "coverage":0.4600863966,
+        "gap":0.5399136034,
+        "weight":0.2368134419,
+        "category_score":0.1278587988
+      },
+      {
+        "category":"protection",
+        "in_need":4867750.0,
+        "targeted":1548355.0,
+        "coverage":0.3180843305,
+        "gap":0.6819156695,
+        "weight":0.1838604882,
+        "category_score":0.1253773479
+      }
+    ],
+    "category_level_score":0.6326329015,
+    "overall_severity_score":0.6878955634,
+    "systematic_underfunding":{
+      "score":null,
+      "weighted_avg_underfunding_gap":null,
+      "underfunded_year_share":null,
+      "max_underfunding_gap":null,
+      "historical_years_count":null
+    }
+  },
+  {
+    "code":"RBGD26",
+    "name":"Rohingya Humanitarian Crisis Joint Response Plan 2026",
+    "primary_location_code":"BGD",
+    "location_codes":[
+      "BGD"
+    ],
+    "year":2026,
+    "requirements":698375266.0,
+    "funding":233087883.0,
+    "percent_funded":33.4,
+    "dest_plan_code":"RBGD26",
+    "contribution_count":74,
+    "Country ISO3_x":null,
+    "people_in_need":null,
+    "people_targeted":null,
+    "people_affected":null,
+    "people_reached":null,
+    "Country ISO3_y":null,
+    "category_breakdown":[
+
+    ],
+    "benchmark_key":"BGD",
+    "primary_location_name":"Bangladesh",
+    "location_names":[
+      "Bangladesh"
+    ],
+    "latitude":24.4769288,
+    "longitude":90.2934413,
+    "category_breakdown_scored":[
+
+    ],
+    "category_level_score":null,
+    "overall_severity_score":0.666,
+    "systematic_underfunding":{
+      "score":null,
+      "weighted_avg_underfunding_gap":null,
+      "underfunded_year_share":null,
+      "max_underfunding_gap":null,
+      "historical_years_count":null
+    }
   },
   {
     "code":"HUKR26",
@@ -127,41 +871,243 @@
         "targeted":2442478
       }
     ],
+    "benchmark_key":"UKR",
     "primary_location_name":"Ukraine",
     "location_names":[
       "Ukraine"
     ],
     "latitude":49.4871968,
-    "longitude":31.2718321
+    "longitude":31.2718321,
+    "category_breakdown_scored":[
+      {
+        "category":"education",
+        "in_need":846540.0,
+        "targeted":487663.0,
+        "coverage":0.5760661044,
+        "gap":0.4239338956,
+        "weight":0.0713796181,
+        "category_score":0.0302602396
+      },
+      {
+        "category":"health",
+        "in_need":4473766.0,
+        "targeted":1468059.0,
+        "coverage":0.3281483654,
+        "gap":0.6718516346,
+        "weight":0.3772245948,
+        "category_score":0.2534389606
+      },
+      {
+        "category":"protection",
+        "in_need":6539382.0,
+        "targeted":2442478.0,
+        "coverage":0.3735028784,
+        "gap":0.6264971216,
+        "weight":0.5513957871,
+        "category_score":0.3454478735
+      }
+    ],
+    "category_level_score":0.6291470737,
+    "overall_severity_score":0.6639669211,
+    "systematic_underfunding":{
+      "score":null,
+      "weighted_avg_underfunding_gap":null,
+      "underfunded_year_share":null,
+      "max_underfunding_gap":null,
+      "historical_years_count":null
+    }
   },
   {
-    "code":"HYEM26",
-    "name":"Yemen Humanitarian Needs and Response Plan 2026",
-    "primary_location_code":"YEM",
+    "code":"HCOD26",
+    "name":"R\u00e9publique D\u00e9mocratique du Congo Besoins Humanitaires et Plan de R\u00e9ponse 2026",
+    "primary_location_code":"COD",
     "location_codes":[
-      "YEM"
+      "COD"
     ],
     "year":2026,
-    "requirements":2162563336.0,
-    "funding":258764721.0,
-    "percent_funded":12.0,
-    "dest_plan_code":"HYEM26",
-    "contribution_count":85,
-    "Country ISO3_x":"YEM",
-    "people_in_need":23100000.0,
-    "people_targeted":10500000.0,
+    "requirements":1403721718.0,
+    "funding":430024823.0,
+    "percent_funded":30.6,
+    "dest_plan_code":"HCOD26",
+    "contribution_count":65,
+    "Country ISO3_x":"COD",
+    "people_in_need":14940727.0,
+    "people_targeted":7313763.0,
     "people_affected":0.0,
     "people_reached":0.0,
-    "Country ISO3_y":null,
+    "Country ISO3_y":"COD",
     "category_breakdown":[
-
+      {
+        "category":"education",
+        "in_need":3901894.0,
+        "targeted":480758
+      },
+      {
+        "category":"food_security",
+        "in_need":17260021.0,
+        "targeted":7776224
+      },
+      {
+        "category":"health",
+        "in_need":7544115.0,
+        "targeted":2512134
+      }
     ],
-    "primary_location_name":"Yemen",
+    "benchmark_key":"COD",
+    "primary_location_name":"Democratic Republic of the Congo",
     "location_names":[
-      "Yemen"
+      "Democratic Republic of the Congo"
     ],
-    "latitude":16.3471243,
-    "longitude":47.8915271
+    "latitude":-2.9814344,
+    "longitude":23.8222636,
+    "category_breakdown_scored":[
+      {
+        "category":"education",
+        "in_need":3901894.0,
+        "targeted":480758.0,
+        "coverage":0.1232114455,
+        "gap":0.8767885545,
+        "weight":0.1359259361,
+        "category_score":0.119178305
+      },
+      {
+        "category":"food_security",
+        "in_need":17260021.0,
+        "targeted":7776224.0,
+        "coverage":0.4505338667,
+        "gap":0.5494661333,
+        "weight":0.6012681308,
+        "category_score":0.3303764749
+      },
+      {
+        "category":"health",
+        "in_need":7544115.0,
+        "targeted":2512134.0,
+        "coverage":0.3329925379,
+        "gap":0.6670074621,
+        "weight":0.2628059331,
+        "category_score":0.1752935185
+      }
+    ],
+    "category_level_score":0.6248482984,
+    "overall_severity_score":0.6507801865,
+    "systematic_underfunding":{
+      "score":null,
+      "weighted_avg_underfunding_gap":null,
+      "underfunded_year_share":null,
+      "max_underfunding_gap":null,
+      "historical_years_count":null
+    }
+  },
+  {
+    "code":"HNGA26",
+    "name":"Nigeria Humanitarian Needs and Response Plan 2026",
+    "primary_location_code":"NGA",
+    "location_codes":[
+      "NGA"
+    ],
+    "year":2026,
+    "requirements":516399423.0,
+    "funding":188766423.0,
+    "percent_funded":36.6,
+    "dest_plan_code":"HNGA26",
+    "contribution_count":47,
+    "Country ISO3_x":"NGA",
+    "people_in_need":5900000.0,
+    "people_targeted":2500000.0,
+    "people_affected":0.0,
+    "people_reached":0.0,
+    "Country ISO3_y":"NGA",
+    "category_breakdown":[
+      {
+        "category":"camp_coordination_and_camp_management",
+        "in_need":2036114.0,
+        "targeted":568578
+      },
+      {
+        "category":"education",
+        "in_need":1648802.0,
+        "targeted":633643
+      },
+      {
+        "category":"food_security",
+        "in_need":9962369.0,
+        "targeted":3026536
+      },
+      {
+        "category":"health",
+        "in_need":3957689.0,
+        "targeted":1488054
+      },
+      {
+        "category":"protection",
+        "in_need":3328745.0,
+        "targeted":1472715
+      }
+    ],
+    "benchmark_key":"NGA",
+    "primary_location_name":"Nigeria",
+    "location_names":[
+      "Nigeria"
+    ],
+    "latitude":9.6000359,
+    "longitude":7.9999721,
+    "category_breakdown_scored":[
+      {
+        "category":"camp_coordination_and_camp_management",
+        "in_need":2036114.0,
+        "targeted":568578.0,
+        "coverage":0.2792466434,
+        "gap":0.7207533566,
+        "weight":0.0972648004,
+        "category_score":0.0701039314
+      },
+      {
+        "category":"education",
+        "in_need":1648802.0,
+        "targeted":633643.0,
+        "coverage":0.3843050894,
+        "gap":0.6156949106,
+        "weight":0.0787629757,
+        "category_score":0.0484939633
+      },
+      {
+        "category":"food_security",
+        "in_need":9962369.0,
+        "targeted":3026536.0,
+        "coverage":0.3037968178,
+        "gap":0.6962031822,
+        "weight":0.4759005793,
+        "category_score":0.3313234978
+      },
+      {
+        "category":"health",
+        "in_need":3957689.0,
+        "targeted":1488054.0,
+        "coverage":0.3759906349,
+        "gap":0.6240093651,
+        "weight":0.1890580933,
+        "category_score":0.1179740208
+      },
+      {
+        "category":"protection",
+        "in_need":3328745.0,
+        "targeted":1472715.0,
+        "coverage":0.4424234959,
+        "gap":0.5575765041,
+        "weight":0.1590135513,
+        "category_score":0.08866222
+      }
+    ],
+    "category_level_score":0.6565576332,
+    "overall_severity_score":0.6480985207,
+    "systematic_underfunding":{
+      "score":null,
+      "weighted_avg_underfunding_gap":null,
+      "underfunded_year_share":null,
+      "max_underfunding_gap":null,
+      "historical_years_count":null
+    }
   },
   {
     "code":"HAFG26",
@@ -214,267 +1160,69 @@
         "targeted":5347659
       }
     ],
+    "benchmark_key":"AFG",
     "primary_location_name":"Afghanistan",
     "location_names":[
       "Afghanistan"
     ],
     "latitude":33.7680065,
-    "longitude":66.2385139
-  },
-  {
-    "code":"HSSD26",
-    "name":"South Sudan Humanitarian Needs and Response Plan 2026",
-    "primary_location_code":"SSD",
-    "location_codes":[
-      "SSD"
-    ],
-    "year":2026,
-    "requirements":1463046056.0,
-    "funding":322015249.0,
-    "percent_funded":22.0,
-    "dest_plan_code":"HSSD26",
-    "contribution_count":68,
-    "Country ISO3_x":"SSD",
-    "people_in_need":9913863.0,
-    "people_targeted":4343435.0,
-    "people_affected":0.0,
-    "people_reached":0.0,
-    "Country ISO3_y":"SSD",
-    "category_breakdown":[
+    "longitude":66.2385139,
+    "category_breakdown_scored":[
       {
         "category":"education",
-        "in_need":2435900.0,
-        "targeted":795532
+        "in_need":7105602.0,
+        "targeted":613774.0,
+        "coverage":0.0863788881,
+        "gap":0.9136211119,
+        "weight":0.0919175785,
+        "category_score":0.0839778402
       },
       {
         "category":"food_security",
-        "in_need":12901895.0,
-        "targeted":4497644
+        "in_need":24876883.0,
+        "targeted":17593841.0,
+        "coverage":0.7072365537,
+        "gap":0.2927634463,
+        "weight":0.3218056464,
+        "category_score":0.0942129301
       },
       {
         "category":"health",
-        "in_need":6269692.0,
-        "targeted":2884600
-      },
-      {
-        "category":"other",
-        "in_need":0.0,
-        "targeted":463705
-      },
-      {
-        "category":"protection",
-        "in_need":4867750.0,
-        "targeted":1548355
-      }
-    ],
-    "primary_location_name":"South Sudan",
-    "location_names":[
-      "South Sudan"
-    ],
-    "latitude":7.8699431,
-    "longitude":29.6667897
-  },
-  {
-    "code":"HCOD26",
-    "name":"R\u00e9publique D\u00e9mocratique du Congo Besoins Humanitaires et Plan de R\u00e9ponse 2026",
-    "primary_location_code":"COD",
-    "location_codes":[
-      "COD"
-    ],
-    "year":2026,
-    "requirements":1403721718.0,
-    "funding":430024823.0,
-    "percent_funded":30.6,
-    "dest_plan_code":"HCOD26",
-    "contribution_count":65,
-    "Country ISO3_x":"COD",
-    "people_in_need":14940727.0,
-    "people_targeted":7313763.0,
-    "people_affected":0.0,
-    "people_reached":0.0,
-    "Country ISO3_y":"COD",
-    "category_breakdown":[
-      {
-        "category":"education",
-        "in_need":3901894.0,
-        "targeted":480758
-      },
-      {
-        "category":"food_security",
-        "in_need":17260021.0,
-        "targeted":7776224
-      },
-      {
-        "category":"health",
-        "in_need":7544115.0,
-        "targeted":2512134
-      }
-    ],
-    "primary_location_name":"Democratic Republic of the Congo",
-    "location_names":[
-      "Democratic Republic of the Congo"
-    ],
-    "latitude":-2.9814344,
-    "longitude":23.8222636
-  },
-  {
-    "code":"HTCD26",
-    "name":"Tchad Besoins Humanitaires et Plan de R\u00e9ponse 2026",
-    "primary_location_code":"TCD",
-    "location_codes":[
-      "TCD"
-    ],
-    "year":2026,
-    "requirements":986069627.0,
-    "funding":215913333.0,
-    "percent_funded":21.9,
-    "dest_plan_code":"HTCD26",
-    "contribution_count":100,
-    "Country ISO3_x":"TCD",
-    "people_in_need":4509014.0,
-    "people_targeted":3352810.0,
-    "people_affected":0.0,
-    "people_reached":0.0,
-    "Country ISO3_y":"TCD",
-    "category_breakdown":[
-      {
-        "category":"camp_coordination_and_camp_management",
-        "in_need":504194.0,
-        "targeted":482348
-      },
-      {
-        "category":"education",
-        "in_need":1388864.0,
-        "targeted":587099
-      },
-      {
-        "category":"food_security",
-        "in_need":5042675.0,
-        "targeted":2818620
-      },
-      {
-        "category":"health",
-        "in_need":1706766.0,
-        "targeted":1203856
+        "in_need":14423290.0,
+        "targeted":7218662.0,
+        "coverage":0.5004865048,
+        "gap":0.4995134952,
+        "weight":0.1865786868,
+        "category_score":0.093198572
       },
       {
         "category":"hygiene",
-        "in_need":2901096.0,
-        "targeted":1672229
-      }
-    ],
-    "primary_location_name":"Chad",
-    "location_names":[
-      "Chad"
-    ],
-    "latitude":15.6134137,
-    "longitude":19.0156172
-  },
-  {
-    "code":"HMMR26",
-    "name":"Myanmar Humanitarian Needs and Response Plan 2026",
-    "primary_location_code":"MMR",
-    "location_codes":[
-      "MMR"
-    ],
-    "year":2026,
-    "requirements":889600798.0,
-    "funding":245472134.0,
-    "percent_funded":27.6,
-    "dest_plan_code":"HMMR26",
-    "contribution_count":62,
-    "Country ISO3_x":"MMR",
-    "people_in_need":16229050.0,
-    "people_targeted":4868096.0,
-    "people_affected":0.0,
-    "people_reached":0.0,
-    "Country ISO3_y":"MMR",
-    "category_breakdown":[
-      {
-        "category":"education",
-        "in_need":3523306.0,
-        "targeted":1135546
-      },
-      {
-        "category":"food_security",
-        "in_need":11129020.0,
-        "targeted":2183437
-      },
-      {
-        "category":"health",
-        "in_need":9251462.0,
-        "targeted":2002225
-      },
-      {
-        "category":"hygiene",
-        "in_need":8948125.0,
-        "targeted":2375280
+        "in_need":15909907.0,
+        "targeted":7838434.0,
+        "coverage":0.4926762928,
+        "gap":0.5073237072,
+        "weight":0.205809462,
+        "category_score":0.1044120192
       },
       {
         "category":"protection",
-        "in_need":11596899.0,
-        "targeted":3372443
+        "in_need":14988378.0,
+        "targeted":5347659.0,
+        "coverage":0.3567870386,
+        "gap":0.6432129614,
+        "weight":0.1938886263,
+        "category_score":0.1247116775
       }
     ],
-    "primary_location_name":"Myanmar",
-    "location_names":[
-      "Myanmar"
-    ],
-    "latitude":17.1750495,
-    "longitude":95.9999652
-  },
-  {
-    "code":"HHTI26",
-    "name":"Haiti Besoins Humanitaires et Plan de R\u00e9ponse 2026",
-    "primary_location_code":"HTI",
-    "location_codes":[
-      "HTI"
-    ],
-    "year":2026,
-    "requirements":880327426.0,
-    "funding":172057079.0,
-    "percent_funded":19.5,
-    "dest_plan_code":"HHTI26",
-    "contribution_count":18,
-    "Country ISO3_x":"HTI",
-    "people_in_need":6414193.0,
-    "people_targeted":4162202.0,
-    "people_affected":0.0,
-    "people_reached":0.0,
-    "Country ISO3_y":"HTI",
-    "category_breakdown":[
-      {
-        "category":"camp_coordination_and_camp_management",
-        "in_need":2118299.0,
-        "targeted":571841
-      },
-      {
-        "category":"education",
-        "in_need":1493675.0,
-        "targeted":982031
-      },
-      {
-        "category":"food_security",
-        "in_need":7136524.0,
-        "targeted":4475612
-      },
-      {
-        "category":"health",
-        "in_need":4860485.0,
-        "targeted":2710790
-      },
-      {
-        "category":"protection",
-        "in_need":2195026.0,
-        "targeted":1235914
-      }
-    ],
-    "primary_location_name":"Haiti",
-    "location_names":[
-      "Haiti"
-    ],
-    "latitude":19.1399952,
-    "longitude":-72.3570972
+    "category_level_score":0.500513039,
+    "overall_severity_score":0.6409456494,
+    "systematic_underfunding":{
+      "score":null,
+      "weighted_avg_underfunding_gap":null,
+      "underfunded_year_share":null,
+      "max_underfunding_gap":null,
+      "historical_years_count":null
+    }
   },
   {
     "code":"HSOM26",
@@ -527,406 +1275,78 @@
         "targeted":1853929
       }
     ],
+    "benchmark_key":"SOM",
     "primary_location_name":"Somalia",
     "location_names":[
       "Somalia"
     ],
     "latitude":8.3676771,
-    "longitude":49.083416
-  },
-  {
-    "code":"RUGA26",
-    "name":"Uganda Regional Refugee Response Plan 2026",
-    "primary_location_code":"UGA",
-    "location_codes":[
-      "UGA"
-    ],
-    "year":2026,
-    "requirements":828700000.0,
-    "funding":13438960.0,
-    "percent_funded":1.6,
-    "dest_plan_code":"RUGA26",
-    "contribution_count":3,
-    "Country ISO3_x":null,
-    "people_in_need":null,
-    "people_targeted":null,
-    "people_affected":null,
-    "people_reached":null,
-    "Country ISO3_y":null,
-    "category_breakdown":[
-
-    ],
-    "primary_location_name":"Uganda",
-    "location_names":[
-      "Uganda"
-    ],
-    "latitude":1.5333554,
-    "longitude":32.2166578
-  },
-  {
-    "code":"RREG26b",
-    "name":"Venezuela Regional Refugee and Migrant Response Plan (RMRP) 2026",
-    "primary_location_code":"BRA",
-    "location_codes":[
-      "BRA",
-      "GUY",
-      "CRI",
-      "URY",
-      "PRY",
-      "COL",
-      "PER",
-      "ECU",
-      "PAN",
-      "CUW",
-      "ARG",
-      "ABW",
-      "BOL",
-      "CHL",
-      "DOM",
-      "TTO",
-      "MEX"
-    ],
-    "year":2026,
-    "requirements":737473022.0,
-    "funding":67880713.0,
-    "percent_funded":9.2,
-    "dest_plan_code":"RREG26b",
-    "contribution_count":48,
-    "Country ISO3_x":null,
-    "people_in_need":null,
-    "people_targeted":null,
-    "people_affected":null,
-    "people_reached":null,
-    "Country ISO3_y":null,
-    "category_breakdown":[
-
-    ],
-    "primary_location_name":"Brazil",
-    "location_names":[
-      "Brazil",
-      "Guyana",
-      "Costa Rica",
-      "Uruguay",
-      "Paraguay",
-      "Colombia",
-      "Peru",
-      "Ecuador",
-      "Panama",
-      "Cura\u00e7ao",
-      "Argentina",
-      "Aruba",
-      "Bolivia",
-      "Chile",
-      "Dominican Republic",
-      "Trinidad and Tobago",
-      "Mexico"
-    ],
-    "latitude":-10.3333333,
-    "longitude":-53.2
-  },
-  {
-    "code":"RBGD26",
-    "name":"Rohingya Humanitarian Crisis Joint Response Plan 2026",
-    "primary_location_code":"BGD",
-    "location_codes":[
-      "BGD"
-    ],
-    "year":2026,
-    "requirements":698375266.0,
-    "funding":233087883.0,
-    "percent_funded":33.4,
-    "dest_plan_code":"RBGD26",
-    "contribution_count":74,
-    "Country ISO3_x":null,
-    "people_in_need":null,
-    "people_targeted":null,
-    "people_affected":null,
-    "people_reached":null,
-    "Country ISO3_y":null,
-    "category_breakdown":[
-
-    ],
-    "primary_location_name":"Bangladesh",
-    "location_names":[
-      "Bangladesh"
-    ],
-    "latitude":24.4769288,
-    "longitude":90.2934413
-  },
-  {
-    "code":"HNER26",
-    "name":"Niger Besoins Humanitaires et Plan de R\u00e9ponse 2026",
-    "primary_location_code":"NER",
-    "location_codes":[
-      "NER"
-    ],
-    "year":2026,
-    "requirements":675619589.0,
-    "funding":66462854.0,
-    "percent_funded":9.8,
-    "dest_plan_code":"HNER26",
-    "contribution_count":55,
-    "Country ISO3_x":"NER",
-    "people_in_need":2600000.0,
-    "people_targeted":1600000.0,
-    "people_affected":0.0,
-    "people_reached":0.0,
-    "Country ISO3_y":null,
-    "category_breakdown":[
-
-    ],
-    "primary_location_name":"Niger",
-    "location_names":[
-      "Niger"
-    ],
-    "latitude":17.7356214,
-    "longitude":9.3238432
-  },
-  {
-    "code":"HBFA26",
-    "name":"Burkina Faso Besoins Humanitaires et Plan de R\u00e9ponse 2026",
-    "primary_location_code":"BFA",
-    "location_codes":[
-      "BFA"
-    ],
-    "year":2026,
-    "requirements":658486359.0,
-    "funding":72939948.0,
-    "percent_funded":11.1,
-    "dest_plan_code":"HBFA26",
-    "contribution_count":45,
-    "Country ISO3_x":"BFA",
-    "people_in_need":4400000.0,
-    "people_targeted":3100000.0,
-    "people_affected":0.0,
-    "people_reached":0.0,
-    "Country ISO3_y":null,
-    "category_breakdown":[
-
-    ],
-    "primary_location_name":"Burkina Faso",
-    "location_names":[
-      "Burkina Faso"
-    ],
-    "latitude":12.0753083,
-    "longitude":-1.6880314
-  },
-  {
-    "code":"HVEN26",
-    "name":"Venezuela Plan de Respuesta Humanitaria 2026",
-    "primary_location_code":"VEN",
-    "location_codes":[
-      "VEN"
-    ],
-    "year":2026,
-    "requirements":632191972.0,
-    "funding":84012783.0,
-    "percent_funded":13.3,
-    "dest_plan_code":"HVEN26",
-    "contribution_count":23,
-    "Country ISO3_x":"VEN",
-    "people_in_need":7900000.0,
-    "people_targeted":5400000.0,
-    "people_affected":0.0,
-    "people_reached":0.0,
-    "Country ISO3_y":null,
-    "category_breakdown":[
-
-    ],
-    "primary_location_name":"Venezuela",
-    "location_names":[
-      "Venezuela"
-    ],
-    "latitude":8.0018709,
-    "longitude":-66.1109318
-  },
-  {
-    "code":"HMLI26",
-    "name":"Mali Besoins Humanitaires et Plan de R\u00e9ponse 2026",
-    "primary_location_code":"MLI",
-    "location_codes":[
-      "MLI"
-    ],
-    "year":2026,
-    "requirements":577866412.0,
-    "funding":75201041.0,
-    "percent_funded":13.0,
-    "dest_plan_code":"HMLI26",
-    "contribution_count":96,
-    "Country ISO3_x":"MLI",
-    "people_in_need":5100000.0,
-    "people_targeted":3800000.0,
-    "people_affected":0.0,
-    "people_reached":0.0,
-    "Country ISO3_y":null,
-    "category_breakdown":[
-
-    ],
-    "primary_location_name":"Mali",
-    "location_names":[
-      "Mali"
-    ],
-    "latitude":16.3700359,
-    "longitude":-2.2900239
-  },
-  {
-    "code":"HMOZ26",
-    "name":"Mozambique Humanitarian Needs and Response Plan 2026",
-    "primary_location_code":"MOZ",
-    "location_codes":[
-      "MOZ"
-    ],
-    "year":2026,
-    "requirements":534342584.0,
-    "funding":131262552.0,
-    "percent_funded":24.6,
-    "dest_plan_code":"HMOZ26",
-    "contribution_count":52,
-    "Country ISO3_x":"MOZ",
-    "people_in_need":2356162.0,
-    "people_targeted":1745582.0,
-    "people_affected":0.0,
-    "people_reached":0.0,
-    "Country ISO3_y":"MOZ",
-    "category_breakdown":[
-      {
-        "category":"education",
-        "in_need":738165.0,
-        "targeted":553295
-      },
-      {
-        "category":"food_security",
-        "in_need":588027.0,
-        "targeted":371552
-      },
-      {
-        "category":"health",
-        "in_need":1216660.0,
-        "targeted":948693
-      },
-      {
-        "category":"protection",
-        "in_need":1654443.0,
-        "targeted":1008599
-      }
-    ],
-    "primary_location_name":"Mozambique",
-    "location_names":[
-      "Mozambique"
-    ],
-    "latitude":-19.302233,
-    "longitude":34.9144977
-  },
-  {
-    "code":"HNGA26",
-    "name":"Nigeria Humanitarian Needs and Response Plan 2026",
-    "primary_location_code":"NGA",
-    "location_codes":[
-      "NGA"
-    ],
-    "year":2026,
-    "requirements":516399423.0,
-    "funding":188766423.0,
-    "percent_funded":36.6,
-    "dest_plan_code":"HNGA26",
-    "contribution_count":47,
-    "Country ISO3_x":"NGA",
-    "people_in_need":5900000.0,
-    "people_targeted":2500000.0,
-    "people_affected":0.0,
-    "people_reached":0.0,
-    "Country ISO3_y":"NGA",
-    "category_breakdown":[
+    "longitude":49.083416,
+    "category_breakdown_scored":[
       {
         "category":"camp_coordination_and_camp_management",
-        "in_need":2036114.0,
-        "targeted":568578
+        "in_need":2039580.0,
+        "targeted":1039063.0,
+        "coverage":0.5094494945,
+        "gap":0.4905505055,
+        "weight":0.1089968959,
+        "category_score":0.0534684824
       },
       {
         "category":"education",
-        "in_need":1648802.0,
-        "targeted":633643
+        "in_need":1729469.0,
+        "targeted":628192.0,
+        "coverage":0.363228251,
+        "gap":0.636771749,
+        "weight":0.0924242994,
+        "category_score":0.0588531828
       },
       {
         "category":"food_security",
-        "in_need":9962369.0,
-        "targeted":3026536
+        "in_need":2369935.0,
+        "targeted":1270239.0,
+        "coverage":0.5359805227,
+        "gap":0.4640194773,
+        "weight":0.1266513491,
+        "category_score":0.0587686928
       },
       {
         "category":"health",
-        "in_need":3957689.0,
-        "targeted":1488054
+        "in_need":4989936.0,
+        "targeted":2426481.0,
+        "coverage":0.4862749743,
+        "gap":0.5137250257,
+        "weight":0.2666664387,
+        "category_score":0.1369932231
+      },
+      {
+        "category":"hygiene",
+        "in_need":4486155.0,
+        "targeted":2229585.0,
+        "coverage":0.4969924133,
+        "gap":0.5030075867,
+        "weight":0.239743952,
+        "category_score":0.1205930267
       },
       {
         "category":"protection",
-        "in_need":3328745.0,
-        "targeted":1472715
+        "in_need":3097201.0,
+        "targeted":1853929.0,
+        "coverage":0.5985820746,
+        "gap":0.4014179254,
+        "weight":0.1655170648,
+        "category_score":0.0664415168
       }
     ],
-    "primary_location_name":"Nigeria",
-    "location_names":[
-      "Nigeria"
-    ],
-    "latitude":9.6000359,
-    "longitude":7.9999721
-  },
-  {
-    "code":"HCMR26",
-    "name":"Cameroon Humanitarian Needs and Response Plan 2026",
-    "primary_location_code":"CMR",
-    "location_codes":[
-      "CMR"
-    ],
-    "year":2026,
-    "requirements":318976221.0,
-    "funding":66498901.0,
-    "percent_funded":20.8,
-    "dest_plan_code":"HCMR26",
-    "contribution_count":33,
-    "Country ISO3_x":"CMR",
-    "people_in_need":2900000.0,
-    "people_targeted":1800000.0,
-    "people_affected":0.0,
-    "people_reached":0.0,
-    "Country ISO3_y":null,
-    "category_breakdown":[
-
-    ],
-    "primary_location_name":"Cameroon",
-    "location_names":[
-      "Cameroon"
-    ],
-    "latitude":4.6125522,
-    "longitude":13.1535811
-  },
-  {
-    "code":"HCOL26",
-    "name":"Colombia Necesidades Humanitarias y Plan de Respuesta 2026",
-    "primary_location_code":"COL",
-    "location_codes":[
-      "COL"
-    ],
-    "year":2026,
-    "requirements":286966367.0,
-    "funding":152365573.0,
-    "percent_funded":53.1,
-    "dest_plan_code":"HCOL26",
-    "contribution_count":35,
-    "Country ISO3_x":"COL",
-    "people_in_need":6900000.0,
-    "people_targeted":2600000.0,
-    "people_affected":0.0,
-    "people_reached":0.0,
-    "Country ISO3_y":null,
-    "category_breakdown":[
-
-    ],
-    "primary_location_name":"Colombia",
-    "location_names":[
-      "Colombia"
-    ],
-    "latitude":4.099917,
-    "longitude":-72.9088133
+    "category_level_score":0.4951181246,
+    "overall_severity_score":0.6353238279,
+    "systematic_underfunding":{
+      "score":null,
+      "weighted_avg_underfunding_gap":null,
+      "underfunded_year_share":null,
+      "max_underfunding_gap":null,
+      "historical_years_count":null
+    }
   },
   {
     "code":"HCAF26",
@@ -979,70 +1399,298 @@
         "targeted":559981
       }
     ],
+    "benchmark_key":"CAF",
     "primary_location_name":"Central African Republic",
     "location_names":[
       "Central African Republic"
     ],
     "latitude":7.0323598,
-    "longitude":19.9981227
+    "longitude":19.9981227,
+    "category_breakdown_scored":[
+      {
+        "category":"camp_coordination_and_camp_management",
+        "in_need":411618.0,
+        "targeted":246970.0,
+        "coverage":0.5999980565,
+        "gap":0.4000019435,
+        "weight":0.0664686367,
+        "category_score":0.0265875839
+      },
+      {
+        "category":"education",
+        "in_need":585470.0,
+        "targeted":278834.0,
+        "coverage":0.4762566827,
+        "gap":0.5237433173,
+        "weight":0.094542495,
+        "category_score":0.049516
+      },
+      {
+        "category":"food_security",
+        "in_need":2101283.0,
+        "targeted":1065649.0,
+        "coverage":0.5071420651,
+        "gap":0.4928579349,
+        "weight":0.339318048,
+        "category_score":0.1672355924
+      },
+      {
+        "category":"health",
+        "in_need":955008.0,
+        "targeted":516609.0,
+        "coverage":0.540947301,
+        "gap":0.459052699,
+        "weight":0.1542159959,
+        "category_score":0.0707932691
+      },
+      {
+        "category":"hygiene",
+        "in_need":1096042.0,
+        "targeted":569945.0,
+        "coverage":0.5200028831,
+        "gap":0.4799971169,
+        "weight":0.1769903588,
+        "category_score":0.0849548619
+      },
+      {
+        "category":"protection",
+        "in_need":1043244.0,
+        "targeted":559981.0,
+        "coverage":0.536768963,
+        "gap":0.463231037,
+        "weight":0.1684644656,
+        "category_score":0.0780379691
+      }
+    ],
+    "category_level_score":0.4771252764,
+    "overall_severity_score":0.6060782978,
+    "systematic_underfunding":{
+      "score":null,
+      "weighted_avg_underfunding_gap":null,
+      "underfunded_year_share":null,
+      "max_underfunding_gap":null,
+      "historical_years_count":null
+    }
   },
   {
-    "code":"OPAK26",
-    "name":"Pakistan Floods Support Plan 2026",
-    "primary_location_code":"PAK",
+    "code":"HHTI26",
+    "name":"Haiti Besoins Humanitaires et Plan de R\u00e9ponse 2026",
+    "primary_location_code":"HTI",
     "location_codes":[
-      "PAK"
+      "HTI"
     ],
     "year":2026,
-    "requirements":64943909.0,
-    "funding":11011245.0,
-    "percent_funded":17.0,
-    "dest_plan_code":"OPAK26",
-    "contribution_count":10,
-    "Country ISO3_x":null,
-    "people_in_need":null,
-    "people_targeted":null,
-    "people_affected":null,
-    "people_reached":null,
-    "Country ISO3_y":null,
+    "requirements":880327426.0,
+    "funding":172057079.0,
+    "percent_funded":19.5,
+    "dest_plan_code":"HHTI26",
+    "contribution_count":18,
+    "Country ISO3_x":"HTI",
+    "people_in_need":6414193.0,
+    "people_targeted":4162202.0,
+    "people_affected":0.0,
+    "people_reached":0.0,
+    "Country ISO3_y":"HTI",
     "category_breakdown":[
-
+      {
+        "category":"camp_coordination_and_camp_management",
+        "in_need":2118299.0,
+        "targeted":571841
+      },
+      {
+        "category":"education",
+        "in_need":1493675.0,
+        "targeted":982031
+      },
+      {
+        "category":"food_security",
+        "in_need":7136524.0,
+        "targeted":4475612
+      },
+      {
+        "category":"health",
+        "in_need":4860485.0,
+        "targeted":2710790
+      },
+      {
+        "category":"protection",
+        "in_need":2195026.0,
+        "targeted":1235914
+      }
     ],
-    "primary_location_name":"Pakistan",
+    "benchmark_key":"HTI",
+    "primary_location_name":"Haiti",
     "location_names":[
-      "Pakistan"
+      "Haiti"
     ],
-    "latitude":30.3308401,
-    "longitude":71.247499
+    "latitude":19.1399952,
+    "longitude":-72.3570972,
+    "category_breakdown_scored":[
+      {
+        "category":"camp_coordination_and_camp_management",
+        "in_need":2118299.0,
+        "targeted":571841.0,
+        "coverage":0.2699529198,
+        "gap":0.7300470802,
+        "weight":0.1189787648,
+        "category_score":0.0868600999
+      },
+      {
+        "category":"education",
+        "in_need":1493675.0,
+        "targeted":982031.0,
+        "coverage":0.6574596214,
+        "gap":0.3425403786,
+        "weight":0.0838954305,
+        "category_score":0.0287375725
+      },
+      {
+        "category":"food_security",
+        "in_need":7136524.0,
+        "targeted":4475612.0,
+        "coverage":0.6271417289,
+        "gap":0.3728582711,
+        "weight":0.400838036,
+        "category_score":0.1494557771
+      },
+      {
+        "category":"health",
+        "in_need":4860485.0,
+        "targeted":2710790.0,
+        "coverage":0.5577200629,
+        "gap":0.4422799371,
+        "weight":0.2729994688,
+        "category_score":0.1207421879
+      },
+      {
+        "category":"protection",
+        "in_need":2195026.0,
+        "targeted":1235914.0,
+        "coverage":0.5630521005,
+        "gap":0.4369478995,
+        "weight":0.1232882998,
+        "category_score":0.0538705636
+      }
+    ],
+    "category_level_score":0.439666201,
+    "overall_severity_score":0.5766663756,
+    "systematic_underfunding":{
+      "score":null,
+      "weighted_avg_underfunding_gap":null,
+      "underfunded_year_share":null,
+      "max_underfunding_gap":null,
+      "historical_years_count":null
+    }
   },
   {
-    "code":"OVNM26",
-    "name":"Viet Nam\u00a025-26 Joint Response Plan Multiple Typhoons and Floods 2026",
-    "primary_location_code":"VNM",
+    "code":"HTCD26",
+    "name":"Tchad Besoins Humanitaires et Plan de R\u00e9ponse 2026",
+    "primary_location_code":"TCD",
     "location_codes":[
-      "VNM"
+      "TCD"
     ],
     "year":2026,
-    "requirements":61132366.0,
-    "funding":3028917.0,
-    "percent_funded":5.0,
-    "dest_plan_code":"OVNM26",
-    "contribution_count":3,
-    "Country ISO3_x":null,
-    "people_in_need":null,
-    "people_targeted":null,
-    "people_affected":null,
-    "people_reached":null,
-    "Country ISO3_y":null,
+    "requirements":986069627.0,
+    "funding":215913333.0,
+    "percent_funded":21.9,
+    "dest_plan_code":"HTCD26",
+    "contribution_count":100,
+    "Country ISO3_x":"TCD",
+    "people_in_need":4509014.0,
+    "people_targeted":3352810.0,
+    "people_affected":0.0,
+    "people_reached":0.0,
+    "Country ISO3_y":"TCD",
     "category_breakdown":[
-
+      {
+        "category":"camp_coordination_and_camp_management",
+        "in_need":504194.0,
+        "targeted":482348
+      },
+      {
+        "category":"education",
+        "in_need":1388864.0,
+        "targeted":587099
+      },
+      {
+        "category":"food_security",
+        "in_need":5042675.0,
+        "targeted":2818620
+      },
+      {
+        "category":"health",
+        "in_need":1706766.0,
+        "targeted":1203856
+      },
+      {
+        "category":"hygiene",
+        "in_need":2901096.0,
+        "targeted":1672229
+      }
     ],
-    "primary_location_name":"Vietnam",
+    "benchmark_key":"TCD",
+    "primary_location_name":"Chad",
     "location_names":[
-      "Vietnam"
+      "Chad"
     ],
-    "latitude":15.9266657,
-    "longitude":107.9650855
+    "latitude":15.6134137,
+    "longitude":19.0156172,
+    "category_breakdown_scored":[
+      {
+        "category":"camp_coordination_and_camp_management",
+        "in_need":504194.0,
+        "targeted":482348.0,
+        "coverage":0.95667144,
+        "gap":0.04332856,
+        "weight":0.0436773813,
+        "category_score":0.001892478
+      },
+      {
+        "category":"education",
+        "in_need":1388864.0,
+        "targeted":587099.0,
+        "coverage":0.4227188551,
+        "gap":0.5772811449,
+        "weight":0.1203146853,
+        "category_score":0.0694553993
+      },
+      {
+        "category":"food_security",
+        "in_need":5042675.0,
+        "targeted":2818620.0,
+        "coverage":0.5589533333,
+        "gap":0.4410466667,
+        "weight":0.4368374843,
+        "category_score":0.1926657164
+      },
+      {
+        "category":"health",
+        "in_need":1706766.0,
+        "targeted":1203856.0,
+        "coverage":0.7053433218,
+        "gap":0.2946566782,
+        "weight":0.1478539398,
+        "category_score":0.0435661508
+      },
+      {
+        "category":"hygiene",
+        "in_need":2901096.0,
+        "targeted":1672229.0,
+        "coverage":0.5764128454,
+        "gap":0.4235871546,
+        "weight":0.2513165093,
+        "category_score":0.1064544451
+      }
+    ],
+    "category_level_score":0.4140341895,
+    "overall_severity_score":0.5516463685,
+    "systematic_underfunding":{
+      "score":null,
+      "weighted_avg_underfunding_gap":null,
+      "underfunded_year_share":null,
+      "max_underfunding_gap":null,
+      "historical_years_count":null
+    }
   },
   {
     "code":"OLKA2526",
@@ -1066,12 +1714,163 @@
     "category_breakdown":[
 
     ],
+    "benchmark_key":"LKA",
     "primary_location_name":"Sri Lanka",
     "location_names":[
       "Sri Lanka"
     ],
     "latitude":7.5554942,
-    "longitude":80.7137847
+    "longitude":80.7137847,
+    "category_breakdown_scored":[
+
+    ],
+    "category_level_score":null,
+    "overall_severity_score":0.551,
+    "systematic_underfunding":{
+      "score":null,
+      "weighted_avg_underfunding_gap":null,
+      "underfunded_year_share":null,
+      "max_underfunding_gap":null,
+      "historical_years_count":null
+    }
+  },
+  {
+    "code":"HMOZ26",
+    "name":"Mozambique Humanitarian Needs and Response Plan 2026",
+    "primary_location_code":"MOZ",
+    "location_codes":[
+      "MOZ"
+    ],
+    "year":2026,
+    "requirements":534342584.0,
+    "funding":131262552.0,
+    "percent_funded":24.6,
+    "dest_plan_code":"HMOZ26",
+    "contribution_count":52,
+    "Country ISO3_x":"MOZ",
+    "people_in_need":2356162.0,
+    "people_targeted":1745582.0,
+    "people_affected":0.0,
+    "people_reached":0.0,
+    "Country ISO3_y":"MOZ",
+    "category_breakdown":[
+      {
+        "category":"education",
+        "in_need":738165.0,
+        "targeted":553295
+      },
+      {
+        "category":"food_security",
+        "in_need":588027.0,
+        "targeted":371552
+      },
+      {
+        "category":"health",
+        "in_need":1216660.0,
+        "targeted":948693
+      },
+      {
+        "category":"protection",
+        "in_need":1654443.0,
+        "targeted":1008599
+      }
+    ],
+    "benchmark_key":"MOZ",
+    "primary_location_name":"Mozambique",
+    "location_names":[
+      "Mozambique"
+    ],
+    "latitude":-19.302233,
+    "longitude":34.9144977,
+    "category_breakdown_scored":[
+      {
+        "category":"education",
+        "in_need":738165.0,
+        "targeted":553295.0,
+        "coverage":0.7495546389,
+        "gap":0.2504453611,
+        "weight":0.175866838,
+        "category_score":0.0440450338
+      },
+      {
+        "category":"food_security",
+        "in_need":588027.0,
+        "targeted":371552.0,
+        "coverage":0.6318621424,
+        "gap":0.3681378576,
+        "weight":0.1400966575,
+        "category_score":0.0515748833
+      },
+      {
+        "category":"health",
+        "in_need":1216660.0,
+        "targeted":948693.0,
+        "coverage":0.7797519438,
+        "gap":0.2202480562,
+        "weight":0.2898676409,
+        "category_score":0.0638427845
+      },
+      {
+        "category":"protection",
+        "in_need":1654443.0,
+        "targeted":1008599.0,
+        "coverage":0.6096305524,
+        "gap":0.3903694476,
+        "weight":0.3941688635,
+        "category_score":0.1538714815
+      }
+    ],
+    "category_level_score":0.3133341831,
+    "overall_severity_score":0.4785838644,
+    "systematic_underfunding":{
+      "score":null,
+      "weighted_avg_underfunding_gap":null,
+      "underfunded_year_share":null,
+      "max_underfunding_gap":null,
+      "historical_years_count":null
+    }
+  },
+  {
+    "code":"HCOL26",
+    "name":"Colombia Necesidades Humanitarias y Plan de Respuesta 2026",
+    "primary_location_code":"COL",
+    "location_codes":[
+      "COL"
+    ],
+    "year":2026,
+    "requirements":286966367.0,
+    "funding":152365573.0,
+    "percent_funded":53.1,
+    "dest_plan_code":"HCOL26",
+    "contribution_count":35,
+    "Country ISO3_x":"COL",
+    "people_in_need":6900000.0,
+    "people_targeted":2600000.0,
+    "people_affected":0.0,
+    "people_reached":0.0,
+    "Country ISO3_y":null,
+    "category_breakdown":[
+
+    ],
+    "benchmark_key":"COL",
+    "primary_location_name":"Colombia",
+    "location_names":[
+      "Colombia"
+    ],
+    "latitude":4.099917,
+    "longitude":-72.9088133,
+    "category_breakdown_scored":[
+
+    ],
+    "category_level_score":null,
+    "overall_severity_score":0.469,
+    "systematic_underfunding":{
+      "score":null,
+      "weighted_avg_underfunding_gap":null,
+      "underfunded_year_share":null,
+      "max_underfunding_gap":null,
+      "historical_years_count":null
+    }
   },
   {
     "code":"RREG26",
@@ -1100,6 +1899,7 @@
     "category_breakdown":[
 
     ],
+    "benchmark_key":"YEM",
     "primary_location_name":"Yemen",
     "location_names":[
       "Yemen",
@@ -1110,7 +1910,19 @@
       "Tanzania"
     ],
     "latitude":16.3471243,
-    "longitude":47.8915271
+    "longitude":47.8915271,
+    "category_breakdown_scored":[
+
+    ],
+    "category_level_score":null,
+    "overall_severity_score":null,
+    "systematic_underfunding":{
+      "score":null,
+      "weighted_avg_underfunding_gap":null,
+      "underfunded_year_share":null,
+      "max_underfunding_gap":null,
+      "historical_years_count":null
+    }
   },
   {
     "code":"RJORLBNTUR26",
@@ -1136,6 +1948,7 @@
     "category_breakdown":[
 
     ],
+    "benchmark_key":"JOR",
     "primary_location_name":"Jordan",
     "location_names":[
       "Jordan",
@@ -1143,7 +1956,19 @@
       "Lebanon"
     ],
     "latitude":31.1667049,
-    "longitude":36.941628
+    "longitude":36.941628,
+    "category_breakdown_scored":[
+
+    ],
+    "category_level_score":null,
+    "overall_severity_score":null,
+    "systematic_underfunding":{
+      "score":null,
+      "weighted_avg_underfunding_gap":null,
+      "underfunded_year_share":null,
+      "max_underfunding_gap":null,
+      "historical_years_count":null
+    }
   },
   {
     "code":"RREG26a",
@@ -1173,6 +1998,7 @@
     "category_breakdown":[
 
     ],
+    "benchmark_key":"LBY",
     "primary_location_name":"Libya",
     "location_names":[
       "Libya",
@@ -1184,6 +2010,18 @@
       "Egypt"
     ],
     "latitude":26.8234472,
-    "longitude":18.1236723
+    "longitude":18.1236723,
+    "category_breakdown_scored":[
+
+    ],
+    "category_level_score":null,
+    "overall_severity_score":null,
+    "systematic_underfunding":{
+      "score":null,
+      "weighted_avg_underfunding_gap":null,
+      "underfunded_year_share":null,
+      "max_underfunding_gap":null,
+      "historical_years_count":null
+    }
   }
 ]
