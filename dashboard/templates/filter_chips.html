@@ -11,6 +11,7 @@
         <span class="text-xs italic text-gray-400">None</span>
         {% endif %}
 
+        {% if chips %}
         <button hx-post="/nlp-query"
                 hx-vals='js:{query: "", preserve_sort: true, current_filters: document.getElementById("hidden-filters-input")?.value || "{}"}'
                 hx-target="#active-filters"
@@ -18,6 +19,7 @@
                 class="text-xs text-red-500 hover:text-red-700 font-bold uppercase tracking-tighter transition-colors ml-2">
             Reset
         </button>
+        {% endif %}
     </div>
 
     <div id="sort-controls" class="flex items-center gap-2 shrink-0">
