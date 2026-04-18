@@ -41,6 +41,9 @@ def _format_list_value(value: Any) -> str:
 
 
 def _build_chip(field_name: str, condition: Any) -> Optional[str]:
+    if field_name == "limit" and isinstance(condition, int):
+        return f"{_field_label(field_name)}: {condition}"
+
     if isinstance(condition, NumericCondition):
         op = OPERATOR_DISPLAY.get(condition.operator, condition.operator)
         val = _format_numeric_value(field_name, condition.value)
@@ -65,6 +68,14 @@ def build_filter_chips(parsed_filter: QueryFilter, chip_field_order: list[str]) 
     for field_name in chip_field_order:
         condition = getattr(parsed_filter, field_name, None)
         if condition is None:
+            continue
+
+        if field_name == "limit" and isinstance(condition, int):
+            if parsed_filter.order_by and parsed_filter.order_by.field:
+                sort_label = _field_label(parsed_filter.order_by.field)
+                chips.append(f"Top {sort_label}: {condition}")
+            else:
+                chips.append(f"{_field_label(field_name)}: {condition}")
             continue
 
         chip = _build_chip(field_name, condition)

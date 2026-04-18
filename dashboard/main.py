@@ -40,6 +40,7 @@ FIELD_MAP = {
 }
 
 CHIP_FIELD_ORDER = list(FIELD_MAP.keys())
+CHIP_FIELD_ORDER.append("limit")
 
 SORT_FIELDS = [
     "people_in_need",
@@ -288,6 +289,9 @@ def apply_advanced_filters(data: List[dict], filters: Optional[QueryFilter]) -> 
             path = paths[0]
             reverse = filters.order_by.direction == "desc"
             filtered_results.sort(key=lambda x: get_nested_value(x, path) or 0, reverse=reverse)
+
+    if filters.limit and filters.limit > 0:
+        filtered_results = filtered_results[: filters.limit]
 
     return filtered_results
 

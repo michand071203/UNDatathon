@@ -23,4 +23,8 @@ FIELD_LABELS = {
         "short": "Crisis Type",
         "long": "Crisis Type",
     },
+    "limit": {
+        "short": "Top",
+        "long": "Result Limit",
+    },
 }

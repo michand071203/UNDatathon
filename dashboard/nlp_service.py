@@ -110,6 +110,7 @@ class QueryFilter(BaseModel):
     sectors: Optional[ListCondition] = None
     crisis_type: Optional[EnumCondition[CrisisTypeEnum]] = None
     order_by: Optional[OrderCondition] = None
+    limit: Optional[int] = Field(default=None, ge=1)
 
 # --- Parser ---
 
@@ -147,7 +148,9 @@ class QueryParser:
             "3. For list/enum filters, if the query implies negation (e.g., 'outside of the Middle East', 'excluding Sudan'), use the EXACT location/item mentioned and set the 'exclude' field to true. Do NOT try to list all the other alternatives.\n"
             f"4. Supported broad region labels are exactly: {self.region_names_text}. If the user requests one of these, output the exact region label text and do NOT expand it into countries.\n"
             "5. If the user names a geographic area that is not in the supported broad-region list, output your best-guess list of ISO-3 country codes for that area.\n"
-            "6. If the query asks to sort or rank results (e.g., 'highest', 'lowest', 'most underfunded'), set the 'order_by' field with the correct 'field' and 'direction' ('asc' or 'desc')."
+            "6. If the query asks to sort or rank results (e.g., 'highest', 'lowest', 'most underfunded', 'ranked by severity'), set the 'order_by' field with the correct 'field' and 'direction' ('asc' or 'desc').\n"
+            "7. If the query requests a top/bottom N subset (e.g., 'top 10', 'bottom 5'), set 'limit' to N.\n"
+            "8. Map ranking terms carefully: 'ranked by severity' or 'most severe' -> order_by.field='severity_score'; 'most underfunded' -> order_by.field='funding_coverage_percentage' and direction='asc'."
         )
 
         try:
