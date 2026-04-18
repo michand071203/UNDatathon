@@ -42,7 +42,7 @@
                 </div>
 
                 <div class="flex flex-col min-w-[100px]">
-                    <span class="text-[9px] font-bold text-gray-400 uppercase tracking-widest mb-0.5">Requirements</span>
+                    <span class="text-[9px] font-bold text-gray-400 uppercase tracking-widest mb-0.5">Required Funding</span>
                     <span class="text-sm font-bold text-gray-700 truncate">
                         {% if crisis.requirements is not none %}
                             <span {% if crisis.requirements_projected %}class="italic cursor-help" data-hover-tooltip="{{ projected_requirement_tooltip }}" tabindex="0"{% endif %}>
@@ -59,7 +59,7 @@
                     <!-- Coverage Progress -->
                     <div class="flex flex-col w-32">
                         <div class="flex justify-between items-center mb-1">
-                            <span class="text-[9px] font-bold text-gray-400 uppercase tracking-widest">Coverage</span>
+                            <span class="text-[9px] font-bold text-gray-400 uppercase tracking-widest">Funded</span>
                             <span class="text-[10px] font-bold text-gray-700">
                                 {% if crisis.percent_funded is not none %}
                                     <span {% if crisis.coverage_projected %}class="italic cursor-help" data-hover-tooltip="{{ projected_requirement_tooltip }}" tabindex="0"{% endif %}>
@@ -110,7 +110,7 @@
                             {% if score is not none %}{{ score|int }}%{% else %}N/A{% endif %}
                         </div>
                     </div>
-                    <span class="text-[9px] font-bold text-gray-400 uppercase tracking-widest text-center">{{ ["Education Deprivation", "Food Insecurity", "Health Vulnerability", "Saniation Deprivation", "Physical Insecurity"][loop.index0] }}</span>
+                    <span class="text-[9px] font-bold text-gray-400 uppercase tracking-widest text-center">{{ ["Education Deprivation", "Food Insecurity", "Health Vulnerability", "Lack of Sanitation", "Physical Insecurity"][loop.index0] }}</span>
                 </div>
             {% endfor %}
         </div>
