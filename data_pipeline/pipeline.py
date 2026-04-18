@@ -221,7 +221,7 @@ def _with_requirement_fallback(requirements, requirements_last_year):
     return requirements if pd.notna(requirements) else requirements_last_year
 
 
-def _fit_requirement_bootstrap_factors(history):
+def _fit_requirement_bootstrap_adjustments(history):
     valid = history[["benchmark_key", "requirements_last_year_raw", "requirements"]].copy()
     valid["requirements_last_year_raw"] = pd.to_numeric(
         valid["requirements_last_year_raw"], errors="coerce"
@@ -236,27 +236,29 @@ def _fit_requirement_bootstrap_factors(history):
     ]
 
     if valid.empty:
-        return pd.DataFrame(columns=["benchmark_key", "requirement_bootstrap_factor"])
+        return pd.DataFrame(
+            columns=[
+                "benchmark_key",
+                "requirement_bootstrap_avg_delta",
+            ]
+        )
 
-    factors = []
+    adjustments = []
     for benchmark_key, group in valid.groupby("benchmark_key"):
         x = group["requirements_last_year_raw"].astype(float)
         y = group["requirements"].astype(float)
-        denominator = float((x**2).sum())
-        if denominator <= 0:
-            continue
+        avg_delta = float((y - x).mean()) if len(group) > 0 else 0.0
+        if pd.isna(avg_delta):
+            avg_delta = 0.0
 
-        # Fit a single multiplicative factor: next_year_requirement ~= factor * last_year_residual.
-        factor = float((x * y).sum()) / denominator
-        if not pd.isna(factor) and factor > 0:
-            factors.append(
-                {
-                    "benchmark_key": benchmark_key,
-                    "requirement_bootstrap_factor": factor,
-                }
-            )
+        adjustments.append(
+            {
+                "benchmark_key": benchmark_key,
+                "requirement_bootstrap_avg_delta": avg_delta,
+            }
+        )
 
-    return pd.DataFrame(factors)
+    return pd.DataFrame(adjustments)
 
 
 def build_latest_canonical_key_map(summary):
@@ -482,7 +484,7 @@ def apply_last_year_requirement_fallback(funding_summary, plans, target_year=202
         funding_summary = funding_summary.copy()
         funding_summary["requirements_last_year"] = pd.Series(dtype=float)
         funding_summary["requirements_last_year_raw"] = pd.Series(dtype=float)
-        funding_summary["requirement_bootstrap_factor"] = pd.Series(dtype=float)
+        funding_summary["requirement_bootstrap_avg_delta"] = pd.Series(dtype=float)
         return funding_summary
 
     funding_summary = funding_summary.copy()
@@ -524,19 +526,19 @@ def apply_last_year_requirement_fallback(funding_summary, plans, target_year=202
         how="left",
         on=["benchmark_key", "year"],
     )
-    bootstrap_factors = _fit_requirement_bootstrap_factors(funding_summary)
+    bootstrap_models = _fit_requirement_bootstrap_adjustments(funding_summary)
     funding_summary = funding_summary.merge(
-        bootstrap_factors,
+        bootstrap_models,
         how="left",
         on="benchmark_key",
     )
-    funding_summary["requirement_bootstrap_factor"] = funding_summary[
-        "requirement_bootstrap_factor"
-    ].fillna(1.0)
+    funding_summary["requirement_bootstrap_avg_delta"] = funding_summary[
+        "requirement_bootstrap_avg_delta"
+    ].fillna(0.0)
     funding_summary["requirements_last_year"] = (
         funding_summary["requirements_last_year_raw"]
-        * funding_summary["requirement_bootstrap_factor"]
-    )
+        + funding_summary["requirement_bootstrap_avg_delta"]
+    ).clip(lower=0)
 
     zero_requirement_mask = (
         funding_summary["year"].eq(target_year) & funding_summary["requirements"].eq(0)
@@ -763,8 +765,8 @@ def build_all_years_export(summary):
             requirements_last_year_raw_2026 = group_2026[
                 "requirements_last_year_raw"
             ].sum(min_count=1)
-            requirement_bootstrap_factor_2026 = group_2026[
-                "requirement_bootstrap_factor"
+            requirement_bootstrap_avg_delta_2026 = group_2026[
+                "requirement_bootstrap_avg_delta"
             ].mean()
             effective_requirements_2026 = _with_requirement_fallback(
                 requirements_2026,
@@ -808,8 +810,8 @@ def build_all_years_export(summary):
                 "requirements_last_year_raw": _json_number(
                     requirements_last_year_raw_2026
                 ),
-                "requirement_bootstrap_factor": _json_number(
-                    requirement_bootstrap_factor_2026
+                "requirement_bootstrap_avg_delta": _json_number(
+                    requirement_bootstrap_avg_delta_2026
                 ),
                 "funding": _json_number(funding_2026),
                 "percent_funded": _json_number(percent_funded_2026),
@@ -869,8 +871,8 @@ def build_all_years_export(summary):
             year_requirements_last_year_raw = year_group[
                 "requirements_last_year_raw"
             ].sum(min_count=1)
-            year_requirement_bootstrap_factor = year_group[
-                "requirement_bootstrap_factor"
+            year_requirement_bootstrap_avg_delta = year_group[
+                "requirement_bootstrap_avg_delta"
             ].mean()
             year_effective_requirements = _with_requirement_fallback(
                 year_requirements,
@@ -889,8 +891,8 @@ def build_all_years_export(summary):
                 "requirements_last_year_raw": _json_number(
                     year_requirements_last_year_raw
                 ),
-                "requirement_bootstrap_factor": _json_number(
-                    year_requirement_bootstrap_factor
+                "requirement_bootstrap_avg_delta": _json_number(
+                    year_requirement_bootstrap_avg_delta
                 ),
                 "funding": _json_number(year_funding),
                 "percent_funded": _json_number(
