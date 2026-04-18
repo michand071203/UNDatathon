@@ -276,6 +276,9 @@
                                 pointBorderColor: '#ffffff',
                                 pointBorderWidth: 1,
                                 pointRadius: 3,
+                                segment: {
+                                    borderDash: (ctx) => (coverageProjected[ctx.p1DataIndex] ? [5, 5] : undefined),
+                                },
                                 tension: 0.2,
                                 spanGaps: true,
                             },
