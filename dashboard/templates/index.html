@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Humanitarian Crisis Dashboard</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- HTMX -->
+    <script src="https://unpkg.com/htmx.org@1.9.10"></script>
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <!-- Leaflet JS -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <style>
+        #map { height: calc(100vh - 80px); }
+        .tab-content { display: none; }
+        .tab-content.active { display: block; }
+    </style>
+</head>
+<body class="bg-gray-100 overflow-hidden h-screen flex flex-col">
+
+    <!-- Top Panel -->
+    <header class="h-20 bg-white border-b border-gray-200 flex items-center px-6 justify-between shadow-sm z-10">
+        <div class="flex items-center space-x-4">
+            <h1 class="text-xl font-bold text-gray-800">UN Datathon 2026</h1>
+            <nav class="flex space-x-2 bg-gray-100 p-1 rounded-lg">
+                <button onclick="switchTab('map')" class="px-4 py-2 rounded-md transition-colors tab-btn active bg-white shadow-sm font-semibold">Map View</button>
+                <button onclick="switchTab('list')" class="px-4 py-2 rounded-md transition-colors tab-btn hover:bg-white/50" hx-get="/list" hx-target="#list-container" hx-trigger="click">List View</button>
+            </nav>
+        </div>
+        
+        <div class="flex space-x-4 items-center">
+            <input type="text" 
+                   name="search" 
+                   placeholder="Search crises..." 
+                   class="border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 w-64"
+                   hx-get="/list" 
+                   hx-target="#list-container" 
+                   hx-trigger="keyup changed delay:500ms"
+                   hx-include="[name='sort']">
+            
+            <select name="sort" 
+                    class="border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    hx-get="/list" 
+                    hx-target="#list-container" 
+                    hx-trigger="change"
+                    hx-include="[name='search']">
+                <option value="title">Sort by: Name</option>
+                <option value="severity">Sort by: Severity</option>
+                <option value="impact">Sort by: Impact</option>
+            </select>
+        </div>
+    </header>
+
+    <!-- Main View -->
+    <main class="flex-grow relative">
+        <!-- Map Tab -->
+        <div id="tab-map" class="tab-content active w-full h-full">
+            <div id="map" class="w-full"></div>
+        </div>
+
+        <!-- List Tab -->
+        <div id="tab-list" class="tab-content w-full h-full bg-white overflow-y-auto p-6">
+            <div id="list-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- HTMX will inject list_items.html here -->
+            </div>
+        </div>
+
+        <!-- Side Panel (Left Slide-in) -->
+        <div id="side-panel" 
+             class="fixed top-20 left-0 h-[calc(100vh-80px)] w-full md:w-[450px] bg-white shadow-2xl z-20 transform -translate-x-full transition-transform duration-300 ease-in-out border-r border-gray-200 overflow-y-auto">
+            <!-- HTMX will inject side_panel.html here -->
+            <div id="side-panel-content"></div>
+        </div>
+    </main>
+
+    <script>
+        // Map Initialization
+        const map = L.map('map').setView([10, 20], 3);
+        L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>'
+        }).addTo(map);
+
+        // Fetch Map Data and Draw Circles
+        async function loadMapData() {
+            const response = await fetch('/api/map-data');
+            const data = await response.json();
+            
+            data.forEach(crisis => {
+                // Color mapping logic: higher metric -> darker red/orange
+                const color = crisis.display.color_metric > 8 ? '#b91c1c' : 
+                             crisis.display.color_metric > 5 ? '#f97316' : '#facc15';
+                
+                const circle = L.circle([crisis.display.lat, crisis.display.lng], {
+                    color: color,
+                    fillColor: color,
+                    fillOpacity: 0.6,
+                    radius: crisis.display.radius_metric
+                }).addTo(map);
+
+                // Tooltip
+                circle.bindTooltip(`
+                    <div class="p-1">
+                        <div class="font-bold text-lg">${crisis.display.title}</div>
+                        <div class="text-sm text-gray-600 mb-1">${crisis.summary.brief_text}</div>
+                        <div class="text-xs font-semibold text-blue-600">${crisis.summary.key_stat_1}</div>
+                    </div>
+                `, { direction: 'top' });
+
+                // Click event to trigger HTMX request for side panel
+                circle.on('click', function() {
+                    htmx.ajax('GET', `/details/${crisis.id}`, {
+                        target: '#side-panel-content',
+                        swap: 'innerHTML'
+                    }).then(() => {
+                        openSidePanel();
+                    });
+                });
+            });
+        }
+
+        loadMapData();
+
+        // UI Helpers
+        function switchTab(tab) {
+            document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
+            document.querySelectorAll('.tab-btn').forEach(el => {
+                el.classList.remove('bg-white', 'shadow-sm', 'font-semibold');
+                el.classList.add('hover:bg-white/50');
+            });
+
+            const activeBtn = event.currentTarget;
+            activeBtn.classList.remove('hover:bg-white/50');
+            activeBtn.classList.add('bg-white', 'shadow-sm', 'font-semibold');
+
+            document.getElementById(`tab-${tab}`).classList.add('active');
+            
+            if (tab === 'map') {
+                setTimeout(() => map.invalidateSize(), 100);
+            }
+        }
+
+        function openSidePanel() {
+            document.getElementById('side-panel').classList.remove('-translate-x-full');
+            document.getElementById('side-panel').classList.add('translate-x-0');
+        }
+
+        function closeSidePanel() {
+            document.getElementById('side-panel').classList.remove('translate-x-0');
+            document.getElementById('side-panel').classList.add('-translate-x-full');
+        }
+
+        // Listen for HTMX events to handle panel state if needed
+        document.body.addEventListener('htmx:afterOnLoad', function(evt) {
+            if (evt.detail.target.id === 'side-panel-content') {
+                openSidePanel();
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,66 @@
+[
+  {
+    "id": "crisis-001",
+    "display": {
+      "title": "East Africa Drought",
+      "lat": 2.0,
+      "lng": 45.0,
+      "radius_metric": 500000,
+      "color_metric": 8.5
+    },
+    "summary": {
+      "brief_text": "Severe multi-year drought affecting food security across the Horn of Africa.",
+      "key_stat_1": "20M People at Risk",
+      "key_stat_2": "Level 4 Emergency"
+    },
+    "metadata": {
+      "Rainfall Deficit": "60% below average",
+      "Livestock Loss": "3.5 million head",
+      "Water Price Increase": "400%",
+      "Last Update": "2026-04-15"
+    }
+  },
+  {
+    "id": "crisis-002",
+    "display": {
+      "title": "Southeast Asia Flooding",
+      "lat": 15.0,
+      "lng": 105.0,
+      "radius_metric": 300000,
+      "color_metric": 6.2
+    },
+    "summary": {
+      "brief_text": "Unprecedented monsoon rains causing widespread displacement and infrastructure damage.",
+      "key_stat_1": "1.2M Displaced",
+      "key_stat_2": "Critical Shelter Need"
+    },
+    "metadata": {
+      "Bridges Destroyed": "142",
+      "Arable Land Submerged": "250,000 hectares",
+      "Rescue Teams Deployed": "45",
+      "Primary Disease Risk": "Water-borne pathogens"
+    }
+  },
+  {
+    "id": "crisis-003",
+    "display": {
+      "title": "Central Andes Earthquake",
+      "lat": -15.0,
+      "lng": -75.0,
+      "radius_metric": 150000,
+      "color_metric": 9.1
+    },
+    "summary": {
+      "brief_text": "Magnitude 7.8 earthquake striking remote mountain communities.",
+      "key_stat_1": "85k Homes Destroyed",
+      "key_stat_2": "High Altitude Cold Risk"
+    },
+    "metadata": {
+      "Magnitude": "7.8 Mw",
+      "Depth": "12km",
+      "Aftershocks": "200+",
+      "Blocked Roads": "Main Highway 4S",
+      "Temperature at Site": "-5°C"
+    }
+  }
+]

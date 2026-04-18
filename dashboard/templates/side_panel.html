@@ -1,0 +1,75 @@
+<div class="p-0 flex flex-col h-full bg-white">
+    <!-- Close Button and Header -->
+    <div class="sticky top-0 bg-white border-b border-gray-100 p-6 flex justify-between items-center shadow-sm">
+        <div>
+            <span class="text-xs font-bold text-blue-600 uppercase tracking-widest">Crisis Intelligence Details</span>
+            <h2 class="text-2xl font-black text-gray-900 mt-1">{{ crisis.display.title }}</h2>
+        </div>
+        <button onclick="closeSidePanel()" class="p-2 hover:bg-gray-100 rounded-full transition-colors text-gray-400 hover:text-gray-900">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+        </button>
+    </div>
+
+    <!-- Main Content Area -->
+    <div class="p-6 space-y-8">
+        <!-- Core Summary Section -->
+        <section>
+            <h3 class="text-sm font-bold text-gray-400 uppercase tracking-wider mb-4">Core Impact Summary</h3>
+            <div class="grid grid-cols-1 gap-4">
+                <div class="bg-blue-50 border-l-4 border-blue-500 p-4 rounded-r-lg">
+                    <p class="text-sm font-medium text-blue-800 leading-relaxed">
+                        {{ crisis.summary.brief_text }}
+                    </p>
+                </div>
+                <div class="grid grid-cols-2 gap-3">
+                    <div class="bg-gray-50 p-4 rounded-lg border border-gray-100">
+                        <div class="text-xs text-gray-500 uppercase font-semibold">Priority Stat 1</div>
+                        <div class="text-lg font-bold text-blue-700 mt-1">{{ crisis.summary.key_stat_1 }}</div>
+                    </div>
+                    <div class="bg-gray-50 p-4 rounded-lg border border-gray-100">
+                        <div class="text-xs text-gray-500 uppercase font-semibold">Priority Stat 2</div>
+                        <div class="text-lg font-bold text-gray-800 mt-1">{{ crisis.summary.key_stat_2 }}</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Dynamic Metadata Section -->
+        <section>
+            <h3 class="text-sm font-bold text-gray-400 uppercase tracking-wider mb-4">Granular Metrics & Intelligence</h3>
+            <div class="bg-white border border-gray-200 rounded-xl overflow-hidden shadow-sm">
+                <table class="min-w-full divide-y divide-gray-200">
+                    <tbody class="divide-y divide-gray-100 bg-white">
+                        {% for key, value in crisis.metadata.items() %}
+                        <tr class="hover:bg-gray-50 transition-colors">
+                            <td class="px-6 py-4 whitespace-nowrap text-sm font-bold text-gray-600 bg-gray-50/50 w-1/3">
+                                {{ key }}
+                            </td>
+                            <td class="px-6 py-4 text-sm text-gray-800 font-medium">
+                                {{ value }}
+                            </td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Technical Metadata (Fixed) -->
+        <section>
+            <h3 class="text-sm font-bold text-gray-400 uppercase tracking-wider mb-4">Geographic Anchors</h3>
+            <div class="flex space-x-4 text-xs font-mono text-gray-500 bg-gray-100 p-4 rounded-lg border border-gray-200">
+                <div>LAT: <span class="text-gray-900 font-bold">{{ crisis.display.lat }}</span></div>
+                <div>LNG: <span class="text-gray-900 font-bold">{{ crisis.display.lng }}</span></div>
+                <div>ID: <span class="text-gray-900 font-bold">{{ crisis.id }}</span></div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Bottom Action Footer -->
+    <div class="mt-auto p-6 bg-gray-50 border-t border-gray-200">
+        <button class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-4 rounded-lg shadow-lg transform active:scale-95 transition-all">
+            Export Intel PDF
+        </button>
+    </div>
+</div>
