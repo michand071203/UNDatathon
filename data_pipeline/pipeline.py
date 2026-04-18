@@ -217,7 +217,7 @@ def _display_score(value):
     numeric = pd.to_numeric(value, errors="coerce")
     if pd.isna(numeric):
         return None
-    return int(round(float(numeric) * 100.0))
+    return round(float(numeric) * 100.0, 1)
 
 
 def _display_normalized_category_score(item):
