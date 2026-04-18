@@ -8,8 +8,10 @@ from nlp_service import (
 import json
 import os
 import math
+import secrets
+from base64 import b64decode
 from fastapi import FastAPI, Request, Query, Form
-from fastapi.responses import HTMLResponse, JSONResponse
+from fastapi.responses import HTMLResponse, JSONResponse, Response
 from fastapi.templating import Jinja2Templates
 from fastapi.staticfiles import StaticFiles
 from typing import Optional, List, Any
@@ -22,10 +24,47 @@ load_dotenv()
 
 app = FastAPI(title="Humanitarian Crisis Dashboard")
 
+BASIC_AUTH_USERNAME = os.getenv("BASIC_AUTH_USERNAME")
+BASIC_AUTH_PASSWORD = os.getenv("BASIC_AUTH_PASSWORD")
+
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 templates = Jinja2Templates(directory=os.path.join(BASE_DIR, "templates"))
 app.mount("/static", StaticFiles(directory=os.path.join(BASE_DIR, "static")), name="static")
 nlp_parser = QueryParser()
+
+
+@app.middleware("http")
+async def basic_auth_middleware(request: Request, call_next):
+    # Enable protection only when both credentials are configured.
+    if not BASIC_AUTH_USERNAME or not BASIC_AUTH_PASSWORD:
+        return await call_next(request)
+
+    auth_header = request.headers.get("Authorization")
+    if not auth_header or not auth_header.startswith("Basic "):
+        return Response(
+            status_code=401,
+            headers={"WWW-Authenticate": 'Basic realm="UN Dashboard"'},
+        )
+
+    encoded = auth_header.split(" ", 1)[1].strip()
+    try:
+        decoded = b64decode(encoded).decode("utf-8")
+        username, password = decoded.split(":", 1)
+    except Exception:
+        return Response(
+            status_code=401,
+            headers={"WWW-Authenticate": 'Basic realm="UN Dashboard"'},
+        )
+
+    valid_user = secrets.compare_digest(username, BASIC_AUTH_USERNAME)
+    valid_password = secrets.compare_digest(password, BASIC_AUTH_PASSWORD)
+    if not (valid_user and valid_password):
+        return Response(
+            status_code=401,
+            headers={"WWW-Authenticate": 'Basic realm="UN Dashboard"'},
+        )
+
+    return await call_next(request)
 
 # --- Declarative Configuration ---
 
