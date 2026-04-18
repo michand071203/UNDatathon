@@ -1,0 +1,142 @@
+[
+  {
+    "Country ISO3": "AFG",
+    "Description": "Plan caseload",
+    "Population": 48595632,
+    "In Need": 21889283,
+    "Targeted": 17479657
+  },
+  {
+    "Country ISO3": "BFA",
+    "Description": "GHO Estimates",
+    "Population": 24100000,
+    "In Need": 4400000,
+    "Targeted": 3100000
+  },
+  {
+    "Country ISO3": "CAF",
+    "Description": "Final",
+    "Population": 6567382,
+    "In Need": 2286959,
+    "Targeted": 1265483
+  },
+  {
+    "Country ISO3": "CMR",
+    "Description": "GHO Estimates",
+    "Population": 29900000,
+    "In Need": 2900000,
+    "Targeted": 1800000
+  },
+  {
+    "Country ISO3": "COD",
+    "Description": "Final Caseload",
+    "Population": 112800000,
+    "In Need": 14940727,
+    "Targeted": 7313763
+  },
+  {
+    "Country ISO3": "COL",
+    "Description": "GHO Estimates",
+    "Population": 53400000,
+    "In Need": 6900000,
+    "Targeted": 2600000
+  },
+  {
+    "Country ISO3": "HTI",
+    "Description": "Final HNRP",
+    "Population": 11899555,
+    "In Need": 6414193,
+    "Targeted": 4162202
+  },
+  {
+    "Country ISO3": "MLI",
+    "Description": "GHO Estimates",
+    "Population": 25200000,
+    "In Need": 5100000,
+    "Targeted": 3800000
+  },
+  {
+    "Country ISO3": "MMR",
+    "Description": "Final caseload",
+    "Population": 54900000,
+    "In Need": 16229050,
+    "Targeted": 4868096
+  },
+  {
+    "Country ISO3": "MOZ",
+    "Description": "HNRP caseload",
+    "Population": 35600000,
+    "In Need": 2356162,
+    "Targeted": 1745582
+  },
+  {
+    "Country ISO3": "NER",
+    "Description": "GHO Estimates",
+    "Population": 27900000,
+    "In Need": 2600000,
+    "Targeted": 1600000
+  },
+  {
+    "Country ISO3": "NGA",
+    "Description": "GHO Estimates",
+    "Population": 237500000,
+    "In Need": 5900000,
+    "Targeted": 2500000
+  },
+  {
+    "Country ISO3": "SDN",
+    "Description": "Final",
+    "Population": 51700000,
+    "In Need": 33699770,
+    "Targeted": 20419163
+  },
+  {
+    "Country ISO3": "SOM",
+    "Description": "Final",
+    "Population": 19700000,
+    "In Need": 4796040,
+    "Targeted": 2430751
+  },
+  {
+    "Country ISO3": "SSD",
+    "Description": "Final caseload",
+    "Population": 14363363,
+    "In Need": 9913863,
+    "Targeted": 4343435
+  },
+  {
+    "Country ISO3": "SYR",
+    "Description": "GHO Estimates",
+    "Population": 25600000,
+    "In Need": 16500000,
+    "Targeted": 10300000
+  },
+  {
+    "Country ISO3": "TCD",
+    "Description": "Final Caseload",
+    "Population": 21000000,
+    "In Need": 4509014,
+    "Targeted": 3352810
+  },
+  {
+    "Country ISO3": "UKR",
+    "Description": "Final",
+    "Population": 34200000,
+    "In Need": 10849697,
+    "Targeted": 4118954
+  },
+  {
+    "Country ISO3": "VEN",
+    "Description": "GHO Estimates",
+    "Population": 28500000,
+    "In Need": 7900000,
+    "Targeted": 5400000
+  },
+  {
+    "Country ISO3": "YEM",
+    "Description": "GHO Estimates",
+    "Population": 41800000,
+    "In Need": 23100000,
+    "Targeted": 10500000
+  }
+]
