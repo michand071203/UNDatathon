@@ -176,7 +176,7 @@
             if (value === null || value === undefined || Number.isNaN(Number(value))) {
                 return 'Unknown';
             }
-            return Number(value).toFixed(3);
+            return String(Math.round(Number(value)));
         }
 
         const fundingHoverLinePlugin = {

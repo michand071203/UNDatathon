@@ -95,15 +95,15 @@ def sanitize_non_finite_values(value: Any) -> Any:
 # --- Dynamic Core Logic ---
 
 def calculate_color(severity_score: Optional[float]) -> str:
-    # Severity is normalized to [0, 1]: lower is better, higher is worse.
+    # Severity is an integer score in [0, 100]: lower is better, higher is worse.
     if severity_score is None:
         return "#b91c1c"
 
-    severity_score = max(0.0, min(1.0, float(severity_score)))
+    severity_score = max(0.0, min(100.0, float(severity_score)))
 
-    if severity_score >= 0.75: return "#b91c1c"
-    if severity_score >= 0.5: return "#f97316"
-    if severity_score >= 0.25: return "#facc15"
+    if severity_score >= 75: return "#b91c1c"
+    if severity_score >= 50: return "#f97316"
+    if severity_score >= 25: return "#facc15"
     return "#16a34a"
 
 def calculate_radius(people_in_need: int) -> float:

@@ -1,4 +1,4 @@
-{% include '_constants.html' %}
+{% from '_constants.html' import projected_requirement_tooltip %}
 
 <div class="p-0 flex flex-col h-full bg-white">
     <!-- Close Button and Header -->
@@ -22,7 +22,7 @@
                 <div class="p-4 rounded-lg border mb-3" style="background-color: {{ (crisis.color or '#9ca3af') ~ '1f' }}; border-color: {{ (crisis.color or '#9ca3af') ~ '4d' }};">
                     <div class="text-xs uppercase font-semibold tracking-wide" style="color: {{ crisis.color or '#9ca3af' }};">Severity Score</div>
                     <div class="text-3xl font-black mt-1" style="color: {{ crisis.color or '#9ca3af' }};">
-                        {% if crisis.overall_severity_score is not none %}{{ '%.3f'|format(crisis.overall_severity_score) }}{% else %}Unknown{% endif %}
+                        {% if crisis.overall_severity_score is not none %}{{ crisis.overall_severity_score | round | int }}{% else %}Unknown{% endif %}
                     </div>
                 </div>
                 <div class="grid grid-cols-2 gap-3">
