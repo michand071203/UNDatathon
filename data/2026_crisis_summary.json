@@ -19,8 +19,8 @@
     "Targeted":null,
     "Affected":null,
     "Reached":null,
-    "latitude":31.9522,
-    "longitude":35.2332
+    "latitude":-23.5504428,
+    "longitude":-46.6334463
   },
   {
     "code":"HSYR26",
@@ -42,8 +42,8 @@
     "Targeted":10300000.0,
     "Affected":0.0,
     "Reached":0.0,
-    "latitude":34.8021,
-    "longitude":38.9968
+    "latitude":49.6251361,
+    "longitude":6.272597
   },
   {
     "code":"HSDN26",
@@ -65,8 +65,8 @@
     "Targeted":20419163.0,
     "Affected":0.0,
     "Reached":0.0,
-    "latitude":12.8628,
-    "longitude":30.2176
+    "latitude":10.022662,
+    "longitude":77.9653911
   },
   {
     "code":"HUKR26",
@@ -88,8 +88,8 @@
     "Targeted":4118954.0,
     "Affected":0.0,
     "Reached":0.0,
-    "latitude":48.3794,
-    "longitude":31.1656
+    "latitude":48.9878957,
+    "longitude":12.087126
   },
   {
     "code":"HYEM26",
@@ -111,8 +111,8 @@
     "Targeted":10500000.0,
     "Affected":0.0,
     "Reached":0.0,
-    "latitude":15.5527,
-    "longitude":48.5164
+    "latitude":3.5619213,
+    "longitude":12.1574578
   },
   {
     "code":"HAFG26",
@@ -134,8 +134,8 @@
     "Targeted":17479657.0,
     "Affected":0.0,
     "Reached":0.0,
-    "latitude":33.9391,
-    "longitude":67.71
+    "latitude":33.7680065,
+    "longitude":66.2385139
   },
   {
     "code":"HSSD26",
@@ -157,8 +157,8 @@
     "Targeted":4343435.0,
     "Affected":0.0,
     "Reached":0.0,
-    "latitude":6.877,
-    "longitude":31.307
+    "latitude":-32.7461659,
+    "longitude":-70.7044932
   },
   {
     "code":"HCOD26",
@@ -180,8 +180,8 @@
     "Targeted":7313763.0,
     "Affected":0.0,
     "Reached":0.0,
-    "latitude":-4.0383,
-    "longitude":21.7587
+    "latitude":44.520752,
+    "longitude":-109.0218534
   },
   {
     "code":"HTCD26",
@@ -203,8 +203,8 @@
     "Targeted":3352810.0,
     "Affected":0.0,
     "Reached":0.0,
-    "latitude":15.4542,
-    "longitude":18.7322
+    "latitude":-2.8958053,
+    "longitude":-69.7497586
   },
   {
     "code":"HMMR26",
@@ -226,8 +226,8 @@
     "Targeted":4868096.0,
     "Affected":0.0,
     "Reached":0.0,
-    "latitude":21.9162,
-    "longitude":95.956
+    "latitude":19.0822739,
+    "longitude":73.15177
   },
   {
     "code":"HHTI26",
@@ -249,8 +249,8 @@
     "Targeted":4162202.0,
     "Affected":0.0,
     "Reached":0.0,
-    "latitude":18.9712,
-    "longitude":-72.2852
+    "latitude":-20.358137,
+    "longitude":148.9521302
   },
   {
     "code":"HSOM26",
@@ -272,8 +272,8 @@
     "Targeted":2430751.0,
     "Affected":0.0,
     "Reached":0.0,
-    "latitude":5.1521,
-    "longitude":46.1996
+    "latitude":46.8067676,
+    "longitude":18.1413711
   },
   {
     "code":"RUGA26",
@@ -295,8 +295,8 @@
     "Targeted":null,
     "Affected":null,
     "Reached":null,
-    "latitude":1.3733,
-    "longitude":32.2903
+    "latitude":33.9404278,
+    "longitude":-83.373049
   },
   {
     "code":"RREG26b",
@@ -334,8 +334,8 @@
     "Targeted":null,
     "Affected":null,
     "Reached":null,
-    "latitude":-14.235,
-    "longitude":-51.9253
+    "latitude":44.6976778,
+    "longitude":7.8542707
   },
   {
     "code":"RBGD26",
@@ -357,8 +357,8 @@
     "Targeted":null,
     "Affected":null,
     "Reached":null,
-    "latitude":23.685,
-    "longitude":90.3563
+    "latitude":-23.568589,
+    "longitude":-46.6477629
   },
   {
     "code":"HNER26",
@@ -380,8 +380,8 @@
     "Targeted":1600000.0,
     "Affected":0.0,
     "Reached":0.0,
-    "latitude":17.6078,
-    "longitude":8.0817
+    "latitude":51.7845921,
+    "longitude":19.1139514
   },
   {
     "code":"HBFA26",
@@ -403,8 +403,8 @@
     "Targeted":3100000.0,
     "Affected":0.0,
     "Reached":0.0,
-    "latitude":12.2383,
-    "longitude":-1.5616
+    "latitude":48.1841414,
+    "longitude":16.4131103
   },
   {
     "code":"HVEN26",
@@ -426,8 +426,8 @@
     "Targeted":5400000.0,
     "Affected":0.0,
     "Reached":0.0,
-    "latitude":6.4238,
-    "longitude":-66.5897
+    "latitude":48.2083537,
+    "longitude":16.3725042
   },
   {
     "code":"HMLI26",
@@ -449,8 +449,8 @@
     "Targeted":3800000.0,
     "Affected":0.0,
     "Reached":0.0,
-    "latitude":17.5707,
-    "longitude":-3.9962
+    "latitude":41.4477214,
+    "longitude":-90.5114665
   },
   {
     "code":"HMOZ26",
@@ -472,8 +472,8 @@
     "Targeted":1745582.0,
     "Affected":0.0,
     "Reached":0.0,
-    "latitude":-18.6657,
-    "longitude":35.5296
+    "latitude":-17.489829,
+    "longitude":-149.7627821
   },
   {
     "code":"HNGA26",
@@ -495,8 +495,8 @@
     "Targeted":2500000.0,
     "Affected":0.0,
     "Reached":0.0,
-    "latitude":9.082,
-    "longitude":8.6753
+    "latitude":64.6863136,
+    "longitude":97.7453061
   },
   {
     "code":"HCMR26",
@@ -518,8 +518,8 @@
     "Targeted":1800000.0,
     "Affected":0.0,
     "Reached":0.0,
-    "latitude":7.3697,
-    "longitude":12.3547
+    "latitude":39.0125063,
+    "longitude":-7.0692822
   },
   {
     "code":"HCOL26",
@@ -541,8 +541,8 @@
     "Targeted":2600000.0,
     "Affected":0.0,
     "Reached":0.0,
-    "latitude":4.5709,
-    "longitude":-74.2973
+    "latitude":19.166667,
+    "longitude":-104.0
   },
   {
     "code":"HCAF26",
@@ -564,8 +564,8 @@
     "Targeted":1265483.0,
     "Affected":0.0,
     "Reached":0.0,
-    "latitude":6.6111,
-    "longitude":20.9394
+    "latitude":19.9402881,
+    "longitude":79.3126355
   },
   {
     "code":"OPAK26",
@@ -587,8 +587,8 @@
     "Targeted":null,
     "Affected":null,
     "Reached":null,
-    "latitude":30.3753,
-    "longitude":69.3451
+    "latitude":13.4509043,
+    "longitude":79.1145053
   },
   {
     "code":"OVNM26",
@@ -610,8 +610,8 @@
     "Targeted":null,
     "Affected":null,
     "Reached":null,
-    "latitude":14.0583,
-    "longitude":108.2772
+    "latitude":14.3926225,
+    "longitude":79.017633
   },
   {
     "code":"OLKA2526",
@@ -633,8 +633,8 @@
     "Targeted":null,
     "Affected":null,
     "Reached":null,
-    "latitude":7.8731,
-    "longitude":80.7718
+    "latitude":-8.2744567,
+    "longitude":123.001795
   },
   {
     "code":"RREG26",
@@ -661,8 +661,8 @@
     "Targeted":10500000.0,
     "Affected":0.0,
     "Reached":0.0,
-    "latitude":15.5527,
-    "longitude":48.5164
+    "latitude":3.5619213,
+    "longitude":12.1574578
   },
   {
     "code":"RJORLBNTUR26",
@@ -686,8 +686,8 @@
     "Targeted":null,
     "Affected":null,
     "Reached":null,
-    "latitude":30.5852,
-    "longitude":36.2384
+    "latitude":25.3691156,
+    "longitude":61.361292
   },
   {
     "code":"RREG26a",
@@ -715,7 +715,7 @@
     "Targeted":null,
     "Affected":null,
     "Reached":null,
-    "latitude":26.3351,
-    "longitude":17.2283
+    "latitude":47.2861569,
+    "longitude":-2.3487929
   }
 ]
