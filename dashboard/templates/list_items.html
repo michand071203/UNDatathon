@@ -83,12 +83,12 @@
                         <svg class="w-full h-full transform -rotate-90" viewBox="0 0 36 36">
                             <circle cx="18" cy="18" r="15.915" fill="none" stroke="#e5e7eb" stroke-width="3"></circle>
                             {% if score is not none %}
-                            <circle cx="18" cy="18" r="15.915" fill="none" stroke="{{ crisis.color or '#3b82f6' }}" stroke-width="3" stroke-dasharray="{{ score * 100 }}, 100" stroke-linecap="round"></circle>
+                            <circle cx="18" cy="18" r="15.915" fill="none" stroke="{{ '#3b82f6' }}" stroke-width="3" stroke-dasharray="{{ score }}, 100" stroke-linecap="round"></circle>
                             {% endif %}
-                        </svg>
-                        <div class="absolute inset-0 flex items-center justify-center text-[9px] font-bold {% if score is not none %}text-gray-700{% else %}text-gray-300{% endif %}">
-                            {% if score is not none %}{{ (score * 100)|int }}%{% else %}N/A{% endif %}
-                        </div>
+                            </svg>
+                            <div class="absolute inset-0 flex items-center justify-center text-[10px] font-bold {% if score is not none %}text-gray-700{% else %}text-gray-300{% endif %}">
+                            {% if score is not none %}{{ score|int }}{% else %}N/A{% endif %}
+                            </div>
                     </div>
                     <span class="text-[9px] font-bold text-gray-400 uppercase tracking-widest text-center">{{ cat.replace('_', ' ') }}</span>
                 </div>
