@@ -3,6 +3,7 @@ from nlp_service import (
     QueryFilter,
     NumericCondition,
     ListCondition,
+    OrderCondition,
 )
 import json
 import os
@@ -33,6 +34,7 @@ FIELD_MAP = {
     "funding_coverage_percentage": [["percent_funded"]],
     "funding_required_usd": [["requirements"]],
     "funding_received_usd": [["funding"]],
+    "severity_score": [["overall_severity_score"]],
     "overlooked_rank": [],
     "crisis_type": []
 }
@@ -44,6 +46,7 @@ SORT_FIELDS = [
     "funding_coverage_percentage",
     "funding_required_usd",
     "funding_received_usd",
+    "severity_score",
 ]
 
 SORT_FIELD_OPTIONS = [
@@ -53,6 +56,18 @@ SORT_FIELD_OPTIONS = [
     }
     for field_name in SORT_FIELDS
 ]
+
+DEFAULT_SORT_FIELD = "severity_score"
+DEFAULT_SORT_DIRECTION = "desc"
+
+
+def ensure_default_sort(filter_obj: QueryFilter) -> QueryFilter:
+    if filter_obj.order_by is None:
+        filter_obj.order_by = OrderCondition(
+            field=DEFAULT_SORT_FIELD,
+            direction=DEFAULT_SORT_DIRECTION,
+        )
+    return filter_obj
 
 def get_nested_value(data: dict, path: List[str]) -> Any:
     """Safely retrieves a value from a nested dictionary given a path list."""
@@ -280,15 +295,16 @@ def apply_advanced_filters(data: List[dict], filters: Optional[QueryFilter]) -> 
 
 @app.get("/", response_class=HTMLResponse)
 async def get_index(request: Request):
+    default_filter = ensure_default_sort(QueryFilter())
     return templates.TemplateResponse(
         request=request,
         name="index.html",
         context={
             "chips": [],
-            "filters_json": QueryFilter().model_dump_json(),
+            "filters_json": default_filter.model_dump_json(),
             "sort_field_options": SORT_FIELD_OPTIONS,
-            "selected_sort_field": "",
-            "selected_sort_direction": "desc",
+            "selected_sort_field": DEFAULT_SORT_FIELD,
+            "selected_sort_direction": DEFAULT_SORT_DIRECTION,
         },
     )
 
@@ -308,12 +324,20 @@ async def post_nlp_query(
                 parsed_filter.order_by = existing_filter.order_by
             except:
                 pass
+        parsed_filter = ensure_default_sort(parsed_filter)
     else:
         parsed_filter = nlp_parser.parse_query(query)
+        parsed_filter = ensure_default_sort(parsed_filter)
     
     chips = build_filter_chips(parsed_filter, CHIP_FIELD_ORDER)
-    selected_sort_field = parsed_filter.order_by.field if parsed_filter.order_by else ""
-    selected_sort_direction = parsed_filter.order_by.direction.value if parsed_filter.order_by else "desc"
+    selected_sort_field = (
+        parsed_filter.order_by.field if parsed_filter.order_by else DEFAULT_SORT_FIELD
+    )
+    selected_sort_direction = (
+        parsed_filter.order_by.direction.value
+        if parsed_filter.order_by
+        else DEFAULT_SORT_DIRECTION
+    )
 
     # Trigger a refresh AFTER the DOM has been updated with the new filter JSON
     response = templates.TemplateResponse(
@@ -358,7 +382,10 @@ async def get_list(
         except: pass
     
     if not applied_nlp_sort:
-        filtered_data.sort(key=lambda x: get_nested_value(x, ["display", "title"]) or "")
+        filtered_data.sort(
+            key=lambda x: get_nested_value(x, ["overall_severity_score"]) or 0,
+            reverse=True,
+        )
     
     return templates.TemplateResponse(
         request=request, 

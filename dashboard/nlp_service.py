@@ -106,6 +106,7 @@ class QueryFilter(BaseModel):
     locations: Optional[ListCondition] = None
     people_in_need: Optional[NumericCondition] = None
     funding_coverage_percentage: Optional[NumericCondition] = None
+    severity_score: Optional[NumericCondition] = None
     sectors: Optional[ListCondition] = None
     crisis_type: Optional[EnumCondition[CrisisTypeEnum]] = None
     order_by: Optional[OrderCondition] = None

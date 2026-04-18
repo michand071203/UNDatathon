@@ -15,6 +15,10 @@ FIELD_LABELS = {
         "short": "Received",
         "long": "Funding Received (USD)",
     },
+    "severity_score": {
+        "short": "Severity",
+        "long": "Severity Score",
+    },
     "crisis_type": {
         "short": "Crisis Type",
         "long": "Crisis Type",
