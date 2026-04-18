@@ -1,39 +1,64 @@
 {% for crisis in crises %}
-<div class="crisis-card bg-white border border-gray-200 rounded-lg shadow-sm hover:shadow-md transition-all cursor-pointer overflow-hidden flex flex-col"
+<div class="crisis-card bg-white border rounded-xl shadow-sm hover:shadow-md transition-all cursor-pointer overflow-hidden flex items-stretch min-h-[110px] {% if crisis.code == selected_crisis_id %}border-blue-500 ring-4 ring-blue-100 bg-blue-50/30{% else %}border-gray-200{% endif %}"
      id="card-{{ crisis.code }}"
      data-crisis-id="{{ crisis.code }}"
      hx-get="/details/{{ crisis.code }}"
      hx-target="#side-panel-content"
      hx-swap="innerHTML">
     <div class="p-5 flex-grow">
+        <!-- Row 1: Crisis Name -->
         <div class="flex justify-between items-start mb-2">
             <h3 class="text-lg font-bold text-gray-800 leading-tight">{{ crisis.name }}</h3>
-            <span class="px-2 py-1 text-xs font-bold rounded text-white shadow-sm whitespace-nowrap ml-2" style="background-color: {{ crisis.color or '#666' }}">
-                Coverage: {% if crisis.percent_funded is not none %}{{ crisis.percent_funded }}%{% else %}Unknown{% endif %}
-            </span>
         </div>
-        <p class="text-gray-600 text-sm mb-4 line-clamp-2">
-            Locations: {{ crisis.locations_display or 'Unknown' }}
-        </p>
-        <div class="space-y-2">
-            <div class="flex items-center text-sm text-blue-600 font-medium">
-                <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                {% if crisis.people_in_need %}{{ '{:,}'.format(crisis.people_in_need | int) }} in need{% else %}Unknown PIN{% endif %}
-            </div>
-            <div class="flex items-center text-sm text-gray-500">
-                <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                {% if crisis.requirements %}${{ '{:,}'.format(crisis.requirements | int) }} required{% else %}Unknown Requirements{% endif %}
+
+            <!-- Row 2: Locations and Metrics -->
+            <div class="flex flex-col lg:flex-row lg:items-center gap-4 lg:gap-12">
+                <div class="flex items-center gap-8 sm:gap-12 shrink-0">
+                    <div class="flex flex-col">
+                        <span class="text-[9px] font-bold text-gray-400 uppercase tracking-widest mb-0.5">Location</span>
+                        <span class="text-sm font-bold text-blue-600 whitespace-nowrap">
+                            {% if crisis.locations_display %}{{ crisis.locations_display }}{% else %}Unknown{% endif %}
+                        </span>
+                    </div>
+
+                    <div class="flex flex-col">
+                        <span class="text-[9px] font-bold text-gray-400 uppercase tracking-widest mb-0.5">In Need</span>
+                        <span class="text-sm font-bold text-blue-600 whitespace-nowrap">
+                            {% if crisis.people_in_need %}{{ '{:,}'.format(crisis.people_in_need | int) }}{% else %}Unknown{% endif %}
+                        </span>
+                    </div>
+
+                    <div class="flex flex-col">
+                        <span class="text-[9px] font-bold text-gray-400 uppercase tracking-widest mb-0.5">Requirements</span>
+                        <span class="text-sm font-bold text-gray-700 whitespace-nowrap">
+                            {% if crisis.requirements %}${{ '{:,}'.format(crisis.requirements | int) }}{% else %}Unknown{% endif %}
+                        </span>
+                    </div>
+
+                    <!-- Funding Progress -->
+                    <div class="flex flex-col w-32 sm:w-40">
+                        <div class="flex justify-between items-center mb-1">
+                            <span class="text-[9px] font-bold text-gray-400 uppercase tracking-widest">Coverage</span>
+                            <span class="text-[10px] font-bold text-gray-700">{{ crisis.percent_funded }}%</span>
+                        </div>
+                        <div class="w-full bg-gray-100 rounded-full h-1.5 overflow-hidden border border-gray-200/50">
+                            <div class="h-full rounded-full transition-all duration-500" style="width: {{ crisis.percent_funded }}%; background-color: {{ crisis.color or '#3b82f6' }}"></div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
-    <div class="bg-gray-50 px-5 py-3 border-t border-gray-100 text-xs font-semibold text-gray-400 uppercase tracking-wider">
-        Click for full metrics
+
+        <!-- Action Indicator -->
+        <div class="hidden md:flex items-center justify-center text-gray-300 ml-2 shrink-0 self-center">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+        </div>
     </div>
 </div>
 {% endfor %}
 
 {% if not crises %}
-<div class="col-span-full py-12 text-center text-gray-500 italic">
+<div class="py-12 text-center text-gray-500 italic bg-white border border-dashed border-gray-300 rounded-xl">
     No crises found matching your criteria.
 </div>
 {% endif %}

@@ -324,7 +324,11 @@ async def get_map_data(filters: Optional[str] = Query(None)):
     return JSONResponse(content=data)
 
 @app.get("/list", response_class=HTMLResponse)
-async def get_list(request: Request, filters: Optional[str] = Query(None)):
+async def get_list(
+    request: Request, 
+    filters: Optional[str] = Query(None),
+    selected_crisis_id: Optional[str] = Query(None)
+):
     filtered_data = get_enriched_data()
     
     applied_nlp_sort = False
@@ -339,7 +343,14 @@ async def get_list(request: Request, filters: Optional[str] = Query(None)):
     if not applied_nlp_sort:
         filtered_data.sort(key=lambda x: get_nested_value(x, ["display", "title"]) or "")
     
-    return templates.TemplateResponse(request=request, name="list_items.html", context={"crises": filtered_data})
+    return templates.TemplateResponse(
+        request=request, 
+        name="list_items.html", 
+        context={
+            "crises": filtered_data,
+            "selected_crisis_id": selected_crisis_id
+        }
+    )
 
 @app.get("/details/{crisis_code}", response_class=HTMLResponse)
 async def get_details(request: Request, crisis_code: str):

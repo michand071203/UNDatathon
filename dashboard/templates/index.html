@@ -98,10 +98,11 @@
             <div id="tab-list" class="tab-content absolute inset-0 overflow-y-auto p-6">
                 <div class="max-w-7xl mx-auto">
                     <div id="list-container" 
-                         class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
+                         class="flex flex-col space-y-4"
                          hx-get="/list"
                          hx-trigger="filters-changed from:body"
-                         hx-include="#hidden-filters-input">
+                         hx-include="#hidden-filters-input"
+                         hx-vals='js:{selected_crisis_id: selectedCrisisId}'>
                         <!-- HTMX will inject list_items.html here -->
                     </div>
                 </div>
@@ -110,10 +111,19 @@
 
         <!-- Unified Side Panel (Right) -->
         <div id="side-panel" 
-             class="h-full w-0 border-l border-transparent transition-all duration-300 ease-in-out bg-white overflow-hidden z-20 shadow-[-4px_0_15px_-3px_rgba(0,0,0,0.1)]">
-            <!-- Fixed width container inside to prevent content reflow during width transition -->
-            <div id="side-panel-content" class="w-[450px] lg:w-[500px] h-full overflow-y-auto">
-                <!-- HTMX will inject side_panel.html here -->
+             class="h-full w-0 border-l border-transparent transition-[width,border-color] duration-300 ease-in-out bg-white overflow-visible z-20 shadow-[-4px_0_15px_-3px_rgba(0,0,0,0.1)] relative">
+            
+            <!-- Resize Handle -->
+            <div id="side-panel-resizer" 
+                 class="absolute left-0 top-0 bottom-0 w-1.5 cursor-col-resize hover:bg-blue-400/30 transition-colors z-30 group flex items-center justify-center">
+                <div class="w-1 h-8 bg-gray-200 rounded-full group-hover:bg-blue-400"></div>
+            </div>
+
+            <!-- Container inside to prevent content reflow -->
+            <div id="side-panel-content-wrapper" class="w-full h-full overflow-hidden">
+                <div id="side-panel-content" class="w-full h-full overflow-y-auto">
+                    <!-- HTMX will inject side_panel.html here -->
+                </div>
             </div>
         </div>
     </main>
@@ -122,6 +132,37 @@
         // Selection Tracking
         let selectedCrisisId = null;
         let mapCircles = {};
+
+        // Side Panel Resizing Logic
+        const sidePanel = document.getElementById('side-panel');
+        const resizer = document.getElementById('side-panel-resizer');
+        let isResizing = false;
+        let defaultWidth = window.innerWidth >= 1024 ? 700 : 600;
+
+        resizer.addEventListener('mousedown', (e) => {
+            isResizing = true;
+            document.body.style.cursor = 'col-resize';
+            sidePanel.classList.remove('transition-[width,border-color]', 'duration-300');
+            e.preventDefault();
+        });
+
+        window.addEventListener('mousemove', (e) => {
+            if (!isResizing) return;
+            
+            const newWidth = window.innerWidth - e.clientX;
+            // Constrain width
+            if (newWidth > 300 && newWidth < window.innerWidth * 0.9) {
+                sidePanel.style.width = `${newWidth}px`;
+                map.invalidateSize();
+            }
+        });
+
+        window.addEventListener('mouseup', () => {
+            if (!isResizing) return;
+            isResizing = false;
+            document.body.style.cursor = '';
+            sidePanel.classList.add('transition-[width,border-color]', 'duration-300');
+        });
 
         function formatCompactUsd(value) {
             if (value === null || value === undefined || Number.isNaN(Number(value))) {
@@ -357,16 +398,16 @@
         }
 
         function openSidePanel() {
-            const panel = document.getElementById('side-panel');
-            panel.classList.remove('w-0', 'border-transparent');
-            panel.classList.add('w-[450px]', 'lg:w-[500px]', 'border-gray-200');
+            sidePanel.classList.remove('w-0', 'border-transparent');
+            sidePanel.classList.add('border-gray-200');
+            sidePanel.style.width = `${defaultWidth}px`;
             setTimeout(() => map.invalidateSize(), 310);
         }
 
         function closeSidePanel() {
-            const panel = document.getElementById('side-panel');
-            panel.classList.remove('w-[450px]', 'lg:w-[500px]', 'border-gray-200');
-            panel.classList.add('w-0', 'border-transparent');
+            sidePanel.classList.remove('border-gray-200');
+            sidePanel.classList.add('w-0', 'border-transparent');
+            sidePanel.style.width = '0px';
             
             // Clear selections when closing
             if (selectedCrisisId && mapCircles[selectedCrisisId]) {
