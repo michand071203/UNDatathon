@@ -5216,69 +5216,6 @@
     }
   },
   {
-    "funding_base_key": "RRSDN",
-    "primary_location_code": "EGY",
-    "primary_location_name": "Egypt",
-    "location_codes": [
-      "EGY",
-      "ETH"
-    ],
-    "location_names": [
-      "Egypt",
-      "Ethiopia"
-    ],
-    "latitude": 26.2540493,
-    "longitude": 29.2675469,
-    "systematic_underfunding": {
-      "score": 1.0,
-      "weighted_avg_underfunding_gap": 17.7688731211288,
-      "underfunded_year_share": 1.0,
-      "max_underfunding_gap": 23.399647685615445,
-      "historical_years_count": 3
-    },
-    "years": {
-      "2023": {
-        "codes": [
-          "RRSDN23"
-        ],
-        "names": [
-          "Sudan Emergency: Regional Refugee Response Plan 2023"
-        ],
-        "requirements": 217629924.0,
-        "funding": 90104144.0,
-        "percent_funded": 41.4,
-        "contribution_count": null,
-        "avg_percent_funded": 45.1
-      },
-      "2024": {
-        "codes": [
-          "RRSDN24"
-        ],
-        "names": [
-          "Sudan Emergency: Regional Refugee Response Plan 2024"
-        ],
-        "requirements": 504551939.0,
-        "funding": 137020779.0,
-        "percent_funded": 27.2,
-        "contribution_count": null,
-        "avg_percent_funded": 50.6
-      },
-      "2025": {
-        "codes": [
-          "RRSDN25"
-        ],
-        "names": [
-          "Sudan Emergency: Regional Refugee Response Plan 2025"
-        ],
-        "requirements": 611760722.0,
-        "funding": 104387706.0,
-        "percent_funded": 17.1,
-        "contribution_count": null,
-        "avg_percent_funded": 35.2
-      }
-    }
-  },
-  {
     "funding_base_key": "FSLV09",
     "primary_location_code": "SLV",
     "primary_location_name": "El Salvador",
@@ -8296,65 +8233,52 @@
     "latitude": 31.1667049,
     "longitude": 36.941628,
     "systematic_underfunding": {
-      "score": null,
-      "weighted_avg_underfunding_gap": null,
-      "underfunded_year_share": null,
-      "max_underfunding_gap": null,
-      "historical_years_count": 0
+      "score": 0.9905432589761098,
+      "weighted_avg_underfunding_gap": 16.498178795499957,
+      "underfunded_year_share": 0.8333333333333334,
+      "max_underfunding_gap": 29.346906184949294,
+      "historical_years_count": 12
     },
     "years": {
-      "2026": {
+      "2013": {
         "codes": [
-          "RJORLBNTUR26"
+          "RXSYRREG13"
         ],
         "names": [
-          "Syrian Arab Republic Regional Refugee and Resilience Plan (3RP) 2026"
+          "Syria Regional Refugee Response Plan (RRP) 2013"
         ],
-        "requirements": 0.0,
-        "funding": 107634318.0,
-        "percent_funded": null,
-        "contribution_count": 64,
-        "avg_percent_funded": 18.6
-      }
-    },
-    "project_metrics_2026": {
-      "requirements": 0.0,
-      "funding": 107634318.0,
-      "percent_funded": null,
-      "contribution_count": 64,
-      "category_breakdown_scored": [],
-      "category_level_score": null,
-      "overall_severity_score": null
-    }
-  },
-  {
-    "funding_base_key": "RSYR",
-    "primary_location_code": "JOR",
-    "primary_location_name": "Jordan",
-    "location_codes": [
-      "JOR",
-      "IRQ",
-      "TUR",
-      "EGY",
-      "LBN"
-    ],
-    "location_names": [
-      "Jordan",
-      "Iraq",
-      "T\u00fcrkiye",
-      "Egypt",
-      "Lebanon"
-    ],
-    "latitude": 31.1667049,
-    "longitude": 36.941628,
-    "systematic_underfunding": {
-      "score": 1.0,
-      "weighted_avg_underfunding_gap": 20.39159497545281,
-      "underfunded_year_share": 1.0,
-      "max_underfunding_gap": 29.346906184949294,
-      "historical_years_count": 9
-    },
-    "years": {
+        "requirements": 2942721835.0,
+        "funding": 2022500680.0,
+        "percent_funded": 68.7,
+        "contribution_count": null,
+        "avg_percent_funded": 63.8
+      },
+      "2015": {
+        "codes": [
+          "RXSYRREG15"
+        ],
+        "names": [
+          "Syrian Arab Republic Regional Refugee and Resilience Plan (3RP) 2015"
+        ],
+        "requirements": 4191355391.0,
+        "funding": 2485412883.0,
+        "percent_funded": 59.3,
+        "contribution_count": null,
+        "avg_percent_funded": 53.5
+      },
+      "2016": {
+        "codes": [
+          "RXSYRREG16"
+        ],
+        "names": [
+          "Syrian Arab Republic Regional Refugee and Resilience Plan (3RP) 2016"
+        ],
+        "requirements": 4283067903.0,
+        "funding": 2582090546.0,
+        "percent_funded": 60.3,
+        "contribution_count": null,
+        "avg_percent_funded": 60.4
+      },
       "2017": {
         "codes": [
           "RSYR17"
@@ -8471,76 +8395,29 @@
         "percent_funded": 10.8,
         "contribution_count": null,
         "avg_percent_funded": 35.2
+      },
+      "2026": {
+        "codes": [
+          "RJORLBNTUR26"
+        ],
+        "names": [
+          "Syrian Arab Republic Regional Refugee and Resilience Plan (3RP) 2026"
+        ],
+        "requirements": 0.0,
+        "funding": 107634318.0,
+        "percent_funded": null,
+        "contribution_count": 64,
+        "avg_percent_funded": 18.6
       }
-    }
-  },
-  {
-    "funding_base_key": "RXSYRREG",
-    "primary_location_code": "JOR",
-    "primary_location_name": "Jordan",
-    "location_codes": [
-      "JOR",
-      "IRQ",
-      "TUR",
-      "EGY",
-      "LBN"
-    ],
-    "location_names": [
-      "Jordan",
-      "Iraq",
-      "T\u00fcrkiye",
-      "Egypt",
-      "Lebanon"
-    ],
-    "latitude": 31.1667049,
-    "longitude": 36.941628,
-    "systematic_underfunding": {
-      "score": 0.00023473854149919497,
-      "weighted_avg_underfunding_gap": 0.04056462714268959,
-      "underfunded_year_share": 0.3333333333333333,
-      "max_underfunding_gap": 0.10813095792094884,
-      "historical_years_count": 3
     },
-    "years": {
-      "2013": {
-        "codes": [
-          "RXSYRREG13"
-        ],
-        "names": [
-          "Syria Regional Refugee Response Plan (RRP) 2013"
-        ],
-        "requirements": 2942721835.0,
-        "funding": 2022500680.0,
-        "percent_funded": 68.7,
-        "contribution_count": null,
-        "avg_percent_funded": 63.8
-      },
-      "2015": {
-        "codes": [
-          "RXSYRREG15"
-        ],
-        "names": [
-          "Syrian Arab Republic Regional Refugee and Resilience Plan (3RP) 2015"
-        ],
-        "requirements": 4191355391.0,
-        "funding": 2485412883.0,
-        "percent_funded": 59.3,
-        "contribution_count": null,
-        "avg_percent_funded": 53.5
-      },
-      "2016": {
-        "codes": [
-          "RXSYRREG16"
-        ],
-        "names": [
-          "Syrian Arab Republic Regional Refugee and Resilience Plan (3RP) 2016"
-        ],
-        "requirements": 4283067903.0,
-        "funding": 2582090546.0,
-        "percent_funded": 60.3,
-        "contribution_count": null,
-        "avg_percent_funded": 60.4
-      }
+    "project_metrics_2026": {
+      "requirements": 0.0,
+      "funding": 107634318.0,
+      "percent_funded": null,
+      "contribution_count": 64,
+      "category_breakdown_scored": [],
+      "category_level_score": null,
+      "overall_severity_score": 0.9905432589761098
     }
   },
   {
@@ -10034,13 +9911,52 @@
     "latitude": 26.8234472,
     "longitude": 18.1236723,
     "systematic_underfunding": {
-      "score": null,
-      "weighted_avg_underfunding_gap": null,
-      "underfunded_year_share": null,
-      "max_underfunding_gap": null,
-      "historical_years_count": 0
+      "score": 1.0,
+      "weighted_avg_underfunding_gap": 17.7688731211288,
+      "underfunded_year_share": 1.0,
+      "max_underfunding_gap": 23.399647685615445,
+      "historical_years_count": 3
     },
     "years": {
+      "2023": {
+        "codes": [
+          "RRSDN23"
+        ],
+        "names": [
+          "Sudan Emergency: Regional Refugee Response Plan 2023"
+        ],
+        "requirements": 217629924.0,
+        "funding": 90104144.0,
+        "percent_funded": 41.4,
+        "contribution_count": null,
+        "avg_percent_funded": 45.1
+      },
+      "2024": {
+        "codes": [
+          "RRSDN24"
+        ],
+        "names": [
+          "Sudan Emergency: Regional Refugee Response Plan 2024"
+        ],
+        "requirements": 504551939.0,
+        "funding": 137020779.0,
+        "percent_funded": 27.2,
+        "contribution_count": null,
+        "avg_percent_funded": 50.6
+      },
+      "2025": {
+        "codes": [
+          "RRSDN25"
+        ],
+        "names": [
+          "Sudan Emergency: Regional Refugee Response Plan 2025"
+        ],
+        "requirements": 611760722.0,
+        "funding": 104387706.0,
+        "percent_funded": 17.1,
+        "contribution_count": null,
+        "avg_percent_funded": 35.2
+      },
       "2026": {
         "codes": [
           "RREG26a"
@@ -10062,7 +9978,7 @@
       "contribution_count": 19,
       "category_breakdown_scored": [],
       "category_level_score": null,
-      "overall_severity_score": null
+      "overall_severity_score": 1.0
     }
   },
   {
@@ -16237,7 +16153,7 @@
     }
   },
   {
-    "funding_base_key": "CSDN",
+    "funding_base_key": "HSDN",
     "primary_location_code": "SDN",
     "primary_location_name": "Sudan",
     "location_codes": [
@@ -16249,11 +16165,11 @@
     "latitude": 14.5844444,
     "longitude": 29.4917691,
     "systematic_underfunding": {
-      "score": 0.2548228039554471,
-      "weighted_avg_underfunding_gap": 1.7843744736673086,
-      "underfunded_year_share": 0.4166666666666667,
-      "max_underfunding_gap": 7.846066105540814,
-      "historical_years_count": 12
+      "score": 0.38313391336929703,
+      "weighted_avg_underfunding_gap": 2.6129291076205097,
+      "underfunded_year_share": 0.48148148148148145,
+      "max_underfunding_gap": 15.260686616767828,
+      "historical_years_count": 27
     },
     "years": {
       "2000": {
@@ -16321,6 +16237,19 @@
         "contribution_count": null,
         "avg_percent_funded": 63.7
       },
+      "2005": {
+        "codes": [
+          "OSDN05"
+        ],
+        "names": [
+          "Sudan - Humanitarian & Recovery Components of the 2005 Work Plan"
+        ],
+        "requirements": 1910110699.0,
+        "funding": 1018855336.0,
+        "percent_funded": 53.3,
+        "contribution_count": null,
+        "avg_percent_funded": 59.3
+      },
       "2006": {
         "codes": [
           "CSDN06"
@@ -16336,14 +16265,16 @@
       },
       "2007": {
         "codes": [
-          "CSDN07"
+          "CSDN07",
+          "FSDN0708"
         ],
         "names": [
+          "Sudan Flash Appeal: Flood Response 2007",
           "Sudan Work Plan 2007 (Humanitarian Action component) "
         ],
-        "requirements": 1333440796.0,
-        "funding": 1087170043.0,
-        "percent_funded": 81.5,
+        "requirements": 1368092035.0,
+        "funding": 1099643717.0,
+        "percent_funded": 80.4,
         "contribution_count": null,
         "avg_percent_funded": 72.7
       },
@@ -16386,6 +16317,19 @@
         "contribution_count": null,
         "avg_percent_funded": 62.8
       },
+      "2011": {
+        "codes": [
+          "CSDN1112"
+        ],
+        "names": [
+          "Sudan 2011"
+        ],
+        "requirements": 1132952016.0,
+        "funding": 812424912.0,
+        "percent_funded": 71.7,
+        "contribution_count": null,
+        "avg_percent_funded": 64.5
+      },
       "2012": {
         "codes": [
           "CSDN12"
@@ -16411,99 +16355,7 @@
         "percent_funded": 55.9,
         "contribution_count": null,
         "avg_percent_funded": 63.8
-      }
-    }
-  },
-  {
-    "funding_base_key": "CSDN1112",
-    "primary_location_code": "SDN",
-    "primary_location_name": "Sudan",
-    "location_codes": [
-      "SDN"
-    ],
-    "location_names": [
-      "Sudan"
-    ],
-    "latitude": 14.5844444,
-    "longitude": 29.4917691,
-    "systematic_underfunding": {
-      "score": 0.0,
-      "weighted_avg_underfunding_gap": 0.0,
-      "underfunded_year_share": 0.0,
-      "max_underfunding_gap": 0.0,
-      "historical_years_count": 1
-    },
-    "years": {
-      "2011": {
-        "codes": [
-          "CSDN1112"
-        ],
-        "names": [
-          "Sudan 2011"
-        ],
-        "requirements": 1132952016.0,
-        "funding": 812424912.0,
-        "percent_funded": 71.7,
-        "contribution_count": null,
-        "avg_percent_funded": 64.5
-      }
-    }
-  },
-  {
-    "funding_base_key": "FSDN0708",
-    "primary_location_code": "SDN",
-    "primary_location_name": "Sudan",
-    "location_codes": [
-      "SDN"
-    ],
-    "location_names": [
-      "Sudan"
-    ],
-    "latitude": 14.5844444,
-    "longitude": 29.4917691,
-    "systematic_underfunding": {
-      "score": 1.0,
-      "weighted_avg_underfunding_gap": 36.72434488523801,
-      "underfunded_year_share": 1.0,
-      "max_underfunding_gap": 36.72434488523801,
-      "historical_years_count": 1
-    },
-    "years": {
-      "2007": {
-        "codes": [
-          "FSDN0708"
-        ],
-        "names": [
-          "Sudan Flash Appeal: Flood Response 2007"
-        ],
-        "requirements": 34651239.0,
-        "funding": 12473674.0,
-        "percent_funded": 36.0,
-        "contribution_count": null,
-        "avg_percent_funded": 72.7
-      }
-    }
-  },
-  {
-    "funding_base_key": "HSDN",
-    "primary_location_code": "SDN",
-    "primary_location_name": "Sudan",
-    "location_codes": [
-      "SDN"
-    ],
-    "location_names": [
-      "Sudan"
-    ],
-    "latitude": 14.5844444,
-    "longitude": 29.4917691,
-    "systematic_underfunding": {
-      "score": 0.3951961983490734,
-      "weighted_avg_underfunding_gap": 2.911103823592253,
-      "underfunded_year_share": 0.5384615384615384,
-      "max_underfunding_gap": 15.260686616767828,
-      "historical_years_count": 13
-    },
-    "years": {
+      },
       "2014": {
         "codes": [
           "HSDN14"
@@ -16681,7 +16533,7 @@
       "contribution_count": 83,
       "category_breakdown_scored": [],
       "category_level_score": null,
-      "overall_severity_score": 0.6560784793396293
+      "overall_severity_score": 0.6512535653477187
     },
     "people_2026": {
       "people_in_need": 33699770.0,
@@ -16691,42 +16543,7 @@
     }
   },
   {
-    "funding_base_key": "OSDN",
-    "primary_location_code": "SDN",
-    "primary_location_name": "Sudan",
-    "location_codes": [
-      "SDN"
-    ],
-    "location_names": [
-      "Sudan"
-    ],
-    "latitude": 14.5844444,
-    "longitude": 29.4917691,
-    "systematic_underfunding": {
-      "score": 1.0,
-      "weighted_avg_underfunding_gap": 5.955260717328677,
-      "underfunded_year_share": 1.0,
-      "max_underfunding_gap": 5.955260717328677,
-      "historical_years_count": 1
-    },
-    "years": {
-      "2005": {
-        "codes": [
-          "OSDN05"
-        ],
-        "names": [
-          "Sudan - Humanitarian & Recovery Components of the 2005 Work Plan"
-        ],
-        "requirements": 1910110699.0,
-        "funding": 1018855336.0,
-        "percent_funded": 53.3,
-        "contribution_count": null,
-        "avg_percent_funded": 59.3
-      }
-    }
-  },
-  {
-    "funding_base_key": "CSYR",
+    "funding_base_key": "HSYR",
     "primary_location_code": "SYR",
     "primary_location_name": "Syria",
     "location_codes": [
@@ -16738,13 +16555,39 @@
     "latitude": 34.6401861,
     "longitude": 39.0494106,
     "systematic_underfunding": {
-      "score": 0.0,
-      "weighted_avg_underfunding_gap": 0.0,
-      "underfunded_year_share": 0.0,
-      "max_underfunding_gap": 0.0,
-      "historical_years_count": 2
+      "score": 0.8010399321216563,
+      "weighted_avg_underfunding_gap": 4.123322527511363,
+      "underfunded_year_share": 0.5882352941176471,
+      "max_underfunding_gap": 44.97762637343641,
+      "historical_years_count": 17
     },
     "years": {
+      "2008": {
+        "codes": [
+          "OSYR0809"
+        ],
+        "names": [
+          "Syria Drought Appeal 2008"
+        ],
+        "requirements": 20397906.0,
+        "funding": 5447096.0,
+        "percent_funded": 26.7,
+        "contribution_count": null,
+        "avg_percent_funded": 71.7
+      },
+      "2009": {
+        "codes": [
+          "OSYR0910"
+        ],
+        "names": [
+          "Syria Drought Response Plan (Revised) (July 2009 - June 2010)"
+        ],
+        "requirements": 43687572.0,
+        "funding": 14608732.0,
+        "percent_funded": 33.4,
+        "contribution_count": null,
+        "avg_percent_funded": 73.2
+      },
       "2012": {
         "codes": [
           "CSYR12"
@@ -16770,77 +16613,20 @@
         "percent_funded": 68.0,
         "contribution_count": null,
         "avg_percent_funded": 63.8
-      }
-    }
-  },
-  {
-    "funding_base_key": "FSYR",
-    "primary_location_code": "SYR",
-    "primary_location_name": "Syria",
-    "location_codes": [
-      "SYR"
-    ],
-    "location_names": [
-      "Syria"
-    ],
-    "latitude": 34.6401861,
-    "longitude": 39.0494106,
-    "systematic_underfunding": {
-      "score": 0.0,
-      "weighted_avg_underfunding_gap": 0.0,
-      "underfunded_year_share": 0.0,
-      "max_underfunding_gap": 0.0,
-      "historical_years_count": 2
-    },
-    "years": {
-      "2023": {
-        "codes": [
-          "FSYR23"
-        ],
-        "names": [
-          "Syria Earthquake Flash Appeal 2023"
-        ],
-        "requirements": 397623464.0,
-        "funding": 413628403.0,
-        "percent_funded": 104.0,
-        "contribution_count": null,
-        "avg_percent_funded": 45.1
       },
-      "2025": {
+      "2014": {
         "codes": [
-          "FSYR25"
+          "SSYR14"
         ],
         "names": [
-          "Syrian Arab Republic Humanitarian Response Priorities \u2013 January-December 2025"
+          "Syria Humanitarian Assistance Response Plan 2014"
         ],
-        "requirements": 3186585280.0,
-        "funding": 1354411981.0,
-        "percent_funded": 42.5,
+        "requirements": 2256199013.0,
+        "funding": 1142347933.0,
+        "percent_funded": 50.6,
         "contribution_count": null,
-        "avg_percent_funded": 35.2
-      }
-    }
-  },
-  {
-    "funding_base_key": "HSYR",
-    "primary_location_code": "SYR",
-    "primary_location_name": "Syria",
-    "location_codes": [
-      "SYR"
-    ],
-    "location_names": [
-      "Syria"
-    ],
-    "latitude": 34.6401861,
-    "longitude": 39.0494106,
-    "systematic_underfunding": {
-      "score": 0.8119563945553679,
-      "weighted_avg_underfunding_gap": 4.419475515759665,
-      "underfunded_year_share": 0.6363636363636364,
-      "max_underfunding_gap": 12.986374978976208,
-      "historical_years_count": 11
-    },
-    "years": {
+        "avg_percent_funded": 67.2
+      },
       "2015": {
         "codes": [
           "HSYR15"
@@ -16947,29 +16733,46 @@
       },
       "2023": {
         "codes": [
+          "FSYR23",
           "HSYR23"
         ],
         "names": [
+          "Syria Earthquake Flash Appeal 2023",
           "Syrian Arab Republic Humanitarian Response Plan 2023"
         ],
-        "requirements": 5413802598.0,
-        "funding": 2193081879.0,
-        "percent_funded": 40.5,
+        "requirements": 5811426062.0,
+        "funding": 2606710282.0,
+        "percent_funded": 44.9,
         "contribution_count": null,
         "avg_percent_funded": 45.1
       },
       "2024": {
         "codes": [
-          "HSYR24"
+          "HSYR24",
+          "OSYR24"
         ],
         "names": [
+          "Inter-Agency Emergency Appeal for the Influx from Lebanon to Syria 2024",
           "Syrian Arab Republic Humanitarian Response Plan 2024"
         ],
-        "requirements": 4074158710.0,
-        "funding": 1530669380.0,
-        "percent_funded": 37.6,
+        "requirements": 4209822792.0,
+        "funding": 1563959995.0,
+        "percent_funded": 37.2,
         "contribution_count": null,
         "avg_percent_funded": 50.6
+      },
+      "2025": {
+        "codes": [
+          "FSYR25"
+        ],
+        "names": [
+          "Syrian Arab Republic Humanitarian Response Priorities \u2013 January-December 2025"
+        ],
+        "requirements": 3186585280.0,
+        "funding": 1354411981.0,
+        "percent_funded": 42.5,
+        "contribution_count": null,
+        "avg_percent_funded": 35.2
       },
       "2026": {
         "codes": [
@@ -16992,153 +16795,13 @@
       "contribution_count": 75,
       "category_breakdown_scored": [],
       "category_level_score": null,
-      "overall_severity_score": 0.8347825578221473
+      "overall_severity_score": 0.8304159728486625
     },
     "people_2026": {
       "people_in_need": 16500000.0,
       "people_targeted": 10300000.0,
       "people_affected": 0.0,
       "people_reached": 0.0
-    }
-  },
-  {
-    "funding_base_key": "OSYR",
-    "primary_location_code": "SYR",
-    "primary_location_name": "Syria",
-    "location_codes": [
-      "SYR"
-    ],
-    "location_names": [
-      "Syria"
-    ],
-    "latitude": 34.6401861,
-    "longitude": 39.0494106,
-    "systematic_underfunding": {
-      "score": 1.0,
-      "weighted_avg_underfunding_gap": 26.01756581414384,
-      "underfunded_year_share": 1.0,
-      "max_underfunding_gap": 26.01756581414384,
-      "historical_years_count": 1
-    },
-    "years": {
-      "2024": {
-        "codes": [
-          "OSYR24"
-        ],
-        "names": [
-          "Inter-Agency Emergency Appeal for the Influx from Lebanon to Syria 2024"
-        ],
-        "requirements": 135664082.0,
-        "funding": 33290615.0,
-        "percent_funded": 24.5,
-        "contribution_count": null,
-        "avg_percent_funded": 50.6
-      }
-    }
-  },
-  {
-    "funding_base_key": "OSYR0809",
-    "primary_location_code": "SYR",
-    "primary_location_name": "Syria",
-    "location_codes": [
-      "SYR"
-    ],
-    "location_names": [
-      "Syria"
-    ],
-    "latitude": 34.6401861,
-    "longitude": 39.0494106,
-    "systematic_underfunding": {
-      "score": 1.0,
-      "weighted_avg_underfunding_gap": 44.97762637343641,
-      "underfunded_year_share": 1.0,
-      "max_underfunding_gap": 44.97762637343641,
-      "historical_years_count": 1
-    },
-    "years": {
-      "2008": {
-        "codes": [
-          "OSYR0809"
-        ],
-        "names": [
-          "Syria Drought Appeal 2008"
-        ],
-        "requirements": 20397906.0,
-        "funding": 5447096.0,
-        "percent_funded": 26.7,
-        "contribution_count": null,
-        "avg_percent_funded": 71.7
-      }
-    }
-  },
-  {
-    "funding_base_key": "OSYR0910",
-    "primary_location_code": "SYR",
-    "primary_location_name": "Syria",
-    "location_codes": [
-      "SYR"
-    ],
-    "location_names": [
-      "Syria"
-    ],
-    "latitude": 34.6401861,
-    "longitude": 39.0494106,
-    "systematic_underfunding": {
-      "score": 1.0,
-      "weighted_avg_underfunding_gap": 39.731034353514076,
-      "underfunded_year_share": 1.0,
-      "max_underfunding_gap": 39.731034353514076,
-      "historical_years_count": 1
-    },
-    "years": {
-      "2009": {
-        "codes": [
-          "OSYR0910"
-        ],
-        "names": [
-          "Syria Drought Response Plan (Revised) (July 2009 - June 2010)"
-        ],
-        "requirements": 43687572.0,
-        "funding": 14608732.0,
-        "percent_funded": 33.4,
-        "contribution_count": null,
-        "avg_percent_funded": 73.2
-      }
-    }
-  },
-  {
-    "funding_base_key": "SSYR",
-    "primary_location_code": "SYR",
-    "primary_location_name": "Syria",
-    "location_codes": [
-      "SYR"
-    ],
-    "location_names": [
-      "Syria"
-    ],
-    "latitude": 34.6401861,
-    "longitude": 39.0494106,
-    "systematic_underfunding": {
-      "score": 1.0,
-      "weighted_avg_underfunding_gap": 16.520681213504666,
-      "underfunded_year_share": 1.0,
-      "max_underfunding_gap": 16.520681213504666,
-      "historical_years_count": 1
-    },
-    "years": {
-      "2014": {
-        "codes": [
-          "SSYR14"
-        ],
-        "names": [
-          "Syria Humanitarian Assistance Response Plan 2014"
-        ],
-        "requirements": 2256199013.0,
-        "funding": 1142347933.0,
-        "percent_funded": 50.6,
-        "contribution_count": null,
-        "avg_percent_funded": 67.2
-      }
     }
   },
   {

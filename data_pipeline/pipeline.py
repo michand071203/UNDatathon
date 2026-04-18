@@ -36,6 +36,18 @@ COUNTRY_NAME_OVERRIDES = {
     "PSE": "Palestine",
 }
 
+COUNTRY_STITCHED_BASE_KEY_FAMILIES = {
+    "SDN": {"HSDN", "CSDN", "CSDN1112", "FSDN0708", "OSDN"},
+    "SYR": {"HSYR", "FSYR", "CSYR", "SSYR", "OSYR", "OSYR0809", "OSYR0910"},
+}
+
+GLOBAL_STITCHED_BASE_KEY_FAMILIES = {
+    # Sudan Emergency: Regional Refugee Response Plan (RRSDN -> RREGa in 2026)
+    "SUDAN_REFUGEES": {"RRSDN", "RREGa"},
+    # Syria 3RP lineage (RXSYRREG -> RSYR -> RJORLBNTUR in 2026)
+    "SYRIA_REFUGEES": {"RXSYRREG", "RSYR", "RJORLBNTUR"},
+}
+
 
 def geocode_country(country_name, geocode, country_code=None):
     if not country_name:
@@ -137,6 +149,73 @@ def _json_number(value):
     return float(value)
 
 
+def build_latest_canonical_key_map(summary):
+    if summary.empty:
+        return {}
+
+    key_map = {}
+    location_col = "primary_location"
+    if location_col not in summary.columns and "primary_location_code" in summary.columns:
+        location_col = "primary_location_code"
+
+    work = summary[["code", "year", location_col]].copy()
+    work = work.rename(columns={location_col: "location_code"})
+    work = work[
+        work["code"].notna() & work["year"].notna() & work["location_code"].notna()
+    ]
+    if work.empty:
+        return {}
+
+    work["base_key"] = work.apply(
+        lambda row: build_funding_base_key(row.get("code"), row.get("year")), axis=1
+    )
+
+    for country, family in COUNTRY_STITCHED_BASE_KEY_FAMILIES.items():
+        family_rows = work[
+            (work["location_code"].astype(str).str.upper() == country)
+            & (work["base_key"].isin(family))
+        ]
+        if family_rows.empty:
+            continue
+
+        latest_year = family_rows["year"].max()
+        latest_rows = family_rows[family_rows["year"] == latest_year]
+        latest_keys = sorted(set(latest_rows["base_key"].dropna().tolist()))
+        if not latest_keys:
+            continue
+
+        canonical_latest = latest_keys[0]
+        for base_key in family:
+            key_map[(country, base_key)] = canonical_latest
+
+    for family in GLOBAL_STITCHED_BASE_KEY_FAMILIES.values():
+        family_rows = work[work["base_key"].isin(family)]
+        if family_rows.empty:
+            continue
+
+        latest_year = family_rows["year"].max()
+        latest_rows = family_rows[family_rows["year"] == latest_year]
+        latest_keys = sorted(set(latest_rows["base_key"].dropna().tolist()))
+        if not latest_keys:
+            continue
+
+        canonical_latest = latest_keys[0]
+        for base_key in family:
+            key_map[("__GLOBAL__", base_key)] = canonical_latest
+
+    return key_map
+
+
+def apply_latest_canonical_key(base_key, primary_location, canonical_key_map):
+    if not isinstance(primary_location, str) or not primary_location:
+        return canonical_key_map.get(("__GLOBAL__", base_key), base_key)
+    country = primary_location.upper()
+    country_key = canonical_key_map.get((country, base_key))
+    if country_key is not None:
+        return country_key
+    return canonical_key_map.get(("__GLOBAL__", base_key), base_key)
+
+
 def build_category_scores(category_breakdown):
     if not isinstance(category_breakdown, list) or not category_breakdown:
         return [], None
@@ -213,9 +292,17 @@ def compute_overall_severity_score(row):
 
 
 def build_historical_benchmark_data(summary):
-    historical = summary[["code", "year", "requirements", "funding"]].copy()
+    canonical_key_map = build_latest_canonical_key_map(summary)
+    historical = summary[
+        ["code", "year", "requirements", "funding", "primary_location"]
+    ].copy()
     historical["benchmark_key"] = historical.apply(
-        lambda row: build_funding_base_key(row.get("code"), row.get("year")), axis=1
+        lambda row: apply_latest_canonical_key(
+            build_funding_base_key(row.get("code"), row.get("year")),
+            row.get("primary_location"),
+            canonical_key_map,
+        ),
+        axis=1,
     )
 
     historical = historical.groupby(["benchmark_key", "year"], as_index=False).agg(
@@ -388,8 +475,14 @@ def _pick_first_dict(series):
 def build_all_years_export(summary):
     records = []
     data = summary.copy()
+    canonical_key_map = build_latest_canonical_key_map(data)
     data["funding_base_key"] = data.apply(
-        lambda row: build_funding_base_key(row.get("code"), row.get("year")), axis=1
+        lambda row: apply_latest_canonical_key(
+            build_funding_base_key(row.get("code"), row.get("year")),
+            row.get("primary_location_code"),
+            canonical_key_map,
+        ),
+        axis=1,
     )
 
     yearly_totals = (
@@ -773,8 +866,14 @@ def build_summary(year=None):
 
     historical = build_historical_benchmark_data(plan_summary)
     systematic_metrics = compute_systematic_underfunding_metrics(historical)
+    canonical_key_map = build_latest_canonical_key_map(plan_summary)
     plan_summary["benchmark_key"] = plan_summary.apply(
-        lambda row: build_funding_base_key(row.get("code"), row.get("year")), axis=1
+        lambda row: apply_latest_canonical_key(
+            build_funding_base_key(row.get("code"), row.get("year")),
+            row.get("primary_location"),
+            canonical_key_map,
+        ),
+        axis=1,
     )
     plan_summary = plan_summary.merge(
         systematic_metrics,
