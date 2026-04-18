@@ -2,6 +2,7 @@ import re
 from pathlib import Path
 
 import pandas as pd
+import pycountry
 from geopy.extra.rate_limiter import RateLimiter
 from geopy.geocoders import Nominatim
 
@@ -31,8 +32,10 @@ DATA_DIR = Path(__file__).resolve().parent.parent / "data"
 COORDINATE_FILE = DATA_DIR / "country_coordinates.csv"
 
 
-def geocode_country(name, geocode):
+def geocode_country(code, geocode):
     try:
+        country = pycountry.countries.get(alpha_3=code)
+        name = country.name if country else code
         location = geocode(name)
         if location:
             return float(location.latitude), float(location.longitude)
