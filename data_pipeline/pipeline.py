@@ -213,6 +213,13 @@ def _json_number(value):
     return float(value)
 
 
+def _display_score(value):
+    numeric = pd.to_numeric(value, errors="coerce")
+    if pd.isna(numeric):
+        return None
+    return int(round(float(numeric) * 100.0))
+
+
 def _with_requirement_fallback(requirements, requirements_last_year):
     requirements = pd.to_numeric(requirements, errors="coerce")
     requirements_last_year = pd.to_numeric(requirements_last_year, errors="coerce")
@@ -818,9 +825,15 @@ def build_all_years_export(summary):
                 "contribution_count": int(contribution_count_2026)
                 if pd.notna(contribution_count_2026)
                 else None,
-                "category_breakdown_scored": category_breakdown_scored_2026,
-                "category_level_score": _json_number(category_level_score_2026),
-                "overall_severity_score": _json_number(overall_severity_score_2026),
+                "category_breakdown_scored": [
+                    {
+                        **item,
+                        "category_score": _display_score(item.get("category_score")),
+                    }
+                    for item in category_breakdown_scored_2026
+                ],
+                "category_level_score": _display_score(category_level_score_2026),
+                "overall_severity_score": _display_score(overall_severity_score_2026),
             }
 
         payload = {
@@ -831,7 +844,14 @@ def build_all_years_export(summary):
             "location_names": location_names,
             "latitude": _json_number(latitude),
             "longitude": _json_number(longitude),
-            "systematic_underfunding": systematic_underfunding,
+            "systematic_underfunding": (
+                {
+                    **systematic_underfunding,
+                    "score": _display_score(systematic_underfunding.get("score")),
+                }
+                if isinstance(systematic_underfunding, dict)
+                else systematic_underfunding
+            ),
             "years": {},
         }
         if project_metrics_2026 is not None:
@@ -1199,11 +1219,20 @@ def print_top_crises(summary, top_n=25, year=None):
         "Affected",
         "Reached",
     ]
+    display_summary = summary.copy()
+    for col in [
+        "category_level_score",
+        "overall_severity_score",
+        "systematic_underfunding_score",
+    ]:
+        if col in display_summary.columns:
+            display_summary[col] = display_summary[col].apply(_display_score)
+
     if year is None:
         print("Top crisis plans across all years by requirements and funding status:\n")
     else:
         print(f"Top {year} crisis plans by requirements and funding status:\n")
-    print(summary[display_columns].head(top_n).to_string(index=False))
+    print(display_summary[display_columns].head(top_n).to_string(index=False))
 
 
 def main():

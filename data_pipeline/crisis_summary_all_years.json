@@ -12,7 +12,7 @@
     "latitude": 33.7680065,
     "longitude": 66.2385139,
     "systematic_underfunding": {
-      "score": 0.0,
+      "score": 0,
       "weighted_avg_underfunding_gap": 0.0,
       "underfunded_year_share": 0.0,
       "max_underfunding_gap": 0.0,
@@ -114,7 +114,7 @@
     "latitude": 33.7680065,
     "longitude": 66.2385139,
     "systematic_underfunding": {
-      "score": 0.0,
+      "score": 0,
       "weighted_avg_underfunding_gap": 0.0,
       "underfunded_year_share": 0.0,
       "max_underfunding_gap": 0.0,
@@ -152,7 +152,7 @@
     "latitude": 33.7680065,
     "longitude": 66.2385139,
     "systematic_underfunding": {
-      "score": 1.0,
+      "score": 100,
       "weighted_avg_underfunding_gap": 10.20832014435755,
       "underfunded_year_share": 1.0,
       "max_underfunding_gap": 10.20832014435755,
@@ -190,7 +190,7 @@
     "latitude": 33.7680065,
     "longitude": 66.2385139,
     "systematic_underfunding": {
-      "score": 0.004741393218594548,
+      "score": 0,
       "weighted_avg_underfunding_gap": 3.080919025734659,
       "underfunded_year_share": 0.5,
       "max_underfunding_gap": 15.361271107593446,
@@ -244,7 +244,7 @@
     "latitude": 33.7680065,
     "longitude": 66.2385139,
     "systematic_underfunding": {
-      "score": 0.002789519435237447,
+      "score": 0,
       "weighted_avg_underfunding_gap": 0.22667534471038694,
       "underfunded_year_share": 0.15384615384615385,
       "max_underfunding_gap": 2.466705763690465,
@@ -476,7 +476,7 @@
           "coverage": 0.08637888809421074,
           "gap": 0.9136211119057893,
           "weight": 0.0919175784557758,
-          "category_score": 0.08397784023245351
+          "category_score": 8
         },
         {
           "category": "food_security",
@@ -485,7 +485,7 @@
           "coverage": 0.7072365537113311,
           "gap": 0.2927634462886689,
           "weight": 0.3218056464304721,
-          "category_score": 0.09421293008413789
+          "category_score": 9
         },
         {
           "category": "health",
@@ -494,7 +494,7 @@
           "coverage": 0.5004865048127022,
           "gap": 0.4995134951872978,
           "weight": 0.18657868681153358,
-          "category_score": 0.09319857197668532
+          "category_score": 9
         },
         {
           "category": "hygiene",
@@ -503,7 +503,7 @@
           "coverage": 0.4926762928281102,
           "gap": 0.5073237071718898,
           "weight": 0.2058094620127326,
-          "category_score": 0.10441201923935173
+          "category_score": 10
         },
         {
           "category": "protection",
@@ -512,11 +512,11 @@
           "coverage": 0.3567870385975053,
           "gap": 0.6432129614024946,
           "weight": 0.19388862628948597,
-          "category_score": 0.12471167749792185
+          "category_score": 12
         }
       ],
-      "category_level_score": 0.5005130390305503,
-      "overall_severity_score": 0.5133144234023227
+      "category_level_score": 50,
+      "overall_severity_score": 51
     },
     "people_2026": {
       "people_in_need": 21889283.0,
@@ -538,7 +538,7 @@
     "latitude": 33.7680065,
     "longitude": 66.2385139,
     "systematic_underfunding": {
-      "score": 0.1393625437344086,
+      "score": 14,
       "weighted_avg_underfunding_gap": 6.372146477096802,
       "underfunded_year_share": 0.5,
       "max_underfunding_gap": 27.320024312388824,
@@ -624,7 +624,7 @@
     "latitude": 33.7680065,
     "longitude": 66.2385139,
     "systematic_underfunding": {
-      "score": 1.0,
+      "score": 100,
       "weighted_avg_underfunding_gap": 21.41175296193945,
       "underfunded_year_share": 1.0,
       "max_underfunding_gap": 21.41175296193945,
@@ -794,7 +794,7 @@
     "latitude": -11.8775768,
     "longitude": 17.5691241,
     "systematic_underfunding": {
-      "score": 0.5315310419162194,
+      "score": 53,
       "weighted_avg_underfunding_gap": 8.120746821011263,
       "underfunded_year_share": 0.6,
       "max_underfunding_gap": 21.86176766810061,
@@ -896,7 +896,7 @@
     "latitude": -11.8775768,
     "longitude": 17.5691241,
     "systematic_underfunding": {
-      "score": 0.0,
+      "score": 0,
       "weighted_avg_underfunding_gap": 0.0,
       "underfunded_year_share": 0.0,
       "max_underfunding_gap": 0.0,
@@ -988,7 +988,7 @@
     "latitude": 24.4769288,
     "longitude": 90.2934413,
     "systematic_underfunding": {
-      "score": 1.0,
+      "score": 100,
       "weighted_avg_underfunding_gap": 32.7442251706713,
       "underfunded_year_share": 1.0,
       "max_underfunding_gap": 32.7442251706713,
@@ -1026,7 +1026,7 @@
     "latitude": 24.4769288,
     "longitude": 90.2934413,
     "systematic_underfunding": {
-      "score": 0.0,
+      "score": 0,
       "weighted_avg_underfunding_gap": 0.0,
       "underfunded_year_share": 0.0,
       "max_underfunding_gap": 0.0,
@@ -1064,7 +1064,7 @@
     "latitude": 24.4769288,
     "longitude": 90.2934413,
     "systematic_underfunding": {
-      "score": 0.987074147957533,
+      "score": 99,
       "weighted_avg_underfunding_gap": 22.157781199649445,
       "underfunded_year_share": 0.6666666666666666,
       "max_underfunding_gap": 26.039184185684693,
@@ -1134,7 +1134,7 @@
     "latitude": 24.4769288,
     "longitude": 90.2934413,
     "systematic_underfunding": {
-      "score": 0.0,
+      "score": 0,
       "weighted_avg_underfunding_gap": 0.0,
       "underfunded_year_share": 0.0,
       "max_underfunding_gap": 0.0,
@@ -1296,7 +1296,7 @@
       "contribution_count": 74,
       "category_breakdown_scored": [],
       "category_level_score": null,
-      "overall_severity_score": 0.3996
+      "overall_severity_score": 40
     }
   },
   {
@@ -1312,7 +1312,7 @@
     "latitude": 9.5293472,
     "longitude": 2.2584408,
     "systematic_underfunding": {
-      "score": 0.0,
+      "score": 0,
       "weighted_avg_underfunding_gap": 0.0,
       "underfunded_year_share": 0.0,
       "max_underfunding_gap": 0.0,
@@ -1350,7 +1350,7 @@
     "latitude": 9.5293472,
     "longitude": 2.2584408,
     "systematic_underfunding": {
-      "score": 1.0,
+      "score": 100,
       "weighted_avg_underfunding_gap": 34.664605654886216,
       "underfunded_year_share": 1.0,
       "max_underfunding_gap": 34.664605654886216,
@@ -1388,7 +1388,7 @@
     "latitude": -17.0568696,
     "longitude": -64.9912286,
     "systematic_underfunding": {
-      "score": 0.26258443247541513,
+      "score": 26,
       "weighted_avg_underfunding_gap": 8.544531597401948,
       "underfunded_year_share": 0.5,
       "max_underfunding_gap": 17.273151739382754,
@@ -1442,7 +1442,7 @@
     "latitude": -17.0568696,
     "longitude": -64.9912286,
     "systematic_underfunding": {
-      "score": 1.0,
+      "score": 100,
       "weighted_avg_underfunding_gap": 12.29258661894908,
       "underfunded_year_share": 1.0,
       "max_underfunding_gap": 12.29258661894908,
@@ -1512,7 +1512,7 @@
     "latitude": -10.3333333,
     "longitude": -53.2,
     "systematic_underfunding": {
-      "score": 0.8773508430165172,
+      "score": 88,
       "weighted_avg_underfunding_gap": 15.72532413455081,
       "underfunded_year_share": 0.875,
       "max_underfunding_gap": 25.58882430792621,
@@ -1658,7 +1658,7 @@
       "contribution_count": 48,
       "category_breakdown_scored": [],
       "category_level_score": null,
-      "overall_severity_score": 0.8957403372066068
+      "overall_severity_score": 90
     }
   },
   {
@@ -1674,7 +1674,7 @@
     "latitude": 12.0753083,
     "longitude": -1.6880314,
     "systematic_underfunding": {
-      "score": 0.5823789329570921,
+      "score": 58,
       "weighted_avg_underfunding_gap": 4.758342886020303,
       "underfunded_year_share": 0.5,
       "max_underfunding_gap": 9.07449690145178,
@@ -1728,7 +1728,7 @@
     "latitude": 12.0753083,
     "longitude": -1.6880314,
     "systematic_underfunding": {
-      "score": 1.0,
+      "score": 100,
       "weighted_avg_underfunding_gap": 51.65149510226416,
       "underfunded_year_share": 1.0,
       "max_underfunding_gap": 51.65149510226416,
@@ -1766,7 +1766,7 @@
     "latitude": 12.0753083,
     "longitude": -1.6880314,
     "systematic_underfunding": {
-      "score": 1.0,
+      "score": 100,
       "weighted_avg_underfunding_gap": 26.910391431303836,
       "underfunded_year_share": 1.0,
       "max_underfunding_gap": 26.910391431303836,
@@ -1804,7 +1804,7 @@
     "latitude": 12.0753083,
     "longitude": -1.6880314,
     "systematic_underfunding": {
-      "score": 0.9327859171978079,
+      "score": 93,
       "weighted_avg_underfunding_gap": 5.20937548492442,
       "underfunded_year_share": 0.8,
       "max_underfunding_gap": 22.48868408672568,
@@ -1982,7 +1982,7 @@
       "contribution_count": 45,
       "category_breakdown_scored": [],
       "category_level_score": null,
-      "overall_severity_score": 0.9065143668791231
+      "overall_severity_score": 91
     },
     "people_2026": {
       "people_in_need": 4400000.0,
@@ -2004,7 +2004,7 @@
     "latitude": 12.0753083,
     "longitude": -1.6880314,
     "systematic_underfunding": {
-      "score": 1.0,
+      "score": 100,
       "weighted_avg_underfunding_gap": 17.584177834513085,
       "underfunded_year_share": 1.0,
       "max_underfunding_gap": 17.584177834513085,
@@ -2042,7 +2042,7 @@
     "latitude": 12.0753083,
     "longitude": -1.6880314,
     "systematic_underfunding": {
-      "score": 0.9987632253614316,
+      "score": 100,
       "weighted_avg_underfunding_gap": 11.084204387717064,
       "underfunded_year_share": 0.5,
       "max_underfunding_gap": 16.437101455861566,
@@ -2096,7 +2096,7 @@
     "latitude": 12.0753083,
     "longitude": -1.6880314,
     "systematic_underfunding": {
-      "score": 1.0,
+      "score": 100,
       "weighted_avg_underfunding_gap": 35.27703167042496,
       "underfunded_year_share": 1.0,
       "max_underfunding_gap": 35.27703167042496,
@@ -2134,7 +2134,7 @@
     "latitude": -3.426449,
     "longitude": 29.9324519,
     "systematic_underfunding": {
-      "score": 0.9654264701094674,
+      "score": 97,
       "weighted_avg_underfunding_gap": 13.499147507696946,
       "underfunded_year_share": 0.75,
       "max_underfunding_gap": 32.8512311692489,
@@ -2284,7 +2284,7 @@
     "latitude": -3.426449,
     "longitude": 29.9324519,
     "systematic_underfunding": {
-      "score": 0.506806252340009,
+      "score": 51,
       "weighted_avg_underfunding_gap": 7.078387173446027,
       "underfunded_year_share": 0.625,
       "max_underfunding_gap": 18.80701514148342,
@@ -2434,7 +2434,7 @@
     "latitude": -3.426449,
     "longitude": 29.9324519,
     "systematic_underfunding": {
-      "score": 0.0,
+      "score": 0,
       "weighted_avg_underfunding_gap": 0.0,
       "underfunded_year_share": 0.0,
       "max_underfunding_gap": 0.0,
@@ -2472,7 +2472,7 @@
     "latitude": 4.6125522,
     "longitude": 13.1535811,
     "systematic_underfunding": {
-      "score": 0.936630503555241,
+      "score": 94,
       "weighted_avg_underfunding_gap": 7.403487860646008,
       "underfunded_year_share": 0.7692307692307693,
       "max_underfunding_gap": 23.365712289924417,
@@ -2698,7 +2698,7 @@
       "contribution_count": 33,
       "category_breakdown_scored": [],
       "category_level_score": null,
-      "overall_severity_score": 0.8498522014220964
+      "overall_severity_score": 85
     },
     "people_2026": {
       "people_in_need": 2900000.0,
@@ -2720,7 +2720,7 @@
     "latitude": 7.0323598,
     "longitude": 19.9981227,
     "systematic_underfunding": {
-      "score": 0.7190128130161514,
+      "score": 72,
       "weighted_avg_underfunding_gap": 7.891770871320315,
       "underfunded_year_share": 0.7,
       "max_underfunding_gap": 25.688770247559745,
@@ -2902,7 +2902,7 @@
     "latitude": 7.0323598,
     "longitude": 19.9981227,
     "systematic_underfunding": {
-      "score": 1.0,
+      "score": 100,
       "weighted_avg_underfunding_gap": 38.13702092660508,
       "underfunded_year_share": 1.0,
       "max_underfunding_gap": 38.13702092660508,
@@ -2940,7 +2940,7 @@
     "latitude": 7.0323598,
     "longitude": 19.9981227,
     "systematic_underfunding": {
-      "score": 0.18798912863688336,
+      "score": 19,
       "weighted_avg_underfunding_gap": 4.200259476654466,
       "underfunded_year_share": 0.3333333333333333,
       "max_underfunding_gap": 23.45901798353472,
@@ -3156,7 +3156,7 @@
           "coverage": 0.5999980564503982,
           "gap": 0.40000194354960183,
           "weight": 0.06646863668549809,
-          "category_score": 0.026587583859291598
+          "category_score": 3
         },
         {
           "category": "education",
@@ -3165,7 +3165,7 @@
           "coverage": 0.47625668266520915,
           "gap": 0.5237433173347908,
           "weight": 0.0945424950324295,
-          "category_score": 0.04951599997739261
+          "category_score": 5
         },
         {
           "category": "food_security",
@@ -3174,7 +3174,7 @@
           "coverage": 0.5071420651097449,
           "gap": 0.4928579348902551,
           "weight": 0.33931804804555066,
-          "category_score": 0.16723559243072245
+          "category_score": 17
         },
         {
           "category": "health",
@@ -3183,7 +3183,7 @@
           "coverage": 0.5409473009650181,
           "gap": 0.4590526990349819,
           "weight": 0.1542159958596178,
-          "category_score": 0.07079326913372515
+          "category_score": 7
         },
         {
           "category": "hygiene",
@@ -3192,7 +3192,7 @@
           "coverage": 0.520002883101195,
           "gap": 0.479997116898805,
           "weight": 0.17699035875507557,
-          "category_score": 0.08495486192132144
+          "category_score": 8
         },
         {
           "category": "protection",
@@ -3201,11 +3201,11 @@
           "coverage": 0.5367689629655191,
           "gap": 0.4632310370344809,
           "weight": 0.1684644656218284,
-          "category_score": 0.07803796911345923
+          "category_score": 8
         }
       ],
-      "category_level_score": 0.47712527643591246,
-      "overall_severity_score": 0.5224604639453329
+      "category_level_score": 48,
+      "overall_severity_score": 52
     },
     "people_2026": {
       "people_in_need": 2286959.0,
@@ -3227,7 +3227,7 @@
     "latitude": 7.0323598,
     "longitude": 19.9981227,
     "systematic_underfunding": {
-      "score": 0.0,
+      "score": 0,
       "weighted_avg_underfunding_gap": 0.0,
       "underfunded_year_share": 0.0,
       "max_underfunding_gap": 0.0,
@@ -3265,7 +3265,7 @@
     "latitude": 15.6134137,
     "longitude": 19.0156172,
     "systematic_underfunding": {
-      "score": 0.06724767289485119,
+      "score": 7,
       "weighted_avg_underfunding_gap": 1.9684531673700065,
       "underfunded_year_share": 0.3,
       "max_underfunding_gap": 5.8022228063104535,
@@ -3447,7 +3447,7 @@
     "latitude": 15.6134137,
     "longitude": 19.0156172,
     "systematic_underfunding": {
-      "score": 0.9164806780245535,
+      "score": 92,
       "weighted_avg_underfunding_gap": 7.225101524300022,
       "underfunded_year_share": 0.6923076923076923,
       "max_underfunding_gap": 30.521703527761723,
@@ -3679,7 +3679,7 @@
           "coverage": 0.9566714399616021,
           "gap": 0.04332856003839791,
           "weight": 0.04367738126640791,
-          "category_score": 0.0018924780365215514
+          "category_score": 0
         },
         {
           "category": "education",
@@ -3688,7 +3688,7 @@
           "coverage": 0.4227188551218838,
           "gap": 0.5772811448781162,
           "weight": 0.1203146853298301,
-          "category_score": 0.06945539929285462
+          "category_score": 7
         },
         {
           "category": "food_security",
@@ -3697,7 +3697,7 @@
           "coverage": 0.5589533333002821,
           "gap": 0.4410466666997179,
           "weight": 0.436837484336552,
-          "category_score": 0.1926657163561265
+          "category_score": 19
         },
         {
           "category": "health",
@@ -3706,7 +3706,7 @@
           "coverage": 0.7053433218144726,
           "gap": 0.29465667818552743,
           "weight": 0.1478539397821909,
-          "category_score": 0.04356615075286338
+          "category_score": 4
         },
         {
           "category": "hygiene",
@@ -3715,11 +3715,11 @@
           "coverage": 0.5764128453522392,
           "gap": 0.42358715464776076,
           "weight": 0.2513165092850191,
-          "category_score": 0.10645444508404878
+          "category_score": 11
         }
       ],
-      "category_level_score": 0.4140341895224149,
-      "overall_severity_score": 0.6246132303661182
+      "category_level_score": 41,
+      "overall_severity_score": 62
     },
     "people_2026": {
       "people_in_need": 4509014.0,
@@ -3741,7 +3741,7 @@
     "latitude": 4.099917,
     "longitude": -72.9088133,
     "systematic_underfunding": {
-      "score": 0.4797600498313024,
+      "score": 48,
       "weighted_avg_underfunding_gap": 9.054984213152135,
       "underfunded_year_share": 0.7142857142857143,
       "max_underfunding_gap": 39.53997309106373,
@@ -3871,7 +3871,7 @@
       "contribution_count": 35,
       "category_breakdown_scored": [],
       "category_level_score": null,
-      "overall_severity_score": 0.4733040199325209
+      "overall_severity_score": 47
     },
     "people_2026": {
       "people_in_need": 6900000.0,
@@ -3893,7 +3893,7 @@
     "latitude": 4.099917,
     "longitude": -72.9088133,
     "systematic_underfunding": {
-      "score": 1.0,
+      "score": 100,
       "weighted_avg_underfunding_gap": 39.4079142910134,
       "underfunded_year_share": 1.0,
       "max_underfunding_gap": 40.737259486611315,
@@ -3947,7 +3947,7 @@
     "latitude": -0.7264327,
     "longitude": 15.6419155,
     "systematic_underfunding": {
-      "score": 1.0,
+      "score": 100,
       "weighted_avg_underfunding_gap": 15.645470854354409,
       "underfunded_year_share": 1.0,
       "max_underfunding_gap": 42.55238306115869,
@@ -4065,7 +4065,7 @@
     "latitude": -0.7264327,
     "longitude": 15.6419155,
     "systematic_underfunding": {
-      "score": 1.0,
+      "score": 100,
       "weighted_avg_underfunding_gap": 18.714834016784216,
       "underfunded_year_share": 1.0,
       "max_underfunding_gap": 30.96297688653118,
@@ -4119,7 +4119,7 @@
     "latitude": -0.7264327,
     "longitude": 15.6419155,
     "systematic_underfunding": {
-      "score": 1.0,
+      "score": 100,
       "weighted_avg_underfunding_gap": 26.980425393988348,
       "underfunded_year_share": 1.0,
       "max_underfunding_gap": 31.14706865164782,
@@ -4199,7 +4199,7 @@
     "latitude": -0.7264327,
     "longitude": 15.6419155,
     "systematic_underfunding": {
-      "score": 0.9956692322909162,
+      "score": 100,
       "weighted_avg_underfunding_gap": 17.374791496786777,
       "underfunded_year_share": 0.8,
       "max_underfunding_gap": 48.81840851967611,
@@ -4327,7 +4327,7 @@
     "latitude": 45.3658443,
     "longitude": 15.6575209,
     "systematic_underfunding": {
-      "score": 0.0,
+      "score": 0,
       "weighted_avg_underfunding_gap": 0.0,
       "underfunded_year_share": 0.0,
       "max_underfunding_gap": 0.0,
@@ -4365,7 +4365,7 @@
     "latitude": 23.0131338,
     "longitude": -80.8328748,
     "systematic_underfunding": {
-      "score": 1.0,
+      "score": 100,
       "weighted_avg_underfunding_gap": 33.50187451362325,
       "underfunded_year_share": 1.0,
       "max_underfunding_gap": 33.50187451362325,
@@ -4403,7 +4403,7 @@
     "latitude": 23.0131338,
     "longitude": -80.8328748,
     "systematic_underfunding": {
-      "score": 1.0,
+      "score": 100,
       "weighted_avg_underfunding_gap": 40.844926333550596,
       "underfunded_year_share": 1.0,
       "max_underfunding_gap": 40.844926333550596,
@@ -4441,7 +4441,7 @@
     "latitude": 23.0131338,
     "longitude": -80.8328748,
     "systematic_underfunding": {
-      "score": 1.0,
+      "score": 100,
       "weighted_avg_underfunding_gap": 23.45496864323195,
       "underfunded_year_share": 1.0,
       "max_underfunding_gap": 23.45496864323195,
@@ -4479,7 +4479,7 @@
     "latitude": 23.0131338,
     "longitude": -80.8328748,
     "systematic_underfunding": {
-      "score": 1.0,
+      "score": 100,
       "weighted_avg_underfunding_gap": 40.13477470452777,
       "underfunded_year_share": 1.0,
       "max_underfunding_gap": 40.13477470452777,
@@ -4517,7 +4517,7 @@
     "latitude": 7.9897371,
     "longitude": -5.5679458,
     "systematic_underfunding": {
-      "score": 0.9861329302267289,
+      "score": 99,
       "weighted_avg_underfunding_gap": 10.964000987208097,
       "underfunded_year_share": 0.8333333333333334,
       "max_underfunding_gap": 35.73499082028793,
@@ -4637,7 +4637,7 @@
     "latitude": 7.9897371,
     "longitude": -5.5679458,
     "systematic_underfunding": {
-      "score": 0.0,
+      "score": 0,
       "weighted_avg_underfunding_gap": 0.0,
       "underfunded_year_share": 0.0,
       "max_underfunding_gap": 0.0,
@@ -4717,7 +4717,7 @@
     "latitude": 7.9897371,
     "longitude": -5.5679458,
     "systematic_underfunding": {
-      "score": 1.0,
+      "score": 100,
       "weighted_avg_underfunding_gap": 1.6049582914270815,
       "underfunded_year_share": 1.0,
       "max_underfunding_gap": 1.6049582914270815,
@@ -4781,7 +4781,7 @@
     "latitude": 7.9897371,
     "longitude": -5.5679458,
     "systematic_underfunding": {
-      "score": 1.0,
+      "score": 100,
       "weighted_avg_underfunding_gap": 0.6173379432392352,
       "underfunded_year_share": 1.0,
       "max_underfunding_gap": 0.6173379432392352,
@@ -4843,7 +4843,7 @@
     "latitude": 7.9897371,
     "longitude": -5.5679458,
     "systematic_underfunding": {
-      "score": 0.0,
+      "score": 0,
       "weighted_avg_underfunding_gap": 0.0,
       "underfunded_year_share": 0.0,
       "max_underfunding_gap": 0.0,
@@ -4881,7 +4881,7 @@
     "latitude": 7.9897371,
     "longitude": -5.5679458,
     "systematic_underfunding": {
-      "score": 1.0,
+      "score": 100,
       "weighted_avg_underfunding_gap": 22.68748112200806,
       "underfunded_year_share": 1.0,
       "max_underfunding_gap": 22.68748112200806,
@@ -4919,7 +4919,7 @@
     "latitude": 7.9897371,
     "longitude": -5.5679458,
     "systematic_underfunding": {
-      "score": 1.0,
+      "score": 100,
       "weighted_avg_underfunding_gap": 21.39054532683071,
       "underfunded_year_share": 1.0,
       "max_underfunding_gap": 21.39054532683071,
@@ -4957,7 +4957,7 @@
     "latitude": -2.9814344,
     "longitude": 23.8222636,
     "systematic_underfunding": {
-      "score": 0.7881447729516037,
+      "score": 79,
       "weighted_avg_underfunding_gap": 6.016312302165209,
       "underfunded_year_share": 0.5454545454545454,
       "max_underfunding_gap": 29.799482160940975,
@@ -5155,7 +5155,7 @@
     "latitude": -2.9814344,
     "longitude": 23.8222636,
     "systematic_underfunding": {
-      "score": 0.0,
+      "score": 0,
       "weighted_avg_underfunding_gap": 0.0,
       "underfunded_year_share": 0.0,
       "max_underfunding_gap": 0.0,
@@ -5193,7 +5193,7 @@
     "latitude": -2.9814344,
     "longitude": 23.8222636,
     "systematic_underfunding": {
-      "score": 0.0,
+      "score": 0,
       "weighted_avg_underfunding_gap": 0.0,
       "underfunded_year_share": 0.0,
       "max_underfunding_gap": 0.0,
@@ -5231,7 +5231,7 @@
     "latitude": -2.9814344,
     "longitude": 23.8222636,
     "systematic_underfunding": {
-      "score": 0.0,
+      "score": 0,
       "weighted_avg_underfunding_gap": 0.0,
       "underfunded_year_share": 0.0,
       "max_underfunding_gap": 0.0,
@@ -5269,7 +5269,7 @@
     "latitude": -2.9814344,
     "longitude": 23.8222636,
     "systematic_underfunding": {
-      "score": 0.825869180637647,
+      "score": 83,
       "weighted_avg_underfunding_gap": 6.793055224303917,
       "underfunded_year_share": 0.6666666666666666,
       "max_underfunding_gap": 21.134243481806053,
@@ -5485,7 +5485,7 @@
           "coverage": 0.12321144551850972,
           "gap": 0.8767885544814903,
           "weight": 0.13592593611864826,
-          "category_score": 0.119178305046013
+          "category_score": 12
         },
         {
           "category": "food_security",
@@ -5494,7 +5494,7 @@
           "coverage": 0.45053386667374273,
           "gap": 0.5494661333262573,
           "weight": 0.6012681307725241,
-          "category_score": 0.3303764749078852
+          "category_score": 33
         },
         {
           "category": "health",
@@ -5503,11 +5503,11 @@
           "coverage": 0.3329925378921186,
           "gap": 0.6670074621078814,
           "weight": 0.26280593310882766,
-          "category_score": 0.17529351846981278
+          "category_score": 18
         }
       ],
-      "category_level_score": 0.6248482984237109,
-      "overall_severity_score": 0.6857979853393849
+      "category_level_score": 62,
+      "overall_severity_score": 69
     },
     "people_2026": {
       "people_in_need": 14940727.0,
@@ -5529,7 +5529,7 @@
     "latitude": -2.9814344,
     "longitude": 23.8222636,
     "systematic_underfunding": {
-      "score": 1.0,
+      "score": 100,
       "weighted_avg_underfunding_gap": 19.778953549080917,
       "underfunded_year_share": 1.0,
       "max_underfunding_gap": 19.778953549080917,
@@ -5567,7 +5567,7 @@
     "latitude": 11.8145966,
     "longitude": 42.8453061,
     "systematic_underfunding": {
-      "score": 1.0,
+      "score": 100,
       "weighted_avg_underfunding_gap": 18.298530942370455,
       "underfunded_year_share": 1.0,
       "max_underfunding_gap": 28.39189593105484,
@@ -5621,7 +5621,7 @@
     "latitude": 11.8145966,
     "longitude": 42.8453061,
     "systematic_underfunding": {
-      "score": 1.0,
+      "score": 100,
       "weighted_avg_underfunding_gap": 6.253604666231695,
       "underfunded_year_share": 1.0,
       "max_underfunding_gap": 6.253604666231695,
@@ -5659,7 +5659,7 @@
     "latitude": 11.8145966,
     "longitude": 42.8453061,
     "systematic_underfunding": {
-      "score": 1.0,
+      "score": 100,
       "weighted_avg_underfunding_gap": 25.32376678759745,
       "underfunded_year_share": 1.0,
       "max_underfunding_gap": 25.32376678759745,
@@ -5697,7 +5697,7 @@
     "latitude": 11.8145966,
     "longitude": 42.8453061,
     "systematic_underfunding": {
-      "score": 1.0,
+      "score": 100,
       "weighted_avg_underfunding_gap": 26.224531449444918,
       "underfunded_year_share": 1.0,
       "max_underfunding_gap": 26.224531449444918,
@@ -5735,7 +5735,7 @@
     "latitude": 11.8145966,
     "longitude": 42.8453061,
     "systematic_underfunding": {
-      "score": 1.0,
+      "score": 100,
       "weighted_avg_underfunding_gap": 31.989993638774237,
       "underfunded_year_share": 1.0,
       "max_underfunding_gap": 39.08162957122282,
@@ -5821,7 +5821,7 @@
     "latitude": 11.8145966,
     "longitude": 42.8453061,
     "systematic_underfunding": {
-      "score": 1.0,
+      "score": 100,
       "weighted_avg_underfunding_gap": 38.174163753091364,
       "underfunded_year_share": 1.0,
       "max_underfunding_gap": 57.26100390107576,
@@ -5875,7 +5875,7 @@
     "latitude": 11.8145966,
     "longitude": 42.8453061,
     "systematic_underfunding": {
-      "score": 1.0,
+      "score": 100,
       "weighted_avg_underfunding_gap": 36.74938266142981,
       "underfunded_year_share": 1.0,
       "max_underfunding_gap": 36.74938266142981,
@@ -5951,7 +5951,7 @@
     "latitude": 19.0974031,
     "longitude": -70.3028026,
     "systematic_underfunding": {
-      "score": 1.0,
+      "score": 100,
       "weighted_avg_underfunding_gap": 31.583996437717573,
       "underfunded_year_share": 1.0,
       "max_underfunding_gap": 31.583996437717573,
@@ -5989,7 +5989,7 @@
     "latitude": -1.3397668,
     "longitude": -79.3666965,
     "systematic_underfunding": {
-      "score": 1.0,
+      "score": 100,
       "weighted_avg_underfunding_gap": 22.55328617694549,
       "underfunded_year_share": 1.0,
       "max_underfunding_gap": 22.55328617694549,
@@ -6027,7 +6027,7 @@
     "latitude": -1.3397668,
     "longitude": -79.3666965,
     "systematic_underfunding": {
-      "score": 1.0,
+      "score": 100,
       "weighted_avg_underfunding_gap": 9.381555178868219,
       "underfunded_year_share": 1.0,
       "max_underfunding_gap": 9.381555178868219,
@@ -6065,7 +6065,7 @@
     "latitude": 13.8000382,
     "longitude": -88.9140683,
     "systematic_underfunding": {
-      "score": 1.0,
+      "score": 100,
       "weighted_avg_underfunding_gap": 14.823187648615807,
       "underfunded_year_share": 1.0,
       "max_underfunding_gap": 14.823187648615807,
@@ -6103,7 +6103,7 @@
     "latitude": 13.8000382,
     "longitude": -88.9140683,
     "systematic_underfunding": {
-      "score": 1.0,
+      "score": 100,
       "weighted_avg_underfunding_gap": 24.016825903516043,
       "underfunded_year_share": 1.0,
       "max_underfunding_gap": 24.016825903516043,
@@ -6141,7 +6141,7 @@
     "latitude": 13.8000382,
     "longitude": -88.9140683,
     "systematic_underfunding": {
-      "score": 1.0,
+      "score": 100,
       "weighted_avg_underfunding_gap": 17.365626435164,
       "underfunded_year_share": 1.0,
       "max_underfunding_gap": 31.00357159197825,
@@ -6243,7 +6243,7 @@
     "latitude": 13.8000382,
     "longitude": -88.9140683,
     "systematic_underfunding": {
-      "score": 1.0,
+      "score": 100,
       "weighted_avg_underfunding_gap": 31.13693066876671,
       "underfunded_year_share": 1.0,
       "max_underfunding_gap": 31.13693066876671,
@@ -6281,7 +6281,7 @@
     "latitude": 15.9500319,
     "longitude": 37.9999668,
     "systematic_underfunding": {
-      "score": 0.7927576882511442,
+      "score": 79,
       "weighted_avg_underfunding_gap": 2.620080092466837,
       "underfunded_year_share": 0.4,
       "max_underfunding_gap": 13.477679206638228,
@@ -6387,7 +6387,7 @@
     "latitude": 15.9500319,
     "longitude": 37.9999668,
     "systematic_underfunding": {
-      "score": 1.0,
+      "score": 100,
       "weighted_avg_underfunding_gap": 18.03452513096319,
       "underfunded_year_share": 1.0,
       "max_underfunding_gap": 18.03452513096319,
@@ -6425,7 +6425,7 @@
     "latitude": -26.5624806,
     "longitude": 31.3991317,
     "systematic_underfunding": {
-      "score": 1.0,
+      "score": 100,
       "weighted_avg_underfunding_gap": 45.45412629410029,
       "underfunded_year_share": 1.0,
       "max_underfunding_gap": 45.45412629410029,
@@ -6463,7 +6463,7 @@
     "latitude": -26.5624806,
     "longitude": 31.3991317,
     "systematic_underfunding": {
-      "score": 1.0,
+      "score": 100,
       "weighted_avg_underfunding_gap": 29.85580873105907,
       "underfunded_year_share": 1.0,
       "max_underfunding_gap": 29.85580873105907,
@@ -6501,7 +6501,7 @@
     "latitude": -26.5624806,
     "longitude": 31.3991317,
     "systematic_underfunding": {
-      "score": 0.0,
+      "score": 0,
       "weighted_avg_underfunding_gap": 0.0,
       "underfunded_year_share": 0.0,
       "max_underfunding_gap": 0.0,
@@ -6539,7 +6539,7 @@
     "latitude": 10.2116702,
     "longitude": 38.6521203,
     "systematic_underfunding": {
-      "score": 1.0,
+      "score": 100,
       "weighted_avg_underfunding_gap": 16.5757670619819,
       "underfunded_year_share": 1.0,
       "max_underfunding_gap": 16.5757670619819,
@@ -6577,7 +6577,7 @@
     "latitude": 10.2116702,
     "longitude": 38.6521203,
     "systematic_underfunding": {
-      "score": 0.0,
+      "score": 0,
       "weighted_avg_underfunding_gap": 0.0,
       "underfunded_year_share": 0.0,
       "max_underfunding_gap": 0.0,
@@ -6615,7 +6615,7 @@
     "latitude": 10.2116702,
     "longitude": 38.6521203,
     "systematic_underfunding": {
-      "score": 0.9500395956180192,
+      "score": 95,
       "weighted_avg_underfunding_gap": 9.147863614013206,
       "underfunded_year_share": 0.75,
       "max_underfunding_gap": 18.54500444080732,
@@ -6765,7 +6765,7 @@
     "latitude": 10.2116702,
     "longitude": 38.6521203,
     "systematic_underfunding": {
-      "score": 0.0,
+      "score": 0,
       "weighted_avg_underfunding_gap": 0.0,
       "underfunded_year_share": 0.0,
       "max_underfunding_gap": 0.0,
@@ -6803,7 +6803,7 @@
     "latitude": 10.2116702,
     "longitude": 38.6521203,
     "systematic_underfunding": {
-      "score": 1.0,
+      "score": 100,
       "weighted_avg_underfunding_gap": 15.583238442300178,
       "underfunded_year_share": 1.0,
       "max_underfunding_gap": 15.583238442300178,
@@ -6841,7 +6841,7 @@
     "latitude": 10.2116702,
     "longitude": 38.6521203,
     "systematic_underfunding": {
-      "score": 1.0,
+      "score": 100,
       "weighted_avg_underfunding_gap": 47.087653720682106,
       "underfunded_year_share": 1.0,
       "max_underfunding_gap": 47.087653720682106,
@@ -6885,7 +6885,7 @@
     "latitude": 10.2116702,
     "longitude": 38.6521203,
     "systematic_underfunding": {
-      "score": 0.915028191562487,
+      "score": 92,
       "weighted_avg_underfunding_gap": 17.864161727202607,
       "underfunded_year_share": 0.8571428571428571,
       "max_underfunding_gap": 36.05993778761997,
@@ -7035,7 +7035,7 @@
     "latitude": -18.1239696,
     "longitude": 179.0122737,
     "systematic_underfunding": {
-      "score": 1.0,
+      "score": 100,
       "weighted_avg_underfunding_gap": 3.951023868938563,
       "underfunded_year_share": 1.0,
       "max_underfunding_gap": 3.951023868938563,
@@ -7073,7 +7073,7 @@
     "latitude": 13.470062,
     "longitude": -15.4900464,
     "systematic_underfunding": {
-      "score": 1.0,
+      "score": 100,
       "weighted_avg_underfunding_gap": 48.626227469246516,
       "underfunded_year_share": 1.0,
       "max_underfunding_gap": 56.55075743358747,
@@ -7143,7 +7143,7 @@
     "latitude": 41.6808672,
     "longitude": 44.0287806,
     "systematic_underfunding": {
-      "score": 1.0,
+      "score": 100,
       "weighted_avg_underfunding_gap": 7.482149593311142,
       "underfunded_year_share": 1.0,
       "max_underfunding_gap": 7.482149593311142,
@@ -7181,7 +7181,7 @@
     "latitude": 8.0300284,
     "longitude": -1.0800271,
     "systematic_underfunding": {
-      "score": 1.0,
+      "score": 100,
       "weighted_avg_underfunding_gap": 6.967092637851906,
       "underfunded_year_share": 1.0,
       "max_underfunding_gap": 6.967092637851906,
@@ -7219,7 +7219,7 @@
     "latitude": 12.1360374,
     "longitude": -61.6904045,
     "systematic_underfunding": {
-      "score": 1.0,
+      "score": 100,
       "weighted_avg_underfunding_gap": 19.079587143866696,
       "underfunded_year_share": 1.0,
       "max_underfunding_gap": 19.079587143866696,
@@ -7257,7 +7257,7 @@
     "latitude": 12.1360374,
     "longitude": -61.6904045,
     "systematic_underfunding": {
-      "score": 1.0,
+      "score": 100,
       "weighted_avg_underfunding_gap": 39.872260087238104,
       "underfunded_year_share": 1.0,
       "max_underfunding_gap": 39.872260087238104,
@@ -7295,7 +7295,7 @@
     "latitude": 15.5855545,
     "longitude": -90.345759,
     "systematic_underfunding": {
-      "score": 1.0,
+      "score": 100,
       "weighted_avg_underfunding_gap": 38.69459984687204,
       "underfunded_year_share": 1.0,
       "max_underfunding_gap": 38.69459984687204,
@@ -7333,7 +7333,7 @@
     "latitude": 15.5855545,
     "longitude": -90.345759,
     "systematic_underfunding": {
-      "score": 1.0,
+      "score": 100,
       "weighted_avg_underfunding_gap": 14.272158098846319,
       "underfunded_year_share": 1.0,
       "max_underfunding_gap": 14.272158098846319,
@@ -7371,7 +7371,7 @@
     "latitude": 15.5855545,
     "longitude": -90.345759,
     "systematic_underfunding": {
-      "score": 0.0,
+      "score": 0,
       "weighted_avg_underfunding_gap": 0.0,
       "underfunded_year_share": 0.0,
       "max_underfunding_gap": 0.0,
@@ -7409,7 +7409,7 @@
     "latitude": 15.5855545,
     "longitude": -90.345759,
     "systematic_underfunding": {
-      "score": 1.0,
+      "score": 100,
       "weighted_avg_underfunding_gap": 51.82881942238745,
       "underfunded_year_share": 1.0,
       "max_underfunding_gap": 51.82881942238745,
@@ -7447,7 +7447,7 @@
     "latitude": 15.5855545,
     "longitude": -90.345759,
     "systematic_underfunding": {
-      "score": 0.9234944548973663,
+      "score": 92,
       "weighted_avg_underfunding_gap": 13.04447116726491,
       "underfunded_year_share": 0.6666666666666666,
       "max_underfunding_gap": 32.27834165506149,
@@ -7565,7 +7565,7 @@
     "latitude": 10.7226226,
     "longitude": -10.7083587,
     "systematic_underfunding": {
-      "score": 0.9916516298547071,
+      "score": 99,
       "weighted_avg_underfunding_gap": 6.8777715634419225,
       "underfunded_year_share": 0.6,
       "max_underfunding_gap": 15.782015478623038,
@@ -7667,7 +7667,7 @@
     "latitude": 11.815215,
     "longitude": -15.2351044,
     "systematic_underfunding": {
-      "score": 1.0,
+      "score": 100,
       "weighted_avg_underfunding_gap": 9.481742176284946,
       "underfunded_year_share": 1.0,
       "max_underfunding_gap": 9.481742176284946,
@@ -7705,7 +7705,7 @@
     "latitude": 4.8417097,
     "longitude": -58.6416891,
     "systematic_underfunding": {
-      "score": 1.0,
+      "score": 100,
       "weighted_avg_underfunding_gap": 28.865610252978037,
       "underfunded_year_share": 1.0,
       "max_underfunding_gap": 28.865610252978037,
@@ -7743,7 +7743,7 @@
     "latitude": 19.1399952,
     "longitude": -72.3570972,
     "systematic_underfunding": {
-      "score": 1.0,
+      "score": 100,
       "weighted_avg_underfunding_gap": 14.786873853497243,
       "underfunded_year_share": 1.0,
       "max_underfunding_gap": 15.994715302452576,
@@ -7797,7 +7797,7 @@
     "latitude": 19.1399952,
     "longitude": -72.3570972,
     "systematic_underfunding": {
-      "score": 1.0,
+      "score": 100,
       "weighted_avg_underfunding_gap": 6.737001447038423,
       "underfunded_year_share": 1.0,
       "max_underfunding_gap": 6.737001447038423,
@@ -7835,7 +7835,7 @@
     "latitude": 19.1399952,
     "longitude": -72.3570972,
     "systematic_underfunding": {
-      "score": 0.07736872318697328,
+      "score": 8,
       "weighted_avg_underfunding_gap": 0.45458945227408415,
       "underfunded_year_share": 0.5,
       "max_underfunding_gap": 20.631947851539692,
@@ -7921,7 +7921,7 @@
     "latitude": 19.1399952,
     "longitude": -72.3570972,
     "systematic_underfunding": {
-      "score": 1.0,
+      "score": 100,
       "weighted_avg_underfunding_gap": 16.798155738889676,
       "underfunded_year_share": 1.0,
       "max_underfunding_gap": 16.798155738889676,
@@ -7959,7 +7959,7 @@
     "latitude": 19.1399952,
     "longitude": -72.3570972,
     "systematic_underfunding": {
-      "score": 1.0,
+      "score": 100,
       "weighted_avg_underfunding_gap": 10.887046644853498,
       "underfunded_year_share": 1.0,
       "max_underfunding_gap": 10.887046644853498,
@@ -7997,7 +7997,7 @@
     "latitude": 19.1399952,
     "longitude": -72.3570972,
     "systematic_underfunding": {
-      "score": 1.0,
+      "score": 100,
       "weighted_avg_underfunding_gap": 11.707125782713419,
       "underfunded_year_share": 1.0,
       "max_underfunding_gap": 11.707125782713419,
@@ -8035,7 +8035,7 @@
     "latitude": 19.1399952,
     "longitude": -72.3570972,
     "systematic_underfunding": {
-      "score": 1.0,
+      "score": 100,
       "weighted_avg_underfunding_gap": 50.323011799951274,
       "underfunded_year_share": 1.0,
       "max_underfunding_gap": 50.323011799951274,
@@ -8073,7 +8073,7 @@
     "latitude": 19.1399952,
     "longitude": -72.3570972,
     "systematic_underfunding": {
-      "score": 0.9702806621590749,
+      "score": 97,
       "weighted_avg_underfunding_gap": 12.152749733129188,
       "underfunded_year_share": 0.8333333333333334,
       "max_underfunding_gap": 49.37134310108485,
@@ -8289,7 +8289,7 @@
           "coverage": 0.2699529197719491,
           "gap": 0.730047080228051,
           "weight": 0.11897876483886298,
-          "category_score": 0.08686009987975181
+          "category_score": 9
         },
         {
           "category": "education",
@@ -8298,7 +8298,7 @@
           "coverage": 0.6574596214035852,
           "gap": 0.34254037859641484,
           "weight": 0.08389543051792436,
-          "category_score": 0.028737572532119025
+          "category_score": 3
         },
         {
           "category": "food_security",
@@ -8307,7 +8307,7 @@
           "coverage": 0.6271417289425496,
           "gap": 0.3728582710574504,
           "weight": 0.4008380359726846,
-          "category_score": 0.14945577706683927
+          "category_score": 15
         },
         {
           "category": "health",
@@ -8316,7 +8316,7 @@
           "coverage": 0.5577200629155321,
           "gap": 0.4422799370844679,
           "weight": 0.27299946882749837,
-          "category_score": 0.12074218789711913
+          "category_score": 12
         },
         {
           "category": "protection",
@@ -8325,11 +8325,11 @@
           "coverage": 0.5630521005218161,
           "gap": 0.4369478994781839,
           "weight": 0.12328829984302973,
-          "category_score": 0.053870563646648356
+          "category_score": 5
         }
       ],
-      "category_level_score": 0.43966620102247755,
-      "overall_severity_score": 0.6553892329430537
+      "category_level_score": 44,
+      "overall_severity_score": 66
     },
     "people_2026": {
       "people_in_need": 6414193.0,
@@ -8351,7 +8351,7 @@
     "latitude": 19.1399952,
     "longitude": -72.3570972,
     "systematic_underfunding": {
-      "score": 1.0,
+      "score": 100,
       "weighted_avg_underfunding_gap": 39.22270939015591,
       "underfunded_year_share": 1.0,
       "max_underfunding_gap": 39.22270939015591,
@@ -8389,7 +8389,7 @@
     "latitude": 15.2572432,
     "longitude": -86.0755145,
     "systematic_underfunding": {
-      "score": 1.0,
+      "score": 100,
       "weighted_avg_underfunding_gap": 36.244637811576894,
       "underfunded_year_share": 1.0,
       "max_underfunding_gap": 36.244637811576894,
@@ -8427,7 +8427,7 @@
     "latitude": 15.2572432,
     "longitude": -86.0755145,
     "systematic_underfunding": {
-      "score": 1.0,
+      "score": 100,
       "weighted_avg_underfunding_gap": 53.50438971952503,
       "underfunded_year_share": 1.0,
       "max_underfunding_gap": 53.50438971952503,
@@ -8465,7 +8465,7 @@
     "latitude": 15.2572432,
     "longitude": -86.0755145,
     "systematic_underfunding": {
-      "score": 0.0,
+      "score": 0,
       "weighted_avg_underfunding_gap": 0.0,
       "underfunded_year_share": 0.0,
       "max_underfunding_gap": 0.0,
@@ -8503,7 +8503,7 @@
     "latitude": 15.2572432,
     "longitude": -86.0755145,
     "systematic_underfunding": {
-      "score": 1.0,
+      "score": 100,
       "weighted_avg_underfunding_gap": 23.80379014397307,
       "underfunded_year_share": 1.0,
       "max_underfunding_gap": 46.849882647209085,
@@ -8621,7 +8621,7 @@
     "latitude": -2.4833826,
     "longitude": 117.8902853,
     "systematic_underfunding": {
-      "score": 1.0,
+      "score": 100,
       "weighted_avg_underfunding_gap": 28.290653193618095,
       "underfunded_year_share": 1.0,
       "max_underfunding_gap": 33.72216756126214,
@@ -8723,7 +8723,7 @@
     "latitude": -2.4833826,
     "longitude": 117.8902853,
     "systematic_underfunding": {
-      "score": 1.0,
+      "score": 100,
       "weighted_avg_underfunding_gap": 13.112683501178786,
       "underfunded_year_share": 1.0,
       "max_underfunding_gap": 13.112683501178786,
@@ -8761,7 +8761,7 @@
     "latitude": -2.4833826,
     "longitude": 117.8902853,
     "systematic_underfunding": {
-      "score": 1.0,
+      "score": 100,
       "weighted_avg_underfunding_gap": 18.305443486184068,
       "underfunded_year_share": 1.0,
       "max_underfunding_gap": 31.378517454112824,
@@ -8815,7 +8815,7 @@
     "latitude": -2.4833826,
     "longitude": 117.8902853,
     "systematic_underfunding": {
-      "score": 1.0,
+      "score": 100,
       "weighted_avg_underfunding_gap": 11.573664897848056,
       "underfunded_year_share": 1.0,
       "max_underfunding_gap": 24.58312679386971,
@@ -8869,7 +8869,7 @@
     "latitude": 32.6475314,
     "longitude": 54.5643516,
     "systematic_underfunding": {
-      "score": 1.0,
+      "score": 100,
       "weighted_avg_underfunding_gap": 5.575588126649045,
       "underfunded_year_share": 1.0,
       "max_underfunding_gap": 5.575588126649045,
@@ -8907,7 +8907,7 @@
     "latitude": 32.6475314,
     "longitude": 54.5643516,
     "systematic_underfunding": {
-      "score": 0.5554753091585266,
+      "score": 56,
       "weighted_avg_underfunding_gap": 4.184169200136842,
       "underfunded_year_share": 0.5,
       "max_underfunding_gap": 23.81372719565983,
@@ -8969,7 +8969,7 @@
     "latitude": 32.6475314,
     "longitude": 54.5643516,
     "systematic_underfunding": {
-      "score": 1.0,
+      "score": 100,
       "weighted_avg_underfunding_gap": 26.335489212021542,
       "underfunded_year_share": 1.0,
       "max_underfunding_gap": 39.874578420855244,
@@ -9055,7 +9055,7 @@
     "latitude": 33.0955793,
     "longitude": 44.1749775,
     "systematic_underfunding": {
-      "score": 1.0,
+      "score": 100,
       "weighted_avg_underfunding_gap": 14.74127115536183,
       "underfunded_year_share": 1.0,
       "max_underfunding_gap": 35.56085479054122,
@@ -9109,7 +9109,7 @@
     "latitude": 33.0955793,
     "longitude": 44.1749775,
     "systematic_underfunding": {
-      "score": 0.0,
+      "score": 0,
       "weighted_avg_underfunding_gap": 0.0,
       "underfunded_year_share": 0.0,
       "max_underfunding_gap": 0.0,
@@ -9163,7 +9163,7 @@
     "latitude": 33.0955793,
     "longitude": 44.1749775,
     "systematic_underfunding": {
-      "score": 0.0,
+      "score": 0,
       "weighted_avg_underfunding_gap": 0.0,
       "underfunded_year_share": 0.0,
       "max_underfunding_gap": 0.0,
@@ -9329,7 +9329,7 @@
     "latitude": 33.0955793,
     "longitude": 44.1749775,
     "systematic_underfunding": {
-      "score": 1.0,
+      "score": 100,
       "weighted_avg_underfunding_gap": 70.88700524039248,
       "underfunded_year_share": 1.0,
       "max_underfunding_gap": 70.88700524039248,
@@ -9367,7 +9367,7 @@
     "latitude": 33.0955793,
     "longitude": 44.1749775,
     "systematic_underfunding": {
-      "score": 1.0,
+      "score": 100,
       "weighted_avg_underfunding_gap": 6.57088855361377,
       "underfunded_year_share": 1.0,
       "max_underfunding_gap": 6.57088855361377,
@@ -9405,7 +9405,7 @@
     "latitude": 31.1667049,
     "longitude": 36.941628,
     "systematic_underfunding": {
-      "score": 1.0,
+      "score": 100,
       "weighted_avg_underfunding_gap": 18.691965273807227,
       "underfunded_year_share": 1.0,
       "max_underfunding_gap": 18.691965273807227,
@@ -9449,7 +9449,7 @@
     "latitude": 31.1667049,
     "longitude": 36.941628,
     "systematic_underfunding": {
-      "score": 1.0,
+      "score": 100,
       "weighted_avg_underfunding_gap": 15.020625141538893,
       "underfunded_year_share": 1.0,
       "max_underfunding_gap": 15.020625141538893,
@@ -9491,7 +9491,7 @@
     "latitude": 31.1667049,
     "longitude": 36.941628,
     "systematic_underfunding": {
-      "score": 0.9909468928553701,
+      "score": 99,
       "weighted_avg_underfunding_gap": 16.14473506562842,
       "underfunded_year_share": 0.8461538461538461,
       "max_underfunding_gap": 29.346906184949294,
@@ -9717,7 +9717,7 @@
       "contribution_count": 64,
       "category_breakdown_scored": [],
       "category_level_score": null,
-      "overall_severity_score": 0.9861787571421481
+      "overall_severity_score": 99
     }
   },
   {
@@ -9777,7 +9777,7 @@
     "latitude": 1.4419683,
     "longitude": 38.4313975,
     "systematic_underfunding": {
-      "score": 0.06881036630261572,
+      "score": 7,
       "weighted_avg_underfunding_gap": 1.992774997233437,
       "underfunded_year_share": 0.25,
       "max_underfunding_gap": 7.610756867594439,
@@ -9863,7 +9863,7 @@
     "latitude": 1.4419683,
     "longitude": 38.4313975,
     "systematic_underfunding": {
-      "score": 0.0,
+      "score": 0,
       "weighted_avg_underfunding_gap": 0.0,
       "underfunded_year_share": 0.0,
       "max_underfunding_gap": 0.0,
@@ -9901,7 +9901,7 @@
     "latitude": 1.4419683,
     "longitude": 38.4313975,
     "systematic_underfunding": {
-      "score": 0.01532486324785537,
+      "score": 2,
       "weighted_avg_underfunding_gap": 2.015590523511081,
       "underfunded_year_share": 0.42857142857142855,
       "max_underfunding_gap": 10.835492907638006,
@@ -10035,7 +10035,7 @@
     "latitude": 1.4419683,
     "longitude": 38.4313975,
     "systematic_underfunding": {
-      "score": 0.0,
+      "score": 0,
       "weighted_avg_underfunding_gap": 0.0,
       "underfunded_year_share": 0.0,
       "max_underfunding_gap": 0.0,
@@ -10073,7 +10073,7 @@
     "latitude": 1.4419683,
     "longitude": 38.4313975,
     "systematic_underfunding": {
-      "score": 0.9773716066218495,
+      "score": 98,
       "weighted_avg_underfunding_gap": 17.830904587420676,
       "underfunded_year_share": 0.6666666666666666,
       "max_underfunding_gap": 29.62649694667183,
@@ -10143,7 +10143,7 @@
     "latitude": 41.5089324,
     "longitude": 74.724091,
     "systematic_underfunding": {
-      "score": 1.0,
+      "score": 100,
       "weighted_avg_underfunding_gap": 17.203122255141658,
       "underfunded_year_share": 1.0,
       "max_underfunding_gap": 17.203122255141658,
@@ -10181,7 +10181,7 @@
     "latitude": 41.5089324,
     "longitude": 74.724091,
     "systematic_underfunding": {
-      "score": 0.0,
+      "score": 0,
       "weighted_avg_underfunding_gap": 0.0,
       "underfunded_year_share": 0.0,
       "max_underfunding_gap": 0.0,
@@ -10219,7 +10219,7 @@
     "latitude": 20.0171109,
     "longitude": 103.378253,
     "systematic_underfunding": {
-      "score": 0.0,
+      "score": 0,
       "weighted_avg_underfunding_gap": 0.0,
       "underfunded_year_share": 0.0,
       "max_underfunding_gap": 0.0,
@@ -10257,7 +10257,7 @@
     "latitude": 20.0171109,
     "longitude": 103.378253,
     "systematic_underfunding": {
-      "score": 1.0,
+      "score": 100,
       "weighted_avg_underfunding_gap": 25.894796207192122,
       "underfunded_year_share": 1.0,
       "max_underfunding_gap": 25.894796207192122,
@@ -10295,7 +10295,7 @@
     "latitude": 33.8750629,
     "longitude": 35.843409,
     "systematic_underfunding": {
-      "score": 0.0,
+      "score": 0,
       "weighted_avg_underfunding_gap": 0.0,
       "underfunded_year_share": 0.0,
       "max_underfunding_gap": 0.0,
@@ -10381,7 +10381,7 @@
     "latitude": 33.8750629,
     "longitude": 35.843409,
     "systematic_underfunding": {
-      "score": 0.0,
+      "score": 0,
       "weighted_avg_underfunding_gap": 0.0,
       "underfunded_year_share": 0.0,
       "max_underfunding_gap": 0.0,
@@ -10467,7 +10467,7 @@
     "latitude": 33.8750629,
     "longitude": 35.843409,
     "systematic_underfunding": {
-      "score": 0.0,
+      "score": 0,
       "weighted_avg_underfunding_gap": 0.0,
       "underfunded_year_share": 0.0,
       "max_underfunding_gap": 0.0,
@@ -10505,7 +10505,7 @@
     "latitude": -29.6039267,
     "longitude": 28.3350193,
     "systematic_underfunding": {
-      "score": 1.0,
+      "score": 100,
       "weighted_avg_underfunding_gap": 42.6344273038697,
       "underfunded_year_share": 1.0,
       "max_underfunding_gap": 42.6344273038697,
@@ -10543,7 +10543,7 @@
     "latitude": -29.6039267,
     "longitude": 28.3350193,
     "systematic_underfunding": {
-      "score": 1.0,
+      "score": 100,
       "weighted_avg_underfunding_gap": 13.90950557667501,
       "underfunded_year_share": 1.0,
       "max_underfunding_gap": 13.90950557667501,
@@ -10581,7 +10581,7 @@
     "latitude": -29.6039267,
     "longitude": 28.3350193,
     "systematic_underfunding": {
-      "score": 0.0,
+      "score": 0,
       "weighted_avg_underfunding_gap": 0.0,
       "underfunded_year_share": 0.0,
       "max_underfunding_gap": 0.0,
@@ -10619,7 +10619,7 @@
     "latitude": -29.6039267,
     "longitude": 28.3350193,
     "systematic_underfunding": {
-      "score": 0.0,
+      "score": 0,
       "weighted_avg_underfunding_gap": 0.0,
       "underfunded_year_share": 0.0,
       "max_underfunding_gap": 0.0,
@@ -10657,7 +10657,7 @@
     "latitude": -29.6039267,
     "longitude": 28.3350193,
     "systematic_underfunding": {
-      "score": 1.0,
+      "score": 100,
       "weighted_avg_underfunding_gap": 12.630217584587314,
       "underfunded_year_share": 1.0,
       "max_underfunding_gap": 12.630217584587314,
@@ -10695,7 +10695,7 @@
     "latitude": 5.7499721,
     "longitude": -9.3658524,
     "systematic_underfunding": {
-      "score": 1.0,
+      "score": 100,
       "weighted_avg_underfunding_gap": 15.011401438646331,
       "underfunded_year_share": 1.0,
       "max_underfunding_gap": 37.338517568732335,
@@ -10813,7 +10813,7 @@
     "latitude": 5.7499721,
     "longitude": -9.3658524,
     "systematic_underfunding": {
-      "score": 1.0,
+      "score": 100,
       "weighted_avg_underfunding_gap": 26.74337192881263,
       "underfunded_year_share": 1.0,
       "max_underfunding_gap": 40.15737072176423,
@@ -10891,7 +10891,7 @@
     "latitude": 5.7499721,
     "longitude": -9.3658524,
     "systematic_underfunding": {
-      "score": 0.0,
+      "score": 0,
       "weighted_avg_underfunding_gap": 0.0,
       "underfunded_year_share": 0.0,
       "max_underfunding_gap": 0.0,
@@ -10971,7 +10971,7 @@
     "latitude": 26.8234472,
     "longitude": 18.1236723,
     "systematic_underfunding": {
-      "score": 0.0759275651622485,
+      "score": 8,
       "weighted_avg_underfunding_gap": 7.247965191470149,
       "underfunded_year_share": 0.3333333333333333,
       "max_underfunding_gap": 55.71972964040239,
@@ -11047,7 +11047,7 @@
     "latitude": 26.8234472,
     "longitude": 18.1236723,
     "systematic_underfunding": {
-      "score": 0.0,
+      "score": 0,
       "weighted_avg_underfunding_gap": 0.0,
       "underfunded_year_share": 0.0,
       "max_underfunding_gap": 0.0,
@@ -11085,7 +11085,7 @@
     "latitude": 26.8234472,
     "longitude": 18.1236723,
     "systematic_underfunding": {
-      "score": 0.4472979702781452,
+      "score": 45,
       "weighted_avg_underfunding_gap": 13.479321518424747,
       "underfunded_year_share": 0.3333333333333333,
       "max_underfunding_gap": 36.20399887331793,
@@ -11203,7 +11203,7 @@
     "latitude": 26.8234472,
     "longitude": 18.1236723,
     "systematic_underfunding": {
-      "score": 1.0,
+      "score": 100,
       "weighted_avg_underfunding_gap": 19.483340198251383,
       "underfunded_year_share": 1.0,
       "max_underfunding_gap": 19.483340198251383,
@@ -11241,7 +11241,7 @@
     "latitude": 26.8234472,
     "longitude": 18.1236723,
     "systematic_underfunding": {
-      "score": 1.0,
+      "score": 100,
       "weighted_avg_underfunding_gap": 21.34218288641464,
       "underfunded_year_share": 1.0,
       "max_underfunding_gap": 21.34218288641464,
@@ -11291,7 +11291,7 @@
     "latitude": 26.8234472,
     "longitude": 18.1236723,
     "systematic_underfunding": {
-      "score": 0.9999137757200669,
+      "score": 100,
       "weighted_avg_underfunding_gap": 10.902865753348946,
       "underfunded_year_share": 0.75,
       "max_underfunding_gap": 22.341416208193888,
@@ -11373,7 +11373,7 @@
       "contribution_count": 19,
       "category_breakdown_scored": [],
       "category_level_score": null,
-      "overall_severity_score": 0.9087655102880268
+      "overall_severity_score": 91
     }
   },
   {
@@ -11389,7 +11389,7 @@
     "latitude": -18.9249604,
     "longitude": 46.4416422,
     "systematic_underfunding": {
-      "score": 0.003981669217933569,
+      "score": 0,
       "weighted_avg_underfunding_gap": 0.3255742588226937,
       "underfunded_year_share": 0.1,
       "max_underfunding_gap": 16.969277736716542,
@@ -11571,7 +11571,7 @@
     "latitude": -13.2687204,
     "longitude": 33.9301963,
     "systematic_underfunding": {
-      "score": 1.0,
+      "score": 100,
       "weighted_avg_underfunding_gap": 53.19483986863042,
       "underfunded_year_share": 1.0,
       "max_underfunding_gap": 53.19483986863042,
@@ -11609,7 +11609,7 @@
     "latitude": -13.2687204,
     "longitude": 33.9301963,
     "systematic_underfunding": {
-      "score": 0.0,
+      "score": 0,
       "weighted_avg_underfunding_gap": 0.0,
       "underfunded_year_share": 0.0,
       "max_underfunding_gap": 0.0,
@@ -11647,7 +11647,7 @@
     "latitude": -13.2687204,
     "longitude": 33.9301963,
     "systematic_underfunding": {
-      "score": 0.26988787034305867,
+      "score": 27,
       "weighted_avg_underfunding_gap": 2.237239731824566,
       "underfunded_year_share": 0.25,
       "max_underfunding_gap": 5.439558060485297,
@@ -11733,7 +11733,7 @@
     "latitude": -13.2687204,
     "longitude": 33.9301963,
     "systematic_underfunding": {
-      "score": 0.0,
+      "score": 0,
       "weighted_avg_underfunding_gap": 0.0,
       "underfunded_year_share": 0.0,
       "max_underfunding_gap": 0.0,
@@ -11771,7 +11771,7 @@
     "latitude": 16.3700359,
     "longitude": -2.2900239,
     "systematic_underfunding": {
-      "score": 0.5491575311414716,
+      "score": 55,
       "weighted_avg_underfunding_gap": 5.69425318514018,
       "underfunded_year_share": 0.5,
       "max_underfunding_gap": 8.25601561164396,
@@ -11825,7 +11825,7 @@
     "latitude": 16.3700359,
     "longitude": -2.2900239,
     "systematic_underfunding": {
-      "score": 1.0,
+      "score": 100,
       "weighted_avg_underfunding_gap": 11.181346642960971,
       "underfunded_year_share": 1.0,
       "max_underfunding_gap": 19.091326868929265,
@@ -12051,7 +12051,7 @@
       "contribution_count": 96,
       "category_breakdown_scored": [],
       "category_level_score": null,
-      "overall_severity_score": 0.922
+      "overall_severity_score": 92
     },
     "people_2026": {
       "people_in_need": 5100000.0,
@@ -12171,7 +12171,7 @@
     "latitude": 16.3700359,
     "longitude": -2.2900239,
     "systematic_underfunding": {
-      "score": 0.0,
+      "score": 0,
       "weighted_avg_underfunding_gap": 0.0,
       "underfunded_year_share": 0.0,
       "max_underfunding_gap": 0.0,
@@ -12209,7 +12209,7 @@
     "latitude": 20.2540382,
     "longitude": -9.2399263,
     "systematic_underfunding": {
-      "score": 0.0,
+      "score": 0,
       "weighted_avg_underfunding_gap": 0.0,
       "underfunded_year_share": 0.0,
       "max_underfunding_gap": 0.0,
@@ -12263,7 +12263,7 @@
     "latitude": 20.2540382,
     "longitude": -9.2399263,
     "systematic_underfunding": {
-      "score": 0.9952025083414644,
+      "score": 100,
       "weighted_avg_underfunding_gap": 13.651374260861425,
       "underfunded_year_share": 0.5,
       "max_underfunding_gap": 34.34595476659491,
@@ -12349,7 +12349,7 @@
     "latitude": 20.2540382,
     "longitude": -9.2399263,
     "systematic_underfunding": {
-      "score": 0.0,
+      "score": 0,
       "weighted_avg_underfunding_gap": 0.0,
       "underfunded_year_share": 0.0,
       "max_underfunding_gap": 0.0,
@@ -12387,7 +12387,7 @@
     "latitude": 46.8250388,
     "longitude": 103.8499736,
     "systematic_underfunding": {
-      "score": 1.0,
+      "score": 100,
       "weighted_avg_underfunding_gap": 44.17144548843147,
       "underfunded_year_share": 1.0,
       "max_underfunding_gap": 44.17144548843147,
@@ -12425,7 +12425,7 @@
     "latitude": 46.8250388,
     "longitude": 103.8499736,
     "systematic_underfunding": {
-      "score": 0.0,
+      "score": 0,
       "weighted_avg_underfunding_gap": 0.0,
       "underfunded_year_share": 0.0,
       "max_underfunding_gap": 0.0,
@@ -12463,7 +12463,7 @@
     "latitude": 46.8250388,
     "longitude": 103.8499736,
     "systematic_underfunding": {
-      "score": 0.0,
+      "score": 0,
       "weighted_avg_underfunding_gap": 0.0,
       "underfunded_year_share": 0.0,
       "max_underfunding_gap": 0.0,
@@ -12501,7 +12501,7 @@
     "latitude": -19.302233,
     "longitude": 34.9144977,
     "systematic_underfunding": {
-      "score": 1.0,
+      "score": 100,
       "weighted_avg_underfunding_gap": 50.547542849839786,
       "underfunded_year_share": 1.0,
       "max_underfunding_gap": 50.547542849839786,
@@ -12539,7 +12539,7 @@
     "latitude": -19.302233,
     "longitude": 34.9144977,
     "systematic_underfunding": {
-      "score": 0.8088136803407209,
+      "score": 81,
       "weighted_avg_underfunding_gap": 20.308762730648382,
       "underfunded_year_share": 0.8333333333333334,
       "max_underfunding_gap": 28.259654445811755,
@@ -12657,7 +12657,7 @@
     "latitude": -19.302233,
     "longitude": 34.9144977,
     "systematic_underfunding": {
-      "score": 1.0,
+      "score": 100,
       "weighted_avg_underfunding_gap": 22.412076136795996,
       "underfunded_year_share": 1.0,
       "max_underfunding_gap": 22.412076136795996,
@@ -12695,7 +12695,7 @@
     "latitude": -19.302233,
     "longitude": 34.9144977,
     "systematic_underfunding": {
-      "score": 0.38202307359168447,
+      "score": 38,
       "weighted_avg_underfunding_gap": 4.538266618996437,
       "underfunded_year_share": 0.5714285714285714,
       "max_underfunding_gap": 14.653222172683577,
@@ -12831,7 +12831,7 @@
           "coverage": 0.7495546388680038,
           "gap": 0.2504453611319962,
           "weight": 0.17586683804688497,
-          "category_score": 0.0440450337657944
+          "category_score": 4
         },
         {
           "category": "food_security",
@@ -12840,7 +12840,7 @@
           "coverage": 0.6318621423846184,
           "gap": 0.36813785761538165,
           "weight": 0.14009665749012162,
-          "category_score": 0.05157488334748928
+          "category_score": 5
         },
         {
           "category": "health",
@@ -12849,7 +12849,7 @@
           "coverage": 0.7797519438462677,
           "gap": 0.22024805615373233,
           "weight": 0.28986764094494194,
-          "category_score": 0.06384278445999149
+          "category_score": 6
         },
         {
           "category": "protection",
@@ -12858,11 +12858,11 @@
           "coverage": 0.6096305523973929,
           "gap": 0.39036944760260706,
           "weight": 0.3941688635180515,
-          "category_score": 0.15387148151368918
+          "category_score": 15
         }
       ],
-      "category_level_score": 0.31333418308696437,
-      "overall_severity_score": 0.45927170626181907
+      "category_level_score": 31,
+      "overall_severity_score": 46
     },
     "people_2026": {
       "people_in_need": 2356162.0,
@@ -12884,7 +12884,7 @@
     "latitude": -19.302233,
     "longitude": 34.9144977,
     "systematic_underfunding": {
-      "score": 1.0,
+      "score": 100,
       "weighted_avg_underfunding_gap": 21.360550916711972,
       "underfunded_year_share": 1.0,
       "max_underfunding_gap": 21.360550916711972,
@@ -12922,7 +12922,7 @@
     "latitude": -19.302233,
     "longitude": 34.9144977,
     "systematic_underfunding": {
-      "score": 0.0,
+      "score": 0,
       "weighted_avg_underfunding_gap": 0.0,
       "underfunded_year_share": 0.0,
       "max_underfunding_gap": 0.0,
@@ -12960,7 +12960,7 @@
     "latitude": -19.302233,
     "longitude": 34.9144977,
     "systematic_underfunding": {
-      "score": 0.0,
+      "score": 0,
       "weighted_avg_underfunding_gap": 0.0,
       "underfunded_year_share": 0.0,
       "max_underfunding_gap": 0.0,
@@ -12998,7 +12998,7 @@
     "latitude": 17.1750495,
     "longitude": 95.9999652,
     "systematic_underfunding": {
-      "score": 0.0,
+      "score": 0,
       "weighted_avg_underfunding_gap": 0.0,
       "underfunded_year_share": 0.0,
       "max_underfunding_gap": 0.0,
@@ -13036,7 +13036,7 @@
     "latitude": 17.1750495,
     "longitude": 95.9999652,
     "systematic_underfunding": {
-      "score": 0.3023918588637442,
+      "score": 30,
       "weighted_avg_underfunding_gap": 4.491055962258574,
       "underfunded_year_share": 0.36363636363636365,
       "max_underfunding_gap": 15.010598357904364,
@@ -13236,7 +13236,7 @@
           "coverage": 0.322295593967711,
           "gap": 0.677704406032289,
           "weight": 0.079266595471663,
-          "category_score": 0.0537193210023251
+          "category_score": 5
         },
         {
           "category": "food_security",
@@ -13245,7 +13245,7 @@
           "coverage": 0.19619310595182685,
           "gap": 0.8038068940481732,
           "weight": 0.2503783453200054,
-          "category_score": 0.2012558400885945
+          "category_score": 20
         },
         {
           "category": "health",
@@ -13254,7 +13254,7 @@
           "coverage": 0.21642255029529386,
           "gap": 0.7835774497047061,
           "weight": 0.20813744133364015,
-          "category_score": 0.16309180546827665
+          "category_score": 16
         },
         {
           "category": "hygiene",
@@ -13263,7 +13263,7 @@
           "coverage": 0.26545002444646226,
           "gap": 0.7345499755535377,
           "weight": 0.2013130294685941,
-          "category_score": 0.14787448087476443
+          "category_score": 15
         },
         {
           "category": "protection",
@@ -13272,11 +13272,11 @@
           "coverage": 0.2908055851827286,
           "gap": 0.7091944148172714,
           "weight": 0.2609045884060973,
-          "category_score": 0.18503207689780324
+          "category_score": 19
         }
       ],
-      "category_level_score": 0.7509735243317639,
-      "overall_severity_score": 0.6531651339386307
+      "category_level_score": 75,
+      "overall_severity_score": 65
     },
     "people_2026": {
       "people_in_need": 16229050.0,
@@ -13298,7 +13298,7 @@
     "latitude": 17.1750495,
     "longitude": 95.9999652,
     "systematic_underfunding": {
-      "score": 0.0,
+      "score": 0,
       "weighted_avg_underfunding_gap": 0.0,
       "underfunded_year_share": 0.0,
       "max_underfunding_gap": 0.0,
@@ -13336,7 +13336,7 @@
     "latitude": 17.1750495,
     "longitude": 95.9999652,
     "systematic_underfunding": {
-      "score": 1.0,
+      "score": 100,
       "weighted_avg_underfunding_gap": 18.17364557975028,
       "underfunded_year_share": 1.0,
       "max_underfunding_gap": 18.17364557975028,
@@ -13374,7 +13374,7 @@
     "latitude": 17.1750495,
     "longitude": 95.9999652,
     "systematic_underfunding": {
-      "score": 1.0,
+      "score": 100,
       "weighted_avg_underfunding_gap": 30.8874022951517,
       "underfunded_year_share": 1.0,
       "max_underfunding_gap": 40.15246069127015,
@@ -13428,7 +13428,7 @@
     "latitude": 17.1750495,
     "longitude": 95.9999652,
     "systematic_underfunding": {
-      "score": 0.0,
+      "score": 0,
       "weighted_avg_underfunding_gap": 0.0,
       "underfunded_year_share": 0.0,
       "max_underfunding_gap": 0.0,
@@ -13466,7 +13466,7 @@
     "latitude": 17.1750495,
     "longitude": 95.9999652,
     "systematic_underfunding": {
-      "score": 0.0,
+      "score": 0,
       "weighted_avg_underfunding_gap": 0.0,
       "underfunded_year_share": 0.0,
       "max_underfunding_gap": 0.0,
@@ -13504,7 +13504,7 @@
     "latitude": -23.2335499,
     "longitude": 17.3231107,
     "systematic_underfunding": {
-      "score": 1.0,
+      "score": 100,
       "weighted_avg_underfunding_gap": 33.73034945771329,
       "underfunded_year_share": 1.0,
       "max_underfunding_gap": 40.999650987609826,
@@ -13558,7 +13558,7 @@
     "latitude": 28.3780464,
     "longitude": 83.9999901,
     "systematic_underfunding": {
-      "score": 0.0,
+      "score": 0,
       "weighted_avg_underfunding_gap": 0.0,
       "underfunded_year_share": 0.0,
       "max_underfunding_gap": 0.0,
@@ -13596,7 +13596,7 @@
     "latitude": 28.3780464,
     "longitude": 83.9999901,
     "systematic_underfunding": {
-      "score": 0.0,
+      "score": 0,
       "weighted_avg_underfunding_gap": 0.0,
       "underfunded_year_share": 0.0,
       "max_underfunding_gap": 0.0,
@@ -13634,7 +13634,7 @@
     "latitude": 28.3780464,
     "longitude": 83.9999901,
     "systematic_underfunding": {
-      "score": 0.39948561231526997,
+      "score": 40,
       "weighted_avg_underfunding_gap": 9.162620387690275,
       "underfunded_year_share": 0.5,
       "max_underfunding_gap": 46.97061300710444,
@@ -13752,7 +13752,7 @@
     "latitude": 28.3780464,
     "longitude": 83.9999901,
     "systematic_underfunding": {
-      "score": 1.0,
+      "score": 100,
       "weighted_avg_underfunding_gap": 9.382452359917451,
       "underfunded_year_share": 1.0,
       "max_underfunding_gap": 9.382452359917451,
@@ -13790,7 +13790,7 @@
     "latitude": 12.3506436,
     "longitude": -85.7841006,
     "systematic_underfunding": {
-      "score": 1.0,
+      "score": 100,
       "weighted_avg_underfunding_gap": 28.829395103959065,
       "underfunded_year_share": 1.0,
       "max_underfunding_gap": 28.829395103959065,
@@ -13828,7 +13828,7 @@
     "latitude": 12.3506436,
     "longitude": -85.7841006,
     "systematic_underfunding": {
-      "score": 1.0,
+      "score": 100,
       "weighted_avg_underfunding_gap": 28.383784369313396,
       "underfunded_year_share": 1.0,
       "max_underfunding_gap": 28.383784369313396,
@@ -13866,7 +13866,7 @@
     "latitude": 17.7356214,
     "longitude": 9.3238432,
     "systematic_underfunding": {
-      "score": 0.17885407089565816,
+      "score": 18,
       "weighted_avg_underfunding_gap": 2.1799267622196568,
       "underfunded_year_share": 0.3333333333333333,
       "max_underfunding_gap": 10.709952047804528,
@@ -13936,7 +13936,7 @@
     "latitude": 17.7356214,
     "longitude": 9.3238432,
     "systematic_underfunding": {
-      "score": 0.0,
+      "score": 0,
       "weighted_avg_underfunding_gap": 0.0,
       "underfunded_year_share": 0.0,
       "max_underfunding_gap": 0.0,
@@ -13974,7 +13974,7 @@
     "latitude": 17.7356214,
     "longitude": 9.3238432,
     "systematic_underfunding": {
-      "score": 0.2728937813732827,
+      "score": 27,
       "weighted_avg_underfunding_gap": 3.1806222542103493,
       "underfunded_year_share": 0.46153846153846156,
       "max_underfunding_gap": 9.50353653802739,
@@ -14200,7 +14200,7 @@
       "contribution_count": 55,
       "category_breakdown_scored": [],
       "category_level_score": null,
-      "overall_severity_score": 0.6503575125493131
+      "overall_severity_score": 65
     },
     "people_2026": {
       "people_in_need": 2600000.0,
@@ -14368,7 +14368,7 @@
     "latitude": 9.6000359,
     "longitude": 7.9999721,
     "systematic_underfunding": {
-      "score": 0.1812336253362737,
+      "score": 18,
       "weighted_avg_underfunding_gap": 1.1196927172637943,
       "underfunded_year_share": 0.3076923076923077,
       "max_underfunding_gap": 48.099693237498066,
@@ -14600,7 +14600,7 @@
           "coverage": 0.27924664336083344,
           "gap": 0.7207533566391666,
           "weight": 0.09726480039213291,
-          "category_score": 0.07010393136546832
+          "category_score": 7
         },
         {
           "category": "education",
@@ -14609,7 +14609,7 @@
           "coverage": 0.3843050893921769,
           "gap": 0.6156949106078231,
           "weight": 0.07876297565664275,
-          "category_score": 0.048493963256122805
+          "category_score": 5
         },
         {
           "category": "food_security",
@@ -14618,7 +14618,7 @@
           "coverage": 0.30379681780508233,
           "gap": 0.6962031821949177,
           "weight": 0.4759005793476066,
-          "category_score": 0.33132349775020864
+          "category_score": 33
         },
         {
           "category": "health",
@@ -14627,7 +14627,7 @@
           "coverage": 0.3759906349387231,
           "gap": 0.6240093650612769,
           "weight": 0.18905809330869494,
-          "category_score": 0.11797402076525437
+          "category_score": 12
         },
         {
           "category": "protection",
@@ -14636,11 +14636,11 @@
           "coverage": 0.4424234959421644,
           "gap": 0.5575765040578355,
           "weight": 0.1590135512949228,
-          "category_score": 0.08866222002884437
+          "category_score": 9
         }
       ],
-      "category_level_score": 0.6565576331658985,
-      "overall_severity_score": 0.554725541650204
+      "category_level_score": 66,
+      "overall_severity_score": 55
     },
     "people_2026": {
       "people_in_need": 5900000.0,
@@ -14662,7 +14662,7 @@
     "latitude": 40.3736611,
     "longitude": 127.0870417,
     "systematic_underfunding": {
-      "score": 0.37040811692926956,
+      "score": 37,
       "weighted_avg_underfunding_gap": 5.631153120028472,
       "underfunded_year_share": 0.4,
       "max_underfunding_gap": 18.921186635404105,
@@ -14764,7 +14764,7 @@
     "latitude": 40.3736611,
     "longitude": 127.0870417,
     "systematic_underfunding": {
-      "score": 0.0,
+      "score": 0,
       "weighted_avg_underfunding_gap": 0.0,
       "underfunded_year_share": 0.0,
       "max_underfunding_gap": 0.0,
@@ -14802,7 +14802,7 @@
     "latitude": 40.3736611,
     "longitude": 127.0870417,
     "systematic_underfunding": {
-      "score": 1.0,
+      "score": 100,
       "weighted_avg_underfunding_gap": 26.85816849086884,
       "underfunded_year_share": 1.0,
       "max_underfunding_gap": 33.72638275915701,
@@ -14936,7 +14936,7 @@
     "latitude": 40.3736611,
     "longitude": 127.0870417,
     "systematic_underfunding": {
-      "score": 1.0,
+      "score": 100,
       "weighted_avg_underfunding_gap": 23.806152013779315,
       "underfunded_year_share": 1.0,
       "max_underfunding_gap": 23.806152013779315,
@@ -14974,7 +14974,7 @@
     "latitude": 40.3736611,
     "longitude": 127.0870417,
     "systematic_underfunding": {
-      "score": 1.0,
+      "score": 100,
       "weighted_avg_underfunding_gap": 44.507052211742646,
       "underfunded_year_share": 1.0,
       "max_underfunding_gap": 44.507052211742646,
@@ -15012,7 +15012,7 @@
     "latitude": 30.3308401,
     "longitude": 71.247499,
     "systematic_underfunding": {
-      "score": 1.0,
+      "score": 100,
       "weighted_avg_underfunding_gap": 12.545842385929397,
       "underfunded_year_share": 1.0,
       "max_underfunding_gap": 12.545842385929397,
@@ -15050,7 +15050,7 @@
     "latitude": 30.3308401,
     "longitude": 71.247499,
     "systematic_underfunding": {
-      "score": 0.0,
+      "score": 0,
       "weighted_avg_underfunding_gap": 0.0,
       "underfunded_year_share": 0.0,
       "max_underfunding_gap": 0.0,
@@ -15088,7 +15088,7 @@
     "latitude": 30.3308401,
     "longitude": 71.247499,
     "systematic_underfunding": {
-      "score": 1.0,
+      "score": 100,
       "weighted_avg_underfunding_gap": 24.02479760412794,
       "underfunded_year_share": 1.0,
       "max_underfunding_gap": 24.02479760412794,
@@ -15126,7 +15126,7 @@
     "latitude": 30.3308401,
     "longitude": 71.247499,
     "systematic_underfunding": {
-      "score": 0.0,
+      "score": 0,
       "weighted_avg_underfunding_gap": 0.0,
       "underfunded_year_share": 0.0,
       "max_underfunding_gap": 0.0,
@@ -15164,7 +15164,7 @@
     "latitude": 30.3308401,
     "longitude": 71.247499,
     "systematic_underfunding": {
-      "score": 1.0,
+      "score": 100,
       "weighted_avg_underfunding_gap": 20.449849286859234,
       "underfunded_year_share": 1.0,
       "max_underfunding_gap": 20.449849286859234,
@@ -15202,7 +15202,7 @@
     "latitude": 30.3308401,
     "longitude": 71.247499,
     "systematic_underfunding": {
-      "score": 0.15056360389214574,
+      "score": 15,
       "weighted_avg_underfunding_gap": 10.681589224287675,
       "underfunded_year_share": 0.5,
       "max_underfunding_gap": 21.131529641742773,
@@ -15256,7 +15256,7 @@
     "latitude": 30.3308401,
     "longitude": 71.247499,
     "systematic_underfunding": {
-      "score": 0.666218616735149,
+      "score": 67,
       "weighted_avg_underfunding_gap": 14.055396063664437,
       "underfunded_year_share": 0.25,
       "max_underfunding_gap": 42.55008191256303,
@@ -15402,7 +15402,7 @@
       "contribution_count": 10,
       "category_breakdown_scored": [],
       "category_level_score": null,
-      "overall_severity_score": 0.7644874466940595
+      "overall_severity_score": 76
     }
   },
   {
@@ -15418,7 +15418,7 @@
     "latitude": 31.7562524,
     "longitude": 34.9639214,
     "systematic_underfunding": {
-      "score": 0.503603632490683,
+      "score": 50,
       "weighted_avg_underfunding_gap": 3.7334950650937104,
       "underfunded_year_share": 0.45454545454545453,
       "max_underfunding_gap": 17.08860238143859,
@@ -15616,7 +15616,7 @@
     "latitude": 31.7562524,
     "longitude": 34.9639214,
     "systematic_underfunding": {
-      "score": 0.006173665850121684,
+      "score": 1,
       "weighted_avg_underfunding_gap": 1.291479716373505,
       "underfunded_year_share": 0.4,
       "max_underfunding_gap": 3.846127617659345,
@@ -15714,7 +15714,7 @@
       "contribution_count": 165,
       "category_breakdown_scored": [],
       "category_level_score": null,
-      "overall_severity_score": 0.5358694663400486
+      "overall_severity_score": 54
     }
   },
   {
@@ -15730,7 +15730,7 @@
     "latitude": 31.7562524,
     "longitude": 34.9639214,
     "systematic_underfunding": {
-      "score": 0.09702918608319673,
+      "score": 10,
       "weighted_avg_underfunding_gap": 4.691534238181135,
       "underfunded_year_share": 0.3333333333333333,
       "max_underfunding_gap": 15.988800232163392,
@@ -15896,7 +15896,7 @@
     "latitude": 31.7562524,
     "longitude": 34.9639214,
     "systematic_underfunding": {
-      "score": 1.0,
+      "score": 100,
       "weighted_avg_underfunding_gap": 12.70215735028168,
       "underfunded_year_share": 1.0,
       "max_underfunding_gap": 12.70215735028168,
@@ -15934,7 +15934,7 @@
     "latitude": -6.8699697,
     "longitude": -75.0458515,
     "systematic_underfunding": {
-      "score": 1.0,
+      "score": 100,
       "weighted_avg_underfunding_gap": 28.690184049699223,
       "underfunded_year_share": 1.0,
       "max_underfunding_gap": 28.690184049699223,
@@ -15972,7 +15972,7 @@
     "latitude": -6.8699697,
     "longitude": -75.0458515,
     "systematic_underfunding": {
-      "score": 1.0,
+      "score": 100,
       "weighted_avg_underfunding_gap": 16.557456400417486,
       "underfunded_year_share": 1.0,
       "max_underfunding_gap": 16.557456400417486,
@@ -16010,7 +16010,7 @@
     "latitude": 12.7503486,
     "longitude": 122.7312101,
     "systematic_underfunding": {
-      "score": 0.0,
+      "score": 0,
       "weighted_avg_underfunding_gap": 0.0,
       "underfunded_year_share": 0.0,
       "max_underfunding_gap": 0.0,
@@ -16048,7 +16048,7 @@
     "latitude": 12.7503486,
     "longitude": 122.7312101,
     "systematic_underfunding": {
-      "score": 1.0,
+      "score": 100,
       "weighted_avg_underfunding_gap": 7.700007058657576,
       "underfunded_year_share": 1.0,
       "max_underfunding_gap": 7.700007058657576,
@@ -16086,7 +16086,7 @@
     "latitude": 12.7503486,
     "longitude": 122.7312101,
     "systematic_underfunding": {
-      "score": 1.0,
+      "score": 100,
       "weighted_avg_underfunding_gap": 40.35422139743661,
       "underfunded_year_share": 1.0,
       "max_underfunding_gap": 40.35422139743661,
@@ -16124,7 +16124,7 @@
     "latitude": 12.7503486,
     "longitude": 122.7312101,
     "systematic_underfunding": {
-      "score": 1.0,
+      "score": 100,
       "weighted_avg_underfunding_gap": 29.455075044772563,
       "underfunded_year_share": 1.0,
       "max_underfunding_gap": 29.455075044772563,
@@ -16162,7 +16162,7 @@
     "latitude": 12.7503486,
     "longitude": 122.7312101,
     "systematic_underfunding": {
-      "score": 1.0,
+      "score": 100,
       "weighted_avg_underfunding_gap": 18.17387285655522,
       "underfunded_year_share": 1.0,
       "max_underfunding_gap": 18.17387285655522,
@@ -16200,7 +16200,7 @@
     "latitude": 12.7503486,
     "longitude": 122.7312101,
     "systematic_underfunding": {
-      "score": 1.0,
+      "score": 100,
       "weighted_avg_underfunding_gap": 20.435190578117343,
       "underfunded_year_share": 1.0,
       "max_underfunding_gap": 20.435190578117343,
@@ -16238,7 +16238,7 @@
     "latitude": 12.7503486,
     "longitude": 122.7312101,
     "systematic_underfunding": {
-      "score": 0.5332241844382207,
+      "score": 53,
       "weighted_avg_underfunding_gap": 27.6493806864504,
       "underfunded_year_share": 0.6,
       "max_underfunding_gap": 38.741770036719856,
@@ -16340,7 +16340,7 @@
     "latitude": 12.7503486,
     "longitude": 122.7312101,
     "systematic_underfunding": {
-      "score": 1.0,
+      "score": 100,
       "weighted_avg_underfunding_gap": 50.65301680688561,
       "underfunded_year_share": 1.0,
       "max_underfunding_gap": 50.65301680688561,
@@ -16378,7 +16378,7 @@
     "latitude": 12.7503486,
     "longitude": 122.7312101,
     "systematic_underfunding": {
-      "score": 1.0,
+      "score": 100,
       "weighted_avg_underfunding_gap": 3.8115700998176862,
       "underfunded_year_share": 1.0,
       "max_underfunding_gap": 3.8115700998176862,
@@ -16416,7 +16416,7 @@
     "latitude": 12.7503486,
     "longitude": 122.7312101,
     "systematic_underfunding": {
-      "score": 1.0,
+      "score": 100,
       "weighted_avg_underfunding_gap": 6.575936675094006,
       "underfunded_year_share": 1.0,
       "max_underfunding_gap": 6.575936675094006,
@@ -16454,7 +16454,7 @@
     "latitude": 64.6863136,
     "longitude": 97.7453061,
     "systematic_underfunding": {
-      "score": 0.0,
+      "score": 0,
       "weighted_avg_underfunding_gap": 0.0,
       "underfunded_year_share": 0.0,
       "max_underfunding_gap": 0.0,
@@ -16556,7 +16556,7 @@
     "latitude": 64.6863136,
     "longitude": 97.7453061,
     "systematic_underfunding": {
-      "score": 0.0,
+      "score": 0,
       "weighted_avg_underfunding_gap": 0.0,
       "underfunded_year_share": 0.0,
       "max_underfunding_gap": 0.0,
@@ -16594,7 +16594,7 @@
     "latitude": 64.6863136,
     "longitude": 97.7453061,
     "systematic_underfunding": {
-      "score": 0.23907662210494166,
+      "score": 24,
       "weighted_avg_underfunding_gap": 0.9541674570586443,
       "underfunded_year_share": 0.5,
       "max_underfunding_gap": 2.2873916602875113,
@@ -16648,7 +16648,7 @@
     "latitude": 12.90447,
     "longitude": -61.2765569,
     "systematic_underfunding": {
-      "score": 1.0,
+      "score": 100,
       "weighted_avg_underfunding_gap": 34.76208080477156,
       "underfunded_year_share": 1.0,
       "max_underfunding_gap": 34.76208080477156,
@@ -16686,7 +16686,7 @@
     "latitude": 14.4750607,
     "longitude": -14.4529612,
     "systematic_underfunding": {
-      "score": 1.0,
+      "score": 100,
       "weighted_avg_underfunding_gap": 33.190261015563465,
       "underfunded_year_share": 1.0,
       "max_underfunding_gap": 38.61492940111336,
@@ -16772,7 +16772,7 @@
     "latitude": 14.4750607,
     "longitude": -14.4529612,
     "systematic_underfunding": {
-      "score": 1.0,
+      "score": 100,
       "weighted_avg_underfunding_gap": 16.414174688340346,
       "underfunded_year_share": 1.0,
       "max_underfunding_gap": 16.414174688340346,
@@ -16810,7 +16810,7 @@
     "latitude": 8.6400349,
     "longitude": -11.8400269,
     "systematic_underfunding": {
-      "score": 0.060635892356199594,
+      "score": 6,
       "weighted_avg_underfunding_gap": 1.772484258568506,
       "underfunded_year_share": 0.4,
       "max_underfunding_gap": 8.755895558899617,
@@ -16912,7 +16912,7 @@
     "latitude": 8.6400349,
     "longitude": -11.8400269,
     "systematic_underfunding": {
-      "score": 1.0,
+      "score": 100,
       "weighted_avg_underfunding_gap": 21.388667660885165,
       "underfunded_year_share": 1.0,
       "max_underfunding_gap": 21.388667660885165,
@@ -16958,7 +16958,7 @@
     "latitude": 48.7411522,
     "longitude": 19.4528646,
     "systematic_underfunding": {
-      "score": 1.0,
+      "score": 100,
       "weighted_avg_underfunding_gap": 20.878109746368402,
       "underfunded_year_share": 1.0,
       "max_underfunding_gap": 20.91221509553555,
@@ -17044,7 +17044,7 @@
     "latitude": -8.7053941,
     "longitude": 159.1070694,
     "systematic_underfunding": {
-      "score": 0.0,
+      "score": 0,
       "weighted_avg_underfunding_gap": 0.0,
       "underfunded_year_share": 0.0,
       "max_underfunding_gap": 0.0,
@@ -17082,7 +17082,7 @@
     "latitude": 8.3676771,
     "longitude": 49.083416,
     "systematic_underfunding": {
-      "score": 0.4470233761122671,
+      "score": 45,
       "weighted_avg_underfunding_gap": 5.194667829659341,
       "underfunded_year_share": 0.5714285714285714,
       "max_underfunding_gap": 35.5627154730424,
@@ -17328,7 +17328,7 @@
     "latitude": 8.3676771,
     "longitude": 49.083416,
     "systematic_underfunding": {
-      "score": 1.0,
+      "score": 100,
       "weighted_avg_underfunding_gap": 17.641487041373566,
       "underfunded_year_share": 1.0,
       "max_underfunding_gap": 17.641487041373566,
@@ -17366,7 +17366,7 @@
     "latitude": 8.3676771,
     "longitude": 49.083416,
     "systematic_underfunding": {
-      "score": 0.0999229942772728,
+      "score": 10,
       "weighted_avg_underfunding_gap": 2.350874510905455,
       "underfunded_year_share": 0.46153846153846156,
       "max_underfunding_gap": 18.077021554881505,
@@ -17598,7 +17598,7 @@
           "coverage": 0.5094494945037704,
           "gap": 0.4905505054962296,
           "weight": 0.10899689594146644,
-          "category_score": 0.0534684824016063
+          "category_score": 5
         },
         {
           "category": "education",
@@ -17607,7 +17607,7 @@
           "coverage": 0.36322825098339434,
           "gap": 0.6367717490166056,
           "weight": 0.09242429942781948,
-          "category_score": 0.058853182798287065
+          "category_score": 6
         },
         {
           "category": "food_security",
@@ -17616,7 +17616,7 @@
           "coverage": 0.5359805226725628,
           "gap": 0.4640194773274372,
           "weight": 0.12665134909296977,
-          "category_score": 0.05876869280893462
+          "category_score": 6
         },
         {
           "category": "health",
@@ -17625,7 +17625,7 @@
           "coverage": 0.48627497426820704,
           "gap": 0.5137250257317929,
           "weight": 0.2666664386523585,
-          "category_score": 0.13699322305848846
+          "category_score": 14
         },
         {
           "category": "hygiene",
@@ -17634,7 +17634,7 @@
           "coverage": 0.49699241332499655,
           "gap": 0.5030075866750034,
           "weight": 0.23974395204517077,
-          "category_score": 0.1205930267381691
+          "category_score": 12
         },
         {
           "category": "protection",
@@ -17643,11 +17643,11 @@
           "coverage": 0.5985820745892824,
           "gap": 0.40141792541071764,
           "weight": 0.16551706484021506,
-          "category_score": 0.06644151678823036
+          "category_score": 7
         }
       ],
-      "category_level_score": 0.4951181245937159,
-      "overall_severity_score": 0.5282436611523125
+      "category_level_score": 50,
+      "overall_severity_score": 53
     },
     "people_2026": {
       "people_in_need": 4796040.0,
@@ -17669,7 +17669,7 @@
     "latitude": 7.8699431,
     "longitude": 29.6667897,
     "systematic_underfunding": {
-      "score": 0.04997536963083715,
+      "score": 5,
       "weighted_avg_underfunding_gap": 0.7105110383612653,
       "underfunded_year_share": 0.3333333333333333,
       "max_underfunding_gap": 3.2891109287524642,
@@ -17739,7 +17739,7 @@
     "latitude": 7.8699431,
     "longitude": 29.6667897,
     "systematic_underfunding": {
-      "score": 0.0,
+      "score": 0,
       "weighted_avg_underfunding_gap": 0.0,
       "underfunded_year_share": 0.0,
       "max_underfunding_gap": 0.0,
@@ -17955,7 +17955,7 @@
           "coverage": 0.3265864772773923,
           "gap": 0.6734135227226077,
           "weight": 0.09200673066684918,
-          "category_score": 0.061958576612553086
+          "category_score": 6
         },
         {
           "category": "food_security",
@@ -17964,7 +17964,7 @@
           "coverage": 0.34860336407946274,
           "gap": 0.6513966359205372,
           "weight": 0.4873193391998719,
-          "category_score": 0.31743817817381575
+          "category_score": 32
         },
         {
           "category": "health",
@@ -17973,7 +17973,7 @@
           "coverage": 0.46008639658854056,
           "gap": 0.5399136034114594,
           "weight": 0.2368134419344386,
-          "category_score": 0.12785879877109316
+          "category_score": 13
         },
         {
           "category": "protection",
@@ -17982,11 +17982,11 @@
           "coverage": 0.3180843305428586,
           "gap": 0.6819156694571413,
           "weight": 0.1838604881988403,
-          "category_score": 0.125377347896829
+          "category_score": 13
         }
       ],
-      "category_level_score": 0.632632901454291,
-      "overall_severity_score": 0.5503164507271454
+      "category_level_score": 63,
+      "overall_severity_score": 55
     },
     "people_2026": {
       "people_in_need": 9913863.0,
@@ -18008,7 +18008,7 @@
     "latitude": 7.8699431,
     "longitude": 29.6667897,
     "systematic_underfunding": {
-      "score": 0.0,
+      "score": 0,
       "weighted_avg_underfunding_gap": 0.0,
       "underfunded_year_share": 0.0,
       "max_underfunding_gap": 0.0,
@@ -18046,7 +18046,7 @@
     "latitude": 7.5554942,
     "longitude": 80.7137847,
     "systematic_underfunding": {
-      "score": 0.922059918429334,
+      "score": 92,
       "weighted_avg_underfunding_gap": 4.055846922429633,
       "underfunded_year_share": 0.3333333333333333,
       "max_underfunding_gap": 9.673543144428294,
@@ -18116,7 +18116,7 @@
     "latitude": 7.5554942,
     "longitude": 80.7137847,
     "systematic_underfunding": {
-      "score": 1.0,
+      "score": 100,
       "weighted_avg_underfunding_gap": 7.048307242915861,
       "underfunded_year_share": 1.0,
       "max_underfunding_gap": 7.048307242915861,
@@ -18154,7 +18154,7 @@
     "latitude": 7.5554942,
     "longitude": 80.7137847,
     "systematic_underfunding": {
-      "score": 0.8329013286106759,
+      "score": 83,
       "weighted_avg_underfunding_gap": 18.391101136234827,
       "underfunded_year_share": 0.8333333333333334,
       "max_underfunding_gap": 61.432120597807724,
@@ -18272,7 +18272,7 @@
     "latitude": 7.5554942,
     "longitude": 80.7137847,
     "systematic_underfunding": {
-      "score": 0.0,
+      "score": 0,
       "weighted_avg_underfunding_gap": 0.0,
       "underfunded_year_share": 0.0,
       "max_underfunding_gap": 0.0,
@@ -18306,7 +18306,7 @@
       "contribution_count": 16,
       "category_breakdown_scored": [],
       "category_level_score": null,
-      "overall_severity_score": 0.33059999999999995
+      "overall_severity_score": 33
     }
   },
   {
@@ -18322,7 +18322,7 @@
     "latitude": 14.5844444,
     "longitude": 29.4917691,
     "systematic_underfunding": {
-      "score": 0.36590587646917083,
+      "score": 37,
       "weighted_avg_underfunding_gap": 2.422329679916694,
       "underfunded_year_share": 0.4444444444444444,
       "max_underfunding_gap": 15.260686616767828,
@@ -18774,7 +18774,7 @@
       "contribution_count": 83,
       "category_breakdown_scored": [],
       "category_level_score": null,
-      "overall_severity_score": 0.6443623505876683
+      "overall_severity_score": 64
     },
     "people_2026": {
       "people_in_need": 33699770.0,
@@ -18796,7 +18796,7 @@
     "latitude": 34.6401861,
     "longitude": 39.0494106,
     "systematic_underfunding": {
-      "score": 0.7997750498320867,
+      "score": 80,
       "weighted_avg_underfunding_gap": 4.235989215827895,
       "underfunded_year_share": 0.5294117647058824,
       "max_underfunding_gap": 44.65636376870279,
@@ -19090,7 +19090,7 @@
       "contribution_count": 75,
       "category_breakdown_scored": [],
       "category_level_score": null,
-      "overall_severity_score": 0.8299100199328346
+      "overall_severity_score": 83
     },
     "people_2026": {
       "people_in_need": 16500000.0,
@@ -19112,7 +19112,7 @@
     "latitude": 38.6281733,
     "longitude": 70.8156541,
     "systematic_underfunding": {
-      "score": 0.02672319867586651,
+      "score": 3,
       "weighted_avg_underfunding_gap": 1.1996377357278771,
       "underfunded_year_share": 0.2,
       "max_underfunding_gap": 8.899444549237273,
@@ -19214,7 +19214,7 @@
     "latitude": 38.6281733,
     "longitude": 70.8156541,
     "systematic_underfunding": {
-      "score": 1.0,
+      "score": 100,
       "weighted_avg_underfunding_gap": 14.17460239469301,
       "underfunded_year_share": 1.0,
       "max_underfunding_gap": 14.17460239469301,
@@ -19252,7 +19252,7 @@
     "latitude": 38.6281733,
     "longitude": 70.8156541,
     "systematic_underfunding": {
-      "score": 1.0,
+      "score": 100,
       "weighted_avg_underfunding_gap": 41.040744134187875,
       "underfunded_year_share": 1.0,
       "max_underfunding_gap": 59.113024593867365,
@@ -19306,7 +19306,7 @@
     "latitude": 38.6281733,
     "longitude": 70.8156541,
     "systematic_underfunding": {
-      "score": 1.0,
+      "score": 100,
       "weighted_avg_underfunding_gap": 2.541661554989318,
       "underfunded_year_share": 1.0,
       "max_underfunding_gap": 2.541661554989318,
@@ -19344,7 +19344,7 @@
     "latitude": -6.5247123,
     "longitude": 35.7878438,
     "systematic_underfunding": {
-      "score": 0.006149687384987153,
+      "score": 1,
       "weighted_avg_underfunding_gap": 0.4069933261294215,
       "underfunded_year_share": 0.3333333333333333,
       "max_underfunding_gap": 8.05030975426046,
@@ -19418,7 +19418,7 @@
     "latitude": -6.5247123,
     "longitude": 35.7878438,
     "systematic_underfunding": {
-      "score": 0.0,
+      "score": 0,
       "weighted_avg_underfunding_gap": 0.0,
       "underfunded_year_share": 0.0,
       "max_underfunding_gap": 0.0,
@@ -19472,7 +19472,7 @@
     "latitude": -6.5247123,
     "longitude": 35.7878438,
     "systematic_underfunding": {
-      "score": 1.0,
+      "score": 100,
       "weighted_avg_underfunding_gap": 39.11275550693784,
       "underfunded_year_share": 1.0,
       "max_underfunding_gap": 40.41460588558782,
@@ -19526,7 +19526,7 @@
     "latitude": -8.7443169,
     "longitude": 126.063482,
     "systematic_underfunding": {
-      "score": 1.0,
+      "score": 100,
       "weighted_avg_underfunding_gap": 6.463068986006945,
       "underfunded_year_share": 1.0,
       "max_underfunding_gap": 6.463068986006945,
@@ -19564,7 +19564,7 @@
     "latitude": -8.7443169,
     "longitude": 126.063482,
     "systematic_underfunding": {
-      "score": 0.0,
+      "score": 0,
       "weighted_avg_underfunding_gap": 0.0,
       "underfunded_year_share": 0.0,
       "max_underfunding_gap": 0.0,
@@ -19602,7 +19602,7 @@
     "latitude": -8.7443169,
     "longitude": 126.063482,
     "systematic_underfunding": {
-      "score": 0.0,
+      "score": 0,
       "weighted_avg_underfunding_gap": 0.0,
       "underfunded_year_share": 0.0,
       "max_underfunding_gap": 0.0,
@@ -19640,7 +19640,7 @@
     "latitude": -8.7443169,
     "longitude": 126.063482,
     "systematic_underfunding": {
-      "score": 1.0,
+      "score": 100,
       "weighted_avg_underfunding_gap": 11.134739170774083,
       "underfunded_year_share": 1.0,
       "max_underfunding_gap": 11.134739170774083,
@@ -19678,7 +19678,7 @@
     "latitude": 8.7800265,
     "longitude": 1.0199765,
     "systematic_underfunding": {
-      "score": 1.0,
+      "score": 100,
       "weighted_avg_underfunding_gap": 27.060174940270304,
       "underfunded_year_share": 1.0,
       "max_underfunding_gap": 27.060174940270304,
@@ -19716,7 +19716,7 @@
     "latitude": 39.294076,
     "longitude": 35.2316631,
     "systematic_underfunding": {
-      "score": 0.0,
+      "score": 0,
       "weighted_avg_underfunding_gap": 0.0,
       "underfunded_year_share": 0.0,
       "max_underfunding_gap": 0.0,
@@ -19754,7 +19754,7 @@
     "latitude": 1.5333554,
     "longitude": 32.2166578,
     "systematic_underfunding": {
-      "score": 0.10985635359180589,
+      "score": 11,
       "weighted_avg_underfunding_gap": 1.3159383631552433,
       "underfunded_year_share": 0.2727272727272727,
       "max_underfunding_gap": 12.843329002728773,
@@ -19952,7 +19952,7 @@
     "latitude": 1.5333554,
     "longitude": 32.2166578,
     "systematic_underfunding": {
-      "score": 1.0,
+      "score": 100,
       "weighted_avg_underfunding_gap": 23.51681683462867,
       "underfunded_year_share": 1.0,
       "max_underfunding_gap": 23.51681683462867,
@@ -19990,7 +19990,7 @@
     "latitude": 1.5333554,
     "longitude": 32.2166578,
     "systematic_underfunding": {
-      "score": 1.0,
+      "score": 100,
       "weighted_avg_underfunding_gap": 36.54808598315867,
       "underfunded_year_share": 1.0,
       "max_underfunding_gap": 36.54808598315867,
@@ -20028,7 +20028,7 @@
     "latitude": 1.5333554,
     "longitude": 32.2166578,
     "systematic_underfunding": {
-      "score": 1.0,
+      "score": 100,
       "weighted_avg_underfunding_gap": 19.32399937337306,
       "underfunded_year_share": 1.0,
       "max_underfunding_gap": 45.32509202014798,
@@ -20094,7 +20094,7 @@
       "contribution_count": 3,
       "category_breakdown_scored": [],
       "category_level_score": null,
-      "overall_severity_score": 0.9904
+      "overall_severity_score": 99
     }
   },
   {
@@ -20110,7 +20110,7 @@
     "latitude": 49.4871968,
     "longitude": 31.2718321,
     "systematic_underfunding": {
-      "score": 0.0,
+      "score": 0,
       "weighted_avg_underfunding_gap": 0.0,
       "underfunded_year_share": 0.0,
       "max_underfunding_gap": 0.0,
@@ -20164,7 +20164,7 @@
     "latitude": 49.4871968,
     "longitude": 31.2718321,
     "systematic_underfunding": {
-      "score": 0.027013600912815534,
+      "score": 3,
       "weighted_avg_underfunding_gap": 0.8246397471602733,
       "underfunded_year_share": 0.3,
       "max_underfunding_gap": 23.212799397658628,
@@ -20364,7 +20364,7 @@
           "coverage": 0.5760661043778204,
           "gap": 0.42393389562217965,
           "weight": 0.07137961808101528,
-          "category_score": 0.03026023956110818
+          "category_score": 3
         },
         {
           "category": "health",
@@ -20373,7 +20373,7 @@
           "coverage": 0.3281483653816494,
           "gap": 0.6718516346183506,
           "weight": 0.3772245947785473,
-          "category_score": 0.25343896062021193
+          "category_score": 25
         },
         {
           "category": "protection",
@@ -20382,11 +20382,11 @@
           "coverage": 0.3735028784065528,
           "gap": 0.6264971215934472,
           "weight": 0.5513957871404375,
-          "category_score": 0.34544787350223716
+          "category_score": 35
         }
       ],
-      "category_level_score": 0.6291470736835573,
-      "overall_severity_score": 0.5365762570243418
+      "category_level_score": 63,
+      "overall_severity_score": 54
     },
     "people_2026": {
       "people_in_need": 10849697.0,
@@ -20408,7 +20408,7 @@
     "latitude": 49.4871968,
     "longitude": 31.2718321,
     "systematic_underfunding": {
-      "score": 1.0,
+      "score": 100,
       "weighted_avg_underfunding_gap": 25.05119661928387,
       "underfunded_year_share": 1.0,
       "max_underfunding_gap": 25.05119661928387,
@@ -20446,7 +20446,7 @@
     "latitude": -16.5255069,
     "longitude": 168.1069154,
     "systematic_underfunding": {
-      "score": 0.0,
+      "score": 0,
       "weighted_avg_underfunding_gap": 0.0,
       "underfunded_year_share": 0.0,
       "max_underfunding_gap": 0.0,
@@ -20484,7 +20484,7 @@
     "latitude": 8.0018709,
     "longitude": -66.1109318,
     "systematic_underfunding": {
-      "score": 0.959348152782963,
+      "score": 96,
       "weighted_avg_underfunding_gap": 16.205425856541886,
       "underfunded_year_share": 0.875,
       "max_underfunding_gap": 32.24112125643695,
@@ -20630,7 +20630,7 @@
       "contribution_count": 23,
       "category_breakdown_scored": [],
       "category_level_score": null,
-      "overall_severity_score": 0.9039392611131852
+      "overall_severity_score": 90
     },
     "people_2026": {
       "people_in_need": 7900000.0,
@@ -20652,7 +20652,7 @@
     "latitude": 15.9266657,
     "longitude": 107.9650855,
     "systematic_underfunding": {
-      "score": 1.0,
+      "score": 100,
       "weighted_avg_underfunding_gap": 14.608104550466997,
       "underfunded_year_share": 1.0,
       "max_underfunding_gap": 23.473338941755934,
@@ -20702,7 +20702,7 @@
       "contribution_count": 3,
       "category_breakdown_scored": [],
       "category_level_score": null,
-      "overall_severity_score": 0.97
+      "overall_severity_score": 97
     }
   },
   {
@@ -20718,7 +20718,7 @@
     "latitude": 15.9266657,
     "longitude": 107.9650855,
     "systematic_underfunding": {
-      "score": 1.0,
+      "score": 100,
       "weighted_avg_underfunding_gap": 8.406714182066004,
       "underfunded_year_share": 1.0,
       "max_underfunding_gap": 8.406714182066004,
@@ -20756,7 +20756,7 @@
     "latitude": 15.9266657,
     "longitude": 107.9650855,
     "systematic_underfunding": {
-      "score": 1.0,
+      "score": 100,
       "weighted_avg_underfunding_gap": 23.979077937487546,
       "underfunded_year_share": 1.0,
       "max_underfunding_gap": 23.979077937487546,
@@ -20794,7 +20794,7 @@
     "latitude": 16.3471243,
     "longitude": 47.8915271,
     "systematic_underfunding": {
-      "score": 0.9585696061061227,
+      "score": 96,
       "weighted_avg_underfunding_gap": 4.5085179279433225,
       "underfunded_year_share": 0.5,
       "max_underfunding_gap": 7.67575743159184,
@@ -20880,7 +20880,7 @@
     "latitude": 16.3471243,
     "longitude": 47.8915271,
     "systematic_underfunding": {
-      "score": 0.0,
+      "score": 0,
       "weighted_avg_underfunding_gap": 0.0,
       "underfunded_year_share": 0.0,
       "max_underfunding_gap": 0.0,
@@ -20918,7 +20918,7 @@
     "latitude": 16.3471243,
     "longitude": 47.8915271,
     "systematic_underfunding": {
-      "score": 0.0,
+      "score": 0,
       "weighted_avg_underfunding_gap": 0.0,
       "underfunded_year_share": 0.0,
       "max_underfunding_gap": 0.0,
@@ -20956,7 +20956,7 @@
     "latitude": 16.3471243,
     "longitude": 47.8915271,
     "systematic_underfunding": {
-      "score": 0.08916321146695011,
+      "score": 9,
       "weighted_avg_underfunding_gap": 1.9674852175777666,
       "underfunded_year_share": 0.38461538461538464,
       "max_underfunding_gap": 7.093928134912559,
@@ -21182,7 +21182,7 @@
       "contribution_count": 85,
       "category_breakdown_scored": [],
       "category_level_score": null,
-      "overall_severity_score": 0.5636652845867801
+      "overall_severity_score": 56
     },
     "people_2026": {
       "people_in_need": 23100000.0,
@@ -21214,7 +21214,7 @@
     "latitude": 16.3471243,
     "longitude": 47.8915271,
     "systematic_underfunding": {
-      "score": 0.0847258785500259,
+      "score": 8,
       "weighted_avg_underfunding_gap": 2.874358298105361,
       "underfunded_year_share": 0.5,
       "max_underfunding_gap": 8.047753707737552,
@@ -21344,7 +21344,7 @@
       "contribution_count": 21,
       "category_breakdown_scored": [],
       "category_level_score": null,
-      "overall_severity_score": 0.3974903514200104
+      "overall_severity_score": 40
     },
     "people_2026": {
       "people_in_need": 23100000.0,
@@ -21366,7 +21366,7 @@
     "latitude": -14.5189121,
     "longitude": 27.5589884,
     "systematic_underfunding": {
-      "score": 1.0,
+      "score": 100,
       "weighted_avg_underfunding_gap": 29.67121231386136,
       "underfunded_year_share": 1.0,
       "max_underfunding_gap": 29.67121231386136,
@@ -21404,7 +21404,7 @@
     "latitude": -14.5189121,
     "longitude": 27.5589884,
     "systematic_underfunding": {
-      "score": 1.0,
+      "score": 100,
       "weighted_avg_underfunding_gap": 55.00709542469014,
       "underfunded_year_share": 1.0,
       "max_underfunding_gap": 55.00709542469014,
@@ -21442,7 +21442,7 @@
     "latitude": -14.5189121,
     "longitude": 27.5589884,
     "systematic_underfunding": {
-      "score": 0.9471971298945483,
+      "score": 95,
       "weighted_avg_underfunding_gap": 9.145339269415523,
       "underfunded_year_share": 0.6666666666666666,
       "max_underfunding_gap": 60.27539728496833,
@@ -21512,7 +21512,7 @@
     "latitude": -14.5189121,
     "longitude": 27.5589884,
     "systematic_underfunding": {
-      "score": 1.0,
+      "score": 100,
       "weighted_avg_underfunding_gap": 42.34592254058607,
       "underfunded_year_share": 1.0,
       "max_underfunding_gap": 42.34592254058607,
@@ -21550,7 +21550,7 @@
     "latitude": -14.5189121,
     "longitude": 27.5589884,
     "systematic_underfunding": {
-      "score": 1.0,
+      "score": 100,
       "weighted_avg_underfunding_gap": 22.091362182930524,
       "underfunded_year_share": 1.0,
       "max_underfunding_gap": 22.091362182930524,
@@ -21588,7 +21588,7 @@
     "latitude": -18.4554963,
     "longitude": 29.7468414,
     "systematic_underfunding": {
-      "score": 0.8435282357636674,
+      "score": 84,
       "weighted_avg_underfunding_gap": 11.588542863801347,
       "underfunded_year_share": 0.8888888888888888,
       "max_underfunding_gap": 52.819025856160046,
@@ -21754,7 +21754,7 @@
     "latitude": -18.4554963,
     "longitude": 29.7468414,
     "systematic_underfunding": {
-      "score": 1.0,
+      "score": 100,
       "weighted_avg_underfunding_gap": 42.417941310359446,
       "underfunded_year_share": 1.0,
       "max_underfunding_gap": 42.417941310359446,
@@ -21792,7 +21792,7 @@
     "latitude": -18.4554963,
     "longitude": 29.7468414,
     "systematic_underfunding": {
-      "score": 1.0,
+      "score": 100,
       "weighted_avg_underfunding_gap": 15.47465646141919,
       "underfunded_year_share": 1.0,
       "max_underfunding_gap": 20.551829411032678,
@@ -21846,7 +21846,7 @@
     "latitude": -18.4554963,
     "longitude": 29.7468414,
     "systematic_underfunding": {
-      "score": 1.0,
+      "score": 100,
       "weighted_avg_underfunding_gap": 14.154120751439883,
       "underfunded_year_share": 1.0,
       "max_underfunding_gap": 14.154120751439883,
@@ -21884,7 +21884,7 @@
     "latitude": -18.4554963,
     "longitude": 29.7468414,
     "systematic_underfunding": {
-      "score": 1.0,
+      "score": 100,
       "weighted_avg_underfunding_gap": 30.325983200261717,
       "underfunded_year_share": 1.0,
       "max_underfunding_gap": 36.17701907409913,
@@ -21938,7 +21938,7 @@
     "latitude": -18.4554963,
     "longitude": 29.7468414,
     "systematic_underfunding": {
-      "score": 1.0,
+      "score": 100,
       "weighted_avg_underfunding_gap": 11.880382761987434,
       "underfunded_year_share": 1.0,
       "max_underfunding_gap": 11.880382761987434,
@@ -22108,7 +22108,7 @@
     "latitude": -18.4554963,
     "longitude": 29.7468414,
     "systematic_underfunding": {
-      "score": 1.0,
+      "score": 100,
       "weighted_avg_underfunding_gap": 11.715959796682078,
       "underfunded_year_share": 1.0,
       "max_underfunding_gap": 11.715959796682078,
