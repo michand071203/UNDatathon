@@ -41,48 +41,65 @@
                 <div class="flex flex-col">
                     <span class="text-[9px] font-bold text-gray-400 uppercase tracking-widest mb-0.5">Requirements</span>
                     <span class="text-sm font-bold text-gray-700 whitespace-nowrap">
-                        {% if crisis.requirements %}${{ '{:,}'.format(crisis.requirements | int) }}{% else %}Unknown{% endif %}
+                        {% if crisis.requirements is not none %}
+                            <span {% if crisis.requirements_projected %}class="italic cursor-help" data-hover-tooltip="{{ projected_requirement_tooltip }}" tabindex="0"{% endif %}>
+                                ${{ '{:,}'.format(crisis.requirements | int) }}{% if crisis.requirements_projected %}<sup aria-hidden="true">*</sup>{% endif %}
+                            </span>
+                        {% else %}
+                            Unknown
+                        {% endif %}
                     </span>
                 </div>
-                    <div class="flex flex-col">
-                        <span class="text-[9px] font-bold text-gray-400 uppercase tracking-widest mb-0.5">Requirements</span>
-                        <span class="text-sm font-bold text-gray-700 whitespace-nowrap">
-                            {% if crisis.requirements is not none %}
-                                <span {% if crisis.requirements_projected %}class="italic cursor-help" data-hover-tooltip="{{ projected_requirement_tooltip }}" tabindex="0"{% endif %}>
-                                    ${{ '{:,}'.format(crisis.requirements | int) }}{% if crisis.requirements_projected %}<sup aria-hidden="true">*</sup>{% endif %}
+
+                <!-- Funding Progress -->
+                <div class="flex flex-col w-32 sm:w-40">
+                    <div class="flex justify-between items-center mb-1">
+                        <span class="text-[9px] font-bold text-gray-400 uppercase tracking-widest">Coverage</span>
+                        <span class="text-[10px] font-bold text-gray-700">
+                            {% if crisis.percent_funded is not none %}
+                                <span {% if crisis.coverage_projected %}class="italic cursor-help" data-hover-tooltip="{{ projected_requirement_tooltip }}" tabindex="0"{% endif %}>
+                                    {{ crisis.percent_funded }}%{% if crisis.coverage_projected %}<sup aria-hidden="true">*</sup>{% endif %}
                                 </span>
                             {% else %}
                                 Unknown
                             {% endif %}
                         </span>
                     </div>
-
-                    <!-- Funding Progress -->
-                    <div class="flex flex-col w-32 sm:w-40">
-                        <div class="flex justify-between items-center mb-1">
-                            <span class="text-[9px] font-bold text-gray-400 uppercase tracking-widest">Coverage</span>
-                            <span class="text-[10px] font-bold text-gray-700">
-                                {% if crisis.percent_funded is not none %}
-                                    <span {% if crisis.coverage_projected %}class="italic cursor-help" data-hover-tooltip="{{ projected_requirement_tooltip }}" tabindex="0"{% endif %}>
-                                        {{ crisis.percent_funded }}%{% if crisis.coverage_projected %}<sup aria-hidden="true">*</sup>{% endif %}
-                                    </span>
-                                {% else %}
-                                    Unknown
-                                {% endif %}
-                            </span>
-                        </div>
-                        <div class="w-full bg-gray-100 rounded-full h-1.5 overflow-hidden border border-gray-200/50">
-                            <div class="h-full rounded-full transition-all duration-500" style="width: {% if crisis.percent_funded is not none %}{{ crisis.percent_funded }}%{% else %}0%{% endif %}; background-color: {% if crisis.percent_funded is not none %}{{ crisis.color or '#3b82f6' }}{% else %}#9ca3af{% endif %}"></div>
-                        </div>
+                    <div class="w-full bg-gray-100 rounded-full h-1.5 overflow-hidden border border-gray-200/50">
+                        <div class="h-full rounded-full transition-all duration-500" style="width: {% if crisis.percent_funded is not none %}{{ crisis.percent_funded }}%{% else %}0%{% endif %}; background-color: {% if crisis.percent_funded is not none %}{{ crisis.color or '#3b82f6' }}{% else %}#9ca3af{% endif %}"></div>
                     </div>
                 </div>
             </div>
         </div>
 
-        <!-- Action Indicator -->
-        <div class="hidden md:flex items-center justify-center text-gray-300 ml-2 shrink-0 self-center">
-            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+        {% set has_cat_data = (crisis.category_scores.values() | select('defined') | list | length > 0) %}
+        {% if has_cat_data %}
+        <!-- Row 3: Category Donut Charts -->
+        <div class="border-t border-gray-100 pt-4 flex gap-4">
+            {% for cat in ["education", "food_security", "health", "hygiene", "protection"] %}
+                {% set score = crisis.category_scores.get(cat) %}
+                <div class="flex flex-col items-center gap-1.5 flex-1">
+                    <div class="relative w-12 h-12">
+                        <svg class="w-full h-full transform -rotate-90" viewBox="0 0 36 36">
+                            <circle cx="18" cy="18" r="15.915" fill="none" stroke="#e5e7eb" stroke-width="3"></circle>
+                            {% if score is not none %}
+                            <circle cx="18" cy="18" r="15.915" fill="none" stroke="{{ crisis.color or '#3b82f6' }}" stroke-width="3" stroke-dasharray="{{ score * 100 }}, 100" stroke-linecap="round"></circle>
+                            {% endif %}
+                        </svg>
+                        <div class="absolute inset-0 flex items-center justify-center text-[9px] font-bold {% if score is not none %}text-gray-700{% else %}text-gray-300{% endif %}">
+                            {% if score is not none %}{{ (score * 100)|int }}%{% else %}N/A{% endif %}
+                        </div>
+                    </div>
+                    <span class="text-[9px] font-bold text-gray-400 uppercase tracking-widest text-center">{{ cat.replace('_', ' ') }}</span>
+                </div>
+            {% endfor %}
         </div>
+        {% endif %}
+    </div>
+
+    <!-- Action Indicator -->
+    <div class="hidden md:flex items-center justify-center text-gray-300 px-5 shrink-0 self-center">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
     </div>
 </div>
 {% endfor %}
