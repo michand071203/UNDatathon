@@ -3,6 +3,12 @@
     "funding_base_key": "CAFG",
     "primary_location_code": "AFG",
     "primary_location_name": "Afghanistan",
+    "location_codes": [
+      "AFG"
+    ],
+    "location_names": [
+      "Afghanistan"
+    ],
     "latitude": 33.7680065,
     "longitude": 66.2385139,
     "years": {
@@ -77,6 +83,12 @@
     "funding_base_key": "CAFG01",
     "primary_location_code": "AFG",
     "primary_location_name": "Afghanistan",
+    "location_codes": [
+      "AFG"
+    ],
+    "location_names": [
+      "Afghanistan"
+    ],
     "latitude": 33.7680065,
     "longitude": 66.2385139,
     "years": {
@@ -99,6 +111,12 @@
     "funding_base_key": "CAFG11",
     "primary_location_code": "AFG",
     "primary_location_name": "Afghanistan",
+    "location_codes": [
+      "AFG"
+    ],
+    "location_names": [
+      "Afghanistan"
+    ],
     "latitude": 33.7680065,
     "longitude": 66.2385139,
     "years": {
@@ -121,6 +139,12 @@
     "funding_base_key": "FAFG",
     "primary_location_code": "AFG",
     "primary_location_name": "Afghanistan",
+    "location_codes": [
+      "AFG"
+    ],
+    "location_names": [
+      "Afghanistan"
+    ],
     "latitude": 33.7680065,
     "longitude": 66.2385139,
     "years": {
@@ -156,6 +180,12 @@
     "funding_base_key": "HAFG",
     "primary_location_code": "AFG",
     "primary_location_name": "Afghanistan",
+    "location_codes": [
+      "AFG"
+    ],
+    "location_names": [
+      "Afghanistan"
+    ],
     "latitude": 33.7680065,
     "longitude": 66.2385139,
     "years": {
@@ -340,6 +370,12 @@
     "funding_base_key": "OAFG",
     "primary_location_code": "AFG",
     "primary_location_name": "Afghanistan",
+    "location_codes": [
+      "AFG"
+    ],
+    "location_names": [
+      "Afghanistan"
+    ],
     "latitude": 33.7680065,
     "longitude": 66.2385139,
     "years": {
@@ -401,6 +437,12 @@
     "funding_base_key": "OAFG0809",
     "primary_location_code": "AFG",
     "primary_location_name": "Afghanistan",
+    "location_codes": [
+      "AFG"
+    ],
+    "location_names": [
+      "Afghanistan"
+    ],
     "latitude": 33.7680065,
     "longitude": 66.2385139,
     "years": {
@@ -423,6 +465,106 @@
     "funding_base_key": "OGLBLa",
     "primary_location_code": "AFG",
     "primary_location_name": "Afghanistan",
+    "location_codes": [
+      "AFG",
+      "ZWE",
+      "VEN",
+      "UKR",
+      "BEN",
+      "BDI",
+      "LSO",
+      "LBR",
+      "LBY",
+      "MLI",
+      "MOZ",
+      "MMR",
+      "NER",
+      "NGA",
+      "EGY",
+      "ETH",
+      "PSE",
+      "PAK",
+      "PHL",
+      "RWA",
+      "SLE",
+      "SOM",
+      "SSD",
+      "SDN",
+      "SYR",
+      "TZA",
+      "TGO",
+      "TUR",
+      "UGA",
+      "YEM",
+      "ZMB",
+      "BGD",
+      "AGO",
+      "BFA",
+      "CMR",
+      "CAF",
+      "TCD",
+      "DJI",
+      "PRK",
+      "COD",
+      "COL",
+      "ECU",
+      "HTI",
+      "IRN",
+      "IRQ",
+      "JOR",
+      "KEN",
+      "LBN"
+    ],
+    "location_names": [
+      "Afghanistan",
+      "Zimbabwe",
+      "Venezuela",
+      "Ukraine",
+      "Benin",
+      "Burundi",
+      "Lesotho",
+      "Liberia",
+      "Libya",
+      "Mali",
+      "Mozambique",
+      "Myanmar",
+      "Niger",
+      "Nigeria",
+      "Egypt",
+      "Ethiopia",
+      "Palestine",
+      "Pakistan",
+      "Philippines",
+      "Rwanda",
+      "Sierra Leone",
+      "Somalia",
+      "South Sudan",
+      "Sudan",
+      "Syria",
+      "Tanzania",
+      "Togo",
+      "T\u00fcrkiye",
+      "Uganda",
+      "Yemen",
+      "Zambia",
+      "Bangladesh",
+      "Angola",
+      "Burkina Faso",
+      "Cameroon",
+      "Central African Republic",
+      "Chad",
+      "Djibouti",
+      "North Korea",
+      "Democratic Republic of the Congo",
+      "Colombia",
+      "Ecuador",
+      "Haiti",
+      "Iran",
+      "Iraq",
+      "Jordan",
+      "Kenya",
+      "Lebanon"
+    ],
     "latitude": 33.7680065,
     "longitude": 66.2385139,
     "years": {
@@ -445,6 +587,12 @@
     "funding_base_key": "CAGO",
     "primary_location_code": "AGO",
     "primary_location_name": "Angola",
+    "location_codes": [
+      "AGO"
+    ],
+    "location_names": [
+      "Angola"
+    ],
     "latitude": -11.8775768,
     "longitude": 17.5691241,
     "years": {
@@ -519,6 +667,12 @@
     "funding_base_key": "FAGO",
     "primary_location_code": "AGO",
     "primary_location_name": "Angola",
+    "location_codes": [
+      "AGO"
+    ],
+    "location_names": [
+      "Angola"
+    ],
     "latitude": -11.8775768,
     "longitude": 17.5691241,
     "years": {
@@ -541,6 +695,28 @@
     "funding_base_key": "RAIAATGBHSBLMKNAMAFSXMTCAVGB",
     "primary_location_code": "ATG",
     "primary_location_name": "Antigua and Barbuda",
+    "location_codes": [
+      "ATG",
+      "MAF",
+      "BHS",
+      "AIA",
+      "TCA",
+      "VGB",
+      "BLM",
+      "KNA",
+      "SXM"
+    ],
+    "location_names": [
+      "Antigua and Barbuda",
+      "Saint Martin (French part)",
+      "Bahamas",
+      "Anguilla",
+      "Turks and Caicos Islands",
+      "Virgin Islands, British",
+      "Saint Barth\u00e9lemy",
+      "Saint Kitts and Nevis",
+      "Sint Maarten (Dutch part)"
+    ],
     "latitude": 17.2234721,
     "longitude": -61.9554608,
     "years": {
@@ -563,6 +739,12 @@
     "funding_base_key": "FBGD0405",
     "primary_location_code": "BGD",
     "primary_location_name": "Bangladesh",
+    "location_codes": [
+      "BGD"
+    ],
+    "location_names": [
+      "Bangladesh"
+    ],
     "latitude": 24.4769288,
     "longitude": 90.2934413,
     "years": {
@@ -585,6 +767,12 @@
     "funding_base_key": "HBGD",
     "primary_location_code": "BGD",
     "primary_location_name": "Bangladesh",
+    "location_codes": [
+      "BGD"
+    ],
+    "location_names": [
+      "Bangladesh"
+    ],
     "latitude": 24.4769288,
     "longitude": 90.2934413,
     "years": {
@@ -607,6 +795,12 @@
     "funding_base_key": "OBGD",
     "primary_location_code": "BGD",
     "primary_location_name": "Bangladesh",
+    "location_codes": [
+      "BGD"
+    ],
+    "location_names": [
+      "Bangladesh"
+    ],
     "latitude": 24.4769288,
     "longitude": 90.2934413,
     "years": {
@@ -655,6 +849,12 @@
     "funding_base_key": "RBGD",
     "primary_location_code": "BGD",
     "primary_location_name": "Bangladesh",
+    "location_codes": [
+      "BGD"
+    ],
+    "location_names": [
+      "Bangladesh"
+    ],
     "latitude": 24.4769288,
     "longitude": 90.2934413,
     "years": {
@@ -781,6 +981,12 @@
     "funding_base_key": "FBEN",
     "primary_location_code": "BEN",
     "primary_location_name": "Benin",
+    "location_codes": [
+      "BEN"
+    ],
+    "location_names": [
+      "Benin"
+    ],
     "latitude": 9.5293472,
     "longitude": 2.2584408,
     "years": {
@@ -803,6 +1009,12 @@
     "funding_base_key": "OBEN",
     "primary_location_code": "BEN",
     "primary_location_name": "Benin",
+    "location_codes": [
+      "BEN"
+    ],
+    "location_names": [
+      "Benin"
+    ],
     "latitude": 9.5293472,
     "longitude": 2.2584408,
     "years": {
@@ -825,6 +1037,12 @@
     "funding_base_key": "FBOL",
     "primary_location_code": "BOL",
     "primary_location_name": "Bolivia",
+    "location_codes": [
+      "BOL"
+    ],
+    "location_names": [
+      "Bolivia"
+    ],
     "latitude": -17.0568696,
     "longitude": -64.9912286,
     "years": {
@@ -860,6 +1078,12 @@
     "funding_base_key": "FBOL0405",
     "primary_location_code": "BOL",
     "primary_location_name": "Bolivia",
+    "location_codes": [
+      "BOL"
+    ],
+    "location_names": [
+      "Bolivia"
+    ],
     "latitude": -17.0568696,
     "longitude": -64.9912286,
     "years": {
@@ -882,6 +1106,44 @@
     "funding_base_key": "RREGb",
     "primary_location_code": "BRA",
     "primary_location_name": "Brazil",
+    "location_codes": [
+      "BRA",
+      "GUY",
+      "CRI",
+      "URY",
+      "PRY",
+      "COL",
+      "PER",
+      "ECU",
+      "PAN",
+      "CUW",
+      "ARG",
+      "ABW",
+      "BOL",
+      "CHL",
+      "DOM",
+      "TTO",
+      "MEX"
+    ],
+    "location_names": [
+      "Brazil",
+      "Guyana",
+      "Costa Rica",
+      "Uruguay",
+      "Paraguay",
+      "Colombia",
+      "Peru",
+      "Ecuador",
+      "Panama",
+      "Cura\u00e7ao",
+      "Argentina",
+      "Aruba",
+      "Bolivia",
+      "Chile",
+      "Dominican Republic",
+      "Trinidad and Tobago",
+      "Mexico"
+    ],
     "latitude": -10.3333333,
     "longitude": -53.2,
     "years": {
@@ -904,6 +1166,12 @@
     "funding_base_key": "CBFA",
     "primary_location_code": "BFA",
     "primary_location_name": "Burkina Faso",
+    "location_codes": [
+      "BFA"
+    ],
+    "location_names": [
+      "Burkina Faso"
+    ],
     "latitude": 12.0753083,
     "longitude": -1.6880314,
     "years": {
@@ -939,6 +1207,12 @@
     "funding_base_key": "FBFA0708",
     "primary_location_code": "BFA",
     "primary_location_name": "Burkina Faso",
+    "location_codes": [
+      "BFA"
+    ],
+    "location_names": [
+      "Burkina Faso"
+    ],
     "latitude": 12.0753083,
     "longitude": -1.6880314,
     "years": {
@@ -961,6 +1235,12 @@
     "funding_base_key": "FBFA0910",
     "primary_location_code": "BFA",
     "primary_location_name": "Burkina Faso",
+    "location_codes": [
+      "BFA"
+    ],
+    "location_names": [
+      "Burkina Faso"
+    ],
     "latitude": 12.0753083,
     "longitude": -1.6880314,
     "years": {
@@ -983,6 +1263,12 @@
     "funding_base_key": "HBFA",
     "primary_location_code": "BFA",
     "primary_location_name": "Burkina Faso",
+    "location_codes": [
+      "BFA"
+    ],
+    "location_names": [
+      "Burkina Faso"
+    ],
     "latitude": 12.0753083,
     "longitude": -1.6880314,
     "years": {
@@ -1128,6 +1414,12 @@
     "funding_base_key": "HBFA13",
     "primary_location_code": "BFA",
     "primary_location_name": "Burkina Faso",
+    "location_codes": [
+      "BFA"
+    ],
+    "location_names": [
+      "Burkina Faso"
+    ],
     "latitude": 12.0753083,
     "longitude": -1.6880314,
     "years": {
@@ -1150,6 +1442,12 @@
     "funding_base_key": "OBFA",
     "primary_location_code": "BFA",
     "primary_location_name": "Burkina Faso",
+    "location_codes": [
+      "BFA"
+    ],
+    "location_names": [
+      "Burkina Faso"
+    ],
     "latitude": 12.0753083,
     "longitude": -1.6880314,
     "years": {
@@ -1185,6 +1483,12 @@
     "funding_base_key": "OBFA1011",
     "primary_location_code": "BFA",
     "primary_location_name": "Burkina Faso",
+    "location_codes": [
+      "BFA"
+    ],
+    "location_names": [
+      "Burkina Faso"
+    ],
     "latitude": 12.0753083,
     "longitude": -1.6880314,
     "years": {
@@ -1207,6 +1511,12 @@
     "funding_base_key": "CBDI",
     "primary_location_code": "BDI",
     "primary_location_name": "Burundi",
+    "location_codes": [
+      "BDI"
+    ],
+    "location_names": [
+      "Burundi"
+    ],
     "latitude": -3.426449,
     "longitude": 29.9324519,
     "years": {
@@ -1320,6 +1630,12 @@
     "funding_base_key": "HBDI",
     "primary_location_code": "BDI",
     "primary_location_name": "Burundi",
+    "location_codes": [
+      "BDI"
+    ],
+    "location_names": [
+      "Burundi"
+    ],
     "latitude": -3.426449,
     "longitude": 29.9324519,
     "years": {
@@ -1433,6 +1749,12 @@
     "funding_base_key": "OBDI",
     "primary_location_code": "BDI",
     "primary_location_name": "Burundi",
+    "location_codes": [
+      "BDI"
+    ],
+    "location_names": [
+      "Burundi"
+    ],
     "latitude": -3.426449,
     "longitude": 29.9324519,
     "years": {
@@ -1455,6 +1777,12 @@
     "funding_base_key": "HCMR",
     "primary_location_code": "CMR",
     "primary_location_name": "Cameroon",
+    "location_codes": [
+      "CMR"
+    ],
+    "location_names": [
+      "Cameroon"
+    ],
     "latitude": 4.6125522,
     "longitude": 13.1535811,
     "years": {
@@ -1639,6 +1967,12 @@
     "funding_base_key": "CCAF",
     "primary_location_code": "CAF",
     "primary_location_name": "Central African Republic",
+    "location_codes": [
+      "CAF"
+    ],
+    "location_names": [
+      "Central African Republic"
+    ],
     "latitude": 7.0323598,
     "longitude": 19.9981227,
     "years": {
@@ -1778,6 +2112,12 @@
     "funding_base_key": "FCAF",
     "primary_location_code": "CAF",
     "primary_location_name": "Central African Republic",
+    "location_codes": [
+      "CAF"
+    ],
+    "location_names": [
+      "Central African Republic"
+    ],
     "latitude": 7.0323598,
     "longitude": 19.9981227,
     "years": {
@@ -1800,6 +2140,12 @@
     "funding_base_key": "HCAF",
     "primary_location_code": "CAF",
     "primary_location_name": "Central African Republic",
+    "location_codes": [
+      "CAF"
+    ],
+    "location_names": [
+      "Central African Republic"
+    ],
     "latitude": 7.0323598,
     "longitude": 19.9981227,
     "years": {
@@ -1971,6 +2317,12 @@
     "funding_base_key": "HCAF2021",
     "primary_location_code": "CAF",
     "primary_location_name": "Central African Republic",
+    "location_codes": [
+      "CAF"
+    ],
+    "location_names": [
+      "Central African Republic"
+    ],
     "latitude": 7.0323598,
     "longitude": 19.9981227,
     "years": {
@@ -1993,6 +2345,12 @@
     "funding_base_key": "CTCD",
     "primary_location_code": "TCD",
     "primary_location_name": "Chad",
+    "location_codes": [
+      "TCD"
+    ],
+    "location_names": [
+      "Chad"
+    ],
     "latitude": 15.6134137,
     "longitude": 19.0156172,
     "years": {
@@ -2132,6 +2490,12 @@
     "funding_base_key": "HTCD",
     "primary_location_code": "TCD",
     "primary_location_name": "Chad",
+    "location_codes": [
+      "TCD"
+    ],
+    "location_names": [
+      "Chad"
+    ],
     "latitude": 15.6134137,
     "longitude": 19.0156172,
     "years": {
@@ -2316,6 +2680,12 @@
     "funding_base_key": "HCOL",
     "primary_location_code": "COL",
     "primary_location_name": "Colombia",
+    "location_codes": [
+      "COL"
+    ],
+    "location_names": [
+      "Colombia"
+    ],
     "latitude": 4.099917,
     "longitude": -72.9088133,
     "years": {
@@ -2422,6 +2792,12 @@
     "funding_base_key": "OCOL",
     "primary_location_code": "COL",
     "primary_location_name": "Colombia",
+    "location_codes": [
+      "COL"
+    ],
+    "location_names": [
+      "Colombia"
+    ],
     "latitude": 4.099917,
     "longitude": -72.9088133,
     "years": {
@@ -2457,6 +2833,12 @@
     "funding_base_key": "CCOG",
     "primary_location_code": "COG",
     "primary_location_name": "Congo",
+    "location_codes": [
+      "COG"
+    ],
+    "location_names": [
+      "Congo"
+    ],
     "latitude": -0.7264327,
     "longitude": 15.6419155,
     "years": {
@@ -2544,6 +2926,12 @@
     "funding_base_key": "HCOG",
     "primary_location_code": "COG",
     "primary_location_name": "Congo",
+    "location_codes": [
+      "COG"
+    ],
+    "location_names": [
+      "Congo"
+    ],
     "latitude": -0.7264327,
     "longitude": 15.6419155,
     "years": {
@@ -2579,6 +2967,12 @@
     "funding_base_key": "OCOG",
     "primary_location_code": "COG",
     "primary_location_name": "Congo",
+    "location_codes": [
+      "COG"
+    ],
+    "location_names": [
+      "Congo"
+    ],
     "latitude": -0.7264327,
     "longitude": 15.6419155,
     "years": {
@@ -2627,6 +3021,22 @@
     "funding_base_key": "RDRCRRP",
     "primary_location_code": "COG",
     "primary_location_name": "Congo",
+    "location_codes": [
+      "COG",
+      "AGO",
+      "TZA",
+      "UGA",
+      "ZMB",
+      "RWA"
+    ],
+    "location_names": [
+      "Congo",
+      "Angola",
+      "Tanzania",
+      "Uganda",
+      "Zambia",
+      "Rwanda"
+    ],
     "latitude": -0.7264327,
     "longitude": 15.6419155,
     "years": {
@@ -2688,6 +3098,22 @@
     "funding_base_key": "RGRCHRVMKDSRBSVNTUR",
     "primary_location_code": "HRV",
     "primary_location_name": "Croatia",
+    "location_codes": [
+      "HRV",
+      "MKD",
+      "SVN",
+      "TUR",
+      "SRB",
+      "GRC"
+    ],
+    "location_names": [
+      "Croatia",
+      "North Macedonia",
+      "Slovenia",
+      "T\u00fcrkiye",
+      "Serbia",
+      "Greece"
+    ],
     "latitude": 45.3658443,
     "longitude": 15.6575209,
     "years": {
@@ -2710,6 +3136,12 @@
     "funding_base_key": "OCUB",
     "primary_location_code": "CUB",
     "primary_location_name": "Cuba",
+    "location_codes": [
+      "CUB"
+    ],
+    "location_names": [
+      "Cuba"
+    ],
     "latitude": 23.0131338,
     "longitude": -80.8328748,
     "years": {
@@ -2732,6 +3164,12 @@
     "funding_base_key": "OCUB0809",
     "primary_location_code": "CUB",
     "primary_location_name": "Cuba",
+    "location_codes": [
+      "CUB"
+    ],
+    "location_names": [
+      "Cuba"
+    ],
     "latitude": 23.0131338,
     "longitude": -80.8328748,
     "years": {
@@ -2754,6 +3192,12 @@
     "funding_base_key": "OCUB12",
     "primary_location_code": "CUB",
     "primary_location_name": "Cuba",
+    "location_codes": [
+      "CUB"
+    ],
+    "location_names": [
+      "Cuba"
+    ],
     "latitude": 23.0131338,
     "longitude": -80.8328748,
     "years": {
@@ -2776,6 +3220,12 @@
     "funding_base_key": "OCUB2223",
     "primary_location_code": "CUB",
     "primary_location_name": "Cuba",
+    "location_codes": [
+      "CUB"
+    ],
+    "location_names": [
+      "Cuba"
+    ],
     "latitude": 23.0131338,
     "longitude": -80.8328748,
     "years": {
@@ -2798,6 +3248,12 @@
     "funding_base_key": "CCIV",
     "primary_location_code": "CIV",
     "primary_location_name": "C\u00f4te d'Ivoire",
+    "location_codes": [
+      "CIV"
+    ],
+    "location_names": [
+      "C\u00f4te d'Ivoire"
+    ],
     "latitude": 7.9897371,
     "longitude": -5.5679458,
     "years": {
@@ -2885,6 +3341,14 @@
     "funding_base_key": "CXWAF",
     "primary_location_code": "CIV",
     "primary_location_name": "C\u00f4te d'Ivoire",
+    "location_codes": [
+      "CIV",
+      "LBR"
+    ],
+    "location_names": [
+      "C\u00f4te d'Ivoire",
+      "Liberia"
+    ],
     "latitude": 7.9897371,
     "longitude": -5.5679458,
     "years": {
@@ -2920,6 +3384,38 @@
     "funding_base_key": "RBENBFACIVCPVGHAGINGNBLBRMLIMRTNERSENSLETGO",
     "primary_location_code": "CIV",
     "primary_location_name": "C\u00f4te d'Ivoire",
+    "location_codes": [
+      "CIV",
+      "LBR",
+      "MLI",
+      "GIN",
+      "GHA",
+      "NER",
+      "SEN",
+      "TGO",
+      "BFA",
+      "MRT",
+      "SLE",
+      "BEN",
+      "CPV",
+      "GNB"
+    ],
+    "location_names": [
+      "C\u00f4te d'Ivoire",
+      "Liberia",
+      "Mali",
+      "Guinea",
+      "Ghana",
+      "Niger",
+      "Senegal",
+      "Togo",
+      "Burkina Faso",
+      "Mauritania",
+      "Sierra Leone",
+      "Benin",
+      "Cabo Verde",
+      "Guinea-Bissau"
+    ],
     "latitude": 7.9897371,
     "longitude": -5.5679458,
     "years": {
@@ -2942,6 +3438,38 @@
     "funding_base_key": "RBENBFACIVGHAGINGNBLBRMLIMRTNERNGASENSLETGO",
     "primary_location_code": "CIV",
     "primary_location_name": "C\u00f4te d'Ivoire",
+    "location_codes": [
+      "CIV",
+      "LBR",
+      "MLI",
+      "GIN",
+      "GHA",
+      "NER",
+      "NGA",
+      "SEN",
+      "TGO",
+      "BFA",
+      "MRT",
+      "SLE",
+      "BEN",
+      "GNB"
+    ],
+    "location_names": [
+      "C\u00f4te d'Ivoire",
+      "Liberia",
+      "Mali",
+      "Guinea",
+      "Ghana",
+      "Niger",
+      "Nigeria",
+      "Senegal",
+      "Togo",
+      "Burkina Faso",
+      "Mauritania",
+      "Sierra Leone",
+      "Benin",
+      "Guinea-Bissau"
+    ],
     "latitude": 7.9897371,
     "longitude": -5.5679458,
     "years": {
@@ -2964,6 +3492,36 @@
     "funding_base_key": "RBENBFACIVGHAGINGNBLBRMLIMRTNERSENSLETGO",
     "primary_location_code": "CIV",
     "primary_location_name": "C\u00f4te d'Ivoire",
+    "location_codes": [
+      "CIV",
+      "LBR",
+      "MLI",
+      "GIN",
+      "GHA",
+      "NER",
+      "SEN",
+      "TGO",
+      "BFA",
+      "MRT",
+      "SLE",
+      "BEN",
+      "GNB"
+    ],
+    "location_names": [
+      "C\u00f4te d'Ivoire",
+      "Liberia",
+      "Mali",
+      "Guinea",
+      "Ghana",
+      "Niger",
+      "Senegal",
+      "Togo",
+      "Burkina Faso",
+      "Mauritania",
+      "Sierra Leone",
+      "Benin",
+      "Guinea-Bissau"
+    ],
     "latitude": 7.9897371,
     "longitude": -5.5679458,
     "years": {
@@ -2986,6 +3544,12 @@
     "funding_base_key": "RCIV",
     "primary_location_code": "CIV",
     "primary_location_name": "C\u00f4te d'Ivoire",
+    "location_codes": [
+      "CIV"
+    ],
+    "location_names": [
+      "C\u00f4te d'Ivoire"
+    ],
     "latitude": 7.9897371,
     "longitude": -5.5679458,
     "years": {
@@ -3008,6 +3572,12 @@
     "funding_base_key": "RCIV02",
     "primary_location_code": "CIV",
     "primary_location_name": "C\u00f4te d'Ivoire",
+    "location_codes": [
+      "CIV"
+    ],
+    "location_names": [
+      "C\u00f4te d'Ivoire"
+    ],
     "latitude": 7.9897371,
     "longitude": -5.5679458,
     "years": {
@@ -3030,6 +3600,12 @@
     "funding_base_key": "CCOD",
     "primary_location_code": "COD",
     "primary_location_name": "Democratic Republic of the Congo",
+    "location_codes": [
+      "COD"
+    ],
+    "location_names": [
+      "Democratic Republic of the Congo"
+    ],
     "latitude": -2.9814344,
     "longitude": 23.8222636,
     "years": {
@@ -3182,6 +3758,12 @@
     "funding_base_key": "CCOD1112",
     "primary_location_code": "COD",
     "primary_location_name": "Democratic Republic of the Congo",
+    "location_codes": [
+      "COD"
+    ],
+    "location_names": [
+      "Democratic Republic of the Congo"
+    ],
     "latitude": -2.9814344,
     "longitude": 23.8222636,
     "years": {
@@ -3204,6 +3786,12 @@
     "funding_base_key": "CCOD1213",
     "primary_location_code": "COD",
     "primary_location_name": "Democratic Republic of the Congo",
+    "location_codes": [
+      "COD"
+    ],
+    "location_names": [
+      "Democratic Republic of the Congo"
+    ],
     "latitude": -2.9814344,
     "longitude": 23.8222636,
     "years": {
@@ -3226,6 +3814,12 @@
     "funding_base_key": "CCOD1314",
     "primary_location_code": "COD",
     "primary_location_name": "Democratic Republic of the Congo",
+    "location_codes": [
+      "COD"
+    ],
+    "location_names": [
+      "Democratic Republic of the Congo"
+    ],
     "latitude": -2.9814344,
     "longitude": 23.8222636,
     "years": {
@@ -3248,6 +3842,12 @@
     "funding_base_key": "HCOD",
     "primary_location_code": "COD",
     "primary_location_name": "Democratic Republic of the Congo",
+    "location_codes": [
+      "COD"
+    ],
+    "location_names": [
+      "Democratic Republic of the Congo"
+    ],
     "latitude": -2.9814344,
     "longitude": 23.8222636,
     "years": {
@@ -3419,6 +4019,12 @@
     "funding_base_key": "SCOD",
     "primary_location_code": "COD",
     "primary_location_name": "Democratic Republic of the Congo",
+    "location_codes": [
+      "COD"
+    ],
+    "location_names": [
+      "Democratic Republic of the Congo"
+    ],
     "latitude": -2.9814344,
     "longitude": 23.8222636,
     "years": {
@@ -3441,6 +4047,12 @@
     "funding_base_key": "CDJI",
     "primary_location_code": "DJI",
     "primary_location_name": "Djibouti",
+    "location_codes": [
+      "DJI"
+    ],
+    "location_names": [
+      "Djibouti"
+    ],
     "latitude": 11.8145966,
     "longitude": 42.8453061,
     "years": {
@@ -3476,6 +4088,12 @@
     "funding_base_key": "CDJI10",
     "primary_location_code": "DJI",
     "primary_location_name": "Djibouti",
+    "location_codes": [
+      "DJI"
+    ],
+    "location_names": [
+      "Djibouti"
+    ],
     "latitude": 11.8145966,
     "longitude": 42.8453061,
     "years": {
@@ -3498,6 +4116,12 @@
     "funding_base_key": "FDJI",
     "primary_location_code": "DJI",
     "primary_location_name": "Djibouti",
+    "location_codes": [
+      "DJI"
+    ],
+    "location_names": [
+      "Djibouti"
+    ],
     "latitude": 11.8145966,
     "longitude": 42.8453061,
     "years": {
@@ -3520,6 +4144,12 @@
     "funding_base_key": "FDJI19",
     "primary_location_code": "DJI",
     "primary_location_name": "Djibouti",
+    "location_codes": [
+      "DJI"
+    ],
+    "location_names": [
+      "Djibouti"
+    ],
     "latitude": 11.8145966,
     "longitude": 42.8453061,
     "years": {
@@ -3542,6 +4172,12 @@
     "funding_base_key": "HDJI",
     "primary_location_code": "DJI",
     "primary_location_name": "Djibouti",
+    "location_codes": [
+      "DJI"
+    ],
+    "location_names": [
+      "Djibouti"
+    ],
     "latitude": 11.8145966,
     "longitude": 42.8453061,
     "years": {
@@ -3603,6 +4239,12 @@
     "funding_base_key": "ODJI",
     "primary_location_code": "DJI",
     "primary_location_name": "Djibouti",
+    "location_codes": [
+      "DJI"
+    ],
+    "location_names": [
+      "Djibouti"
+    ],
     "latitude": 11.8145966,
     "longitude": 42.8453061,
     "years": {
@@ -3638,6 +4280,12 @@
     "funding_base_key": "ODJI0809",
     "primary_location_code": "DJI",
     "primary_location_name": "Djibouti",
+    "location_codes": [
+      "DJI"
+    ],
+    "location_names": [
+      "Djibouti"
+    ],
     "latitude": 11.8145966,
     "longitude": 42.8453061,
     "years": {
@@ -3660,6 +4308,16 @@
     "funding_base_key": "RDJIETHSOM",
     "primary_location_code": "DJI",
     "primary_location_name": "Djibouti",
+    "location_codes": [
+      "DJI",
+      "SOM",
+      "ETH"
+    ],
+    "location_names": [
+      "Djibouti",
+      "Somalia",
+      "Ethiopia"
+    ],
     "latitude": 11.8145966,
     "longitude": 42.8453061,
     "years": {
@@ -3682,6 +4340,12 @@
     "funding_base_key": "FDMA",
     "primary_location_code": "DMA",
     "primary_location_name": "Dominica",
+    "location_codes": [
+      "DMA"
+    ],
+    "location_names": [
+      "Dominica"
+    ],
     "latitude": 15.4113138,
     "longitude": -61.3653618,
     "years": {
@@ -3704,6 +4368,12 @@
     "funding_base_key": "FDOM0708",
     "primary_location_code": "DOM",
     "primary_location_name": "Dominican Republic",
+    "location_codes": [
+      "DOM"
+    ],
+    "location_names": [
+      "Dominican Republic"
+    ],
     "latitude": 19.0974031,
     "longitude": -70.3028026,
     "years": {
@@ -3726,6 +4396,12 @@
     "funding_base_key": "FECU",
     "primary_location_code": "ECU",
     "primary_location_name": "Ecuador",
+    "location_codes": [
+      "ECU"
+    ],
+    "location_names": [
+      "Ecuador"
+    ],
     "latitude": -1.3397668,
     "longitude": -79.3666965,
     "years": {
@@ -3748,6 +4424,12 @@
     "funding_base_key": "OECU",
     "primary_location_code": "ECU",
     "primary_location_name": "Ecuador",
+    "location_codes": [
+      "ECU"
+    ],
+    "location_names": [
+      "Ecuador"
+    ],
     "latitude": -1.3397668,
     "longitude": -79.3666965,
     "years": {
@@ -3770,6 +4452,14 @@
     "funding_base_key": "RRSDN",
     "primary_location_code": "EGY",
     "primary_location_name": "Egypt",
+    "location_codes": [
+      "EGY",
+      "ETH"
+    ],
+    "location_names": [
+      "Egypt",
+      "Ethiopia"
+    ],
     "latitude": 26.2540493,
     "longitude": 29.2675469,
     "years": {
@@ -3818,6 +4508,12 @@
     "funding_base_key": "FSLV09",
     "primary_location_code": "SLV",
     "primary_location_name": "El Salvador",
+    "location_codes": [
+      "SLV"
+    ],
+    "location_names": [
+      "El Salvador"
+    ],
     "latitude": 13.8000382,
     "longitude": -88.9140683,
     "years": {
@@ -3840,6 +4536,12 @@
     "funding_base_key": "FSLV1112",
     "primary_location_code": "SLV",
     "primary_location_name": "El Salvador",
+    "location_codes": [
+      "SLV"
+    ],
+    "location_names": [
+      "El Salvador"
+    ],
     "latitude": 13.8000382,
     "longitude": -88.9140683,
     "years": {
@@ -3862,6 +4564,12 @@
     "funding_base_key": "HSLV",
     "primary_location_code": "SLV",
     "primary_location_name": "El Salvador",
+    "location_codes": [
+      "SLV"
+    ],
+    "location_names": [
+      "El Salvador"
+    ],
     "latitude": 13.8000382,
     "longitude": -88.9140683,
     "years": {
@@ -3936,6 +4644,12 @@
     "funding_base_key": "OSLV",
     "primary_location_code": "SLV",
     "primary_location_name": "El Salvador",
+    "location_codes": [
+      "SLV"
+    ],
+    "location_names": [
+      "El Salvador"
+    ],
     "latitude": 13.8000382,
     "longitude": -88.9140683,
     "years": {
@@ -3958,6 +4672,12 @@
     "funding_base_key": "CERI",
     "primary_location_code": "ERI",
     "primary_location_name": "Eritrea",
+    "location_codes": [
+      "ERI"
+    ],
+    "location_names": [
+      "Eritrea"
+    ],
     "latitude": 15.9500319,
     "longitude": 37.9999668,
     "years": {
@@ -4032,6 +4752,16 @@
     "funding_base_key": "CXHAF",
     "primary_location_code": "ERI",
     "primary_location_name": "Eritrea",
+    "location_codes": [
+      "ERI",
+      "KEN",
+      "DJI"
+    ],
+    "location_names": [
+      "Eritrea",
+      "Kenya",
+      "Djibouti"
+    ],
     "latitude": 15.9500319,
     "longitude": 37.9999668,
     "years": {
@@ -4054,6 +4784,12 @@
     "funding_base_key": "CSWZ0203",
     "primary_location_code": "SWZ",
     "primary_location_name": "Eswatini",
+    "location_codes": [
+      "SWZ"
+    ],
+    "location_names": [
+      "Eswatini"
+    ],
     "latitude": -26.5624806,
     "longitude": 31.3991317,
     "years": {
@@ -4076,6 +4812,12 @@
     "funding_base_key": "CSWZ0304",
     "primary_location_code": "SWZ",
     "primary_location_name": "Eswatini",
+    "location_codes": [
+      "SWZ"
+    ],
+    "location_names": [
+      "Eswatini"
+    ],
     "latitude": -26.5624806,
     "longitude": 31.3991317,
     "years": {
@@ -4098,6 +4840,12 @@
     "funding_base_key": "FSWZ0708",
     "primary_location_code": "SWZ",
     "primary_location_name": "Eswatini",
+    "location_codes": [
+      "SWZ"
+    ],
+    "location_names": [
+      "Eswatini"
+    ],
     "latitude": -26.5624806,
     "longitude": 31.3991317,
     "years": {
@@ -4120,6 +4868,12 @@
     "funding_base_key": "CETH",
     "primary_location_code": "ETH",
     "primary_location_name": "Ethiopia",
+    "location_codes": [
+      "ETH"
+    ],
+    "location_names": [
+      "Ethiopia"
+    ],
     "latitude": 10.2116702,
     "longitude": 38.6521203,
     "years": {
@@ -4142,6 +4896,12 @@
     "funding_base_key": "FETH",
     "primary_location_code": "ETH",
     "primary_location_name": "Ethiopia",
+    "location_codes": [
+      "ETH"
+    ],
+    "location_names": [
+      "Ethiopia"
+    ],
     "latitude": 10.2116702,
     "longitude": 38.6521203,
     "years": {
@@ -4164,6 +4924,12 @@
     "funding_base_key": "HETH",
     "primary_location_code": "ETH",
     "primary_location_name": "Ethiopia",
+    "location_codes": [
+      "ETH"
+    ],
+    "location_names": [
+      "Ethiopia"
+    ],
     "latitude": 10.2116702,
     "longitude": 38.6521203,
     "years": {
@@ -4277,6 +5043,12 @@
     "funding_base_key": "OETH",
     "primary_location_code": "ETH",
     "primary_location_name": "Ethiopia",
+    "location_codes": [
+      "ETH"
+    ],
+    "location_names": [
+      "Ethiopia"
+    ],
     "latitude": 10.2116702,
     "longitude": 38.6521203,
     "years": {
@@ -4299,6 +5071,12 @@
     "funding_base_key": "OETH0607",
     "primary_location_code": "ETH",
     "primary_location_name": "Ethiopia",
+    "location_codes": [
+      "ETH"
+    ],
+    "location_names": [
+      "Ethiopia"
+    ],
     "latitude": 10.2116702,
     "longitude": 38.6521203,
     "years": {
@@ -4321,6 +5099,12 @@
     "funding_base_key": "OETHa",
     "primary_location_code": "ETH",
     "primary_location_name": "Ethiopia",
+    "location_codes": [
+      "ETH"
+    ],
+    "location_names": [
+      "Ethiopia"
+    ],
     "latitude": 10.2116702,
     "longitude": 38.6521203,
     "years": {
@@ -4343,6 +5127,16 @@
     "funding_base_key": "RSSDRRP",
     "primary_location_code": "ETH",
     "primary_location_name": "Ethiopia",
+    "location_codes": [
+      "ETH",
+      "KEN",
+      "UGA"
+    ],
+    "location_names": [
+      "Ethiopia",
+      "Kenya",
+      "Uganda"
+    ],
     "latitude": 10.2116702,
     "longitude": 38.6521203,
     "years": {
@@ -4365,6 +5159,18 @@
     "funding_base_key": "RXSSDREG",
     "primary_location_code": "ETH",
     "primary_location_name": "Ethiopia",
+    "location_codes": [
+      "ETH",
+      "KEN",
+      "UGA",
+      "SDN"
+    ],
+    "location_names": [
+      "Ethiopia",
+      "Kenya",
+      "Uganda",
+      "Sudan"
+    ],
     "latitude": 10.2116702,
     "longitude": 38.6521203,
     "years": {
@@ -4400,6 +5206,12 @@
     "funding_base_key": "FFJI",
     "primary_location_code": "FJI",
     "primary_location_name": "Fiji",
+    "location_codes": [
+      "FJI"
+    ],
+    "location_names": [
+      "Fiji"
+    ],
     "latitude": -18.1239696,
     "longitude": 179.0122737,
     "years": {
@@ -4422,6 +5234,12 @@
     "funding_base_key": "HGMB",
     "primary_location_code": "GMB",
     "primary_location_name": "Gambia",
+    "location_codes": [
+      "GMB"
+    ],
+    "location_names": [
+      "Gambia"
+    ],
     "latitude": 13.470062,
     "longitude": -15.4900464,
     "years": {
@@ -4470,6 +5288,12 @@
     "funding_base_key": "FGEO0809",
     "primary_location_code": "GEO",
     "primary_location_name": "Georgia",
+    "location_codes": [
+      "GEO"
+    ],
+    "location_names": [
+      "Georgia"
+    ],
     "latitude": 41.6808672,
     "longitude": 44.0287806,
     "years": {
@@ -4492,6 +5316,12 @@
     "funding_base_key": "FGHA0708",
     "primary_location_code": "GHA",
     "primary_location_name": "Ghana",
+    "location_codes": [
+      "GHA"
+    ],
+    "location_names": [
+      "Ghana"
+    ],
     "latitude": 8.0300284,
     "longitude": -1.0800271,
     "years": {
@@ -4514,6 +5344,12 @@
     "funding_base_key": "FFA",
     "primary_location_code": "GRD",
     "primary_location_name": "Grenada",
+    "location_codes": [
+      "GRD"
+    ],
+    "location_names": [
+      "Grenada"
+    ],
     "latitude": 12.1360374,
     "longitude": -61.6904045,
     "years": {
@@ -4536,6 +5372,12 @@
     "funding_base_key": "FGRD0405",
     "primary_location_code": "GRD",
     "primary_location_name": "Grenada",
+    "location_codes": [
+      "GRD"
+    ],
+    "location_names": [
+      "Grenada"
+    ],
     "latitude": 12.1360374,
     "longitude": -61.6904045,
     "years": {
@@ -4558,6 +5400,12 @@
     "funding_base_key": "CGTM",
     "primary_location_code": "GTM",
     "primary_location_name": "Guatemala",
+    "location_codes": [
+      "GTM"
+    ],
+    "location_names": [
+      "Guatemala"
+    ],
     "latitude": 15.5855545,
     "longitude": -90.345759,
     "years": {
@@ -4580,6 +5428,12 @@
     "funding_base_key": "FGTM",
     "primary_location_code": "GTM",
     "primary_location_name": "Guatemala",
+    "location_codes": [
+      "GTM"
+    ],
+    "location_names": [
+      "Guatemala"
+    ],
     "latitude": 15.5855545,
     "longitude": -90.345759,
     "years": {
@@ -4602,6 +5456,12 @@
     "funding_base_key": "FGTM0506",
     "primary_location_code": "GTM",
     "primary_location_name": "Guatemala",
+    "location_codes": [
+      "GTM"
+    ],
+    "location_names": [
+      "Guatemala"
+    ],
     "latitude": 15.5855545,
     "longitude": -90.345759,
     "years": {
@@ -4624,6 +5484,12 @@
     "funding_base_key": "FGTM14",
     "primary_location_code": "GTM",
     "primary_location_name": "Guatemala",
+    "location_codes": [
+      "GTM"
+    ],
+    "location_names": [
+      "Guatemala"
+    ],
     "latitude": 15.5855545,
     "longitude": -90.345759,
     "years": {
@@ -4646,6 +5512,12 @@
     "funding_base_key": "HGTM",
     "primary_location_code": "GTM",
     "primary_location_name": "Guatemala",
+    "location_codes": [
+      "GTM"
+    ],
+    "location_names": [
+      "Guatemala"
+    ],
     "latitude": 15.5855545,
     "longitude": -90.345759,
     "years": {
@@ -4733,6 +5605,12 @@
     "funding_base_key": "CGIN",
     "primary_location_code": "GIN",
     "primary_location_name": "Guinea",
+    "location_codes": [
+      "GIN"
+    ],
+    "location_names": [
+      "Guinea"
+    ],
     "latitude": 10.7226226,
     "longitude": -10.7083587,
     "years": {
@@ -4807,6 +5685,12 @@
     "funding_base_key": "FGNB",
     "primary_location_code": "GNB",
     "primary_location_name": "Guinea-Bissau",
+    "location_codes": [
+      "GNB"
+    ],
+    "location_names": [
+      "Guinea-Bissau"
+    ],
     "latitude": 11.815215,
     "longitude": -15.2351044,
     "years": {
@@ -4829,6 +5713,12 @@
     "funding_base_key": "FGUY",
     "primary_location_code": "GUY",
     "primary_location_name": "Guyana",
+    "location_codes": [
+      "GUY"
+    ],
+    "location_names": [
+      "Guyana"
+    ],
     "latitude": 4.8417097,
     "longitude": -58.6416891,
     "years": {
@@ -4851,6 +5741,12 @@
     "funding_base_key": "CHTI",
     "primary_location_code": "HTI",
     "primary_location_name": "Haiti",
+    "location_codes": [
+      "HTI"
+    ],
+    "location_names": [
+      "Haiti"
+    ],
     "latitude": 19.1399952,
     "longitude": -72.3570972,
     "years": {
@@ -4886,6 +5782,12 @@
     "funding_base_key": "CHTI10",
     "primary_location_code": "HTI",
     "primary_location_name": "Haiti",
+    "location_codes": [
+      "HTI"
+    ],
+    "location_names": [
+      "Haiti"
+    ],
     "latitude": 19.1399952,
     "longitude": -72.3570972,
     "years": {
@@ -4908,6 +5810,12 @@
     "funding_base_key": "FHTI",
     "primary_location_code": "HTI",
     "primary_location_name": "Haiti",
+    "location_codes": [
+      "HTI"
+    ],
+    "location_names": [
+      "Haiti"
+    ],
     "latitude": 19.1399952,
     "longitude": -72.3570972,
     "years": {
@@ -4969,6 +5877,12 @@
     "funding_base_key": "FHTI0405",
     "primary_location_code": "HTI",
     "primary_location_name": "Haiti",
+    "location_codes": [
+      "HTI"
+    ],
+    "location_names": [
+      "Haiti"
+    ],
     "latitude": 19.1399952,
     "longitude": -72.3570972,
     "years": {
@@ -4991,6 +5905,12 @@
     "funding_base_key": "FHTI0809",
     "primary_location_code": "HTI",
     "primary_location_name": "Haiti",
+    "location_codes": [
+      "HTI"
+    ],
+    "location_names": [
+      "Haiti"
+    ],
     "latitude": 19.1399952,
     "longitude": -72.3570972,
     "years": {
@@ -5013,6 +5933,12 @@
     "funding_base_key": "FHTI2122",
     "primary_location_code": "HTI",
     "primary_location_name": "Haiti",
+    "location_codes": [
+      "HTI"
+    ],
+    "location_names": [
+      "Haiti"
+    ],
     "latitude": 19.1399952,
     "longitude": -72.3570972,
     "years": {
@@ -5035,6 +5961,12 @@
     "funding_base_key": "FHTI2223",
     "primary_location_code": "HTI",
     "primary_location_name": "Haiti",
+    "location_codes": [
+      "HTI"
+    ],
+    "location_names": [
+      "Haiti"
+    ],
     "latitude": 19.1399952,
     "longitude": -72.3570972,
     "years": {
@@ -5057,6 +5989,12 @@
     "funding_base_key": "HHTI",
     "primary_location_code": "HTI",
     "primary_location_name": "Haiti",
+    "location_codes": [
+      "HTI"
+    ],
+    "location_names": [
+      "Haiti"
+    ],
     "latitude": 19.1399952,
     "longitude": -72.3570972,
     "years": {
@@ -5228,6 +6166,12 @@
     "funding_base_key": "OHTI",
     "primary_location_code": "HTI",
     "primary_location_name": "Haiti",
+    "location_codes": [
+      "HTI"
+    ],
+    "location_names": [
+      "Haiti"
+    ],
     "latitude": 19.1399952,
     "longitude": -72.3570972,
     "years": {
@@ -5250,6 +6194,12 @@
     "funding_base_key": "FHND0809",
     "primary_location_code": "HND",
     "primary_location_name": "Honduras",
+    "location_codes": [
+      "HND"
+    ],
+    "location_names": [
+      "Honduras"
+    ],
     "latitude": 15.2572432,
     "longitude": -86.0755145,
     "years": {
@@ -5272,6 +6222,12 @@
     "funding_base_key": "FHND14",
     "primary_location_code": "HND",
     "primary_location_name": "Honduras",
+    "location_codes": [
+      "HND"
+    ],
+    "location_names": [
+      "Honduras"
+    ],
     "latitude": 15.2572432,
     "longitude": -86.0755145,
     "years": {
@@ -5294,6 +6250,12 @@
     "funding_base_key": "FHND20",
     "primary_location_code": "HND",
     "primary_location_name": "Honduras",
+    "location_codes": [
+      "HND"
+    ],
+    "location_names": [
+      "Honduras"
+    ],
     "latitude": 15.2572432,
     "longitude": -86.0755145,
     "years": {
@@ -5316,6 +6278,12 @@
     "funding_base_key": "HHND",
     "primary_location_code": "HND",
     "primary_location_name": "Honduras",
+    "location_codes": [
+      "HND"
+    ],
+    "location_names": [
+      "Honduras"
+    ],
     "latitude": 15.2572432,
     "longitude": -86.0755145,
     "years": {
@@ -5403,6 +6371,12 @@
     "funding_base_key": "CIDN",
     "primary_location_code": "IDN",
     "primary_location_name": "Indonesia",
+    "location_codes": [
+      "IDN"
+    ],
+    "location_names": [
+      "Indonesia"
+    ],
     "latitude": -2.4833826,
     "longitude": 117.8902853,
     "years": {
@@ -5477,6 +6451,12 @@
     "funding_base_key": "CIDN99",
     "primary_location_code": "IDN",
     "primary_location_name": "Indonesia",
+    "location_codes": [
+      "IDN"
+    ],
+    "location_names": [
+      "Indonesia"
+    ],
     "latitude": -2.4833826,
     "longitude": 117.8902853,
     "years": {
@@ -5499,6 +6479,12 @@
     "funding_base_key": "FIDN",
     "primary_location_code": "IDN",
     "primary_location_name": "Indonesia",
+    "location_codes": [
+      "IDN"
+    ],
+    "location_names": [
+      "Indonesia"
+    ],
     "latitude": -2.4833826,
     "longitude": 117.8902853,
     "years": {
@@ -5534,6 +6520,12 @@
     "funding_base_key": "OIDN",
     "primary_location_code": "IDN",
     "primary_location_name": "Indonesia",
+    "location_codes": [
+      "IDN"
+    ],
+    "location_names": [
+      "Indonesia"
+    ],
     "latitude": -2.4833826,
     "longitude": 117.8902853,
     "years": {
@@ -5569,6 +6561,12 @@
     "funding_base_key": "FIRN",
     "primary_location_code": "IRN",
     "primary_location_name": "Iran",
+    "location_codes": [
+      "IRN"
+    ],
+    "location_names": [
+      "Iran"
+    ],
     "latitude": 32.6475314,
     "longitude": 54.5643516,
     "years": {
@@ -5591,6 +6589,12 @@
     "funding_base_key": "OIRN",
     "primary_location_code": "IRN",
     "primary_location_name": "Iran",
+    "location_codes": [
+      "IRN"
+    ],
+    "location_names": [
+      "Iran"
+    ],
     "latitude": 32.6475314,
     "longitude": 54.5643516,
     "years": {
@@ -5626,6 +6630,20 @@
     "funding_base_key": "RAFG",
     "primary_location_code": "IRN",
     "primary_location_name": "Iran",
+    "location_codes": [
+      "IRN",
+      "TJK",
+      "UZB",
+      "TKM",
+      "PAK"
+    ],
+    "location_names": [
+      "Iran",
+      "Tajikistan",
+      "Uzbekistan",
+      "Turkmenistan",
+      "Pakistan"
+    ],
     "latitude": 32.6475314,
     "longitude": 54.5643516,
     "years": {
@@ -5661,6 +6679,14 @@
     "funding_base_key": "RIRNPAK",
     "primary_location_code": "IRN",
     "primary_location_name": "Iran",
+    "location_codes": [
+      "IRN",
+      "PAK"
+    ],
+    "location_names": [
+      "Iran",
+      "Pakistan"
+    ],
     "latitude": 32.6475314,
     "longitude": 54.5643516,
     "years": {
@@ -5683,6 +6709,12 @@
     "funding_base_key": "CIRQ",
     "primary_location_code": "IRQ",
     "primary_location_name": "Iraq",
+    "location_codes": [
+      "IRQ"
+    ],
+    "location_names": [
+      "Iraq"
+    ],
     "latitude": 33.0955793,
     "longitude": 44.1749775,
     "years": {
@@ -5718,6 +6750,12 @@
     "funding_base_key": "FIRQ",
     "primary_location_code": "IRQ",
     "primary_location_name": "Iraq",
+    "location_codes": [
+      "IRQ"
+    ],
+    "location_names": [
+      "Iraq"
+    ],
     "latitude": 33.0955793,
     "longitude": 44.1749775,
     "years": {
@@ -5753,6 +6791,12 @@
     "funding_base_key": "HIRQ",
     "primary_location_code": "IRQ",
     "primary_location_name": "Iraq",
+    "location_codes": [
+      "IRQ"
+    ],
+    "location_names": [
+      "Iraq"
+    ],
     "latitude": 33.0955793,
     "longitude": 44.1749775,
     "years": {
@@ -5879,6 +6923,12 @@
     "funding_base_key": "OIRQ0708",
     "primary_location_code": "IRQ",
     "primary_location_name": "Iraq",
+    "location_codes": [
+      "IRQ"
+    ],
+    "location_names": [
+      "Iraq"
+    ],
     "latitude": 33.0955793,
     "longitude": 44.1749775,
     "years": {
@@ -5901,6 +6951,12 @@
     "funding_base_key": "RIRQ",
     "primary_location_code": "IRQ",
     "primary_location_name": "Iraq",
+    "location_codes": [
+      "IRQ"
+    ],
+    "location_names": [
+      "Iraq"
+    ],
     "latitude": 33.0955793,
     "longitude": 44.1749775,
     "years": {
@@ -5923,6 +6979,12 @@
     "funding_base_key": "OJOR",
     "primary_location_code": "JOR",
     "primary_location_name": "Jordan",
+    "location_codes": [
+      "JOR"
+    ],
+    "location_names": [
+      "Jordan"
+    ],
     "latitude": 31.1667049,
     "longitude": 36.941628,
     "years": {
@@ -5945,6 +7007,18 @@
     "funding_base_key": "OXIRQREG",
     "primary_location_code": "JOR",
     "primary_location_name": "Jordan",
+    "location_codes": [
+      "JOR",
+      "IRQ",
+      "SYR",
+      "LBN"
+    ],
+    "location_names": [
+      "Jordan",
+      "Iraq",
+      "Syria",
+      "Lebanon"
+    ],
     "latitude": 31.1667049,
     "longitude": 36.941628,
     "years": {
@@ -5967,6 +7041,16 @@
     "funding_base_key": "RJORLBNTUR",
     "primary_location_code": "JOR",
     "primary_location_name": "Jordan",
+    "location_codes": [
+      "JOR",
+      "TUR",
+      "LBN"
+    ],
+    "location_names": [
+      "Jordan",
+      "T\u00fcrkiye",
+      "Lebanon"
+    ],
     "latitude": 31.1667049,
     "longitude": 36.941628,
     "years": {
@@ -5989,6 +7073,20 @@
     "funding_base_key": "RSYR",
     "primary_location_code": "JOR",
     "primary_location_name": "Jordan",
+    "location_codes": [
+      "JOR",
+      "IRQ",
+      "TUR",
+      "EGY",
+      "LBN"
+    ],
+    "location_names": [
+      "Jordan",
+      "Iraq",
+      "T\u00fcrkiye",
+      "Egypt",
+      "Lebanon"
+    ],
     "latitude": 31.1667049,
     "longitude": 36.941628,
     "years": {
@@ -6115,6 +7213,20 @@
     "funding_base_key": "RXSYRREG",
     "primary_location_code": "JOR",
     "primary_location_name": "Jordan",
+    "location_codes": [
+      "JOR",
+      "IRQ",
+      "TUR",
+      "EGY",
+      "LBN"
+    ],
+    "location_names": [
+      "Jordan",
+      "Iraq",
+      "T\u00fcrkiye",
+      "Egypt",
+      "Lebanon"
+    ],
     "latitude": 31.1667049,
     "longitude": 36.941628,
     "years": {
@@ -6163,6 +7275,20 @@
     "funding_base_key": NaN,
     "primary_location_code": "JOR",
     "primary_location_name": "Jordan",
+    "location_codes": [
+      "JOR",
+      "IRQ",
+      "TUR",
+      "EGY",
+      "LBN"
+    ],
+    "location_names": [
+      "Jordan",
+      "Iraq",
+      "T\u00fcrkiye",
+      "Egypt",
+      "Lebanon"
+    ],
     "latitude": 31.1667049,
     "longitude": 36.941628,
     "years": {
@@ -6183,6 +7309,12 @@
     "funding_base_key": "CKEN",
     "primary_location_code": "KEN",
     "primary_location_name": "Kenya",
+    "location_codes": [
+      "KEN"
+    ],
+    "location_names": [
+      "Kenya"
+    ],
     "latitude": 1.4419683,
     "longitude": 38.4313975,
     "years": {
@@ -6244,6 +7376,12 @@
     "funding_base_key": "CKEN1113",
     "primary_location_code": "KEN",
     "primary_location_name": "Kenya",
+    "location_codes": [
+      "KEN"
+    ],
+    "location_names": [
+      "Kenya"
+    ],
     "latitude": 1.4419683,
     "longitude": 38.4313975,
     "years": {
@@ -6266,6 +7404,12 @@
     "funding_base_key": "FKEN",
     "primary_location_code": "KEN",
     "primary_location_name": "Kenya",
+    "location_codes": [
+      "KEN"
+    ],
+    "location_names": [
+      "Kenya"
+    ],
     "latitude": 1.4419683,
     "longitude": 38.4313975,
     "years": {
@@ -6366,6 +7510,12 @@
     "funding_base_key": "FKEN0607",
     "primary_location_code": "KEN",
     "primary_location_name": "Kenya",
+    "location_codes": [
+      "KEN"
+    ],
+    "location_names": [
+      "Kenya"
+    ],
     "latitude": 1.4419683,
     "longitude": 38.4313975,
     "years": {
@@ -6388,6 +7538,12 @@
     "funding_base_key": "OKEN",
     "primary_location_code": "KEN",
     "primary_location_name": "Kenya",
+    "location_codes": [
+      "KEN"
+    ],
+    "location_names": [
+      "Kenya"
+    ],
     "latitude": 1.4419683,
     "longitude": 38.4313975,
     "years": {
@@ -6436,6 +7592,16 @@
     "funding_base_key": "RETHKENUGA",
     "primary_location_code": "KEN",
     "primary_location_name": "Kenya",
+    "location_codes": [
+      "KEN",
+      "ETH",
+      "UGA"
+    ],
+    "location_names": [
+      "Kenya",
+      "Ethiopia",
+      "Uganda"
+    ],
     "latitude": 1.4419683,
     "longitude": 38.4313975,
     "years": {
@@ -6510,6 +7676,12 @@
     "funding_base_key": "FKGZ0809",
     "primary_location_code": "KGZ",
     "primary_location_name": "Kyrgyzstan",
+    "location_codes": [
+      "KGZ"
+    ],
+    "location_names": [
+      "Kyrgyzstan"
+    ],
     "latitude": 41.5089324,
     "longitude": 74.724091,
     "years": {
@@ -6532,6 +7704,12 @@
     "funding_base_key": "FKGZ1011",
     "primary_location_code": "KGZ",
     "primary_location_name": "Kyrgyzstan",
+    "location_codes": [
+      "KGZ"
+    ],
+    "location_names": [
+      "Kyrgyzstan"
+    ],
     "latitude": 41.5089324,
     "longitude": 74.724091,
     "years": {
@@ -6554,6 +7732,12 @@
     "funding_base_key": "FLAO0910",
     "primary_location_code": "LAO",
     "primary_location_name": "Laos",
+    "location_codes": [
+      "LAO"
+    ],
+    "location_names": [
+      "Laos"
+    ],
     "latitude": 20.0171109,
     "longitude": 103.378253,
     "years": {
@@ -6576,6 +7760,12 @@
     "funding_base_key": "OLAO0809",
     "primary_location_code": "LAO",
     "primary_location_name": "Laos",
+    "location_codes": [
+      "LAO"
+    ],
+    "location_names": [
+      "Laos"
+    ],
     "latitude": 20.0171109,
     "longitude": 103.378253,
     "years": {
@@ -6598,6 +7788,12 @@
     "funding_base_key": "FLBN",
     "primary_location_code": "LBN",
     "primary_location_name": "Lebanon",
+    "location_codes": [
+      "LBN"
+    ],
+    "location_names": [
+      "Lebanon"
+    ],
     "latitude": 33.8750629,
     "longitude": 35.843409,
     "years": {
@@ -6659,6 +7855,12 @@
     "funding_base_key": "OLBN",
     "primary_location_code": "LBN",
     "primary_location_name": "Lebanon",
+    "location_codes": [
+      "LBN"
+    ],
+    "location_names": [
+      "Lebanon"
+    ],
     "latitude": 33.8750629,
     "longitude": 35.843409,
     "years": {
@@ -6720,6 +7922,12 @@
     "funding_base_key": "OLBN2122",
     "primary_location_code": "LBN",
     "primary_location_name": "Lebanon",
+    "location_codes": [
+      "LBN"
+    ],
+    "location_names": [
+      "Lebanon"
+    ],
     "latitude": 33.8750629,
     "longitude": 35.843409,
     "years": {
@@ -6742,6 +7950,12 @@
     "funding_base_key": "CLSO0203",
     "primary_location_code": "LSO",
     "primary_location_name": "Lesotho",
+    "location_codes": [
+      "LSO"
+    ],
+    "location_names": [
+      "Lesotho"
+    ],
     "latitude": -29.6039267,
     "longitude": 28.3350193,
     "years": {
@@ -6764,6 +7978,12 @@
     "funding_base_key": "CLSO0304",
     "primary_location_code": "LSO",
     "primary_location_name": "Lesotho",
+    "location_codes": [
+      "LSO"
+    ],
+    "location_names": [
+      "Lesotho"
+    ],
     "latitude": -29.6039267,
     "longitude": 28.3350193,
     "years": {
@@ -6786,6 +8006,12 @@
     "funding_base_key": "FLSO0708",
     "primary_location_code": "LSO",
     "primary_location_name": "Lesotho",
+    "location_codes": [
+      "LSO"
+    ],
+    "location_names": [
+      "Lesotho"
+    ],
     "latitude": -29.6039267,
     "longitude": 28.3350193,
     "years": {
@@ -6808,6 +8034,12 @@
     "funding_base_key": "FLSO1213",
     "primary_location_code": "LSO",
     "primary_location_name": "Lesotho",
+    "location_codes": [
+      "LSO"
+    ],
+    "location_names": [
+      "Lesotho"
+    ],
     "latitude": -29.6039267,
     "longitude": 28.3350193,
     "years": {
@@ -6830,6 +8062,12 @@
     "funding_base_key": "FLSO19",
     "primary_location_code": "LSO",
     "primary_location_name": "Lesotho",
+    "location_codes": [
+      "LSO"
+    ],
+    "location_names": [
+      "Lesotho"
+    ],
     "latitude": -29.6039267,
     "longitude": 28.3350193,
     "years": {
@@ -6852,6 +8090,12 @@
     "funding_base_key": "CLBR",
     "primary_location_code": "LBR",
     "primary_location_name": "Liberia",
+    "location_codes": [
+      "LBR"
+    ],
+    "location_names": [
+      "Liberia"
+    ],
     "latitude": 5.7499721,
     "longitude": -9.3658524,
     "years": {
@@ -6939,6 +8183,12 @@
     "funding_base_key": "OLBR",
     "primary_location_code": "LBR",
     "primary_location_name": "Liberia",
+    "location_codes": [
+      "LBR"
+    ],
+    "location_names": [
+      "Liberia"
+    ],
     "latitude": 5.7499721,
     "longitude": -9.3658524,
     "years": {
@@ -6974,6 +8224,36 @@
     "funding_base_key": "RBENBFAGHAGINGMBGNBLBRMLIMRTNERSENSLETGO",
     "primary_location_code": "LBR",
     "primary_location_name": "Liberia",
+    "location_codes": [
+      "LBR",
+      "MLI",
+      "GIN",
+      "GHA",
+      "NER",
+      "SEN",
+      "TGO",
+      "BFA",
+      "GMB",
+      "MRT",
+      "SLE",
+      "BEN",
+      "GNB"
+    ],
+    "location_names": [
+      "Liberia",
+      "Mali",
+      "Guinea",
+      "Ghana",
+      "Niger",
+      "Senegal",
+      "Togo",
+      "Burkina Faso",
+      "Gambia",
+      "Mauritania",
+      "Sierra Leone",
+      "Benin",
+      "Guinea-Bissau"
+    ],
     "latitude": 5.7499721,
     "longitude": -9.3658524,
     "years": {
@@ -6996,6 +8276,16 @@
     "funding_base_key": "RGINLBRSLE1415",
     "primary_location_code": "LBR",
     "primary_location_name": "Liberia",
+    "location_codes": [
+      "LBR",
+      "GIN",
+      "SLE"
+    ],
+    "location_names": [
+      "Liberia",
+      "Guinea",
+      "Sierra Leone"
+    ],
     "latitude": 5.7499721,
     "longitude": -9.3658524,
     "years": {
@@ -7018,6 +8308,12 @@
     "funding_base_key": "FLBY",
     "primary_location_code": "LBY",
     "primary_location_name": "Libya",
+    "location_codes": [
+      "LBY"
+    ],
+    "location_names": [
+      "Libya"
+    ],
     "latitude": 26.8234472,
     "longitude": 18.1236723,
     "years": {
@@ -7066,6 +8362,18 @@
     "funding_base_key": "FXLBYREG",
     "primary_location_code": "LBY",
     "primary_location_name": "Libya",
+    "location_codes": [
+      "LBY",
+      "NER",
+      "TUN",
+      "EGY"
+    ],
+    "location_names": [
+      "Libya",
+      "Niger",
+      "Tunisia",
+      "Egypt"
+    ],
     "latitude": 26.8234472,
     "longitude": 18.1236723,
     "years": {
@@ -7088,6 +8396,12 @@
     "funding_base_key": "HLBY",
     "primary_location_code": "LBY",
     "primary_location_name": "Libya",
+    "location_codes": [
+      "LBY"
+    ],
+    "location_names": [
+      "Libya"
+    ],
     "latitude": 26.8234472,
     "longitude": 18.1236723,
     "years": {
@@ -7175,6 +8489,12 @@
     "funding_base_key": "HLBY14",
     "primary_location_code": "LBY",
     "primary_location_name": "Libya",
+    "location_codes": [
+      "LBY"
+    ],
+    "location_names": [
+      "Libya"
+    ],
     "latitude": 26.8234472,
     "longitude": 18.1236723,
     "years": {
@@ -7197,6 +8517,12 @@
     "funding_base_key": "HLBY15",
     "primary_location_code": "LBY",
     "primary_location_name": "Libya",
+    "location_codes": [
+      "LBY"
+    ],
+    "location_names": [
+      "Libya"
+    ],
     "latitude": 26.8234472,
     "longitude": 18.1236723,
     "years": {
@@ -7219,6 +8545,24 @@
     "funding_base_key": "RREGa",
     "primary_location_code": "LBY",
     "primary_location_name": "Libya",
+    "location_codes": [
+      "LBY",
+      "TCD",
+      "SSD",
+      "UGA",
+      "ETH",
+      "CAF",
+      "EGY"
+    ],
+    "location_names": [
+      "Libya",
+      "Chad",
+      "South Sudan",
+      "Uganda",
+      "Ethiopia",
+      "Central African Republic",
+      "Egypt"
+    ],
     "latitude": 26.8234472,
     "longitude": 18.1236723,
     "years": {
@@ -7241,6 +8585,12 @@
     "funding_base_key": "FMDG",
     "primary_location_code": "MDG",
     "primary_location_name": "Madagascar",
+    "location_codes": [
+      "MDG"
+    ],
+    "location_names": [
+      "Madagascar"
+    ],
     "latitude": -18.9249604,
     "longitude": 46.4416422,
     "years": {
@@ -7380,6 +8730,12 @@
     "funding_base_key": "CMWI",
     "primary_location_code": "MWI",
     "primary_location_name": "Malawi",
+    "location_codes": [
+      "MWI"
+    ],
+    "location_names": [
+      "Malawi"
+    ],
     "latitude": -13.2687204,
     "longitude": 33.9301963,
     "years": {
@@ -7402,6 +8758,12 @@
     "funding_base_key": "CMWI0203",
     "primary_location_code": "MWI",
     "primary_location_name": "Malawi",
+    "location_codes": [
+      "MWI"
+    ],
+    "location_names": [
+      "Malawi"
+    ],
     "latitude": -13.2687204,
     "longitude": 33.9301963,
     "years": {
@@ -7424,6 +8786,12 @@
     "funding_base_key": "FMWI",
     "primary_location_code": "MWI",
     "primary_location_name": "Malawi",
+    "location_codes": [
+      "MWI"
+    ],
+    "location_names": [
+      "Malawi"
+    ],
     "latitude": -13.2687204,
     "longitude": 33.9301963,
     "years": {
@@ -7485,6 +8853,12 @@
     "funding_base_key": "FMWI0506",
     "primary_location_code": "MWI",
     "primary_location_name": "Malawi",
+    "location_codes": [
+      "MWI"
+    ],
+    "location_names": [
+      "Malawi"
+    ],
     "latitude": -13.2687204,
     "longitude": 33.9301963,
     "years": {
@@ -7507,6 +8881,12 @@
     "funding_base_key": "CMLI",
     "primary_location_code": "MLI",
     "primary_location_name": "Mali",
+    "location_codes": [
+      "MLI"
+    ],
+    "location_names": [
+      "Mali"
+    ],
     "latitude": 16.3700359,
     "longitude": -2.2900239,
     "years": {
@@ -7542,6 +8922,12 @@
     "funding_base_key": "HMLI",
     "primary_location_code": "MLI",
     "primary_location_name": "Mali",
+    "location_codes": [
+      "MLI"
+    ],
+    "location_names": [
+      "Mali"
+    ],
     "latitude": 16.3700359,
     "longitude": -2.2900239,
     "years": {
@@ -7726,6 +9112,28 @@
     "funding_base_key": "RBFACMRGMBMLIMRTNERNGASENTCD",
     "primary_location_code": "MLI",
     "primary_location_name": "Mali",
+    "location_codes": [
+      "MLI",
+      "NER",
+      "NGA",
+      "SEN",
+      "BFA",
+      "TCD",
+      "GMB",
+      "MRT",
+      "CMR"
+    ],
+    "location_names": [
+      "Mali",
+      "Niger",
+      "Nigeria",
+      "Senegal",
+      "Burkina Faso",
+      "Chad",
+      "Gambia",
+      "Mauritania",
+      "Cameroon"
+    ],
     "latitude": 16.3700359,
     "longitude": -2.2900239,
     "years": {
@@ -7774,6 +9182,24 @@
     "funding_base_key": "RBFAGNBMLIMRTNERSENTGO",
     "primary_location_code": "MLI",
     "primary_location_name": "Mali",
+    "location_codes": [
+      "MLI",
+      "NER",
+      "SEN",
+      "TGO",
+      "BFA",
+      "MRT",
+      "GNB"
+    ],
+    "location_names": [
+      "Mali",
+      "Niger",
+      "Senegal",
+      "Togo",
+      "Burkina Faso",
+      "Mauritania",
+      "Guinea-Bissau"
+    ],
     "latitude": 16.3700359,
     "longitude": -2.2900239,
     "years": {
@@ -7796,6 +9222,12 @@
     "funding_base_key": "CMRT",
     "primary_location_code": "MRT",
     "primary_location_name": "Mauritania",
+    "location_codes": [
+      "MRT"
+    ],
+    "location_names": [
+      "Mauritania"
+    ],
     "latitude": 20.2540382,
     "longitude": -9.2399263,
     "years": {
@@ -7831,6 +9263,12 @@
     "funding_base_key": "HMRT",
     "primary_location_code": "MRT",
     "primary_location_name": "Mauritania",
+    "location_codes": [
+      "MRT"
+    ],
+    "location_names": [
+      "Mauritania"
+    ],
     "latitude": 20.2540382,
     "longitude": -9.2399263,
     "years": {
@@ -7892,6 +9330,12 @@
     "funding_base_key": "OMRT",
     "primary_location_code": "MRT",
     "primary_location_name": "Mauritania",
+    "location_codes": [
+      "MRT"
+    ],
+    "location_names": [
+      "Mauritania"
+    ],
     "latitude": 20.2540382,
     "longitude": -9.2399263,
     "years": {
@@ -7914,6 +9358,42 @@
     "funding_base_key": "RSAMR",
     "primary_location_code": "MEX",
     "primary_location_name": "Mexico",
+    "location_codes": [
+      "MEX",
+      "ECU",
+      "BRA",
+      "COL",
+      "DOM",
+      "ARG",
+      "CRI",
+      "PER",
+      "GUY",
+      "ABW",
+      "TTO",
+      "CHL",
+      "CUW",
+      "URY",
+      "PAN",
+      "PRY"
+    ],
+    "location_names": [
+      "Mexico",
+      "Ecuador",
+      "Brazil",
+      "Colombia",
+      "Dominican Republic",
+      "Argentina",
+      "Costa Rica",
+      "Peru",
+      "Guyana",
+      "Aruba",
+      "Trinidad and Tobago",
+      "Chile",
+      "Cura\u00e7ao",
+      "Uruguay",
+      "Panama",
+      "Paraguay"
+    ],
     "latitude": 23.6585116,
     "longitude": -102.0077097,
     "years": {
@@ -7936,6 +9416,12 @@
     "funding_base_key": "CMNG1011",
     "primary_location_code": "MNG",
     "primary_location_name": "Mongolia",
+    "location_codes": [
+      "MNG"
+    ],
+    "location_names": [
+      "Mongolia"
+    ],
     "latitude": 46.8250388,
     "longitude": 103.8499736,
     "years": {
@@ -7958,6 +9444,12 @@
     "funding_base_key": "OMNG22",
     "primary_location_code": "MNG",
     "primary_location_name": "Mongolia",
+    "location_codes": [
+      "MNG"
+    ],
+    "location_names": [
+      "Mongolia"
+    ],
     "latitude": 46.8250388,
     "longitude": 103.8499736,
     "years": {
@@ -7980,6 +9472,12 @@
     "funding_base_key": "OMNG23",
     "primary_location_code": "MNG",
     "primary_location_name": "Mongolia",
+    "location_codes": [
+      "MNG"
+    ],
+    "location_names": [
+      "Mongolia"
+    ],
     "latitude": 46.8250388,
     "longitude": 103.8499736,
     "years": {
@@ -8002,6 +9500,12 @@
     "funding_base_key": "CMOZ0304",
     "primary_location_code": "MOZ",
     "primary_location_name": "Mozambique",
+    "location_codes": [
+      "MOZ"
+    ],
+    "location_names": [
+      "Mozambique"
+    ],
     "latitude": -19.302233,
     "longitude": 34.9144977,
     "years": {
@@ -8024,6 +9528,12 @@
     "funding_base_key": "FMOZ",
     "primary_location_code": "MOZ",
     "primary_location_name": "Mozambique",
+    "location_codes": [
+      "MOZ"
+    ],
+    "location_names": [
+      "Mozambique"
+    ],
     "latitude": -19.302233,
     "longitude": 34.9144977,
     "years": {
@@ -8111,6 +9621,12 @@
     "funding_base_key": "FMOZa",
     "primary_location_code": "MOZ",
     "primary_location_name": "Mozambique",
+    "location_codes": [
+      "MOZ"
+    ],
+    "location_names": [
+      "Mozambique"
+    ],
     "latitude": -19.302233,
     "longitude": 34.9144977,
     "years": {
@@ -8133,6 +9649,12 @@
     "funding_base_key": "HMOZ",
     "primary_location_code": "MOZ",
     "primary_location_name": "Mozambique",
+    "location_codes": [
+      "MOZ"
+    ],
+    "location_names": [
+      "Mozambique"
+    ],
     "latitude": -19.302233,
     "longitude": 34.9144977,
     "years": {
@@ -8239,6 +9761,12 @@
     "funding_base_key": "OMOZ",
     "primary_location_code": "MOZ",
     "primary_location_name": "Mozambique",
+    "location_codes": [
+      "MOZ"
+    ],
+    "location_names": [
+      "Mozambique"
+    ],
     "latitude": -19.302233,
     "longitude": 34.9144977,
     "years": {
@@ -8261,6 +9789,12 @@
     "funding_base_key": "OMOZa",
     "primary_location_code": "MOZ",
     "primary_location_name": "Mozambique",
+    "location_codes": [
+      "MOZ"
+    ],
+    "location_names": [
+      "Mozambique"
+    ],
     "latitude": -19.302233,
     "longitude": 34.9144977,
     "years": {
@@ -8283,6 +9817,12 @@
     "funding_base_key": "OMOZb",
     "primary_location_code": "MOZ",
     "primary_location_name": "Mozambique",
+    "location_codes": [
+      "MOZ"
+    ],
+    "location_names": [
+      "Mozambique"
+    ],
     "latitude": -19.302233,
     "longitude": 34.9144977,
     "years": {
@@ -8305,6 +9845,12 @@
     "funding_base_key": "FMMR",
     "primary_location_code": "MMR",
     "primary_location_name": "Myanmar",
+    "location_codes": [
+      "MMR"
+    ],
+    "location_names": [
+      "Myanmar"
+    ],
     "latitude": 17.1750495,
     "longitude": 95.9999652,
     "years": {
@@ -8327,6 +9873,12 @@
     "funding_base_key": "HMMR",
     "primary_location_code": "MMR",
     "primary_location_name": "Myanmar",
+    "location_codes": [
+      "MMR"
+    ],
+    "location_names": [
+      "Myanmar"
+    ],
     "latitude": 17.1750495,
     "longitude": 95.9999652,
     "years": {
@@ -8485,6 +10037,12 @@
     "funding_base_key": "HMMRa",
     "primary_location_code": "MMR",
     "primary_location_name": "Myanmar",
+    "location_codes": [
+      "MMR"
+    ],
+    "location_names": [
+      "Myanmar"
+    ],
     "latitude": 17.1750495,
     "longitude": 95.9999652,
     "years": {
@@ -8507,6 +10065,12 @@
     "funding_base_key": "HMMRb",
     "primary_location_code": "MMR",
     "primary_location_name": "Myanmar",
+    "location_codes": [
+      "MMR"
+    ],
+    "location_names": [
+      "Myanmar"
+    ],
     "latitude": 17.1750495,
     "longitude": 95.9999652,
     "years": {
@@ -8529,6 +10093,12 @@
     "funding_base_key": "OMMR",
     "primary_location_code": "MMR",
     "primary_location_name": "Myanmar",
+    "location_codes": [
+      "MMR"
+    ],
+    "location_names": [
+      "Myanmar"
+    ],
     "latitude": 17.1750495,
     "longitude": 95.9999652,
     "years": {
@@ -8564,6 +10134,12 @@
     "funding_base_key": "OMMR12",
     "primary_location_code": "MMR",
     "primary_location_name": "Myanmar",
+    "location_codes": [
+      "MMR"
+    ],
+    "location_names": [
+      "Myanmar"
+    ],
     "latitude": 17.1750495,
     "longitude": 95.9999652,
     "years": {
@@ -8586,6 +10162,12 @@
     "funding_base_key": "SMMR",
     "primary_location_code": "MMR",
     "primary_location_name": "Myanmar",
+    "location_codes": [
+      "MMR"
+    ],
+    "location_names": [
+      "Myanmar"
+    ],
     "latitude": 17.1750495,
     "longitude": 95.9999652,
     "years": {
@@ -8608,6 +10190,12 @@
     "funding_base_key": "FNAM",
     "primary_location_code": "NAM",
     "primary_location_name": "Namibia",
+    "location_codes": [
+      "NAM"
+    ],
+    "location_names": [
+      "Namibia"
+    ],
     "latitude": -23.2335499,
     "longitude": 17.3231107,
     "years": {
@@ -8643,6 +10231,12 @@
     "funding_base_key": "CNPL05",
     "primary_location_code": "NPL",
     "primary_location_name": "Nepal",
+    "location_codes": [
+      "NPL"
+    ],
+    "location_names": [
+      "Nepal"
+    ],
     "latitude": 28.3780464,
     "longitude": 83.9999901,
     "years": {
@@ -8665,6 +10259,12 @@
     "funding_base_key": "FNPL",
     "primary_location_code": "NPL",
     "primary_location_name": "Nepal",
+    "location_codes": [
+      "NPL"
+    ],
+    "location_names": [
+      "Nepal"
+    ],
     "latitude": 28.3780464,
     "longitude": 83.9999901,
     "years": {
@@ -8687,6 +10287,12 @@
     "funding_base_key": "ONPL",
     "primary_location_code": "NPL",
     "primary_location_name": "Nepal",
+    "location_codes": [
+      "NPL"
+    ],
+    "location_names": [
+      "Nepal"
+    ],
     "latitude": 28.3780464,
     "longitude": 83.9999901,
     "years": {
@@ -8774,6 +10380,12 @@
     "funding_base_key": "ONPL0809",
     "primary_location_code": "NPL",
     "primary_location_name": "Nepal",
+    "location_codes": [
+      "NPL"
+    ],
+    "location_names": [
+      "Nepal"
+    ],
     "latitude": 28.3780464,
     "longitude": 83.9999901,
     "years": {
@@ -8796,6 +10408,12 @@
     "funding_base_key": "FNIC0708",
     "primary_location_code": "NIC",
     "primary_location_name": "Nicaragua",
+    "location_codes": [
+      "NIC"
+    ],
+    "location_names": [
+      "Nicaragua"
+    ],
     "latitude": 12.3506436,
     "longitude": -85.7841006,
     "years": {
@@ -8818,6 +10436,12 @@
     "funding_base_key": "FNIC1112",
     "primary_location_code": "NIC",
     "primary_location_name": "Nicaragua",
+    "location_codes": [
+      "NIC"
+    ],
+    "location_names": [
+      "Nicaragua"
+    ],
     "latitude": 12.3506436,
     "longitude": -85.7841006,
     "years": {
@@ -8840,6 +10464,12 @@
     "funding_base_key": "CNER",
     "primary_location_code": "NER",
     "primary_location_name": "Niger",
+    "location_codes": [
+      "NER"
+    ],
+    "location_names": [
+      "Niger"
+    ],
     "latitude": 17.7356214,
     "longitude": 9.3238432,
     "years": {
@@ -8888,6 +10518,12 @@
     "funding_base_key": "FNER",
     "primary_location_code": "NER",
     "primary_location_name": "Niger",
+    "location_codes": [
+      "NER"
+    ],
+    "location_names": [
+      "Niger"
+    ],
     "latitude": 17.7356214,
     "longitude": 9.3238432,
     "years": {
@@ -8910,6 +10546,12 @@
     "funding_base_key": "HNER",
     "primary_location_code": "NER",
     "primary_location_name": "Niger",
+    "location_codes": [
+      "NER"
+    ],
+    "location_names": [
+      "Niger"
+    ],
     "latitude": 17.7356214,
     "longitude": 9.3238432,
     "years": {
@@ -9094,6 +10736,120 @@
     "funding_base_key": "OCOVD",
     "primary_location_code": "NER",
     "primary_location_name": "Niger",
+    "location_codes": [
+      "NER",
+      "PRK",
+      "KEN",
+      "NGA",
+      "GUY",
+      "PAN",
+      "MEX",
+      "BRA",
+      "CUW",
+      "TTO",
+      "PER",
+      "URY",
+      "EGY",
+      "DJI",
+      "JOR",
+      "CRI",
+      "BFA",
+      "YEM",
+      "RWA",
+      "AGO",
+      "COG",
+      "ETH",
+      "TUR",
+      "PRY",
+      "ECU",
+      "SSD",
+      "SDN",
+      "SOM",
+      "IRQ",
+      "COD",
+      "LBN",
+      "CAF",
+      "MLI",
+      "BGD",
+      "ABW",
+      "CMR",
+      "UKR",
+      "UGA",
+      "VEN",
+      "TZA",
+      "ZMB",
+      "BOL",
+      "DOM",
+      "CHL",
+      "COL",
+      "TCD",
+      "AFG",
+      "SYR",
+      "ARG",
+      "LBY",
+      "IRN",
+      "PSE",
+      "MMR",
+      "HTI",
+      "BDI"
+    ],
+    "location_names": [
+      "Niger",
+      "North Korea",
+      "Kenya",
+      "Nigeria",
+      "Guyana",
+      "Panama",
+      "Mexico",
+      "Brazil",
+      "Cura\u00e7ao",
+      "Trinidad and Tobago",
+      "Peru",
+      "Uruguay",
+      "Egypt",
+      "Djibouti",
+      "Jordan",
+      "Costa Rica",
+      "Burkina Faso",
+      "Yemen",
+      "Rwanda",
+      "Angola",
+      "Congo",
+      "Ethiopia",
+      "T\u00fcrkiye",
+      "Paraguay",
+      "Ecuador",
+      "South Sudan",
+      "Sudan",
+      "Somalia",
+      "Iraq",
+      "Democratic Republic of the Congo",
+      "Lebanon",
+      "Central African Republic",
+      "Mali",
+      "Bangladesh",
+      "Aruba",
+      "Cameroon",
+      "Ukraine",
+      "Uganda",
+      "Venezuela",
+      "Tanzania",
+      "Zambia",
+      "Bolivia",
+      "Dominican Republic",
+      "Chile",
+      "Colombia",
+      "Chad",
+      "Afghanistan",
+      "Syria",
+      "Argentina",
+      "Libya",
+      "Iran",
+      "Palestine",
+      "Myanmar",
+      "Haiti",
+      "Burundi"
+    ],
     "latitude": 17.7356214,
     "longitude": 9.3238432,
     "years": {
@@ -9116,6 +10872,12 @@
     "funding_base_key": "HNGA",
     "primary_location_code": "NGA",
     "primary_location_name": "Nigeria",
+    "location_codes": [
+      "NGA"
+    ],
+    "location_names": [
+      "Nigeria"
+    ],
     "latitude": 9.6000359,
     "longitude": 7.9999721,
     "years": {
@@ -9300,6 +11062,12 @@
     "funding_base_key": "CPRK",
     "primary_location_code": "PRK",
     "primary_location_name": "North Korea",
+    "location_codes": [
+      "PRK"
+    ],
+    "location_names": [
+      "North Korea"
+    ],
     "latitude": 40.3736611,
     "longitude": 127.0870417,
     "years": {
@@ -9374,6 +11142,12 @@
     "funding_base_key": "FPRK",
     "primary_location_code": "PRK",
     "primary_location_name": "North Korea",
+    "location_codes": [
+      "PRK"
+    ],
+    "location_names": [
+      "North Korea"
+    ],
     "latitude": 40.3736611,
     "longitude": 127.0870417,
     "years": {
@@ -9396,6 +11170,12 @@
     "funding_base_key": "OPRK",
     "primary_location_code": "PRK",
     "primary_location_name": "North Korea",
+    "location_codes": [
+      "PRK"
+    ],
+    "location_names": [
+      "North Korea"
+    ],
     "latitude": 40.3736611,
     "longitude": 127.0870417,
     "years": {
@@ -9496,6 +11276,12 @@
     "funding_base_key": "OPRKb",
     "primary_location_code": "PRK",
     "primary_location_name": "North Korea",
+    "location_codes": [
+      "PRK"
+    ],
+    "location_names": [
+      "North Korea"
+    ],
     "latitude": 40.3736611,
     "longitude": 127.0870417,
     "years": {
@@ -9518,6 +11304,12 @@
     "funding_base_key": "OPRKc",
     "primary_location_code": "PRK",
     "primary_location_name": "North Korea",
+    "location_codes": [
+      "PRK"
+    ],
+    "location_names": [
+      "North Korea"
+    ],
     "latitude": 40.3736611,
     "longitude": 127.0870417,
     "years": {
@@ -9540,6 +11332,12 @@
     "funding_base_key": "CPAK",
     "primary_location_code": "PAK",
     "primary_location_name": "Pakistan",
+    "location_codes": [
+      "PAK"
+    ],
+    "location_names": [
+      "Pakistan"
+    ],
     "latitude": 30.3308401,
     "longitude": 71.247499,
     "years": {
@@ -9562,6 +11360,12 @@
     "funding_base_key": "CPAK08",
     "primary_location_code": "PAK",
     "primary_location_name": "Pakistan",
+    "location_codes": [
+      "PAK"
+    ],
+    "location_names": [
+      "Pakistan"
+    ],
     "latitude": 30.3308401,
     "longitude": 71.247499,
     "years": {
@@ -9584,6 +11388,12 @@
     "funding_base_key": "FPAK",
     "primary_location_code": "PAK",
     "primary_location_name": "Pakistan",
+    "location_codes": [
+      "PAK"
+    ],
+    "location_names": [
+      "Pakistan"
+    ],
     "latitude": 30.3308401,
     "longitude": 71.247499,
     "years": {
@@ -9606,6 +11416,12 @@
     "funding_base_key": "FPAK1011",
     "primary_location_code": "PAK",
     "primary_location_name": "Pakistan",
+    "location_codes": [
+      "PAK"
+    ],
+    "location_names": [
+      "Pakistan"
+    ],
     "latitude": 30.3308401,
     "longitude": 71.247499,
     "years": {
@@ -9628,6 +11444,12 @@
     "funding_base_key": "FPAK1112",
     "primary_location_code": "PAK",
     "primary_location_name": "Pakistan",
+    "location_codes": [
+      "PAK"
+    ],
+    "location_names": [
+      "Pakistan"
+    ],
     "latitude": 30.3308401,
     "longitude": 71.247499,
     "years": {
@@ -9650,6 +11472,12 @@
     "funding_base_key": "HPAK",
     "primary_location_code": "PAK",
     "primary_location_name": "Pakistan",
+    "location_codes": [
+      "PAK"
+    ],
+    "location_names": [
+      "Pakistan"
+    ],
     "latitude": 30.3308401,
     "longitude": 71.247499,
     "years": {
@@ -9685,6 +11513,12 @@
     "funding_base_key": "OPAK",
     "primary_location_code": "PAK",
     "primary_location_name": "Pakistan",
+    "location_codes": [
+      "PAK"
+    ],
+    "location_names": [
+      "Pakistan"
+    ],
     "latitude": 30.3308401,
     "longitude": 71.247499,
     "years": {
@@ -9798,6 +11632,14 @@
     "funding_base_key": "RAFG_RRP",
     "primary_location_code": "PAK",
     "primary_location_name": "Pakistan",
+    "location_codes": [
+      "PAK",
+      "IRN"
+    ],
+    "location_names": [
+      "Pakistan",
+      "Iran"
+    ],
     "latitude": 30.3308401,
     "longitude": 71.247499,
     "years": {
@@ -9820,6 +11662,12 @@
     "funding_base_key": "CPSE",
     "primary_location_code": "PSE",
     "primary_location_name": "Palestine",
+    "location_codes": [
+      "PSE"
+    ],
+    "location_names": [
+      "Palestine"
+    ],
     "latitude": 31.7562524,
     "longitude": 34.9639214,
     "years": {
@@ -9972,6 +11820,12 @@
     "funding_base_key": "FPSE",
     "primary_location_code": "PSE",
     "primary_location_name": "Palestine",
+    "location_codes": [
+      "PSE"
+    ],
+    "location_names": [
+      "Palestine"
+    ],
     "latitude": 31.7562524,
     "longitude": 34.9639214,
     "years": {
@@ -10046,6 +11900,12 @@
     "funding_base_key": "HPSE",
     "primary_location_code": "PSE",
     "primary_location_name": "Palestine",
+    "location_codes": [
+      "PSE"
+    ],
+    "location_names": [
+      "Palestine"
+    ],
     "latitude": 31.7562524,
     "longitude": 34.9639214,
     "years": {
@@ -10172,6 +12032,12 @@
     "funding_base_key": "SPSE",
     "primary_location_code": "PSE",
     "primary_location_name": "Palestine",
+    "location_codes": [
+      "PSE"
+    ],
+    "location_names": [
+      "Palestine"
+    ],
     "latitude": 31.7562524,
     "longitude": 34.9639214,
     "years": {
@@ -10194,6 +12060,12 @@
     "funding_base_key": "FPER",
     "primary_location_code": "PER",
     "primary_location_name": "Peru",
+    "location_codes": [
+      "PER"
+    ],
+    "location_names": [
+      "Peru"
+    ],
     "latitude": -6.8699697,
     "longitude": -75.0458515,
     "years": {
@@ -10216,6 +12088,12 @@
     "funding_base_key": "FPER0708",
     "primary_location_code": "PER",
     "primary_location_name": "Peru",
+    "location_codes": [
+      "PER"
+    ],
+    "location_names": [
+      "Peru"
+    ],
     "latitude": -6.8699697,
     "longitude": -75.0458515,
     "years": {
@@ -10235,115 +12113,15 @@
     }
   },
   {
-    "funding_base_key": "RREG",
-    "primary_location_code": "PER",
-    "primary_location_name": "Peru",
-    "latitude": -6.8699697,
-    "longitude": -75.0458515,
-    "years": {
-      "2020": {
-        "codes": [
-          "RREG20"
-        ],
-        "names": [
-          "Venezuela Regional Refugee and Migrant Response Plan (RMRP) 2020"
-        ],
-        "requirements": 807149208.0,
-        "funding": 617637097.0,
-        "percent_funded": 76.5,
-        "contribution_count": null,
-        "avg_percent_funded": 53.3
-      },
-      "2021": {
-        "codes": [
-          "RREG21"
-        ],
-        "names": [
-          "Venezuela Regional Refugee and Migrant Response Plan (RMRP) 2021"
-        ],
-        "requirements": 1402889273.0,
-        "funding": 564270559.0,
-        "percent_funded": 40.2,
-        "contribution_count": null,
-        "avg_percent_funded": 53.2
-      },
-      "2022": {
-        "codes": [
-          "RREG22"
-        ],
-        "names": [
-          "Venezuela Regional Refugee and Migrant Response Plan (RMRP) 2022"
-        ],
-        "requirements": 1719443218.0,
-        "funding": 612511840.0,
-        "percent_funded": 35.6,
-        "contribution_count": null,
-        "avg_percent_funded": 60.2
-      },
-      "2023": {
-        "codes": [
-          "RREG23"
-        ],
-        "names": [
-          "Venezuela Regional Refugee and Migrant Response Plan (RMRP) 2023"
-        ],
-        "requirements": 1659624773.0,
-        "funding": 559744110.0,
-        "percent_funded": 33.7,
-        "contribution_count": null,
-        "avg_percent_funded": 45.1
-      },
-      "2024": {
-        "codes": [
-          "RREG24"
-        ],
-        "names": [
-          "Venezuela Regional Refugee and Migrant Response Plan (RMRP) 2024"
-        ],
-        "requirements": 1525556160.0,
-        "funding": 429236820.0,
-        "percent_funded": 28.1,
-        "contribution_count": null,
-        "avg_percent_funded": 50.6
-      },
-      "2025": {
-        "codes": [
-          "RREG25"
-        ],
-        "names": [
-          "Venezuela Regional Refugee and Migrant Response Plan (RMRP) 2025"
-        ],
-        "requirements": 1336186928.0,
-        "funding": 134900733.0,
-        "percent_funded": 10.1,
-        "contribution_count": null,
-        "avg_percent_funded": 35.2
-      },
-      "2026": {
-        "codes": [
-          "RREG26"
-        ],
-        "names": [
-          "Regional Migrant Response Plan for Horn of Africa to Yemen and Southern Africa 2026"
-        ],
-        "requirements": 0.0,
-        "funding": 27150666.0,
-        "percent_funded": null,
-        "contribution_count": 21,
-        "avg_percent_funded": 18.6
-      }
-    },
-    "people_2026": {
-      "people_in_need": 23100000.0,
-      "people_targeted": 10500000.0,
-      "people_affected": 0.0,
-      "people_reached": 0.0
-    }
-  },
-  {
     "funding_base_key": "CPHL",
     "primary_location_code": "PHL",
     "primary_location_name": "Philippines",
+    "location_codes": [
+      "PHL"
+    ],
+    "location_names": [
+      "Philippines"
+    ],
     "latitude": 12.7503486,
     "longitude": 122.7312101,
     "years": {
@@ -10366,6 +12144,12 @@
     "funding_base_key": "CPHL1314",
     "primary_location_code": "PHL",
     "primary_location_name": "Philippines",
+    "location_codes": [
+      "PHL"
+    ],
+    "location_names": [
+      "Philippines"
+    ],
     "latitude": 12.7503486,
     "longitude": 122.7312101,
     "years": {
@@ -10388,6 +12172,12 @@
     "funding_base_key": "FPHL0405",
     "primary_location_code": "PHL",
     "primary_location_name": "Philippines",
+    "location_codes": [
+      "PHL"
+    ],
+    "location_names": [
+      "Philippines"
+    ],
     "latitude": 12.7503486,
     "longitude": 122.7312101,
     "years": {
@@ -10410,6 +12200,12 @@
     "funding_base_key": "FPHL0910",
     "primary_location_code": "PHL",
     "primary_location_name": "Philippines",
+    "location_codes": [
+      "PHL"
+    ],
+    "location_names": [
+      "Philippines"
+    ],
     "latitude": 12.7503486,
     "longitude": 122.7312101,
     "years": {
@@ -10432,6 +12228,12 @@
     "funding_base_key": "FPHL13",
     "primary_location_code": "PHL",
     "primary_location_name": "Philippines",
+    "location_codes": [
+      "PHL"
+    ],
+    "location_names": [
+      "Philippines"
+    ],
     "latitude": 12.7503486,
     "longitude": 122.7312101,
     "years": {
@@ -10454,6 +12256,12 @@
     "funding_base_key": "HPHL13a",
     "primary_location_code": "PHL",
     "primary_location_name": "Philippines",
+    "location_codes": [
+      "PHL"
+    ],
+    "location_names": [
+      "Philippines"
+    ],
     "latitude": 12.7503486,
     "longitude": 122.7312101,
     "years": {
@@ -10476,6 +12284,12 @@
     "funding_base_key": "OPHL",
     "primary_location_code": "PHL",
     "primary_location_name": "Philippines",
+    "location_codes": [
+      "PHL"
+    ],
+    "location_names": [
+      "Philippines"
+    ],
     "latitude": 12.7503486,
     "longitude": 122.7312101,
     "years": {
@@ -10550,6 +12364,12 @@
     "funding_base_key": "OPHL0607",
     "primary_location_code": "PHL",
     "primary_location_name": "Philippines",
+    "location_codes": [
+      "PHL"
+    ],
+    "location_names": [
+      "Philippines"
+    ],
     "latitude": 12.7503486,
     "longitude": 122.7312101,
     "years": {
@@ -10572,6 +12392,12 @@
     "funding_base_key": "OPHL21",
     "primary_location_code": "PHL",
     "primary_location_name": "Philippines",
+    "location_codes": [
+      "PHL"
+    ],
+    "location_names": [
+      "Philippines"
+    ],
     "latitude": 12.7503486,
     "longitude": 122.7312101,
     "years": {
@@ -10594,6 +12420,12 @@
     "funding_base_key": "SPHL13",
     "primary_location_code": "PHL",
     "primary_location_name": "Philippines",
+    "location_codes": [
+      "PHL"
+    ],
+    "location_names": [
+      "Philippines"
+    ],
     "latitude": 12.7503486,
     "longitude": 122.7312101,
     "years": {
@@ -10616,6 +12448,12 @@
     "funding_base_key": "CRUS",
     "primary_location_code": "RUS",
     "primary_location_name": "Russian Federation",
+    "location_codes": [
+      "RUS"
+    ],
+    "location_names": [
+      "Russian Federation"
+    ],
     "latitude": 64.6863136,
     "longitude": 97.7453061,
     "years": {
@@ -10690,6 +12528,12 @@
     "funding_base_key": "CRUS99",
     "primary_location_code": "RUS",
     "primary_location_name": "Russian Federation",
+    "location_codes": [
+      "RUS"
+    ],
+    "location_names": [
+      "Russian Federation"
+    ],
     "latitude": 64.6863136,
     "longitude": 97.7453061,
     "years": {
@@ -10712,6 +12556,12 @@
     "funding_base_key": "ORUS",
     "primary_location_code": "RUS",
     "primary_location_name": "Russian Federation",
+    "location_codes": [
+      "RUS"
+    ],
+    "location_names": [
+      "Russian Federation"
+    ],
     "latitude": 64.6863136,
     "longitude": 97.7453061,
     "years": {
@@ -10747,6 +12597,12 @@
     "funding_base_key": "FVCT",
     "primary_location_code": "VCT",
     "primary_location_name": "Saint Vincent and the Grenadines",
+    "location_codes": [
+      "VCT"
+    ],
+    "location_names": [
+      "Saint Vincent and the Grenadines"
+    ],
     "latitude": 12.90447,
     "longitude": -61.2765569,
     "years": {
@@ -10769,6 +12625,12 @@
     "funding_base_key": "HSEN",
     "primary_location_code": "SEN",
     "primary_location_name": "Senegal",
+    "location_codes": [
+      "SEN"
+    ],
+    "location_names": [
+      "Senegal"
+    ],
     "latitude": 14.4750607,
     "longitude": -14.4529612,
     "years": {
@@ -10830,6 +12692,12 @@
     "funding_base_key": "OSEN",
     "primary_location_code": "SEN",
     "primary_location_name": "Senegal",
+    "location_codes": [
+      "SEN"
+    ],
+    "location_names": [
+      "Senegal"
+    ],
     "latitude": 14.4750607,
     "longitude": -14.4529612,
     "years": {
@@ -10852,6 +12720,12 @@
     "funding_base_key": "CSLE",
     "primary_location_code": "SLE",
     "primary_location_name": "Sierra Leone",
+    "location_codes": [
+      "SLE"
+    ],
+    "location_names": [
+      "Sierra Leone"
+    ],
     "latitude": 8.6400349,
     "longitude": -11.8400269,
     "years": {
@@ -10926,6 +12800,12 @@
     "funding_base_key": "OSLE",
     "primary_location_code": "SLE",
     "primary_location_name": "Sierra Leone",
+    "location_codes": [
+      "SLE"
+    ],
+    "location_names": [
+      "Sierra Leone"
+    ],
     "latitude": 8.6400349,
     "longitude": -11.8400269,
     "years": {
@@ -10948,6 +12828,20 @@
     "funding_base_key": "RUKRN",
     "primary_location_code": "SVK",
     "primary_location_name": "Slovakia",
+    "location_codes": [
+      "SVK",
+      "MDA",
+      "POL",
+      "HUN",
+      "ROU"
+    ],
+    "location_names": [
+      "Slovakia",
+      "Moldova",
+      "Poland",
+      "Hungary",
+      "Romania"
+    ],
     "latitude": 48.7411522,
     "longitude": 19.4528646,
     "years": {
@@ -11009,6 +12903,12 @@
     "funding_base_key": "OSLB",
     "primary_location_code": "SLB",
     "primary_location_name": "Solomon Islands",
+    "location_codes": [
+      "SLB"
+    ],
+    "location_names": [
+      "Solomon Islands"
+    ],
     "latitude": -8.7053941,
     "longitude": 159.1070694,
     "years": {
@@ -11031,6 +12931,12 @@
     "funding_base_key": "CSOM",
     "primary_location_code": "SOM",
     "primary_location_name": "Somalia",
+    "location_codes": [
+      "SOM"
+    ],
+    "location_names": [
+      "Somalia"
+    ],
     "latitude": 8.3676771,
     "longitude": 49.083416,
     "years": {
@@ -11222,6 +13128,12 @@
     "funding_base_key": "FSOM0607",
     "primary_location_code": "SOM",
     "primary_location_name": "Somalia",
+    "location_codes": [
+      "SOM"
+    ],
+    "location_names": [
+      "Somalia"
+    ],
     "latitude": 8.3676771,
     "longitude": 49.083416,
     "years": {
@@ -11244,6 +13156,12 @@
     "funding_base_key": "HSOM",
     "primary_location_code": "SOM",
     "primary_location_name": "Somalia",
+    "location_codes": [
+      "SOM"
+    ],
+    "location_names": [
+      "Somalia"
+    ],
     "latitude": 8.3676771,
     "longitude": 49.083416,
     "years": {
@@ -11428,6 +13346,12 @@
     "funding_base_key": "CSSD",
     "primary_location_code": "SSD",
     "primary_location_name": "South Sudan",
+    "location_codes": [
+      "SSD"
+    ],
+    "location_names": [
+      "South Sudan"
+    ],
     "latitude": 7.8699431,
     "longitude": 29.6667897,
     "years": {
@@ -11476,6 +13400,12 @@
     "funding_base_key": "HSSD",
     "primary_location_code": "SSD",
     "primary_location_name": "South Sudan",
+    "location_codes": [
+      "SSD"
+    ],
+    "location_names": [
+      "South Sudan"
+    ],
     "latitude": 7.8699431,
     "longitude": 29.6667897,
     "years": {
@@ -11647,6 +13577,12 @@
     "funding_base_key": "SSSD",
     "primary_location_code": "SSD",
     "primary_location_name": "South Sudan",
+    "location_codes": [
+      "SSD"
+    ],
+    "location_names": [
+      "South Sudan"
+    ],
     "latitude": 7.8699431,
     "longitude": 29.6667897,
     "years": {
@@ -11669,6 +13605,12 @@
     "funding_base_key": "CLKA",
     "primary_location_code": "LKA",
     "primary_location_name": "Sri Lanka",
+    "location_codes": [
+      "LKA"
+    ],
+    "location_names": [
+      "Sri Lanka"
+    ],
     "latitude": 7.5554942,
     "longitude": 80.7137847,
     "years": {
@@ -11717,6 +13659,12 @@
     "funding_base_key": "FLKA",
     "primary_location_code": "LKA",
     "primary_location_name": "Sri Lanka",
+    "location_codes": [
+      "LKA"
+    ],
+    "location_names": [
+      "Sri Lanka"
+    ],
     "latitude": 7.5554942,
     "longitude": 80.7137847,
     "years": {
@@ -11739,6 +13687,12 @@
     "funding_base_key": "OLKA",
     "primary_location_code": "LKA",
     "primary_location_name": "Sri Lanka",
+    "location_codes": [
+      "LKA"
+    ],
+    "location_names": [
+      "Sri Lanka"
+    ],
     "latitude": 7.5554942,
     "longitude": 80.7137847,
     "years": {
@@ -11826,6 +13780,12 @@
     "funding_base_key": "OLKA25",
     "primary_location_code": "LKA",
     "primary_location_name": "Sri Lanka",
+    "location_codes": [
+      "LKA"
+    ],
+    "location_names": [
+      "Sri Lanka"
+    ],
     "latitude": 7.5554942,
     "longitude": 80.7137847,
     "years": {
@@ -11848,6 +13808,12 @@
     "funding_base_key": "CSDN",
     "primary_location_code": "SDN",
     "primary_location_name": "Sudan",
+    "location_codes": [
+      "SDN"
+    ],
+    "location_names": [
+      "Sudan"
+    ],
     "latitude": 14.5844444,
     "longitude": 29.4917691,
     "years": {
@@ -12013,6 +13979,12 @@
     "funding_base_key": "CSDN1112",
     "primary_location_code": "SDN",
     "primary_location_name": "Sudan",
+    "location_codes": [
+      "SDN"
+    ],
+    "location_names": [
+      "Sudan"
+    ],
     "latitude": 14.5844444,
     "longitude": 29.4917691,
     "years": {
@@ -12035,6 +14007,12 @@
     "funding_base_key": "FSDN0708",
     "primary_location_code": "SDN",
     "primary_location_name": "Sudan",
+    "location_codes": [
+      "SDN"
+    ],
+    "location_names": [
+      "Sudan"
+    ],
     "latitude": 14.5844444,
     "longitude": 29.4917691,
     "years": {
@@ -12057,6 +14035,12 @@
     "funding_base_key": "HSDN",
     "primary_location_code": "SDN",
     "primary_location_name": "Sudan",
+    "location_codes": [
+      "SDN"
+    ],
+    "location_names": [
+      "Sudan"
+    ],
     "latitude": 14.5844444,
     "longitude": 29.4917691,
     "years": {
@@ -12241,6 +14225,12 @@
     "funding_base_key": "OSDN",
     "primary_location_code": "SDN",
     "primary_location_name": "Sudan",
+    "location_codes": [
+      "SDN"
+    ],
+    "location_names": [
+      "Sudan"
+    ],
     "latitude": 14.5844444,
     "longitude": 29.4917691,
     "years": {
@@ -12263,6 +14253,12 @@
     "funding_base_key": "CSYR",
     "primary_location_code": "SYR",
     "primary_location_name": "Syria",
+    "location_codes": [
+      "SYR"
+    ],
+    "location_names": [
+      "Syria"
+    ],
     "latitude": 34.6401861,
     "longitude": 39.0494106,
     "years": {
@@ -12298,6 +14294,12 @@
     "funding_base_key": "FSYR",
     "primary_location_code": "SYR",
     "primary_location_name": "Syria",
+    "location_codes": [
+      "SYR"
+    ],
+    "location_names": [
+      "Syria"
+    ],
     "latitude": 34.6401861,
     "longitude": 39.0494106,
     "years": {
@@ -12333,6 +14335,12 @@
     "funding_base_key": "HSYR",
     "primary_location_code": "SYR",
     "primary_location_name": "Syria",
+    "location_codes": [
+      "SYR"
+    ],
+    "location_names": [
+      "Syria"
+    ],
     "latitude": 34.6401861,
     "longitude": 39.0494106,
     "years": {
@@ -12491,6 +14499,12 @@
     "funding_base_key": "OSYR",
     "primary_location_code": "SYR",
     "primary_location_name": "Syria",
+    "location_codes": [
+      "SYR"
+    ],
+    "location_names": [
+      "Syria"
+    ],
     "latitude": 34.6401861,
     "longitude": 39.0494106,
     "years": {
@@ -12513,6 +14527,12 @@
     "funding_base_key": "OSYR0809",
     "primary_location_code": "SYR",
     "primary_location_name": "Syria",
+    "location_codes": [
+      "SYR"
+    ],
+    "location_names": [
+      "Syria"
+    ],
     "latitude": 34.6401861,
     "longitude": 39.0494106,
     "years": {
@@ -12535,6 +14555,12 @@
     "funding_base_key": "OSYR0910",
     "primary_location_code": "SYR",
     "primary_location_name": "Syria",
+    "location_codes": [
+      "SYR"
+    ],
+    "location_names": [
+      "Syria"
+    ],
     "latitude": 34.6401861,
     "longitude": 39.0494106,
     "years": {
@@ -12557,6 +14583,12 @@
     "funding_base_key": "SSYR",
     "primary_location_code": "SYR",
     "primary_location_name": "Syria",
+    "location_codes": [
+      "SYR"
+    ],
+    "location_names": [
+      "Syria"
+    ],
     "latitude": 34.6401861,
     "longitude": 39.0494106,
     "years": {
@@ -12579,6 +14611,12 @@
     "funding_base_key": "CTJK",
     "primary_location_code": "TJK",
     "primary_location_name": "Tajikistan",
+    "location_codes": [
+      "TJK"
+    ],
+    "location_names": [
+      "Tajikistan"
+    ],
     "latitude": 38.6281733,
     "longitude": 70.8156541,
     "years": {
@@ -12653,6 +14691,12 @@
     "funding_base_key": "FTJK",
     "primary_location_code": "TJK",
     "primary_location_name": "Tajikistan",
+    "location_codes": [
+      "TJK"
+    ],
+    "location_names": [
+      "Tajikistan"
+    ],
     "latitude": 38.6281733,
     "longitude": 70.8156541,
     "years": {
@@ -12675,6 +14719,12 @@
     "funding_base_key": "OTJK",
     "primary_location_code": "TJK",
     "primary_location_name": "Tajikistan",
+    "location_codes": [
+      "TJK"
+    ],
+    "location_names": [
+      "Tajikistan"
+    ],
     "latitude": 38.6281733,
     "longitude": 70.8156541,
     "years": {
@@ -12710,6 +14760,12 @@
     "funding_base_key": "OTJK08",
     "primary_location_code": "TJK",
     "primary_location_name": "Tajikistan",
+    "location_codes": [
+      "TJK"
+    ],
+    "location_names": [
+      "Tajikistan"
+    ],
     "latitude": 38.6281733,
     "longitude": 70.8156541,
     "years": {
@@ -12732,6 +14788,12 @@
     "funding_base_key": "CTZA",
     "primary_location_code": "TZA",
     "primary_location_name": "Tanzania",
+    "location_codes": [
+      "TZA"
+    ],
+    "location_names": [
+      "Tanzania"
+    ],
     "latitude": -6.5247123,
     "longitude": 35.7878438,
     "years": {
@@ -12780,6 +14842,16 @@
     "funding_base_key": "CXGLR",
     "primary_location_code": "TZA",
     "primary_location_name": "Tanzania",
+    "location_codes": [
+      "TZA",
+      "RWA",
+      "BDI"
+    ],
+    "location_names": [
+      "Tanzania",
+      "Rwanda",
+      "Burundi"
+    ],
     "latitude": -6.5247123,
     "longitude": 35.7878438,
     "years": {
@@ -12815,6 +14887,12 @@
     "funding_base_key": "OTZA",
     "primary_location_code": "TZA",
     "primary_location_name": "Tanzania",
+    "location_codes": [
+      "TZA"
+    ],
+    "location_names": [
+      "Tanzania"
+    ],
     "latitude": -6.5247123,
     "longitude": 35.7878438,
     "years": {
@@ -12850,6 +14928,20 @@
     "funding_base_key": "RRHOAY",
     "primary_location_code": "TZA",
     "primary_location_name": "Tanzania",
+    "location_codes": [
+      "TZA",
+      "KEN",
+      "DJI",
+      "SOM",
+      "ETH"
+    ],
+    "location_names": [
+      "Tanzania",
+      "Kenya",
+      "Djibouti",
+      "Somalia",
+      "Ethiopia"
+    ],
     "latitude": -6.5247123,
     "longitude": 35.7878438,
     "years": {
@@ -12885,6 +14977,12 @@
     "funding_base_key": "CTLS",
     "primary_location_code": "TLS",
     "primary_location_name": "Timor-Leste",
+    "location_codes": [
+      "TLS"
+    ],
+    "location_names": [
+      "Timor-Leste"
+    ],
     "latitude": -8.7443169,
     "longitude": 126.063482,
     "years": {
@@ -12907,6 +15005,12 @@
     "funding_base_key": "CTLS99",
     "primary_location_code": "TLS",
     "primary_location_name": "Timor-Leste",
+    "location_codes": [
+      "TLS"
+    ],
+    "location_names": [
+      "Timor-Leste"
+    ],
     "latitude": -8.7443169,
     "longitude": 126.063482,
     "years": {
@@ -12929,6 +15033,12 @@
     "funding_base_key": "FTLS",
     "primary_location_code": "TLS",
     "primary_location_name": "Timor-Leste",
+    "location_codes": [
+      "TLS"
+    ],
+    "location_names": [
+      "Timor-Leste"
+    ],
     "latitude": -8.7443169,
     "longitude": 126.063482,
     "years": {
@@ -12951,6 +15061,12 @@
     "funding_base_key": "OTLS",
     "primary_location_code": "TLS",
     "primary_location_name": "Timor-Leste",
+    "location_codes": [
+      "TLS"
+    ],
+    "location_names": [
+      "Timor-Leste"
+    ],
     "latitude": -8.7443169,
     "longitude": 126.063482,
     "years": {
@@ -12973,6 +15089,12 @@
     "funding_base_key": "OTGO",
     "primary_location_code": "TGO",
     "primary_location_name": "Togo",
+    "location_codes": [
+      "TGO"
+    ],
+    "location_names": [
+      "Togo"
+    ],
     "latitude": 8.7800265,
     "longitude": 1.0199765,
     "years": {
@@ -12995,6 +15117,12 @@
     "funding_base_key": "FTUR",
     "primary_location_code": "TUR",
     "primary_location_name": "T\u00fcrkiye",
+    "location_codes": [
+      "TUR"
+    ],
+    "location_names": [
+      "T\u00fcrkiye"
+    ],
     "latitude": 39.294076,
     "longitude": 35.2316631,
     "years": {
@@ -13017,6 +15145,12 @@
     "funding_base_key": "CUGA",
     "primary_location_code": "UGA",
     "primary_location_name": "Uganda",
+    "location_codes": [
+      "UGA"
+    ],
+    "location_names": [
+      "Uganda"
+    ],
     "latitude": 1.5333554,
     "longitude": 32.2166578,
     "years": {
@@ -13169,6 +15303,12 @@
     "funding_base_key": "FUGA0708",
     "primary_location_code": "UGA",
     "primary_location_name": "Uganda",
+    "location_codes": [
+      "UGA"
+    ],
+    "location_names": [
+      "Uganda"
+    ],
     "latitude": 1.5333554,
     "longitude": 32.2166578,
     "years": {
@@ -13191,6 +15331,12 @@
     "funding_base_key": "OUGA",
     "primary_location_code": "UGA",
     "primary_location_name": "Uganda",
+    "location_codes": [
+      "UGA"
+    ],
+    "location_names": [
+      "Uganda"
+    ],
     "latitude": 1.5333554,
     "longitude": 32.2166578,
     "years": {
@@ -13213,6 +15359,24 @@
     "funding_base_key": "RDRC_RRP",
     "primary_location_code": "UGA",
     "primary_location_name": "Uganda",
+    "location_codes": [
+      "UGA",
+      "RWA",
+      "TZA",
+      "AGO",
+      "BDI",
+      "ZMB",
+      "COG"
+    ],
+    "location_names": [
+      "Uganda",
+      "Rwanda",
+      "Tanzania",
+      "Angola",
+      "Burundi",
+      "Zambia",
+      "Congo"
+    ],
     "latitude": 1.5333554,
     "longitude": 32.2166578,
     "years": {
@@ -13248,6 +15412,16 @@
     "funding_base_key": "RRWATZAUGA",
     "primary_location_code": "UGA",
     "primary_location_name": "Uganda",
+    "location_codes": [
+      "UGA",
+      "TZA",
+      "RWA"
+    ],
+    "location_names": [
+      "Uganda",
+      "Tanzania",
+      "Rwanda"
+    ],
     "latitude": 1.5333554,
     "longitude": 32.2166578,
     "years": {
@@ -13283,6 +15457,12 @@
     "funding_base_key": "RUGA",
     "primary_location_code": "UGA",
     "primary_location_name": "Uganda",
+    "location_codes": [
+      "UGA"
+    ],
+    "location_names": [
+      "Uganda"
+    ],
     "latitude": 1.5333554,
     "longitude": 32.2166578,
     "years": {
@@ -13305,6 +15485,12 @@
     "funding_base_key": "FUKR",
     "primary_location_code": "UKR",
     "primary_location_name": "Ukraine",
+    "location_codes": [
+      "UKR"
+    ],
+    "location_names": [
+      "Ukraine"
+    ],
     "latitude": 49.4871968,
     "longitude": 31.2718321,
     "years": {
@@ -13340,6 +15526,12 @@
     "funding_base_key": "HUKR",
     "primary_location_code": "UKR",
     "primary_location_name": "Ukraine",
+    "location_codes": [
+      "UKR"
+    ],
+    "location_names": [
+      "Ukraine"
+    ],
     "latitude": 49.4871968,
     "longitude": 31.2718321,
     "years": {
@@ -13498,6 +15690,12 @@
     "funding_base_key": "HUKR1615",
     "primary_location_code": "UKR",
     "primary_location_name": "Ukraine",
+    "location_codes": [
+      "UKR"
+    ],
+    "location_names": [
+      "Ukraine"
+    ],
     "latitude": 49.4871968,
     "longitude": 31.2718321,
     "years": {
@@ -13520,6 +15718,12 @@
     "funding_base_key": "FVUT",
     "primary_location_code": "VUT",
     "primary_location_name": "Vanuatu",
+    "location_codes": [
+      "VUT"
+    ],
+    "location_names": [
+      "Vanuatu"
+    ],
     "latitude": -16.5255069,
     "longitude": 168.1069154,
     "years": {
@@ -13542,6 +15746,12 @@
     "funding_base_key": "HVEN",
     "primary_location_code": "VEN",
     "primary_location_name": "Venezuela",
+    "location_codes": [
+      "VEN"
+    ],
+    "location_names": [
+      "Venezuela"
+    ],
     "latitude": 8.0018709,
     "longitude": -66.1109318,
     "years": {
@@ -13661,6 +15871,12 @@
     "funding_base_key": "OVNM",
     "primary_location_code": "VNM",
     "primary_location_name": "Vietnam",
+    "location_codes": [
+      "VNM"
+    ],
+    "location_names": [
+      "Vietnam"
+    ],
     "latitude": 15.9266657,
     "longitude": 107.9650855,
     "years": {
@@ -13696,6 +15912,12 @@
     "funding_base_key": "OVNMa",
     "primary_location_code": "VNM",
     "primary_location_name": "Vietnam",
+    "location_codes": [
+      "VNM"
+    ],
+    "location_names": [
+      "Vietnam"
+    ],
     "latitude": 15.9266657,
     "longitude": 107.9650855,
     "years": {
@@ -13718,6 +15940,12 @@
     "funding_base_key": "OVNMb",
     "primary_location_code": "VNM",
     "primary_location_name": "Vietnam",
+    "location_codes": [
+      "VNM"
+    ],
+    "location_names": [
+      "Vietnam"
+    ],
     "latitude": 15.9266657,
     "longitude": 107.9650855,
     "years": {
@@ -13740,6 +15968,12 @@
     "funding_base_key": "CYEM",
     "primary_location_code": "YEM",
     "primary_location_name": "Yemen",
+    "location_codes": [
+      "YEM"
+    ],
+    "location_names": [
+      "Yemen"
+    ],
     "latitude": 16.3471243,
     "longitude": 47.8915271,
     "years": {
@@ -13801,6 +16035,12 @@
     "funding_base_key": "FYEM",
     "primary_location_code": "YEM",
     "primary_location_name": "Yemen",
+    "location_codes": [
+      "YEM"
+    ],
+    "location_names": [
+      "Yemen"
+    ],
     "latitude": 16.3471243,
     "longitude": 47.8915271,
     "years": {
@@ -13823,6 +16063,12 @@
     "funding_base_key": "FYEM0809",
     "primary_location_code": "YEM",
     "primary_location_name": "Yemen",
+    "location_codes": [
+      "YEM"
+    ],
+    "location_names": [
+      "Yemen"
+    ],
     "latitude": 16.3471243,
     "longitude": 47.8915271,
     "years": {
@@ -13845,6 +16091,12 @@
     "funding_base_key": "HYEM",
     "primary_location_code": "YEM",
     "primary_location_name": "Yemen",
+    "location_codes": [
+      "YEM"
+    ],
+    "location_names": [
+      "Yemen"
+    ],
     "latitude": 16.3471243,
     "longitude": 47.8915271,
     "years": {
@@ -14029,6 +16281,18 @@
     "funding_base_key": "RDJIETHSOMYEM",
     "primary_location_code": "YEM",
     "primary_location_name": "Yemen",
+    "location_codes": [
+      "YEM",
+      "DJI",
+      "SOM",
+      "ETH"
+    ],
+    "location_names": [
+      "Yemen",
+      "Djibouti",
+      "Somalia",
+      "Ethiopia"
+    ],
     "latitude": 16.3471243,
     "longitude": 47.8915271,
     "years": {
@@ -14074,9 +16338,137 @@
     }
   },
   {
+    "funding_base_key": "RREG",
+    "primary_location_code": "YEM",
+    "primary_location_name": "Yemen",
+    "location_codes": [
+      "YEM",
+      "KEN",
+      "DJI",
+      "SOM",
+      "ETH",
+      "TZA"
+    ],
+    "location_names": [
+      "Yemen",
+      "Kenya",
+      "Djibouti",
+      "Somalia",
+      "Ethiopia",
+      "Tanzania"
+    ],
+    "latitude": 16.3471243,
+    "longitude": 47.8915271,
+    "years": {
+      "2020": {
+        "codes": [
+          "RREG20"
+        ],
+        "names": [
+          "Venezuela Regional Refugee and Migrant Response Plan (RMRP) 2020"
+        ],
+        "requirements": 807149208.0,
+        "funding": 617637097.0,
+        "percent_funded": 76.5,
+        "contribution_count": null,
+        "avg_percent_funded": 53.3
+      },
+      "2021": {
+        "codes": [
+          "RREG21"
+        ],
+        "names": [
+          "Venezuela Regional Refugee and Migrant Response Plan (RMRP) 2021"
+        ],
+        "requirements": 1402889273.0,
+        "funding": 564270559.0,
+        "percent_funded": 40.2,
+        "contribution_count": null,
+        "avg_percent_funded": 53.2
+      },
+      "2022": {
+        "codes": [
+          "RREG22"
+        ],
+        "names": [
+          "Venezuela Regional Refugee and Migrant Response Plan (RMRP) 2022"
+        ],
+        "requirements": 1719443218.0,
+        "funding": 612511840.0,
+        "percent_funded": 35.6,
+        "contribution_count": null,
+        "avg_percent_funded": 60.2
+      },
+      "2023": {
+        "codes": [
+          "RREG23"
+        ],
+        "names": [
+          "Venezuela Regional Refugee and Migrant Response Plan (RMRP) 2023"
+        ],
+        "requirements": 1659624773.0,
+        "funding": 559744110.0,
+        "percent_funded": 33.7,
+        "contribution_count": null,
+        "avg_percent_funded": 45.1
+      },
+      "2024": {
+        "codes": [
+          "RREG24"
+        ],
+        "names": [
+          "Venezuela Regional Refugee and Migrant Response Plan (RMRP) 2024"
+        ],
+        "requirements": 1525556160.0,
+        "funding": 429236820.0,
+        "percent_funded": 28.1,
+        "contribution_count": null,
+        "avg_percent_funded": 50.6
+      },
+      "2025": {
+        "codes": [
+          "RREG25"
+        ],
+        "names": [
+          "Venezuela Regional Refugee and Migrant Response Plan (RMRP) 2025"
+        ],
+        "requirements": 1336186928.0,
+        "funding": 134900733.0,
+        "percent_funded": 10.1,
+        "contribution_count": null,
+        "avg_percent_funded": 35.2
+      },
+      "2026": {
+        "codes": [
+          "RREG26"
+        ],
+        "names": [
+          "Regional Migrant Response Plan for Horn of Africa to Yemen and Southern Africa 2026"
+        ],
+        "requirements": 0.0,
+        "funding": 27150666.0,
+        "percent_funded": null,
+        "contribution_count": 21,
+        "avg_percent_funded": 18.6
+      }
+    },
+    "people_2026": {
+      "people_in_need": 23100000.0,
+      "people_targeted": 10500000.0,
+      "people_affected": 0.0,
+      "people_reached": 0.0
+    }
+  },
+  {
     "funding_base_key": "CZMB0203",
     "primary_location_code": "ZMB",
     "primary_location_name": "Zambia",
+    "location_codes": [
+      "ZMB"
+    ],
+    "location_names": [
+      "Zambia"
+    ],
     "latitude": -14.5189121,
     "longitude": 27.5589884,
     "years": {
@@ -14099,6 +16491,12 @@
     "funding_base_key": "CZMB0304",
     "primary_location_code": "ZMB",
     "primary_location_name": "Zambia",
+    "location_codes": [
+      "ZMB"
+    ],
+    "location_names": [
+      "Zambia"
+    ],
     "latitude": -14.5189121,
     "longitude": 27.5589884,
     "years": {
@@ -14121,6 +16519,12 @@
     "funding_base_key": "FZMB",
     "primary_location_code": "ZMB",
     "primary_location_name": "Zambia",
+    "location_codes": [
+      "ZMB"
+    ],
+    "location_names": [
+      "Zambia"
+    ],
     "latitude": -14.5189121,
     "longitude": 27.5589884,
     "years": {
@@ -14169,6 +16573,12 @@
     "funding_base_key": "OZMB",
     "primary_location_code": "ZMB",
     "primary_location_name": "Zambia",
+    "location_codes": [
+      "ZMB"
+    ],
+    "location_names": [
+      "Zambia"
+    ],
     "latitude": -14.5189121,
     "longitude": 27.5589884,
     "years": {
@@ -14191,6 +16601,12 @@
     "funding_base_key": "OZMB19",
     "primary_location_code": "ZMB",
     "primary_location_name": "Zambia",
+    "location_codes": [
+      "ZMB"
+    ],
+    "location_names": [
+      "Zambia"
+    ],
     "latitude": -14.5189121,
     "longitude": 27.5589884,
     "years": {
@@ -14213,6 +16629,12 @@
     "funding_base_key": "CZWE",
     "primary_location_code": "ZWE",
     "primary_location_name": "Zimbabwe",
+    "location_codes": [
+      "ZWE"
+    ],
+    "location_names": [
+      "Zimbabwe"
+    ],
     "latitude": -18.4554963,
     "longitude": 29.7468414,
     "years": {
@@ -14339,6 +16761,12 @@
     "funding_base_key": "CZWE0203",
     "primary_location_code": "ZWE",
     "primary_location_name": "Zimbabwe",
+    "location_codes": [
+      "ZWE"
+    ],
+    "location_names": [
+      "Zimbabwe"
+    ],
     "latitude": -18.4554963,
     "longitude": 29.7468414,
     "years": {
@@ -14361,6 +16789,12 @@
     "funding_base_key": "FZWE",
     "primary_location_code": "ZWE",
     "primary_location_name": "Zimbabwe",
+    "location_codes": [
+      "ZWE"
+    ],
+    "location_names": [
+      "Zimbabwe"
+    ],
     "latitude": -18.4554963,
     "longitude": 29.7468414,
     "years": {
@@ -14396,6 +16830,12 @@
     "funding_base_key": "FZWE1920",
     "primary_location_code": "ZWE",
     "primary_location_name": "Zimbabwe",
+    "location_codes": [
+      "ZWE"
+    ],
+    "location_names": [
+      "Zimbabwe"
+    ],
     "latitude": -18.4554963,
     "longitude": 29.7468414,
     "years": {
@@ -14418,6 +16858,12 @@
     "funding_base_key": "HZWE",
     "primary_location_code": "ZWE",
     "primary_location_name": "Zimbabwe",
+    "location_codes": [
+      "ZWE"
+    ],
+    "location_names": [
+      "Zimbabwe"
+    ],
     "latitude": -18.4554963,
     "longitude": 29.7468414,
     "years": {
@@ -14453,6 +16899,12 @@
     "funding_base_key": "HZWE1617",
     "primary_location_code": "ZWE",
     "primary_location_name": "Zimbabwe",
+    "location_codes": [
+      "ZWE"
+    ],
+    "location_names": [
+      "Zimbabwe"
+    ],
     "latitude": -18.4554963,
     "longitude": 29.7468414,
     "years": {
@@ -14475,6 +16927,106 @@
     "funding_base_key": "OGLBLb",
     "primary_location_code": "ZWE",
     "primary_location_name": "Zimbabwe",
+    "location_codes": [
+      "ZWE",
+      "YEM",
+      "BFA",
+      "BGD",
+      "VEN",
+      "ZMB",
+      "TUR",
+      "JOR",
+      "AGO",
+      "SDN",
+      "SLE",
+      "EGY",
+      "COL",
+      "TZA",
+      "SYR",
+      "RWA",
+      "TGO",
+      "SSD",
+      "SOM",
+      "PAK",
+      "PSE",
+      "MMR",
+      "LBR",
+      "LSO",
+      "IRN",
+      "COD",
+      "TCD",
+      "CMR",
+      "BEN",
+      "AFG",
+      "LBY",
+      "UKR",
+      "UGA",
+      "HTI",
+      "PHL",
+      "NGA",
+      "NER",
+      "MOZ",
+      "MLI",
+      "LBN",
+      "KEN",
+      "IRQ",
+      "ETH",
+      "ECU",
+      "PRK",
+      "DJI",
+      "CAF",
+      "BDI"
+    ],
+    "location_names": [
+      "Zimbabwe",
+      "Yemen",
+      "Burkina Faso",
+      "Bangladesh",
+      "Venezuela",
+      "Zambia",
+      "T\u00fcrkiye",
+      "Jordan",
+      "Angola",
+      "Sudan",
+      "Sierra Leone",
+      "Egypt",
+      "Colombia",
+      "Tanzania",
+      "Syria",
+      "Rwanda",
+      "Togo",
+      "South Sudan",
+      "Somalia",
+      "Pakistan",
+      "Palestine",
+      "Myanmar",
+      "Liberia",
+      "Lesotho",
+      "Iran",
+      "Democratic Republic of the Congo",
+      "Chad",
+      "Cameroon",
+      "Benin",
+      "Afghanistan",
+      "Libya",
+      "Ukraine",
+      "Uganda",
+      "Haiti",
+      "Philippines",
+      "Nigeria",
+      "Niger",
+      "Mozambique",
+      "Mali",
+      "Lebanon",
+      "Kenya",
+      "Iraq",
+      "Ethiopia",
+      "Ecuador",
+      "North Korea",
+      "Djibouti",
+      "Central African Republic",
+      "Burundi"
+    ],
     "latitude": -18.4554963,
     "longitude": 29.7468414,
     "years": {
@@ -14497,6 +17049,12 @@
     "funding_base_key": "OZWE",
     "primary_location_code": "ZWE",
     "primary_location_name": "Zimbabwe",
+    "location_codes": [
+      "ZWE"
+    ],
+    "location_names": [
+      "Zimbabwe"
+    ],
     "latitude": -18.4554963,
     "longitude": 29.7468414,
     "years": {
@@ -14519,6 +17077,8 @@
     "funding_base_key": "O",
     "primary_location_code": null,
     "primary_location_name": null,
+    "location_codes": [],
+    "location_names": [],
     "latitude": null,
     "longitude": null,
     "years": {
@@ -14541,6 +17101,8 @@
     "funding_base_key": "OEUR",
     "primary_location_code": null,
     "primary_location_name": null,
+    "location_codes": [],
+    "location_names": [],
     "latitude": null,
     "longitude": null,
     "years": {
@@ -14563,6 +17125,8 @@
     "funding_base_key": "R",
     "primary_location_code": null,
     "primary_location_name": null,
+    "location_codes": [],
+    "location_names": [],
     "latitude": null,
     "longitude": null,
     "years": {
@@ -14659,6 +17223,8 @@
     "funding_base_key": "R0203",
     "primary_location_code": null,
     "primary_location_name": null,
+    "location_codes": [],
+    "location_names": [],
     "latitude": null,
     "longitude": null,
     "years": {
@@ -14681,6 +17247,8 @@
     "funding_base_key": "R0304",
     "primary_location_code": null,
     "primary_location_name": null,
+    "location_codes": [],
+    "location_names": [],
     "latitude": null,
     "longitude": null,
     "years": {
@@ -14703,6 +17271,8 @@
     "funding_base_key": "R0506",
     "primary_location_code": null,
     "primary_location_name": null,
+    "location_codes": [],
+    "location_names": [],
     "latitude": null,
     "longitude": null,
     "years": {

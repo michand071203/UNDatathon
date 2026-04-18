@@ -105,6 +105,13 @@ def _normalize_crisis_record(crisis: dict) -> Optional[dict]:
     year_data = years["2026"]
     codes = year_data.get("codes") or []
     names = year_data.get("names") or []
+    primary_location_name = crisis.get("primary_location_name")
+    impacted_countries = crisis.get("location_names") or []
+    if not impacted_countries and primary_location_name:
+        impacted_countries = [primary_location_name]
+    location_codes = crisis.get("location_codes") or []
+    if not location_codes and crisis.get("primary_location_code"):
+        location_codes = [crisis.get("primary_location_code")]
     people_2026 = crisis.get("people_2026") or {}
     funding_timeline = []
     for year_key, values in years.items():
@@ -148,7 +155,8 @@ def _normalize_crisis_record(crisis: dict) -> Optional[dict]:
         "display_year": 2026,
         "primary_location_code": crisis.get("primary_location_code"),
         "primary_location_name": crisis.get("primary_location_name"),
-        "location_codes": [crisis.get("primary_location_code")] if crisis.get("primary_location_code") else [],
+        "location_codes": location_codes,
+        "location_names": impacted_countries,
         "requirements": year_data.get("requirements"),
         "funding": year_data.get("funding"),
         "percent_funded": year_data.get("percent_funded"),
@@ -183,7 +191,9 @@ def get_enriched_data():
     for crisis in data:
         if crisis.get("latitude") is not None and crisis.get("longitude") is not None:
             primary_location_name = crisis.get("primary_location_name")
-            full_location_names = [primary_location_name] if primary_location_name else []
+            full_location_names = crisis.get("location_names") or []
+            if not full_location_names and primary_location_name:
+                full_location_names = [primary_location_name]
             full_location_names = [name for name in full_location_names if name]
 
             crisis["primary_location_name_display"] = primary_location_name

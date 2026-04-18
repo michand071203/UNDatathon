@@ -166,21 +166,41 @@ def build_all_years_export(summary):
 
     for base_key, group in data.groupby("funding_base_key", dropna=False):
         group = group.sort_values(by="year")
+        preferred = group[group["year"] == 2026]
+
+        def _pick_location_field(field_name):
+            sources = [preferred, group] if not preferred.empty else [group]
+            for source in sources:
+                for value in source[field_name].tolist():
+                    if isinstance(value, list) and value:
+                        cleaned = [item for item in value if item]
+                        if cleaned:
+                            return list(dict.fromkeys(cleaned))
+            return []
+
+        def _pick_scalar_field(field_name):
+            sources = [preferred, group] if not preferred.empty else [group]
+            for source in sources:
+                non_null = source[field_name].dropna()
+                if not non_null.empty:
+                    return non_null.iloc[0]
+            return None
+
+        location_codes = _pick_location_field("location_codes")
+        location_names = _pick_location_field("location_names")
+        primary_location_code = _pick_scalar_field("primary_location_code")
+        primary_location_name = _pick_scalar_field("primary_location_name")
+        latitude = _pick_scalar_field("latitude")
+        longitude = _pick_scalar_field("longitude")
 
         payload = {
             "funding_base_key": base_key,
-            "primary_location_code": group["primary_location_code"].dropna().iloc[0]
-            if group["primary_location_code"].notna().any()
-            else None,
-            "primary_location_name": group["primary_location_name"].dropna().iloc[0]
-            if group["primary_location_name"].notna().any()
-            else None,
-            "latitude": _json_number(group["latitude"].dropna().iloc[0])
-            if group["latitude"].notna().any()
-            else None,
-            "longitude": _json_number(group["longitude"].dropna().iloc[0])
-            if group["longitude"].notna().any()
-            else None,
+            "primary_location_code": primary_location_code,
+            "primary_location_name": primary_location_name,
+            "location_codes": location_codes,
+            "location_names": location_names,
+            "latitude": _json_number(latitude),
+            "longitude": _json_number(longitude),
             "years": {},
         }
 

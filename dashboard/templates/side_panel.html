@@ -61,6 +61,21 @@
         </section>
 
         <section>
+            <h3 class="text-sm font-bold text-gray-400 uppercase tracking-wider mb-4">Impacted Countries</h3>
+            {% if crisis.location_names_display %}
+            <div class="flex flex-wrap gap-2">
+                {% for country in crisis.location_names_display %}
+                <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold bg-blue-50 text-blue-700 border border-blue-100">{{ country }}</span>
+                {% endfor %}
+            </div>
+            {% else %}
+            <div class="bg-gray-50 border border-gray-200 rounded-xl p-4 text-sm text-gray-500">
+                No impacted countries available for this crisis.
+            </div>
+            {% endif %}
+        </section>
+
+        <section>
             <h3 class="text-sm font-bold text-gray-400 uppercase tracking-wider mb-4">Funding Over Time</h3>
             {% if crisis.funding_timeline %}
             {% set timeline_count = crisis.funding_timeline | length %}
