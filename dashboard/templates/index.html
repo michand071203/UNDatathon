@@ -143,6 +143,9 @@
                 const percentages = JSON.parse(canvas.dataset.percentages || '[]').map((v) =>
                     v === null || v === undefined ? null : Number(v)
                 );
+                const avgPercentages = JSON.parse(canvas.dataset.avgPercentages || '[]').map((v) =>
+                    v === null || v === undefined ? null : Number(v)
+                );
                 const funding = JSON.parse(canvas.dataset.funding || '[]');
                 const requirements = JSON.parse(canvas.dataset.requirements || '[]');
 
@@ -164,6 +167,18 @@
                                 pointBorderWidth: 1,
                                 pointRadius: 3,
                                 tension: 0.2,
+                                spanGaps: true,
+                            },
+                            {
+                                label: 'Year Avg %',
+                                data: avgPercentages,
+                                borderColor: '#ef4444',
+                                backgroundColor: 'transparent',
+                                borderDash: [5, 5],
+                                borderWidth: 2,
+                                pointRadius: 0,
+                                pointHoverRadius: 0,
+                                tension: 0,
                                 spanGaps: true,
                             },
                         ],
@@ -196,6 +211,12 @@
                                         const idx = context.dataIndex;
                                         const pct = context.parsed.y;
                                         const pctText = pct === null || pct === undefined ? 'N/A' : `${pct.toFixed(1)}% funded`;
+                                        if (context.dataset.label === 'Year Avg %') {
+                                            return [
+                                                `Year benchmark: ${pctText}`,
+                                                'Weighted average funding coverage across all projects in this year.',
+                                            ];
+                                        }
                                         const fundingText = `Funding: ${formatCompactUsd(funding[idx])}`;
                                         const reqText = `Requirements: ${formatCompactUsd(requirements[idx])}`;
                                         return [pctText, fundingText, reqText];

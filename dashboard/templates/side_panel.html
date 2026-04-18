@@ -89,6 +89,7 @@
                 <div data-funding-tab-panel="line">
                     {% set timeline_years = crisis.funding_timeline | map(attribute='year') | list %}
                     {% set timeline_pct = crisis.funding_timeline | map(attribute='percent_funded') | list %}
+                    {% set timeline_avg_pct = crisis.funding_timeline | map(attribute='avg_percent_funded') | list %}
                     {% set timeline_funding = crisis.funding_timeline | map(attribute='funding') | list %}
                     {% set timeline_requirements = crisis.funding_timeline | map(attribute='requirements') | list %}
                     <div class="border border-gray-100 rounded-lg p-3 bg-gray-50">
@@ -97,6 +98,7 @@
                                 class="w-full h-full funding-line-chart"
                                 data-years='{{ timeline_years | tojson }}'
                                 data-percentages='{{ timeline_pct | tojson }}'
+                                data-avg-percentages='{{ timeline_avg_pct | tojson }}'
                                 data-funding='{{ timeline_funding | tojson }}'
                                 data-requirements='{{ timeline_requirements | tojson }}'
                                 aria-label="Funding percentage over time"
@@ -125,8 +127,22 @@
                                     {% endif %}
                                 </span>
                             </div>
-                            <div class="h-2.5 bg-gray-100 rounded-full overflow-hidden">
-                                <div class="h-full bg-blue-500" style="width: {{ '%.1f'|format((point.coverage_ratio or 0) * 100) }}%"></div>
+                            <div class="relative h-2.5">
+                                <div class="h-full bg-gray-100 rounded-full overflow-hidden">
+                                    <div class="h-full bg-blue-500" style="width: {{ '%.1f'|format((point.coverage_ratio or 0) * 100) }}%"></div>
+                                </div>
+                                {% if point.avg_coverage_ratio is not none %}
+                                <div
+                                    class="group absolute top-[-56px] h-24 w-24 cursor-help"
+                                    style="left: {{ '%.1f'|format((point.avg_coverage_ratio or 0) * 100) }}%; margin-left: -48px;"
+                                    tabindex="0"
+                                    aria-label="Benchmark marker for {{ point.year }}">
+                                    <div class="absolute bottom-0 left-1/2 h-3.5 w-1 -translate-x-1/2 bg-red-500 rounded-sm"></div>
+                                    <div class="pointer-events-none absolute left-1/2 top-0 z-30 w-56 -translate-x-1/2 rounded-md bg-gray-900 px-2 py-1.5 text-[11px] leading-tight text-white opacity-0 shadow-lg transition-opacity duration-75 group-hover:opacity-100 group-focus:opacity-100">
+                                        Benchmark: {% if point.avg_percent_funded is not none %}{{ '%.1f'|format(point.avg_percent_funded) }}%{% else %}N/A{% endif %}. Weighted average funding coverage across all projects in {{ point.year }}.
+                                    </div>
+                                </div>
+                                {% endif %}
                             </div>
                             <div class="mt-1 text-[11px] text-gray-500 flex justify-between">
                                 <span>{% if point.funding %}${{ '{:,.0f}'.format(point.funding) }}{% else %}Unknown funding{% endif %}</span>
@@ -155,10 +171,4 @@
         </section>
     </div>
 
-    <!-- Bottom Action Footer -->
-    <div class="mt-auto p-6 bg-gray-50 border-t border-gray-200">
-        <button class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-4 rounded-lg shadow-lg transform active:scale-95 transition-all">
-            Export Intel PDF
-        </button>
-    </div>
 </div>

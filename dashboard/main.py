@@ -119,6 +119,11 @@ def _normalize_crisis_record(crisis: dict) -> Optional[dict]:
         if isinstance(requirements, (int, float)) and isinstance(funding, (int, float)) and requirements > 0:
             coverage_ratio = max(0.0, min(float(funding) / float(requirements), 1.0))
 
+        avg_percent_funded = values.get("avg_percent_funded")
+        avg_coverage_ratio = None
+        if isinstance(avg_percent_funded, (int, float)):
+            avg_coverage_ratio = max(0.0, min(float(avg_percent_funded) / 100.0, 1.0))
+
         funding_timeline.append(
             {
                 "year": year_int,
@@ -126,6 +131,8 @@ def _normalize_crisis_record(crisis: dict) -> Optional[dict]:
                 "funding": funding,
                 "percent_funded": values.get("percent_funded"),
                 "coverage_ratio": coverage_ratio,
+                "avg_percent_funded": avg_percent_funded,
+                "avg_coverage_ratio": avg_coverage_ratio,
             }
         )
 

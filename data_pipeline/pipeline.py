@@ -144,6 +144,26 @@ def build_all_years_export(summary):
         lambda row: build_funding_base_key(row.get("code"), row.get("year")), axis=1
     )
 
+    yearly_totals = (
+        data.groupby("year", dropna=True)
+        .agg(
+            total_requirements=("requirements", "sum"),
+            total_funding=("funding", "sum"),
+        )
+        .reset_index()
+    )
+    yearly_totals["avg_percent_funded"] = (
+        100 * yearly_totals["total_funding"] / yearly_totals["total_requirements"]
+    ).round(1)
+    yearly_totals.loc[
+        yearly_totals["total_requirements"] == 0, "avg_percent_funded"
+    ] = None
+    yearly_avg_percent_map = {
+        int(row["year"]): _json_number(row["avg_percent_funded"])
+        for _, row in yearly_totals.iterrows()
+        if pd.notna(row["year"])
+    }
+
     for base_key, group in data.groupby("funding_base_key", dropna=False):
         group = group.sort_values(by="year")
 
@@ -212,6 +232,9 @@ def build_all_years_export(summary):
                 else None,
                 "contribution_count": int(year_group["contribution_count"].sum(min_count=1))
                 if pd.notna(year_group["contribution_count"].sum(min_count=1))
+                else None,
+                "avg_percent_funded": yearly_avg_percent_map.get(int(year))
+                if pd.notna(year)
                 else None,
             }
 
