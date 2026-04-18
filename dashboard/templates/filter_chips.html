@@ -1,5 +1,5 @@
-<div class="flex flex-wrap gap-2 items-center">
-    <span class="text-xs font-bold text-gray-400 uppercase mr-1">Active NLP Filters:</span>
+<div class="flex flex-wrap gap-2 items-center w-full">
+    <span class="text-xs font-bold text-gray-400 uppercase mr-1">Active Filters:</span>
     {% for chip in chips %}
     <div class="flex items-center bg-blue-100 text-blue-700 px-3 py-1 rounded-full text-xs font-semibold border border-blue-200 shadow-sm animate-in fade-in slide-in-from-left-2 duration-300">
         {{ chip }}
@@ -13,10 +13,10 @@
     <button hx-post="/nlp-query" 
             hx-vals='{"query": ""}' 
             hx-target="#active-filters" 
-            class="text-xs text-red-500 hover:underline ml-auto font-bold uppercase tracking-tighter">
+            onclick="document.getElementById('nlp-query-input').value = ''"
+            class="text-xs text-red-500 hover:text-red-700 ml-auto font-bold uppercase tracking-tighter transition-colors">
         Clear All
     </button>
     
-    <!-- Hidden input that standard HTMX requests in index.html will pick up via hx-include -->
     <input type="hidden" name="filters" value='{{ filters_json }}' id="hidden-filters-input">
 </div>

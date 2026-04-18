@@ -23,14 +23,14 @@
     <!-- Top Panel: Brand and Tabs -->
     <header class="h-16 bg-white border-b border-gray-100 flex items-center px-6 justify-between z-10">
         <div class="flex items-center space-x-8">
-            <h1 class="text-xl font-black text-blue-900 tracking-tight italic">UN DATATHON <span class="text-gray-400 font-light">2026</span></h1>
+            <h1 class="text-xl font-black text-blue-900 tracking-tight italic">DATATHON<span class="text-gray-400 font-light">2026</span></h1>
             <nav class="flex space-x-1 bg-gray-100 p-1 rounded-lg">
                 <button onclick="switchTab('map')" class="px-4 py-1.5 rounded-md transition-all tab-btn active bg-white shadow-sm font-bold text-sm">Map View</button>
                 <button onclick="switchTab('list')" class="px-4 py-1.5 rounded-md transition-all tab-btn hover:bg-white/50 text-sm text-gray-600" hx-get="/list" hx-target="#list-container" hx-trigger="click">List View</button>
             </nav>
         </div>
         <div class="text-xs font-bold text-gray-400 uppercase tracking-widest hidden md:block">
-            Humanitarian Crisis Dashboard v1.0
+            Humanitarian Crisis Dashboard
         </div>
     </header>
 
@@ -61,7 +61,7 @@
         <div class="px-6 py-2 bg-gray-50/50">
             <div id="active-filters" class="w-full max-w-7xl mx-auto min-h-[32px] flex items-center">
                 <!-- HTMX will inject filter_chips.html here -->
-                <span class="text-xs italic text-gray-400">Our AI identifies the best crises for your query.</span>
+                <span class="text-xs italic text-gray-400">Filters will appear here when applied.</span>
             </div>
         </div>
     </section>
@@ -78,7 +78,11 @@
             <!-- List Tab -->
             <div id="tab-list" class="tab-content absolute inset-0 overflow-y-auto p-6">
                 <div class="max-w-7xl mx-auto">
-                    <div id="list-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <div id="list-container" 
+                         class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
+                         hx-get="/list"
+                         hx-trigger="filters-changed from:body"
+                         hx-include="#hidden-filters-input">
                         <!-- HTMX will inject list_items.html here -->
                     </div>
                 </div>
@@ -241,26 +245,17 @@
             if (evt.detail.target.id === 'side-panel-content') {
                 openSidePanel();
             }
-            // If the list was re-loaded (search/sort), re-apply selection if applicable
+            // If the list was re-loaded, re-apply selection if applicable
             if (evt.detail.target.id === 'list-container' && selectedCrisisId) {
                 updateSelection(selectedCrisisId);
             }
-            // IF the filters were updated, trigger a refresh of the list and map
-            if (evt.detail.target.id === 'active-filters') {
-                const filtersInput = document.getElementById('hidden-filters-input');
-                const filtersValue = filtersInput ? filtersInput.value : '';
-                
-                // Refresh List
-                htmx.ajax('GET', '/list', {
-                    target: '#list-container',
-                    values: { 
-                        filters: filtersValue 
-                    }
-                });
+        });
 
-                // Refresh Map
-                loadMapData(filtersValue);
-            }
+        // Listen for the custom HTMX event to refresh the map
+        document.body.addEventListener('filters-changed', function() {
+            const filtersInput = document.getElementById('hidden-filters-input');
+            const filtersValue = filtersInput ? filtersInput.value : '{}';
+            loadMapData(filtersValue);
         });
 
         // Global listener for list item clicks to sync with map

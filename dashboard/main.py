@@ -62,25 +62,21 @@ def get_enriched_data():
     return valid_data
 
 def apply_advanced_filters(data: List[dict], filters: Optional[QueryFilter]) -> List[dict]:
-    print("Applying filters:", filters)
     if not filters:
         return data
 
     filtered_results = data
     
     # 1. Declarative Filtering Loop
-    # We iterate over the fields actually populated in the filter object
     for field_name, condition in filters.model_dump(exclude_none=True).items():
-        if field_name == "order_by": continue # Handle sorting separately
+        if field_name == "order_by": continue
         
         paths = FIELD_MAP.get(field_name)
         if not paths: continue
 
-        # Re-get the Pydantic condition object to use its .evaluate() method
         condition_obj = getattr(filters, field_name)
         
         def item_matches(crisis):
-            # Check all possible paths for this field (e.g. Country Code OR Region)
             for path in paths: # type: ignore
                 val = get_nested_value(crisis, path)
                 if condition_obj.evaluate(val):
@@ -94,13 +90,9 @@ def apply_advanced_filters(data: List[dict], filters: Optional[QueryFilter]) -> 
         field_name = filters.order_by.field
         paths = FIELD_MAP.get(field_name)
         if paths:
-            # Sort based on the first mapped path for that field
             path = paths[0]
             reverse = filters.order_by.direction == "desc"
-            filtered_results.sort(
-                key=lambda x: get_nested_value(x, path) or 0, 
-                reverse=reverse
-            )
+            filtered_results.sort(key=lambda x: get_nested_value(x, path) or 0, reverse=reverse)
 
     return filtered_results
 
@@ -111,8 +103,13 @@ async def get_index(request: Request):
     return templates.TemplateResponse(request=request, name="index.html")
 
 @app.post("/nlp-query", response_class=HTMLResponse)
-async def post_nlp_query(request: Request, query: str = Form(...)):
-    parsed_filter = nlp_parser.parse_query(query)
+async def post_nlp_query(request: Request, query: Optional[str] = Form(None)):
+    # Handle empty or missing query safely
+    if not query:
+        parsed_filter = QueryFilter()
+    else:
+        parsed_filter = nlp_parser.parse_query(query)
+    
     chips = []
     f_dict = parsed_filter.model_dump(exclude_none=True)
     
@@ -126,11 +123,14 @@ async def post_nlp_query(request: Request, query: str = Form(...)):
     if "order_by" in f_dict:
         chips.append(f"Sort: {parsed_filter.order_by.field} ({parsed_filter.order_by.direction})") # type: ignore
 
-    return templates.TemplateResponse(
+    # Trigger a refresh AFTER the DOM has been updated with the new filter JSON
+    response = templates.TemplateResponse(
         request=request, 
         name="filter_chips.html", 
         context={"chips": chips, "filters_json": parsed_filter.model_dump_json()}
     )
+    response.headers["HX-Trigger-After-Swap"] = "filters-changed"
+    return response
 
 @app.get("/api/map-data")
 async def get_map_data(filters: Optional[str] = Query(None)):
@@ -145,20 +145,25 @@ async def get_map_data(filters: Optional[str] = Query(None)):
 @app.get("/list", response_class=HTMLResponse)
 async def get_list(request: Request, filters: Optional[str] = Query(None)):
     filtered_data = get_enriched_data()
+    
+    applied_nlp_sort = False
     if filters:
         try:
             f_obj = QueryFilter.model_validate_json(filters)
             filtered_data = apply_advanced_filters(filtered_data, f_obj)
+            if f_obj.order_by:
+                applied_nlp_sort = True
         except: pass
-    else:
-        filtered_data.sort(key=lambda x: get_nested_value(x, ["name"]) or "")
+    
+    if not applied_nlp_sort:
+        filtered_data.sort(key=lambda x: get_nested_value(x, ["display", "title"]) or "")
     
     return templates.TemplateResponse(request=request, name="list_items.html", context={"crises": filtered_data})
 
-@app.get("/details/{crisis_id}", response_class=HTMLResponse)
-async def get_details(request: Request, crisis_id: str):
+@app.get("/details/{crisis_code}", response_class=HTMLResponse)
+async def get_details(request: Request, crisis_code: str):
     data = get_enriched_data()
-    crisis = next((c for c in data if c["code"] == crisis_id), None)
+    crisis = next((c for c in data if c["code"] == crisis_code), None)
     if not crisis:
         return HTMLResponse(content="Crisis not found", status_code=404)
     return templates.TemplateResponse(request=request, name="side_panel.html", context={"crisis": crisis})

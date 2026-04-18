@@ -1,8 +1,8 @@
 import os
 import json
 import operator
-from typing import List, Optional, Literal, TypeVar, Generic, Any
-from pydantic import BaseModel, Field, ValidationError
+from typing import List, Optional, Literal, TypeVar, Generic, Any, Dict, cast
+from pydantic import BaseModel, Field, ValidationError, model_validator
 from enum import Enum
 from anthropic import Anthropic
 
@@ -23,15 +23,30 @@ class NumericCondition(BaseModel):
             "gte": operator.ge,
             "lte": operator.le
         }
-        return ops[self.operator](float(data_value), self.value)
+        try:
+            return ops[self.operator](float(data_value), self.value)
+        except (ValueError, TypeError):
+            return False
 
 class ListCondition(BaseModel):
     values: List[str]
     exclude: bool = False
 
+    @model_validator(mode='before')
+    @classmethod
+    def wrap_list(cls, data: Any) -> Any:
+        """Handle raw lists or stringified JSON lists from LLM."""
+        if isinstance(data, str):
+            try:
+                data = json.loads(data)
+            except json.JSONDecodeError:
+                pass
+        if isinstance(data, list):
+            return {"values": data}
+        return data
+
     def evaluate(self, data_value: Any) -> bool:
         if data_value is None: return False
-        # Normalize for comparison
         target = str(data_value).upper()
         check_list = [v.upper() for v in self.values]
         is_match = target in check_list
@@ -47,6 +62,18 @@ class EnumCondition(BaseModel, Generic[T]):
     values: List[T]
     exclude: bool = False
 
+    @model_validator(mode='before')
+    @classmethod
+    def wrap_list(cls, data: Any) -> Any:
+        if isinstance(data, str):
+            try:
+                data = json.loads(data)
+            except json.JSONDecodeError:
+                pass
+        if isinstance(data, list):
+            return {"values": data}
+        return data
+
     def evaluate(self, data_value: Any) -> bool:
         if data_value is None: return False
         is_match = data_value in self.values
@@ -57,8 +84,16 @@ class OrderDirection(str, Enum):
     DESC = "desc"
 
 class OrderCondition(BaseModel):
-    field: Literal["people_in_need", "funding_coverage_percentage", "funding_required_usd", "funding_received_usd", "overlooked_rank"]
+    field: str # Flexible field name for mapping
     direction: OrderDirection = OrderDirection.DESC
+    
+    @model_validator(mode='before')
+    @classmethod
+    def repair_order(cls, data: Any) -> Any:
+        if isinstance(data, str):
+            try: return json.loads(data)
+            except: pass
+        return data
 
 class QueryFilter(BaseModel):
     locations: Optional[ListCondition] = None
@@ -79,15 +114,10 @@ class QueryParser:
         else:
             self.client = Anthropic(api_key=key)
         self.model = "claude-3-haiku-20240307"
-        
-        print(f"NLP Service initialized with model: {self.model}")
 
     def parse_query(self, query: str) -> QueryFilter:
         if not self.client or not query.strip():
-            print("NLP error: No API key or empty query. Returning empty filter.")
             return QueryFilter()
-        
-        print(f"Querying LLM with: {query}")
 
         tool_schema = {
             "name": "apply_filters",
@@ -119,26 +149,23 @@ class QueryParser:
             )
 
             tool_call = response.content[0]
-            print(f"LLM Tool Call: {tool_call}")
             if tool_call.type == "tool_use" and tool_call.name == "apply_filters":
-                # Parse any string values in the input that should be objects
-                parsed_input = {}
-                for key, value in tool_call.input.items():
-                    if isinstance(value, str):
+                # 1. Cast to dict to solve Pylance "object" error
+                # 2. Use model_validate which handles nested validation more robustly
+                raw_input = cast(Dict[str, Any], tool_call.input)
+                
+                # Pre-process top-level stringified JSON (common in LLM tool calls)
+                processed_input = {}
+                for k, v in raw_input.items():
+                    if isinstance(v, str) and (v.startswith('[') or v.startswith('{')):
                         try:
-                            parsed_input[key] = json.loads(value)
-                        except (json.JSONDecodeError, TypeError):
-                            parsed_input[key] = value
+                            processed_input[k] = json.loads(v)
+                        except:
+                            processed_input[k] = v
                     else:
-                        parsed_input[key] = value
-                
-                # Handle list condition fields that the LLM might output as lists instead of dicts
-                list_condition_fields = ['locations', 'sectors', 'crisis_type']
-                for field in list_condition_fields:
-                    if field in parsed_input and isinstance(parsed_input[field], list):
-                        parsed_input[field] = {'values': parsed_input[field]}
-                
-                return QueryFilter(**parsed_input) # type: ignore
+                        processed_input[k] = v
+
+                return QueryFilter.model_validate(processed_input)
         except Exception as e:
             print(f"NLP Error: {e}")
             return QueryFilter()
