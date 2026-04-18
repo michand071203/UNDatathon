@@ -22,6 +22,14 @@ class EnumCondition(BaseModel, Generic[T]):
     values: List[T] = Field(description="List of enum values to filter by.")
     exclude: bool = Field(default=False, description="If true, EXCLUDE these values (negation).")
 
+class OrderDirection(str, Enum):
+    ASC = "asc"
+    DESC = "desc"
+
+class OrderCondition(BaseModel):
+    field: Literal["people_in_need", "funding_coverage_percentage", "funding_required_usd", "funding_received_usd", "overlooked_rank"] = Field(description="The field to sort by.")
+    direction: OrderDirection = Field(default=OrderDirection.DESC, description="Direction of the sort: 'asc' or 'desc'.")
+
 class QueryFilter(BaseModel):
     locations: Optional[ListCondition] = Field(
         default=None, 
@@ -31,6 +39,7 @@ class QueryFilter(BaseModel):
     funding_coverage_percentage: Optional[NumericCondition] = Field(default=None, description="Filter by funding coverage % (0-100).")
     sectors: Optional[ListCondition] = Field(default=None, description="Humanitarian sectors (e.g., 'Health', 'Food Security').")
     crisis_type: Optional[EnumCondition[CrisisTypeEnum]] = Field(default=None, description="Filter by the type of crisis.")
+    order_by: Optional[OrderCondition] = Field(default=None, description="If the query asks to sort or order the results (e.g., 'highest', 'lowest', 'most underfunded').")
     is_multi_year_query: bool = Field(default=False)
 
 class CrisisData(BaseModel):

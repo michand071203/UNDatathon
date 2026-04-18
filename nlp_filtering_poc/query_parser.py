@@ -6,6 +6,8 @@ from anthropic import Anthropic
 
 from models import QueryFilter
 
+from pydantic import ValidationError
+
 class QueryParser:
     def __init__(self, api_key: Optional[str] = None):
         """
@@ -39,8 +41,9 @@ class QueryParser:
             "IMPORTANT RULES:\n"
             "1. Pay strict attention to the data types. If a value is missing or unknown, omit the field or return a literal JSON null.\n"
             "2. For numeric filters, infer the correct operator ('eq', 'gt', 'lt', 'gte', 'lte'). E.g., 'more than 10%' -> 'gt', 'less than 5' -> 'lt'.\n"
-            "3. For list/enum filters, if the query implies negation (e.g., 'excluding', 'outside of', 'not in'), set the 'exclude' field to true.\n"
-            "4. For geographic locations, output standard ISO-3 codes for specific countries (e.g. 'SDN', 'HTI'). If a broad region is mentioned, output the exact region name (e.g. 'Africa', 'Middle East')."
+            "3. For list/enum filters, if the query implies negation (e.g., 'outside of the Middle East', 'excluding Sudan'), use the EXACT location/item mentioned and set the 'exclude' field to true. Do NOT try to list all the other alternatives.\n"
+            "4. For geographic locations, output standard ISO-3 codes for specific countries (e.g. 'SDN', 'HTI'). If a broad region is mentioned, output the exact region name (e.g. 'Africa', 'Middle East').\n"
+            "5. If the query asks to sort or rank results (e.g., 'highest', 'lowest', 'most underfunded'), set the 'order_by' field with the correct 'field' and 'direction' ('asc' or 'desc')."
         )
 
         response = self.client.messages.create(
@@ -57,8 +60,19 @@ class QueryParser:
         # Extract the tool use arguments
         tool_call = response.content[0]
         if tool_call.type == "tool_use" and tool_call.name == "apply_filters":
-            # Convert the raw dictionary back into our Pydantic model to ensure validation
-            return QueryFilter(**tool_call.input)
+            try:
+                # Convert the raw dictionary back into our Pydantic model to ensure validation
+                return QueryFilter(**tool_call.input)
+            except ValidationError as e:
+                # Descriptive error formatting
+                error_msg = "The NLP engine generated an invalid filter format.\nDetails:\n"
+                for err in e.errors():
+                    loc = " -> ".join([str(l) for l in err["loc"]])
+                    error_msg += f" - Field '{loc}': {err['msg']} (Got: {err.get('input')})\n"
+                
+                print(f"\n[Warning] {error_msg}")
+                print("[Fallback] Returning an empty QueryFilter to prevent crash.\n")
+                return QueryFilter()
         
         raise RuntimeError(f"Unexpected response format from Claude: {response.content}")
 

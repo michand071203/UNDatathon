@@ -14,9 +14,9 @@ def main():
         return
 
     example_queries = [
-        "Which crises have more than 1000000 people in need but less than 25% fund allocations?",
+        "Which crises have more than 1000000 people in need but less than 25% fund allocations? Order them by the lowest funding coverage.",
         "Are there countries outside of the Middle East with active HRPs where funding is absent or negligible?",
-        "Show me acute natural disaster hotspots that have received less than 10% of their requested funding, excluding Sudan."
+        "Show me acute natural disaster hotspots that have received less than 10% of their requested funding, excluding Sudan, and rank them by highest people in need."
     ]
 
     print("=== Testing Humanitarian LLM Query Parser ===")
