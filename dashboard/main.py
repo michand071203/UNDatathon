@@ -63,6 +63,16 @@ def get_nested_value(data: dict, path: List[str]) -> Any:
             return None
     return current
 
+
+def sanitize_non_finite_values(value: Any) -> Any:
+    if isinstance(value, dict):
+        return {k: sanitize_non_finite_values(v) for k, v in value.items()}
+    if isinstance(value, list):
+        return [sanitize_non_finite_values(v) for v in value]
+    if isinstance(value, float) and not math.isfinite(value):
+        return None
+    return value
+
 # --- Dynamic Core Logic ---
 
 def calculate_color(funding_coverage: float) -> str:
@@ -99,10 +109,93 @@ def iso3_to_full_country_name(code: Optional[str]) -> Optional[str]:
 
     return getattr(country, "official_name", None) or country.name
 
+
+def _pick_display_year(years: dict) -> Optional[str]:
+    # Dashboard is intentionally fixed to 2026-only display.
+    if not years:
+        return None
+    return "2026" if "2026" in years else None
+
+
+def _normalize_crisis_record(crisis: dict) -> Optional[dict]:
+    # Dashboard expects the all-years schema with a top-level years dictionary.
+    if "years" not in crisis or not isinstance(crisis.get("years"), dict):
+        return None
+
+    years = crisis.get("years", {})
+    selected_year = _pick_display_year(years)
+    if selected_year is None:
+        return None
+
+    year_data = years.get(selected_year, {}) if selected_year else {}
+    codes = year_data.get("codes") or []
+    names = year_data.get("names") or []
+    people_2026 = crisis.get("people_2026") or {}
+    funding_timeline = []
+    for year_key, values in years.items():
+        try:
+            year_int = int(year_key)
+        except (TypeError, ValueError):
+            continue
+
+        requirements = values.get("requirements")
+        funding = values.get("funding")
+        if requirements is None and funding is None:
+            continue
+
+        coverage_ratio = 0.0
+        if isinstance(requirements, (int, float)) and isinstance(funding, (int, float)) and requirements > 0:
+            coverage_ratio = max(0.0, min(float(funding) / float(requirements), 1.0))
+
+        funding_timeline.append(
+            {
+                "year": year_int,
+                "requirements": requirements,
+                "funding": funding,
+                "percent_funded": values.get("percent_funded"),
+                "coverage_ratio": coverage_ratio,
+            }
+        )
+
+    funding_timeline.sort(key=lambda x: x["year"])
+
+    normalized = {
+        "code": codes[0] if codes else crisis.get("funding_base_key"),
+        "dest_plan_code": codes[0] if codes else crisis.get("funding_base_key"),
+        "name": names[0] if names else crisis.get("funding_base_key"),
+        "display_year": int(selected_year) if selected_year and str(selected_year).isdigit() else None,
+        "primary_location_code": crisis.get("primary_location_code"),
+        "primary_location_name": crisis.get("primary_location_name"),
+        "location_codes": [crisis.get("primary_location_code")] if crisis.get("primary_location_code") else [],
+        "requirements": year_data.get("requirements"),
+        "funding": year_data.get("funding"),
+        "percent_funded": year_data.get("percent_funded"),
+        "contribution_count": year_data.get("contribution_count"),
+        "people_in_need": people_2026.get("people_in_need"),
+        "people_targeted": people_2026.get("people_targeted"),
+        "people_affected": people_2026.get("people_affected"),
+        "people_reached": people_2026.get("people_reached"),
+        "latitude": crisis.get("latitude"),
+        "longitude": crisis.get("longitude"),
+        "funding_base_key": crisis.get("funding_base_key"),
+        "funding_timeline": funding_timeline,
+    }
+    return normalized
+
 def get_enriched_data():
-    json_path = os.path.join(BASE_DIR, "..", "data", "2026_crisis_summary.json")
+    json_path = os.path.join(
+        BASE_DIR, "..", "data_pipeline", "crisis_summary_all_years.json"
+    )
+    if not os.path.exists(json_path):
+        raise FileNotFoundError(
+            "Could not find data_pipeline/crisis_summary_all_years.json."
+        )
+
     with open(json_path, "r") as f:
-        data = json.load(f)
+        raw_data = json.load(f)
+
+    data = [_normalize_crisis_record(item) for item in raw_data]
+    data = [item for item in data if item is not None]
     
     valid_data = []
     for crisis in data:
@@ -121,7 +214,7 @@ def get_enriched_data():
 
             crisis["color"] = calculate_color(crisis.get("percent_funded") or 0)
             crisis["radius_km"] = calculate_radius(crisis.get("people_in_need") or 500000)
-            valid_data.append(crisis)
+            valid_data.append(sanitize_non_finite_values(crisis))
     return valid_data
 
 def apply_advanced_filters(data: List[dict], filters: Optional[QueryFilter]) -> List[dict]:

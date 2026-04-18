@@ -61,6 +61,39 @@
             </div>
         </section>
 
+        <section>
+            <h3 class="text-sm font-bold text-gray-400 uppercase tracking-wider mb-4">Funding Over Time</h3>
+            {% if crisis.funding_timeline %}
+            <div class="bg-white border border-gray-200 rounded-xl p-4 space-y-3 shadow-sm">
+                {% for point in crisis.funding_timeline %}
+                <div>
+                    <div class="flex items-center justify-between text-xs font-semibold text-gray-600 mb-1">
+                        <span>{{ point.year }}</span>
+                        <span>
+                            {% if point.percent_funded is not none %}
+                                {{ '%.1f'|format(point.percent_funded) }}%
+                            {% else %}
+                                N/A
+                            {% endif %}
+                        </span>
+                    </div>
+                    <div class="h-2.5 bg-gray-100 rounded-full overflow-hidden">
+                        <div class="h-full bg-blue-500" style="width: {{ '%.1f'|format((point.coverage_ratio or 0) * 100) }}%"></div>
+                    </div>
+                    <div class="mt-1 text-[11px] text-gray-500 flex justify-between">
+                        <span>{% if point.funding %}${{ '{:,.0f}'.format(point.funding) }}{% else %}Unknown funding{% endif %}</span>
+                        <span>{% if point.requirements %}${{ '{:,.0f}'.format(point.requirements) }} req{% else %}Unknown req{% endif %}</span>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+            {% else %}
+            <div class="bg-gray-50 border border-gray-200 rounded-xl p-4 text-sm text-gray-500">
+                No historical funding timeline available for this crisis.
+            </div>
+            {% endif %}
+        </section>
+
         <!-- Technical Metadata (Fixed) -->
         <section>
             <h3 class="text-sm font-bold text-gray-400 uppercase tracking-wider mb-4">Geographic Anchors</h3>
