@@ -419,6 +419,58 @@ def build_historical_benchmark_data(summary):
     return historical
 
 
+def apply_last_year_requirement_fallback(funding_summary, plans, target_year=2026):
+    if funding_summary.empty:
+        funding_summary = funding_summary.copy()
+        funding_summary["requirements_last_year"] = pd.Series(dtype=float)
+        return funding_summary
+
+    funding_summary = funding_summary.copy()
+
+    plan_keys = plans[["code", "year", "primary_location", "planVersion"]].copy()
+    plan_keys = plan_keys.dropna(subset=["code", "year", "primary_location"])
+    plan_keys = plan_keys.drop_duplicates(subset=["code", "year"], keep="first")
+    plan_keys = plan_keys.rename(columns={"planVersion": "name"})
+
+    canonical_key_map = build_latest_canonical_key_map(plan_keys)
+    funding_summary = funding_summary.merge(
+        plan_keys,
+        how="left",
+        on=["code", "year"],
+    )
+    funding_summary["benchmark_key"] = funding_summary.apply(
+        lambda row: apply_latest_canonical_key(
+            build_funding_base_key(row.get("code"), row.get("year")),
+            row.get("primary_location"),
+            row.get("name"),
+            canonical_key_map,
+        ),
+        axis=1,
+    )
+
+    previous_year = funding_summary[
+        ["benchmark_key", "year", "requirements", "funding"]
+    ].copy()
+    previous_year["year"] = previous_year["year"] + 1
+    previous_year["requirements_last_year"] = (
+        previous_year["requirements"] - previous_year["funding"]
+    ).clip(lower=0)
+    previous_year = previous_year[["benchmark_key", "year", "requirements_last_year"]]
+
+    funding_summary = funding_summary.merge(
+        previous_year,
+        how="left",
+        on=["benchmark_key", "year"],
+    )
+
+    zero_requirement_mask = (
+        funding_summary["year"].eq(target_year) & funding_summary["requirements"].eq(0)
+    )
+    funding_summary.loc[zero_requirement_mask, "requirements"] = pd.NA
+
+    return funding_summary.drop(columns=["primary_location", "name", "benchmark_key"])
+
+
 def compute_systematic_underfunding_metrics(historical):
     if historical.empty:
         return pd.DataFrame(
@@ -626,6 +678,9 @@ def build_all_years_export(summary):
         project_metrics_2026 = None
         if not group_2026.empty:
             requirements_2026 = group_2026["requirements"].sum(min_count=1)
+            requirements_last_year_2026 = group_2026["requirements_last_year"].sum(
+                min_count=1
+            )
             funding_2026 = group_2026["funding"].sum(min_count=1)
             contribution_count_2026 = group_2026["contribution_count"].sum(min_count=1)
 
@@ -658,6 +713,7 @@ def build_all_years_export(summary):
 
             project_metrics_2026 = {
                 "requirements": _json_number(requirements_2026),
+                "requirements_last_year": _json_number(requirements_last_year_2026),
                 "funding": _json_number(funding_2026),
                 "percent_funded": _json_number(percent_funded_2026),
                 "contribution_count": int(contribution_count_2026)
@@ -710,6 +766,9 @@ def build_all_years_export(summary):
         for year, year_group in group.groupby("year", dropna=False):
             year_key = str(int(year)) if pd.notna(year) else "unknown"
             year_requirements = year_group["requirements"].sum(min_count=1)
+            year_requirements_last_year = year_group["requirements_last_year"].sum(
+                min_count=1
+            )
             year_funding = year_group["funding"].sum(min_count=1)
             payload["years"][year_key] = {
                 "codes": sorted(
@@ -719,6 +778,7 @@ def build_all_years_export(summary):
                     [str(name) for name in year_group["name"].dropna().unique().tolist()]
                 ),
                 "requirements": _json_number(year_requirements),
+                "requirements_last_year": _json_number(year_requirements_last_year),
                 "funding": _json_number(year_funding),
                 "percent_funded": _json_number(
                     round((year_funding / year_requirements) * 100, 1)
@@ -856,6 +916,7 @@ def build_summary(year=None):
     funding_summary = fts.groupby(["code", "year"], as_index=False).agg(
         requirements=("requirements", "sum"), funding=("funding", "sum")
     )
+    funding_summary = apply_last_year_requirement_fallback(funding_summary, plans)
     funding_summary["percent_funded"] = (
         100 * funding_summary["funding"] / funding_summary["requirements"]
     ).round(1)
