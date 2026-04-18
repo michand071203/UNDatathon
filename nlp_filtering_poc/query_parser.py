@@ -4,28 +4,7 @@ from typing import List, Optional
 from pydantic import BaseModel, Field
 from anthropic import Anthropic
 
-# Define the structured output schema using Pydantic
-class QueryFilter(BaseModel):
-    geographic_scope: Optional[List[str]] = Field(
-        default=None, 
-        description="List of regions, countries, or continents mentioned in the query. Example: ['Africa', 'Middle East', 'Yemen']"
-    )
-    min_people_in_need: Optional[int] = Field(
-        default=None, 
-        description="The minimum number of people in need (PIN) required to filter the crises."
-    )
-    max_funding_coverage_percentage: Optional[float] = Field(
-        default=None, 
-        description="The maximum funding coverage percentage (0.0 to 100.0) mentioned. Example: 10% would be 10.0"
-    )
-    target_sectors: Optional[List[str]] = Field(
-        default=None, 
-        description="Specific humanitarian sectors mentioned, e.g., ['Food Security', 'Health', 'Shelter']"
-    )
-    is_multi_year_query: bool = Field(
-        default=False, 
-        description="True if the query explicitly asks for multi-year trends or consistently underfunded crises."
-    )
+from models import QueryFilter
 
 class QueryParser:
     def __init__(self, api_key: Optional[str] = None):
@@ -56,7 +35,9 @@ class QueryParser:
             "You are an expert humanitarian data analyst. "
             "Your task is to take a natural language query about humanitarian crises, funding gaps, "
             "and needs, and extract the precise filtering parameters. "
-            "Always use the `apply_filters` tool to output the structured data."
+            "Always use the `apply_filters` tool to output the structured data. "
+            "IMPORTANT: Pay strict attention to the data types. If a value is missing or unknown, "
+            "you MUST omit the field or return a literal JSON null. Do not return strings like '<UNKNOWN>' or 'null'."
         )
 
         response = self.client.messages.create(
