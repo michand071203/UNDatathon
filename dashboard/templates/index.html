@@ -19,10 +19,48 @@
         #map { height: calc(100vh - 80px); }
         .tab-content { display: none; }
         .tab-content.active { display: block; }
+        .leaflet-tooltip.crisis-tooltip {
+            background: transparent;
+            border: 0;
+            box-shadow: none;
+            padding: 0;
+        }
         .crisis-tooltip {
             white-space: normal;
-            width: max-content;
-            max-width: min(70vw, 560px);
+            width: min(84vw, 360px);
+        }
+        .crisis-hover-card {
+            border-radius: 14px;
+            border: 1px solid rgba(148, 163, 184, 0.35);
+            background: linear-gradient(160deg, #ffffff 0%, #f8fafc 62%, #eff6ff 100%);
+            box-shadow: 0 12px 30px rgba(15, 23, 42, 0.2), 0 2px 8px rgba(15, 23, 42, 0.08);
+            color: #0f172a;
+            overflow: hidden;
+        }
+        .crisis-hover-accent {
+            height: 4px;
+            width: 100%;
+        }
+        .crisis-kpi-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 8px;
+        }
+        .crisis-kpi {
+            background: rgba(255, 255, 255, 0.82);
+            border: 1px solid rgba(148, 163, 184, 0.22);
+            border-radius: 8px;
+            padding: 8px;
+        }
+        .crisis-coverage-track {
+            height: 6px;
+            border-radius: 9999px;
+            background: rgba(148, 163, 184, 0.3);
+            overflow: hidden;
+        }
+        .crisis-coverage-fill {
+            height: 100%;
+            border-radius: 9999px;
         }
         /* Keep selected map markers visually circular; suppress default rectangular focus ring. */
         .leaflet-container .leaflet-interactive:focus {
@@ -196,6 +234,81 @@
                 return 'Unknown';
             }
             return String(Math.round(Number(value)));
+        }
+
+        function formatPercent(value) {
+            if (value === null || value === undefined || Number.isNaN(Number(value))) {
+                return 'Unknown';
+            }
+            return `${Number(value).toFixed(1)}%`;
+        }
+
+        function buildCrisisHoverCard(crisis, baseColor) {
+            const requirements = Number(crisis.requirements);
+            const funding = Number(crisis.funding);
+            const hasRequirements = Number.isFinite(requirements);
+            const hasFunding = Number.isFinite(funding);
+            const fundingGap = hasRequirements && hasFunding ? Math.max(requirements - funding, 0) : null;
+
+            const coverage = Number(crisis.percent_funded);
+            const coverageIsKnown = Number.isFinite(coverage);
+            const coverageWidth = coverageIsKnown
+                ? Math.max(0, Math.min(100, coverage))
+                : 0;
+            const locationsText = crisis.locations_display || 'Unknown location';
+            const projectedTag = crisis.coverage_projected ? '<span class="ml-1 text-[10px] font-bold uppercase text-amber-700">Projected*</span>' : '';
+
+            return `
+                <article class="crisis-hover-card">
+                    <div class="crisis-hover-accent" style="background:${baseColor};"></div>
+                    <div class="px-3 py-2.5">
+                        <header class="mb-2">
+                            <h3 class="text-sm font-extrabold leading-tight text-slate-900">${crisis.name || 'Unknown crisis'}</h3>
+                            <p class="mt-1 text-[11px] font-medium text-slate-500">${locationsText}</p>
+                        </header>
+
+                        <div class="mb-2.5 rounded-md bg-white/75 border border-slate-200 px-2.5 py-2">
+                            <div class="flex items-center justify-between">
+                                <span class="text-[10px] font-bold tracking-wide uppercase text-slate-500">Funding Coverage</span>
+                                <span class="text-xs font-black text-blue-700">${formatPercent(crisis.percent_funded)}</span>
+                            </div>
+                            <div class="mt-1.5 crisis-coverage-track">
+                                <div class="crisis-coverage-fill" style="width:${coverageWidth}%;background:linear-gradient(90deg,#2563eb 0%,#3b82f6 100%);"></div>
+                            </div>
+                            <div class="mt-1 text-[10px] text-slate-500">${projectedTag}</div>
+                        </div>
+
+                        <div class="crisis-kpi-grid">
+                            <div class="crisis-kpi">
+                                <div class="text-[10px] font-bold uppercase tracking-wide text-slate-500">Severity</div>
+                                <div class="mt-1 text-sm font-black" style="color:${baseColor};">${formatSeverityScore(crisis.overall_severity_score)}</div>
+                            </div>
+                            <div class="crisis-kpi">
+                                <div class="text-[10px] font-bold uppercase tracking-wide text-slate-500">People In Need</div>
+                                <div class="mt-1 text-sm font-black text-slate-900">${formatCompactNumber(crisis.people_in_need)}</div>
+                            </div>
+                            <div class="crisis-kpi">
+                                <div class="text-[10px] font-bold uppercase tracking-wide text-slate-500">Funding</div>
+                                <div class="mt-1 text-sm font-black text-emerald-700">${formatCompactUsd(crisis.funding)}</div>
+                            </div>
+                            <div class="crisis-kpi">
+                                <div class="text-[10px] font-bold uppercase tracking-wide text-slate-500">Requirements</div>
+                                <div class="mt-1 text-sm font-black text-slate-900">${formatCompactUsd(crisis.requirements)}</div>
+                            </div>
+                            <div class="crisis-kpi">
+                                <div class="text-[10px] font-bold uppercase tracking-wide text-slate-500">Funding Gap</div>
+                                <div class="mt-1 text-sm font-black text-rose-700">${fundingGap === null ? 'Unknown' : formatCompactUsd(fundingGap)}</div>
+                            </div>
+                            <div class="crisis-kpi">
+                                <div class="text-[10px] font-bold uppercase tracking-wide text-slate-500">People Targeted</div>
+                                <div class="mt-1 text-sm font-black text-slate-900">${formatCompactNumber(crisis.people_targeted)}</div>
+                            </div>
+                        </div>
+
+                        <footer class="mt-2.5 text-[10px] font-semibold uppercase tracking-wide text-blue-700">Click marker for full profile</footer>
+                    </div>
+                </article>
+            `;
         }
 
         const fundingHoverLinePlugin = {
@@ -440,14 +553,7 @@
                 circle.baseColor = baseColor;
                 mapCircles[crisis.code] = circle;
 
-                circle.bindTooltip(`
-                    <div class="p-1">
-                        <div class="font-bold text-lg">${crisis.name}</div>
-                        <div class="text-sm text-gray-600 mb-1">Locations: ${crisis.locations_display || 'Unknown'}</div>
-                        <div class="text-sm font-extrabold mb-1" style="color: ${baseColor};">Severity Score: ${formatSeverityScore(crisis.overall_severity_score)}</div>
-                        <div class="text-xs font-semibold text-blue-600">${crisis.people_in_need !== null && crisis.people_in_need !== undefined ? `${formatCompactNumber(crisis.people_in_need)} in need` : 'Unknown PIN'}</div>
-                    </div>
-                `, {
+                circle.bindTooltip(buildCrisisHoverCard(crisis, baseColor), {
                     direction: 'top',
                     offset: [0, -radiusInPixels - 2],
                     className: 'crisis-tooltip'
