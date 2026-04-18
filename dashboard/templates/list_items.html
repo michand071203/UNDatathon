@@ -14,30 +14,36 @@
             <h3 class="text-lg font-bold text-gray-800 leading-tight">{{ crisis.name }}</h3>
         </div>
 
-            <!-- Row 2: Locations and Metrics -->
-            <div class="flex flex-col lg:flex-row lg:items-center gap-4 lg:gap-12">
-                <div class="flex items-center gap-8 sm:gap-12 shrink-0">
-                    <div class="flex flex-col rounded-lg px-3 py-2 min-w-[112px] border" style="background-color: color-mix(in srgb, {{ crisis.color or '#9ca3af' }} 14%, white); border-color: color-mix(in srgb, {{ crisis.color or '#9ca3af' }} 32%, white);">
-                        <span class="text-[9px] font-bold uppercase tracking-widest mb-0.5" style="color: color-mix(in srgb, {{ crisis.color or '#9ca3af' }} 68%, #1f2937);">Severity Score</span>
-                        <span class="text-base font-extrabold whitespace-nowrap" style="color: color-mix(in srgb, {{ crisis.color or '#9ca3af' }} 78%, #111827);">
-                            {% if crisis.overall_severity_score is not none %}{{ '%.3f'|format(crisis.overall_severity_score) }}{% else %}Unknown{% endif %}
-                        </span>
-                    </div>
+        <!-- Row 2: Locations and Metrics -->
+        <div class="flex flex-col lg:flex-row lg:items-center gap-4 lg:gap-12 mb-4">
+            <div class="flex items-center gap-8 sm:gap-12 shrink-0">
+                <div class="flex flex-col rounded-lg px-3 py-2 min-w-[112px] border" style="background-color: color-mix(in srgb, {{ crisis.color or '#9ca3af' }} 14%, white); border-color: color-mix(in srgb, {{ crisis.color or '#9ca3af' }} 32%, white);">
+                    <span class="text-[9px] font-bold uppercase tracking-widest mb-0.5" style="color: color-mix(in srgb, {{ crisis.color or '#9ca3af' }} 68%, #1f2937);">Severity Score</span>
+                    <span class="text-base font-extrabold whitespace-nowrap" style="color: color-mix(in srgb, {{ crisis.color or '#9ca3af' }} 78%, #111827);">
+                        {% if crisis.overall_severity_score is not none %}{{ '%.3f'|format(crisis.overall_severity_score) }}{% else %}Unknown{% endif %}
+                    </span>
+                </div>
 
-                    <div class="flex flex-col">
-                        <span class="text-[9px] font-bold text-gray-400 uppercase tracking-widest mb-0.5">Location</span>
-                        <span class="text-sm font-bold text-blue-600 whitespace-nowrap">
-                            {% if crisis.primary_location_name_display %}{{ crisis.primary_location_name_display }}{% else %}Unknown{% endif %}
-                        </span>
-                    </div>
+                <div class="flex flex-col">
+                    <span class="text-[9px] font-bold text-gray-400 uppercase tracking-widest mb-0.5">Location</span>
+                    <span class="text-sm font-bold text-blue-600 whitespace-nowrap">
+                        {% if crisis.primary_location_name_display %}{{ crisis.primary_location_name_display }}{% else %}Unknown{% endif %}
+                    </span>
+                </div>
 
-                    <div class="flex flex-col">
-                        <span class="text-[9px] font-bold text-gray-400 uppercase tracking-widest mb-0.5">In Need</span>
-                        <span class="text-sm font-bold text-blue-600 whitespace-nowrap">
-                            {% if crisis.people_in_need %}{{ '{:,}'.format(crisis.people_in_need | int) }}{% else %}Unknown{% endif %}
-                        </span>
-                    </div>
+                <div class="flex flex-col">
+                    <span class="text-[9px] font-bold text-gray-400 uppercase tracking-widest mb-0.5">In Need</span>
+                    <span class="text-sm font-bold text-blue-600 whitespace-nowrap">
+                        {% if crisis.people_in_need %}{{ '{:,}'.format(crisis.people_in_need | int) }}{% else %}Unknown{% endif %}
+                    </span>
+                </div>
 
+                <div class="flex flex-col">
+                    <span class="text-[9px] font-bold text-gray-400 uppercase tracking-widest mb-0.5">Requirements</span>
+                    <span class="text-sm font-bold text-gray-700 whitespace-nowrap">
+                        {% if crisis.requirements %}${{ '{:,}'.format(crisis.requirements | int) }}{% else %}Unknown{% endif %}
+                    </span>
+                </div>
                     <div class="flex flex-col">
                         <span class="text-[9px] font-bold text-gray-400 uppercase tracking-widest mb-0.5">Requirements</span>
                         <span class="text-sm font-bold text-gray-700 whitespace-nowrap">
