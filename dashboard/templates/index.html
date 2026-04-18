@@ -12,6 +12,8 @@
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
     <!-- Leaflet JS -->
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <style>
         #map { height: calc(100vh - 80px); }
         .tab-content { display: none; }
@@ -116,6 +118,91 @@
         // Selection Tracking
         let selectedCrisisId = null;
         let mapCircles = {};
+
+        function formatCompactUsd(value) {
+            if (value === null || value === undefined || Number.isNaN(Number(value))) {
+                return 'Unknown';
+            }
+            return `$${Number(value).toLocaleString()}`;
+        }
+
+        function initFundingLineCharts(root = document) {
+            if (typeof Chart === 'undefined') return;
+
+            const canvases = root.querySelectorAll('canvas.funding-line-chart');
+            canvases.forEach((canvas) => {
+                if (canvas._fundingChartInstance) {
+                    canvas._fundingChartInstance.destroy();
+                }
+
+                const years = JSON.parse(canvas.dataset.years || '[]');
+                const percentages = JSON.parse(canvas.dataset.percentages || '[]').map((v) =>
+                    v === null || v === undefined ? null : Number(v)
+                );
+                const funding = JSON.parse(canvas.dataset.funding || '[]');
+                const requirements = JSON.parse(canvas.dataset.requirements || '[]');
+
+                const ctx = canvas.getContext('2d');
+                if (!ctx) return;
+
+                canvas._fundingChartInstance = new Chart(ctx, {
+                    type: 'line',
+                    data: {
+                        labels: years,
+                        datasets: [
+                            {
+                                label: 'Funding %',
+                                data: percentages,
+                                borderColor: '#2563eb',
+                                backgroundColor: 'rgba(37, 99, 235, 0.15)',
+                                pointBackgroundColor: '#1d4ed8',
+                                pointBorderColor: '#ffffff',
+                                pointBorderWidth: 1,
+                                pointRadius: 3,
+                                tension: 0.2,
+                                spanGaps: true,
+                            },
+                        ],
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        scales: {
+                            y: {
+                                min: 0,
+                                max: 100,
+                                ticks: {
+                                    callback: (value) => `${value}%`,
+                                    color: '#6b7280',
+                                    font: { size: 10 },
+                                },
+                                grid: { color: '#e5e7eb' },
+                            },
+                            x: {
+                                ticks: { color: '#6b7280', font: { size: 10 } },
+                                grid: { display: false },
+                            },
+                        },
+                        plugins: {
+                            legend: { display: false },
+                            tooltip: {
+                                callbacks: {
+                                    title: (items) => `Year ${items[0].label}`,
+                                    label: (context) => {
+                                        const idx = context.dataIndex;
+                                        const pct = context.parsed.y;
+                                        const pctText = pct === null || pct === undefined ? 'N/A' : `${pct.toFixed(1)}% funded`;
+                                        const fundingText = `Funding: ${formatCompactUsd(funding[idx])}`;
+                                        const reqText = `Requirements: ${formatCompactUsd(requirements[idx])}`;
+                                        return [pctText, fundingText, reqText];
+                                    },
+                                },
+                            },
+                        },
+                    },
+                });
+            });
+        }
 
 
         // Map Initialization
@@ -257,6 +344,7 @@
         document.body.addEventListener('htmx:afterOnLoad', function(evt) {
             if (evt.detail.target.id === 'side-panel-content') {
                 openSidePanel();
+                initFundingLineCharts(evt.detail.target);
             }
             // If the list was re-loaded, re-apply selection if applicable
             if (evt.detail.target.id === 'list-container' && selectedCrisisId) {
@@ -329,6 +417,34 @@
             const nextFilters = parseFiltersJson();
             nextFilters.order_by = { field: fieldSelect.value, direction: nextDirection };
             writeFiltersJson(nextFilters);
+        });
+
+        document.body.addEventListener('click', function(e) {
+            const btn = e.target.closest('[data-funding-tab-button]');
+            if (!btn) return;
+
+            const container = btn.closest('[data-funding-tabs]');
+            if (!container) return;
+
+            const target = btn.dataset.fundingTabTarget;
+            container.querySelectorAll('[data-funding-tab-button]').forEach((b) => {
+                b.classList.remove('bg-white', 'text-blue-700', 'shadow-sm');
+                b.classList.add('text-gray-600');
+            });
+            btn.classList.add('bg-white', 'text-blue-700', 'shadow-sm');
+            btn.classList.remove('text-gray-600');
+
+            container.querySelectorAll('[data-funding-tab-panel]').forEach((panel) => {
+                if (panel.dataset.fundingTabPanel === target) {
+                    panel.classList.remove('hidden');
+                } else {
+                    panel.classList.add('hidden');
+                }
+            });
+
+            if (target === 'line') {
+                initFundingLineCharts(container);
+            }
         });
     </script>
 </body>
