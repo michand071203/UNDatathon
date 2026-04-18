@@ -1,5 +1,6 @@
 import os
 import json
+import re
 import operator
 from typing import List, Optional, Literal, TypeVar, Generic, Any, Dict, cast
 from pydantic import BaseModel, Field, ValidationError, model_validator
@@ -127,6 +128,31 @@ class QueryParser:
             _format_region_name_for_prompt(name) for name in REGION_NAMES
         )
 
+    def _normalize_percentage_conditions(self, query: str, parsed_filter: QueryFilter) -> QueryFilter:
+        """Ensure percentage fields use percent units (e.g. 10 for 10%), not ratios (0.1)."""
+        percent_matches = re.findall(r"(\d+(?:\.\d+)?)\s*%", query)
+        if not percent_matches:
+            return parsed_filter
+
+        query_percents = [float(match) for match in percent_matches]
+        percentage_fields = ["funding_coverage_percentage"]
+
+        for field_name in percentage_fields:
+            condition = getattr(parsed_filter, field_name, None)
+            if not isinstance(condition, NumericCondition):
+                continue
+
+            value = float(condition.value)
+
+            # If the model returned a ratio for an explicit percentage query
+            # (e.g. query 10% -> value 0.1), convert it to percent units.
+            for q_percent in query_percents:
+                if q_percent > 1 and abs(value - (q_percent / 100.0)) < 1e-9:
+                    condition.value = q_percent
+                    break
+
+        return parsed_filter
+
     def parse_query(self, query: str) -> QueryFilter:
         if not self.client or not query.strip():
             return QueryFilter()
@@ -180,7 +206,8 @@ class QueryParser:
                     else:
                         processed_input[k] = v
 
-                return QueryFilter.model_validate(processed_input)
+                parsed_filter = QueryFilter.model_validate(processed_input)
+                return self._normalize_percentage_conditions(query, parsed_filter)
         except Exception as e:
             print(f"NLP Error: {e}")
             return QueryFilter()
