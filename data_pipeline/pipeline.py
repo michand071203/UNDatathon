@@ -87,14 +87,6 @@ GLOBAL_STITCHED_BASE_KEY_RULES = [
         "name_norms": {"afghanistan situation regional refugee response plan"},
         "base_keys": {"RAFG", "RAFG_RRP", "RIRNPAK"},
     },
-    {
-        "label": "UGANDA_BURUNDI_RRP",
-        "name_norms": {
-            "burundi regional refugee response plan",
-            "uganda regional refugee response plan",
-        },
-        "base_keys": {"RRWATZAUGA", "RUGA"},
-    },
 ]
 
 MONTHS_PATTERN = (

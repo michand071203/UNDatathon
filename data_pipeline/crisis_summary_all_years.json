@@ -20064,23 +20064,27 @@
     }
   },
   {
-    "funding_base_key": "RUGA",
+    "funding_base_key": "RRWATZAUGA",
     "primary_location_code": "UGA",
     "primary_location_name": "Uganda",
     "location_codes": [
-      "UGA"
+      "UGA",
+      "TZA",
+      "RWA"
     ],
     "location_names": [
-      "Uganda"
+      "Uganda",
+      "Tanzania",
+      "Rwanda"
     ],
     "latitude": 1.5333554,
     "longitude": 32.2166578,
     "systematic_underfunding": {
       "score": 100.0,
-      "weighted_avg_underfunding_gap": 19.32399937337306,
+      "weighted_avg_underfunding_gap": 45.32509202014798,
       "underfunded_year_share": 1.0,
       "max_underfunding_gap": 45.32509202014798,
-      "historical_years_count": 2
+      "historical_years_count": 1
     },
     "years": {
       "2020": {
@@ -20114,7 +20118,29 @@
         "percent_funded": 7.9,
         "contribution_count": null,
         "avg_percent_funded": 53.2
-      },
+      }
+    }
+  },
+  {
+    "funding_base_key": "RUGA",
+    "primary_location_code": "UGA",
+    "primary_location_name": "Uganda",
+    "location_codes": [
+      "UGA"
+    ],
+    "location_names": [
+      "Uganda"
+    ],
+    "latitude": 1.5333554,
+    "longitude": 32.2166578,
+    "systematic_underfunding": {
+      "score": 100.0,
+      "weighted_avg_underfunding_gap": 13.341624584526446,
+      "underfunded_year_share": 1.0,
+      "max_underfunding_gap": 13.341624584526446,
+      "historical_years_count": 1
+    },
+    "years": {
       "2026": {
         "codes": [
           "RUGA26"
