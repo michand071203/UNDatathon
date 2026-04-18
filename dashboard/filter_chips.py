@@ -35,6 +35,10 @@ def _field_label(field_name: str) -> str:
     return field_name.replace("_", " ").title()
 
 
+def _field_group_label(field_name: str) -> str:
+    return f"{_field_label(field_name)} Group"
+
+
 def _format_numeric_value(field_name: str, value: float) -> str:
     if "percentage" in field_name:
         return f"{value:g}%"
@@ -64,9 +68,7 @@ def _build_chip(field_name: str, condition: Any) -> Optional[str]:
     if isinstance(condition, (ListCondition, EnumCondition)):
         prefix = "Excluding" if condition.exclude else "In"
         values = ", ".join(_format_list_value(v) for v in condition.values)
-        if field_name == "locations":
-            return f"{prefix}: {values}"
-        return f"{prefix} {_field_label(field_name)}: {values}"
+        return f"{prefix} ({_field_group_label(field_name)}): {values}"
 
     if isinstance(condition, OrderCondition):
         return f"Sort: {_field_label(condition.field)} ({condition.direction})"

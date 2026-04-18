@@ -71,7 +71,7 @@ async def basic_auth_middleware(request: Request, call_next):
 # Maps QueryFilter attribute names to paths in the crisis dictionary
 FIELD_MAP = {
     "crisis_name": [["name"]],
-    "locations": [["location_codes"], ["country_iso3"], ["primary_location_code"]],
+    "locations": [["location_codes"], ["country_iso3"], ["primary_location_code"], ["location_names"], ["primary_location_name"]],
     "people_in_need": [["people_in_need"]],
     "funding_coverage_percentage": [["percent_funded"]],
     "funding_required_usd": [["requirements"]],
@@ -111,6 +111,32 @@ def ensure_default_sort(filter_obj: QueryFilter) -> QueryFilter:
     return filter_obj
 
 
+def _compact_value(value: Any) -> Any:
+    if isinstance(value, dict):
+        compacted = {}
+        for key, val in value.items():
+            compacted_val = _compact_value(val)
+            if compacted_val not in (None, "", [], {}):
+                compacted[key] = compacted_val
+        return compacted if compacted else None
+
+    if isinstance(value, list):
+        compacted = [
+            item
+            for item in (_compact_value(val) for val in value)
+            if item not in (None, "", [], {})
+        ]
+        return compacted if compacted else None
+
+    return value
+
+
+def compact_filter_json(filter_obj: QueryFilter) -> str:
+    serialized = filter_obj.model_dump(exclude_none=True)
+    compacted = _compact_value(serialized) or {}
+    return json.dumps(compacted)
+
+
 def render_filter_chips_response(
     request: Request,
     parsed_filter: QueryFilter,
@@ -132,7 +158,7 @@ def render_filter_chips_response(
         name="filter_chips.html",
         context={
             "chips": chips,
-            "filters_json": parsed_filter.model_dump_json(),
+            "filters_json": compact_filter_json(parsed_filter),
             "sort_field_options": SORT_FIELD_OPTIONS,
             "selected_sort_field": selected_sort_field,
             "selected_sort_direction": selected_sort_direction,
@@ -429,7 +455,7 @@ async def get_index(request: Request):
         name="index.html",
         context={
             "chips": [],
-            "filters_json": default_filter.model_dump_json(),
+            "filters_json": compact_filter_json(default_filter),
             "sort_field_options": SORT_FIELD_OPTIONS,
             "selected_sort_field": DEFAULT_SORT_FIELD,
             "selected_sort_direction": DEFAULT_SORT_DIRECTION,

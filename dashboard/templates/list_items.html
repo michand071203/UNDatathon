@@ -5,6 +5,7 @@
      id="card-{{ crisis.code }}"
      data-crisis-id="{{ crisis.code }}"
      hx-get="/details/{{ crisis.code }}"
+     hx-disinherit="hx-include"
      hx-target="#side-panel-content"
      hx-swap="innerHTML">
     <div class="w-1.5 shrink-0" style="background-color: {{ crisis.color or '#9ca3af' }};"></div>

@@ -1,4 +1,13 @@
 FIELD_LABELS = {
+    "crisis_name": {
+        "short": "Crisis",
+        "long": "Crisis Name",
+    },
+    # NOTE: For arrays, the label is singular
+    "locations": {
+        "short": "Country",
+        "long": "Country",
+    },
     "people_in_need": {
         "short": "PIN",
         "long": "People In Need",
