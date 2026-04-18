@@ -30,15 +30,33 @@ DESCRIPTION_MAP = {
 
 DATA_DIR = Path(__file__).resolve().parent.parent / "data"
 COORDINATE_FILE = DATA_DIR / "country_coordinates.csv"
+GEOCODE_ALIASES = {
+    "COD": ["Democratic Republic of the Congo"],
+}
 
 
 def geocode_country(code, geocode):
     try:
         country = pycountry.countries.get(alpha_3=code)
-        name = country.name if country else code
-        location = geocode(name)
-        if location:
-            return float(location.latitude), float(location.longitude)
+        query_candidates = []
+        if country:
+            for attr in ("official_name", "common_name", "name", "alpha_2"):
+                value = getattr(country, attr, None)
+                if value:
+                    query_candidates.append(value)
+
+        query_candidates.extend(GEOCODE_ALIASES.get(code, []))
+
+        # Keep order while removing duplicates.
+        seen = set()
+        unique_candidates = [
+            q for q in query_candidates if not (q in seen or seen.add(q))
+        ]
+
+        for query in unique_candidates:
+            location = geocode(query)
+            if location:
+                return float(location.latitude), float(location.longitude)
     except Exception:
         pass
     return None, None
@@ -52,9 +70,24 @@ def load_coordinates(primary_codes):
     else:
         coords = pd.DataFrame(columns=["primary_location", "latitude", "longitude"])
 
-    coords = coords[["primary_location", "latitude", "longitude"]].drop_duplicates()
+    coords = coords[["primary_location", "latitude", "longitude"]]
+    coords["latitude"] = pd.to_numeric(coords["latitude"], errors="coerce")
+    coords["longitude"] = pd.to_numeric(coords["longitude"], errors="coerce")
+    coords = coords[coords["primary_location"].notna()]
+
+    # Keep one row per country, preferring rows that already have coordinates.
+    coords["has_coordinates"] = coords["latitude"].notna() & coords["longitude"].notna()
+    coords = coords.sort_values(by="has_coordinates")
+    coords = coords.drop_duplicates(subset=["primary_location"], keep="last")
+    coords = coords.drop(columns=["has_coordinates"])
+
+    existing_with_coordinates = set(
+        coords.loc[
+            coords["latitude"].notna() & coords["longitude"].notna(), "primary_location"
+        ]
+    )
     missing_codes = [
-        code for code in primary_codes if code not in coords["primary_location"].values
+        code for code in primary_codes if code not in existing_with_coordinates
     ]
 
     geolocator = Nominatim(user_agent="UNDatathonGeocoder/1.0")
@@ -62,6 +95,7 @@ def load_coordinates(primary_codes):
 
     for code in missing_codes:
         lat, lon = geocode_country(code, geocode)
+        coords = coords[coords["primary_location"] != code]
         coords = pd.concat(
             [
                 coords,

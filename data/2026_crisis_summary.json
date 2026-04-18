@@ -103,22 +103,22 @@
     "Country ISO3_y":"UKR",
     "category_breakdown":[
       {
-        "category":"Cash",
+        "category":"cash",
         "in_need":0.0,
         "targeted":1091920
       },
       {
-        "category":"Education",
+        "category":"education",
         "in_need":846540.0,
         "targeted":487663
       },
       {
-        "category":"Health",
+        "category":"health",
         "in_need":4473766.0,
         "targeted":1468059
       },
       {
-        "category":"Protection",
+        "category":"protection",
         "in_need":6539382.0,
         "targeted":2442478
       }
@@ -176,37 +176,37 @@
     "Country ISO3_y":"AFG",
     "category_breakdown":[
       {
-        "category":"Cash",
+        "category":"cash",
         "in_need":0.0,
         "targeted":688322
       },
       {
-        "category":"Education",
+        "category":"education",
         "in_need":7105602.0,
         "targeted":613774
       },
       {
-        "category":"Food Security",
+        "category":"food_security",
         "in_need":17412653.0,
         "targeted":11911619
       },
       {
-        "category":"Health",
+        "category":"health",
         "in_need":14423290.0,
         "targeted":7218662
       },
       {
-        "category":"Nutrition",
+        "category":"nutrition",
         "in_need":7464230.0,
         "targeted":5682222
       },
       {
-        "category":"Protection",
+        "category":"protection",
         "in_need":14988378.0,
         "targeted":5347659
       },
       {
-        "category":"WASH",
+        "category":"wash",
         "in_need":15909907.0,
         "targeted":7838434
       }
@@ -237,32 +237,32 @@
     "Country ISO3_y":"SSD",
     "category_breakdown":[
       {
-        "category":"Cash",
+        "category":"cash",
         "in_need":0.0,
         "targeted":463705
       },
       {
-        "category":"Education",
+        "category":"education",
         "in_need":2435900.0,
         "targeted":795532
       },
       {
-        "category":"Food Security",
+        "category":"food_security",
         "in_need":7650962.0,
         "targeted":2664032
       },
       {
-        "category":"Health",
+        "category":"health",
         "in_need":6269692.0,
         "targeted":2884600
       },
       {
-        "category":"Nutrition",
+        "category":"nutrition",
         "in_need":5250933.0,
         "targeted":1833612
       },
       {
-        "category":"Protection",
+        "category":"protection",
         "in_need":4867750.0,
         "targeted":1548355
       }
@@ -293,28 +293,28 @@
     "Country ISO3_y":"COD",
     "category_breakdown":[
       {
-        "category":"Education",
+        "category":"education",
         "in_need":3901894.0,
         "targeted":480758
       },
       {
-        "category":"Food Security",
+        "category":"food_security",
         "in_need":13003064.0,
         "targeted":5922823
       },
       {
-        "category":"Health",
+        "category":"health",
         "in_need":7544115.0,
         "targeted":2512134
       },
       {
-        "category":"Nutrition",
+        "category":"nutrition",
         "in_need":4256957.0,
         "targeted":1853401
       }
     ],
-    "latitude":null,
-    "longitude":null
+    "latitude":-2.9814344,
+    "longitude":23.8222636
   },
   {
     "code":"HTCD26",
@@ -339,32 +339,32 @@
     "Country ISO3_y":"TCD",
     "category_breakdown":[
       {
-        "category":"CCCM",
+        "category":"cccm",
         "in_need":504194.0,
         "targeted":482348
       },
       {
-        "category":"Education",
+        "category":"education",
         "in_need":1388864.0,
         "targeted":587099
       },
       {
-        "category":"Food Security",
+        "category":"food_security",
         "in_need":2913694.0,
         "targeted":1581468
       },
       {
-        "category":"Health",
+        "category":"health",
         "in_need":1706766.0,
         "targeted":1203856
       },
       {
-        "category":"Nutrition",
+        "category":"nutrition",
         "in_need":2128981.0,
         "targeted":1237152
       },
       {
-        "category":"WASH",
+        "category":"wash",
         "in_need":2901096.0,
         "targeted":1672229
       }
@@ -395,32 +395,32 @@
     "Country ISO3_y":"MMR",
     "category_breakdown":[
       {
-        "category":"Education",
+        "category":"education",
         "in_need":3523306.0,
         "targeted":1135546
       },
       {
-        "category":"Food Security",
+        "category":"food_security",
         "in_need":8475703.0,
         "targeted":1506063
       },
       {
-        "category":"Health",
+        "category":"health",
         "in_need":9251462.0,
         "targeted":2002225
       },
       {
-        "category":"Nutrition",
+        "category":"nutrition",
         "in_need":2653317.0,
         "targeted":677374
       },
       {
-        "category":"Protection",
+        "category":"protection",
         "in_need":11596899.0,
         "targeted":3372443
       },
       {
-        "category":"WASH",
+        "category":"wash",
         "in_need":8948125.0,
         "targeted":2375280
       }
@@ -451,32 +451,32 @@
     "Country ISO3_y":"HTI",
     "category_breakdown":[
       {
-        "category":"CCCM",
+        "category":"cccm",
         "in_need":2118299.0,
         "targeted":571841
       },
       {
-        "category":"Education",
+        "category":"education",
         "in_need":1493675.0,
         "targeted":982031
       },
       {
-        "category":"Food Security",
+        "category":"food_security",
         "in_need":5910721.0,
         "targeted":3529354
       },
       {
-        "category":"Health",
+        "category":"health",
         "in_need":4860485.0,
         "targeted":2710790
       },
       {
-        "category":"Nutrition",
+        "category":"nutrition",
         "in_need":1225803.0,
         "targeted":946258
       },
       {
-        "category":"Protection",
+        "category":"protection",
         "in_need":2195026.0,
         "targeted":1235914
       }
@@ -507,32 +507,32 @@
     "Country ISO3_y":"SOM",
     "category_breakdown":[
       {
-        "category":"CCCM",
+        "category":"cccm",
         "in_need":2039580.0,
         "targeted":1039063
       },
       {
-        "category":"Education",
+        "category":"education",
         "in_need":1729469.0,
         "targeted":628192
       },
       {
-        "category":"Health",
+        "category":"health",
         "in_need":4989936.0,
         "targeted":2426481
       },
       {
-        "category":"Nutrition",
+        "category":"nutrition",
         "in_need":2369935.0,
         "targeted":1270239
       },
       {
-        "category":"Protection",
+        "category":"protection",
         "in_need":3097201.0,
         "targeted":1853929
       },
       {
-        "category":"WASH",
+        "category":"wash",
         "in_need":4486155.0,
         "targeted":2229585
       }
@@ -768,22 +768,22 @@
     "Country ISO3_y":"MOZ",
     "category_breakdown":[
       {
-        "category":"Education",
+        "category":"education",
         "in_need":738165.0,
         "targeted":553295
       },
       {
-        "category":"Health",
+        "category":"health",
         "in_need":1216660.0,
         "targeted":948693
       },
       {
-        "category":"Nutrition",
+        "category":"nutrition",
         "in_need":588027.0,
         "targeted":371552
       },
       {
-        "category":"Protection",
+        "category":"protection",
         "in_need":1654443.0,
         "targeted":1008599
       }
@@ -814,32 +814,32 @@
     "Country ISO3_y":"NGA",
     "category_breakdown":[
       {
-        "category":"CCCM",
+        "category":"cccm",
         "in_need":2036114.0,
         "targeted":568578
       },
       {
-        "category":"Education",
+        "category":"education",
         "in_need":1648802.0,
         "targeted":633643
       },
       {
-        "category":"Food Security",
+        "category":"food_security",
         "in_need":5848123.0,
         "targeted":1492595
       },
       {
-        "category":"Health",
+        "category":"health",
         "in_need":3957689.0,
         "targeted":1488054
       },
       {
-        "category":"Nutrition",
+        "category":"nutrition",
         "in_need":4114246.0,
         "targeted":1533941
       },
       {
-        "category":"Protection",
+        "category":"protection",
         "in_need":3328745.0,
         "targeted":1472715
       }
@@ -924,37 +924,37 @@
     "Country ISO3_y":"CAF",
     "category_breakdown":[
       {
-        "category":"CCCM",
+        "category":"cccm",
         "in_need":411618.0,
         "targeted":246970
       },
       {
-        "category":"Education",
+        "category":"education",
         "in_need":585470.0,
         "targeted":278834
       },
       {
-        "category":"Food Security",
+        "category":"food_security",
         "in_need":1765978.0,
         "targeted":825257
       },
       {
-        "category":"Health",
+        "category":"health",
         "in_need":955008.0,
         "targeted":516609
       },
       {
-        "category":"Nutrition",
+        "category":"nutrition",
         "in_need":335305.0,
         "targeted":240392
       },
       {
-        "category":"Protection",
+        "category":"protection",
         "in_need":1043244.0,
         "targeted":559981
       },
       {
-        "category":"WASH",
+        "category":"wash",
         "in_need":1096042.0,
         "targeted":569945
       }
