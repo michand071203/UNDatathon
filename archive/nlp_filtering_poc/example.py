@@ -1,5 +1,5 @@
 import json
-from query_parser import QueryParser
+from archive.nlp_filtering_poc.query_parser import QueryParser
 from dotenv import load_dotenv
 
 def main():

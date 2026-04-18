@@ -4,7 +4,7 @@ from typing import List, Optional
 from pydantic import BaseModel, Field
 from anthropic import Anthropic
 
-from models import QueryFilter
+from archive.nlp_filtering_poc.models import QueryFilter
 
 from pydantic import ValidationError
 

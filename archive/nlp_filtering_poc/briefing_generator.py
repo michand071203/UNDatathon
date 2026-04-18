@@ -1,7 +1,7 @@
 import os
 from typing import Optional
 from anthropic import Anthropic
-from models import CrisisData
+from archive.nlp_filtering_poc.models import CrisisData
 
 class BriefingGenerator:
     def __init__(self, api_key: Optional[str] = None):

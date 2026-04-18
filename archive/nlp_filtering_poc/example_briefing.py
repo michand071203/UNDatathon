@@ -1,7 +1,7 @@
 import os
 from dotenv import load_dotenv
-from models import CrisisData
-from briefing_generator import BriefingGenerator
+from archive.nlp_filtering_poc.models import CrisisData
+from archive.nlp_filtering_poc.briefing_generator import BriefingGenerator
 
 import json
 
