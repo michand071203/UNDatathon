@@ -137,6 +137,254 @@ def _json_number(value):
     return float(value)
 
 
+def build_category_scores(category_breakdown):
+    if not isinstance(category_breakdown, list) or not category_breakdown:
+        return [], None
+
+    valid_categories = []
+    total_in_need = 0.0
+
+    for item in category_breakdown:
+        if not isinstance(item, dict):
+            continue
+
+        category = item.get("category")
+        in_need = pd.to_numeric(item.get("in_need"), errors="coerce")
+        targeted = pd.to_numeric(item.get("targeted"), errors="coerce")
+
+        if pd.isna(in_need) or in_need <= 0 or pd.isna(targeted):
+            continue
+
+        coverage = max(0.0, min(float(targeted) / float(in_need), 1.0))
+        gap = 1.0 - coverage
+        valid_categories.append(
+            {
+                "category": category,
+                "in_need": float(in_need),
+                "targeted": float(targeted),
+                "coverage": coverage,
+                "gap": gap,
+            }
+        )
+        total_in_need += float(in_need)
+
+    if not valid_categories or total_in_need <= 0:
+        return [], None
+
+    weighted_gap_sum = 0.0
+    for item in valid_categories:
+        weight = item["in_need"] / total_in_need
+        item["weight"] = weight
+        item["category_score"] = weight * item["gap"]
+        weighted_gap_sum += item["category_score"]
+
+    return valid_categories, weighted_gap_sum
+
+
+def compute_overall_severity_score(row):
+    category_score = row.get("category_level_score")
+    percent_funded = pd.to_numeric(row.get("percent_funded"), errors="coerce")
+    systematic_score = pd.to_numeric(
+        row.get("systematic_underfunding_score"), errors="coerce"
+    )
+
+    funding_gap = None
+    if not pd.isna(percent_funded):
+        funding_gap = max(0.0, min(1.0, 1.0 - float(percent_funded) / 100.0))
+
+    components = []
+    weights = []
+
+    if category_score is not None and not pd.isna(category_score):
+        components.append(float(category_score))
+        weights.append(0.5)
+    if funding_gap is not None and not pd.isna(funding_gap):
+        components.append(float(funding_gap))
+        weights.append(0.3)
+    if systematic_score is not None and not pd.isna(systematic_score):
+        components.append(float(systematic_score))
+        weights.append(0.2)
+
+    if not components:
+        return None
+
+    total_weight = sum(weights)
+    return sum(value * weight for value, weight in zip(components, weights)) / total_weight
+
+
+def build_historical_benchmark_data(summary):
+    historical = summary[["code", "year", "requirements", "funding"]].copy()
+    historical["benchmark_key"] = historical.apply(
+        lambda row: build_funding_base_key(row.get("code"), row.get("year")), axis=1
+    )
+
+    historical = historical.groupby(["benchmark_key", "year"], as_index=False).agg(
+        requirements=("requirements", "sum"),
+        funding=("funding", "sum"),
+    )
+    historical["percent_funded"] = (
+        100 * historical["funding"] / historical["requirements"]
+    )
+    historical.loc[historical["requirements"] == 0, "percent_funded"] = None
+
+    yearly_totals = historical.groupby("year", as_index=False).agg(
+        total_requirements=("requirements", "sum"),
+        total_funding=("funding", "sum"),
+    )
+    yearly_totals["avg_percent_funded_raw"] = (
+        100 * yearly_totals["total_funding"] / yearly_totals["total_requirements"]
+    )
+    yearly_totals.loc[
+        yearly_totals["total_requirements"] == 0, "avg_percent_funded_raw"
+    ] = None
+    yearly_totals["avg_percent_funded"] = yearly_totals["avg_percent_funded_raw"].round(1)
+
+    historical = historical.merge(
+        yearly_totals[["year", "avg_percent_funded_raw", "avg_percent_funded"]],
+        how="left",
+        on="year",
+    )
+    return historical
+
+
+def compute_systematic_underfunding_metrics(historical):
+    if historical.empty:
+        return pd.DataFrame(
+            columns=[
+                "benchmark_key",
+                "systematic_underfunding_score",
+                "weighted_avg_underfunding_gap",
+                "underfunded_year_share",
+                "max_underfunding_gap",
+                "historical_years_count",
+            ]
+        )
+
+    metrics = []
+    for benchmark_key, group in historical.groupby("benchmark_key"):
+        valid = group[
+            group["percent_funded"].notna() & group["avg_percent_funded_raw"].notna()
+        ].copy()
+
+        if valid.empty:
+            metrics.append(
+                {
+                    "benchmark_key": benchmark_key,
+                    "systematic_underfunding_score": None,
+                    "weighted_avg_underfunding_gap": None,
+                    "underfunded_year_share": None,
+                    "max_underfunding_gap": None,
+                    "historical_years_count": 0,
+                }
+            )
+            continue
+
+        valid["gap_vs_benchmark"] = (
+            valid["avg_percent_funded_raw"] - valid["percent_funded"]
+        )
+        valid["underfunding_gap"] = valid["gap_vs_benchmark"].clip(lower=0)
+
+        req = pd.to_numeric(valid["requirements"], errors="coerce").fillna(0.0)
+        if req.sum() > 0:
+            weights = req / req.sum()
+        else:
+            weights = pd.Series(
+                [1.0 / len(valid)] * len(valid), index=valid.index, dtype=float
+            )
+
+        ss_under = float((weights * (valid["underfunding_gap"] ** 2)).sum())
+        ss_all = float((weights * (valid["gap_vs_benchmark"] ** 2)).sum())
+        eta_sq = ss_under / ss_all if ss_all > 0 else None
+        avg_gap = float((weights * valid["underfunding_gap"]).sum())
+        underfunded_share = float((valid["gap_vs_benchmark"] > 0).mean())
+        max_gap = float(valid["underfunding_gap"].max())
+
+        metrics.append(
+            {
+                "benchmark_key": benchmark_key,
+                "systematic_underfunding_score": eta_sq,
+                "weighted_avg_underfunding_gap": avg_gap,
+                "underfunded_year_share": underfunded_share,
+                "max_underfunding_gap": max_gap,
+                "historical_years_count": int(len(valid)),
+            }
+        )
+
+    return pd.DataFrame(metrics)
+
+
+def build_systematic_underfunding_json(row):
+    return {
+        "score": (
+            None
+            if pd.isna(
+                pd.to_numeric(row.get("systematic_underfunding_score"), errors="coerce")
+            )
+            else float(
+                pd.to_numeric(row.get("systematic_underfunding_score"), errors="coerce")
+            )
+        ),
+        "weighted_avg_underfunding_gap": (
+            None
+            if pd.isna(
+                pd.to_numeric(row.get("weighted_avg_underfunding_gap"), errors="coerce")
+            )
+            else float(
+                pd.to_numeric(row.get("weighted_avg_underfunding_gap"), errors="coerce")
+            )
+        ),
+        "underfunded_year_share": (
+            None
+            if pd.isna(pd.to_numeric(row.get("underfunded_year_share"), errors="coerce"))
+            else float(pd.to_numeric(row.get("underfunded_year_share"), errors="coerce"))
+        ),
+        "max_underfunding_gap": (
+            None
+            if pd.isna(pd.to_numeric(row.get("max_underfunding_gap"), errors="coerce"))
+            else float(pd.to_numeric(row.get("max_underfunding_gap"), errors="coerce"))
+        ),
+        "historical_years_count": (
+            None
+            if pd.isna(pd.to_numeric(row.get("historical_years_count"), errors="coerce"))
+            else int(pd.to_numeric(row.get("historical_years_count"), errors="coerce"))
+        ),
+    }
+
+
+def _combine_category_breakdown(rows):
+    combined = {}
+    for value in rows:
+        if not isinstance(value, list):
+            continue
+        for item in value:
+            if not isinstance(item, dict):
+                continue
+            category = item.get("category")
+            if not category:
+                continue
+            in_need = pd.to_numeric(item.get("in_need"), errors="coerce")
+            targeted = pd.to_numeric(item.get("targeted"), errors="coerce")
+            if pd.isna(in_need) and pd.isna(targeted):
+                continue
+
+            if category not in combined:
+                combined[category] = {"category": category, "in_need": 0.0, "targeted": 0.0}
+
+            if not pd.isna(in_need):
+                combined[category]["in_need"] += float(in_need)
+            if not pd.isna(targeted):
+                combined[category]["targeted"] += float(targeted)
+
+    return list(combined.values())
+
+
+def _pick_first_dict(series):
+    for value in series:
+        if isinstance(value, dict):
+            return value
+    return None
+
+
 def build_all_years_export(summary):
     records = []
     data = summary.copy()
@@ -193,6 +441,54 @@ def build_all_years_export(summary):
         latitude = _pick_scalar_field("latitude")
         longitude = _pick_scalar_field("longitude")
 
+        systematic_underfunding = _pick_first_dict(group.get("systematic_underfunding", []))
+
+        group_2026 = group[group["year"] == 2026]
+        project_metrics_2026 = None
+        if not group_2026.empty:
+            requirements_2026 = group_2026["requirements"].sum(min_count=1)
+            funding_2026 = group_2026["funding"].sum(min_count=1)
+            contribution_count_2026 = group_2026["contribution_count"].sum(min_count=1)
+
+            percent_funded_2026 = None
+            if (
+                pd.notna(requirements_2026)
+                and requirements_2026 != 0
+                and pd.notna(funding_2026)
+            ):
+                percent_funded_2026 = round((funding_2026 / requirements_2026) * 100, 1)
+
+            category_breakdown_2026 = _combine_category_breakdown(
+                group_2026.get("category_breakdown", pd.Series(dtype=object))
+            )
+            category_breakdown_scored_2026, category_level_score_2026 = (
+                build_category_scores(category_breakdown_2026)
+            )
+
+            overall_severity_score_2026 = compute_overall_severity_score(
+                {
+                    "category_level_score": category_level_score_2026,
+                    "percent_funded": percent_funded_2026,
+                    "systematic_underfunding_score": (
+                        systematic_underfunding.get("score")
+                        if isinstance(systematic_underfunding, dict)
+                        else None
+                    ),
+                }
+            )
+
+            project_metrics_2026 = {
+                "requirements": _json_number(requirements_2026),
+                "funding": _json_number(funding_2026),
+                "percent_funded": _json_number(percent_funded_2026),
+                "contribution_count": int(contribution_count_2026)
+                if pd.notna(contribution_count_2026)
+                else None,
+                "category_breakdown_scored": category_breakdown_scored_2026,
+                "category_level_score": _json_number(category_level_score_2026),
+                "overall_severity_score": _json_number(overall_severity_score_2026),
+            }
+
         payload = {
             "funding_base_key": base_key,
             "primary_location_code": primary_location_code,
@@ -201,10 +497,12 @@ def build_all_years_export(summary):
             "location_names": location_names,
             "latitude": _json_number(latitude),
             "longitude": _json_number(longitude),
+            "systematic_underfunding": systematic_underfunding,
             "years": {},
         }
+        if project_metrics_2026 is not None:
+            payload["project_metrics_2026"] = project_metrics_2026
 
-        group_2026 = group[group["year"] == 2026]
         if not group_2026.empty:
             has_people_data = group_2026[
                 [
@@ -465,7 +763,38 @@ def build_summary(year=None):
             lambda x: x if isinstance(x, list) else []
         )
 
-    plan_summary = plan_summary.sort_values(by=["year", "requirements"], ascending=False)
+    category_score_results = plan_summary["category_breakdown"].apply(
+        build_category_scores
+    )
+    plan_summary["category_breakdown_scored"] = category_score_results.apply(
+        lambda x: x[0]
+    )
+    plan_summary["category_level_score"] = category_score_results.apply(lambda x: x[1])
+
+    historical = build_historical_benchmark_data(plan_summary)
+    systematic_metrics = compute_systematic_underfunding_metrics(historical)
+    plan_summary["benchmark_key"] = plan_summary.apply(
+        lambda row: build_funding_base_key(row.get("code"), row.get("year")), axis=1
+    )
+    plan_summary = plan_summary.merge(
+        systematic_metrics,
+        how="left",
+        on="benchmark_key",
+    )
+    plan_summary["systematic_underfunding"] = plan_summary.apply(
+        build_systematic_underfunding_json, axis=1
+    )
+
+    plan_summary["overall_severity_score"] = None
+    severity_mask = plan_summary["year"] == 2026
+    plan_summary.loc[severity_mask, "overall_severity_score"] = plan_summary.loc[
+        severity_mask
+    ].apply(compute_overall_severity_score, axis=1)
+
+    plan_summary = plan_summary.sort_values(
+        by=["year", "overall_severity_score", "requirements"],
+        ascending=[False, False, False],
+    )
     return plan_summary
 
 
@@ -477,6 +806,11 @@ def print_top_crises(summary, top_n=25, year=None):
         "requirements",
         "funding",
         "percent_funded",
+        "category_level_score",
+        "overall_severity_score",
+        "systematic_underfunding_score",
+        "weighted_avg_underfunding_gap",
+        "underfunded_year_share",
         "total_contributions",
         "In Need",
         "Targeted",
@@ -504,9 +838,7 @@ def main():
         "Reached": "people_reached",
     }
     summary = summary.rename(columns=column_rename)
-    summary = summary.drop(
-        columns=["locations", "total_contributions"], errors="ignore"
-    )
+    summary = summary.drop(columns=["locations", "total_contributions"], errors="ignore")
 
     json_file = Path(__file__).resolve().parent / "crisis_summary_all_years.json"
     all_years_export = build_all_years_export(summary)

@@ -103,6 +103,9 @@ def _normalize_crisis_record(crisis: dict) -> Optional[dict]:
         return None
 
     year_data = years["2026"]
+    project_metrics_2026 = crisis.get("project_metrics_2026")
+    if not isinstance(project_metrics_2026, dict):
+        return None
     codes = year_data.get("codes") or []
     names = year_data.get("names") or []
     primary_location_name = crisis.get("primary_location_name")
@@ -161,6 +164,10 @@ def _normalize_crisis_record(crisis: dict) -> Optional[dict]:
         "funding": year_data.get("funding"),
         "percent_funded": year_data.get("percent_funded"),
         "contribution_count": year_data.get("contribution_count"),
+        "category_breakdown_scored": project_metrics_2026.get("category_breakdown_scored") or [],
+        "category_level_score": project_metrics_2026.get("category_level_score"),
+        "overall_severity_score": project_metrics_2026.get("overall_severity_score"),
+        "systematic_underfunding": crisis.get("systematic_underfunding"),
         "people_in_need": people_2026.get("people_in_need"),
         "people_targeted": people_2026.get("people_targeted"),
         "people_affected": people_2026.get("people_affected"),
