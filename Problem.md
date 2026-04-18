@@ -62,7 +62,7 @@ Possible directions include:
 - An LLM-assisted query understanding layer that maps natural-language questions to filter criteria.
 - A hybrid approach combining structured funding ratios with semantic scoring over crisis descriptions.
 - Geospatial analysis using country centroids or crisis coordinates.
-- Enrichment using external data such as ACLED conflict events, IPC food security phases, or UNHCR displacement figures.
+- Enrichment using external data such as ACLED conflict events, IPC food security phases, or UNHCR displacement figures.asdfasdf
 - Time-series analysis of funding trends per crisis.
 - A lightweight visualization or dashboard.
 - A conversational interface where a user can refine scope across multiple turns.
