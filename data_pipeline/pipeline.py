@@ -213,6 +213,14 @@ def _json_number(value):
     return float(value)
 
 
+def _with_requirement_fallback(requirements, requirements_last_year):
+    requirements = pd.to_numeric(requirements, errors="coerce")
+    requirements_last_year = pd.to_numeric(requirements_last_year, errors="coerce")
+    if isinstance(requirements, pd.Series):
+        return requirements.where(requirements.notna(), requirements_last_year)
+    return requirements if pd.notna(requirements) else requirements_last_year
+
+
 def build_latest_canonical_key_map(summary):
     if summary.empty:
         return {}
@@ -378,8 +386,20 @@ def compute_overall_severity_score(row):
 def build_historical_benchmark_data(summary):
     canonical_key_map = build_latest_canonical_key_map(summary)
     historical = summary[
-        ["code", "name", "year", "requirements", "funding", "primary_location"]
+        [
+            "code",
+            "name",
+            "year",
+            "requirements",
+            "requirements_last_year",
+            "funding",
+            "primary_location",
+        ]
     ].copy()
+    historical["requirements_effective"] = _with_requirement_fallback(
+        historical["requirements"],
+        historical["requirements_last_year"],
+    )
     historical["benchmark_key"] = historical.apply(
         lambda row: apply_latest_canonical_key(
             build_funding_base_key(row.get("code"), row.get("year")),
@@ -391,7 +411,7 @@ def build_historical_benchmark_data(summary):
     )
 
     historical = historical.groupby(["benchmark_key", "year"], as_index=False).agg(
-        requirements=("requirements", "sum"),
+        requirements=("requirements_effective", "sum"),
         funding=("funding", "sum"),
     )
     historical["percent_funded"] = (
@@ -612,6 +632,10 @@ def _pick_first_dict(series):
 def build_all_years_export(summary):
     records = []
     data = summary.copy()
+    data["requirements_effective"] = _with_requirement_fallback(
+        data["requirements"],
+        data["requirements_last_year"],
+    )
     canonical_key_map = build_latest_canonical_key_map(data)
     data["funding_base_key"] = data.apply(
         lambda row: apply_latest_canonical_key(
@@ -626,7 +650,7 @@ def build_all_years_export(summary):
     yearly_totals = (
         data.groupby("year", dropna=True)
         .agg(
-            total_requirements=("requirements", "sum"),
+            total_requirements=("requirements_effective", "sum"),
             total_funding=("funding", "sum"),
         )
         .reset_index()
@@ -681,16 +705,22 @@ def build_all_years_export(summary):
             requirements_last_year_2026 = group_2026["requirements_last_year"].sum(
                 min_count=1
             )
+            effective_requirements_2026 = _with_requirement_fallback(
+                requirements_2026,
+                requirements_last_year_2026,
+            )
             funding_2026 = group_2026["funding"].sum(min_count=1)
             contribution_count_2026 = group_2026["contribution_count"].sum(min_count=1)
 
             percent_funded_2026 = None
             if (
-                pd.notna(requirements_2026)
-                and requirements_2026 != 0
+                pd.notna(effective_requirements_2026)
+                and effective_requirements_2026 != 0
                 and pd.notna(funding_2026)
             ):
-                percent_funded_2026 = round((funding_2026 / requirements_2026) * 100, 1)
+                percent_funded_2026 = round(
+                    (funding_2026 / effective_requirements_2026) * 100, 1
+                )
 
             category_breakdown_2026 = _combine_category_breakdown(
                 group_2026.get("category_breakdown", pd.Series(dtype=object))
@@ -769,6 +799,10 @@ def build_all_years_export(summary):
             year_requirements_last_year = year_group["requirements_last_year"].sum(
                 min_count=1
             )
+            year_effective_requirements = _with_requirement_fallback(
+                year_requirements,
+                year_requirements_last_year,
+            )
             year_funding = year_group["funding"].sum(min_count=1)
             payload["years"][year_key] = {
                 "codes": sorted(
@@ -781,10 +815,10 @@ def build_all_years_export(summary):
                 "requirements_last_year": _json_number(year_requirements_last_year),
                 "funding": _json_number(year_funding),
                 "percent_funded": _json_number(
-                    round((year_funding / year_requirements) * 100, 1)
+                    round((year_funding / year_effective_requirements) * 100, 1)
                 )
-                if pd.notna(year_requirements)
-                and year_requirements != 0
+                if pd.notna(year_effective_requirements)
+                and year_effective_requirements != 0
                 and pd.notna(year_funding)
                 else None,
                 "contribution_count": int(year_group["contribution_count"].sum(min_count=1))
@@ -883,20 +917,32 @@ def load_severity():
             ["Country ISO3", "desc_norm"], as_index=False
         )[["In Need", "Targeted"]].sum()
 
+        breakdown_records = breakdown.rename(
+            columns={
+                "desc_norm": "category",
+                "In Need": "in_need",
+                "Targeted": "targeted",
+            }
+        )
         breakdown_json = (
-            breakdown.groupby("Country ISO3")
-            .apply(
-                lambda g: g[["desc_norm", "In Need", "Targeted"]]
-                .rename(
-                    columns={
-                        "desc_norm": "category",
-                        "In Need": "in_need",
-                        "Targeted": "targeted",
-                    }
+            breakdown_records.groupby("Country ISO3", as_index=False)
+            .agg(
+                category_breakdown=(
+                    "category",
+                    lambda categories: [
+                        {
+                            "category": category,
+                            "in_need": float(in_need) if pd.notna(in_need) else None,
+                            "targeted": float(targeted) if pd.notna(targeted) else None,
+                        }
+                        for category, in_need, targeted in zip(
+                            categories,
+                            breakdown_records.loc[categories.index, "in_need"],
+                            breakdown_records.loc[categories.index, "targeted"],
+                        )
+                    ],
                 )
-                .to_dict("records")
             )
-            .reset_index(name="category_breakdown")
         )
         breakdown_json["year"] = 2026
     else:
@@ -917,10 +963,18 @@ def build_summary(year=None):
         requirements=("requirements", "sum"), funding=("funding", "sum")
     )
     funding_summary = apply_last_year_requirement_fallback(funding_summary, plans)
+    funding_summary["requirements_effective"] = _with_requirement_fallback(
+        funding_summary["requirements"],
+        funding_summary["requirements_last_year"],
+    )
     funding_summary["percent_funded"] = (
-        100 * funding_summary["funding"] / funding_summary["requirements"]
+        100 * funding_summary["funding"] / funding_summary["requirements_effective"]
     ).round(1)
-    funding_summary.loc[funding_summary["requirements"] == 0, "percent_funded"] = None
+    funding_summary.loc[
+        funding_summary["requirements_effective"].isna()
+        | funding_summary["requirements_effective"].eq(0),
+        "percent_funded",
+    ] = None
 
     contributions_summary = contributions.groupby(
         ["destPlanCode", "year"], as_index=False

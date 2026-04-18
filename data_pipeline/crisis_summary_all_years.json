@@ -226,10 +226,10 @@
     "latitude": 33.7680065,
     "longitude": 66.2385139,
     "systematic_underfunding": {
-      "score": 0.016910366478812975,
-      "weighted_avg_underfunding_gap": 0.5461767393362005,
+      "score": 0.005727418597193144,
+      "weighted_avg_underfunding_gap": 0.32065947623098967,
       "underfunded_year_share": 0.15384615384615385,
-      "max_underfunding_gap": 6.127703030218731,
+      "max_underfunding_gap": 3.543620150862159,
       "historical_years_count": 13
     },
     "years": {
@@ -413,7 +413,7 @@
         "funding": 214214587.0,
         "percent_funded": 12.5,
         "contribution_count": 58,
-        "avg_percent_funded": 18.6
+        "avg_percent_funded": 16.0
       }
     },
     "project_metrics_2026": {
@@ -470,7 +470,7 @@
         }
       ],
       "category_level_score": 0.5005130390305503,
-      "overall_severity_score": 0.5161385928110378
+      "overall_severity_score": 0.5139020032347138
     },
     "people_2026": {
       "people_in_need": 21889283.0,
@@ -1183,7 +1183,7 @@
         "funding": 233087883.0,
         "percent_funded": 33.4,
         "contribution_count": 74,
-        "avg_percent_funded": 18.6
+        "avg_percent_funded": 16.0
       }
     },
     "project_metrics_2026": {
@@ -1400,8 +1400,8 @@
     "latitude": -10.3333333,
     "longitude": -53.2,
     "systematic_underfunding": {
-      "score": 0.8787545961105018,
-      "weighted_avg_underfunding_gap": 16.001272821052765,
+      "score": 0.8776964609014979,
+      "weighted_avg_underfunding_gap": 15.806496855801404,
       "underfunded_year_share": 0.875,
       "max_underfunding_gap": 25.58882430792621,
       "historical_years_count": 8
@@ -1517,7 +1517,7 @@
         "funding": 67880713.0,
         "percent_funded": 9.2,
         "contribution_count": 48,
-        "avg_percent_funded": 18.6
+        "avg_percent_funded": 16.0
       }
     },
     "project_metrics_2026": {
@@ -1528,7 +1528,7 @@
       "contribution_count": 48,
       "category_breakdown_scored": [],
       "category_level_score": null,
-      "overall_severity_score": 0.8963018384442007
+      "overall_severity_score": 0.8958785843605992
     }
   },
   {
@@ -1666,8 +1666,8 @@
     "latitude": 12.0753083,
     "longitude": -1.6880314,
     "systematic_underfunding": {
-      "score": 0.9379303661549234,
-      "weighted_avg_underfunding_gap": 5.659968613018241,
+      "score": 0.9340307805605103,
+      "weighted_avg_underfunding_gap": 5.341921397165731,
       "underfunded_year_share": 0.8,
       "max_underfunding_gap": 22.48868408672568,
       "historical_years_count": 10
@@ -1811,7 +1811,7 @@
         "funding": 72939948.0,
         "percent_funded": 11.1,
         "contribution_count": 45,
-        "avg_percent_funded": 18.6
+        "avg_percent_funded": 16.0
       }
     },
     "project_metrics_2026": {
@@ -1822,7 +1822,7 @@
       "contribution_count": 45,
       "category_breakdown_scored": [],
       "category_level_score": null,
-      "overall_severity_score": 0.9085721464619694
+      "overall_severity_score": 0.9070123122242041
     },
     "people_2026": {
       "people_in_need": 4400000.0,
@@ -2270,7 +2270,7 @@
     "latitude": 4.6125522,
     "longitude": 13.1535811,
     "systematic_underfunding": {
-      "score": 0.9578634274327306,
+      "score": 0.9447543350438602,
       "weighted_avg_underfunding_gap": 7.403487860646008,
       "underfunded_year_share": 0.7692307692307693,
       "max_underfunding_gap": 23.365712289924417,
@@ -2457,7 +2457,7 @@
         "funding": 66498901.0,
         "percent_funded": 20.8,
         "contribution_count": 33,
-        "avg_percent_funded": 18.6
+        "avg_percent_funded": 16.0
       }
     },
     "project_metrics_2026": {
@@ -2468,7 +2468,7 @@
       "contribution_count": 33,
       "category_breakdown_scored": [],
       "category_level_score": null,
-      "overall_severity_score": 0.8583453709730923
+      "overall_severity_score": 0.8531017340175442
     },
     "people_2026": {
       "people_in_need": 2900000.0,
@@ -2688,9 +2688,9 @@
     "latitude": 7.0323598,
     "longitude": 19.9981227,
     "systematic_underfunding": {
-      "score": 0.18825363279930524,
-      "weighted_avg_underfunding_gap": 4.233296119882455,
-      "underfunded_year_share": 0.4166666666666667,
+      "score": 0.1881162480458923,
+      "weighted_avg_underfunding_gap": 4.200259476654466,
+      "underfunded_year_share": 0.3333333333333333,
       "max_underfunding_gap": 23.45901798353472,
       "historical_years_count": 12
     },
@@ -2861,7 +2861,7 @@
         "funding": 47355888.0,
         "percent_funded": 17.9,
         "contribution_count": 38,
-        "avg_percent_funded": 18.6
+        "avg_percent_funded": 16.0
       }
     },
     "project_metrics_2026": {
@@ -2927,7 +2927,7 @@
         }
       ],
       "category_level_score": 0.47712527643591246,
-      "overall_severity_score": 0.5225133647778173
+      "overall_severity_score": 0.5224858878271347
     },
     "people_2026": {
       "people_in_need": 2286959.0,
@@ -3147,7 +3147,7 @@
     "latitude": 15.6134137,
     "longitude": 19.0156172,
     "systematic_underfunding": {
-      "score": 0.943820069374632,
+      "score": 0.9263728782473097,
       "weighted_avg_underfunding_gap": 7.225101524300022,
       "underfunded_year_share": 0.6923076923076923,
       "max_underfunding_gap": 30.521703527761723,
@@ -3334,7 +3334,7 @@
         "funding": 215913333.0,
         "percent_funded": 21.9,
         "contribution_count": 100,
-        "avg_percent_funded": 18.6
+        "avg_percent_funded": 16.0
       }
     },
     "project_metrics_2026": {
@@ -3391,7 +3391,7 @@
         }
       ],
       "category_level_score": 0.4140341895224149,
-      "overall_severity_score": 0.6300811086361339
+      "overall_severity_score": 0.6265916704106694
     },
     "people_2026": {
       "people_in_need": 4509014.0,
@@ -3413,7 +3413,7 @@
     "latitude": 4.099917,
     "longitude": -72.9088133,
     "systematic_underfunding": {
-      "score": 0.5240813080401795,
+      "score": 0.4924465842153333,
       "weighted_avg_underfunding_gap": 9.054984213152135,
       "underfunded_year_share": 0.7142857142857143,
       "max_underfunding_gap": 39.53997309106373,
@@ -3516,7 +3516,7 @@
         "funding": 152365573.0,
         "percent_funded": 53.1,
         "contribution_count": 35,
-        "avg_percent_funded": 18.6
+        "avg_percent_funded": 16.0
       }
     },
     "project_metrics_2026": {
@@ -3527,7 +3527,7 @@
       "contribution_count": 35,
       "category_breakdown_scored": [],
       "category_level_score": null,
-      "overall_severity_score": 0.4910325232160718
+      "overall_severity_score": 0.4783786336861333
     },
     "people_2026": {
       "people_in_need": 6900000.0,
@@ -4823,7 +4823,7 @@
     "latitude": -2.9814344,
     "longitude": 23.8222636,
     "systematic_underfunding": {
-      "score": 0.8870488555538935,
+      "score": 0.8446041895618636,
       "weighted_avg_underfunding_gap": 6.793055224303917,
       "underfunded_year_share": 0.6666666666666666,
       "max_underfunding_gap": 21.134243481806053,
@@ -4996,7 +4996,7 @@
         "funding": 430024823.0,
         "percent_funded": 30.6,
         "contribution_count": 65,
-        "avg_percent_funded": 18.6
+        "avg_percent_funded": 16.0
       }
     },
     "project_metrics_2026": {
@@ -5035,7 +5035,7 @@
         }
       ],
       "category_level_score": 0.6248482984237109,
-      "overall_severity_score": 0.6980339203226341
+      "overall_severity_score": 0.6895449871242282
     },
     "people_2026": {
       "people_in_need": 14940727.0,
@@ -7419,7 +7419,7 @@
     "latitude": 19.1399952,
     "longitude": -72.3570972,
     "systematic_underfunding": {
-      "score": 0.9815805795125122,
+      "score": 0.9751337736295528,
       "weighted_avg_underfunding_gap": 12.152749733129188,
       "underfunded_year_share": 0.8333333333333334,
       "max_underfunding_gap": 49.37134310108485,
@@ -7592,7 +7592,7 @@
         "funding": 172057079.0,
         "percent_funded": 19.5,
         "contribution_count": 18,
-        "avg_percent_funded": 18.6
+        "avg_percent_funded": 16.0
       }
     },
     "project_metrics_2026": {
@@ -7649,7 +7649,7 @@
         }
       ],
       "category_level_score": 0.43966620102247755,
-      "overall_severity_score": 0.6576492164137412
+      "overall_severity_score": 0.6563598552371493
     },
     "people_2026": {
       "people_in_need": 6414193.0,
@@ -8723,11 +8723,11 @@
     "latitude": 31.1667049,
     "longitude": 36.941628,
     "systematic_underfunding": {
-      "score": 0.9905000395159452,
-      "weighted_avg_underfunding_gap": 16.44993256698026,
-      "underfunded_year_share": 0.8333333333333334,
+      "score": 0.9908111605284777,
+      "weighted_avg_underfunding_gap": 16.254530661706628,
+      "underfunded_year_share": 0.8461538461538461,
       "max_underfunding_gap": 29.346906184949294,
-      "historical_years_count": 12
+      "historical_years_count": 13
     },
     "years": {
       "2013": {
@@ -8908,20 +8908,20 @@
         "requirements": null,
         "requirements_last_year": 4189138053.0,
         "funding": 107634318.0,
-        "percent_funded": null,
+        "percent_funded": 2.6,
         "contribution_count": 64,
-        "avg_percent_funded": 18.6
+        "avg_percent_funded": 16.0
       }
     },
     "project_metrics_2026": {
       "requirements": null,
       "requirements_last_year": 4189138053.0,
       "funding": 107634318.0,
-      "percent_funded": null,
+      "percent_funded": 2.6,
       "contribution_count": 64,
       "category_breakdown_scored": [],
       "category_level_score": null,
-      "overall_severity_score": 0.9905000395159452
+      "overall_severity_score": 0.980724464211391
     }
   },
   {
@@ -10381,11 +10381,11 @@
     "latitude": 26.8234472,
     "longitude": 18.1236723,
     "systematic_underfunding": {
-      "score": 1.0,
-      "weighted_avg_underfunding_gap": 17.58872603166165,
-      "underfunded_year_share": 1.0,
+      "score": 0.9281256249486356,
+      "weighted_avg_underfunding_gap": 12.742166881543485,
+      "underfunded_year_share": 0.75,
       "max_underfunding_gap": 22.341416208193888,
-      "historical_years_count": 3
+      "historical_years_count": 4
     },
     "years": {
       "2023": {
@@ -10440,20 +10440,20 @@
         "requirements": null,
         "requirements_last_year": 507373016.0,
         "funding": 124214829.0,
-        "percent_funded": null,
+        "percent_funded": 24.5,
         "contribution_count": 19,
-        "avg_percent_funded": 18.6
+        "avg_percent_funded": 16.0
       }
     },
     "project_metrics_2026": {
       "requirements": null,
       "requirements_last_year": 507373016.0,
       "funding": 124214829.0,
-      "percent_funded": null,
+      "percent_funded": 24.5,
       "contribution_count": 19,
       "category_breakdown_scored": [],
       "category_level_score": null,
-      "overall_severity_score": 1.0
+      "overall_severity_score": 0.8242502499794542
     }
   },
   {
@@ -10868,7 +10868,7 @@
     "longitude": -2.2900239,
     "systematic_underfunding": {
       "score": 1.0,
-      "weighted_avg_underfunding_gap": 11.497280048587328,
+      "weighted_avg_underfunding_gap": 11.274281219290174,
       "underfunded_year_share": 1.0,
       "max_underfunding_gap": 19.091326868929265,
       "historical_years_count": 13
@@ -11054,7 +11054,7 @@
         "funding": 75201041.0,
         "percent_funded": 13.0,
         "contribution_count": 96,
-        "avg_percent_funded": 18.6
+        "avg_percent_funded": 16.0
       }
     },
     "project_metrics_2026": {
@@ -11665,7 +11665,7 @@
     "latitude": -19.302233,
     "longitude": 34.9144977,
     "systematic_underfunding": {
-      "score": 0.4120005741793174,
+      "score": 0.3918031199578644,
       "weighted_avg_underfunding_gap": 4.538266618996437,
       "underfunded_year_share": 0.5714285714285714,
       "max_underfunding_gap": 14.653222172683577,
@@ -11768,7 +11768,7 @@
         "funding": 131262552.0,
         "percent_funded": 24.6,
         "contribution_count": 52,
-        "avg_percent_funded": 18.6
+        "avg_percent_funded": 16.0
       }
     },
     "project_metrics_2026": {
@@ -11816,7 +11816,7 @@
         }
       ],
       "category_level_score": 0.31333418308696437,
-      "overall_severity_score": 0.46526720637934565
+      "overall_severity_score": 0.46122771553505504
     },
     "people_2026": {
       "people_in_need": 2356162.0,
@@ -11982,7 +11982,7 @@
     "latitude": 17.1750495,
     "longitude": 95.9999652,
     "systematic_underfunding": {
-      "score": 0.32704486592635484,
+      "score": 0.31009042515184093,
       "weighted_avg_underfunding_gap": 4.491055962258574,
       "underfunded_year_share": 0.36363636363636365,
       "max_underfunding_gap": 15.010598357904364,
@@ -12141,7 +12141,7 @@
         "funding": 245472134.0,
         "percent_funded": 27.6,
         "contribution_count": 62,
-        "avg_percent_funded": 18.6
+        "avg_percent_funded": 16.0
       }
     },
     "project_metrics_2026": {
@@ -12198,7 +12198,7 @@
         }
       ],
       "category_level_score": 0.7509735243317639,
-      "overall_severity_score": 0.658095735351153
+      "overall_severity_score": 0.6547048471962501
     },
     "people_2026": {
       "people_in_need": 16229050.0,
@@ -12850,8 +12850,8 @@
     "latitude": 17.7356214,
     "longitude": 9.3238432,
     "systematic_underfunding": {
-      "score": 0.31486469992291755,
-      "weighted_avg_underfunding_gap": 3.588329379099518,
+      "score": 0.2834083916589193,
+      "weighted_avg_underfunding_gap": 3.300552873268669,
       "underfunded_year_share": 0.46153846153846156,
       "max_underfunding_gap": 9.50353653802739,
       "historical_years_count": 13
@@ -13037,7 +13037,7 @@
         "funding": 66462854.0,
         "percent_funded": 9.8,
         "contribution_count": 55,
-        "avg_percent_funded": 18.6
+        "avg_percent_funded": 16.0
       }
     },
     "project_metrics_2026": {
@@ -13048,7 +13048,7 @@
       "contribution_count": 55,
       "category_breakdown_scored": [],
       "category_level_score": null,
-      "overall_severity_score": 0.6671458799691671
+      "overall_severity_score": 0.6545633566635678
     },
     "people_2026": {
       "people_in_need": 2600000.0,
@@ -13214,7 +13214,7 @@
     "latitude": 9.6000359,
     "longitude": 7.9999721,
     "systematic_underfunding": {
-      "score": 0.1919461457681923,
+      "score": 0.18445990933768952,
       "weighted_avg_underfunding_gap": 1.1196927172637943,
       "underfunded_year_share": 0.3076923076923077,
       "max_underfunding_gap": 48.099693237498066,
@@ -13401,7 +13401,7 @@
         "funding": 188766423.0,
         "percent_funded": 36.6,
         "contribution_count": 47,
-        "avg_percent_funded": 18.6
+        "avg_percent_funded": 16.0
       }
     },
     "project_metrics_2026": {
@@ -13458,7 +13458,7 @@
         }
       ],
       "category_level_score": 0.6565576331658985,
-      "overall_severity_score": 0.5568680457365878
+      "overall_severity_score": 0.5553707984504872
     },
     "people_2026": {
       "people_in_need": 5900000.0,
@@ -14030,9 +14030,9 @@
     "latitude": 30.3308401,
     "longitude": 71.247499,
     "systematic_underfunding": {
-      "score": 0.6663607458789844,
-      "weighted_avg_underfunding_gap": 14.113115506439014,
-      "underfunded_year_share": 0.375,
+      "score": 0.6663015752496055,
+      "weighted_avg_underfunding_gap": 14.055396063664437,
+      "underfunded_year_share": 0.25,
       "max_underfunding_gap": 42.55008191256303,
       "historical_years_count": 8
     },
@@ -14147,7 +14147,7 @@
         "funding": 11011245.0,
         "percent_funded": 17.0,
         "contribution_count": 10,
-        "avg_percent_funded": 18.6
+        "avg_percent_funded": 16.0
       }
     },
     "project_metrics_2026": {
@@ -14158,7 +14158,7 @@
       "contribution_count": 10,
       "category_breakdown_scored": [],
       "category_level_score": null,
-      "overall_severity_score": 0.7645442983515938
+      "overall_severity_score": 0.7645206300998422
     }
   },
   {
@@ -14350,10 +14350,10 @@
     "latitude": 31.7562524,
     "longitude": 34.9639214,
     "systematic_underfunding": {
-      "score": 0.022962275729820687,
-      "weighted_avg_underfunding_gap": 2.5027458721626012,
+      "score": 0.010038595704621952,
+      "weighted_avg_underfunding_gap": 1.6477842571579406,
       "underfunded_year_share": 0.4,
-      "max_underfunding_gap": 7.507124884187611,
+      "max_underfunding_gap": 4.923042004831039,
       "historical_years_count": 5
     },
     "years": {
@@ -14425,7 +14425,7 @@
         "funding": 451836549.0,
         "percent_funded": 11.1,
         "contribution_count": 165,
-        "avg_percent_funded": 18.6
+        "avg_percent_funded": 16.0
       }
     },
     "project_metrics_2026": {
@@ -14436,7 +14436,7 @@
       "contribution_count": 165,
       "category_breakdown_scored": [],
       "category_level_score": null,
-      "overall_severity_score": 0.5425849102919282
+      "overall_severity_score": 0.5374154382818488
     }
   },
   {
@@ -15956,8 +15956,8 @@
     "latitude": 8.3676771,
     "longitude": 49.083416,
     "systematic_underfunding": {
-      "score": 0.10423839717800067,
-      "weighted_avg_underfunding_gap": 2.5277330947144288,
+      "score": 0.10075666034724462,
+      "weighted_avg_underfunding_gap": 2.402899011207612,
       "underfunded_year_share": 0.46153846153846156,
       "max_underfunding_gap": 18.077021554881505,
       "historical_years_count": 13
@@ -16143,7 +16143,7 @@
         "funding": 111250193.0,
         "percent_funded": 13.1,
         "contribution_count": 56,
-        "avg_percent_funded": 18.6
+        "avg_percent_funded": 16.0
       }
     },
     "project_metrics_2026": {
@@ -16209,7 +16209,7 @@
         }
       ],
       "category_level_score": 0.4951181245937159,
-      "overall_severity_score": 0.5291067417324581
+      "overall_severity_score": 0.5284103943663069
     },
     "people_2026": {
       "people_in_need": 4796040.0,
@@ -16468,7 +16468,7 @@
         "funding": 322015249.0,
         "percent_funded": 22.0,
         "contribution_count": 68,
-        "avg_percent_funded": 18.6
+        "avg_percent_funded": 16.0
       }
     },
     "project_metrics_2026": {
@@ -16799,7 +16799,7 @@
         "funding": 15834857.0,
         "percent_funded": 44.9,
         "contribution_count": 16,
-        "avg_percent_funded": 18.6
+        "avg_percent_funded": 16.0
       }
     },
     "project_metrics_2026": {
@@ -16826,9 +16826,9 @@
     "latitude": 14.5844444,
     "longitude": 29.4917691,
     "systematic_underfunding": {
-      "score": 0.3692431046308495,
-      "weighted_avg_underfunding_gap": 2.5326191978108232,
-      "underfunded_year_share": 0.48148148148148145,
+      "score": 0.36717506990624665,
+      "weighted_avg_underfunding_gap": 2.422329679916694,
+      "underfunded_year_share": 0.4444444444444444,
       "max_underfunding_gap": 15.260686616767828,
       "historical_years_count": 27
     },
@@ -17211,7 +17211,7 @@
         "funding": 488147337.0,
         "percent_funded": 17.0,
         "contribution_count": 83,
-        "avg_percent_funded": 18.6
+        "avg_percent_funded": 16.0
       }
     },
     "project_metrics_2026": {
@@ -17222,7 +17222,7 @@
       "contribution_count": 83,
       "category_breakdown_scored": [],
       "category_level_score": null,
-      "overall_severity_score": 0.6456972418523397
+      "overall_severity_score": 0.6448700279624986
     },
     "people_2026": {
       "people_in_need": 33699770.0,
@@ -17244,8 +17244,8 @@
     "latitude": 34.6401861,
     "longitude": 39.0494106,
     "systematic_underfunding": {
-      "score": 0.8019988313863045,
-      "weighted_avg_underfunding_gap": 4.426307847799122,
+      "score": 0.7999690441203632,
+      "weighted_avg_underfunding_gap": 4.29191515432626,
       "underfunded_year_share": 0.5882352941176471,
       "max_underfunding_gap": 44.65636376870279,
       "historical_years_count": 17
@@ -17491,7 +17491,7 @@
         "funding": 437301894.0,
         "percent_funded": 15.0,
         "contribution_count": 75,
-        "avg_percent_funded": 18.6
+        "avg_percent_funded": 16.0
       }
     },
     "project_metrics_2026": {
@@ -17502,7 +17502,7 @@
       "contribution_count": 75,
       "category_breakdown_scored": [],
       "category_level_score": null,
-      "overall_severity_score": 0.8307995325545219
+      "overall_severity_score": 0.8299876176481453
     },
     "people_2026": {
       "people_in_need": 16500000.0,
@@ -18371,7 +18371,7 @@
     "longitude": 32.2166578,
     "systematic_underfunding": {
       "score": 1.0,
-      "weighted_avg_underfunding_gap": 22.300222301615467,
+      "weighted_avg_underfunding_gap": 20.19948139576035,
       "underfunded_year_share": 1.0,
       "max_underfunding_gap": 45.32509202014798,
       "historical_years_count": 2
@@ -18417,7 +18417,7 @@
         "funding": 13438960.0,
         "percent_funded": 1.6,
         "contribution_count": 3,
-        "avg_percent_funded": 18.6
+        "avg_percent_funded": 16.0
       }
     },
     "project_metrics_2026": {
@@ -18494,7 +18494,7 @@
     "latitude": 49.4871968,
     "longitude": 31.2718321,
     "systematic_underfunding": {
-      "score": 0.027637568342287876,
+      "score": 0.027215584729366936,
       "weighted_avg_underfunding_gap": 0.8246397471602733,
       "underfunded_year_share": 0.3,
       "max_underfunding_gap": 23.212799397658628,
@@ -18653,7 +18653,7 @@
         "funding": 640227370.0,
         "percent_funded": 27.8,
         "contribution_count": 106,
-        "avg_percent_funded": 18.6
+        "avg_percent_funded": 16.0
       }
     },
     "project_metrics_2026": {
@@ -18692,7 +18692,7 @@
         }
       ],
       "category_level_score": 0.6291470736835573,
-      "overall_severity_score": 0.5367010505102362
+      "overall_severity_score": 0.536616653787652
     },
     "people_2026": {
       "people_in_need": 10849697.0,
@@ -18786,8 +18786,8 @@
     "latitude": 8.0018709,
     "longitude": -66.1109318,
     "systematic_underfunding": {
-      "score": 0.9596744313698047,
-      "weighted_avg_underfunding_gap": 16.662500132547148,
+      "score": 0.9594091459030509,
+      "weighted_avg_underfunding_gap": 16.339878255164663,
       "underfunded_year_share": 0.875,
       "max_underfunding_gap": 32.24112125643695,
       "historical_years_count": 8
@@ -18903,7 +18903,7 @@
         "funding": 84012783.0,
         "percent_funded": 13.3,
         "contribution_count": 23,
-        "avg_percent_funded": 18.6
+        "avg_percent_funded": 16.0
       }
     },
     "project_metrics_2026": {
@@ -18914,7 +18914,7 @@
       "contribution_count": 23,
       "category_breakdown_scored": [],
       "category_level_score": null,
-      "overall_severity_score": 0.9040697725479219
+      "overall_severity_score": 0.9039636583612204
     },
     "people_2026": {
       "people_in_need": 7900000.0,
@@ -18937,7 +18937,7 @@
     "longitude": 107.9650855,
     "systematic_underfunding": {
       "score": 1.0,
-      "weighted_avg_underfunding_gap": 17.018524195458113,
+      "weighted_avg_underfunding_gap": 15.317150585148646,
       "underfunded_year_share": 1.0,
       "max_underfunding_gap": 23.473338941755934,
       "historical_years_count": 2
@@ -18969,7 +18969,7 @@
         "funding": 3028917.0,
         "percent_funded": 5.0,
         "contribution_count": 3,
-        "avg_percent_funded": 18.6
+        "avg_percent_funded": 16.0
       }
     },
     "project_metrics_2026": {
@@ -19218,8 +19218,8 @@
     "latitude": 16.3471243,
     "longitude": 47.8915271,
     "systematic_underfunding": {
-      "score": 0.10433797915646435,
-      "weighted_avg_underfunding_gap": 2.1833973694423228,
+      "score": 0.09247576789349794,
+      "weighted_avg_underfunding_gap": 2.0309976667221603,
       "underfunded_year_share": 0.38461538461538464,
       "max_underfunding_gap": 7.093928134912559,
       "historical_years_count": 13
@@ -19405,7 +19405,7 @@
         "funding": 258764721.0,
         "percent_funded": 12.0,
         "contribution_count": 85,
-        "avg_percent_funded": 18.6
+        "avg_percent_funded": 16.0
       }
     },
     "project_metrics_2026": {
@@ -19416,7 +19416,7 @@
       "contribution_count": 85,
       "category_breakdown_scored": [],
       "category_level_score": null,
-      "overall_severity_score": 0.5697351916625858
+      "overall_severity_score": 0.5649903071573992
     },
     "people_2026": {
       "people_in_need": 23100000.0,
@@ -19448,11 +19448,11 @@
     "latitude": 16.3471243,
     "longitude": 47.8915271,
     "systematic_underfunding": {
-      "score": 0.15097374577171443,
-      "weighted_avg_underfunding_gap": 3.5851325018680003,
-      "underfunded_year_share": 0.6,
+      "score": 0.04925236282132374,
+      "weighted_avg_underfunding_gap": 3.1379610257398474,
+      "underfunded_year_share": 0.5,
       "max_underfunding_gap": 8.047753707737552,
-      "historical_years_count": 5
+      "historical_years_count": 6
     },
     "years": {
       "2020": {
@@ -19549,20 +19549,20 @@
         "requirements": null,
         "requirements_last_year": 39681024.0,
         "funding": 27150666.0,
-        "percent_funded": null,
+        "percent_funded": 68.4,
         "contribution_count": 21,
-        "avg_percent_funded": 18.6
+        "avg_percent_funded": 16.0
       }
     },
     "project_metrics_2026": {
       "requirements": null,
       "requirements_last_year": 39681024.0,
       "funding": 27150666.0,
-      "percent_funded": null,
+      "percent_funded": 68.4,
       "contribution_count": 21,
       "category_breakdown_scored": [],
       "category_level_score": null,
-      "overall_severity_score": 0.15097374577171443
+      "overall_severity_score": 0.20930094512852945
     },
     "people_2026": {
       "people_in_need": 23100000.0,
