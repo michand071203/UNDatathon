@@ -1,0 +1,30 @@
+# 2026 Crisis Rankings Table
+
+| Ranking Name | Level | Formula | Sort Direction |
+|-------------|-------|---------|---------------|
+| plan_rankings.by_funding_gap | Plan | requirements - funding | descending (highest first) |
+| plan_rankings.by_requirements | Plan | requirements | descending (highest first) |
+| plan_rankings.by_funding | Plan | funding | descending (highest first) |
+| plan_rankings.by_percent_funded | Plan | percent_funded | ascending (lowest first) |
+| plan_rankings.by_people_in_need | Plan | people_in_need | descending (highest first) |
+| plan_rankings.by_target_coverage | Plan | people_targeted / people_in_need | descending (highest first) |
+| plan_rankings.by_unmet_need_ratio | Plan | (people_in_need - people_targeted) / people_in_need | ascending (lowest first) |
+| plan_rankings.by_funding_per_need | Plan | funding / people_in_need | descending (highest first) |
+| plan_rankings.by_funding_per_target | Plan | funding / people_targeted | descending (highest first) |
+| plan_rankings.by_gap_per_person | Plan | funding_gap / people_in_need | ascending (lowest first) |
+| plan_rankings.by_people_reached_ratio | Plan | people_reached / people_in_need | descending (highest first) |
+| plan_rankings.overall | Plan | sum of all individual rank positions | ascending (best combined score first) |
+| country_rankings.by_funding_gap | Country | sum(requirements - funding) by country | descending (highest first) |
+| country_rankings.by_requirements | Country | sum(requirements) by country | descending (highest first) |
+| country_rankings.by_funding | Country | sum(funding) by country | descending (highest first) |
+| country_rankings.by_percent_funded | Country | funding / requirements * 100 by country | ascending (lowest first) |
+| country_rankings.by_people_in_need | Country | sum(people_in_need) by country | descending (highest first) |
+| country_rankings.by_coverage | Country | sum(people_targeted) / sum(people_in_need) by country | descending (highest first) |
+| country_rankings.by_unmet_need_ratio | Country | (sum(people_in_need) - sum(people_targeted)) / sum(people_in_need) by country | ascending (lowest first) |
+| country_rankings.by_funding_per_need | Country | sum(funding) / sum(people_in_need) by country | descending (highest first) |
+| country_rankings.by_funding_per_target | Country | sum(funding) / sum(people_targeted) by country | descending (highest first) |
+| country_rankings.by_gap_per_person | Country | sum(funding_gap) / sum(people_in_need) by country | ascending (lowest first) |
+| country_rankings.by_reached_ratio | Country | sum(people_reached) / sum(people_in_need) by country | descending (highest first) |
+| category_rankings.by_people_in_need | Category | sum(people_in_need) by category | descending (highest first) |
+| category_rankings.by_category_coverage | Category | sum(people_targeted) / sum(people_in_need) by category | descending (highest first) |
+| category_rankings.by_category_gap | Category | (sum(people_in_need) - sum(people_targeted)) / sum(people_in_need) by category | ascending (lowest first) |
