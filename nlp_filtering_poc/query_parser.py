@@ -36,8 +36,11 @@ class QueryParser:
             "Your task is to take a natural language query about humanitarian crises, funding gaps, "
             "and needs, and extract the precise filtering parameters. "
             "Always use the `apply_filters` tool to output the structured data. "
-            "IMPORTANT: Pay strict attention to the data types. If a value is missing or unknown, "
-            "you MUST omit the field or return a literal JSON null. Do not return strings like '<UNKNOWN>' or 'null'."
+            "IMPORTANT RULES:\n"
+            "1. Pay strict attention to the data types. If a value is missing or unknown, omit the field or return a literal JSON null.\n"
+            "2. For numeric filters, infer the correct operator ('eq', 'gt', 'lt', 'gte', 'lte'). E.g., 'more than 10%' -> 'gt', 'less than 5' -> 'lt'.\n"
+            "3. For list/enum filters, if the query implies negation (e.g., 'excluding', 'outside of', 'not in'), set the 'exclude' field to true.\n"
+            "4. For geographic locations, output standard ISO-3 codes for specific countries (e.g. 'SDN', 'HTI'). If a broad region is mentioned, output the exact region name (e.g. 'Africa', 'Middle East')."
         )
 
         response = self.client.messages.create(

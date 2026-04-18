@@ -14,10 +14,9 @@ def main():
         return
 
     example_queries = [
-        "Which crises have the highest proportion of people in need but the lowest fund allocations?",
-        "Are there countries in the Middle East with active HRPs where funding is absent or negligible?",
-        "Which regions are consistently underfunded relative to need across multiple years?",
-        "Show me acute food insecurity hotspots that have received less than 10% of their requested funding."
+        "Which crises have more than 1000000 people in need but less than 25% fund allocations?",
+        "Are there countries outside of the Middle East with active HRPs where funding is absent or negligible?",
+        "Show me acute natural disaster hotspots that have received less than 10% of their requested funding, excluding Sudan."
     ]
 
     print("=== Testing Humanitarian LLM Query Parser ===")

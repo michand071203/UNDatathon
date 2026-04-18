@@ -1,27 +1,37 @@
-from typing import List, Optional
+from typing import List, Optional, Literal, TypeVar, Generic
 from pydantic import BaseModel, Field
+from enum import Enum
+
+T = TypeVar('T', bound=Enum)
+
+class NumericCondition(BaseModel):
+    value: float
+    operator: Literal["eq", "gt", "lt", "gte", "lte"] = Field(description="Operator: equal (eq), greater than (gt), less than (lt), greater than or equal (gte), less than or equal (lte)")
+
+class ListCondition(BaseModel):
+    values: List[str] = Field(description="List of strings to filter by.")
+    exclude: bool = Field(default=False, description="If true, EXCLUDE these values (negation).")
+
+class CrisisTypeEnum(str, Enum):
+    CONFLICT = "conflict"
+    NATURAL_DISASTER = "natural_disaster"
+    COMPLEX_EMERGENCY = "complex_emergency"
+    DISEASE_OUTBREAK = "disease_outbreak"
+
+class EnumCondition(BaseModel, Generic[T]):
+    values: List[T] = Field(description="List of enum values to filter by.")
+    exclude: bool = Field(default=False, description="If true, EXCLUDE these values (negation).")
 
 class QueryFilter(BaseModel):
-    geographic_scope: Optional[List[str]] = Field(
+    locations: Optional[ListCondition] = Field(
         default=None, 
-        description="List of regions, countries, or continents mentioned in the query. Example: ['Africa', 'Middle East', 'Yemen']. Must be an array of strings. If not specified, return null."
+        description="Countries, regions, or continents. Output standard ISO-3 codes for specific countries (e.g., 'SDN', 'HTI'). If a broad region is mentioned, output the exact region name (e.g., 'Africa', 'Middle East')."
     )
-    min_people_in_need: Optional[int] = Field(
-        default=None, 
-        description="The minimum number of people in need (PIN) required to filter the crises. If not specified, return null."
-    )
-    max_funding_coverage_percentage: Optional[float] = Field(
-        default=None, 
-        description="The maximum funding coverage percentage (0.0 to 100.0) mentioned. Example: 10% would be 10.0. If not specified, return null."
-    )
-    target_sectors: Optional[List[str]] = Field(
-        default=None, 
-        description="Specific humanitarian sectors mentioned, e.g., ['Food Security', 'Health', 'Shelter']. Must be an array of strings. If not specified, return null."
-    )
-    is_multi_year_query: bool = Field(
-        default=False, 
-        description="True if the query explicitly asks for multi-year trends or consistently underfunded crises."
-    )
+    people_in_need: Optional[NumericCondition] = Field(default=None, description="Filter by People in Need (PIN).")
+    funding_coverage_percentage: Optional[NumericCondition] = Field(default=None, description="Filter by funding coverage % (0-100).")
+    sectors: Optional[ListCondition] = Field(default=None, description="Humanitarian sectors (e.g., 'Health', 'Food Security').")
+    crisis_type: Optional[EnumCondition[CrisisTypeEnum]] = Field(default=None, description="Filter by the type of crisis.")
+    is_multi_year_query: bool = Field(default=False)
 
 class CrisisData(BaseModel):
     country: str
