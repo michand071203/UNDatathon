@@ -32,6 +32,7 @@ DATA_DIR = Path(__file__).resolve().parent.parent / "data"
 COORDINATE_FILE = DATA_DIR / "country_coordinates.csv"
 GEOCODE_ALIASES = {
     "COD": ["Democratic Republic of the Congo"],
+    "PSE": ["State of Palestine", "Palestinian territories"],
 }
 
 
@@ -39,13 +40,15 @@ def geocode_country(code, geocode):
     try:
         country = pycountry.countries.get(alpha_3=code)
         query_candidates = []
+        query_candidates.extend(GEOCODE_ALIASES.get(code, []))
+
         if country:
             for attr in ("official_name", "common_name", "name", "alpha_2"):
                 value = getattr(country, attr, None)
                 if value:
                     query_candidates.append(value)
 
-        query_candidates.extend(GEOCODE_ALIASES.get(code, []))
+        country_code = (getattr(country, "alpha_2", "") or "").lower()
 
         # Keep order while removing duplicates.
         seen = set()
@@ -54,7 +57,9 @@ def geocode_country(code, geocode):
         ]
 
         for query in unique_candidates:
-            location = geocode(query)
+            location = geocode(query, country_codes=country_code) if country_code else None
+            if not location:
+                location = geocode(query)
             if location:
                 return float(location.latitude), float(location.longitude)
     except Exception:
