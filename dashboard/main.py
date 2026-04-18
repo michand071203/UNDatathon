@@ -1,67 +1,164 @@
+from nlp_service import QueryParser, QueryFilter
 import json
-from fastapi import FastAPI, Request, Query
+import os
+from fastapi import FastAPI, Request, Query, Form
 from fastapi.responses import HTMLResponse, JSONResponse
 from fastapi.templating import Jinja2Templates
-from typing import Optional, List
+from typing import Optional, List, Any
+from dotenv import load_dotenv
+
+load_dotenv()
 
 app = FastAPI(title="Humanitarian Crisis Dashboard")
-templates = Jinja2Templates(directory="dashboard/templates")
 
-# Load data on startup
-with open("dashboard/data.json", "r") as f:
-    CRISES_DATA = json.load(f)
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+templates = Jinja2Templates(directory=os.path.join(BASE_DIR, "templates"))
+nlp_parser = QueryParser()
+
+# --- Declarative Configuration ---
+
+# Maps QueryFilter attribute names to paths in the crisis dictionary
+FIELD_MAP = {
+    "locations": [["country_code"], ["metadata", "Region"]],
+    "people_in_need": [["metrics", "people_in_need"]],
+    "funding_coverage_percentage": [["metrics", "funding_coverage_percentage"]],
+    "funding_required_usd": [["metrics", "funding_required_usd"]],
+    "funding_received_usd": [["metrics", "funding_received_usd"]],
+    "overlooked_rank": [["metrics", "overlooked_rank"]],
+    "crisis_type": [["metadata", "Type"]]
+}
+
+def get_nested_value(data: dict, path: List[str]) -> Any:
+    """Safely retrieves a value from a nested dictionary given a path list."""
+    current = data
+    for key in path:
+        if isinstance(current, dict) and key in current:
+            current = current[key]
+        else:
+            return None
+    return current
+
+# --- Dynamic Core Logic ---
+
+def calculate_color(funding_coverage: float) -> str:
+    if funding_coverage < 10: return "#b91c1c"
+    if funding_coverage < 25: return "#f97316"
+    return "#facc15"
+
+def calculate_radius(people_in_need: int) -> float:
+    return people_in_need * 0.000025
+
+def get_enriched_data():
+    json_path = os.path.join(BASE_DIR, "data.json")
+    with open(json_path, "r") as f:
+        data = json.load(f)
+    for crisis in data:
+        metrics = crisis.get("metrics", {})
+        crisis["display"]["color"] = calculate_color(metrics.get("funding_coverage_percentage", 0))
+        crisis["display"]["radius_km"] = calculate_radius(metrics.get("people_in_need", 0))
+    return data
+
+def apply_advanced_filters(data: List[dict], filters: Optional[QueryFilter]) -> List[dict]:
+    print("Applying filters:", filters)
+    if not filters:
+        return data
+
+    filtered_results = data
+    
+    # 1. Declarative Filtering Loop
+    # We iterate over the fields actually populated in the filter object
+    for field_name, condition in filters.model_dump(exclude_none=True).items():
+        if field_name == "order_by": continue # Handle sorting separately
+        
+        paths = FIELD_MAP.get(field_name)
+        if not paths: continue
+
+        # Re-get the Pydantic condition object to use its .evaluate() method
+        condition_obj = getattr(filters, field_name)
+        
+        def item_matches(crisis):
+            # Check all possible paths for this field (e.g. Country Code OR Region)
+            for path in paths: # type: ignore
+                val = get_nested_value(crisis, path)
+                if condition_obj.evaluate(val):
+                    return True
+            return False
+
+        filtered_results = [c for c in filtered_results if item_matches(c)]
+
+    # 2. Declarative Sorting
+    if filters.order_by:
+        field_name = filters.order_by.field
+        paths = FIELD_MAP.get(field_name)
+        if paths:
+            # Sort based on the first mapped path for that field
+            path = paths[0]
+            reverse = filters.order_by.direction == "desc"
+            filtered_results.sort(
+                key=lambda x: get_nested_value(x, path) or 0, 
+                reverse=reverse
+            )
+
+    return filtered_results
+
+# --- Routes ---
 
 @app.get("/", response_class=HTMLResponse)
 async def get_index(request: Request):
     return templates.TemplateResponse(request=request, name="index.html")
 
-@app.get("/api/map-data")
-async def get_map_data():
-    return JSONResponse(content=CRISES_DATA)
-
-@app.get("/list", response_class=HTMLResponse)
-async def get_list(
-    request: Request, 
-    search: Optional[str] = Query(None), 
-    sort: Optional[str] = Query("title")
-):
-    filtered_data = CRISES_DATA.copy()
+@app.post("/nlp-query", response_class=HTMLResponse)
+async def post_nlp_query(request: Request, query: str = Form(...)):
+    parsed_filter = nlp_parser.parse_query(query)
+    chips = []
+    f_dict = parsed_filter.model_dump(exclude_none=True)
     
-    # Filtering logic
-    if search:
-        search = search.lower()
-        filtered_data = [
-            c for c in filtered_data 
-            if search in c["display"]["title"].lower() or search in c["summary"]["brief_text"].lower()
-        ]
-    
-    # Sorting logic
-    if sort == "title":
-        filtered_data.sort(key=lambda x: x["display"]["title"])
-    elif sort == "severity":
-        # Using color_metric as a proxy for severity
-        filtered_data.sort(key=lambda x: x["display"]["color_metric"], reverse=True)
-    elif sort == "impact":
-        # Using radius_metric as a proxy for impact
-        filtered_data.sort(key=lambda x: x["display"]["radius_metric"], reverse=True)
+    if "locations" in f_dict:
+        prefix = "Excluding" if parsed_filter.locations.exclude else "In" # type: ignore
+        chips.append(f"{prefix}: {', '.join(parsed_filter.locations.values)}") # type: ignore
+    if "people_in_need" in f_dict:
+        chips.append(f"PIN {parsed_filter.people_in_need.operator} {parsed_filter.people_in_need.value:,}") # type: ignore
+    if "funding_coverage_percentage" in f_dict:
+        chips.append(f"Funding {parsed_filter.funding_coverage_percentage.operator} {parsed_filter.funding_coverage_percentage.value}%") # type: ignore
+    if "order_by" in f_dict:
+        chips.append(f"Sort: {parsed_filter.order_by.field} ({parsed_filter.order_by.direction})") # type: ignore
 
     return templates.TemplateResponse(
         request=request, 
-        name="list_items.html", 
-        context={"crises": filtered_data}
+        name="filter_chips.html", 
+        context={"chips": chips, "filters_json": parsed_filter.model_dump_json()}
     )
+
+@app.get("/api/map-data")
+async def get_map_data(filters: Optional[str] = Query(None)):
+    data = get_enriched_data()
+    if filters:
+        try:
+            f_obj = QueryFilter.model_validate_json(filters)
+            data = apply_advanced_filters(data, f_obj)
+        except: pass
+    return JSONResponse(content=data)
+
+@app.get("/list", response_class=HTMLResponse)
+async def get_list(request: Request, filters: Optional[str] = Query(None)):
+    filtered_data = get_enriched_data()
+    if filters:
+        try:
+            f_obj = QueryFilter.model_validate_json(filters)
+            filtered_data = apply_advanced_filters(filtered_data, f_obj)
+        except: pass
+    else:
+        filtered_data.sort(key=lambda x: get_nested_value(x, ["display", "title"]))
+    
+    return templates.TemplateResponse(request=request, name="list_items.html", context={"crises": filtered_data})
 
 @app.get("/details/{crisis_id}", response_class=HTMLResponse)
 async def get_details(request: Request, crisis_id: str):
-    crisis = next((c for c in CRISES_DATA if c["id"] == crisis_id), None)
+    data = get_enriched_data()
+    crisis = next((c for c in data if c["id"] == crisis_id), None)
     if not crisis:
         return HTMLResponse(content="Crisis not found", status_code=404)
-    
-    return templates.TemplateResponse(
-        request=request, 
-        name="side_panel.html", 
-        context={"crisis": crisis}
-    )
+    return templates.TemplateResponse(request=request, name="side_panel.html", context={"crisis": crisis})
 
 if __name__ == "__main__":
     import uvicorn

@@ -1,66 +1,80 @@
 [
   {
     "id": "crisis-001",
+    "country_code": "SDN",
     "display": {
-      "title": "East Africa Drought",
-      "lat": 2.0,
-      "lng": 45.0,
-      "radius_metric": 500000,
-      "color_metric": 8.5
+      "title": "Sudan Conflict",
+      "lat": 15.0,
+      "lng": 30.0
     },
     "summary": {
-      "brief_text": "Severe multi-year drought affecting food security across the Horn of Africa.",
-      "key_stat_1": "20M People at Risk",
-      "key_stat_2": "Level 4 Emergency"
+      "brief_text": "One of the fastest-growing displacement crises in the world.",
+      "key_stat_1": "24.8M In Need",
+      "key_stat_2": "15% Funded"
+    },
+    "metrics": {
+      "people_in_need": 24800000,
+      "funding_coverage_percentage": 15.0,
+      "funding_required_usd": 2700000000.00,
+      "funding_received_usd": 405000000.00,
+      "overlooked_rank": 1
     },
     "metadata": {
-      "Rainfall Deficit": "60% below average",
-      "Livestock Loss": "3.5 million head",
-      "Water Price Increase": "400%",
-      "Last Update": "2026-04-15"
+      "Region": "Africa",
+      "Type": "Conflict",
+      "Food Security": "IPC Phase 4/5"
     }
   },
   {
     "id": "crisis-002",
+    "country_code": "HTI",
     "display": {
-      "title": "Southeast Asia Flooding",
-      "lat": 15.0,
-      "lng": 105.0,
-      "radius_metric": 300000,
-      "color_metric": 6.2
+      "title": "Haiti Civil Unrest",
+      "lat": 19.0,
+      "lng": -72.0
     },
     "summary": {
-      "brief_text": "Unprecedented monsoon rains causing widespread displacement and infrastructure damage.",
-      "key_stat_1": "1.2M Displaced",
-      "key_stat_2": "Critical Shelter Need"
+      "brief_text": "Surging gang violence disrupting supply chains and health systems.",
+      "key_stat_1": "5.5M In Need",
+      "key_stat_2": "6% Funded"
+    },
+    "metrics": {
+      "people_in_need": 5500000,
+      "funding_coverage_percentage": 6.0,
+      "funding_required_usd": 674000000.00,
+      "funding_received_usd": 40440000.00,
+      "overlooked_rank": 2
     },
     "metadata": {
-      "Bridges Destroyed": "142",
-      "Arable Land Submerged": "250,000 hectares",
-      "Rescue Teams Deployed": "45",
-      "Primary Disease Risk": "Water-borne pathogens"
+      "Region": "Americas",
+      "Type": "Complex Emergency",
+      "Displaced": "362,000"
     }
   },
   {
     "id": "crisis-003",
+    "country_code": "BFA",
     "display": {
-      "title": "Central Andes Earthquake",
-      "lat": -15.0,
-      "lng": -75.0,
-      "radius_metric": 150000,
-      "color_metric": 9.1
+      "title": "Burkina Faso Insurgency",
+      "lat": 12.0,
+      "lng": -1.5
     },
     "summary": {
-      "brief_text": "Magnitude 7.8 earthquake striking remote mountain communities.",
-      "key_stat_1": "85k Homes Destroyed",
-      "key_stat_2": "High Altitude Cold Risk"
+      "brief_text": "Armed group blockades cutting off major towns and commercial lines.",
+      "key_stat_1": "4.7M In Need",
+      "key_stat_2": "18% Funded"
+    },
+    "metrics": {
+      "people_in_need": 4700000,
+      "funding_coverage_percentage": 18.0,
+      "funding_required_usd": 876000000.00,
+      "funding_received_usd": 157680000.00,
+      "overlooked_rank": 3
     },
     "metadata": {
-      "Magnitude": "7.8 Mw",
-      "Depth": "12km",
-      "Aftershocks": "200+",
-      "Blocked Roads": "Main Highway 4S",
-      "Temperature at Site": "-5°C"
+      "Region": "Africa",
+      "Type": "Conflict",
+      "Primary Need": "Protection & Food"
     }
   }
 ]

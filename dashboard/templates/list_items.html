@@ -7,9 +7,9 @@
      hx-swap="innerHTML">
     <div class="p-5 flex-grow">
         <div class="flex justify-between items-start mb-2">
-            <h3 class="text-lg font-bold text-gray-900 leading-tight">{{ crisis.display.title }}</h3>
-            <span class="px-2 py-1 text-xs font-bold rounded {% if crisis.display.color_metric > 8 %}bg-red-100 text-red-700{% elif crisis.display.color_metric > 5 %}bg-orange-100 text-orange-700{% else %}bg-yellow-100 text-yellow-700{% endif %}">
-                Severity: {{ crisis.display.color_metric }}
+            <h3 class="text-lg font-bold text-gray-800 leading-tight">{{ crisis.display.title }}</h3>
+            <span class="px-2 py-1 text-xs font-bold rounded text-white shadow-sm" style="background-color: {{ crisis.display.color or '#666' }}">
+                Coverage: {{ crisis.metrics.funding_coverage_percentage }}%
             </span>
         </div>
         <p class="text-gray-600 text-sm mb-4 line-clamp-2">
