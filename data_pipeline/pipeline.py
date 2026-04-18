@@ -42,11 +42,65 @@ COUNTRY_STITCHED_BASE_KEY_FAMILIES = {
 }
 
 GLOBAL_STITCHED_BASE_KEY_FAMILIES = {
-    # Sudan Emergency: Regional Refugee Response Plan (RRSDN -> RREGa in 2026)
-    "SUDAN_REFUGEES": {"RRSDN", "RREGa"},
-    # Syria 3RP lineage (RXSYRREG -> RSYR -> RJORLBNTUR in 2026)
-    "SYRIA_REFUGEES": {"RXSYRREG", "RSYR", "RJORLBNTUR"},
+    # Deprecated in favor of GLOBAL_STITCHED_BASE_KEY_RULES.
 }
+
+GLOBAL_STITCHED_BASE_KEY_RULES = [
+    {
+        "label": "SUDAN_REFUGEES",
+        "name_norms": {"sudan emergency regional refugee response plan"},
+        "base_keys": {"RRSDN", "RREGa"},
+    },
+    {
+        "label": "SYRIA_REFUGEES",
+        "name_norms": {
+            "syrian arab republic regional refugee and resilience plan 3rp",
+            "syria regional refugee response plan rrp",
+        },
+        "base_keys": {"RXSYRREG", "RSYR", "RJORLBNTUR"},
+    },
+    {
+        "label": "VENEZUELA_RMRP",
+        "name_norms": {"venezuela regional refugee and migrant response plan rmrp"},
+        "base_keys": {"RREG", "RSAMR", "RREGb"},
+    },
+    {
+        "label": "HOA_YEMEN_RMRP",
+        "name_norms": {
+            "regional migrant response plan for horn of africa to yemen and southern africa",
+            "regional migrant response plan for the horn of africa and yemen",
+        },
+        "base_keys": {"RDJIETHSOM", "RDJIETHSOMYEM", "RRHOAY", "RREG"},
+    },
+    {
+        "label": "SOUTH_SUDAN_RRP",
+        "name_norms": {"south sudan regional refugee response plan"},
+        "base_keys": {"RXSSDREG", "RSSDRRP", "RETHKENUGA"},
+    },
+    {
+        "label": "DRC_RRP",
+        "name_norms": {"democratic republic of the congo regional refugee response plan"},
+        "base_keys": {"RDRCRRP", "RDRC_RRP"},
+    },
+    {
+        "label": "AFGHAN_REGIONAL_REFUGEES",
+        "name_norms": {"afghanistan situation regional refugee response plan"},
+        "base_keys": {"RAFG", "RAFG_RRP", "RIRNPAK"},
+    },
+    {
+        "label": "UGANDA_BURUNDI_RRP",
+        "name_norms": {
+            "burundi regional refugee response plan",
+            "uganda regional refugee response plan",
+        },
+        "base_keys": {"RRWATZAUGA", "RUGA"},
+    },
+]
+
+MONTHS_PATTERN = (
+    r"january|february|march|april|may|june|july|august|"
+    r"september|october|november|december"
+)
 
 
 def geocode_country(country_name, geocode, country_code=None):
@@ -143,6 +197,16 @@ def build_funding_base_key(code, year):
     return re.sub(rf"{year_token}(?=[A-Za-z]?$)", "", code)
 
 
+def normalize_plan_name(name):
+    text = str(name or "").lower()
+    text = re.sub(r"\b(19|20)\d{2}\b", " ", text)
+    text = re.sub(rf"\b({MONTHS_PATTERN})\b", " ", text)
+    text = re.sub(r"\b\d+\b", " ", text)
+    text = re.sub(r"[^a-z0-9]+", " ", text)
+    text = re.sub(r"\s+", " ", text).strip()
+    return text
+
+
 def _json_number(value):
     if pd.isna(value):
         return None
@@ -158,8 +222,14 @@ def build_latest_canonical_key_map(summary):
     if location_col not in summary.columns and "primary_location_code" in summary.columns:
         location_col = "primary_location_code"
 
-    work = summary[["code", "year", location_col]].copy()
+    work_cols = ["code", "year", location_col]
+    if "name" in summary.columns:
+        work_cols.append("name")
+
+    work = summary[work_cols].copy()
     work = work.rename(columns={location_col: "location_code"})
+    if "name" not in work.columns:
+        work["name"] = ""
     work = work[
         work["code"].notna() & work["year"].notna() & work["location_code"].notna()
     ]
@@ -169,6 +239,7 @@ def build_latest_canonical_key_map(summary):
     work["base_key"] = work.apply(
         lambda row: build_funding_base_key(row.get("code"), row.get("year")), axis=1
     )
+    work["name_norm"] = work["name"].map(normalize_plan_name)
 
     for country, family in COUNTRY_STITCHED_BASE_KEY_FAMILIES.items():
         family_rows = work[
@@ -188,8 +259,11 @@ def build_latest_canonical_key_map(summary):
         for base_key in family:
             key_map[(country, base_key)] = canonical_latest
 
-    for family in GLOBAL_STITCHED_BASE_KEY_FAMILIES.values():
-        family_rows = work[work["base_key"].isin(family)]
+    for rule in GLOBAL_STITCHED_BASE_KEY_RULES:
+        family_rows = work[
+            work["base_key"].isin(rule["base_keys"])
+            & work["name_norm"].isin(rule["name_norms"])
+        ]
         if family_rows.empty:
             continue
 
@@ -200,20 +274,30 @@ def build_latest_canonical_key_map(summary):
             continue
 
         canonical_latest = latest_keys[0]
-        for base_key in family:
-            key_map[("__GLOBAL__", base_key)] = canonical_latest
+        for base_key in rule["base_keys"]:
+            key_map[("__GLOBAL__", rule["label"], base_key)] = canonical_latest
 
     return key_map
 
 
-def apply_latest_canonical_key(base_key, primary_location, canonical_key_map):
+def apply_latest_canonical_key(base_key, primary_location, plan_name, canonical_key_map):
     if not isinstance(primary_location, str) or not primary_location:
-        return canonical_key_map.get(("__GLOBAL__", base_key), base_key)
-    country = primary_location.upper()
-    country_key = canonical_key_map.get((country, base_key))
-    if country_key is not None:
-        return country_key
-    return canonical_key_map.get(("__GLOBAL__", base_key), base_key)
+        location = None
+    else:
+        location = primary_location.upper()
+
+    name_norm = normalize_plan_name(plan_name)
+
+    if location is not None:
+        country_key = canonical_key_map.get((location, base_key))
+        if country_key is not None:
+            return country_key
+
+    for rule in GLOBAL_STITCHED_BASE_KEY_RULES:
+        if name_norm in rule["name_norms"] and base_key in rule["base_keys"]:
+            return canonical_key_map.get(("__GLOBAL__", rule["label"], base_key), base_key)
+
+    return base_key
 
 
 def build_category_scores(category_breakdown):
@@ -294,12 +378,13 @@ def compute_overall_severity_score(row):
 def build_historical_benchmark_data(summary):
     canonical_key_map = build_latest_canonical_key_map(summary)
     historical = summary[
-        ["code", "year", "requirements", "funding", "primary_location"]
+        ["code", "name", "year", "requirements", "funding", "primary_location"]
     ].copy()
     historical["benchmark_key"] = historical.apply(
         lambda row: apply_latest_canonical_key(
             build_funding_base_key(row.get("code"), row.get("year")),
             row.get("primary_location"),
+            row.get("name"),
             canonical_key_map,
         ),
         axis=1,
@@ -480,6 +565,7 @@ def build_all_years_export(summary):
         lambda row: apply_latest_canonical_key(
             build_funding_base_key(row.get("code"), row.get("year")),
             row.get("primary_location_code"),
+            row.get("name"),
             canonical_key_map,
         ),
         axis=1,
@@ -871,6 +957,7 @@ def build_summary(year=None):
         lambda row: apply_latest_canonical_key(
             build_funding_base_key(row.get("code"), row.get("year")),
             row.get("primary_location"),
+            row.get("name"),
             canonical_key_map,
         ),
         axis=1,

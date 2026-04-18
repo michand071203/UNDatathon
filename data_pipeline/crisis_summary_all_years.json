@@ -1344,13 +1344,104 @@
     "latitude": -10.3333333,
     "longitude": -53.2,
     "systematic_underfunding": {
-      "score": 1.0,
-      "weighted_avg_underfunding_gap": 9.419812479148995,
-      "underfunded_year_share": 1.0,
-      "max_underfunding_gap": 9.419812479148995,
-      "historical_years_count": 1
+      "score": 0.8800333943033648,
+      "weighted_avg_underfunding_gap": 16.100727034534472,
+      "underfunded_year_share": 0.875,
+      "max_underfunding_gap": 25.108854183855627,
+      "historical_years_count": 8
     },
     "years": {
+      "2019": {
+        "codes": [
+          "RSAMR19"
+        ],
+        "names": [
+          "Venezuela Regional Refugee and Migrant Response Plan (RMRP) 2019"
+        ],
+        "requirements": 595694700.0,
+        "funding": 362371465.0,
+        "percent_funded": 60.8,
+        "contribution_count": null,
+        "avg_percent_funded": 66.8
+      },
+      "2020": {
+        "codes": [
+          "RREG20"
+        ],
+        "names": [
+          "Venezuela Regional Refugee and Migrant Response Plan (RMRP) 2020"
+        ],
+        "requirements": 807149208.0,
+        "funding": 617637097.0,
+        "percent_funded": 76.5,
+        "contribution_count": null,
+        "avg_percent_funded": 53.3
+      },
+      "2021": {
+        "codes": [
+          "RREG21"
+        ],
+        "names": [
+          "Venezuela Regional Refugee and Migrant Response Plan (RMRP) 2021"
+        ],
+        "requirements": 1402889273.0,
+        "funding": 564270559.0,
+        "percent_funded": 40.2,
+        "contribution_count": null,
+        "avg_percent_funded": 53.2
+      },
+      "2022": {
+        "codes": [
+          "RREG22"
+        ],
+        "names": [
+          "Venezuela Regional Refugee and Migrant Response Plan (RMRP) 2022"
+        ],
+        "requirements": 1719443218.0,
+        "funding": 612511840.0,
+        "percent_funded": 35.6,
+        "contribution_count": null,
+        "avg_percent_funded": 60.2
+      },
+      "2023": {
+        "codes": [
+          "RREG23"
+        ],
+        "names": [
+          "Venezuela Regional Refugee and Migrant Response Plan (RMRP) 2023"
+        ],
+        "requirements": 1659624773.0,
+        "funding": 559744110.0,
+        "percent_funded": 33.7,
+        "contribution_count": null,
+        "avg_percent_funded": 45.1
+      },
+      "2024": {
+        "codes": [
+          "RREG24"
+        ],
+        "names": [
+          "Venezuela Regional Refugee and Migrant Response Plan (RMRP) 2024"
+        ],
+        "requirements": 1525556160.0,
+        "funding": 429236820.0,
+        "percent_funded": 28.1,
+        "contribution_count": null,
+        "avg_percent_funded": 50.6
+      },
+      "2025": {
+        "codes": [
+          "RREG25"
+        ],
+        "names": [
+          "Venezuela Regional Refugee and Migrant Response Plan (RMRP) 2025"
+        ],
+        "requirements": 1336186928.0,
+        "funding": 134900733.0,
+        "percent_funded": 10.1,
+        "contribution_count": null,
+        "avg_percent_funded": 35.2
+      },
       "2026": {
         "codes": [
           "RREG26b"
@@ -1372,7 +1463,7 @@
       "contribution_count": 48,
       "category_breakdown_scored": [],
       "category_level_score": null,
-      "overall_severity_score": 0.9448
+      "overall_severity_score": 0.896813357721346
     }
   },
   {
@@ -3531,7 +3622,7 @@
     }
   },
   {
-    "funding_base_key": "RDRCRRP",
+    "funding_base_key": "RDRC_RRP",
     "primary_location_code": "COG",
     "primary_location_name": "Congo",
     "location_codes": [
@@ -3553,11 +3644,11 @@
     "latitude": -0.7264327,
     "longitude": 15.6419155,
     "systematic_underfunding": {
-      "score": 1.0,
-      "weighted_avg_underfunding_gap": 29.454212587302504,
-      "underfunded_year_share": 1.0,
+      "score": 0.9979171205334845,
+      "weighted_avg_underfunding_gap": 17.254981330844668,
+      "underfunded_year_share": 0.8,
       "max_underfunding_gap": 48.81840851967611,
-      "historical_years_count": 3
+      "historical_years_count": 5
     },
     "years": {
       "2020": {
@@ -3611,6 +3702,32 @@
         "percent_funded": 30.0,
         "contribution_count": null,
         "avg_percent_funded": 45.1
+      },
+      "2024": {
+        "codes": [
+          "RDRC_RRP24"
+        ],
+        "names": [
+          "Democratic Republic of the Congo Regional Refugee Response Plan 2024"
+        ],
+        "requirements": 668277343.0,
+        "funding": 353736577.0,
+        "percent_funded": 52.9,
+        "contribution_count": null,
+        "avg_percent_funded": 50.6
+      },
+      "2025": {
+        "codes": [
+          "RDRC_RRP25"
+        ],
+        "names": [
+          "Democratic Republic of the Congo Regional Refugee Response Plan 2025"
+        ],
+        "requirements": 781325185.0,
+        "funding": 229937964.0,
+        "percent_funded": 29.4,
+        "contribution_count": null,
+        "avg_percent_funded": 35.2
       }
     }
   },
@@ -5037,45 +5154,6 @@
     }
   },
   {
-    "funding_base_key": "RDJIETHSOM",
-    "primary_location_code": "DJI",
-    "primary_location_name": "Djibouti",
-    "location_codes": [
-      "DJI",
-      "SOM",
-      "ETH"
-    ],
-    "location_names": [
-      "Djibouti",
-      "Somalia",
-      "Ethiopia"
-    ],
-    "latitude": 11.8145966,
-    "longitude": 42.8453061,
-    "systematic_underfunding": {
-      "score": 0.0,
-      "weighted_avg_underfunding_gap": 0.0,
-      "underfunded_year_share": 0.0,
-      "max_underfunding_gap": 0.0,
-      "historical_years_count": 1
-    },
-    "years": {
-      "2023": {
-        "codes": [
-          "RDJIETHSOM23"
-        ],
-        "names": [
-          "Regional Migrant Response Plan for the Horn of Africa and Yemen 2023"
-        ],
-        "requirements": 53393770.0,
-        "funding": 33830126.0,
-        "percent_funded": 63.4,
-        "contribution_count": null,
-        "avg_percent_funded": 45.1
-      }
-    }
-  },
-  {
     "funding_base_key": "FDMA",
     "primary_location_code": "DMA",
     "primary_location_name": "Dominica",
@@ -5940,46 +6018,7 @@
     }
   },
   {
-    "funding_base_key": "RSSDRRP",
-    "primary_location_code": "ETH",
-    "primary_location_name": "Ethiopia",
-    "location_codes": [
-      "ETH",
-      "KEN",
-      "UGA"
-    ],
-    "location_names": [
-      "Ethiopia",
-      "Kenya",
-      "Uganda"
-    ],
-    "latitude": 10.2116702,
-    "longitude": 38.6521203,
-    "systematic_underfunding": {
-      "score": 0.0,
-      "weighted_avg_underfunding_gap": 0.0,
-      "underfunded_year_share": 0.0,
-      "max_underfunding_gap": 0.0,
-      "historical_years_count": 1
-    },
-    "years": {
-      "2022": {
-        "codes": [
-          "RSSDRRP22"
-        ],
-        "names": [
-          "South Sudan Regional Refugee Response Plan 2022"
-        ],
-        "requirements": 873323126.0,
-        "funding": 668236679.0,
-        "percent_funded": 76.5,
-        "contribution_count": null,
-        "avg_percent_funded": 60.2
-      }
-    }
-  },
-  {
-    "funding_base_key": "RXSSDREG",
+    "funding_base_key": "RETHKENUGA",
     "primary_location_code": "ETH",
     "primary_location_name": "Ethiopia",
     "location_codes": [
@@ -5997,11 +6036,11 @@
     "latitude": 10.2116702,
     "longitude": 38.6521203,
     "systematic_underfunding": {
-      "score": 1.0,
-      "weighted_avg_underfunding_gap": 16.13628033543987,
-      "underfunded_year_share": 1.0,
-      "max_underfunding_gap": 23.43896114335811,
-      "historical_years_count": 2
+      "score": 0.9162588416260804,
+      "weighted_avg_underfunding_gap": 17.972195363928297,
+      "underfunded_year_share": 0.8571428571428571,
+      "max_underfunding_gap": 36.05993778761997,
+      "historical_years_count": 7
     },
     "years": {
       "2014": {
@@ -6029,6 +6068,84 @@
         "percent_funded": 30.1,
         "contribution_count": null,
         "avg_percent_funded": 53.5
+      },
+      "2020": {
+        "codes": [
+          "RETHKENUGA20"
+        ],
+        "names": [
+          "South Sudan Regional Refugee Response Plan 2020"
+        ],
+        "requirements": 0.0,
+        "funding": 86322886.0,
+        "percent_funded": null,
+        "contribution_count": null,
+        "avg_percent_funded": 53.3
+      },
+      "2021": {
+        "codes": [
+          "RETHKENUGA21"
+        ],
+        "names": [
+          "South Sudan Regional Refugee Response Plan 2021"
+        ],
+        "requirements": 866908168.0,
+        "funding": 148421509.0,
+        "percent_funded": 17.1,
+        "contribution_count": null,
+        "avg_percent_funded": 53.2
+      },
+      "2022": {
+        "codes": [
+          "RSSDRRP22"
+        ],
+        "names": [
+          "South Sudan Regional Refugee Response Plan 2022"
+        ],
+        "requirements": 873323126.0,
+        "funding": 668236679.0,
+        "percent_funded": 76.5,
+        "contribution_count": null,
+        "avg_percent_funded": 60.2
+      },
+      "2023": {
+        "codes": [
+          "RETHKENUGA23"
+        ],
+        "names": [
+          "South Sudan Regional Refugee Response Plan 2023"
+        ],
+        "requirements": 950234784.0,
+        "funding": 312745761.0,
+        "percent_funded": 32.9,
+        "contribution_count": null,
+        "avg_percent_funded": 45.1
+      },
+      "2024": {
+        "codes": [
+          "RETHKENUGA24"
+        ],
+        "names": [
+          "South Sudan Regional Refugee Response Plan 2024"
+        ],
+        "requirements": 882019560.0,
+        "funding": 198128012.0,
+        "percent_funded": 22.5,
+        "contribution_count": null,
+        "avg_percent_funded": 50.6
+      },
+      "2025": {
+        "codes": [
+          "RETHKENUGA25"
+        ],
+        "names": [
+          "South Sudan Regional Refugee Response Plan 2025"
+        ],
+        "requirements": 713594695.0,
+        "funding": 135115328.0,
+        "percent_funded": 18.9,
+        "contribution_count": null,
+        "avg_percent_funded": 35.2
       }
     }
   },
@@ -7743,7 +7860,7 @@
     }
   },
   {
-    "funding_base_key": "RAFG",
+    "funding_base_key": "RIRNPAK",
     "primary_location_code": "IRN",
     "primary_location_name": "Iran",
     "location_codes": [
@@ -7764,10 +7881,10 @@
     "longitude": 54.5643516,
     "systematic_underfunding": {
       "score": 1.0,
-      "weighted_avg_underfunding_gap": 30.073766892353383,
+      "weighted_avg_underfunding_gap": 26.479898128324653,
       "underfunded_year_share": 1.0,
       "max_underfunding_gap": 39.874578420855244,
-      "historical_years_count": 2
+      "historical_years_count": 4
     },
     "years": {
       "2022": {
@@ -7795,31 +7912,20 @@
         "percent_funded": 25.0,
         "contribution_count": null,
         "avg_percent_funded": 45.1
-      }
-    }
-  },
-  {
-    "funding_base_key": "RIRNPAK",
-    "primary_location_code": "IRN",
-    "primary_location_name": "Iran",
-    "location_codes": [
-      "IRN",
-      "PAK"
-    ],
-    "location_names": [
-      "Iran",
-      "Pakistan"
-    ],
-    "latitude": 32.6475314,
-    "longitude": 54.5643516,
-    "systematic_underfunding": {
-      "score": 1.0,
-      "weighted_avg_underfunding_gap": 16.82092048895044,
-      "underfunded_year_share": 1.0,
-      "max_underfunding_gap": 16.82092048895044,
-      "historical_years_count": 1
-    },
-    "years": {
+      },
+      "2024": {
+        "codes": [
+          "RAFG_RRP24"
+        ],
+        "names": [
+          "Afghanistan Situation Regional Refugee Response Plan 2024"
+        ],
+        "requirements": 620384634.0,
+        "funding": 133723760.0,
+        "percent_funded": 21.6,
+        "contribution_count": null,
+        "avg_percent_funded": 50.6
+      },
       "2025": {
         "codes": [
           "RIRNPAK25"
@@ -8776,97 +8882,6 @@
         "percent_funded": 25.5,
         "contribution_count": null,
         "avg_percent_funded": 53.3
-      }
-    }
-  },
-  {
-    "funding_base_key": "RETHKENUGA",
-    "primary_location_code": "KEN",
-    "primary_location_name": "Kenya",
-    "location_codes": [
-      "KEN",
-      "ETH",
-      "UGA"
-    ],
-    "location_names": [
-      "Kenya",
-      "Ethiopia",
-      "Uganda"
-    ],
-    "latitude": 1.4419683,
-    "longitude": 38.4313975,
-    "systematic_underfunding": {
-      "score": 1.0,
-      "weighted_avg_underfunding_gap": 23.207834925751587,
-      "underfunded_year_share": 1.0,
-      "max_underfunding_gap": 36.05993778761997,
-      "historical_years_count": 4
-    },
-    "years": {
-      "2020": {
-        "codes": [
-          "RETHKENUGA20"
-        ],
-        "names": [
-          "South Sudan Regional Refugee Response Plan 2020"
-        ],
-        "requirements": 0.0,
-        "funding": 86322886.0,
-        "percent_funded": null,
-        "contribution_count": null,
-        "avg_percent_funded": 53.3
-      },
-      "2021": {
-        "codes": [
-          "RETHKENUGA21"
-        ],
-        "names": [
-          "South Sudan Regional Refugee Response Plan 2021"
-        ],
-        "requirements": 866908168.0,
-        "funding": 148421509.0,
-        "percent_funded": 17.1,
-        "contribution_count": null,
-        "avg_percent_funded": 53.2
-      },
-      "2023": {
-        "codes": [
-          "RETHKENUGA23"
-        ],
-        "names": [
-          "South Sudan Regional Refugee Response Plan 2023"
-        ],
-        "requirements": 950234784.0,
-        "funding": 312745761.0,
-        "percent_funded": 32.9,
-        "contribution_count": null,
-        "avg_percent_funded": 45.1
-      },
-      "2024": {
-        "codes": [
-          "RETHKENUGA24"
-        ],
-        "names": [
-          "South Sudan Regional Refugee Response Plan 2024"
-        ],
-        "requirements": 882019560.0,
-        "funding": 198128012.0,
-        "percent_funded": 22.5,
-        "contribution_count": null,
-        "avg_percent_funded": 50.6
-      },
-      "2025": {
-        "codes": [
-          "RETHKENUGA25"
-        ],
-        "names": [
-          "South Sudan Regional Refugee Response Plan 2025"
-        ],
-        "requirements": 713594695.0,
-        "funding": 135115328.0,
-        "percent_funded": 18.9,
-        "contribution_count": null,
-        "avg_percent_funded": 35.2
       }
     }
   },
@@ -10844,71 +10859,6 @@
         "percent_funded": 61.5,
         "contribution_count": null,
         "avg_percent_funded": 61.2
-      }
-    }
-  },
-  {
-    "funding_base_key": "RSAMR",
-    "primary_location_code": "MEX",
-    "primary_location_name": "Mexico",
-    "location_codes": [
-      "MEX",
-      "ECU",
-      "BRA",
-      "COL",
-      "DOM",
-      "ARG",
-      "CRI",
-      "PER",
-      "GUY",
-      "ABW",
-      "TTO",
-      "CHL",
-      "CUW",
-      "URY",
-      "PAN",
-      "PRY"
-    ],
-    "location_names": [
-      "Mexico",
-      "Ecuador",
-      "Brazil",
-      "Colombia",
-      "Dominican Republic",
-      "Argentina",
-      "Costa Rica",
-      "Peru",
-      "Guyana",
-      "Aruba",
-      "Trinidad and Tobago",
-      "Chile",
-      "Cura\u00e7ao",
-      "Uruguay",
-      "Panama",
-      "Paraguay"
-    ],
-    "latitude": 23.6585116,
-    "longitude": -102.0077097,
-    "systematic_underfunding": {
-      "score": 1.0,
-      "weighted_avg_underfunding_gap": 5.947736861877104,
-      "underfunded_year_share": 1.0,
-      "max_underfunding_gap": 5.947736861877104,
-      "historical_years_count": 1
-    },
-    "years": {
-      "2019": {
-        "codes": [
-          "RSAMR19"
-        ],
-        "names": [
-          "Venezuela Regional Refugee and Migrant Response Plan (RMRP) 2019"
-        ],
-        "requirements": 595694700.0,
-        "funding": 362371465.0,
-        "percent_funded": 60.8,
-        "contribution_count": null,
-        "avg_percent_funded": 66.8
       }
     }
   },
@@ -13587,43 +13537,6 @@
       "category_breakdown_scored": [],
       "category_level_score": null,
       "overall_severity_score": 0.7640965755041949
-    }
-  },
-  {
-    "funding_base_key": "RAFG_RRP",
-    "primary_location_code": "PAK",
-    "primary_location_name": "Pakistan",
-    "location_codes": [
-      "PAK",
-      "IRN"
-    ],
-    "location_names": [
-      "Pakistan",
-      "Iran"
-    ],
-    "latitude": 30.3308401,
-    "longitude": 71.247499,
-    "systematic_underfunding": {
-      "score": 1.0,
-      "weighted_avg_underfunding_gap": 29.001594009795575,
-      "underfunded_year_share": 1.0,
-      "max_underfunding_gap": 29.001594009795575,
-      "historical_years_count": 1
-    },
-    "years": {
-      "2024": {
-        "codes": [
-          "RAFG_RRP24"
-        ],
-        "names": [
-          "Afghanistan Situation Regional Refugee Response Plan 2024"
-        ],
-        "requirements": 620384634.0,
-        "funding": 133723760.0,
-        "percent_funded": 21.6,
-        "contribution_count": null,
-        "avg_percent_funded": 50.6
-      }
     }
   },
   {
@@ -17171,62 +17084,6 @@
     }
   },
   {
-    "funding_base_key": "RRHOAY",
-    "primary_location_code": "TZA",
-    "primary_location_name": "Tanzania",
-    "location_codes": [
-      "TZA",
-      "KEN",
-      "DJI",
-      "SOM",
-      "ETH"
-    ],
-    "location_names": [
-      "Tanzania",
-      "Kenya",
-      "Djibouti",
-      "Somalia",
-      "Ethiopia"
-    ],
-    "latitude": -6.5247123,
-    "longitude": 35.7878438,
-    "systematic_underfunding": {
-      "score": 1.0,
-      "weighted_avg_underfunding_gap": 4.231045421983266,
-      "underfunded_year_share": 1.0,
-      "max_underfunding_gap": 7.567783583666969,
-      "historical_years_count": 2
-    },
-    "years": {
-      "2024": {
-        "codes": [
-          "RRHOAY24"
-        ],
-        "names": [
-          "Regional Migrant Response Plan for Horn of Africa to Yemen and Southern Africa 2024"
-        ],
-        "requirements": 60452713.0,
-        "funding": 29834773.0,
-        "percent_funded": 49.4,
-        "contribution_count": null,
-        "avg_percent_funded": 50.6
-      },
-      "2025": {
-        "codes": [
-          "RRHOAY25"
-        ],
-        "names": [
-          "Regional Migrant Response Plan for Horn of Africa to Yemen and Southern Africa 2025"
-        ],
-        "requirements": 54836082.0,
-        "funding": 15155058.0,
-        "percent_funded": 27.6,
-        "contribution_count": null,
-        "avg_percent_funded": 35.2
-      }
-    }
-  },
-  {
     "funding_base_key": "CTLS",
     "primary_location_code": "TLS",
     "primary_location_name": "Timor-Leste",
@@ -17672,87 +17529,23 @@
     }
   },
   {
-    "funding_base_key": "RDRC_RRP",
+    "funding_base_key": "RUGA",
     "primary_location_code": "UGA",
     "primary_location_name": "Uganda",
     "location_codes": [
-      "UGA",
-      "RWA",
-      "TZA",
-      "AGO",
-      "BDI",
-      "ZMB",
-      "COG"
+      "UGA"
     ],
     "location_names": [
-      "Uganda",
-      "Rwanda",
-      "Tanzania",
-      "Angola",
-      "Burundi",
-      "Zambia",
-      "Congo"
-    ],
-    "latitude": 1.5333554,
-    "longitude": 32.2166578,
-    "systematic_underfunding": {
-      "score": 0.8735481054015823,
-      "weighted_avg_underfunding_gap": 3.1129925843599744,
-      "underfunded_year_share": 0.5,
-      "max_underfunding_gap": 5.7755746346938395,
-      "historical_years_count": 2
-    },
-    "years": {
-      "2024": {
-        "codes": [
-          "RDRC_RRP24"
-        ],
-        "names": [
-          "Democratic Republic of the Congo Regional Refugee Response Plan 2024"
-        ],
-        "requirements": 668277343.0,
-        "funding": 353736577.0,
-        "percent_funded": 52.9,
-        "contribution_count": null,
-        "avg_percent_funded": 50.6
-      },
-      "2025": {
-        "codes": [
-          "RDRC_RRP25"
-        ],
-        "names": [
-          "Democratic Republic of the Congo Regional Refugee Response Plan 2025"
-        ],
-        "requirements": 781325185.0,
-        "funding": 229937964.0,
-        "percent_funded": 29.4,
-        "contribution_count": null,
-        "avg_percent_funded": 35.2
-      }
-    }
-  },
-  {
-    "funding_base_key": "RRWATZAUGA",
-    "primary_location_code": "UGA",
-    "primary_location_name": "Uganda",
-    "location_codes": [
-      "UGA",
-      "TZA",
-      "RWA"
-    ],
-    "location_names": [
-      "Uganda",
-      "Tanzania",
-      "Rwanda"
+      "Uganda"
     ],
     "latitude": 1.5333554,
     "longitude": 32.2166578,
     "systematic_underfunding": {
       "score": 1.0,
-      "weighted_avg_underfunding_gap": 45.32509202014798,
+      "weighted_avg_underfunding_gap": 22.300222301615467,
       "underfunded_year_share": 1.0,
       "max_underfunding_gap": 45.32509202014798,
-      "historical_years_count": 1
+      "historical_years_count": 2
     },
     "years": {
       "2020": {
@@ -17780,29 +17573,7 @@
         "percent_funded": 7.9,
         "contribution_count": null,
         "avg_percent_funded": 53.2
-      }
-    }
-  },
-  {
-    "funding_base_key": "RUGA",
-    "primary_location_code": "UGA",
-    "primary_location_name": "Uganda",
-    "location_codes": [
-      "UGA"
-    ],
-    "location_names": [
-      "Uganda"
-    ],
-    "latitude": 1.5333554,
-    "longitude": 32.2166578,
-    "systematic_underfunding": {
-      "score": 1.0,
-      "weighted_avg_underfunding_gap": 17.002621851054712,
-      "underfunded_year_share": 1.0,
-      "max_underfunding_gap": 17.002621851054712,
-      "historical_years_count": 1
-    },
-    "years": {
+      },
       "2026": {
         "codes": [
           "RUGA26"
@@ -18772,29 +18543,33 @@
     }
   },
   {
-    "funding_base_key": "RDJIETHSOMYEM",
+    "funding_base_key": "RREG",
     "primary_location_code": "YEM",
     "primary_location_name": "Yemen",
     "location_codes": [
       "YEM",
+      "KEN",
       "DJI",
       "SOM",
-      "ETH"
+      "ETH",
+      "TZA"
     ],
     "location_names": [
       "Yemen",
+      "Kenya",
       "Djibouti",
       "Somalia",
-      "Ethiopia"
+      "Ethiopia",
+      "Tanzania"
     ],
     "latitude": 16.3471243,
     "longitude": 47.8915271,
     "systematic_underfunding": {
-      "score": 0.14075408327453903,
-      "weighted_avg_underfunding_gap": 4.993585586123312,
-      "underfunded_year_share": 0.5,
+      "score": 0.14571360589946566,
+      "weighted_avg_underfunding_gap": 3.7203542425474403,
+      "underfunded_year_share": 0.6,
       "max_underfunding_gap": 8.038283442980749,
-      "historical_years_count": 2
+      "historical_years_count": 5
     },
     "years": {
       "2020": {
@@ -18835,114 +18610,43 @@
         "percent_funded": 85.6,
         "contribution_count": null,
         "avg_percent_funded": 60.2
-      }
-    }
-  },
-  {
-    "funding_base_key": "RREG",
-    "primary_location_code": "YEM",
-    "primary_location_name": "Yemen",
-    "location_codes": [
-      "YEM",
-      "KEN",
-      "DJI",
-      "SOM",
-      "ETH",
-      "TZA"
-    ],
-    "location_names": [
-      "Yemen",
-      "Kenya",
-      "Djibouti",
-      "Somalia",
-      "Ethiopia",
-      "Tanzania"
-    ],
-    "latitude": 16.3471243,
-    "longitude": 47.8915271,
-    "systematic_underfunding": {
-      "score": 0.8770951753998026,
-      "weighted_avg_underfunding_gap": 17.399422107019937,
-      "underfunded_year_share": 0.8333333333333334,
-      "max_underfunding_gap": 25.108854183855627,
-      "historical_years_count": 6
-    },
-    "years": {
-      "2020": {
-        "codes": [
-          "RREG20"
-        ],
-        "names": [
-          "Venezuela Regional Refugee and Migrant Response Plan (RMRP) 2020"
-        ],
-        "requirements": 807149208.0,
-        "funding": 617637097.0,
-        "percent_funded": 76.5,
-        "contribution_count": null,
-        "avg_percent_funded": 53.3
-      },
-      "2021": {
-        "codes": [
-          "RREG21"
-        ],
-        "names": [
-          "Venezuela Regional Refugee and Migrant Response Plan (RMRP) 2021"
-        ],
-        "requirements": 1402889273.0,
-        "funding": 564270559.0,
-        "percent_funded": 40.2,
-        "contribution_count": null,
-        "avg_percent_funded": 53.2
-      },
-      "2022": {
-        "codes": [
-          "RREG22"
-        ],
-        "names": [
-          "Venezuela Regional Refugee and Migrant Response Plan (RMRP) 2022"
-        ],
-        "requirements": 1719443218.0,
-        "funding": 612511840.0,
-        "percent_funded": 35.6,
-        "contribution_count": null,
-        "avg_percent_funded": 60.2
       },
       "2023": {
         "codes": [
-          "RREG23"
+          "RDJIETHSOM23"
         ],
         "names": [
-          "Venezuela Regional Refugee and Migrant Response Plan (RMRP) 2023"
+          "Regional Migrant Response Plan for the Horn of Africa and Yemen 2023"
         ],
-        "requirements": 1659624773.0,
-        "funding": 559744110.0,
-        "percent_funded": 33.7,
+        "requirements": 53393770.0,
+        "funding": 33830126.0,
+        "percent_funded": 63.4,
         "contribution_count": null,
         "avg_percent_funded": 45.1
       },
       "2024": {
         "codes": [
-          "RREG24"
+          "RRHOAY24"
         ],
         "names": [
-          "Venezuela Regional Refugee and Migrant Response Plan (RMRP) 2024"
+          "Regional Migrant Response Plan for Horn of Africa to Yemen and Southern Africa 2024"
         ],
-        "requirements": 1525556160.0,
-        "funding": 429236820.0,
-        "percent_funded": 28.1,
+        "requirements": 60452713.0,
+        "funding": 29834773.0,
+        "percent_funded": 49.4,
         "contribution_count": null,
         "avg_percent_funded": 50.6
       },
       "2025": {
         "codes": [
-          "RREG25"
+          "RRHOAY25"
         ],
         "names": [
-          "Venezuela Regional Refugee and Migrant Response Plan (RMRP) 2025"
+          "Regional Migrant Response Plan for Horn of Africa to Yemen and Southern Africa 2025"
         ],
-        "requirements": 1336186928.0,
-        "funding": 134900733.0,
-        "percent_funded": 10.1,
+        "requirements": 54836082.0,
+        "funding": 15155058.0,
+        "percent_funded": 27.6,
         "contribution_count": null,
         "avg_percent_funded": 35.2
       },
@@ -18967,7 +18671,7 @@
       "contribution_count": 21,
       "category_breakdown_scored": [],
       "category_level_score": null,
-      "overall_severity_score": 0.8770951753998026
+      "overall_severity_score": 0.14571360589946566
     },
     "people_2026": {
       "people_in_need": 23100000.0,
