@@ -31,14 +31,13 @@ nlp_parser = QueryParser()
 
 # Maps QueryFilter attribute names to paths in the crisis dictionary
 FIELD_MAP = {
+    "crisis_name": [["name"]],
     "locations": [["location_codes"], ["country_iso3"], ["primary_location_code"]],
     "people_in_need": [["people_in_need"]],
     "funding_coverage_percentage": [["percent_funded"]],
     "funding_required_usd": [["requirements"]],
     "funding_received_usd": [["funding"]],
-    "severity_score": [["overall_severity_score"]],
-    "overlooked_rank": [],
-    "crisis_type": []
+    "severity_score": [["overall_severity_score"]]
 }
 
 CHIP_FIELD_ORDER = list(FIELD_MAP.keys())

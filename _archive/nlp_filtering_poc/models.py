@@ -12,12 +12,6 @@ class ListCondition(BaseModel):
     values: List[str] = Field(description="List of strings to filter by.")
     exclude: bool = Field(default=False, description="If true, EXCLUDE these values (negation).")
 
-class CrisisTypeEnum(str, Enum):
-    CONFLICT = "conflict"
-    NATURAL_DISASTER = "natural_disaster"
-    COMPLEX_EMERGENCY = "complex_emergency"
-    DISEASE_OUTBREAK = "disease_outbreak"
-
 class EnumCondition(BaseModel, Generic[T]):
     values: List[T] = Field(description="List of enum values to filter by.")
     exclude: bool = Field(default=False, description="If true, EXCLUDE these values (negation).")
@@ -38,7 +32,6 @@ class QueryFilter(BaseModel):
     people_in_need: Optional[NumericCondition] = Field(default=None, description="Filter by People in Need (PIN).")
     funding_coverage_percentage: Optional[NumericCondition] = Field(default=None, description="Filter by funding coverage % (0-100).")
     sectors: Optional[ListCondition] = Field(default=None, description="Humanitarian sectors (e.g., 'Health', 'Food Security').")
-    crisis_type: Optional[EnumCondition[CrisisTypeEnum]] = Field(default=None, description="Filter by the type of crisis.")
     order_by: Optional[OrderCondition] = Field(default=None, description="If the query asks to sort or order the results (e.g., 'highest', 'lowest', 'most underfunded').")
     is_multi_year_query: bool = Field(default=False)
 

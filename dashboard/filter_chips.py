@@ -5,6 +5,7 @@ from nlp_service import (
     QueryFilter,
     NumericCondition,
     ListCondition,
+    StringCondition,
     EnumCondition,
     OrderCondition,
 )
@@ -48,6 +49,9 @@ def _build_chip(field_name: str, condition: Any) -> Optional[str]:
         op = OPERATOR_DISPLAY.get(condition.operator, condition.operator)
         val = _format_numeric_value(field_name, condition.value)
         return f"{_field_label(field_name)} {op} {val}"
+
+    if isinstance(condition, StringCondition):
+        return f"Match {_field_label(field_name)}: {condition.value}"
 
     if isinstance(condition, (ListCondition, EnumCondition)):
         prefix = "Excluding" if condition.exclude else "In"

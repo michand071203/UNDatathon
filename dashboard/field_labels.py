@@ -19,10 +19,6 @@ FIELD_LABELS = {
         "short": "Severity",
         "long": "Severity Score",
     },
-    "crisis_type": {
-        "short": "Crisis Type",
-        "long": "Crisis Type",
-    },
     "limit": {
         "short": "Top",
         "long": "Result Limit",
