@@ -207,7 +207,31 @@
             if (value === null || value === undefined || Number.isNaN(Number(value))) {
                 return 'Unknown';
             }
-            return `$${Number(value).toLocaleString()}`;
+
+            const numericValue = Number(value);
+            const absoluteValue = Math.abs(numericValue);
+
+            if (absoluteValue >= 1_000_000_000) {
+                return `$${(numericValue / 1_000_000_000).toFixed(1)}B`;
+            }
+
+            if (absoluteValue >= 1_000_000) {
+                return `$${(numericValue / 1_000_000).toFixed(1)}M`;
+            }
+
+            if (absoluteValue >= 1_000) {
+                return `$${(numericValue / 1_000).toFixed(1)}K`;
+            }
+
+            return `$${Math.round(numericValue)}`;
+        }
+
+        function formatEstimatedUsd(value) {
+            const compact = formatCompactUsd(value);
+            if (compact === 'Unknown') {
+                return compact;
+            }
+            return `~${compact}`;
         }
 
         function formatCompactNumber(value) {
@@ -257,6 +281,12 @@
                 : 0;
             const locationsText = crisis.locations_display || 'Unknown location';
             const projectedTag = crisis.coverage_projected ? '<span class="ml-1 text-[10px] font-bold uppercase text-amber-700">Projected*</span>' : '';
+            const requirementsDisplay = crisis.requirements_projected
+                ? formatEstimatedUsd(crisis.requirements)
+                : formatCompactUsd(crisis.requirements);
+            const fundingGapDisplay = fundingGap === null
+                ? 'Unknown'
+                : (crisis.requirements_projected ? formatEstimatedUsd(fundingGap) : formatCompactUsd(fundingGap));
 
             return `
                 <article class="crisis-hover-card">
@@ -293,11 +323,11 @@
                             </div>
                             <div class="crisis-kpi">
                                 <div class="text-[10px] font-bold uppercase tracking-wide text-slate-500">Requirements</div>
-                                <div class="mt-1 text-sm font-black text-slate-900">${formatCompactUsd(crisis.requirements)}</div>
+                                <div class="mt-1 text-sm font-black text-slate-900">${requirementsDisplay}</div>
                             </div>
                             <div class="crisis-kpi">
                                 <div class="text-[10px] font-bold uppercase tracking-wide text-slate-500">Funding Gap</div>
-                                <div class="mt-1 text-sm font-black text-rose-700">${fundingGap === null ? 'Unknown' : formatCompactUsd(fundingGap)}</div>
+                                <div class="mt-1 text-sm font-black text-rose-700">${fundingGapDisplay}</div>
                             </div>
                             <div class="crisis-kpi">
                                 <div class="text-[10px] font-bold uppercase tracking-wide text-slate-500">People Targeted</div>
@@ -495,7 +525,8 @@
                                         const fundingText = `Funding: ${formatCompactUsd(funding[idx])}`;
                                         const isProjected = Boolean(requirementsProjected[idx]);
                                         const reqSuffix = isProjected ? '*' : '';
-                                        const reqText = `Requirements: ${formatCompactUsd(requirements[idx])}${reqSuffix}`;
+                                        const reqAmount = isProjected ? formatEstimatedUsd(requirements[idx]) : formatCompactUsd(requirements[idx]);
+                                        const reqText = `Requirements: ${reqAmount}${reqSuffix}`;
                                         if (isProjected) {
                                             return [
                                                 coverageText,

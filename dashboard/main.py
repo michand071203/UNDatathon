@@ -215,6 +215,13 @@ def format_compact_usd(value: Any) -> str:
     return f"${compact}"
 
 
+def format_estimated_usd(value: Any) -> str:
+    compact = format_compact_usd(value)
+    if compact == "Unknown":
+        return compact
+    return f"~{compact}"
+
+
 # --- Dynamic Core Logic ---
 
 def calculate_color(severity_score: Optional[float]) -> str:
@@ -232,6 +239,7 @@ def calculate_color(severity_score: Optional[float]) -> str:
 templates.env.globals["calculate_color"] = calculate_color
 templates.env.globals["format_compact_number"] = format_compact_number
 templates.env.globals["format_compact_usd"] = format_compact_usd
+templates.env.globals["format_estimated_usd"] = format_estimated_usd
 
 def calculate_radius(people_in_need: int) -> float:
     people_in_need = max(0, people_in_need)

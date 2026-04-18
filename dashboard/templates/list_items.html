@@ -1,4 +1,4 @@
-{% from '_constants.html' import projected_requirement_tooltip %}
+{% from '_constants.html' import projected_data_tooltip %}
 
 {% for crisis in crises %}
 <div class="crisis-card bg-white border rounded-xl shadow-sm hover:shadow-md transition-all cursor-pointer overflow-hidden flex items-stretch min-h-[110px] {% if crisis.code == selected_crisis_id %}border-blue-500 ring-4 ring-blue-100 bg-blue-50/30{% else %}border-gray-200{% endif %}"
@@ -45,8 +45,12 @@
                     <span class="text-[9px] font-bold text-gray-400 uppercase tracking-widest mb-0.5">Required Funding</span>
                     <span class="text-sm font-bold text-gray-700 truncate">
                         {% if crisis.requirements is not none %}
-                            <span {% if crisis.requirements_projected %}class="italic cursor-help" data-hover-tooltip="{{ projected_requirement_tooltip }}" tabindex="0"{% endif %}>
-                                {{ format_compact_usd(crisis.requirements) }}{% if crisis.requirements_projected %}<sup aria-hidden="true">*</sup>{% endif %}
+                            <span {% if crisis.requirements_projected %}class="italic cursor-help" data-hover-tooltip="{{ projected_data_tooltip }}" tabindex="0"{% endif %}>
+                                {% if crisis.requirements_projected %}
+                                    {{ format_estimated_usd(crisis.requirements) }}<sup aria-hidden="true">*</sup>
+                                {% else %}
+                                    {{ format_compact_usd(crisis.requirements) }}
+                                {% endif %}
                             </span>
                         {% else %}
                             Unknown
@@ -62,7 +66,7 @@
                             <span class="text-[9px] font-bold text-gray-400 uppercase tracking-widest">Funded</span>
                             <span class="text-[10px] font-bold text-gray-700">
                                 {% if crisis.percent_funded is not none %}
-                                    <span {% if crisis.coverage_projected %}class="italic cursor-help" data-hover-tooltip="{{ projected_requirement_tooltip }}" tabindex="0"{% endif %}>
+                                    <span {% if crisis.coverage_projected %}class="italic cursor-help" data-hover-tooltip="{{ projected_data_tooltip }}" tabindex="0"{% endif %}>
                                         {{ crisis.percent_funded }}%{% if crisis.coverage_projected %}<sup aria-hidden="true">*</sup>{% endif %}
                                     </span>
                                 {% else %}
