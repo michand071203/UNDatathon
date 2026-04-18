@@ -133,12 +133,12 @@
                                 </div>
                                 {% if point.avg_coverage_ratio is not none %}
                                 <div
-                                    class="group absolute top-[-56px] h-24 w-24 cursor-help"
-                                    style="left: {{ '%.1f'|format((point.avg_coverage_ratio or 0) * 100) }}%; margin-left: -48px;"
+                                    class="group absolute top-0 h-full w-4 cursor-help"
+                                    style="left: {{ '%.1f'|format((point.avg_coverage_ratio or 0) * 100) }}%; margin-left: -8px;"
                                     tabindex="0"
                                     aria-label="Benchmark marker for {{ point.year }}">
-                                    <div class="absolute bottom-0 left-1/2 h-3.5 w-1 -translate-x-1/2 bg-red-500 rounded-sm"></div>
-                                    <div class="pointer-events-none absolute left-1/2 top-0 z-30 w-56 -translate-x-1/2 rounded-md bg-gray-900 px-2 py-1.5 text-[11px] leading-tight text-white opacity-0 shadow-lg transition-opacity duration-75 group-hover:opacity-100 group-focus:opacity-100">
+                                    <div class="absolute left-1/2 top-1/2 h-[140%] w-1 -translate-x-1/2 -translate-y-1/2 bg-red-500 rounded-sm"></div>
+                                    <div class="pointer-events-none absolute left-1/2 top-[-38px] z-30 w-56 -translate-x-1/2 rounded-md bg-gray-900 px-2 py-1.5 text-[11px] leading-tight text-white opacity-0 shadow-lg transition-opacity duration-75 group-hover:opacity-100 group-focus:opacity-100">
                                         Benchmark: {% if point.avg_percent_funded is not none %}{{ '%.1f'|format(point.avg_percent_funded) }}%{% else %}N/A{% endif %}. Weighted average funding coverage across all projects in {{ point.year }}.
                                     </div>
                                 </div>
