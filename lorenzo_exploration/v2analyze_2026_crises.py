@@ -173,7 +173,17 @@ def print_top_crises(summary, top_n=25):
 def main():
     summary = build_summary()
     print_top_crises(summary)
-    # Output to JSON instead of CSV
+    # Normalize every JSON field name to snake_case
+    column_rename = {
+        "destPlanCode": "dest_plan_code",
+        "Country ISO3": "country_iso3",
+        "In Need": "people_in_need",
+        "Targeted": "people_targeted",
+        "Affected": "people_affected",
+        "Reached": "people_reached",
+    }
+    summary = summary.rename(columns=column_rename)
+
     json_file = (
         Path(__file__).resolve().parent.parent / "data" / "2026_crisis_summary.json"
     )
