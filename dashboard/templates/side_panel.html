@@ -103,6 +103,36 @@
         </section>
 
         <section>
+            <h3 class="text-sm font-bold text-gray-400 uppercase tracking-wider mb-4">Humanitarian Concerns</h3>
+            {% set has_cat_data = (crisis.category_scores.values() | select('defined') | list | length > 0) %}
+            {% if has_cat_data %}
+            <div class="grid grid-cols-3 sm:grid-cols-5 gap-4">
+                {% for cat in ["education", "food_security", "health", "hygiene", "protection"] %}
+                    {% set score = crisis.category_scores.get(cat) %}
+                    <div class="flex flex-col items-center gap-1.5">
+                        <div class="relative w-12 h-12">
+                            <svg class="w-full h-full transform -rotate-90" viewBox="0 0 36 36">
+                                <circle cx="18" cy="18" r="15.915" fill="none" stroke="#e5e7eb" stroke-width="3"></circle>
+                                {% if score is not none %}
+                                <circle cx="18" cy="18" r="15.915" fill="none" stroke="{{ calculate_color(score) }}" stroke-width="3" stroke-dasharray="{{ score }}, 100" stroke-linecap="round"></circle>
+                                {% endif %}
+                            </svg>
+                            <div class="absolute inset-0 flex items-center justify-center text-[9px] font-bold {% if score is not none %}text-gray-700{% else %}text-gray-300{% endif %}">
+                                {% if score is not none %}{{ score|int }}{% else %}N/A{% endif %}
+                            </div>
+                        </div>
+                        <span class="text-[9px] font-bold text-gray-400 uppercase tracking-widest text-center">{{ ["Education Deprivation", "Food Insecurity", "Health Vulnerability", "Lack of Sanitation", "Physical Insecurity"][loop.index0] }}</span>
+                    </div>
+                {% endfor %}
+            </div>
+            {% else %}
+            <div class="bg-gray-50 border border-gray-200 rounded-xl p-4 text-sm text-gray-500">
+                No category concern data available.
+            </div>
+            {% endif %}
+        </section>
+
+        <section>
             <h3 class="text-sm font-bold text-gray-400 uppercase tracking-wider mb-4">Impacted Countries</h3>
             {% if crisis.location_names_display %}
             <div class="flex flex-wrap gap-2">

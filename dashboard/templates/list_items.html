@@ -84,8 +84,8 @@
                     {% set u_score = crisis.systematic_underfunding.score %}
                     <div class="flex flex-col w-32">
                         <div class="flex justify-between items-center mb-1">
-                            <span class="text-[9px] font-bold text-gray-400 uppercase tracking-widest">Underfunding</span>
-                            <span class="text-[10px] font-bold text-gray-700">{{ u_score|int }}%</span>
+                            <span class="text-[9px] font-bold text-gray-400 uppercase tracking-widest">Systematic Underfunding</span>
+                            <span class="text-[10px] font-bold text-gray-700">{{ u_score|int }}</span>
                         </div>
                         <div class="w-full bg-gray-100 rounded-full h-1.5 overflow-hidden border border-gray-200/50">
                             <div class="h-full rounded-full transition-all duration-500" style="width: {{ u_score }}%; background-color: {{ calculate_color(u_score) }}"></div>
@@ -110,8 +110,8 @@
                             <circle cx="18" cy="18" r="15.915" fill="none" stroke="{{ calculate_color(score) }}" stroke-width="3" stroke-dasharray="{{ score }}, 100" stroke-linecap="round"></circle>
                             {% endif %}
                         </svg>
-                        <div class="absolute inset-0 flex items-center justify-center text-[9px] font-bold {% if score is not none %}text-gray-700{% else %}text-gray-300{% endif %}">
-                            {% if score is not none %}{{ score|int }}%{% else %}N/A{% endif %}
+                        <div class="absolute inset-0 flex items-center justify-center text-[11px] font-bold {% if score is not none %}text-gray-700{% else %}text-gray-300{% endif %}">
+                            {% if score is not none %}{{ score|int }}{% else %}N/A{% endif %}
                         </div>
                     </div>
                     <span class="text-[9px] font-bold text-gray-400 uppercase tracking-widest text-center">{{ ["Education Deprivation", "Food Insecurity", "Health Vulnerability", "Lack of Sanitation", "Physical Insecurity"][loop.index0] }}</span>
