@@ -584,6 +584,41 @@
             document.body.dispatchEvent(new CustomEvent('filters-changed'));
         }
 
+        function removeChipFilter(nextFilters, fieldName, indexText) {
+            if (!fieldName || !(fieldName in nextFilters)) return;
+
+            if (indexText !== undefined && indexText !== null && indexText !== '') {
+                const index = Number(indexText);
+                if (Array.isArray(nextFilters[fieldName]) && Number.isInteger(index)) {
+                    nextFilters[fieldName].splice(index, 1);
+                    if (nextFilters[fieldName].length === 0) {
+                        delete nextFilters[fieldName];
+                    }
+                    return;
+                }
+            }
+
+            delete nextFilters[fieldName];
+        }
+
+        document.body.addEventListener('click', function(e) {
+            const removeBtn = e.target.closest('[data-remove-filter-chip]');
+            if (!removeBtn) return;
+
+            const chipEl = removeBtn.closest('[data-chip-field]');
+            if (!chipEl) return;
+
+            const nextFilters = parseFiltersJson();
+            removeChipFilter(nextFilters, chipEl.dataset.chipField, chipEl.dataset.chipIndex);
+            writeFiltersJson(nextFilters);
+
+            htmx.ajax('POST', '/filter-chips', {
+                target: '#active-filters',
+                swap: 'innerHTML',
+                values: { filters: JSON.stringify(nextFilters) }
+            });
+        });
+
         document.body.addEventListener('change', function(e) {
             if (e.target.id !== 'sort-field-select') return;
 

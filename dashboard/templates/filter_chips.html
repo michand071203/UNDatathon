@@ -2,8 +2,16 @@
     <div class="flex flex-wrap gap-2 items-center min-h-[32px]">
         <span class="text-xs font-bold text-gray-400 uppercase mr-1">Active Filters:</span>
         {% for chip in chips %}
-        <div class="flex items-center bg-blue-100 text-blue-700 px-3 py-1 rounded-full text-xs font-semibold border border-blue-200 shadow-sm animate-in fade-in slide-in-from-left-2 duration-300">
-            {{ chip }}
+        <div class="group relative flex items-center bg-blue-100 text-blue-700 px-3 py-1 rounded-full text-xs font-semibold border border-blue-200 shadow-sm animate-in fade-in slide-in-from-left-2 duration-300"
+             data-chip-field="{{ chip.field }}"
+             {% if chip.index is not none %}data-chip-index="{{ chip.index }}"{% endif %}>
+            <span>{{ chip.label }}</span>
+            <button type="button"
+                    data-remove-filter-chip
+                    aria-label="Remove filter"
+                    class="absolute -top-1 -right-1 h-4 w-4 rounded-full border border-blue-300 bg-white text-blue-600 leading-none text-[10px] font-bold opacity-0 group-hover:opacity-100 focus:opacity-100 transition-opacity hover:bg-blue-50">
+                X
+            </button>
         </div>
         {% endfor %}
 

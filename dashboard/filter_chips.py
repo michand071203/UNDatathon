@@ -20,6 +20,14 @@ OPERATOR_DISPLAY = {
 }
 
 
+def _chip_item(label: str, field_name: str, index: Optional[int] = None) -> dict[str, Any]:
+    return {
+        "label": label,
+        "field": field_name,
+        "index": index,
+    }
+
+
 def _field_label(field_name: str) -> str:
     field_labels = FIELD_LABELS.get(field_name)
     if field_labels:
@@ -66,8 +74,8 @@ def _build_chip(field_name: str, condition: Any) -> Optional[str]:
     return None
 
 
-def build_filter_chips(parsed_filter: QueryFilter, chip_field_order: list[str]) -> list[str]:
-    chips: list[str] = []
+def build_filter_chips(parsed_filter: QueryFilter, chip_field_order: list[str]) -> list[dict[str, Any]]:
+    chips: list[dict[str, Any]] = []
 
     for field_name in chip_field_order:
         condition = getattr(parsed_filter, field_name, None)
@@ -77,20 +85,20 @@ def build_filter_chips(parsed_filter: QueryFilter, chip_field_order: list[str]) 
         if field_name == "limit" and isinstance(condition, int):
             if parsed_filter.order_by and parsed_filter.order_by.field:
                 sort_label = _field_label(parsed_filter.order_by.field)
-                chips.append(f"Top {sort_label}: {condition}")
+                chips.append(_chip_item(f"Top {sort_label}: {condition}", field_name))
             else:
-                chips.append(f"{_field_label(field_name)}: {condition}")
+                chips.append(_chip_item(f"{_field_label(field_name)}: {condition}", field_name))
             continue
 
         if isinstance(condition, list):
-            for item in condition:
+            for idx, item in enumerate(condition):
                 chip = _build_chip(field_name, item)
                 if chip:
-                    chips.append(chip)
+                    chips.append(_chip_item(chip, field_name, idx))
             continue
 
         chip = _build_chip(field_name, condition)
         if chip:
-            chips.append(chip)
+            chips.append(_chip_item(chip, field_name))
 
     return chips

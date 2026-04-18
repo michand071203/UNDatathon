@@ -110,6 +110,40 @@ def ensure_default_sort(filter_obj: QueryFilter) -> QueryFilter:
         )
     return filter_obj
 
+
+def render_filter_chips_response(
+    request: Request,
+    parsed_filter: QueryFilter,
+    trigger_filters_changed: bool = False,
+) -> HTMLResponse:
+    parsed_filter = ensure_default_sort(parsed_filter)
+    chips = build_filter_chips(parsed_filter, CHIP_FIELD_ORDER)
+    selected_sort_field = (
+        parsed_filter.order_by.field if parsed_filter.order_by else DEFAULT_SORT_FIELD
+    )
+    selected_sort_direction = (
+        parsed_filter.order_by.direction.value
+        if parsed_filter.order_by
+        else DEFAULT_SORT_DIRECTION
+    )
+
+    response = templates.TemplateResponse(
+        request=request,
+        name="filter_chips.html",
+        context={
+            "chips": chips,
+            "filters_json": parsed_filter.model_dump_json(),
+            "sort_field_options": SORT_FIELD_OPTIONS,
+            "selected_sort_field": selected_sort_field,
+            "selected_sort_direction": selected_sort_direction,
+        },
+    )
+
+    if trigger_filters_changed:
+        response.headers["HX-Trigger-After-Swap"] = "filters-changed"
+
+    return response
+
 def get_nested_value(data: dict, path: List[str]) -> Any:
     """Safely retrieves a value from a nested dictionary given a path list."""
     current = data
@@ -419,32 +453,31 @@ async def post_nlp_query(
         parsed_filter = ensure_default_sort(parsed_filter)
     else:
         parsed_filter = nlp_parser.parse_query(query)
-        parsed_filter = ensure_default_sort(parsed_filter)
     
-    chips = build_filter_chips(parsed_filter, CHIP_FIELD_ORDER)
-    selected_sort_field = (
-        parsed_filter.order_by.field if parsed_filter.order_by else DEFAULT_SORT_FIELD
-    )
-    selected_sort_direction = (
-        parsed_filter.order_by.direction.value
-        if parsed_filter.order_by
-        else DEFAULT_SORT_DIRECTION
+    # Trigger a refresh AFTER the DOM has been updated with the new filter JSON.
+    return render_filter_chips_response(
+        request=request,
+        parsed_filter=parsed_filter,
+        trigger_filters_changed=True,
     )
 
-    # Trigger a refresh AFTER the DOM has been updated with the new filter JSON
-    response = templates.TemplateResponse(
-        request=request, 
-        name="filter_chips.html", 
-        context={
-            "chips": chips,
-            "filters_json": parsed_filter.model_dump_json(),
-            "sort_field_options": SORT_FIELD_OPTIONS,
-            "selected_sort_field": selected_sort_field,
-            "selected_sort_direction": selected_sort_direction,
-        }
+
+@app.post("/filter-chips", response_class=HTMLResponse)
+async def post_filter_chips(
+    request: Request,
+    filters: Optional[str] = Form(None),
+):
+    parsed_filter = QueryFilter()
+    if filters:
+        try:
+            parsed_filter = QueryFilter.model_validate_json(filters)
+        except:
+            pass
+
+    return render_filter_chips_response(
+        request=request,
+        parsed_filter=parsed_filter,
     )
-    response.headers["HX-Trigger-After-Swap"] = "filters-changed"
-    return response
 
 @app.get("/api/map-data")
 async def get_map_data(filters: Optional[str] = Query(None)):
