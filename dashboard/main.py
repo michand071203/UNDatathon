@@ -19,13 +19,13 @@ nlp_parser = QueryParser()
 
 # Maps QueryFilter attribute names to paths in the crisis dictionary
 FIELD_MAP = {
-    "locations": [["country_code"], ["metadata", "Region"]],
-    "people_in_need": [["metrics", "people_in_need"]],
-    "funding_coverage_percentage": [["metrics", "funding_coverage_percentage"]],
-    "funding_required_usd": [["metrics", "funding_required_usd"]],
-    "funding_received_usd": [["metrics", "funding_received_usd"]],
-    "overlooked_rank": [["metrics", "overlooked_rank"]],
-    "crisis_type": [["metadata", "Type"]]
+    "locations": [["location_codes"], ["country_iso3"], ["locations"]],
+    "people_in_need": [["people_in_need"]],
+    "funding_coverage_percentage": [["percent_funded"]],
+    "funding_required_usd": [["requirements"]],
+    "funding_received_usd": [["funding"]],
+    "overlooked_rank": [],
+    "crisis_type": []
 }
 
 def get_nested_value(data: dict, path: List[str]) -> Any:
@@ -49,14 +49,17 @@ def calculate_radius(people_in_need: int) -> float:
     return people_in_need * 0.000025
 
 def get_enriched_data():
-    json_path = os.path.join(BASE_DIR, "data.json")
+    json_path = os.path.join(BASE_DIR, "..", "data", "2026_crisis_summary.json")
     with open(json_path, "r") as f:
         data = json.load(f)
+    
+    valid_data = []
     for crisis in data:
-        metrics = crisis.get("metrics", {})
-        crisis["display"]["color"] = calculate_color(metrics.get("funding_coverage_percentage", 0))
-        crisis["display"]["radius_km"] = calculate_radius(metrics.get("people_in_need", 0))
-    return data
+        if crisis.get("latitude") is not None and crisis.get("longitude") is not None:
+            crisis["color"] = calculate_color(crisis.get("percent_funded") or 0)
+            crisis["radius_km"] = calculate_radius(crisis.get("people_in_need") or 500000)
+            valid_data.append(crisis)
+    return valid_data
 
 def apply_advanced_filters(data: List[dict], filters: Optional[QueryFilter]) -> List[dict]:
     print("Applying filters:", filters)
@@ -148,14 +151,14 @@ async def get_list(request: Request, filters: Optional[str] = Query(None)):
             filtered_data = apply_advanced_filters(filtered_data, f_obj)
         except: pass
     else:
-        filtered_data.sort(key=lambda x: get_nested_value(x, ["display", "title"]))
+        filtered_data.sort(key=lambda x: get_nested_value(x, ["name"]) or "")
     
     return templates.TemplateResponse(request=request, name="list_items.html", context={"crises": filtered_data})
 
 @app.get("/details/{crisis_id}", response_class=HTMLResponse)
 async def get_details(request: Request, crisis_id: str):
     data = get_enriched_data()
-    crisis = next((c for c in data if c["id"] == crisis_id), None)
+    crisis = next((c for c in data if c["code"] == crisis_id), None)
     if not crisis:
         return HTMLResponse(content="Crisis not found", status_code=404)
     return templates.TemplateResponse(request=request, name="side_panel.html", context={"crisis": crisis})

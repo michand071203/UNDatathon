@@ -121,12 +121,12 @@
             }
 
             data.forEach(crisis => {
-                const baseColor = crisis.display.color;
+                const baseColor = crisis.color;
                 
                 // radius is calculated dynamically from people_in_need
-                const radiusInMeters = crisis.display.radius_km * 1000;
+                const radiusInMeters = crisis.radius_km * 1000;
 
-                const circle = L.circle([crisis.display.lat, crisis.display.lng], {
+                const circle = L.circle([crisis.latitude, crisis.longitude], {
                     color: baseColor,
                     fillColor: baseColor,
                     fillOpacity: 0.6,
@@ -136,19 +136,19 @@
 
                 // Store reference for selection
                 circle.baseColor = baseColor;
-                mapCircles[crisis.id] = circle;
+                mapCircles[crisis.code] = circle;
 
                 circle.bindTooltip(`
                     <div class="p-1">
-                        <div class="font-bold text-lg">${crisis.display.title}</div>
-                        <div class="text-sm text-gray-600 mb-1">${crisis.summary.brief_text}</div>
-                        <div class="text-xs font-semibold text-blue-600">${crisis.summary.key_stat_1}</div>
+                        <div class="font-bold text-lg">${crisis.name}</div>
+                        <div class="text-sm text-gray-600 mb-1">Locations: ${crisis.locations}</div>
+                        <div class="text-xs font-semibold text-blue-600">${crisis.people_in_need ? crisis.people_in_need.toLocaleString() + ' in need' : 'Unknown PIN'}</div>
                     </div>
                 `, { direction: 'top' });
 
                 circle.on('click', function() {
-                    updateSelection(crisis.id);
-                    htmx.ajax('GET', `/details/${crisis.id}`, {
+                    updateSelection(crisis.code);
+                    htmx.ajax('GET', `/details/${crisis.code}`, {
                         target: '#side-panel-content',
                         swap: 'innerHTML'
                     });

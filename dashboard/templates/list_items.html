@@ -1,28 +1,28 @@
 {% for crisis in crises %}
 <div class="crisis-card bg-white border border-gray-200 rounded-lg shadow-sm hover:shadow-md transition-all cursor-pointer overflow-hidden flex flex-col"
-     id="card-{{ crisis.id }}"
-     data-crisis-id="{{ crisis.id }}"
-     hx-get="/details/{{ crisis.id }}"
+     id="card-{{ crisis.code }}"
+     data-crisis-id="{{ crisis.code }}"
+     hx-get="/details/{{ crisis.code }}"
      hx-target="#side-panel-content"
      hx-swap="innerHTML">
     <div class="p-5 flex-grow">
         <div class="flex justify-between items-start mb-2">
-            <h3 class="text-lg font-bold text-gray-800 leading-tight">{{ crisis.display.title }}</h3>
-            <span class="px-2 py-1 text-xs font-bold rounded text-white shadow-sm" style="background-color: {{ crisis.display.color or '#666' }}">
-                Coverage: {{ crisis.metrics.funding_coverage_percentage }}%
+            <h3 class="text-lg font-bold text-gray-800 leading-tight">{{ crisis.name }}</h3>
+            <span class="px-2 py-1 text-xs font-bold rounded text-white shadow-sm whitespace-nowrap ml-2" style="background-color: {{ crisis.color or '#666' }}">
+                Coverage: {{ crisis.percent_funded }}%
             </span>
         </div>
         <p class="text-gray-600 text-sm mb-4 line-clamp-2">
-            {{ crisis.summary.brief_text }}
+            Locations: {{ crisis.locations }}
         </p>
         <div class="space-y-2">
             <div class="flex items-center text-sm text-blue-600 font-medium">
                 <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                {{ crisis.summary.key_stat_1 }}
+                {% if crisis.people_in_need %}{{ '{:,}'.format(crisis.people_in_need | int) }} in need{% else %}Unknown PIN{% endif %}
             </div>
             <div class="flex items-center text-sm text-gray-500">
                 <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                {{ crisis.summary.key_stat_2 }}
+                {% if crisis.requirements %}${{ '{:,}'.format(crisis.requirements | int) }} required{% else %}Unknown Requirements{% endif %}
             </div>
         </div>
     </div>

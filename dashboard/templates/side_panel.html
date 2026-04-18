@@ -3,7 +3,7 @@
     <div class="sticky top-0 bg-white border-b border-gray-100 p-6 flex justify-between items-center shadow-sm">
         <div>
             <span class="text-xs font-bold text-blue-600 uppercase tracking-widest">Crisis Intelligence Details</span>
-            <h2 class="text-2xl font-black text-gray-900 mt-1">{{ crisis.display.title }}</h2>
+            <h2 class="text-2xl font-black text-gray-900 mt-1">{{ crisis.name }}</h2>
         </div>
         <button onclick="closeSidePanel()" class="p-2 hover:bg-gray-100 rounded-full transition-colors text-gray-400 hover:text-gray-900">
             <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
@@ -18,17 +18,17 @@
             <div class="grid grid-cols-1 gap-4">
                 <div class="bg-blue-50 border-l-4 border-blue-500 p-4 rounded-r-lg">
                     <p class="text-sm font-medium text-blue-800 leading-relaxed">
-                        {{ crisis.summary.brief_text }}
+                        Plan Code: {{ crisis.dest_plan_code }} | Primary Location: {{ crisis.primary_location }}
                     </p>
                 </div>
                 <div class="grid grid-cols-2 gap-3">
                     <div class="bg-gray-50 p-4 rounded-lg border border-gray-100">
-                        <div class="text-xs text-gray-500 uppercase font-semibold">Priority Stat 1</div>
-                        <div class="text-lg font-bold text-blue-700 mt-1">{{ crisis.summary.key_stat_1 }}</div>
+                        <div class="text-xs text-gray-500 uppercase font-semibold">People in Need</div>
+                        <div class="text-lg font-bold text-blue-700 mt-1">{% if crisis.people_in_need %}{{ '{:,}'.format(crisis.people_in_need | int) }}{% else %}Unknown{% endif %}</div>
                     </div>
                     <div class="bg-gray-50 p-4 rounded-lg border border-gray-100">
-                        <div class="text-xs text-gray-500 uppercase font-semibold">Priority Stat 2</div>
-                        <div class="text-lg font-bold text-gray-800 mt-1">{{ crisis.summary.key_stat_2 }}</div>
+                        <div class="text-xs text-gray-500 uppercase font-semibold">Funded</div>
+                        <div class="text-lg font-bold text-gray-800 mt-1">{{ crisis.percent_funded }}%</div>
                     </div>
                 </div>
             </div>
@@ -40,16 +40,22 @@
             <div class="bg-white border border-gray-200 rounded-xl overflow-hidden shadow-sm">
                 <table class="min-w-full divide-y divide-gray-200">
                     <tbody class="divide-y divide-gray-100 bg-white">
-                        {% for key, value in crisis.metadata.items() %}
                         <tr class="hover:bg-gray-50 transition-colors">
-                            <td class="px-6 py-4 whitespace-nowrap text-sm font-bold text-gray-600 bg-gray-50/50 w-1/3">
-                                {{ key }}
-                            </td>
-                            <td class="px-6 py-4 text-sm text-gray-800 font-medium">
-                                {{ value }}
-                            </td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm font-bold text-gray-600 bg-gray-50/50 w-1/3">Requirements</td>
+                            <td class="px-6 py-4 text-sm text-gray-800 font-medium">${% if crisis.requirements %}{{ '{:,}'.format(crisis.requirements | int) }}{% else %}Unknown{% endif %}</td>
                         </tr>
-                        {% endfor %}
+                        <tr class="hover:bg-gray-50 transition-colors">
+                            <td class="px-6 py-4 whitespace-nowrap text-sm font-bold text-gray-600 bg-gray-50/50 w-1/3">Funding Received</td>
+                            <td class="px-6 py-4 text-sm text-gray-800 font-medium">${% if crisis.funding %}{{ '{:,}'.format(crisis.funding | int) }}{% else %}Unknown{% endif %}</td>
+                        </tr>
+                        <tr class="hover:bg-gray-50 transition-colors">
+                            <td class="px-6 py-4 whitespace-nowrap text-sm font-bold text-gray-600 bg-gray-50/50 w-1/3">Contributions</td>
+                            <td class="px-6 py-4 text-sm text-gray-800 font-medium">{{ crisis.contribution_count }}</td>
+                        </tr>
+                        <tr class="hover:bg-gray-50 transition-colors">
+                            <td class="px-6 py-4 whitespace-nowrap text-sm font-bold text-gray-600 bg-gray-50/50 w-1/3">People Targeted</td>
+                            <td class="px-6 py-4 text-sm text-gray-800 font-medium">{% if crisis.people_targeted %}{{ '{:,}'.format(crisis.people_targeted | int) }}{% else %}Unknown{% endif %}</td>
+                        </tr>
                     </tbody>
                 </table>
             </div>
@@ -59,9 +65,9 @@
         <section>
             <h3 class="text-sm font-bold text-gray-400 uppercase tracking-wider mb-4">Geographic Anchors</h3>
             <div class="flex space-x-4 text-xs font-mono text-gray-500 bg-gray-100 p-4 rounded-lg border border-gray-200">
-                <div>LAT: <span class="text-gray-900 font-bold">{{ crisis.display.lat }}</span></div>
-                <div>LNG: <span class="text-gray-900 font-bold">{{ crisis.display.lng }}</span></div>
-                <div>ID: <span class="text-gray-900 font-bold">{{ crisis.id }}</span></div>
+                <div>LAT: <span class="text-gray-900 font-bold">{{ crisis.latitude }}</span></div>
+                <div>LNG: <span class="text-gray-900 font-bold">{{ crisis.longitude }}</span></div>
+                <div>CODE: <span class="text-gray-900 font-bold">{{ crisis.code }}</span></div>
             </div>
         </section>
     </div>
