@@ -50,7 +50,7 @@ class CrisisSummarizer:
                 system="You are an expert humanitarian crisis analyst.",
                 messages=[{"role": "user", "content": prompt}]
             )
-            return response.content[0].text
+            return response.content[0].text # type: ignore
         except Exception as e:
             return f"Summary could not be generated: {e}"
 
