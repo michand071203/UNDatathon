@@ -6,7 +6,7 @@ from typing import Dict, List, Optional
 from anthropic import Anthropic
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-CACHE_FILE = os.path.join(BASE_DIR, "..", "crisis_summaries_cache_v2.json")
+CACHE_FILE = os.path.join(BASE_DIR, "..", "data", "crisis_summaries_cache.json")
 
 
 class CrisisSummarizer:
@@ -70,9 +70,7 @@ class CrisisSummarizer:
             "name": crisis.get("name"),
             "locations": crisis.get("location_names_display"),
             "assessment": crisis.get("assessment"),
-            "assessment_rank": crisis.get("assessment_rank"),
             "underfunding_drivers": crisis.get("underfunding_drivers"),
-            "underfunding_driver_confidence": crisis.get("underfunding_driver_confidence"),
             "people_in_need": crisis.get("people_in_need"),
             "funding_requirements": crisis.get("requirements"),
             "funding_received": crisis.get("funding"),
