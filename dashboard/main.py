@@ -100,8 +100,9 @@ FIELD_MAP = {
     "rationales": [["underfunding_drivers"]],
     "people_in_need": [["people_in_need"]],
     "funding_ratio": [["percent_funded"]],
-    "funding_required_usd": [["requirements"]],
-    "funding_received_usd": [["funding"]],
+    "funding_required": [["requirements"]],
+    "funding_received": [["funding"]],
+    "funding_gap": [["funding_gap"]],
     "assessment": [["assessment_rank"], ["assessment"]],
 }
 
@@ -111,8 +112,8 @@ CHIP_FIELD_ORDER.append("limit")
 SORT_FIELDS = [
     "people_in_need",
     "funding_ratio",
-    "funding_required_usd",
-    "funding_received_usd",
+    "funding_required",
+    "funding_received",
     "assessment",
 ]
 
@@ -354,6 +355,9 @@ def _normalize_crisis_record(crisis: dict) -> Optional[dict]:
     people_2026 = crisis.get("people_2026") or {}
     year_data_requirements, year_data_requirements_projected = _effective_requirements(year_data)
     year_data_funding = year_data.get("funding")
+    year_data_funding_gap = None
+    if isinstance(year_data_requirements, (int, float)) and isinstance(year_data_funding, (int, float)):
+        year_data_funding_gap = max(float(year_data_requirements) - float(year_data_funding), 0.0)
     year_data_percent_funded = year_data.get("percent_funded")
     year_data_funding_ratio_projected = (
         year_data_requirements_projected
@@ -430,6 +434,7 @@ def _normalize_crisis_record(crisis: dict) -> Optional[dict]:
         "requirements": year_data_requirements,
         "requirements_projected": year_data_requirements_projected,
         "funding": year_data_funding,
+        "funding_gap": year_data_funding_gap,
         "percent_funded": year_data_percent_funded,
         "funding_ratio_projected": year_data_funding_ratio_projected,
         "contribution_count": year_data.get("contribution_count"),

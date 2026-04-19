@@ -93,13 +93,12 @@
                         <tr class="hover:bg-gray-50 transition-colors">
                             <td class="px-6 py-4 whitespace-nowrap text-sm font-bold text-gray-600 bg-gray-50/50 w-1/3">Funding Gap</td>
                             <td class="px-6 py-4 text-sm text-gray-800 font-medium">
-                                {% if crisis.requirements is not none and crisis.funding is not none %}
-                                    {% set funding_gap = [crisis.requirements - crisis.funding, 0] | max %}
+                                {% if crisis.funding_gap is not none %}
                                     <span {% if crisis.requirements_projected %}class="italic cursor-help" data-hover-tooltip="{{ projected_data_tooltip }}" tabindex="0"{% endif %}>
                                         {% if crisis.requirements_projected %}
-                                            {{ format_estimated_usd(funding_gap) }}<sup aria-hidden="true">*</sup>
+                                            {{ format_estimated_usd(crisis.funding_gap) }}<sup aria-hidden="true">*</sup>
                                         {% else %}
-                                            ${{ '{:,}'.format(funding_gap | int) }}
+                                            ${{ '{:,}'.format(crisis.funding_gap | int) }}
                                         {% endif %}
                                     </span>
                                 {% else %}

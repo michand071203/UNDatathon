@@ -269,8 +269,10 @@ class QueryFilter(BaseModel):
     rationales: Optional[EnumCondition[UnderfundingRationale]] = None
     people_in_need: Optional[NumericCondition | List[NumericCondition]] = None
     funding_ratio: Optional[NumericCondition | List[NumericCondition]] = None
+    funding_required: Optional[NumericCondition | List[NumericCondition]] = None
+    funding_received: Optional[NumericCondition | List[NumericCondition]] = None
+    funding_gap: Optional[NumericCondition | List[NumericCondition]] = None
     assessment: Optional[ListCondition | NumericCondition | List[NumericCondition]] = None
-    sectors: Optional[ListCondition] = None
     order_by: Optional[OrderCondition] = None
     limit: Optional[int] = Field(default=None, ge=1)
 
@@ -284,7 +286,7 @@ class QueryParser:
             print("Warning: ANTHROPIC_API_KEY not found. NLP parsing will use mock response.")
         else:
             self.client = Anthropic(api_key=key)
-        self.model = "claude-3-haiku-20240307"
+        self.model = "claude-sonnet-4-6"
         self.region_names_text = ", ".join(
             _format_region_name_for_prompt(name) for name in REGION_NAMES
         )

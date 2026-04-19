@@ -1,5 +1,12 @@
 {% from '_constants.html' import projected_data_tooltip %}
 
+<div class="flex items-center justify-between px-1">
+    <div class="text-xs font-bold uppercase tracking-widest text-gray-400">Results</div>
+    <div class="text-sm font-extrabold text-gray-700">
+        {{ crises | length }} {% if (crises | length) == 1 %}result{% else %}results{% endif %}
+    </div>
+</div>
+
 {% for crisis in crises %}
 <div class="crisis-card bg-white border rounded-xl shadow-sm hover:shadow-md transition-all cursor-pointer overflow-hidden flex items-stretch min-h-[110px] {% if crisis.code == selected_crisis_id %}border-blue-500 ring-4 ring-blue-100 bg-blue-50/30{% else %}border-gray-200{% endif %}"
      id="card-{{ crisis.code }}"
