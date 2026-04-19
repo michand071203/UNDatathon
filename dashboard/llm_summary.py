@@ -6,14 +6,14 @@ from typing import Dict, List, Optional
 from anthropic import Anthropic
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-CACHE_FILE = os.path.join(BASE_DIR, "..", "crisis_summaries_cache.json")
+CACHE_FILE = os.path.join(BASE_DIR, "..", "crisis_summaries_cache_v2.json")
 
 
 class CrisisSummarizer:
     def __init__(self, api_key: Optional[str] = None):
         key = api_key or os.environ.get("ANTHROPIC_API_KEY")
         self.client = Anthropic(api_key=key) if key else None
-        self.model = "claude-3-haiku-20240307"
+        self.model = "claude-sonnet-4-6"
 
     def _get_file_hash(self, file_path: str) -> Optional[str]:
         if not os.path.exists(file_path):
@@ -65,11 +65,26 @@ class CrisisSummarizer:
         if not self.client:
             return "No LLM API key provided. Summary unavailable."
 
-        prompt = f"""
-        Analyze this humanitarian crisis data: {json.dumps(crisis)}
+        # Extract only the most relevant fields for the LLM to reduce noise
+        relevant_data = {
+            "name": crisis.get("name"),
+            "locations": crisis.get("location_names_display"),
+            "assessment": crisis.get("assessment"),
+            "assessment_rank": crisis.get("assessment_rank"),
+            "underfunding_drivers": crisis.get("underfunding_drivers"),
+            "underfunding_driver_confidence": crisis.get("underfunding_driver_confidence"),
+            "people_in_need": crisis.get("people_in_need"),
+            "funding_requirements": crisis.get("requirements"),
+            "funding_received": crisis.get("funding"),
+            "percent_funded": crisis.get("percent_funded"),
+        }
 
-        Explain why this crisis has an overall severity score of {crisis.get('overall_severity_score')}.
+        prompt = f"""
+        Analyze this humanitarian crisis data: {json.dumps(relevant_data)}
+
+        Explain why this crisis has an assessment of "{crisis.get('assessment')}" and detail the main underfunding drivers.
         Keep it concise (2-3 sentences), professional, and informative. Focus on the most critical drivers.
+        No need to output tables or lists, just a clear text summary.
         """
 
         try:

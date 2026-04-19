@@ -22,7 +22,19 @@
                 <svg class="w-4 h-4 mr-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
                 AI Crisis Insights
             </h3>
-            <p class="text-sm text-blue-900 leading-relaxed">{{ summary }}</p>
+            <div id="ai-summary-content" class="text-sm text-blue-900 leading-relaxed prose prose-sm prose-blue max-w-none">
+                <div class="markdown-content hidden">{{ summary }}</div>
+                <div class="rendered-markdown"></div>
+            </div>
+            <script>
+                (function() {
+                    const container = document.getElementById('ai-summary-content');
+                    if (container && typeof marked !== 'undefined') {
+                        const raw = container.querySelector('.markdown-content').textContent;
+                        container.querySelector('.rendered-markdown').innerHTML = marked.parse(raw);
+                    }
+                })();
+            </script>
         </section>
         {% endif %}
 
