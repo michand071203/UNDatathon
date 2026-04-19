@@ -32,10 +32,16 @@ app = FastAPI(title="Humanitarian Crisis Dashboard")
 async def startup_event():
     data = get_enriched_data()
     summarizer = CrisisSummarizer()
-    tasks = [summarizer.summarize_crisis(crisis) for crisis in data]
-    results = await asyncio.gather(*tasks)
-    for crisis, summary in zip(data, results):
-        summaries[crisis["code"]] = summary
+    cached_summaries = summarizer.load_cache(data)
+    
+    if cached_summaries:
+        summaries.update(cached_summaries)
+    else:
+        tasks = [summarizer.summarize_crisis(crisis) for crisis in data]
+        results = await asyncio.gather(*tasks)
+        for crisis, summary in zip(data, results):
+            summaries[crisis["code"]] = summary
+        summarizer.save_cache(data, summaries)
 
 BASIC_AUTH_USERNAME = os.getenv("BASIC_AUTH_USERNAME")
 BASIC_AUTH_PASSWORD = os.getenv("BASIC_AUTH_PASSWORD")
