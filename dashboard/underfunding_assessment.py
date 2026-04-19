@@ -71,6 +71,60 @@ def _summarize_funding_timeline(funding_timeline: list[dict]) -> dict[str, Any]:
     }
 
 
+def _summarize_requirement_trend(funding_timeline: list[dict]) -> dict[str, Any]:
+    # Prefer non-projected requirement points; fall back to all points when needed.
+    confirmed_points: list[tuple[int, float]] = []
+    all_points: list[tuple[int, float]] = []
+
+    for point in funding_timeline or []:
+        year = point.get("year")
+        requirements = point.get("requirements")
+        requirements_projected = bool(point.get("requirements_projected"))
+
+        if not isinstance(year, int) or not isinstance(requirements, (int, float)):
+            continue
+
+        req_value = float(requirements)
+        if req_value <= 0:
+            continue
+
+        all_points.append((year, req_value))
+        if not requirements_projected:
+            confirmed_points.append((year, req_value))
+
+    points = confirmed_points if len(confirmed_points) >= 2 else all_points
+    points.sort(key=lambda item: item[0])
+
+    if len(points) < 2:
+        return {
+            "worsening": False,
+            "recent_requirement_delta": None,
+            "recent_requirement_growth_ratio": None,
+        }
+
+    prev_req = points[-2][1]
+    latest_req = points[-1][1]
+    recent_delta = latest_req - prev_req
+    growth_ratio = (recent_delta / prev_req) if prev_req > 0 else None
+
+    increase_steps = sum(1 for idx in range(1, len(points)) if points[idx][1] > points[idx - 1][1])
+    worsening = False
+    if recent_delta > 0:
+        worsening = (recent_delta >= 25_000_000) or (
+            growth_ratio is not None and growth_ratio >= 0.08
+        )
+
+    # Capture sustained upward demand even when the most recent jump is moderate.
+    if not worsening and len(points) >= 3:
+        worsening = increase_steps >= 2 and latest_req > points[0][1]
+
+    return {
+        "worsening": worsening,
+        "recent_requirement_delta": recent_delta,
+        "recent_requirement_growth_ratio": growth_ratio,
+    }
+
+
 def _summarize_category_scores(category_scores: Any) -> dict[str, Any]:
     if not isinstance(category_scores, dict):
         return {
@@ -169,6 +223,11 @@ def derive_underfunding_assessment(crisis: dict) -> tuple[str, list[str], list[d
     latest_gap_to_peer = timeline_summary["latest_gap_to_peer"]
     recent_delta = timeline_summary["recent_delta"]
 
+    requirement_summary = _summarize_requirement_trend(crisis.get("funding_timeline") or [])
+    requirements_worsening = bool(requirement_summary["worsening"])
+    recent_requirement_delta = requirement_summary["recent_requirement_delta"]
+    recent_requirement_growth_ratio = requirement_summary["recent_requirement_growth_ratio"]
+
     category_summary = _summarize_category_scores(crisis.get("category_scores") or {})
     category_max = category_summary["max_score"]
     category_avg = category_summary["avg_score"]
@@ -251,6 +310,7 @@ def derive_underfunding_assessment(crisis: dict) -> tuple[str, list[str], list[d
     financial_ratio_confidence: Optional[float] = None
     financial_ratio_label: Optional[str] = None
     financial_gap_confidence: Optional[float] = None
+    financial_gap_label: Optional[str] = None
 
     def add_driver(
         bucket: list[dict[str, Any]],
@@ -265,7 +325,13 @@ def derive_underfunding_assessment(crisis: dict) -> tuple[str, list[str], list[d
         })
 
     if funding_ratio_value is not None:
-        if funding_ratio_value >= 45:
+        if funding_ratio_value < 10:
+            financial_ratio_label = "Critically low funding ratio"
+            financial_ratio_confidence = 0.9
+        elif funding_ratio_value < 25:
+            financial_ratio_label = "Low funding ratio"
+            financial_ratio_confidence = 0.78
+        elif funding_ratio_value >= 45:
             add_driver(positive_drivers, "Strong current funding ratio", 0.72, "funding_ratio")
     else:
         add_driver(risk_drivers, "Funding ratio data incomplete", 0.35, "funding_ratio")
@@ -281,6 +347,19 @@ def derive_underfunding_assessment(crisis: dict) -> tuple[str, list[str], list[d
             delta_strength = min(0.24, abs(float(recent_delta)) / 45)
         add_driver(positive_drivers, "Improving funding trend", 0.58 + delta_strength, "trend")
 
+    if requirements_worsening:
+        worsening_confidence = 0.62
+        if isinstance(recent_requirement_growth_ratio, (int, float)):
+            worsening_confidence += min(0.22, max(0.0, float(recent_requirement_growth_ratio)))
+        if isinstance(recent_requirement_delta, (int, float)):
+            worsening_confidence += min(0.16, max(0.0, float(recent_requirement_delta)) / 1_000_000_000)
+        add_driver(
+            risk_drivers,
+            "Worsening crisis",
+            worsening_confidence,
+            "history",
+        )
+
     if latest_below_peer:
         if financial_ratio_confidence is None:
             financial_ratio_confidence = 0.74
@@ -289,7 +368,7 @@ def derive_underfunding_assessment(crisis: dict) -> tuple[str, list[str], list[d
     elif latest_at_or_above_peer:
         add_driver(positive_drivers, "At or above peer benchmark", 0.61, "benchmark")
 
-    # Funding-ratio labels are driven by relative gap vs peer average (not fixed cutoffs).
+    # Peer gap can strengthen (or introduce) ratio pressure confidence.
     if isinstance(latest_gap_to_peer, (int, float)):
         if latest_gap_to_peer >= 20:
             financial_ratio_label = "Critically low funding ratio"
@@ -313,8 +392,13 @@ def derive_underfunding_assessment(crisis: dict) -> tuple[str, list[str], list[d
     if funding_gap is not None:
         if funding_gap >= 1_000_000_000:
             financial_gap_confidence = 0.8
+            financial_gap_label = "Very large funding gap"
         elif funding_gap >= 500_000_000:
-            financial_gap_confidence = 0.6
+            financial_gap_confidence = 0.68
+            financial_gap_label = "Large funding gap"
+        elif funding_gap >= 250_000_000:
+            financial_gap_confidence = 0.56
+            financial_gap_label = "Material funding gap"
 
     if pin_value is None or required_funding_projected:
         incomplete_confidence = 0.9 if required_funding_projected else 0.35
@@ -334,13 +418,10 @@ def derive_underfunding_assessment(crisis: dict) -> tuple[str, list[str], list[d
         elif systematic_underfunding_score < 45:
             add_driver(positive_drivers, "Not systematically underfunded", 0.55, "systematic_underfunding_score")
 
-    if financial_ratio_confidence is not None or financial_gap_confidence is not None:
-        ratio_conf = financial_ratio_confidence if financial_ratio_confidence is not None else -1.0
-        gap_conf = financial_gap_confidence if financial_gap_confidence is not None else -1.0
-        if gap_conf > ratio_conf:
-            add_driver(risk_drivers, "Large funding gap", gap_conf, "financial_pressure")
-        elif financial_ratio_label is not None:
-            add_driver(risk_drivers, financial_ratio_label, ratio_conf, "financial_pressure")
+    if financial_ratio_label is not None and financial_ratio_confidence is not None:
+        add_driver(risk_drivers, financial_ratio_label, financial_ratio_confidence, "financial_pressure")
+    if financial_gap_label is not None and financial_gap_confidence is not None:
+        add_driver(risk_drivers, financial_gap_label, financial_gap_confidence, "funding_gap")
 
     if cbpf_summary["persistent_high_gap"]:
         add_driver(
@@ -407,6 +488,8 @@ def derive_underfunding_assessment(crisis: dict) -> tuple[str, list[str], list[d
         label = item["label"]
         kind = item.get("kind", "other")
         family = kind_to_family.get(kind, kind)
+        if not isinstance(family, str):
+            family = "other"
         if label in selected_drivers or family in seen_families:
             continue
         selected_drivers.append(label)
@@ -421,6 +504,8 @@ def derive_underfunding_assessment(crisis: dict) -> tuple[str, list[str], list[d
             label = item["label"]
             kind = item.get("kind", "other")
             family = kind_to_family.get(kind, kind)
+            if not isinstance(family, str):
+                family = "other"
             if label in selected_drivers or family in seen_families:
                 continue
             selected_drivers.append(label)
@@ -435,4 +520,10 @@ def derive_underfunding_assessment(crisis: dict) -> tuple[str, list[str], list[d
             selected_drivers.append(fallback_label)
             selected_driver_confidence.append({"label": fallback_label, "confidence": 0.35})
 
+    if len(selected_drivers) == 0 and band != "Adequately Supported":
+        fallback_label = "Mixed or incomplete risk evidence"
+        selected_drivers.append(fallback_label)
+        selected_driver_confidence.append({"label": fallback_label, "confidence": 0.3})
+
     return band, selected_drivers[:3], selected_driver_confidence[:3]
+
