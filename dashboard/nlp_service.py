@@ -258,7 +258,7 @@ class QueryFilter(BaseModel):
     crisis_name: Optional[StringCondition] = None
     locations: Optional[ListCondition] = None
     people_in_need: Optional[NumericCondition | List[NumericCondition]] = None
-    funding_coverage_percentage: Optional[NumericCondition | List[NumericCondition]] = None
+    funding_ratio: Optional[NumericCondition | List[NumericCondition]] = None
     severity_score: Optional[NumericCondition | List[NumericCondition]] = None
     sectors: Optional[ListCondition] = None
     order_by: Optional[OrderCondition] = None
@@ -286,7 +286,7 @@ class QueryParser:
             return parsed_filter
 
         query_percents = [float(match) for match in percent_matches]
-        percentage_fields = ["funding_coverage_percentage"]
+        percentage_fields = ["funding_ratio"]
 
         for field_name in percentage_fields:
             condition = getattr(parsed_filter, field_name, None)
@@ -335,7 +335,7 @@ class QueryParser:
             "5. If the user names a geographic area that is not in the supported broad-region list, output your best-guess list of ISO-3 country codes for that area.\n"
             "6. If the query asks to sort or rank results (e.g., 'highest', 'lowest', 'most underfunded', 'ranked by severity'), set the 'order_by' field with the correct 'field' and 'direction' ('asc' or 'desc').\n"
             "7. If the query requests a top/bottom N subset (e.g., 'top 10', 'bottom 5'), set 'limit' to N.\n"
-            "8. Map ranking terms carefully: 'ranked by severity' or 'most severe' -> order_by.field='severity_score'; 'most underfunded' -> order_by.field='funding_coverage_percentage' and direction='asc'.\n"
+            "8. Map ranking terms carefully: 'ranked by severity' or 'most severe' -> order_by.field='severity_score'; 'most underfunded' -> order_by.field='funding_ratio' and direction='asc'.\n"
             "9. If the user references one or more specific crisis names, use 'crisis_name' with those names.\n"
             "10. If a phrase looks like a crisis name, use the user's wording for 'crisis_name' and keep it close to the original phrase; light normalization is allowed (e.g., case/punctuation), but do not expand or paraphrase it, e.g. 'Sudan migrant crisis'."
         )

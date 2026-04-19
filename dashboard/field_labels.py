@@ -12,9 +12,9 @@ FIELD_LABELS = {
         "short": "PIN",
         "long": "People In Need",
     },
-    "funding_coverage_percentage": {
+    "funding_ratio": {
         "short": "Funding",
-        "long": "Funding Coverage %",
+        "long": "Funding Ratio %",
     },
     "funding_required_usd": {
         "short": "Required",

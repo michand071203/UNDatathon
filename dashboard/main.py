@@ -19,6 +19,7 @@ from dotenv import load_dotenv
 from filter_chips import build_filter_chips
 from field_labels import FIELD_LABELS
 from regions import expand_location_values
+from underfunding_assessment import derive_underfunding_assessment
 
 load_dotenv()
 
@@ -73,7 +74,7 @@ FIELD_MAP = {
     "crisis_name": [["name"]],
     "locations": [["location_codes"], ["country_iso3"], ["primary_location_code"], ["location_names"], ["primary_location_name"]],
     "people_in_need": [["people_in_need"]],
-    "funding_coverage_percentage": [["percent_funded"]],
+    "funding_ratio": [["percent_funded"]],
     "funding_required_usd": [["requirements"]],
     "funding_received_usd": [["funding"]],
     "severity_score": [["overall_severity_score"]]
@@ -84,7 +85,7 @@ CHIP_FIELD_ORDER.append("limit")
 
 SORT_FIELDS = [
     "people_in_need",
-    "funding_coverage_percentage",
+    "funding_ratio",
     "funding_required_usd",
     "funding_received_usd",
     "severity_score",
@@ -290,7 +291,7 @@ def _normalize_crisis_record(crisis: dict) -> Optional[dict]:
     year_data_requirements, year_data_requirements_projected = _effective_requirements(year_data)
     year_data_funding = year_data.get("funding")
     year_data_percent_funded = year_data.get("percent_funded")
-    year_data_coverage_projected = (
+    year_data_funding_ratio_projected = (
         year_data_requirements_projected
         and isinstance(year_data_percent_funded, (int, float))
     )
@@ -308,17 +309,17 @@ def _normalize_crisis_record(crisis: dict) -> Optional[dict]:
             continue
 
         percent_funded = values.get("percent_funded")
-        coverage_projected = (
+        funding_ratio_projected = (
             requirements_projected and isinstance(percent_funded, (int, float))
         )
-        coverage_ratio = 0.0
+        funding_ratio = 0.0
         if isinstance(percent_funded, (int, float)):
-            coverage_ratio = max(0.0, min(float(percent_funded) / 100.0, 1.0))
+            funding_ratio = max(0.0, min(float(percent_funded) / 100.0, 1.0))
 
         avg_percent_funded = values.get("avg_percent_funded")
-        avg_coverage_ratio = None
+        avg_funding_ratio = None
         if isinstance(avg_percent_funded, (int, float)):
-            avg_coverage_ratio = max(0.0, min(float(avg_percent_funded) / 100.0, 1.0))
+            avg_funding_ratio = max(0.0, min(float(avg_percent_funded) / 100.0, 1.0))
 
         funding_timeline.append(
             {
@@ -327,10 +328,10 @@ def _normalize_crisis_record(crisis: dict) -> Optional[dict]:
                 "requirements_projected": requirements_projected,
                 "funding": funding,
                 "percent_funded": percent_funded,
-                "coverage_ratio": coverage_ratio,
-                "coverage_projected": coverage_projected,
+                "funding_ratio": funding_ratio,
+                "funding_ratio_projected": funding_ratio_projected,
                 "avg_percent_funded": avg_percent_funded,
-                "avg_coverage_ratio": avg_coverage_ratio,
+                "avg_funding_ratio": avg_funding_ratio,
             }
         )
 
@@ -349,7 +350,7 @@ def _normalize_crisis_record(crisis: dict) -> Optional[dict]:
         "requirements_projected": year_data_requirements_projected,
         "funding": year_data_funding,
         "percent_funded": year_data_percent_funded,
-        "coverage_projected": year_data_coverage_projected,
+        "funding_ratio_projected": year_data_funding_ratio_projected,
         "contribution_count": year_data.get("contribution_count"),
         "category_breakdown_scored": project_metrics_2026.get("category_breakdown_scored") or [],
         "category_scores": {item["category"]: item.get("category_score_normalized") for item in (project_metrics_2026.get("category_breakdown_scored") or [])},
@@ -397,6 +398,10 @@ def get_enriched_data():
 
             crisis["color"] = calculate_color(crisis.get("overall_severity_score"))
             crisis["radius_km"] = calculate_radius(crisis.get("people_in_need") or 500000)
+            underfunding_band, underfunding_drivers, underfunding_driver_confidence = derive_underfunding_assessment(crisis)
+            crisis["underfunding_band"] = underfunding_band
+            crisis["underfunding_drivers"] = underfunding_drivers
+            crisis["underfunding_driver_confidence"] = underfunding_driver_confidence
             valid_data.append(sanitize_non_finite_values(crisis))
     return valid_data
 

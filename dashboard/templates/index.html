@@ -52,13 +52,13 @@
             border-radius: 8px;
             padding: 8px;
         }
-        .crisis-coverage-track {
+        .crisis-funding-ratio-track {
             height: 6px;
             border-radius: 9999px;
             background: rgba(148, 163, 184, 0.3);
             overflow: hidden;
         }
-        .crisis-coverage-fill {
+        .crisis-funding-ratio-fill {
             height: 100%;
             border-radius: 9999px;
         }
@@ -268,13 +268,13 @@
         }
 
         function buildCrisisHoverCard(crisis, baseColor) {
-            const coverage = Number(crisis.percent_funded);
-            const coverageIsKnown = Number.isFinite(coverage);
-            const coverageWidth = coverageIsKnown
-                ? Math.max(0, Math.min(100, coverage))
+            const fundingRatio = Number(crisis.percent_funded);
+            const fundingRatioIsKnown = Number.isFinite(fundingRatio);
+            const fundingRatioWidth = fundingRatioIsKnown
+                ? Math.max(0, Math.min(100, fundingRatio))
                 : 0;
             const locationsText = crisis.locations_display || 'Unknown location';
-            const projectedTag = crisis.coverage_projected ? '<span class="ml-1 text-[10px] font-bold uppercase text-amber-700">Projected*</span>' : '';
+            const projectedTag = crisis.funding_ratio_projected ? '<span class="ml-1 text-[10px] font-bold uppercase text-amber-700">Projected*</span>' : '';
 
             return `
                 <article class="crisis-hover-card">
@@ -287,11 +287,11 @@
 
                         <div class="mb-2.5 rounded-md bg-white/75 border border-slate-200 px-2.5 py-2">
                             <div class="flex items-center justify-between">
-                                <span class="text-[10px] font-bold tracking-wide uppercase text-slate-500">Funding Coverage</span>
+                                <span class="text-[10px] font-bold tracking-wide uppercase text-slate-500">Funding Ratio</span>
                                 <span class="text-xs font-black text-blue-700">${formatPercent(crisis.percent_funded)}</span>
                             </div>
-                            <div class="mt-1.5 crisis-coverage-track">
-                                <div class="crisis-coverage-fill" style="width:${coverageWidth}%;background:linear-gradient(90deg,#2563eb 0%,#3b82f6 100%);"></div>
+                            <div class="mt-1.5 crisis-funding-ratio-track">
+                                <div class="crisis-funding-ratio-fill" style="width:${fundingRatioWidth}%;background:linear-gradient(90deg,#2563eb 0%,#3b82f6 100%);"></div>
                             </div>
                             <div class="mt-1 text-[10px] text-slate-500">${projectedTag}</div>
                         </div>
@@ -395,7 +395,7 @@
                         v === null || v === undefined ? null : Number(v)
                     );
                     const funding = JSON.parse(canvas.dataset.funding || '[]');
-                    const coverageProjected = JSON.parse(canvas.dataset.coverageProjected || '[]');
+                    const fundingRatioProjected = JSON.parse(canvas.dataset.fundingRatioProjected || '[]');
 
                     canvas._fundingChartInstance = new Chart(ctx, {
                         type: 'line',
@@ -408,12 +408,12 @@
                                     data: percentages,
                                     borderColor: '#2563eb',
                                     backgroundColor: 'rgba(37, 99, 235, 0.15)',
-                                    pointBackgroundColor: (ctx) => coverageProjected[ctx.dataIndex] ? '#9ca3af' : '#1d4ed8',
+                                    pointBackgroundColor: (ctx) => fundingRatioProjected[ctx.dataIndex] ? '#9ca3af' : '#1d4ed8',
                                     pointBorderColor: '#ffffff',
                                     pointBorderWidth: 1,
                                     pointRadius: 3,
                                     segment: {
-                                        borderDash: (ctx) => (coverageProjected[ctx.p1DataIndex] ? [5, 5] : undefined),
+                                        borderDash: (ctx) => (fundingRatioProjected[ctx.p1DataIndex] ? [5, 5] : undefined),
                                     },
                                     tension: 0.2,
                                     spanGaps: true,
@@ -489,13 +489,13 @@
                                                 return [
                                                     `Year benchmark: ${pctText}`,
                                                     'Weighted average funding',
-                                                    'coverage across all projects',
+                                                    'funding ratio across all projects',
                                                     'in this year.',
                                                 ];
                                             }
-                                            const coverageIsProjected = Boolean(coverageProjected[idx]);
-                                            const coverageSuffix = coverageIsProjected ? '*' : '';
-                                            const coverageText = `Coverage: ${pctText}${coverageSuffix}`;
+                                            const fundingRatioIsProjected = Boolean(fundingRatioProjected[idx]);
+                                            const fundingRatioSuffix = fundingRatioIsProjected ? '*' : '';
+                                            const fundingRatioText = `Funding ratio: ${pctText}${fundingRatioSuffix}`;
                                             const fundingText = `Funding: ${formatCompactUsd(funding[idx])}`;
                                             const isProjected = Boolean(requirementsProjected[idx]);
                                             const reqSuffix = isProjected ? '*' : '';
@@ -503,14 +503,14 @@
                                             const reqText = `Requirements: ${reqAmount}${reqSuffix}`;
                                             if (isProjected) {
                                                 return [
-                                                    coverageText,
+                                                    fundingRatioText,
                                                     fundingText,
                                                     reqText,
                                                     "* Projected: previous year's requirements",
                                                     "minus previous year's funding.",
                                                 ];
                                             }
-                                            return [coverageText, fundingText, reqText];
+                                            return [fundingRatioText, fundingText, reqText];
                                         },
                                     },
                                 },

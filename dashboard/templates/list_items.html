@@ -17,11 +17,11 @@
 
         <!-- Row 2: Locations and Metrics -->
         <div class="flex gap-4 mb-4">
-            <!-- Severity Score (Stretches vertically) -->
-            <div class="flex flex-col rounded-lg px-3 py-2 min-w-[100px] border" style="background-color: color-mix(in srgb, {{ crisis.color or '#9ca3af' }} 14%, white); border-color: color-mix(in srgb, {{ crisis.color or '#9ca3af' }} 32%, white);">
-                <span class="text-[9px] font-bold uppercase tracking-widest mb-0.5" style="color: color-mix(in srgb, {{ crisis.color or '#9ca3af' }} 68%, #1f2937);">Severity Score</span>
-                <span class="text-base font-extrabold" style="color: color-mix(in srgb, {{ crisis.color or '#9ca3af' }} 78%, #111827);">
-                    {% if crisis.overall_severity_score is not none %}{{ crisis.overall_severity_score | round | int }}{% else %}Unknown{% endif %}
+            <!-- Underfunding Assessment Band -->
+            <div class="flex flex-col rounded-lg px-3 py-2 min-w-[190px] border" style="background-color: color-mix(in srgb, {{ crisis.color or '#9ca3af' }} 14%, white); border-color: color-mix(in srgb, {{ crisis.color or '#9ca3af' }} 32%, white);">
+                <span class="text-[9px] font-bold uppercase tracking-widest mb-0.5" style="color: color-mix(in srgb, {{ crisis.color or '#9ca3af' }} 68%, #1f2937);">Assessment</span>
+                <span class="text-sm font-extrabold leading-tight" style="color: color-mix(in srgb, {{ crisis.color or '#9ca3af' }} 78%, #111827);">
+                    {{ crisis.underfunding_band or 'Needs verification' }}
                 </span>
             </div>
 
@@ -60,14 +60,14 @@
 
                 <!-- Funding and Underfunding -->
                 <div class="flex gap-4 flex-wrap">
-                    <!-- Coverage Progress -->
+                    <!-- Funding Ratio Progress -->
                     <div class="flex flex-col w-32">
                         <div class="flex justify-between items-center mb-1">
-                            <span class="text-[9px] font-bold text-gray-400 uppercase tracking-widest">Funded</span>
+                            <span class="text-[9px] font-bold text-gray-400 uppercase tracking-widest">Funding Ratio</span>
                             <span class="text-[10px] font-bold text-gray-700">
                                 {% if crisis.percent_funded is not none %}
-                                    <span {% if crisis.coverage_projected %}class="italic cursor-help" data-hover-tooltip="{{ projected_data_tooltip }}" tabindex="0"{% endif %}>
-                                        {{ crisis.percent_funded }}%{% if crisis.coverage_projected %}<sup aria-hidden="true">*</sup>{% endif %}
+                                    <span {% if crisis.funding_ratio_projected %}class="italic cursor-help" data-hover-tooltip="{{ projected_data_tooltip }}" tabindex="0"{% endif %}>
+                                        {{ crisis.percent_funded }}%{% if crisis.funding_ratio_projected %}<sup aria-hidden="true">*</sup>{% endif %}
                                     </span>
                                 {% else %}
                                     Unknown
@@ -79,16 +79,14 @@
                         </div>
                     </div>
 
-                    <!-- Underfunding Progress -->
-                    {% if crisis.systematic_underfunding.score is not none %}
-                    {% set u_score = crisis.systematic_underfunding.score %}
-                    <div class="flex flex-col w-32">
-                        <div class="flex justify-between items-center mb-1">
-                            <span class="text-[9px] font-bold text-gray-400 uppercase tracking-widest">Systematic Underfunding</span>
-                            <span class="text-[10px] font-bold text-gray-700">{{ u_score|int }}</span>
-                        </div>
-                        <div class="w-full bg-gray-100 rounded-full h-1.5 overflow-hidden border border-gray-200/50">
-                            <div class="h-full rounded-full transition-all duration-500" style="width: {{ u_score }}%; background-color: {{ calculate_color(u_score) }}"></div>
+                    <!-- Underfunding Drivers -->
+                    {% if crisis.underfunding_drivers %}
+                    <div class="flex flex-col min-w-[165px]">
+                        <div class="text-[9px] font-bold text-gray-400 uppercase tracking-widest mb-1">Rationale</div>
+                        <div class="flex flex-wrap gap-1.5">
+                            {% for driver in crisis.underfunding_drivers %}
+                            <span class="inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-semibold bg-gray-100 text-gray-700 border border-gray-200">{{ driver }}</span>
+                            {% endfor %}
                         </div>
                     </div>
                     {% endif %}
