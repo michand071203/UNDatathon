@@ -1,6 +1,8 @@
 # UNDatathon
 
-## Run The Dashboard
+A published version of the dashboard can be found here: https://fynnstarke.com. It is password-protected, so we will share the credentials with the team over Discord.
+
+## Run Locally
 
 ### 1. Install dependencies
 
