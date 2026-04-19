@@ -77,7 +77,7 @@ FIELD_MAP = {
     "funding_ratio": [["percent_funded"]],
     "funding_required_usd": [["requirements"]],
     "funding_received_usd": [["funding"]],
-    "severity_score": [["overall_severity_score"]]
+    "assessment": [["assessment_rank"], ["underfunding_band"]],
 }
 
 CHIP_FIELD_ORDER = list(FIELD_MAP.keys())
@@ -88,7 +88,7 @@ SORT_FIELDS = [
     "funding_ratio",
     "funding_required_usd",
     "funding_received_usd",
-    "severity_score",
+    "assessment",
 ]
 
 SORT_FIELD_OPTIONS = [
@@ -99,11 +99,30 @@ SORT_FIELD_OPTIONS = [
     for field_name in SORT_FIELDS
 ]
 
-DEFAULT_SORT_FIELD = "severity_score"
+DEFAULT_SORT_FIELD = "assessment"
 DEFAULT_SORT_DIRECTION = "desc"
+
+ASSESSMENT_RANKS = {
+    "Adequately Supported": 1,
+    "Some Funding Gaps": 2,
+    "Likely Underfunded": 3,
+    "Significantly Underfunded": 4,
+    "Critically Underfunded": 5,
+}
+
+ASSESSMENT_COLORS = {
+    "Adequately Supported": "#16a34a",
+    "Some Funding Gaps": "#84cc16",
+    "Likely Underfunded": "#facc15",
+    "Significantly Underfunded": "#f97316",
+    "Critically Underfunded": "#b91c1c",
+}
 
 
 def ensure_default_sort(filter_obj: QueryFilter) -> QueryFilter:
+    if filter_obj.order_by and filter_obj.order_by.field not in FIELD_MAP:
+        filter_obj.order_by.field = DEFAULT_SORT_FIELD
+
     if filter_obj.order_by is None:
         filter_obj.order_by = OrderCondition(
             field=DEFAULT_SORT_FIELD,
@@ -225,17 +244,11 @@ def format_estimated_usd(value: Any) -> str:
 
 # --- Dynamic Core Logic ---
 
-def calculate_color(severity_score: Optional[float]) -> str:
-    # Severity is an integer score in [0, 100]: lower is better, higher is worse.
-    if severity_score is None:
-        return "#b91c1c"
-
-    severity_score = max(0.0, min(100.0, float(severity_score)))
-
-    if severity_score >= 75: return "#b91c1c"
-    if severity_score >= 50: return "#f97316"
-    if severity_score >= 25: return "#facc15"
-    return "#16a34a"
+def calculate_color(assessment: Optional[str]) -> str:
+    # Color is driven solely by the assessment band.
+    if not assessment:
+        return "#64748b"
+    return ASSESSMENT_COLORS.get(assessment, "#64748b")
 
 templates.env.globals["calculate_color"] = calculate_color
 templates.env.globals["format_compact_number"] = format_compact_number
@@ -355,7 +368,6 @@ def _normalize_crisis_record(crisis: dict) -> Optional[dict]:
         "category_breakdown_scored": project_metrics_2026.get("category_breakdown_scored") or [],
         "category_scores": {item["category"]: item.get("category_score_normalized") for item in (project_metrics_2026.get("category_breakdown_scored") or [])},
         "category_level_score": project_metrics_2026.get("category_level_score"),
-        "overall_severity_score": project_metrics_2026.get("overall_severity_score"),
         "systematic_underfunding": crisis.get("systematic_underfunding"),
         "people_in_need": people_2026.get("people_in_need"),
         "people_targeted": people_2026.get("people_targeted"),
@@ -396,12 +408,13 @@ def get_enriched_data():
             crisis["location_names_display"] = full_location_names
             crisis["locations_display"] = ", ".join(full_location_names)
 
-            crisis["color"] = calculate_color(crisis.get("overall_severity_score"))
             crisis["radius_km"] = calculate_radius(crisis.get("people_in_need") or 500000)
             underfunding_band, underfunding_drivers, underfunding_driver_confidence = derive_underfunding_assessment(crisis)
             crisis["underfunding_band"] = underfunding_band
+            crisis["assessment_rank"] = ASSESSMENT_RANKS.get(underfunding_band)
             crisis["underfunding_drivers"] = underfunding_drivers
             crisis["underfunding_driver_confidence"] = underfunding_driver_confidence
+            crisis["color"] = calculate_color(crisis.get("underfunding_band"))
             valid_data.append(sanitize_non_finite_values(crisis))
     return valid_data
 
@@ -575,7 +588,7 @@ async def get_list(
     
     if not applied_nlp_sort:
         filtered_data.sort(
-            key=lambda x: get_nested_value(x, ["overall_severity_score"]) or 0,
+            key=lambda x: get_nested_value(x, ["assessment_rank"]) or 0,
             reverse=True,
         )
     
