@@ -5,7 +5,9 @@ import hashlib
 from typing import Dict, List, Optional
 from anthropic import Anthropic
 
-CACHE_FILE = "crisis_summaries_cache.json"
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+CACHE_FILE = os.path.join(BASE_DIR, "..", "crisis_summaries_cache.json")
+
 
 class CrisisSummarizer:
     def __init__(self, api_key: Optional[str] = None):
@@ -13,21 +15,49 @@ class CrisisSummarizer:
         self.client = Anthropic(api_key=key) if key else None
         self.model = "claude-3-haiku-20240307"
 
-    def _get_data_hash(self, data: List[dict]) -> str:
-        data_string = json.dumps(data, sort_keys=True)
-        return hashlib.md5(data_string.encode()).hexdigest()
+    def _get_file_hash(self, file_path: str) -> Optional[str]:
+        if not os.path.exists(file_path):
+            return None
 
-    def load_cache(self, current_data: List[dict]) -> Optional[Dict[str, str]]:
+        digest = hashlib.sha256()
+        with open(file_path, "rb") as f:
+            while True:
+                chunk = f.read(8192)
+                if not chunk:
+                    break
+                digest.update(chunk)
+        return digest.hexdigest()
+
+    def load_cache(self, source_file_path: str) -> Optional[Dict[str, str]]:
+        source_hash = self._get_file_hash(source_file_path)
+        if source_hash is None:
+            return None
         if not os.path.exists(CACHE_FILE):
             return None
-        with open(CACHE_FILE, "r") as f:
-            cache = json.load(f)
-        if cache.get("hash") == self._get_data_hash(current_data):
-            return cache.get("summaries")
+
+        try:
+            with open(CACHE_FILE, "r") as f:
+                cache = json.load(f)
+        except (json.JSONDecodeError, OSError):
+            return None
+
+        if cache.get("source_hash") == source_hash and cache.get("model") == self.model:
+            summaries = cache.get("summaries")
+            if isinstance(summaries, dict):
+                return summaries
         return None
 
-    def save_cache(self, data: List[dict], summaries: Dict[str, str]):
-        cache = {"hash": self._get_data_hash(data), "summaries": summaries}
+    def save_cache(self, source_file_path: str, summaries: Dict[str, str]):
+        source_hash = self._get_file_hash(source_file_path)
+        if source_hash is None:
+            return
+
+        cache = {
+            "source_file": source_file_path,
+            "source_hash": source_hash,
+            "model": self.model,
+            "summaries": summaries,
+        }
         with open(CACHE_FILE, "w") as f:
             json.dump(cache, f)
 

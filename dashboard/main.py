@@ -27,12 +27,18 @@ from llm_summary import CrisisSummarizer, summaries
 load_dotenv()
 
 app = FastAPI(title="Humanitarian Crisis Dashboard")
+CRISIS_SUMMARY_FILE = os.path.join(
+    os.path.dirname(os.path.abspath(__file__)),
+    "..",
+    "data_pipeline",
+    "crisis_summary_all_years.json",
+)
 
 @app.on_event("startup")
 async def startup_event():
     data = get_enriched_data()
     summarizer = CrisisSummarizer()
-    cached_summaries = summarizer.load_cache(data)
+    cached_summaries = summarizer.load_cache(CRISIS_SUMMARY_FILE)
     
     if cached_summaries:
         summaries.update(cached_summaries)
@@ -41,7 +47,7 @@ async def startup_event():
         results = await asyncio.gather(*tasks)
         for crisis, summary in zip(data, results):
             summaries[crisis["code"]] = summary
-        summarizer.save_cache(data, summaries)
+        summarizer.save_cache(CRISIS_SUMMARY_FILE, summaries)
 
 BASIC_AUTH_USERNAME = os.getenv("BASIC_AUTH_USERNAME")
 BASIC_AUTH_PASSWORD = os.getenv("BASIC_AUTH_PASSWORD")
@@ -445,9 +451,7 @@ def _normalize_crisis_record(crisis: dict) -> Optional[dict]:
     return normalized
 
 def get_enriched_data():
-    json_path = os.path.join(
-        BASE_DIR, "..", "data_pipeline", "crisis_summary_all_years.json"
-    )
+    json_path = CRISIS_SUMMARY_FILE
     if not os.path.exists(json_path):
         raise FileNotFoundError(
             "Could not find data_pipeline/crisis_summary_all_years.json."
@@ -664,8 +668,6 @@ async def get_list(
             "selected_crisis_id": selected_crisis_id
         }
     )
-
-from llm_summary import CrisisSummarizer, summaries
 
 @app.get("/details/{crisis_code}", response_class=HTMLResponse)
 async def get_details(request: Request, crisis_code: str):
