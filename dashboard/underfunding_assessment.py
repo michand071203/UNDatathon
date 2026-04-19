@@ -468,10 +468,6 @@ def derive_underfunding_assessment(crisis: dict) -> tuple[str, list[str], list[D
 
     risk_drivers: list[DriverEvidence] = []
     positive_drivers: list[DriverEvidence] = []
-    financial_ratio_confidence: Optional[float] = None
-    financial_ratio_label: Optional[UnderfundingRationale] = None
-    financial_gap_confidence: Optional[float] = None
-    financial_gap_label: Optional[UnderfundingRationale] = None
 
     def add_driver(
         bucket: list[DriverEvidence],
@@ -489,11 +485,9 @@ def derive_underfunding_assessment(crisis: dict) -> tuple[str, list[str], list[D
 
     if funding_ratio_value is not None:
         if funding_ratio_value < 10:
-            financial_ratio_label = "Critically low funding ratio"
-            financial_ratio_confidence = 0.9
+            add_driver(risk_drivers, "Critically low funding ratio", 0.9, "financial_pressure")
         elif funding_ratio_value < 25:
-            financial_ratio_label = "Low funding ratio"
-            financial_ratio_confidence = 0.78
+            add_driver(risk_drivers, "Low funding ratio", 0.78, "financial_pressure")
         elif signals["has_strong_funding_ratio"]:
             add_driver(positive_drivers, "Strong current funding ratio", 0.72, "funding_ratio")
     else:
@@ -524,27 +518,16 @@ def derive_underfunding_assessment(crisis: dict) -> tuple[str, list[str], list[D
         )
 
     if latest_below_peer:
-        if financial_ratio_confidence is None:
-            financial_ratio_confidence = 0.74
-        else:
-            financial_ratio_confidence = max(financial_ratio_confidence, 0.74)
+        add_driver(risk_drivers, "Low funding ratio", 0.74, "benchmark")
     elif latest_at_or_above_peer:
         add_driver(positive_drivers, "At or above peer benchmark", 0.61, "benchmark")
 
     # Peer gap can strengthen (or introduce) ratio pressure confidence.
     if isinstance(latest_gap_to_peer, (int, float)):
         if latest_gap_to_peer >= 20:
-            financial_ratio_label = "Critically low funding ratio"
-            if financial_ratio_confidence is None:
-                financial_ratio_confidence = 0.9
-            else:
-                financial_ratio_confidence = max(financial_ratio_confidence, 0.9)
+            add_driver(risk_drivers, "Critically low funding ratio", 0.9, "benchmark")
         elif latest_gap_to_peer >= 8:
-            financial_ratio_label = "Low funding ratio"
-            if financial_ratio_confidence is None:
-                financial_ratio_confidence = 0.78
-            else:
-                financial_ratio_confidence = max(financial_ratio_confidence, 0.78)
+            add_driver(risk_drivers, "Low funding ratio", 0.78, "benchmark")
 
     if signals["has_very_large_impacted_population"]:
         add_driver(risk_drivers, "Very large impacted population", 0.84, "needs_scale")
@@ -552,14 +535,11 @@ def derive_underfunding_assessment(crisis: dict) -> tuple[str, list[str], list[D
         add_driver(risk_drivers, "Large impacted population", 0.7, "needs_scale")
 
     if signals["has_very_large_funding_gap"]:
-        financial_gap_confidence = 0.8
-        financial_gap_label = "Very large funding gap"
+        add_driver(risk_drivers, "Very large funding gap", 0.8, "funding_gap")
     elif signals["has_large_funding_gap"]:
-        financial_gap_confidence = 0.68
-        financial_gap_label = "Large funding gap"
+        add_driver(risk_drivers, "Large funding gap", 0.68, "funding_gap")
     elif signals["has_material_funding_gap"]:
-        financial_gap_confidence = 0.56
-        financial_gap_label = "Material funding gap"
+        add_driver(risk_drivers, "Material funding gap", 0.56, "funding_gap")
 
     if pin_value is None or required_funding_projected:
         incomplete_confidence = 0.9 if required_funding_projected else 0.35
@@ -567,22 +547,11 @@ def derive_underfunding_assessment(crisis: dict) -> tuple[str, list[str], list[D
 
     if systematic_underfunding_score is not None:
         if signals["has_severe_systematic_underfunding"]:
-            if financial_ratio_confidence is None:
-                financial_ratio_confidence = 0.86
-            else:
-                financial_ratio_confidence = max(financial_ratio_confidence, 0.86)
+            add_driver(risk_drivers, "Critically low funding ratio", 0.86, "systematic_underfunding_score")
         elif signals["has_elevated_systematic_underfunding"]:
-            if financial_ratio_confidence is None:
-                financial_ratio_confidence = 0.71
-            else:
-                financial_ratio_confidence = max(financial_ratio_confidence, 0.71)
+            add_driver(risk_drivers, "Low funding ratio", 0.71, "systematic_underfunding_score")
         elif signals["has_low_systematic_underfunding"]:
             add_driver(positive_drivers, "Not systematically underfunded", 0.55, "systematic_underfunding_score")
-
-    if financial_ratio_label is not None and financial_ratio_confidence is not None:
-        add_driver(risk_drivers, financial_ratio_label, financial_ratio_confidence, "financial_pressure")
-    if financial_gap_label is not None and financial_gap_confidence is not None:
-        add_driver(risk_drivers, financial_gap_label, financial_gap_confidence, "funding_gap")
 
     if cbpf_summary["persistent_high_gap"]:
         add_driver(
@@ -682,15 +651,21 @@ def derive_underfunding_assessment(crisis: dict) -> tuple[str, list[str], list[D
         fallback_label: UnderfundingRationale = "No strong underfunding signals"
         if fallback_label not in selected_drivers:
             selected_drivers.append(fallback_label)
-            selected_driver_confidence.append(
-                {"label": fallback_label, "confidence": 0.35, "kind": "data_completeness"}
+            add_driver(
+                selected_driver_confidence,
+                fallback_label,
+                0.35,
+                "data_completeness",
             )
 
     if len(selected_drivers) == 0 and band != "Adequately Supported":
         fallback_label = "Mixed or incomplete risk evidence"
         selected_drivers.append(fallback_label)
-        selected_driver_confidence.append(
-            {"label": fallback_label, "confidence": 0.3, "kind": "data_completeness"}
+        add_driver(
+            selected_driver_confidence,
+            fallback_label,
+            0.3,
+            "data_completeness",
         )
 
     return band, [str(label) for label in selected_drivers[:3]], selected_driver_confidence[:3]
