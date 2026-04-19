@@ -388,6 +388,23 @@ def _normalize_crisis_record(crisis: dict) -> Optional[dict]:
 
     funding_timeline.sort(key=lambda x: x["year"])
 
+    cbpf_timeline = []
+    for point in crisis.get("cbpf_time_series") or []:
+        year = point.get("year")
+        total = point.get("total")
+        gap = point.get("gap")
+        if not isinstance(year, int):
+            continue
+        cbpf_timeline.append(
+            {
+                "year": year,
+                "total": total if isinstance(total, (int, float)) else None,
+                "gap": gap if isinstance(gap, (int, float)) else None,
+            }
+        )
+
+    cbpf_timeline.sort(key=lambda x: x["year"])
+
     normalized = {
         "code": codes[0] if codes else crisis.get("funding_base_key"),
         "dest_plan_code": codes[0] if codes else crisis.get("funding_base_key"),
@@ -415,6 +432,9 @@ def _normalize_crisis_record(crisis: dict) -> Optional[dict]:
         "longitude": crisis.get("longitude"),
         "funding_base_key": crisis.get("funding_base_key"),
         "funding_timeline": funding_timeline,
+        "cbpf_timeline": cbpf_timeline,
+        "cbpf_gap": project_metrics_2026.get("cbpf_gap"),
+        "cbpf_total_allocation": project_metrics_2026.get("cbpf_total_allocation"),
     }
     return normalized
 

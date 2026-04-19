@@ -31,9 +31,44 @@ DESCRIPTION_MAP = {
 
 DATA_DIR = Path(__file__).resolve().parent.parent / "data"
 COORDINATE_FILE = DATA_DIR / "country_coordinates.csv"
+CBPF_ALLOCATIONS_FILE = DATA_DIR / "AllocationsByOrgType__20260419_002004_UTC.csv"
 COUNTRY_NAME_OVERRIDES = {
     "COD": "Democratic Republic of the Congo",
     "PSE": "Palestine",
+}
+
+CBPF_NAME_TO_ISO3 = {
+    "Afghanistan": "AFG",
+    "Bangladesh (AP-RHPF)": "BGD",
+    "Burkina Faso (RhPF-WCA)": "BFA",
+    "CAR": "CAF",
+    "Chad (RhPF-WCA)": "TCD",
+    "Colombia (RhPF-LAC)": "COL",
+    "DRC": "COD",
+    "Ethiopia": "ETH",
+    "Fiji (AP-Rhpf)": "FJI",
+    "Haiti (RhPF-LAC)": "HTI",
+    "Iraq": "IRQ",
+    "Jordan": "JOR",
+    "Kenya (ESAHF)": "KEN",
+    "Lebanon": "LBN",
+    "Mali (RhPF-WCA)": "MLI",
+    "Mozambique (RhPF)": "MOZ",
+    "Myanmar": "MMR",
+    "Niger (RhPF-WCA)": "NER",
+    "Nigeria": "NGA",
+    "oPt": "PSE",
+    "Pakistan": "PAK",
+    "Pakistan (AP-RHPF)": "PAK",
+    "Somalia": "SOM",
+    "South Sudan": "SSD",
+    "Sudan": "SDN",
+    "Syria": "SYR",
+    "Syria Cross border": "SYR",
+    "Uganda (ESAHF)": "UGA",
+    "Ukraine": "UKR",
+    "Venezuela": "VEN",
+    "Yemen": "YEM",
 }
 
 COUNTRY_STITCHED_BASE_KEY_FAMILIES = {
@@ -234,6 +269,46 @@ def _with_requirement_fallback(requirements, requirements_last_year):
     if isinstance(requirements, pd.Series):
         return requirements.where(requirements.notna(), requirements_last_year)
     return requirements if pd.notna(requirements) else requirements_last_year
+
+
+def map_cbpf_name_to_iso3(name):
+    if not name:
+        return None
+
+    if name in CBPF_NAME_TO_ISO3:
+        return CBPF_NAME_TO_ISO3[name]
+
+    base_name = re.sub(r"\s*\(.*?\)\s*", "", str(name)).strip()
+    if base_name in CBPF_NAME_TO_ISO3:
+        return CBPF_NAME_TO_ISO3[base_name]
+
+    try:
+        country = pycountry.countries.lookup(base_name)
+    except LookupError:
+        country = None
+    return getattr(country, "alpha_3", None) if country else None
+
+
+def load_cbpf_allocations(year=None):
+    if not CBPF_ALLOCATIONS_FILE.exists():
+        return pd.DataFrame(columns=["primary_location", "year", "cbpf_total_allocation"])
+
+    cbpf = pd.read_csv(CBPF_ALLOCATIONS_FILE)
+    cbpf["year"] = pd.to_numeric(cbpf["Year"], errors="coerce")
+    if year is not None:
+        cbpf = cbpf[cbpf["year"] == year].copy()
+    else:
+        cbpf = cbpf.copy()
+
+    cbpf["primary_location"] = cbpf["CBPF Name"].apply(map_cbpf_name_to_iso3)
+    cbpf["cbpf_total_allocation"] = pd.to_numeric(
+        cbpf["Total Allocation"], errors="coerce"
+    )
+    cbpf = cbpf[cbpf["primary_location"].notna()]
+
+    return cbpf.groupby(["primary_location", "year"], as_index=False).agg(
+        cbpf_total_allocation=("cbpf_total_allocation", "sum")
+    )
 
 
 def _fit_requirement_bootstrap_adjustments(history):
@@ -701,6 +776,46 @@ def _pick_first_dict(series):
     return None
 
 
+def _build_cbpf_time_series(group):
+    records = []
+    for year, year_group in group.groupby("year", dropna=False):
+        if pd.isna(year):
+            continue
+
+        year_requirements = year_group["requirements"].sum(min_count=1)
+        year_requirements_last_year = year_group["requirements_last_year"].sum(
+            min_count=1
+        )
+        year_effective_requirements = _with_requirement_fallback(
+            year_requirements,
+            year_requirements_last_year,
+        )
+
+        year_cbpf_total_series = year_group["cbpf_total_allocation"].dropna()
+        year_cbpf_total = (
+            year_cbpf_total_series.iloc[0] if not year_cbpf_total_series.empty else None
+        )
+
+        year_cbpf_gap = None
+        if (
+            pd.notna(year_effective_requirements)
+            and year_effective_requirements != 0
+            and pd.notna(year_cbpf_total)
+        ):
+            year_cbpf_coverage = float(year_cbpf_total) / float(year_effective_requirements)
+            year_cbpf_gap = max(0.0, min(1.0, 1.0 - min(year_cbpf_coverage, 1.0)))
+
+        records.append(
+            {
+                "year": int(year),
+                "total": _json_number(year_cbpf_total),
+                "gap": _json_number(year_cbpf_gap),
+            }
+        )
+
+    return sorted(records, key=lambda item: item["year"])
+
+
 def build_all_years_export(summary):
     records = []
     data = summary.copy()
@@ -769,6 +884,7 @@ def build_all_years_export(summary):
         longitude = _pick_scalar_field("longitude")
 
         systematic_underfunding = _pick_first_dict(group.get("systematic_underfunding", []))
+        cbpf_time_series = _build_cbpf_time_series(group)
 
         group_2026 = group[group["year"] == 2026]
         project_metrics_2026 = None
@@ -789,6 +905,7 @@ def build_all_years_export(summary):
             )
             funding_2026 = group_2026["funding"].sum(min_count=1)
             contribution_count_2026 = group_2026["contribution_count"].sum(min_count=1)
+            cbpf_total_allocation_2026 = _pick_scalar_field("cbpf_total_allocation")
 
             percent_funded_2026 = None
             if (
@@ -799,6 +916,16 @@ def build_all_years_export(summary):
                 percent_funded_2026 = round(
                     (funding_2026 / effective_requirements_2026) * 100, 1
                 )
+            cbpf_gap_2026 = None
+            if (
+                pd.notna(effective_requirements_2026)
+                and effective_requirements_2026 != 0
+                and pd.notna(cbpf_total_allocation_2026)
+            ):
+                cbpf_coverage_2026 = float(cbpf_total_allocation_2026) / float(
+                    effective_requirements_2026
+                )
+                cbpf_gap_2026 = max(0.0, min(1.0, 1.0 - min(cbpf_coverage_2026, 1.0)))
 
             category_breakdown_2026 = _combine_category_breakdown(
                 group_2026.get("category_breakdown", pd.Series(dtype=object))
@@ -830,6 +957,8 @@ def build_all_years_export(summary):
                 ),
                 "funding": _json_number(funding_2026),
                 "percent_funded": _json_number(percent_funded_2026),
+                "cbpf_total_allocation": _json_number(cbpf_total_allocation_2026),
+                "cbpf_gap": _json_number(cbpf_gap_2026),
                 "contribution_count": int(contribution_count_2026)
                 if pd.notna(contribution_count_2026)
                 else None,
@@ -863,6 +992,7 @@ def build_all_years_export(summary):
                 if isinstance(systematic_underfunding, dict)
                 else systematic_underfunding
             ),
+            "cbpf_time_series": cbpf_time_series,
             "years": {},
         }
         if project_metrics_2026 is not None:
@@ -910,6 +1040,22 @@ def build_all_years_export(summary):
                 year_requirements_last_year,
             )
             year_funding = year_group["funding"].sum(min_count=1)
+            year_cbpf_total_series = year_group["cbpf_total_allocation"].dropna()
+            year_cbpf_total = (
+                year_cbpf_total_series.iloc[0] if not year_cbpf_total_series.empty else None
+            )
+            year_cbpf_gap = None
+            if (
+                pd.notna(year_effective_requirements)
+                and year_effective_requirements != 0
+                and pd.notna(year_cbpf_total)
+            ):
+                year_cbpf_coverage = float(year_cbpf_total) / float(
+                    year_effective_requirements
+                )
+                year_cbpf_gap = max(
+                    0.0, min(1.0, 1.0 - min(year_cbpf_coverage, 1.0))
+                )
             payload["years"][year_key] = {
                 "codes": sorted(
                     [str(code) for code in year_group["code"].dropna().unique().tolist()]
@@ -933,6 +1079,8 @@ def build_all_years_export(summary):
                 and year_effective_requirements != 0
                 and pd.notna(year_funding)
                 else None,
+                "cbpf_total_allocation": _json_number(year_cbpf_total),
+                "cbpf_gap": _json_number(year_cbpf_gap),
                 "contribution_count": int(year_group["contribution_count"].sum(min_count=1))
                 if pd.notna(year_group["contribution_count"].sum(min_count=1))
                 else None,
@@ -1069,6 +1217,7 @@ def build_summary(year=None):
     plans = load_plans(year=year)
     fts = load_requirements_funding(year=year)
     contributions = load_incoming_funding(year=year)
+    cbpf_allocations = load_cbpf_allocations(year=year)
     severity, breakdown_json = load_severity()
 
     funding_summary = fts.groupby(["code", "year"], as_index=False).agg(
@@ -1121,6 +1270,32 @@ def build_summary(year=None):
             how="left",
             left_on=["code", "year"],
             right_on=["destPlanCode", "year"],
+        )
+        .merge(
+            cbpf_allocations,
+            how="left",
+            left_on=["primary_location", "year"],
+            right_on=["primary_location", "year"],
+        )
+    )
+
+    plan_summary["requirements_effective"] = _with_requirement_fallback(
+        plan_summary["requirements"],
+        plan_summary["requirements_last_year"],
+    )
+    plan_summary["cbpf_coverage"] = (
+        plan_summary["cbpf_total_allocation"] / plan_summary["requirements_effective"]
+    )
+    plan_summary.loc[
+        plan_summary["requirements_effective"].isna()
+        | plan_summary["requirements_effective"].eq(0),
+        "cbpf_coverage",
+    ] = None
+    plan_summary["cbpf_gap"] = plan_summary["cbpf_coverage"].apply(
+        lambda value: (
+            None
+            if pd.isna(pd.to_numeric(value, errors="coerce"))
+            else max(0.0, min(1.0, 1.0 - min(float(value), 1.0)))
         )
     )
 

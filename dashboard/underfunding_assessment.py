@@ -116,6 +116,28 @@ def _summarize_category_scores(category_scores: Any) -> dict[str, Any]:
     }
 
 
+def _summarize_cbpf_timeline(cbpf_timeline: list[dict]) -> dict[str, Any]:
+    gap_points: list[tuple[int, float]] = []
+    for point in cbpf_timeline or []:
+        year = point.get("year")
+        gap = point.get("gap")
+        if not isinstance(year, int) or not isinstance(gap, (int, float)):
+            continue
+        gap_points.append((year, float(gap)))
+
+    gap_points.sort(key=lambda item: item[0])
+    latest_gap = gap_points[-1][1] if gap_points else None
+    persistent_high_gap = False
+    if len(gap_points) >= 2:
+        persistent_high_gap = all(gap >= 0.75 for _, gap in gap_points[-2:])
+
+    return {
+        "latest_gap": latest_gap,
+        "persistent_high_gap": persistent_high_gap,
+        "years_with_gap": len(gap_points),
+    }
+
+
 def derive_underfunding_assessment(crisis: dict) -> tuple[str, list[str], list[dict[str, Any]]]:
     systematic_underfunding_score = _get_nested_value(crisis, ["systematic_underfunding", "score"])
     if not isinstance(systematic_underfunding_score, (int, float)):
@@ -153,6 +175,12 @@ def derive_underfunding_assessment(crisis: dict) -> tuple[str, list[str], list[d
     category_high_count = int(category_summary["high_count"])
     category_severe_count = int(category_summary["severe_count"])
     category_top = category_summary["top_category"]
+    cbpf_summary = _summarize_cbpf_timeline(crisis.get("cbpf_timeline") or [])
+    cbpf_gap_value = crisis.get("cbpf_gap")
+    if not isinstance(cbpf_gap_value, (int, float)):
+        cbpf_gap_value = cbpf_summary["latest_gap"]
+    else:
+        cbpf_gap_value = float(cbpf_gap_value)
 
     acute_underfunding = (
         (funding_ratio_value is not None and funding_ratio_value < 10)
@@ -313,6 +341,21 @@ def derive_underfunding_assessment(crisis: dict) -> tuple[str, list[str], list[d
             add_driver(risk_drivers, "Large funding gap", gap_conf, "financial_pressure")
         elif financial_ratio_label is not None:
             add_driver(risk_drivers, financial_ratio_label, ratio_conf, "financial_pressure")
+
+    if cbpf_summary["persistent_high_gap"]:
+        add_driver(
+            risk_drivers,
+            "Persistently weak pooled-fund coverage",
+            0.58,
+            "history",
+        )
+    elif isinstance(cbpf_gap_value, float) and cbpf_gap_value >= 0.8:
+        add_driver(
+            risk_drivers,
+            "Weak pooled-fund coverage",
+            0.48,
+            "history",
+        )
 
     category_label_map = {
         "education": "education deprivation",
