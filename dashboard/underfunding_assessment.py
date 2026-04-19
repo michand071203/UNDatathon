@@ -250,6 +250,9 @@ def _derive_assessment_signals(
     has_critical_funding_ratio = (
         funding_ratio_value is not None and funding_ratio_value < 10
     )
+    has_extreme_funding_ratio = (
+        funding_ratio_value is not None and funding_ratio_value < 5
+    )
     has_low_funding_ratio = (
         funding_ratio_value is not None and funding_ratio_value < 25
     )
@@ -326,6 +329,12 @@ def _derive_assessment_signals(
         or has_severe_sector_peak
         or has_multiple_severe_sector_signals
     )
+    has_high_underfunding_intensity = (
+        has_extreme_funding_ratio
+        or has_severe_systematic_underfunding
+        or has_severe_sector_peak
+        or has_multiple_severe_sector_signals
+    )
     has_structural_scale_pressure = (
         has_very_large_impacted_population
         or has_very_large_funding_gap
@@ -348,12 +357,6 @@ def _derive_assessment_signals(
         and is_at_or_above_peer_benchmark
         and has_low_or_missing_systematic_for_adequacy
         and has_low_or_missing_sector_average_for_adequacy
-    )
-    has_some_gaps_signal = (
-        has_strong_funding_ratio
-        and not has_declining_funding_trend
-        and has_low_or_missing_systematic_for_partial_support
-        and has_low_or_missing_sector_peak_for_partial_support
     )
 
     return {
@@ -382,10 +385,10 @@ def _derive_assessment_signals(
         "has_multiple_severe_sector_signals": has_multiple_severe_sector_signals,
         "has_worsening_crisis_demand": has_worsening_crisis_demand,
         "has_acute_underfunding_signal": has_acute_underfunding_signal,
+        "has_high_underfunding_intensity": has_high_underfunding_intensity,
         "has_structural_scale_pressure": has_structural_scale_pressure,
         "has_likely_underfunded_signal": has_likely_underfunded_signal,
-        "has_adequately_supported_signal": has_adequately_supported_signal,
-        "has_some_gaps_signal": has_some_gaps_signal,
+        "has_adequately_supported_signal": has_adequately_supported_signal
     }
 
 
@@ -453,7 +456,10 @@ def derive_underfunding_assessment(crisis: dict) -> tuple[str, list[str], list[D
         requirements_worsening=requirements_worsening,
     )
 
-    if signals["has_acute_underfunding_signal"] and signals["has_structural_scale_pressure"]:
+    if signals["has_acute_underfunding_signal"] and (
+        signals["has_structural_scale_pressure"]
+        or signals["has_high_underfunding_intensity"]
+    ):
         band = "Critically Underfunded"
     elif signals["has_acute_underfunding_signal"]:
         band = "Significantly Underfunded"
@@ -461,8 +467,6 @@ def derive_underfunding_assessment(crisis: dict) -> tuple[str, list[str], list[D
         band = "Likely Underfunded"
     elif signals["has_adequately_supported_signal"]:
         band = "Adequately Supported"
-    elif signals["has_some_gaps_signal"]:
-        band = "Some Funding Gaps"
     else:
         band = "Some Funding Gaps"
 
