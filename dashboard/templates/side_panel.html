@@ -15,28 +15,6 @@
 
     <!-- Main Content Area -->
     <div class="p-6 space-y-8">
-        <!-- AI Summary Section -->
-        {% if summary %}
-        <section class="bg-blue-50 border border-blue-100 rounded-xl p-5">
-            <h3 class="text-xs font-bold text-blue-800 uppercase tracking-wider mb-2 flex items-center">
-                <svg class="w-4 h-4 mr-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
-                AI Crisis Insights
-            </h3>
-            <div id="ai-summary-content" class="text-sm text-blue-900 leading-relaxed prose prose-sm prose-blue max-w-none">
-                <div class="markdown-content hidden">{{ summary }}</div>
-                <div class="rendered-markdown"></div>
-            </div>
-            <script>
-                (function() {
-                    const container = document.getElementById('ai-summary-content');
-                    if (container && typeof marked !== 'undefined') {
-                        const raw = container.querySelector('.markdown-content').textContent;
-                        container.querySelector('.rendered-markdown').innerHTML = marked.parse(raw);
-                    }
-                })();
-            </script>
-        </section>
-        {% endif %}
 
         <!-- Core Summary Section -->
         <section>
@@ -76,6 +54,28 @@
             </div>
         </section>
 
+        <!-- AI Summary Section -->
+        {% if summary %}
+        <section class="bg-blue-50 border border-blue-100 rounded-xl p-5">
+            <h3 class="text-xs font-bold text-blue-800 uppercase tracking-wider mb-2 flex items-center">
+                <svg class="w-4 h-4 mr-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                AI Crisis Insights
+            </h3>
+            <div id="ai-summary-content" class="text-sm text-blue-900 leading-relaxed prose prose-sm prose-blue max-w-none">
+                <div class="markdown-content hidden">{{ summary }}</div>
+                <div class="rendered-markdown"></div>
+            </div>
+            <script>
+                (function() {
+                    const container = document.getElementById('ai-summary-content');
+                    if (container && typeof marked !== 'undefined') {
+                        const raw = container.querySelector('.markdown-content').textContent;
+                        container.querySelector('.rendered-markdown').innerHTML = marked.parse(raw);
+                    }
+                })();
+            </script>
+        </section>
+        {% endif %}
         <!-- Dynamic Metadata Section -->
         <section>
             <h3 class="text-sm font-bold text-gray-400 uppercase tracking-wider mb-4">Granular Metrics & Intelligence</h3>
