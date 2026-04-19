@@ -97,6 +97,7 @@ async def basic_auth_middleware(request: Request, call_next):
 FIELD_MAP = {
     "crisis_name": [["name"]],
     "locations": [["location_codes"], ["country_iso3"], ["primary_location_code"], ["location_names"], ["primary_location_name"]],
+    "rationales": [["underfunding_drivers"]],
     "people_in_need": [["people_in_need"]],
     "funding_ratio": [["percent_funded"]],
     "funding_required_usd": [["requirements"]],

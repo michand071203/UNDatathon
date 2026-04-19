@@ -7,6 +7,7 @@ from pydantic import BaseModel, Field, ValidationError, model_validator
 from enum import Enum
 from anthropic import Anthropic
 from regions import REGION_NAMES
+from rationales import UNDERFUNDING_RATIONALES, UnderfundingRationale
 
 try:
     from fastembed import TextEmbedding
@@ -21,7 +22,7 @@ def _format_region_name_for_prompt(name: str) -> str:
 
 # --- Models with Dynamic Evaluation Logic ---
 
-T = TypeVar('T', bound=Enum)
+T = TypeVar('T')
 
 class NumericCondition(BaseModel):
     value: float
@@ -234,8 +235,16 @@ class EnumCondition(BaseModel, Generic[T]):
         return data
 
     def evaluate(self, data_value: Any) -> bool:
-        if data_value is None: return False
-        is_match = data_value in self.values
+        if data_value is None:
+            return False
+
+        target = data_value.value if isinstance(data_value, Enum) else data_value
+        target_str = str(target).casefold()
+        check_list = [
+            str(value.value if isinstance(value, Enum) else value).casefold()
+            for value in self.values
+        ]
+        is_match = target_str in check_list
         return not is_match if self.exclude else is_match
 
 class OrderDirection(str, Enum):
@@ -257,6 +266,7 @@ class OrderCondition(BaseModel):
 class QueryFilter(BaseModel):
     crisis_name: Optional[StringCondition] = None
     locations: Optional[ListCondition] = None
+    rationales: Optional[EnumCondition[UnderfundingRationale]] = None
     people_in_need: Optional[NumericCondition | List[NumericCondition]] = None
     funding_ratio: Optional[NumericCondition | List[NumericCondition]] = None
     assessment: Optional[ListCondition | NumericCondition | List[NumericCondition]] = None
@@ -278,6 +288,7 @@ class QueryParser:
         self.region_names_text = ", ".join(
             _format_region_name_for_prompt(name) for name in REGION_NAMES
         )
+        self.rationale_names_text = ", ".join(UNDERFUNDING_RATIONALES)
 
     def _normalize_percentage_conditions(self, query: str, parsed_filter: QueryFilter) -> QueryFilter:
         """Ensure percentage fields use percent units (e.g. 10 for 10%), not ratios (0.1)."""
@@ -337,7 +348,8 @@ class QueryParser:
             "7. If the query requests a top/bottom N subset (e.g., 'top 10', 'bottom 5'), set 'limit' to N.\n"
             "8. Map ranking terms carefully: 'ranked by severity', 'most severe', or 'most underfunded' -> order_by.field='assessment' and direction='desc'; 'least underfunded' -> order_by.field='assessment' and direction='asc'.\n"
             "9. If the user references one or more specific crisis names, use 'crisis_name' with those names.\n"
-            "10. If a phrase looks like a crisis name, use the user's wording for 'crisis_name' and keep it close to the original phrase; light normalization is allowed (e.g., case/punctuation), but do not expand or paraphrase it, e.g. 'Sudan migrant crisis'."
+            "10. If a phrase looks like a crisis name, use the user's wording for 'crisis_name' and keep it close to the original phrase; light normalization is allowed (e.g., case/punctuation), but do not expand or paraphrase it, e.g. 'Sudan migrant crisis'.\n"
+            f"11. Supported rationale labels are exactly: {self.rationale_names_text}. If the user asks for a rationale/driver and their wording is only close (not exact), map it to the single closest label and output that exact label in 'rationales.values'. If multiple fit, then just pick all of them (e.g. for 'education deprivation' -> 'Severe education deprivation' and 'High education deprivation').\n"
         )
 
         try:

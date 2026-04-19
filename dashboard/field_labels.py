@@ -8,6 +8,10 @@ FIELD_LABELS = {
         "short": "Country",
         "long": "Country",
     },
+    "rationales": {
+        "short": "Rationale",
+        "long": "Rationale",
+    },
     "people_in_need": {
         "short": "PIN",
         "long": "People In Need",

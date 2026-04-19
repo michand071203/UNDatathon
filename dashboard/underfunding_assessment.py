@@ -1,4 +1,26 @@
-from typing import Any, Optional
+from typing import Any, Literal, Optional, TypedDict
+
+from rationales import UNDERFUNDING_RATIONALE_SET, UnderfundingRationale
+
+
+DriverKind = Literal[
+    "funding_ratio",
+    "trend",
+    "history",
+    "benchmark",
+    "needs_scale",
+    "data_completeness",
+    "systematic_underfunding_score",
+    "financial_pressure",
+    "funding_gap",
+    "sector",
+]
+
+
+class DriverEvidence(TypedDict):
+    label: UnderfundingRationale
+    confidence: float
+    kind: DriverKind
 
 
 def _get_nested_value(data: dict, path: list[str]) -> Any:
@@ -305,19 +327,21 @@ def derive_underfunding_assessment(crisis: dict) -> tuple[str, list[str], list[d
     else:
         band = "Some Funding Gaps"
 
-    risk_drivers: list[dict[str, Any]] = []
-    positive_drivers: list[dict[str, Any]] = []
+    risk_drivers: list[DriverEvidence] = []
+    positive_drivers: list[DriverEvidence] = []
     financial_ratio_confidence: Optional[float] = None
-    financial_ratio_label: Optional[str] = None
+    financial_ratio_label: Optional[UnderfundingRationale] = None
     financial_gap_confidence: Optional[float] = None
-    financial_gap_label: Optional[str] = None
+    financial_gap_label: Optional[UnderfundingRationale] = None
 
     def add_driver(
-        bucket: list[dict[str, Any]],
-        label: str,
+        bucket: list[DriverEvidence],
+        label: UnderfundingRationale,
         confidence: float,
-        kind: str,
+        kind: DriverKind,
     ) -> None:
+        if label not in UNDERFUNDING_RATIONALE_SET:
+            raise ValueError(f"Unsupported rationale label: {label}")
         bucket.append({
             "label": label,
             "confidence": max(0.0, min(1.0, confidence)),
@@ -438,20 +462,23 @@ def derive_underfunding_assessment(crisis: dict) -> tuple[str, list[str], list[d
             "history",
         )
 
-    category_label_map = {
-        "education": "education deprivation",
-        "food_security": "food insecurity",
-        "health": "health vulnerability",
-        "hygiene": "sanitation stress",
-        "protection": "protection risk",
+    category_label_map: dict[str, tuple[UnderfundingRationale, UnderfundingRationale]] = {
+        "education": ("Severe education deprivation", "High education deprivation"),
+        "food_security": ("Severe food insecurity", "High food insecurity"),
+        "health": ("Severe health vulnerability", "High health vulnerability"),
+        "hygiene": ("Severe sanitation stress", "High sanitation stress"),
+        "protection": ("Severe protection risk", "High protection risk"),
     }
     if category_summary["available"]:
+        severe_label, high_label = category_label_map.get(
+            str(category_top),
+            ("Severe sectoral stress", "High sectoral stress"),
+        )
+
         if category_max is not None and category_max >= 90:
-            top_name = category_label_map.get(category_top, "sectoral stress")
-            add_driver(risk_drivers, f"Severe {top_name}", 0.88, "sector")
+            add_driver(risk_drivers, severe_label, 0.88, "sector")
         elif category_max is not None and category_max >= 80:
-            top_name = category_label_map.get(category_top, "sectoral stress")
-            add_driver(risk_drivers, f"High {top_name}", 0.76, "sector")
+            add_driver(risk_drivers, high_label, 0.76, "sector")
 
         if category_high_count >= 3:
             add_driver(risk_drivers, "Broad multi-sector pressure", 0.82, "sector")
@@ -479,8 +506,8 @@ def derive_underfunding_assessment(crisis: dict) -> tuple[str, list[str], list[d
         "history": "history",
     }
 
-    selected_drivers: list[str] = []
-    selected_driver_confidence: list[dict[str, Any]] = []
+    selected_drivers: list[UnderfundingRationale] = []
+    selected_driver_confidence: list[DriverEvidence] = []
     seen_families: set[str] = set()
 
     # First pass: maximize evidence diversity by selecting at most one driver per family.
@@ -515,7 +542,7 @@ def derive_underfunding_assessment(crisis: dict) -> tuple[str, list[str], list[d
                 break
 
     if len(selected_drivers) < 2 and band == "Adequately Supported":
-        fallback_label = "No strong underfunding signals"
+        fallback_label: UnderfundingRationale = "No strong underfunding signals"
         if fallback_label not in selected_drivers:
             selected_drivers.append(fallback_label)
             selected_driver_confidence.append({"label": fallback_label, "confidence": 0.35})
@@ -525,5 +552,5 @@ def derive_underfunding_assessment(crisis: dict) -> tuple[str, list[str], list[d
         selected_drivers.append(fallback_label)
         selected_driver_confidence.append({"label": fallback_label, "confidence": 0.3})
 
-    return band, selected_drivers[:3], selected_driver_confidence[:3]
+    return band, [str(label) for label in selected_drivers[:3]], selected_driver_confidence[:3]
 
