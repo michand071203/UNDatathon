@@ -84,7 +84,7 @@ class CrisisSummarizer:
 
         Explain why this crisis has an assessment of "{crisis.get('assessment')}" and detail the main underfunding drivers.
         Keep it concise (2-3 sentences), professional, and informative. Focus on the most critical drivers.
-        No need to output tables or lists, just a clear text summary.
+        No need to output tables or lists, just a clear text summary. Also no need for heading. Just a full-text answer.
         """
 
         try:
