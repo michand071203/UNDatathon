@@ -60,7 +60,7 @@
                 <table class="min-w-full divide-y divide-gray-200">
                     <tbody class="divide-y divide-gray-100 bg-white">
                         <tr class="hover:bg-gray-50 transition-colors">
-                            <td class="px-6 py-4 whitespace-nowrap text-sm font-bold text-gray-600 bg-gray-50/50 w-1/3">Required Funding</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm font-bold text-gray-600 bg-gray-50/50 w-1/3">Funding Required</td>
                             <td class="px-6 py-4 text-sm text-gray-800 font-medium">
                                 {% if crisis.requirements is not none %}
                                     <span {% if crisis.requirements_projected %}class="italic cursor-help" data-hover-tooltip="{{ projected_data_tooltip }}" tabindex="0"{% endif %}>
@@ -121,7 +121,7 @@
                             <svg class="w-full h-full transform -rotate-90" viewBox="0 0 36 36">
                                 <circle cx="18" cy="18" r="15.915" fill="none" stroke="#e5e7eb" stroke-width="3"></circle>
                                 {% if score is not none %}
-                                <circle cx="18" cy="18" r="15.915" fill="none" stroke="{{ calculate_color(score) }}" stroke-width="3" stroke-dasharray="{{ score }}, 100" stroke-linecap="round"></circle>
+                                <circle cx="18" cy="18" r="15.915" fill="none" stroke="{{ calculate_score_color(score) }}" stroke-width="3" stroke-dasharray="{{ score }}, 100" stroke-linecap="round"></circle>
                                 {% endif %}
                             </svg>
                             <div class="absolute inset-0 flex items-center justify-center text-[9px] font-bold {% if score is not none %}text-gray-700{% else %}text-gray-300{% endif %}">
@@ -204,7 +204,7 @@
                         </div>
                     </div>
                     <div class="border border-gray-100 rounded-lg p-3 bg-gray-50 mt-4">
-                        <h4 class="text-xs font-bold text-gray-500 uppercase tracking-wider mb-2">Total Required Funding</h4>
+                        <h4 class="text-xs font-bold text-gray-500 uppercase tracking-wider mb-2">Total Funding Required</h4>
                         <div class="h-44">
                             <canvas
                                 class="w-full h-full requirements-line-chart"

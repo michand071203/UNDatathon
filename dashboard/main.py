@@ -111,11 +111,11 @@ ASSESSMENT_RANKS = {
 }
 
 ASSESSMENT_COLORS = {
-    "Adequately Supported": "#16a34a",
-    "Some Funding Gaps": "#84cc16",
-    "Likely Underfunded": "#facc15",
-    "Significantly Underfunded": "#f97316",
-    "Critically Underfunded": "#b91c1c",
+    "Adequately Supported": "#fef08a",
+    "Some Funding Gaps": "#fde047",
+    "Likely Underfunded": "#f59e0b",
+    "Significantly Underfunded": "#ea580c",
+    "Critically Underfunded": "#991b1b",
 }
 
 
@@ -250,7 +250,33 @@ def calculate_color(assessment: Optional[str]) -> str:
         return "#64748b"
     return ASSESSMENT_COLORS.get(assessment, "#64748b")
 
+
+def calculate_score_color(score: Optional[float]) -> str:
+    # Score color scale is numeric: 0 (green) -> yellow -> orange -> 100 (red).
+    if score is None:
+        return "#9ca3af"
+
+    value = max(0.0, min(100.0, float(score)))
+    if value <= 50.0:
+        # Green -> Yellow
+        hue = 120.0 - (70.0 * (value / 50.0))
+        saturation = 88.0
+        lightness = 48.0 + (6.0 * (value / 50.0))
+    elif value <= 80.0:
+        # Yellow -> Orange
+        hue = 50.0 - (25.0 * ((value - 50.0) / 30.0))
+        saturation = 96.0
+        lightness = 54.0
+    else:
+        # Orange -> Red
+        hue = 25.0 - (25.0 * ((value - 80.0) / 20.0))
+        saturation = 94.0
+        lightness = 50.0
+
+    return f"hsl({hue:.1f}, {saturation:.1f}%, {lightness:.1f}%)"
+
 templates.env.globals["calculate_color"] = calculate_color
+templates.env.globals["calculate_score_color"] = calculate_score_color
 templates.env.globals["format_compact_number"] = format_compact_number
 templates.env.globals["format_compact_usd"] = format_compact_usd
 templates.env.globals["format_estimated_usd"] = format_estimated_usd

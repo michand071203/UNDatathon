@@ -20,7 +20,7 @@
             <!-- Underfunding Assessment Band -->
             <div class="flex flex-col rounded-lg px-3 py-2 min-w-[190px] border" style="background-color: color-mix(in srgb, {{ crisis.color or '#9ca3af' }} 14%, white); border-color: color-mix(in srgb, {{ crisis.color or '#9ca3af' }} 32%, white);">
                 <span class="text-[9px] font-bold uppercase tracking-widest mb-0.5" style="color: color-mix(in srgb, {{ crisis.color or '#9ca3af' }} 68%, #1f2937);">Assessment</span>
-                <span class="text-sm font-extrabold leading-tight" style="color: color-mix(in srgb, {{ crisis.color or '#9ca3af' }} 78%, #111827);">
+                <span class="text-base font-extrabold leading-tight" style="color: color-mix(in srgb, {{ crisis.color or '#9ca3af' }} 78%, #111827);">
                     {{ crisis.underfunding_band or 'Needs verification' }}
                 </span>
             </div>
@@ -42,7 +42,7 @@
                 </div>
 
                 <div class="flex flex-col min-w-[100px]">
-                    <span class="text-[9px] font-bold text-gray-400 uppercase tracking-widest mb-0.5">Required Funding</span>
+                    <span class="text-[9px] font-bold text-gray-400 uppercase tracking-widest mb-0.5">Funding Required</span>
                     <span class="text-sm font-bold text-gray-700 truncate">
                         {% if crisis.requirements is not none %}
                             <span {% if crisis.requirements_projected %}class="italic cursor-help" data-hover-tooltip="{{ projected_data_tooltip }}" tabindex="0"{% endif %}>
