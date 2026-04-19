@@ -9,6 +9,7 @@ import json
 import os
 import math
 import secrets
+import asyncio
 from base64 import b64decode
 from fastapi import FastAPI, Request, Query, Form
 from fastapi.responses import HTMLResponse, JSONResponse, Response
@@ -21,9 +22,20 @@ from field_labels import FIELD_LABELS
 from regions import expand_location_values
 from underfunding_assessment import derive_underfunding_assessment
 
+from llm_summary import CrisisSummarizer, summaries
+
 load_dotenv()
 
 app = FastAPI(title="Humanitarian Crisis Dashboard")
+
+@app.on_event("startup")
+async def startup_event():
+    data = get_enriched_data()
+    summarizer = CrisisSummarizer()
+    tasks = [summarizer.summarize_crisis(crisis) for crisis in data]
+    results = await asyncio.gather(*tasks)
+    for crisis, summary in zip(data, results):
+        summaries[crisis["code"]] = summary
 
 BASIC_AUTH_USERNAME = os.getenv("BASIC_AUTH_USERNAME")
 BASIC_AUTH_PASSWORD = os.getenv("BASIC_AUTH_PASSWORD")
@@ -77,7 +89,7 @@ FIELD_MAP = {
     "funding_ratio": [["percent_funded"]],
     "funding_required_usd": [["requirements"]],
     "funding_received_usd": [["funding"]],
-    "assessment": [["assessment_rank"], ["underfunding_band"]],
+    "assessment": [["assessment_rank"], ["assessment"]],
 }
 
 CHIP_FIELD_ORDER = list(FIELD_MAP.keys())
@@ -435,12 +447,12 @@ def get_enriched_data():
             crisis["locations_display"] = ", ".join(full_location_names)
 
             crisis["radius_km"] = calculate_radius(crisis.get("people_in_need") or 500000)
-            underfunding_band, underfunding_drivers, underfunding_driver_confidence = derive_underfunding_assessment(crisis)
-            crisis["underfunding_band"] = underfunding_band
-            crisis["assessment_rank"] = ASSESSMENT_RANKS.get(underfunding_band)
+            assessment, underfunding_drivers, underfunding_driver_confidence = derive_underfunding_assessment(crisis)
+            crisis["assessment"] = assessment
+            crisis["assessment_rank"] = ASSESSMENT_RANKS.get(assessment)
             crisis["underfunding_drivers"] = underfunding_drivers
             crisis["underfunding_driver_confidence"] = underfunding_driver_confidence
-            crisis["color"] = calculate_color(crisis.get("underfunding_band"))
+            crisis["color"] = calculate_color(crisis.get("assessment"))
             valid_data.append(sanitize_non_finite_values(crisis))
     return valid_data
 
@@ -627,13 +639,15 @@ async def get_list(
         }
     )
 
+from llm_summary import CrisisSummarizer, summaries
+
 @app.get("/details/{crisis_code}", response_class=HTMLResponse)
 async def get_details(request: Request, crisis_code: str):
     data = get_enriched_data()
     crisis = next((c for c in data if c["code"] == crisis_code), None)
     if not crisis:
         return HTMLResponse(content="Crisis not found", status_code=404)
-    return templates.TemplateResponse(request=request, name="side_panel.html", context={"crisis": crisis})
+    return templates.TemplateResponse(request=request, name="side_panel.html", context={"crisis": crisis, "summary": summaries.get(crisis_code)})
 
 if __name__ == "__main__":
     import uvicorn

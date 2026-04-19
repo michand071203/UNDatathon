@@ -15,6 +15,17 @@
 
     <!-- Main Content Area -->
     <div class="p-6 space-y-8">
+        <!-- AI Summary Section -->
+        {% if summary %}
+        <section class="bg-blue-50 border border-blue-100 rounded-xl p-5">
+            <h3 class="text-xs font-bold text-blue-800 uppercase tracking-wider mb-2 flex items-center">
+                <svg class="w-4 h-4 mr-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                AI Crisis Insights
+            </h3>
+            <p class="text-sm text-blue-900 leading-relaxed">{{ summary }}</p>
+        </section>
+        {% endif %}
+
         <!-- Core Summary Section -->
         <section>
             <h3 class="text-sm font-bold text-gray-400 uppercase tracking-wider mb-2">Core Impact Summary</h3>
@@ -22,7 +33,7 @@
                 <div class="p-4 rounded-lg border mb-3" style="background-color: {{ (crisis.color or '#9ca3af') ~ '1f' }}; border-color: {{ (crisis.color or '#9ca3af') ~ '4d' }};">
                     <div class="text-xs uppercase font-semibold tracking-wide" style="color: {{ crisis.color or '#9ca3af' }};">Assessment</div>
                     <div class="text-2xl font-black mt-1" style="color: {{ crisis.color or '#9ca3af' }};">
-                        {{ crisis.underfunding_band or 'Needs verification' }}
+                        {{ crisis.assessment or 'Needs verification' }}
                     </div>
                     {% if crisis.underfunding_drivers %}
                     <div class="mt-2 flex flex-wrap gap-1.5">

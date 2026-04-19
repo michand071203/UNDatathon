@@ -20,8 +20,8 @@
             <!-- Underfunding Assessment Band -->
             <div class="flex flex-col rounded-lg px-3 py-2 min-w-[190px] border" style="background-color: color-mix(in srgb, {{ crisis.color or '#9ca3af' }} 14%, white); border-color: color-mix(in srgb, {{ crisis.color or '#9ca3af' }} 32%, white);">
                 <span class="text-[9px] font-bold uppercase tracking-widest mb-0.5" style="color: color-mix(in srgb, {{ crisis.color or '#9ca3af' }} 68%, #1f2937);">Assessment</span>
-                <span class="text-base font-extrabold leading-tight" style="color: color-mix(in srgb, {{ crisis.color or '#9ca3af' }} 78%, #111827);">
-                    {{ crisis.underfunding_band or 'Needs verification' }}
+                <span class="text-sm font-extrabold leading-tight" style="color: color-mix(in srgb, {{ crisis.color or '#9ca3af' }} 78%, #111827);">
+                    {{ crisis.assessment or 'Needs verification' }}
                 </span>
             </div>
 
